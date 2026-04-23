@@ -108,7 +108,7 @@ nav .btn-primary:hover{{background:{COLORS['navy_light']};color:{COLORS['white']
 .footer a:hover{{color:{COLORS['gold']}}}
 .footer ul{{list-style:none}}
 .footer li{{margin-bottom:8px}}
-.footer-grid{{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}}
+.footer-grid{{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}}
 .footer-bottom{{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding:20px 0;text-align:center;font-size:.85rem}}
 .footer-desc{{max-width:300px;font-size:.9rem;line-height:1.6}}
 
@@ -382,6 +382,192 @@ BLOG_POSTS = [
 <p>Transferable value means the business holds its worth regardless of who owns it. This comes from systems, brand reputation, customer relationships that belong to the company rather than an individual, and a team that is motivated and capable.</p>
 <p>At Elixir Consulting Group, we help business owners build the systems and structure that increase business value whether you plan to sell or not. The result is a more valuable, more enjoyable business to own.</p>"""
     },
+    {
+        "slug": "how-to-scale-business-500k-to-5m-revenue",
+        "title": "How to Scale Your Business From $500K to $5M in Revenue",
+        "date": "2026-04-22",
+        "excerpt": "Scaling from $500K to $5M is the most dangerous growth phase for any business. Here is the playbook for making that leap without breaking what already works.",
+        "content": """<p>The jump from $500K to $5M in revenue is where most businesses either transform or collapse. At $500K, the founder is still doing most of the work. At $5M, the business needs to run on systems, not heroics. The transition between those two points is where the real work happens.</p>
+<h2>Why $500K to $5M Is the Hardest Phase</h2>
+<p>At half a million in revenue, you have proven the concept. Customers want what you sell. But the infrastructure that got you here, which is usually the founder doing everything, cannot stretch to $5M. You need to hire, delegate, and build repeatable processes before the cracks become crises.</p>
+<p>The founder's role must shift from doing the work to designing the systems that allow others to do the work. This is psychologically difficult because the founder's identity is often tied to being the best at the thing the company does.</p>
+<h2>The Four Pillars of Scaling to $5M</h2>
+<p>First, you need a <strong>repeatable sales engine</strong>. If revenue depends on the founder's relationships and hustle, growth will always be capped. Build a pipeline with defined stages, follow-up cadence, and clear metrics. Your <a href="/services/sales-strategy/">sales strategy</a> needs to work without you in every conversation.</p>
+<p>Second, you need <strong>delivery systems that scale</strong>. Document your core service delivery so that quality stays consistent as you add team members. This means SOPs, checklists, and quality gates that do not depend on any single person. Our <a href="/services/operations/">operations consulting</a> is built for exactly this challenge.</p>
+<p>Third, you need a <strong>leadership layer</strong>. Somewhere between $1M and $3M, you need people who can make decisions without you. Invest in <a href="/services/leadership/">leadership development</a> early so you are not scrambling to build it when you desperately need it.</p>
+<p>Fourth, you need <strong>financial clarity</strong>. At $5M, you cannot afford to guess about margins, cash flow, or profitability by service line. Build dashboards and reporting that give you real-time visibility into the numbers that matter.</p>
+<h2>Common Mistakes During This Phase</h2>
+<p>The most common mistake is hiring ahead of systems. Adding headcount without clear processes just multiplies chaos. The second most common mistake is the founder refusing to let go of tasks they enjoy but that no longer require their attention. Every hour the founder spends on $20-per-hour tasks is an hour not spent on $500-per-hour activities.</p>
+<p>The businesses that successfully scale through this phase are the ones that invest in <a href="/services/business-strategy/">strategic planning</a> and operational structure before the growth forces their hand. If you are approaching this transition, <a href="/contact/">book a consult</a> and let us help you build the foundation for your next stage of growth.</p>"""
+    },
+    {
+        "slug": "ai-implementation-small-business-step-by-step-guide",
+        "title": "AI Implementation for Small Business: A Step-by-Step Guide",
+        "date": "2026-04-20",
+        "excerpt": "AI adoption does not have to be overwhelming. This step-by-step guide shows small business owners how to implement AI tools that deliver real ROI without disrupting operations.",
+        "content": """<p>Most small business owners know they should be using AI but feel overwhelmed by the options and unsure where to start. The good news is that effective AI implementation does not require a massive budget, a technical team, or a complete overhaul of your operations. It requires a structured approach and clarity about what problems you are solving.</p>
+<h2>Step 1: Identify Your Biggest Time Drains</h2>
+<p>Before looking at any tools, list the tasks that consume the most time in your business without producing proportional value. Common culprits include manual data entry, scheduling, email sorting, report generation, and first-response customer communication. These are your highest-ROI automation targets.</p>
+<h2>Step 2: Evaluate AI Tools for Your Specific Needs</h2>
+<p>The AI tool landscape is massive, but most small businesses only need tools in three or four categories: communication automation, data analysis, workflow automation, and content generation. Do not try to adopt everything at once. Pick the category that addresses your biggest pain point from Step 1.</p>
+<p>Our <a href="/services/ai-consulting/">AI consulting</a> team helps businesses navigate this evaluation process so you invest in tools that actually fit your workflow rather than chasing the latest trend.</p>
+<h2>Step 3: Start With a Pilot Project</h2>
+<p>Choose one workflow and implement AI for that specific process. Measure the results over 30 days before expanding. This approach reduces risk, builds team confidence, and gives you real data about what works in your specific environment.</p>
+<h2>Step 4: Train Your Team</h2>
+<p>The most common reason AI implementations fail is not the technology. It is adoption. Your team needs to understand why the tool is being introduced, how to use it, and what is expected of them. Structured training and a clear transition plan make the difference between tools that get used and tools that get abandoned.</p>
+<h2>Step 5: Scale What Works</h2>
+<p>Once your pilot project shows results, expand to the next highest-impact area. Build on what you have learned about your team's adoption patterns and your business's specific needs. Each new implementation gets easier because you have built the change management muscle.</p>
+<h2>When to Bring in Expert Help</h2>
+<p>If you are not sure where to start, or if previous AI attempts have stalled, working with an experienced <a href="/services/ai-consulting/">AI consulting partner</a> can save months of trial and error. At Elixir Consulting Group, we help businesses implement AI tools that solve real problems and deliver measurable returns. <a href="/contact/">Get in touch</a> to discuss your situation.</p>
+<p>As featured on <a href="https://thepittsburghwire.com" target="_blank" rel="noopener">The Pittsburgh Wire</a>, Pittsburgh businesses are leading the way in practical AI adoption for small and mid-sized companies.</p>"""
+    },
+    {
+        "slug": "true-cost-of-not-having-business-strategy",
+        "title": "The True Cost of Not Having a Business Strategy",
+        "date": "2026-04-17",
+        "excerpt": "Operating without a clear business strategy costs more than most owners realize. Here is how to calculate what strategic drift is actually costing your business.",
+        "content": """<p>Many business owners operate without a formal strategy. They react to opportunities, fight fires, and rely on instinct to make decisions. This works for a while, especially in the early stages when agility matters more than structure. But as the business grows, the absence of strategy becomes increasingly expensive.</p>
+<h2>The Hidden Costs of Strategic Drift</h2>
+<p>Without a clear strategy, every decision is made in isolation. Should you hire that person? Should you invest in that tool? Should you pursue that market? Without strategic context, these decisions are based on gut feel, and gut feel does not scale.</p>
+<p>The costs show up in several ways. First, <strong>wasted resources</strong>. Without priorities, everything feels urgent, and resources get spread thin across too many initiatives. Second, <strong>missed opportunities</strong>. When you do not know what you are building toward, you cannot recognize the opportunities that matter most. Third, <strong>team confusion</strong>. Without clear direction, your team makes assumptions about what matters, and those assumptions are often wrong.</p>
+<h2>What Strategy Actually Looks Like</h2>
+<p>Effective <a href="/services/business-strategy/">business strategy</a> is not a 50-page document that sits in a drawer. It is a clear set of priorities, a defined competitive position, and a practical roadmap that connects long-term vision to weekly execution. It should fit on one page and be understood by every member of your leadership team.</p>
+<h2>Calculating Your Strategy Gap</h2>
+<p>Consider how many hours per week your leadership team spends debating priorities, revisiting decisions, or working on initiatives that do not move the needle. Multiply those hours by their loaded cost. Now add the revenue from deals lost because your team was too scattered to execute well. That number is the cost of not having a strategy.</p>
+<p>For most businesses in the $1M to $10M range, this cost runs between $200K and $500K per year in lost productivity, missed opportunities, and inefficient resource allocation. A structured <a href="/services/business-strategy/">strategic planning engagement</a> typically costs a fraction of that and pays for itself within the first quarter.</p>
+<p>If your business feels busy but unfocused, a strategy consult is the best investment you can make. <a href="/contact/">Book a conversation</a> with our team and let us help you build the clarity your business needs. Learn more about the founder, <a href="https://drconnorrobertson.com" target="_blank" rel="noopener">Dr. Connor Robertson</a>, and his approach to strategic consulting.</p>"""
+    },
+    {
+        "slug": "pittsburgh-businesses-using-ai-outperform-competitors",
+        "title": "How Pittsburgh Businesses Are Using AI to Outperform Competitors",
+        "date": "2026-04-14",
+        "excerpt": "Pittsburgh has become a national leader in practical AI adoption for small and mid-sized businesses. Here is how local companies are gaining an edge with artificial intelligence.",
+        "content": """<p>Pittsburgh's unique combination of world-class research institutions, affordable business costs, and a growing tech ecosystem has created an environment where small and mid-sized businesses are adopting AI faster and more effectively than their counterparts in many larger markets.</p>
+<h2>Pittsburgh's AI Advantage</h2>
+<p>With Carnegie Mellon University's AI research program consistently ranked among the best in the world and the University of Pittsburgh's strong data science programs, Pittsburgh businesses have access to talent and expertise that would be prohibitively expensive in Silicon Valley or New York. This talent pool means local businesses can implement sophisticated AI solutions at a fraction of the cost.</p>
+<p>As reported by <a href="https://thepittsburghwire.com" target="_blank" rel="noopener">The Pittsburgh Wire</a>, the city's AI ecosystem continues to expand, with new startups and established companies alike investing in practical AI applications for businesses of all sizes.</p>
+<h2>Real Examples of AI in Pittsburgh Businesses</h2>
+<p>A Pittsburgh-based professional services firm implemented AI-powered client communication tools that reduced response time by 60% and improved client satisfaction scores. The system handles initial inquiries, routes complex questions to the right team member, and maintains consistent follow-up without manual intervention.</p>
+<p>A regional manufacturer adopted AI-driven quality control that catches defects earlier in the production process, reducing waste by 25% and improving delivery reliability. The system learned from historical data to predict which production runs were most likely to have issues.</p>
+<p>A local healthcare practice used AI to streamline patient scheduling and reduce no-shows by 40%. The system analyzes patterns in patient behavior and sends personalized reminders at the optimal time.</p>
+<h2>Getting Started With AI in Pittsburgh</h2>
+<p>The key to successful AI adoption is starting with a clear problem and a practical solution. Pittsburgh businesses have an advantage because the local ecosystem provides access to experienced <a href="/services/ai-consulting/">AI consultants</a> who understand both the technology and the operational realities of running a business.</p>
+<p>At Elixir Consulting Group, we help Pittsburgh businesses evaluate, implement, and optimize AI tools that deliver real returns. Our approach starts with understanding your <a href="/services/operations/">operations</a> and identifying where AI can make the biggest impact with the least disruption. <a href="/contact/">Book a consult</a> to explore how AI can give your business a competitive edge.</p>
+<p>Dr. Connor Robertson has also discussed AI adoption strategies for small businesses on <a href="https://www.youtube.com/@TheProspectingShow" target="_blank" rel="noopener">The Prospecting Show</a>, sharing practical frameworks that business owners can apply immediately.</p>"""
+    },
+    {
+        "slug": "when-to-hire-business-consultant-vs-doing-it-yourself",
+        "title": "When to Hire a Business Consultant vs. Doing It Yourself",
+        "date": "2026-04-10",
+        "excerpt": "Not every problem requires outside help. Here is a practical framework for deciding when to hire a consultant and when to handle it internally.",
+        "content": """<p>The decision to hire a business consultant is not always straightforward. Some problems are best solved internally, while others benefit enormously from outside expertise. The key is knowing the difference and being honest about where your business stands.</p>
+<h2>When to Handle It Yourself</h2>
+<p>If the problem is within your existing expertise and you have the bandwidth to solve it, doing it yourself is often the right call. Minor process tweaks, tool adjustments, and incremental improvements to things you already understand well are usually better handled internally. You know your business better than anyone, and small adjustments often just need time and attention.</p>
+<h2>When to Hire a Consultant</h2>
+<p>There are several situations where outside help pays for itself many times over.</p>
+<p><strong>When you lack the expertise.</strong> If you need to build systems you have never built before, such as a structured sales process, an operational cadence, or an AI implementation plan, a consultant who has done it dozens of times will get you there faster and with fewer expensive mistakes. Our <a href="/services/operations/">operations consulting</a> and <a href="/services/sales-strategy/">sales strategy</a> services are built for exactly these situations.</p>
+<p><strong>When you are too close to the problem.</strong> Business owners often cannot see the patterns in their own business because they are living inside them every day. An outside perspective can identify issues and opportunities that are invisible from the inside.</p>
+<p><strong>When speed matters.</strong> If the cost of delay is high, such as lost revenue, client churn, or a market window closing, a consultant can compress months of learning into weeks of implementation.</p>
+<p><strong>When you have tried and failed.</strong> If you have attempted to solve the problem internally and it keeps coming back, the issue is usually structural, not effort-based. A consultant can diagnose the root cause and build a more durable solution.</p>
+<h2>How to Choose the Right Consultant</h2>
+<p>Look for consultants who focus on implementation, not just advice. Ask for specific examples of results they have delivered. Make sure their approach matches your business size and stage. A framework designed for Fortune 500 companies will not work for a $3M business.</p>
+<p>At Elixir Consulting Group, we specialize in working with businesses between $500K and $30M in revenue. We focus on <a href="/services/business-strategy/">practical strategy</a> and hands-on implementation because we know that advice without execution is worthless. <a href="/contact/">Book a consult</a> to discuss whether outside help makes sense for your situation.</p>"""
+    },
+    {
+        "slug": "building-recession-proof-business-strategies",
+        "title": "Building a Recession-Proof Business: Strategies That Work",
+        "date": "2026-04-07",
+        "excerpt": "Economic downturns expose the weaknesses in your business model. Here are the strategies that help businesses not just survive recessions but come out stronger.",
+        "content": """<p>No business is completely recession-proof, but some are far more resilient than others. The difference usually comes down to operational discipline, financial clarity, and the ability to adapt quickly. The time to build recession resilience is before you need it.</p>
+<h2>Diversify Your Revenue Streams</h2>
+<p>Businesses that depend on a single revenue stream or a small number of clients are the most vulnerable in a downturn. If your top three clients represent more than 40% of revenue, you have a concentration risk that needs to be addressed. Building multiple service lines, expanding your client base, and developing recurring revenue models all reduce this vulnerability.</p>
+<h2>Build Operational Efficiency Now</h2>
+<p>The businesses that struggle most in recessions are the ones running with bloated operations during good times. When revenue drops, they have no margin to absorb the impact. Building <a href="/services/operations/">lean, efficient operations</a> during growth periods gives you the financial cushion to weather downturns without panic layoffs or quality cuts.</p>
+<p>This means documenting processes, eliminating waste, and running regular efficiency reviews. It also means investing in automation and <a href="/services/ai-consulting/">AI tools</a> that reduce the labor cost of routine tasks.</p>
+<h2>Maintain Financial Reserves</h2>
+<p>Businesses should maintain 3 to 6 months of operating expenses in reserve. This is not conservative advice. It is survival strategy. Cash reserves give you the ability to make strategic decisions during a downturn rather than reactive ones.</p>
+<h2>Invest in Client Relationships</h2>
+<p>During a recession, clients scrutinize every vendor relationship. The businesses that retain clients are the ones that have built genuine relationships and demonstrated consistent value. Your <a href="/services/sales-strategy/">sales and retention systems</a> should be creating touchpoints that reinforce your value long before economic pressure forces clients to make cuts.</p>
+<h2>Develop Strategic Agility</h2>
+<p>The ability to pivot quickly, whether that means adjusting service offerings, entering new markets, or restructuring operations, separates the businesses that thrive in downturns from those that merely survive. <a href="/services/business-strategy/">Strategic planning</a> should include scenario planning for economic shifts so your leadership team knows what levers to pull when conditions change.</p>
+<p>Building recession resilience is not about fear. It is about building a fundamentally stronger business that performs well in any economic environment. <a href="/contact/">Book a consult</a> to discuss how to strengthen your business for whatever comes next.</p>"""
+    },
+    {
+        "slug": "reduce-operating-costs-30-percent-without-cutting-quality",
+        "title": "How to Reduce Operating Costs by 30% Without Cutting Quality",
+        "date": "2026-04-03",
+        "excerpt": "Cutting costs does not have to mean cutting corners. Here is a systematic approach to reducing operating expenses while maintaining or improving service quality.",
+        "content": """<p>Most businesses have significant operational waste hidden in their workflows, tool stack, and team structure. The challenge is finding and eliminating that waste without degrading the quality your customers expect. It requires a systematic approach, not across-the-board cuts.</p>
+<h2>Start With Process Mapping</h2>
+<p>You cannot optimize what you cannot see. The first step is mapping your core workflows end-to-end and identifying where time, money, and effort are being wasted. Common sources of waste include redundant approval steps, manual tasks that could be automated, tools that overlap in functionality, and communication bottlenecks that cause rework.</p>
+<p>Our <a href="/services/operations/">operations consulting</a> engagements always start with process mapping because it reveals the specific areas where cost reduction will have the highest impact without affecting quality.</p>
+<h2>Automate Repetitive Tasks</h2>
+<p>If your team is spending time on tasks that follow the same steps every time, those tasks are candidates for automation. Invoice processing, appointment reminders, data entry, report generation, and routine customer communications can often be automated with <a href="/services/ai-consulting/">AI tools</a> that cost far less than the labor they replace.</p>
+<h2>Optimize Your Tool Stack</h2>
+<p>Most businesses accumulate software subscriptions over time without regularly evaluating whether each tool is still needed or being used effectively. Conduct a quarterly audit of every tool and subscription. Cancel what is not being used, consolidate tools with overlapping functionality, and negotiate better rates on the tools you keep.</p>
+<h2>Restructure Around Outcomes, Not Hours</h2>
+<p>Many businesses are structured around keeping people busy rather than producing specific outcomes. When you define clear deliverables and measure output rather than activity, you often find that the same results can be achieved with less effort and fewer resources.</p>
+<h2>Invest in Training</h2>
+<p>This sounds counterintuitive when you are trying to cut costs, but undertrained employees make more mistakes, work more slowly, and require more supervision. A one-time investment in training often pays for itself within weeks through reduced errors and improved efficiency.</p>
+<p>The goal is not to run your business on the cheapest possible budget. It is to eliminate waste so that every dollar you spend is producing value. When done correctly, cost reduction actually improves quality because it forces you to focus on what matters. <a href="/contact/">Get in touch</a> to discuss how we can help you find and eliminate the waste in your operations.</p>"""
+    },
+    {
+        "slug": "executives-guide-digital-transformation-2026",
+        "title": "The Executive's Guide to Digital Transformation in 2026",
+        "date": "2026-03-28",
+        "excerpt": "Digital transformation in 2026 looks different than it did five years ago. Here is what executives need to know to lead their organizations through technology change effectively.",
+        "content": """<p>Digital transformation has matured from a buzzword into a business necessity. In 2026, the question is no longer whether to digitize your operations but how to do it in a way that delivers ROI without creating disruption. For executives leading this charge, the approach matters as much as the technology.</p>
+<h2>What Digital Transformation Means in 2026</h2>
+<p>Five years ago, digital transformation meant moving from paper to digital, adopting cloud software, and building a website. Today, it means integrating AI into core workflows, using data to drive decisions, and building technology infrastructure that scales with your business. The bar has moved, and businesses that are still operating on 2020-era technology are falling behind.</p>
+<h2>The Executive's Role</h2>
+<p>Digital transformation fails when it is treated as an IT project. It is a business strategy initiative that requires executive sponsorship, clear vision, and organizational change management. The executive's job is not to select the technology but to define the outcomes, allocate the resources, and remove the organizational barriers to adoption.</p>
+<p>This is where <a href="/services/leadership/">leadership consulting</a> intersects with technology strategy. The most successful digital transformations are led by executives who understand that technology is a tool for achieving business objectives, not an objective in itself.</p>
+<h2>A Practical Framework for 2026</h2>
+<p>Start with a technology audit. What tools are you using today, what problems are they solving, and where are the gaps? This audit should include both the formal tech stack and the informal workarounds your team has built, such as spreadsheets, manual processes, and tribal knowledge that should be digitized.</p>
+<p>Next, prioritize based on business impact. Not every process needs to be digitized at once. Focus on the workflows that, if improved, would have the biggest impact on revenue, customer experience, or operational efficiency. Our <a href="/services/ai-consulting/">AI consulting</a> team helps executives identify and prioritize these opportunities.</p>
+<p>Finally, plan for adoption. The best technology in the world is useless if your team does not use it. Build training programs, set adoption milestones, and create accountability for the transition. <a href="/services/operations/">Operational systems</a> should be redesigned around the new tools, not bolted on top of old processes.</p>
+<p>For a deeper dive into how Pittsburgh businesses are approaching digital transformation, check out <a href="https://thepittsburghwire.com" target="_blank" rel="noopener">The Pittsburgh Wire</a> for local business technology coverage. Ready to start your transformation? <a href="/contact/">Book a consult</a> with Elixir Consulting Group.</p>"""
+    },
+    {
+        "slug": "why-most-business-growth-plans-fail-and-how-to-fix",
+        "title": "Why Most Business Growth Plans Fail (And How to Fix Yours)",
+        "date": "2026-03-22",
+        "excerpt": "Most growth plans look great on paper but fail in execution. Here are the most common reasons growth plans stall and a practical framework for building one that actually works.",
+        "content": """<p>Every business owner has a growth plan, even if it is only in their head. The problem is that most growth plans fail, not because the strategy is wrong, but because the execution breaks down. Understanding why plans fail is the first step toward building one that works.</p>
+<h2>Reason 1: The Plan Is Too Vague</h2>
+<p>A growth plan that says "increase revenue by 50%" without specifying how, who, and by when is not a plan. It is a wish. Effective growth plans break down the goal into specific, measurable actions with clear ownership and deadlines. If you cannot describe what your team should be doing differently next week to achieve the plan, it is not specific enough.</p>
+<h2>Reason 2: No Accountability Structure</h2>
+<p>Plans without accountability are plans without teeth. If no one is tracking progress, reviewing results, or adjusting course, the plan will drift within weeks. Building a <a href="/services/leadership/">leadership cadence</a> with weekly check-ins on plan progress is the single most important thing you can do to keep a growth plan alive.</p>
+<h2>Reason 3: Operations Cannot Support the Growth</h2>
+<p>Many businesses set ambitious revenue targets without considering whether their <a href="/services/operations/">operations</a> can handle the additional volume. If your delivery systems are already strained, adding more clients will degrade quality, increase errors, and ultimately hurt retention. Operational capacity should be built ahead of growth, not after the problems start.</p>
+<h2>Reason 4: The Plan Does Not Address Sales Systematically</h2>
+<p>Growth requires a predictable way to generate and close new business. If your <a href="/services/sales-strategy/">sales process</a> depends on the founder's personal relationships or inconsistent outbound efforts, growth will always be lumpy and unpredictable. A systematic sales process is a prerequisite for any serious growth plan.</p>
+<h2>How to Build a Growth Plan That Works</h2>
+<p>Start with a clear, honest assessment of where your business is today. What is working? What is broken? Where is the ceiling? From there, define 3 to 5 priorities for the next 90 days that will move the needle. Assign ownership, set measurable targets, and build a weekly review cadence.</p>
+<p>At Elixir Consulting Group, we help businesses build <a href="/services/business-strategy/">growth plans</a> that are specific, actionable, and supported by the operational infrastructure needed to execute them. The result is growth that is sustainable, not chaotic. <a href="/contact/">Book a consult</a> to start building your plan.</p>"""
+    },
+    {
+        "slug": "how-to-build-business-that-runs-without-you",
+        "title": "How to Build a Business That Runs Without You",
+        "date": "2026-03-15",
+        "excerpt": "The ultimate test of a well-built business is whether it can operate successfully without the owner's daily involvement. Here is how to get there.",
+        "content": """<p>Most business owners dream of a business that runs without them, but few actually build one. The gap between wanting owner independence and achieving it comes down to systems, trust, and a willingness to let go of control. It is achievable, but it requires deliberate effort.</p>
+<h2>Why Owner Independence Matters</h2>
+<p>A business that depends on the owner for daily operations is not really a business. It is a job with overhead. Owner dependence limits your growth, destroys your quality of life, and dramatically reduces the value of your business if you ever want to sell. Buyers pay premiums for businesses that operate independently because those businesses are lower risk and easier to transfer.</p>
+<h2>Step 1: Document Your Decision-Making</h2>
+<p>The first step toward owner independence is understanding all the decisions you make in a typical week and determining which ones could be made by someone else with the right framework. Most owners are surprised to find that 70 to 80 percent of their decisions follow patterns that can be documented and delegated.</p>
+<p>This is the foundation of effective <a href="/services/operations/">operational systems</a>. When decision criteria are documented, your team can handle situations that currently require your involvement.</p>
+<h2>Step 2: Build a Leadership Team</h2>
+<p>You cannot run a business without you if there is no one capable of running it in your place. Invest in developing leaders who can manage their areas independently. This means clear role definitions, decision-making authority, and <a href="/services/leadership/">accountability structures</a> that do not route everything back to you.</p>
+<h2>Step 3: Install a Weekly Operating Cadence</h2>
+<p>A structured weekly rhythm replaces the need for constant owner involvement. When your team knows what to report, when to report it, and how issues get escalated, the business runs on cadence instead of on you. This is the single most impactful change most businesses can make.</p>
+<h2>Step 4: Remove Yourself Gradually</h2>
+<p>Do not try to step back from everything at once. Choose one area of the business, build the systems and team capability to run it without you, prove it works over 30 to 60 days, then move to the next area. This gradual approach builds confidence for both you and your team.</p>
+<h2>Step 5: Measure and Adjust</h2>
+<p>Track the metrics that tell you whether the business is performing well without your direct involvement. Revenue, client satisfaction, delivery quality, and team retention should all be stable or improving as you step back. If they are not, the systems need adjustment, not more owner involvement.</p>
+<p>Building a business that runs without you is the ultimate expression of good <a href="/services/business-strategy/">business strategy</a>. It creates freedom for the owner, value for the business, and resilience for the organization. <a href="/contact/">Book a consult</a> to start building your path to owner independence.</p>
+<p>Learn more about the systems and frameworks we use from <a href="https://drconnorrobertson.com" target="_blank" rel="noopener">Dr. Connor Robertson</a>, founder of Elixir Consulting Group, who has also shared these strategies on <a href="https://www.youtube.com/@TheProspectingShow" target="_blank" rel="noopener">The Prospecting Show</a>.</p>"""
+    },
 ]
 
 # ─── Case Studies ───────────────────────────────────────────────────────
@@ -429,6 +615,46 @@ INDUSTRIES = [
 ]
 
 INDUSTRY_ICONS = ["&#9881;", "&#9879;", "&#9764;", "&#9878;", "&#128187;", "&#127968;", "&#128722;", "&#128176;"]
+
+
+# ─── Service Page FAQs ──────────────────────────────────────────────────
+SERVICE_FAQS = {
+    "business-strategy": [
+        ("What does business strategy consulting include?", "Our business strategy consulting includes strategic planning, growth roadmaps, competitive analysis, execution frameworks, exit planning, and market positioning. We build practical plans that connect high-level goals to weekly action."),
+        ("How long does a business strategy engagement take?", "Most business strategy engagements run 90 days to 6 months depending on complexity. We start with a structured assessment and move into implementation alongside your leadership team."),
+        ("Is business strategy consulting worth the investment?", "Businesses without clear strategy typically waste $200K to $500K per year in lost productivity and missed opportunities. A structured strategy engagement typically pays for itself within the first quarter through better focus and execution."),
+        ("Do you work with startups or only established businesses?", "We primarily work with businesses between $500K and $30M in revenue. Our frameworks are designed for companies that have proven market fit and are ready to scale with more structure."),
+        ("What makes Elixir different from other strategy consultants?", "We focus on implementation, not just advice. Many firms deliver a report and leave. We work alongside your team to build and install the systems, then stay involved to make sure they produce results."),
+    ],
+    "ai-consulting": [
+        ("What AI consulting services does Elixir offer?", "We provide AI readiness assessments, workflow automation, tool selection and implementation, data analysis setup, team training, and digital process design. Our focus is practical AI that solves real business problems."),
+        ("How much does AI consulting cost for a small business?", "AI consulting costs vary based on scope, but most small business implementations start with a focused pilot project. The ROI typically exceeds the investment within 60 to 90 days through reduced labor costs and improved efficiency."),
+        ("Do I need technical expertise to implement AI?", "No. Our AI consulting is designed for non-technical business owners. We handle the technical evaluation and implementation while training your team to use the tools effectively."),
+        ("What AI tools do you recommend for small businesses?", "We do not push specific vendors. We evaluate your needs and recommend tools that fit your workflow, budget, and technical capacity. The right tool depends on what problem you are solving."),
+        ("How quickly can we see results from AI implementation?", "Most businesses see measurable results within 30 to 60 days of implementing their first AI tool. We start with high-impact, low-complexity applications to build momentum and demonstrate ROI quickly."),
+    ],
+    "operations": [
+        ("What does operations consulting involve?", "Operations consulting includes process mapping, SOP development, role clarity, tool optimization, hiring and onboarding systems, and weekly operating cadence design. We build the systems that make your business run consistently."),
+        ("How do you improve operations without disrupting the business?", "We work alongside your existing team and implement changes incrementally. We do not shut down operations to rebuild them. Changes are introduced in phases so the business continues running smoothly during the transition."),
+        ("What results can I expect from operations consulting?", "Clients typically see 15 to 30 percent improvement in operational efficiency, 10 to 15 hours per week reclaimed for the owner, reduced errors, faster onboarding, and more consistent delivery quality."),
+        ("Do you work on-site or remotely?", "We work both on-site and remotely depending on the engagement. Our virtual consulting process is structured to be just as effective as in-person work. We serve clients in Pittsburgh and nationwide."),
+        ("How do you measure operational improvement?", "We establish baseline metrics at the start of every engagement and track improvements weekly. Common metrics include cycle time, error rates, owner hours spent on operations, and team productivity measures."),
+    ],
+    "sales-strategy": [
+        ("What does sales strategy consulting include?", "Our sales strategy consulting covers offer clarity, pipeline design, follow-up systems, CRM optimization, sales cadence and reporting, and revenue forecasting. We build repeatable sales processes your team can execute consistently."),
+        ("Can you help if we already have a CRM?", "Yes. Most businesses have a CRM but are not using it effectively. We configure your existing CRM to support your actual sales process and train your team to use it properly."),
+        ("How quickly will we see sales improvement?", "Most clients see measurable improvement in close rates and pipeline velocity within the first 30 to 60 days. Sales process improvements compound quickly because they affect every deal in your pipeline."),
+        ("Do you train our sales team?", "Yes. We do not just design the process and hand it off. We train your team on the new systems, run practice sessions, and stay involved during the transition to make sure adoption sticks."),
+        ("What size sales team do you work with?", "We work with sales teams of all sizes, from solo founders handling all sales to teams of 20 or more. Our frameworks scale to fit the size and complexity of your sales operation."),
+    ],
+    "leadership": [
+        ("What is leadership consulting?", "Leadership consulting at Elixir focuses on installing practical systems that help leadership teams make better decisions, hold each other accountable, and run the business with clarity. This includes cadence design, scorecards, executive coaching, and succession planning."),
+        ("What is a leadership cadence?", "A leadership cadence is a structured weekly rhythm of meetings, reporting, and priorities that keeps the leadership team aligned and focused on execution. It replaces ad hoc meetings and firefighting with a predictable operating system."),
+        ("Do you offer executive coaching?", "Yes. We provide one-on-one coaching for owners and executives focused on leadership effectiveness, delegation, strategic thinking, and building teams that operate independently."),
+        ("How do you help with accountability?", "We install clear accountability frameworks including scorecards, defined ownership for key metrics, and structured weekly reviews. Every team member knows what they own and how they are measured."),
+        ("Can leadership consulting help reduce owner burnout?", "Absolutely. Most owner burnout comes from being involved in too many decisions and carrying too much operational weight. Our leadership systems distribute decision-making and create structures that reduce the daily burden on the owner."),
+    ],
+}
 
 # ─── Helper Functions ───────────────────────────────────────────────────
 def make_header(active_path="/"):
@@ -484,11 +710,22 @@ def make_footer():
 </ul>
 </div>
 <div>
+<h4>Locations</h4>
+<ul>
+<li><a href="/pittsburgh-business-consultant/">Pittsburgh</a></li>
+<li><a href="/pittsburgh-ai-consulting/">Pittsburgh AI</a></li>
+<li><a href="/pittsburgh-operations-consulting/">Pittsburgh Ops</a></li>
+<li><a href="/cranberry-township-business-consultant/">Cranberry Twp</a></li>
+<li><a href="/wexford-business-consultant/">Wexford</a></li>
+</ul>
+</div>
+<div>
 <h4>Connect</h4>
 <ul>
 <li><a href="/contact/">Contact Us</a></li>
 <li><a href="https://drconnorrobertson.com" target="_blank" rel="noopener">Dr. Connor Robertson</a></li>
 <li><a href="https://thepittsburghwire.com" target="_blank" rel="noopener">The Pittsburgh Wire</a></li>
+<li><a href="https://www.youtube.com/@TheProspectingShow" target="_blank" rel="noopener">The Prospecting Show</a></li>
 </ul>
 </div>
 </div>
@@ -531,6 +768,7 @@ def make_page(title, description, path, body, schema="", canonical=None):
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{description}">
 <meta name="robots" content="index,follow">
+<meta name="google-site-verification" content="elixir-consulting-group-gsc-verify">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -738,6 +976,16 @@ def gen_homepage():
 <div class="process-step"><div class="step-num">02</div><div class="step-content"><h3>Structured Assessment</h3><p>Deep dive into operations, sales, leadership cadence, and team structure.</p></div></div>
 <div class="process-step"><div class="step-num">03</div><div class="step-content"><h3>Implementation</h3><p>Build and install the systems your business needs alongside your team.</p></div></div>
 <div class="process-step"><div class="step-num">04</div><div class="step-content"><h3>Ongoing Support</h3><p>Maintain, refine, and improve execution week to week.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="section" style="padding:40px 0">
+<div class="container text-center">
+<span class="eyebrow">As Featured In</span>
+<div style="display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap;margin-top:24px">
+<a href="https://thepittsburghwire.com" target="_blank" rel="noopener" style="font-size:1.3rem;font-weight:700;color:{COLORS['navy']};opacity:.7;transition:opacity .2s">The Pittsburgh Wire</a>
+<a href="https://www.youtube.com/@TheProspectingShow" target="_blank" rel="noopener" style="font-size:1.3rem;font-weight:700;color:{COLORS['navy']};opacity:.7;transition:opacity .2s">The Prospecting Show</a>
 </div>
 </div>
 </section>
@@ -950,6 +1198,69 @@ def gen_service_page(slug, title, tagline, intro, items, outcomes):
     for o in outcomes:
         outcomes_html += f'<div class="process-step"><div class="step-num" style="background:{COLORS["gold"]};color:{COLORS["navy_dark"]}">&#10003;</div><div class="step-content"><p style="font-weight:600;margin-bottom:0">{o}</p></div></div>\n'
 
+    # FAQ section with schema
+    faq_html = ""
+    faq_schema_items = []
+    if slug in SERVICE_FAQS:
+        for q, a in SERVICE_FAQS[slug]:
+            faq_html += f"""<div class="faq-item"><div class="faq-q">{q}</div><div class="faq-a"><p>{a}</p></div></div>\n"""
+            faq_schema_items.append({"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}})
+
+    faq_section = ""
+    if faq_html:
+        faq_section = f"""
+<section class="section section-gray">
+<div class="container" style="max-width:800px">
+<div class="text-center" style="margin-bottom:32px">
+<span class="eyebrow">Common Questions</span>
+<h2>Frequently Asked Questions</h2>
+</div>
+{faq_html}
+</div>
+</section>
+"""
+
+    # Related blog posts
+    related_keywords = {
+        "business-strategy": ["strategy", "scale", "growth", "exit"],
+        "ai-consulting": ["ai", "digital", "technology", "automation"],
+        "operations": ["operations", "efficiency", "cost", "systems", "scale"],
+        "sales-strategy": ["sales", "revenue", "close rate", "pipeline"],
+        "leadership": ["leadership", "cadence", "accountability", "runs without"],
+    }
+    keywords = related_keywords.get(slug, [])
+    related_posts = []
+    for post in BLOG_POSTS:
+        if len(related_posts) >= 3:
+            break
+        title_lower = post["title"].lower()
+        if any(kw in title_lower for kw in keywords):
+            related_posts.append(post)
+
+    related_html = ""
+    if related_posts:
+        cards = ""
+        for post in related_posts:
+            cards += f"""<div class="card blog-card"><div class="blog-content"><p class="blog-date">{post['date']}</p><h3><a href="/blog/{post['slug']}/">{post['title']}</a></h3><p>{post['excerpt'][:120]}...</p></div></div>\n"""
+        related_html = f"""
+<section class="section">
+<div class="container">
+<div class="text-center" style="margin-bottom:32px">
+<span class="eyebrow">Related Reading</span>
+<h2>From the Blog</h2>
+</div>
+<div class="grid grid-3">{cards}</div>
+</div>
+</section>
+"""
+
+    # Schema
+    schema = ""
+    if faq_schema_items:
+        schema = f"""<script type="application/ld+json">
+{json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faq_schema_items}, indent=2)}
+</script>"""
+
     body = f"""
 <section class="page-hero">
 <div class="container">
@@ -991,13 +1302,137 @@ def gen_service_page(slug, title, tagline, intro, items, outcomes):
 </div>
 </section>
 
+{faq_section}
+{related_html}
 {make_cta()}
 """
     return make_page(
         f"{title} | Elixir Consulting Group",
         f"{tagline} Elixir Consulting Group provides {title.lower()} services for business owners in Pittsburgh, PA and nationwide.",
         f"/services/{slug}/",
-        body
+        body,
+        schema
+    )
+
+
+def gen_city_page(slug, city, state_abbr, services_focus, intro, geo_description):
+    """Generate a city-specific service landing page with FAQ schema."""
+    faqs = [
+        (f"Does Elixir Consulting Group serve businesses in {city}?", f"Yes. Elixir Consulting Group is based in Pittsburgh, PA and actively serves businesses in {city} and the surrounding region. We work both on-site and remotely to deliver business consulting, operations improvement, AI consulting, and leadership development."),
+        (f"What consulting services are available in {city}?", f"We offer business strategy consulting, AI and digital transformation, operations consulting, sales strategy, and leadership development for businesses in {city}. Our engagements are tailored to each client's specific needs and goals."),
+        (f"How much does business consulting cost in {city}?", f"Consulting fees depend on the scope of the engagement. We offer both project-based and retainer-based arrangements. The first step is a free consult where we discuss your business and determine if there is a fit."),
+        (f"Can you work with my {city} business remotely?", f"Absolutely. While we are based in Pittsburgh, our virtual consulting process is designed to be just as effective as in-person work. Many of our {city} area clients work with us through a combination of virtual and in-person sessions."),
+        (f"What industries do you work with in {city}?", f"We work with businesses across all industries in {city}, including professional services, construction, healthcare, manufacturing, technology, real estate, and retail. Our frameworks are industry-agnostic because core operational challenges tend to be universal."),
+    ]
+
+    faq_html = ""
+    faq_schema_items = []
+    for q, a in faqs:
+        faq_html += f"""<div class="faq-item"><div class="faq-q">{q}</div><div class="faq-a"><p>{a}</p></div></div>\n"""
+        faq_schema_items.append({"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}})
+
+    schema = f"""<script type="application/ld+json">
+{json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faq_schema_items}, indent=2)}
+</script>
+<script type="application/ld+json">
+{json.dumps({"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Elixir Consulting Group", "description": f"Business consulting firm serving {city}, {state_abbr}. Specializing in operations, AI consulting, sales systems, and leadership development.", "url": f"https://elixirconsultinggroup.com/{slug}/", "address": {"@type": "PostalAddress", "streetAddress": "429 Fourth Ave. Suite 300", "addressLocality": "Pittsburgh", "addressRegion": "PA", "postalCode": "15219", "addressCountry": "US"}, "areaServed": {"@type": "City", "name": city}, "founder": {"@type": "Person", "name": "Dr. Connor Robertson", "url": "https://drconnorrobertson.com"}}, indent=2)}
+</script>"""
+
+    services_cards = ""
+    for svc_title, svc_desc, svc_link in services_focus:
+        services_cards += f"""<div class="card"><div class="card-icon">&#9881;</div><h3><a href="{svc_link}">{svc_title}</a></h3><p>{svc_desc}</p><a href="{svc_link}" style="font-weight:600;font-size:.9rem">Learn more &rarr;</a></div>\n"""
+
+    # Related blog posts for city pages
+    related_posts = BLOG_POSTS[:4]
+    blog_cards = ""
+    for post in related_posts:
+        blog_cards += f"""<div class="card blog-card"><div class="blog-content"><p class="blog-date">{post['date']}</p><h3><a href="/blog/{post['slug']}/">{post['title']}</a></h3><p>{post['excerpt'][:120]}...</p></div></div>\n"""
+
+    body = f"""
+<section class="page-hero">
+<div class="container">
+<p class="breadcrumb"><a href="/">Home</a> / <a href="/services/">Services</a> / {city}</p>
+<h1>Business Consulting in {city}, {state_abbr}</h1>
+<p>Elixir Consulting Group helps {city} businesses build operations, sales systems, and leadership cadence that produce consistent execution and measurable growth.</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div style="max-width:800px;margin:0 auto">
+<p style="font-size:1.1rem;line-height:1.8">{intro}</p>
+<p style="font-size:1.05rem;line-height:1.8;margin-top:16px">{geo_description}</p>
+</div>
+</div>
+</section>
+
+<section class="section section-gray">
+<div class="container">
+<div class="text-center" style="margin-bottom:48px">
+<span class="eyebrow">Our Services in {city}</span>
+<h2>How We Help {city} Businesses</h2>
+</div>
+<div class="grid grid-3">
+{services_cards}
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="grid grid-2" style="align-items:center;gap:60px">
+<div>
+<span class="eyebrow">Why Choose Elixir</span>
+<h2>Local Expertise, Proven Results</h2>
+<p>As a Pittsburgh-based consulting firm, we understand the unique business landscape of the greater Pittsburgh region including {city}. Our founder, <a href="https://drconnorrobertson.com" target="_blank" rel="noopener">Dr. Connor Robertson</a>, has worked with dozens of businesses in Western Pennsylvania to install systems that improve execution and drive measurable results.</p>
+<p>We have been featured in <a href="https://thepittsburghwire.com" target="_blank" rel="noopener">The Pittsburgh Wire</a> for our work helping local businesses grow through structured operations and AI adoption.</p>
+<a href="/contact/" class="btn btn-primary" style="margin-top:16px">Book a Free Consult</a>
+</div>
+<div>
+<div class="grid grid-2">
+<div class="stat-card card"><span class="stat-num">150+</span><span class="stat-label">Businesses Served</span></div>
+<div class="stat-card card"><span class="stat-num">92%</span><span class="stat-label">Client Retention</span></div>
+<div class="stat-card card"><span class="stat-num">40%</span><span class="stat-label">Avg Efficiency Gain</span></div>
+<div class="stat-card card"><span class="stat-num">5x</span><span class="stat-label">Avg ROI</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section section-gray">
+<div class="container" style="max-width:800px">
+<div class="text-center" style="margin-bottom:32px">
+<span class="eyebrow">Common Questions</span>
+<h2>{city} Business Consulting FAQ</h2>
+</div>
+{faq_html}
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="text-center" style="margin-bottom:32px">
+<span class="eyebrow">Insights</span>
+<h2>Latest From Our Blog</h2>
+</div>
+<div class="grid grid-2">
+{blog_cards}
+</div>
+<div class="text-center" style="margin-top:24px">
+<a href="/blog/" class="btn btn-outline">View All Articles</a>
+</div>
+</div>
+</section>
+
+{make_cta()}
+"""
+    return make_page(
+        f"Business Consultant {city}, {state_abbr} | Elixir Consulting Group",
+        f"Elixir Consulting Group provides business consulting, AI consulting, operations improvement, and leadership development for businesses in {city}, {state_abbr}.",
+        f"/{slug}/",
+        body,
+        schema
     )
 
 
@@ -1334,6 +1769,11 @@ def gen_sitemap():
         ("/services/operations/", "0.8", "monthly"),
         ("/services/sales-strategy/", "0.8", "monthly"),
         ("/services/leadership/", "0.8", "monthly"),
+        ("/pittsburgh-business-consultant/", "0.9", "monthly"),
+        ("/pittsburgh-ai-consulting/", "0.9", "monthly"),
+        ("/pittsburgh-operations-consulting/", "0.9", "monthly"),
+        ("/cranberry-township-business-consultant/", "0.8", "monthly"),
+        ("/wexford-business-consultant/", "0.8", "monthly"),
         ("/industries/", "0.7", "monthly"),
         ("/case-studies/", "0.7", "monthly"),
         ("/blog/", "0.8", "weekly"),
@@ -1543,6 +1983,79 @@ print("\n[12/14] Blog Posts")
 for post in BLOG_POSTS:
     write_page(f"/blog/{post['slug']}/", gen_blog_post(post))
 
+# City Pages
+print("\n[12.5/14] City-Specific Service Pages")
+
+write_page("/pittsburgh-business-consultant/", gen_city_page(
+    "pittsburgh-business-consultant", "Pittsburgh", "PA",
+    [
+        ("Business Strategy", "Strategic planning, growth roadmaps, and execution frameworks for Pittsburgh businesses.", "/services/business-strategy/"),
+        ("Operations Consulting", "Process mapping, SOPs, and weekly operating cadence that keeps your Pittsburgh business running consistently.", "/services/operations/"),
+        ("AI Consulting", "Evaluate and implement AI tools that improve efficiency for Pittsburgh companies without disruption.", "/services/ai-consulting/"),
+        ("Sales Strategy", "Build a repeatable sales process that your Pittsburgh-based team can run consistently.", "/services/sales-strategy/"),
+        ("Leadership Development", "Install leadership rhythms and accountability structures for Pittsburgh business leaders.", "/services/leadership/"),
+        ("Growth & Scaling", "Build the foundation to scale your Pittsburgh business from $1M to $10M and beyond.", "/services/"),
+    ],
+    "Pittsburgh is experiencing a renaissance in business innovation, and Elixir Consulting Group is at the center of it. As a Pittsburgh-based consulting firm, we work directly with local business owners to install the operations, sales processes, and leadership systems that produce consistent execution and measurable growth. Whether you are a startup in the Strip District, a manufacturer in the North Hills, or a professional services firm downtown, we help you build the structure your business needs to scale.",
+    "Pittsburgh offers a unique combination of world-class talent from Carnegie Mellon University and the University of Pittsburgh, affordable business costs compared to coastal cities, and a thriving innovation ecosystem. These advantages make Pittsburgh an ideal city to build and grow a business, and Elixir Consulting Group helps local companies capitalize on these strengths."
+))
+
+write_page("/pittsburgh-ai-consulting/", gen_city_page(
+    "pittsburgh-ai-consulting", "Pittsburgh", "PA",
+    [
+        ("AI Readiness Assessment", "Evaluate where AI can deliver the highest impact in your Pittsburgh business.", "/services/ai-consulting/"),
+        ("Workflow Automation", "Implement AI-powered automation for repetitive tasks in your Pittsburgh operations.", "/services/ai-consulting/"),
+        ("Digital Transformation", "Navigate the transition from manual to digital processes for your Pittsburgh company.", "/services/ai-consulting/"),
+        ("Data Analytics", "Deploy AI analytics tools that surface actionable insights from your business data.", "/services/ai-consulting/"),
+        ("Team Training", "Ensure your Pittsburgh team adopts and effectively uses new AI tools.", "/services/ai-consulting/"),
+        ("Operations Integration", "Integrate AI tools seamlessly into your existing operational workflows.", "/services/operations/"),
+    ],
+    "Pittsburgh has become a national leader in artificial intelligence, with Carnegie Mellon University's AI research program consistently ranked among the best in the world. Elixir Consulting Group brings this expertise to local businesses, helping Pittsburgh companies evaluate, implement, and optimize AI tools that deliver real returns. We bridge the gap between cutting-edge AI research and practical business application.",
+    "The Pittsburgh AI ecosystem includes world-class research institutions, a growing number of AI startups, and established companies investing heavily in AI capabilities. This ecosystem gives local businesses access to talent and expertise that would be prohibitively expensive in other markets. Elixir Consulting Group helps you tap into this advantage."
+))
+
+write_page("/pittsburgh-operations-consulting/", gen_city_page(
+    "pittsburgh-operations-consulting", "Pittsburgh", "PA",
+    [
+        ("Process Mapping", "Document and optimize your core workflows for consistent delivery.", "/services/operations/"),
+        ("SOPs & Documentation", "Build standard operating procedures that your Pittsburgh team actually uses.", "/services/operations/"),
+        ("Weekly Operating Cadence", "Install a structured weekly rhythm that keeps your business on track.", "/services/operations/"),
+        ("Role Clarity", "Define clear responsibilities and accountability structures.", "/services/operations/"),
+        ("Hiring & Onboarding", "Build repeatable systems that get new team members productive faster.", "/services/operations/"),
+        ("Tool Optimization", "Streamline your tech stack to reduce friction and improve efficiency.", "/services/operations/"),
+    ],
+    "Pittsburgh businesses across industries share common operational challenges: inconsistent delivery, owner dependency, and processes that depend on tribal knowledge rather than documented systems. Elixir Consulting Group specializes in solving these problems for Pittsburgh companies by installing practical operational systems that produce consistent, scalable results.",
+    "From manufacturing firms in the Mon Valley to professional services companies in downtown Pittsburgh, we have helped businesses across the region build the operational foundation they need to grow. Our approach is hands-on and practical, working alongside your team to build systems that fit your specific business."
+))
+
+write_page("/cranberry-township-business-consultant/", gen_city_page(
+    "cranberry-township-business-consultant", "Cranberry Township", "PA",
+    [
+        ("Business Strategy", "Strategic planning and growth roadmaps for Cranberry Township businesses.", "/services/business-strategy/"),
+        ("Operations Consulting", "Build efficient operations that scale for your Cranberry Township company.", "/services/operations/"),
+        ("AI & Technology", "Implement AI tools that give your Cranberry Township business a competitive edge.", "/services/ai-consulting/"),
+        ("Sales Systems", "Build repeatable sales processes for businesses in the Cranberry Township area.", "/services/sales-strategy/"),
+        ("Leadership Development", "Install accountability structures and leadership cadence.", "/services/leadership/"),
+        ("Growth Planning", "Scale your Cranberry Township business with proven frameworks.", "/services/"),
+    ],
+    "Cranberry Township has become one of the fastest-growing business communities in Western Pennsylvania. With its strategic location along the I-79 corridor, proximity to Pittsburgh, and growing commercial infrastructure, Cranberry Township is home to a diverse mix of businesses from tech companies to professional services firms to retail operations. Elixir Consulting Group serves Cranberry Township businesses with the same hands-on consulting approach we bring to all our Pittsburgh-area clients.",
+    "The Cranberry Township business community benefits from excellent infrastructure, a skilled workforce drawn from the greater Pittsburgh region, and a business-friendly environment. Elixir Consulting Group helps local businesses capitalize on these advantages by building the systems and processes that turn growth potential into measurable results."
+))
+
+write_page("/wexford-business-consultant/", gen_city_page(
+    "wexford-business-consultant", "Wexford", "PA",
+    [
+        ("Business Strategy", "Strategic planning and execution frameworks for Wexford-area businesses.", "/services/business-strategy/"),
+        ("Operations Consulting", "Streamline operations and build scalable systems for your Wexford business.", "/services/operations/"),
+        ("AI Consulting", "Practical AI adoption for Wexford businesses looking to improve efficiency.", "/services/ai-consulting/"),
+        ("Sales Strategy", "Build a structured sales process for your Wexford-based company.", "/services/sales-strategy/"),
+        ("Leadership & Coaching", "Executive coaching and leadership development for Wexford business leaders.", "/services/leadership/"),
+        ("Exit Planning", "Prepare your Wexford business for a profitable sale or transition.", "/services/business-strategy/"),
+    ],
+    "Wexford, located in Pine Township just north of Pittsburgh, is a thriving business community with a mix of established companies and growing enterprises. Elixir Consulting Group provides Wexford businesses with expert consulting in operations, sales strategy, AI adoption, and leadership development. Our proximity to Wexford means we can work closely with your team while bringing the full resources of a Pittsburgh-based consulting firm.",
+    "The Wexford business community is part of the rapidly growing northern suburbs of Pittsburgh, benefiting from proximity to major transportation corridors, a strong local economy, and access to the Pittsburgh talent pool. Elixir Consulting Group helps Wexford businesses build the operational structure and strategic clarity needed to thrive in this competitive environment."
+))
+
 # Contact
 print("\n[13/14] Contact")
 write_page("/contact/", gen_contact())
@@ -1574,4 +2087,5 @@ for root, dirs, files in os.walk(SITE_DIR):
             total += 1
 print(f"\n{'='*60}")
 print(f"DONE! Generated {total} HTML pages + sitemap + robots.txt + vercel.json")
+print("SEO optimization complete: 10 new blog posts, 5 city pages, FAQ schema on all service pages, internal cross-links, As Featured In section")
 print(f"{'='*60}")
