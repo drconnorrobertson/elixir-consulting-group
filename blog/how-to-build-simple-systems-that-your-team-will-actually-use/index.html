@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Build Simple Systems That Your Team Will Actually Use | Elixir Consulting Group</title>
+<meta name="description" content="One of the fastest ways to slow a growing business down is to build systems that look good on paper […]">
+<link rel="canonical" href="https://elixirconsultinggroup.com/blog/how-to-build-simple-systems-that-your-team-will-actually-use/">
+<meta property="og:title" content="How to Build Simple Systems That Your Team Will Actually Use | Elixir Consulting Group">
+<meta property="og:description" content="One of the fastest ways to slow a growing business down is to build systems that look good on paper […]">
+<meta property="og:url" content="https://elixirconsultinggroup.com/blog/how-to-build-simple-systems-that-your-team-will-actually-use/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Elixir Consulting Group">
+<meta property="article:author" content="Dr. Connor Robertson">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Build Simple Systems That Your Team Will Actually Use | Elixir Consulting Group">
+<meta name="twitter:description" content="One of the fastest ways to slow a growing business down is to build systems that look good on paper […]">
+<meta name="robots" content="index,follow">
+<meta name="author" content="Dr. Connor Robertson">
+<meta name="google-site-verification" content="elixir-consulting-group-gsc-verify">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#1A1A2E;line-height:1.7;background:#FFFFFF}
+img{max-width:100%;height:auto;display:block}
+a{color:#002E5B;text-decoration:none;transition:color .2s}
+a:hover{color:#C9A84C}
+h1,h2,h3,h4,h5,h6{font-family:'Inter',system-ui,sans-serif;font-weight:700;line-height:1.2;color:#002E5B}
+h1{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:1rem}
+h2{font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:.75rem}
+h3{font-size:clamp(1.2rem,3vw,1.6rem);margin-bottom:.5rem}
+p{margin-bottom:1rem;color:#555555}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-block;padding:14px 32px;border-radius:6px;font-weight:600;font-size:1rem;transition:all .3s;cursor:pointer;border:none;text-align:center}
+.btn-primary{background:#002E5B;color:#FFFFFF}
+.btn-primary:hover{background:#003D7A;color:#FFFFFF;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,46,91,.3)}
+.btn-gold{background:#C9A84C;color:#001F3F}
+.btn-gold:hover{background:#D4B96A;color:#001F3F;transform:translateY(-2px)}
+.btn-outline{border:2px solid #002E5B;color:#002E5B;background:transparent}
+.btn-outline:hover{background:#002E5B;color:#FFFFFF}
+.section{padding:80px 0}
+.section-sm{padding:50px 0}
+.section-gray{background:#F8F9FA}
+.section-navy{background:#002E5B;color:#FFFFFF}
+.section-navy h2,.section-navy h3,.section-navy p{color:#FFFFFF}
+.text-center{text-align:center}
+.text-gold{color:#C9A84C}
+.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:.85rem;font-weight:600;color:#C9A84C;margin-bottom:.5rem;display:block}
+.grid{display:grid;gap:32px}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.grid-4{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:#FFFFFF;border-radius:12px;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
+.card h3{margin-bottom:.5rem}
+.card p{font-size:.95rem}
+.card-icon{width:56px;height:56px;background:#F8F9FA;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.5rem}
+.stat-card{text-align:center;padding:32px 24px}
+.stat-num{font-size:2.5rem;font-weight:800;color:#002E5B;display:block}
+.stat-label{color:#6C757D;font-size:.9rem}
+.testimonial-card{border-left:4px solid #C9A84C;padding:28px 32px;background:#FFFFFF;border-radius:0 12px 12px 0}
+.testimonial-card .quote{font-style:italic;font-size:1.05rem;color:#1A1A2E;margin-bottom:12px}
+.testimonial-card .author{font-weight:600;color:#002E5B}
+.testimonial-card .role{font-size:.85rem;color:#6C757D}
+.hero{position:relative;padding:120px 0 100px;background:linear-gradient(135deg,#002E5B 0%,#001F3F 100%);color:#FFFFFF;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(201,168,76,.1) 0%,transparent 70%);border-radius:50%}
+.hero h1{color:#FFFFFF;max-width:700px}
+.hero p{color:rgba(255,255,255,.85);max-width:600px;font-size:1.15rem}
+.hero .btn{margin-top:24px;margin-right:12px}
+.page-hero{padding:80px 0 60px;background:linear-gradient(135deg,#002E5B 0%,#001F3F 100%);color:#FFFFFF;text-align:center}
+.page-hero h1{color:#FFFFFF}
+.page-hero p{color:rgba(255,255,255,.8);max-width:600px;margin:0 auto}
+.breadcrumb{font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:16px}
+.breadcrumb a{color:rgba(255,255,255,.7)}
+.breadcrumb a:hover{color:#C9A84C}
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);box-shadow:0 1px 3px rgba(0,0,0,.08);transition:all .3s}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 24px}
+.logo{font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:800;color:#002E5B;letter-spacing:-.5px}
+.logo span{color:#C9A84C}
+nav ul{display:flex;list-style:none;gap:8px;align-items:center}
+nav a{padding:8px 16px;font-size:.9rem;font-weight:500;color:#1A1A2E;border-radius:6px;transition:all .2s}
+nav a:hover{color:#002E5B;background:#F8F9FA}
+nav .btn-primary{color:#FFFFFF;padding:10px 24px;font-size:.85rem}
+nav .btn-primary:hover{background:#003D7A;color:#FFFFFF}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.nav-toggle span{display:block;width:24px;height:2px;background:#002E5B;margin:5px 0;transition:all .3s}
+.footer{background:#001F3F;color:rgba(255,255,255,.7);padding:60px 0 0}
+.footer h4{color:#FFFFFF;margin-bottom:16px;font-size:1.1rem}
+.footer a{color:rgba(255,255,255,.7)}
+.footer a:hover{color:#C9A84C}
+.footer ul{list-style:none}
+.footer li{margin-bottom:8px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding:20px 0;text-align:center;font-size:.85rem}
+.footer-desc{max-width:300px;font-size:.9rem;line-height:1.6}
+.blog-card{overflow:hidden;border-radius:12px}
+.blog-card .blog-img{height:200px;background:#002E5B;display:flex;align-items:center;justify-content:center;color:#C9A84C;font-size:2.5rem}
+.blog-card .blog-content{padding:24px}
+.blog-card .blog-date{font-size:.8rem;color:#6C757D;margin-bottom:8px}
+.blog-card h3 a{color:#002E5B}
+.blog-card h3 a:hover{color:#C9A84C}
+.faq-item{border:1px solid #E2E8F0;border-radius:8px;margin-bottom:12px;overflow:hidden}
+.faq-q{padding:20px 24px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;background:#FFFFFF;transition:background .2s}
+.faq-q:hover{background:#F8F9FA}
+.faq-q::after{content:'+';font-size:1.4rem;color:#C9A84C;font-weight:300;transition:transform .3s}
+.faq-item.active .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 24px;max-height:0;overflow:hidden;transition:all .3s ease}
+.faq-item.active .faq-a{max-height:300px;padding:0 24px 20px}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-weight:600;margin-bottom:6px;font-size:.9rem;color:#002E5B}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:12px 16px;border:1px solid #E2E8F0;border-radius:8px;font-size:1rem;font-family:inherit;transition:border-color .2s}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:#002E5B;box-shadow:0 0 0 3px rgba(0,46,91,.1)}
+.form-group textarea{resize:vertical;min-height:120px}
+@media(max-width:968px){
+.footer-grid{grid-template-columns:1fr 1fr}
+.grid-3{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+.header-inner{height:64px}
+.nav-menu{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:#FFFFFF;flex-direction:column;padding:80px 32px 32px;box-shadow:-4px 0 20px rgba(0,0,0,.1);transition:right .3s;z-index:999}
+.nav-menu.active{right:0}
+nav ul{flex-direction:column;gap:4px;width:100%}
+nav a{padding:12px 16px;width:100%;display:block}
+.nav-toggle{display:block;z-index:1000}
+.hero{padding:80px 0 60px}
+.section{padding:50px 0}
+.grid-2,.grid-4{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Build Simple Systems That Your Team Will Actually Use","datePublished":"2026-02-07","author":{"@type":"Person","name":"Dr. Connor Robertson","url":"https://drconnorrobertson.com"},"publisher":{"@type":"Organization","name":"Elixir Consulting Group","url":"https://elixirconsultinggroup.com"},"mainEntityOfPage":"https://elixirconsultinggroup.com/blog/how-to-build-simple-systems-that-your-team-will-actually-use/","dateModified":"2026-02-07","description":"One of the fastest ways to slow a growing business down is to build systems that look good on paper […]"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://elixirconsultinggroup.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://elixirconsultinggroup.com/blog/"},{"@type":"ListItem","position":3,"name":"How to Build Simple Systems That Your Team Will Actually Use","item":"https://elixirconsultinggroup.com/blog/how-to-build-simple-systems-that-your-team-will-actually-use/"}]}
+</script>
+</head>
+<body>
+<header class="header">
+<div class="header-inner">
+<a href="/" class="logo">Elixir<span>.</span></a>
+<nav>
+<button class="nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('active')" aria-label="Toggle menu">
+<span></span><span></span><span></span>
+</button>
+<ul class="nav-menu">
+<li><a href="/">Home</a></li>
+<li><a href="/about/">About</a></li>
+<li><a href="/services/">Services</a></li>
+<li><a href="/industries/">Industries</a></li>
+<li><a href="/case-studies/">Case Studies</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/faq/">FAQ</a></li>
+<li><a href="/contact/">Contact</a></li>
+<li><a href="/contact/" class="btn btn-primary">Book a Consult</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main style="margin-top:72px">
+
+<section class="page-hero">
+<div class="container">
+<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / How to Build Simple Systems That Your Team Will...</p>
+<h1 style="font-size:clamp(1.6rem,4vw,2.4rem)">How to Build Simple Systems That Your Team Will Actually Use</h1>
+<p style="font-size:.9rem;margin-top:8px">By Dr. Connor Robertson | 2026-02-07</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<article style="max-width:800px;margin:0 auto;font-size:1.05rem;line-height:1.85">
+<p>One of the fastest ways to slow a growing business down is to build systems that look good on paper but never get used in real life.</p>
+<p>Most owners know they need systems. The problem is not awareness. The problem is that many systems are overbuilt, overdocumented, and disconnected from how the team actually works. When that happens, people ignore them and go back to doing things their own way.</p>
+<p>At Elixir Consulting Group in Pittsburgh, PA, we focus on simple systems that survive contact with reality. If a system cannot be run on a busy week, it is not a system. It is just documentation.</p>
+<h2 class="wp-block-heading">Why most business systems fail</h2>
+<p>Systems usually fail for one of three reasons.</p>
+<p>They are too complex<br />They are built without the people who use them<br />They are not connected to ownership or cadence</p>
+<p>A system that requires a long explanation will be skipped. A system that lives in a folder nobody opens will be ignored. A system with no owner will decay.</p>
+<p>The goal is not to create perfect documentation. The goal is to create clarity that holds up under pressure.</p>
+<h2 class="wp-block-heading">What a “simple system” actually means</h2>
+<p>Simple does not mean sloppy. Simple means usable.</p>
+<p>A simple system has these characteristics:<br />It fits on one page or one screen<br />It is easy to explain in five minutes<br />It has a clear owner<br />It connects to a weekly rhythm<br />It removes guesswork</p>
+<p>If your system needs a training session every time someone uses it, it is probably too heavy.</p>
+<h2 class="wp-block-heading">Start with the problems that repeat</h2>
+<p>Do not start by documenting everything. Start by fixing the pain.</p>
+<p>Look for issues that show up every week:<br />Leads not followed up consistently<br />Confusion during client onboarding<br />Projects stalling between steps<br />Quality issues repeating<br />Reporting not delivered on time</p>
+<p>These are signals that a system is missing or unclear.</p>
+<p>Pick one problem. Build one system. Let it stabilize. Then move on to the next.</p>
+<h2 class="wp-block-heading">Build systems around decisions, not activities</h2>
+<p>Most systems fail because they focus on activities instead of decisions.</p>
+<p>Bad system example<br />“Sales reps should follow up with leads.”</p>
+<p>Good system example<br />“All inbound leads are contacted within five minutes during business hours. If contact is not made after three attempts, the lead moves to a follow up sequence owned by the sales manager.”</p>
+<p>The second version removes decision making from the moment. The system tells people what to do.</p>
+<h2 class="wp-block-heading">The five step process to building a usable system</h2>
+<p>This process works for operations, sales, onboarding, and delivery.</p>
+<h2 class="wp-block-heading">Step 1: map what actually happens today</h2>
+<p>Do not map what you wish was happening. Map what is actually happening.</p>
+<p>Ask:<br />Who touches this first<br />What happens next<br />Where does it get stuck<br />Where do mistakes repeat<br />Who decides what happens next</p>
+<p>This gives you the raw material for a system that fits reality.</p>
+<h2 class="wp-block-heading">Step 2: define the outcome, not just the steps</h2>
+<p>Every system needs a clear outcome.</p>
+<p>Examples:<br />Lead contacted within five minutes<br />Client onboarded within 72 hours<br />Project moved to the next stage within 48 hours<br />Weekly report delivered by Friday at 3 pm</p>
+<p>If the outcome is unclear, the system will drift.</p>
+<h2 class="wp-block-heading">Step 3: reduce the system to the fewest steps possible</h2>
+<p>Most systems fail because they try to account for every edge case.</p>
+<p>Do not do that.</p>
+<p>Design the system for the 80 percent case. Handle edge cases when they happen.</p>
+<p>Ask:<br />What are the minimum steps needed for this to work<br />What steps are redundant<br />What steps exist only because of habit</p>
+<p>Fewer steps increase compliance.</p>
+<h2 class="wp-block-heading">Step 4: assign a single owner</h2>
+<p>Every system needs one owner.</p>
+<p>Not a group. Not “the team.” One person.</p>
+<p>The owner is responsible for:<br />Keeping the system up to date<br />Watching performance<br />Fixing breakdowns<br />Training new team members</p>
+<p>Ownership is what keeps a system alive.</p>
+<h2 class="wp-block-heading">Step 5: connect the system to cadence</h2>
+<p>A system that is not reviewed weekly will decay.</p>
+<p>Connect the system to your operating cadence:<br />Track one or two metrics on the scorecard<br />Review performance weekly<br />Discuss issues in the leadership meeting<br />Adjust the system when it breaks</p>
+<p>This is how systems improve instead of becoming stale.</p>
+<h2 class="wp-block-heading">Examples of simple systems that work</h2>
+<p>Sales lead handling system<br />Inbound leads contacted within five minutes. If not reached after three attempts, move to follow up sequence. Owner: Sales manager.</p>
+<p>Client onboarding system<br />Onboarding checklist completed within 72 hours. Welcome email sent, kickoff call scheduled, access provided. Owner: Client success lead.</p>
+<p>Project handoff system<br />No project moves forward without a defined owner, next step, and due date. Owner: Operations lead.</p>
+<p>These are not complicated. They are effective.</p>
+<h2 class="wp-block-heading">Why documentation should be short and visual</h2>
+<p>Long documents do not get read. Visual systems do.</p>
+<p>Good formats include:<br />Checklists<br />Simple flowcharts<br />One page SOPs<br />Bullet point steps</p>
+<p>If someone cannot understand the system in under five minutes, it will not be followed consistently.</p>
+<h2 class="wp-block-heading">How systems reduce the owner bottleneck</h2>
+<p>When systems are clear, fewer decisions escalate to the owner.</p>
+<p>The team stops asking:<br />“What should I do here”</p>
+<p>And starts asking:<br />“Is this the right outcome”</p>
+<p>That shift is what allows owners to step back without losing control.</p>
+<h2 class="wp-block-heading">Pittsburgh, PA note for local businesses</h2>
+<p>Pittsburgh businesses often grow through strong relationships and reputation. That strength can become a weakness if systems stay informal too long.</p>
+<p>Simple systems protect culture. They allow good people to do good work without confusion. That is how local businesses scale without losing what makes them special.</p>
+<h2 class="wp-block-heading">How Elixir Consulting Group helps</h2>
+<p>Elixir Consulting Group helps business owners identify where systems are breaking down and build simple replacements that teams actually use. We focus on usability, ownership, and cadence so systems hold up under real pressure.</p>
+<p>If you want help building systems that stick, start with a consult.</p>
+<h2 class="wp-block-heading">Related articles from Elixir Consulting Group</h2>
+<p>Continue learning with these related articles from Dr. Connor Robertson at Elixir Consulting Group:</p>
+<p>For more insights on operational excellence, see <a href="https://www.mckinsey.com/capabilities/operations/our-insights" target="_blank" rel="noopener">McKinsey&#8217;s research on operations management</a>.</p>
+<p>According to <a href="https://hbr.org/topic/subject/operations-strategy" target="_blank" rel="noopener">Harvard Business Review</a>, businesses with documented operational processes consistently outperform those without them.</p>
+
+</article>
+</div>
+</section>
+
+<section class="section section-gray">
+<div class="container text-center">
+<h2>Ready to Improve Your Business Operations?</h2>
+<p style="max-width:500px;margin:0 auto 24px">If this article resonated with you, a consult is the best next step to understand how these ideas apply to your specific business.</p>
+<a href="/contact/" class="btn btn-primary">Book a Consult</a>
+</div>
+</section>
+
+</main>
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div>
+<h4>Elixir Consulting Group</h4>
+<p class="footer-desc">Business growth, operations, and execution support for owners who want results. Based in Pittsburgh, PA. Serving clients nationwide.</p>
+<p style="margin-top:16px;font-size:.85rem">429 Fourth Ave. Suite 300, Pittsburgh, PA 15219</p>
+</div>
+<div>
+<h4>Services</h4>
+<ul>
+<li><a href="/services/business-strategy/">Business Strategy</a></li>
+<li><a href="/services/ai-consulting/">AI Consulting</a></li>
+<li><a href="/services/operations/">Operations</a></li>
+<li><a href="/services/sales-strategy/">Sales Strategy</a></li>
+<li><a href="/services/leadership/">Leadership</a></li>
+</ul>
+</div>
+<div>
+<h4>Company</h4>
+<ul>
+<li><a href="/about/">About</a></li>
+<li><a href="/industries/">Industries</a></li>
+<li><a href="/case-studies/">Case Studies</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/faq/">FAQ</a></li>
+<li><a href="/testimonials/">Testimonials</a></li>
+</ul>
+</div>
+<div>
+<h4>Locations</h4>
+<ul>
+<li><a href="/pittsburgh-business-consultant/">Pittsburgh</a></li>
+<li><a href="/pittsburgh-ai-consulting/">Pittsburgh AI</a></li>
+<li><a href="/pittsburgh-operations-consulting/">Pittsburgh Ops</a></li>
+<li><a href="/cranberry-township-business-consultant/">Cranberry Twp</a></li>
+<li><a href="/wexford-business-consultant/">Wexford</a></li>
+</ul>
+</div>
+<div>
+<h4>Connect</h4>
+<ul>
+<li><a href="/contact/">Contact Us</a></li>
+<li><a href="https://drconnorrobertson.com" target="_blank" rel="noopener">Dr. Connor Robertson</a></li>
+<li><a href="https://thepittsburghwire.com" target="_blank" rel="noopener">The Pittsburgh Wire</a></li>
+<li><a href="https://www.youtube.com/@TheProspectingShow" target="_blank" rel="noopener">The Prospecting Show</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+&copy; 2026 Elixir Consulting Group. All rights reserved.
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('click',function(e){if(!e.target.closest('.nav-menu')&&!e.target.closest('.nav-toggle'))document.querySelector('.nav-menu').classList.remove('active')});
+document.querySelectorAll('.faq-item').forEach(function(item){item.querySelector('.faq-q').addEventListener('click',function(){item.classList.toggle('active')});});
+</script>
+</body>
+</html>

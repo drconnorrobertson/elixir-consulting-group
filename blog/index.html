@@ -74,8 +74,6 @@ p{margin-bottom:1rem;color:#555555}
 .breadcrumb{font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:16px}
 .breadcrumb a{color:rgba(255,255,255,.7)}
 .breadcrumb a:hover{color:#C9A84C}
-
-/* Header */
 .header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);box-shadow:0 1px 3px rgba(0,0,0,.08);transition:all .3s}
 .header-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 24px}
 .logo{font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:800;color:#002E5B;letter-spacing:-.5px}
@@ -87,8 +85,6 @@ nav .btn-primary{color:#FFFFFF;padding:10px 24px;font-size:.85rem}
 nav .btn-primary:hover{background:#003D7A;color:#FFFFFF}
 .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
 .nav-toggle span{display:block;width:24px;height:2px;background:#002E5B;margin:5px 0;transition:all .3s}
-
-/* Footer */
 .footer{background:#001F3F;color:rgba(255,255,255,.7);padding:60px 0 0}
 .footer h4{color:#FFFFFF;margin-bottom:16px;font-size:1.1rem}
 .footer a{color:rgba(255,255,255,.7)}
@@ -98,16 +94,12 @@ nav .btn-primary:hover{background:#003D7A;color:#FFFFFF}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding:20px 0;text-align:center;font-size:.85rem}
 .footer-desc{max-width:300px;font-size:.9rem;line-height:1.6}
-
-/* Blog */
 .blog-card{overflow:hidden;border-radius:12px}
 .blog-card .blog-img{height:200px;background:#002E5B;display:flex;align-items:center;justify-content:center;color:#C9A84C;font-size:2.5rem}
 .blog-card .blog-content{padding:24px}
 .blog-card .blog-date{font-size:.8rem;color:#6C757D;margin-bottom:8px}
 .blog-card h3 a{color:#002E5B}
 .blog-card h3 a:hover{color:#C9A84C}
-
-/* FAQ */
 .faq-item{border:1px solid #E2E8F0;border-radius:8px;margin-bottom:12px;overflow:hidden}
 .faq-q{padding:20px 24px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;background:#FFFFFF;transition:background .2s}
 .faq-q:hover{background:#F8F9FA}
@@ -115,35 +107,11 @@ nav .btn-primary:hover{background:#003D7A;color:#FFFFFF}
 .faq-item.active .faq-q::after{transform:rotate(45deg)}
 .faq-a{padding:0 24px;max-height:0;overflow:hidden;transition:all .3s ease}
 .faq-item.active .faq-a{max-height:300px;padding:0 24px 20px}
-
-/* Process Steps */
-.process-step{display:flex;gap:20px;padding:24px 0;border-bottom:1px solid #E2E8F0}
-.process-step:last-child{border-bottom:none}
-.step-num{flex-shrink:0;width:48px;height:48px;background:#002E5B;color:#C9A84C;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem}
-.step-content h3{margin-bottom:4px;font-size:1.1rem}
-.step-content p{margin-bottom:0;font-size:.95rem}
-
-/* CTA Banner */
-.cta-banner{background:linear-gradient(135deg,#002E5B 0%,#001F3F 100%);padding:60px 0;text-align:center;color:#FFFFFF}
-.cta-banner h2{color:#FFFFFF;margin-bottom:12px}
-.cta-banner p{color:rgba(255,255,255,.8);margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto}
-
-/* Contact Form */
 .form-group{margin-bottom:20px}
 .form-group label{display:block;font-weight:600;margin-bottom:6px;font-size:.9rem;color:#002E5B}
 .form-group input,.form-group textarea,.form-group select{width:100%;padding:12px 16px;border:1px solid #E2E8F0;border-radius:8px;font-size:1rem;font-family:inherit;transition:border-color .2s}
 .form-group input:focus,.form-group textarea:focus{outline:none;border-color:#002E5B;box-shadow:0 0 0 3px rgba(0,46,91,.1)}
 .form-group textarea{resize:vertical;min-height:120px}
-.contact-info-card{background:#F8F9FA;border-radius:12px;padding:32px;margin-bottom:16px}
-.contact-info-card h3{font-size:1rem;margin-bottom:4px}
-.contact-info-card p{margin-bottom:0;color:#555555}
-
-/* Industries */
-.industry-card{position:relative;padding:32px;border-radius:12px;background:#FFFFFF;border:1px solid #E2E8F0;transition:all .3s}
-.industry-card:hover{border-color:#C9A84C;box-shadow:0 4px 20px rgba(0,0,0,.08)}
-.industry-card .ind-icon{font-size:2rem;margin-bottom:12px}
-
-/* Responsive */
 @media(max-width:968px){
 .footer-grid{grid-template-columns:1fr 1fr}
 .grid-3{grid-template-columns:1fr}
@@ -159,10 +127,11 @@ nav a{padding:12px 16px;width:100%;display:block}
 .section{padding:50px 0}
 .grid-2,.grid-4{grid-template-columns:1fr}
 .footer-grid{grid-template-columns:1fr}
-.process-step{flex-direction:column;text-align:center;align-items:center}
 }
 </style>
-
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Blog","name":"Elixir Consulting Group Blog","url":"https://elixirconsultinggroup.com/blog/","publisher":{"@type":"Organization","name":"Elixir Consulting Group","url":"https://elixirconsultinggroup.com"}}
+</script>
 </head>
 <body>
 <header class="header">
@@ -178,7 +147,7 @@ nav a{padding:12px 16px;width:100%;display:block}
 <li><a href="/services/">Services</a></li>
 <li><a href="/industries/">Industries</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
-<li><a href="/blog/" style="color:#002E5B;font-weight:700">Blog</a></li>
+<li><a href="/blog/">Blog</a></li>
 <li><a href="/faq/">FAQ</a></li>
 <li><a href="/contact/">Contact</a></li>
 <li><a href="/contact/" class="btn btn-primary">Book a Consult</a></li>
@@ -191,8 +160,8 @@ nav a{padding:12px 16px;width:100%;display:block}
 <section class="page-hero">
 <div class="container">
 <p class="breadcrumb"><a href="/">Home</a> / Blog</p>
-<h1>Blog</h1>
-<p>Insights on business strategy, operations, AI consulting, and growth from Elixir Consulting Group.</p>
+<h1>Business Consulting Blog</h1>
+<p>Insights on strategy, operations, AI, leadership, and growth for business owners who want results.</p>
 </div>
 </section>
 
@@ -200,237 +169,2595 @@ nav a{padding:12px 16px;width:100%;display:block}
 <div class="container">
 <div class="grid grid-3">
 <div class="card blog-card">
-<div class="blog-img">&#9998;</div>
-<div class="blog-content">
-<p class="blog-date">2026-04-24 | By Dr. Connor Robertson</p>
-<h3><a href="/blog/why-every-business-owner-needs-ai-strategy-2026/">Why Every Business Owner Needs an AI Strategy in 2026</a></h3>
-<p>Dr. Connor Robertson explains why business owners who do not have an AI strategy in 2026 are leaving money on the table and falling behind competitors...</p>
-<a href="/blog/why-every-business-owner-needs-ai-strategy-2026/" style="font-weight:600;font-size:.9rem">Read Article &rarr;</a>
-</div>
-</div>
-<div class="card blog-card">
-<div class="blog-img">&#9998;</div>
-<div class="blog-content">
-<p class="blog-date">2026-04-22 | By Dr. Connor Robertson</p>
-<h3><a href="/blog/pittsburgh-small-business-growth-trends-2026/">Pittsburgh Small Business Growth Trends to Watch in 2026</a></h3>
-<p>Dr. Connor Robertson breaks down the key growth trends shaping Pittsburgh small businesses in 2026, from AI adoption to the reshoring boom and talent ...</p>
-<a href="/blog/pittsburgh-small-business-growth-trends-2026/" style="font-weight:600;font-size:.9rem">Read Article &rarr;</a>
-</div>
-</div>
-<div class="card blog-card">
-<div class="blog-img">&#9998;</div>
-<div class="blog-content">
-<p class="blog-date">2026-04-18 | By Dr. Connor Robertson</p>
-<h3><a href="/blog/how-to-build-leadership-team-that-drives-growth/">How to Build a Leadership Team That Actually Drives Growth</a></h3>
-<p>Dr. Connor Robertson shares the framework Elixir Consulting Group uses to help business owners build high-performing leadership teams that drive execu...</p>
-<a href="/blog/how-to-build-leadership-team-that-drives-growth/" style="font-weight:600;font-size:.9rem">Read Article &rarr;</a>
-</div>
-</div>
-<div class="card blog-card">
-<div class="blog-img">&#9998;</div>
-<div class="blog-content">
-<p class="blog-date">2026-04-16 | By Dr. Connor Robertson</p>
-<h3><a href="/blog/consulting-vs-coaching-what-your-business-actually-needs/">Consulting vs. Coaching: What Your Business Actually Needs</a></h3>
-<p>Dr. Connor Robertson explains the difference between business consulting and business coaching, and how to determine which approach will produce resul...</p>
-<a href="/blog/consulting-vs-coaching-what-your-business-actually-needs/" style="font-weight:600;font-size:.9rem">Read Article &rarr;</a>
-</div>
-</div>
-<div class="card blog-card">
-<div class="blog-img">&#9998;</div>
-<div class="blog-content">
-<p class="blog-date">2026-04-12 | By Dr. Connor Robertson</p>
-<h3><a href="/blog/entrepreneurs-guide-to-operational-excellence/">The Entrepreneur's Guide to Operational Excellence</a></h3>
-<p>Dr. Connor Robertson of Elixir Consulting Group shares the operational excellence framework that helps entrepreneurs build businesses that run consist...</p>
-<a href="/blog/entrepreneurs-guide-to-operational-excellence/" style="font-weight:600;font-size:.9rem">Read Article &rarr;</a>
-</div>
-</div>
-<div class="card blog-card">
-<div class="blog-img">&#9998;</div>
-<div class="blog-content">
-<p class="blog-date">2026-04-10 | By Dr. Connor Robertson</p>
-<h3><a href="/blog/ai-powered-sales-systems-for-growing-businesses/">AI-Powered Sales Systems for Growing Businesses</a></h3>
-<p>Dr. Connor Robertson explains how growing businesses can use AI to build sales systems that generate consistent pipeline and revenue without scaling h...</p>
-<a href="/blog/ai-powered-sales-systems-for-growing-businesses/" style="font-weight:600;font-size:.9rem">Read Article &rarr;</a>
-</div>
-</div>
-<div class="card blog-card">
 <div class="blog-img">E</div>
 <div class="blog-content">
-<p class="blog-date">2026-04-15</p>
-<h3><a href="/blog/how-ai-is-transforming-small-business-operations-2026/">How AI Is Transforming Small Business Operations in 2026</a></h3>
-<p>AI is no longer just for enterprise companies. In 2026, small businesses are leveraging artificial intelligence to automate workflows, improve decisio...</p>
-<a href="/blog/how-ai-is-transforming-small-business-operations-2026/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+<p class="blog-date">2026-04-23</p>
+<h3><a href="/blog/elixir-consulting-group-our-approach-to-business-transformation/">Elixir Consulting Group: Our Approach to Business Transformation</a></h3>
+<p>Business transformation sounds like a big, complicated undertaking. But at Elixir Consulting Group, transformation is about making practical, incremental cha...</p>
+<a href="/blog/elixir-consulting-group-our-approach-to-business-transformation/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
 </div>
 </div>
 <div class="card blog-card">
-<div class="blog-img">E</div>
+<div class="blog-img">H</div>
 <div class="blog-content">
-<p class="blog-date">2026-04-08</p>
-<h3><a href="/blog/5-signs-your-business-needs-a-strategy-consultant/">5 Signs Your Business Needs a Strategy Consultant</a></h3>
-<p>Not every business needs a consultant, but there are clear signals that indicate when outside expertise could save time, money, and frustration. Here ...</p>
-<a href="/blog/5-signs-your-business-needs-a-strategy-consultant/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+<p class="blog-date">2026-04-21</p>
+<h3><a href="/blog/how-to-measure-business-performance-beyond-revenue/">How to Measure Business Performance Beyond Revenue</a></h3>
+<p>Revenue is important, but it tells you only part of the story. A business generating strong revenue can still be […]</p>
+<a href="/blog/how-to-measure-business-performance-beyond-revenue/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
 </div>
 </div>
 <div class="card blog-card">
-<div class="blog-img">E</div>
+<div class="blog-img">D</div>
 <div class="blog-content">
-<p class="blog-date">2026-03-25</p>
-<h3><a href="/blog/roi-of-hiring-business-consultant-real-numbers/">The ROI of Hiring a Business Consultant: Real Numbers</a></h3>
-<p>Business owners want to know whether hiring a consultant is worth the investment. Here is how to think about ROI in consulting engagements, with real-...</p>
-<a href="/blog/roi-of-hiring-business-consultant-real-numbers/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+<p class="blog-date">2026-04-19</p>
+<h3><a href="/blog/digital-transformation-for-traditional-businesses-a-practical-guide/">Digital Transformation for Traditional Businesses: A Practical Guide</a></h3>
+<p>Why Digital Transformation Matters for Traditional Businesses Digital transformation has become one of the most talked-about concepts in business, but […]</p>
+<a href="/blog/digital-transformation-for-traditional-businesses-a-practical-guide/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
 </div>
 </div>
 <div class="card blog-card">
-<div class="blog-img">E</div>
+<div class="blog-img">5</div>
 <div class="blog-content">
-<p class="blog-date">2026-03-18</p>
-<h3><a href="/blog/digital-transformation-for-traditional-businesses/">Digital Transformation for Traditional Businesses</a></h3>
-<p>Digital transformation does not have to mean a complete technology overhaul. For traditional businesses, the most effective approach is incremental an...</p>
-<a href="/blog/digital-transformation-for-traditional-businesses/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+<p class="blog-date">2026-04-19</p>
+<h3><a href="/blog/5-signs-your-business-needs-a-strategy-overhaul/">5 Signs Your Business Needs a Strategy Overhaul</a></h3>
+<p>Is Your Business Sending You Warning Signals? Every business goes through cycles of growth, stability, and stagnation. The challenge for […]</p>
+<a href="/blog/5-signs-your-business-needs-a-strategy-overhaul/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
 </div>
 </div>
 <div class="card blog-card">
-<div class="blog-img">E</div>
+<div class="blog-img">W</div>
 <div class="blog-content">
-<p class="blog-date">2026-03-10</p>
-<h3><a href="/blog/how-to-scale-your-business-from-1m-to-10m/">How to Scale Your Business From $1M to $10M</a></h3>
-<p>The journey from $1M to $10M in revenue requires a different operating system than what got you to your first million. Here is what changes and how to...</p>
-<a href="/blog/how-to-scale-your-business-from-1m-to-10m/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+<p class="blog-date">2026-04-19</p>
+<h3><a href="/blog/why-hiring-a-business-consultant-pays-for-itself-in-90-days/">Why Hiring a Business Consultant Pays for Itself in 90 Days</a></h3>
+<p>The Real Cost of Not Having a Consultant Most business owners think of consulting as an expense. But the real […]</p>
+<a href="/blog/why-hiring-a-business-consultant-pays-for-itself-in-90-days/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
 </div>
 </div>
 <div class="card blog-card">
-<div class="blog-img">E</div>
+<div class="blog-img">T</div>
 <div class="blog-content">
-<p class="blog-date">2026-03-01</p>
-<h3><a href="/blog/why-pittsburgh-best-city-business-innovation/">Why Pittsburgh Is the Best City for Business Innovation</a></h3>
-<p>Pittsburgh has transformed from a steel town into a hub of innovation, technology, and entrepreneurship. Here is why it is one of the best cities in A...</p>
-<a href="/blog/why-pittsburgh-best-city-business-innovation/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+<p class="blog-date">2026-04-19</p>
+<h3><a href="/blog/the-small-business-guide-to-operational-efficiency-in-2026/">The Small Business Guide to Operational Efficiency in 2026</a></h3>
+<p>Why Operational Efficiency Is the Defining Challenge of 2026 Every small business owner knows the feeling: working harder than ever, […]</p>
+<a href="/blog/the-small-business-guide-to-operational-efficiency-in-2026/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
 </div>
 </div>
 <div class="card blog-card">
-<div class="blog-img">E</div>
+<div class="blog-img">H</div>
 <div class="blog-content">
-<p class="blog-date">2026-02-20</p>
-<h3><a href="/blog/small-business-guide-operational-efficiency/">The Small Business Guide to Operational Efficiency</a></h3>
-<p>Operational efficiency is not about working harder. It is about building systems that produce consistent results with less wasted effort. Here is how ...</p>
-<a href="/blog/small-business-guide-operational-efficiency/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+<p class="blog-date">2026-04-19</p>
+<h3><a href="/blog/how-ai-consulting-is-helping-pittsburgh-businesses-grow-3x-faster/">How AI Consulting Is Helping Pittsburgh Businesses Grow 3x Faster</a></h3>
+<p>The AI Revolution Is Here, and Pittsburgh Is Leading the Charge Artificial intelligence is no longer a futuristic concept reserved […]</p>
+<a href="/blog/how-ai-consulting-is-helping-pittsburgh-businesses-grow-3x-faster/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
 </div>
 </div>
 <div class="card blog-card">
-<div class="blog-img">E</div>
+<div class="blog-img">T</div>
 <div class="blog-content">
-<p class="blog-date">2026-02-10</p>
-<h3><a href="/blog/ai-tools-every-business-owner-should-use-2026/">AI Tools Every Business Owner Should Be Using in 2026</a></h3>
-<p>The AI tool landscape has matured significantly. Here are the categories of AI tools that are delivering real value for business owners right now....</p>
-<a href="/blog/ai-tools-every-business-owner-should-use-2026/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+<p class="blog-date">2026-04-18</p>
+<h3><a href="/blog/the-business-owner-guide-to-effective-delegation/">The Business Owner Guide to Effective Delegation</a></h3>
+<p>Delegation is one of the most important skills a business owner can develop, yet it is one of the most […]</p>
+<a href="/blog/the-business-owner-guide-to-effective-delegation/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
 </div>
 </div>
 <div class="card blog-card">
-<div class="blog-img">E</div>
+<div class="blog-img">H</div>
 <div class="blog-content">
-<p class="blog-date">2026-01-28</p>
-<h3><a href="/blog/how-to-build-systems-that-scale-without-you/">How to Build Systems That Scale Without You</a></h3>
-<p>The ultimate goal of business systems is to make the owner optional for daily operations. Here is how to build processes that work whether you are the...</p>
-<a href="/blog/how-to-build-systems-that-scale-without-you/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+<p class="blog-date">2026-04-16</p>
+<h3><a href="/blog/how-to-build-a-team-that-executes-without-micromanagement/">How to Build a Team That Executes Without Micromanagement</a></h3>
+<p>Micromanagement is a symptom, not a strategy. When a business owner feels the need to oversee every detail, it usually […]</p>
+<a href="/blog/how-to-build-a-team-that-executes-without-micromanagement/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
 </div>
 </div>
 <div class="card blog-card">
-<div class="blog-img">E</div>
-<div class="blog-content">
-<p class="blog-date">2026-01-15</p>
-<h3><a href="/blog/business-exit-planning-preparing-profitable-sale/">Business Exit Planning: Preparing for a Profitable Sale</a></h3>
-<p>Whether you plan to sell in two years or ten, the work you do now to prepare your business for exit will determine how much it is worth and how smooth...</p>
-<a href="/blog/business-exit-planning-preparing-profitable-sale/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
-</div>
-</div>
-<div class="card blog-card">
-<div class="blog-img">E</div>
-<div class="blog-content">
-<p class="blog-date">2026-04-22</p>
-<h3><a href="/blog/how-to-scale-business-500k-to-5m-revenue/">How to Scale Your Business From $500K to $5M in Revenue</a></h3>
-<p>Scaling from $500K to $5M is the most dangerous growth phase for any business. Here is the playbook for making that leap without breaking what already...</p>
-<a href="/blog/how-to-scale-business-500k-to-5m-revenue/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
-</div>
-</div>
-<div class="card blog-card">
-<div class="blog-img">E</div>
-<div class="blog-content">
-<p class="blog-date">2026-04-20</p>
-<h3><a href="/blog/ai-implementation-small-business-step-by-step-guide/">AI Implementation for Small Business: A Step-by-Step Guide</a></h3>
-<p>AI adoption does not have to be overwhelming. This step-by-step guide shows small business owners how to implement AI tools that deliver real ROI with...</p>
-<a href="/blog/ai-implementation-small-business-step-by-step-guide/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
-</div>
-</div>
-<div class="card blog-card">
-<div class="blog-img">E</div>
-<div class="blog-content">
-<p class="blog-date">2026-04-17</p>
-<h3><a href="/blog/true-cost-of-not-having-business-strategy/">The True Cost of Not Having a Business Strategy</a></h3>
-<p>Operating without a clear business strategy costs more than most owners realize. Here is how to calculate what strategic drift is actually costing you...</p>
-<a href="/blog/true-cost-of-not-having-business-strategy/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
-</div>
-</div>
-<div class="card blog-card">
-<div class="blog-img">E</div>
+<div class="blog-img">H</div>
 <div class="blog-content">
 <p class="blog-date">2026-04-14</p>
-<h3><a href="/blog/pittsburgh-businesses-using-ai-outperform-competitors/">How Pittsburgh Businesses Are Using AI to Outperform Competitors</a></h3>
-<p>Pittsburgh has become a national leader in practical AI adoption for small and mid-sized businesses. Here is how local companies are gaining an edge w...</p>
-<a href="/blog/pittsburgh-businesses-using-ai-outperform-competitors/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+<h3><a href="/blog/how-to-improve-cash-flow-management-for-small-businesses/">How to Improve Cash Flow Management for Small Businesses</a></h3>
+<p>Cash flow is the lifeblood of every business. Even profitable companies can fail if they run out of cash. For […]</p>
+<a href="/blog/how-to-improve-cash-flow-management-for-small-businesses/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
 </div>
 </div>
 <div class="card blog-card">
-<div class="blog-img">E</div>
+<div class="blog-img">T</div>
 <div class="blog-content">
-<p class="blog-date">2026-04-10</p>
-<h3><a href="/blog/when-to-hire-business-consultant-vs-doing-it-yourself/">When to Hire a Business Consultant vs. Doing It Yourself</a></h3>
-<p>Not every problem requires outside help. Here is a practical framework for deciding when to hire a consultant and when to handle it internally....</p>
-<a href="/blog/when-to-hire-business-consultant-vs-doing-it-yourself/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+<p class="blog-date">2026-04-11</p>
+<h3><a href="/blog/the-importance-of-role-clarity-in-a-growing-business/">The Importance of Role Clarity in a Growing Business</a></h3>
+<p>When a business is small, everyone wears multiple hats. But as the team grows, unclear roles create confusion, duplicated effort, […]</p>
+<a href="/blog/the-importance-of-role-clarity-in-a-growing-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
 </div>
 </div>
 <div class="card blog-card">
-<div class="blog-img">E</div>
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-04-09</p>
+<h3><a href="/blog/how-to-set-quarterly-goals-that-your-team-can-actually-achieve/">How to Set Quarterly Goals That Your Team Can Actually Achieve</a></h3>
+<p>Quarterly goals are one of the most effective planning tools a business can use. They are short enough to create […]</p>
+<a href="/blog/how-to-set-quarterly-goals-that-your-team-can-actually-achieve/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
 <div class="blog-content">
 <p class="blog-date">2026-04-07</p>
-<h3><a href="/blog/building-recession-proof-business-strategies/">Building a Recession-Proof Business: Strategies That Work</a></h3>
-<p>Economic downturns expose the weaknesses in your business model. Here are the strategies that help businesses not just survive recessions but come out...</p>
-<a href="/blog/building-recession-proof-business-strategies/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+<h3><a href="/blog/why-business-owners-in-pittsburgh-choose-elixir-consulting-group/">Why Business Owners in Pittsburgh Choose Elixir Consulting Group</a></h3>
+<p>Pittsburgh has a thriving business community, and local business owners face unique challenges and opportunities. Whether you are running a […]</p>
+<a href="/blog/why-business-owners-in-pittsburgh-choose-elixir-consulting-group/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
 </div>
 </div>
 <div class="card blog-card">
-<div class="blog-img">E</div>
+<div class="blog-img">H</div>
 <div class="blog-content">
-<p class="blog-date">2026-04-03</p>
-<h3><a href="/blog/reduce-operating-costs-30-percent-without-cutting-quality/">How to Reduce Operating Costs by 30% Without Cutting Quality</a></h3>
-<p>Cutting costs does not have to mean cutting corners. Here is a systematic approach to reducing operating expenses while maintaining or improving servi...</p>
-<a href="/blog/reduce-operating-costs-30-percent-without-cutting-quality/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+<p class="blog-date">2026-04-04</p>
+<h3><a href="/blog/how-to-create-a-repeatable-client-delivery-process/">How to Create a Repeatable Client Delivery Process</a></h3>
+<p>Inconsistent client delivery is one of the fastest ways to lose trust, generate complaints, and increase churn. When every client […]</p>
+<a href="/blog/how-to-create-a-repeatable-client-delivery-process/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
 </div>
 </div>
 <div class="card blog-card">
-<div class="blog-img">E</div>
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-04-02</p>
+<h3><a href="/blog/the-difference-between-strategy-and-execution-in-business/">The Difference Between Strategy and Execution in Business</a></h3>
+<p>Strategy is knowing where you want to go. Execution is actually getting there. Most businesses do not fail because of […]</p>
+<a href="/blog/the-difference-between-strategy-and-execution-in-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-03-31</p>
+<h3><a href="/blog/how-to-reduce-owner-dependency-in-your-business/">How to Reduce Owner Dependency in Your Business</a></h3>
+<p>If your business cannot function without you for a single week, you do not own a business. You own a […]</p>
+<a href="/blog/how-to-reduce-owner-dependency-in-your-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
 <div class="blog-content">
 <p class="blog-date">2026-03-28</p>
-<h3><a href="/blog/executives-guide-digital-transformation-2026/">The Executive's Guide to Digital Transformation in 2026</a></h3>
-<p>Digital transformation in 2026 looks different than it did five years ago. Here is what executives need to know to lead their organizations through te...</p>
-<a href="/blog/executives-guide-digital-transformation-2026/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+<h3><a href="/blog/what-is-business-consulting-and-how-can-it-help-your-company/">What Is Business Consulting and How Can It Help Your Company</a></h3>
+<p>Business consulting is a professional service that helps companies identify problems, develop strategies, and implement solutions to improve performance. It […]</p>
+<a href="/blog/what-is-business-consulting-and-how-can-it-help-your-company/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-03-26</p>
+<h3><a href="/blog/how-to-run-a-weekly-leadership-meeting-that-actually-drives-results/">How to Run a Weekly Leadership Meeting That Actually Drives Results</a></h3>
+<p>Most leadership meetings are a waste of time. They turn into status updates, tangents, and discussions that lead nowhere. But […]</p>
+<a href="/blog/how-to-run-a-weekly-leadership-meeting-that-actually-drives-results/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">C</div>
+<div class="blog-content">
+<p class="blog-date">2026-03-24</p>
+<h3><a href="/blog/client-onboarding-best-practices-for-service-based-businesses/">Client Onboarding Best Practices for Service-Based Businesses</a></h3>
+<p>The client onboarding experience sets the tone for the entire relationship. A smooth, structured onboarding process builds trust, reduces confusion, […]</p>
+<a href="/blog/client-onboarding-best-practices-for-service-based-businesses/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-03-21</p>
+<h3><a href="/blog/how-dr-connor-robertson-helps-business-owners-build-scalable-operations/">How Dr. Connor Robertson Helps Business Owners Build Scalable Operations</a></h3>
+<p>Scaling a business is not just about increasing revenue. It is about building the operational infrastructure that allows your business […]</p>
+<a href="/blog/how-dr-connor-robertson-helps-business-owners-build-scalable-operations/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-03-19</p>
+<h3><a href="/blog/the-role-of-standard-operating-procedures-in-business-growth/">The Role of Standard Operating Procedures in Business Growth</a></h3>
+<p>Standard operating procedures, or SOPs, are the backbone of a scalable business. They document how your most important tasks get […]</p>
+<a href="/blog/the-role-of-standard-operating-procedures-in-business-growth/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-03-17</p>
+<h3><a href="/blog/how-to-build-a-sales-pipeline-that-runs-without-you/">How to Build a Sales Pipeline That Runs Without You</a></h3>
+<p>One of the most common challenges business owners face is a sales process that depends entirely on them. When the […]</p>
+<a href="/blog/how-to-build-a-sales-pipeline-that-runs-without-you/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2026-03-14</p>
+<h3><a href="/blog/why-every-business-owner-needs-a-weekly-scorecard/">Why Every Business Owner Needs a Weekly Scorecard</a></h3>
+<p>If you cannot measure it, you cannot manage it. A weekly scorecard is one of the simplest and most powerful […]</p>
+<a href="/blog/why-every-business-owner-needs-a-weekly-scorecard/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-03-12</p>
+<h3><a href="/blog/the-five-signs-your-business-has-outgrown-its-current-systems/">The Five Signs Your Business Has Outgrown Its Current Systems</a></h3>
+<p>Growth is exciting until it starts creating chaos. If you find yourself constantly putting out fires, losing track of tasks, […]</p>
+<a href="/blog/the-five-signs-your-business-has-outgrown-its-current-systems/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-03-10</p>
+<h3><a href="/blog/how-to-build-an-operating-system-for-your-small-business/">How to Build an Operating System for Your Small Business</a></h3>
+<p>Every business owner reaches a point where daily operations become overwhelming. The good news is that building an operating system […]</p>
+<a href="/blog/how-to-build-an-operating-system-for-your-small-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-03-07</p>
+<h3><a href="/blog/how-to-document-your-core-business-processes-without-overcomplicating-them/">How to Document Your Core Business Processes Without Overcomplicating Them</a></h3>
+<p>Most business owners know what needs to happen in their business. The problem is not awareness. The problem is that […]</p>
+<a href="/blog/how-to-document-your-core-business-processes-without-overcomplicating-them/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-03-06</p>
+<h3><a href="/blog/the-daily-operating-rhythm-every-small-business-needs/">The Daily Operating Rhythm Every Small Business Needs</a></h3>
+<p>Most business owners know what needs to happen in their business. The problem is not awareness. The problem is that […]</p>
+<a href="/blog/the-daily-operating-rhythm-every-small-business-needs/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">F</div>
+<div class="blog-content">
+<p class="blog-date">2026-03-05</p>
+<h3><a href="/blog/five-operational-bottlenecks-that-slow-down-growing-companies/">Five Operational Bottlenecks That Slow Down Growing Companies</a></h3>
+<p>When your operations run well, your business feels different. Decisions happen faster, mistakes drop, and your team stops asking you […]</p>
+<a href="/blog/five-operational-bottlenecks-that-slow-down-growing-companies/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-03-04</p>
+<h3><a href="/blog/how-to-create-an-operations-manual-that-your-team-will-actually-follow/">How to Create an Operations Manual That Your Team Will Actually Follow</a></h3>
+<p>When your operations run well, your business feels different. Decisions happen faster, mistakes drop, and your team stops asking you […]</p>
+<a href="/blog/how-to-create-an-operations-manual-that-your-team-will-actually-follow/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-03-03</p>
+<h3><a href="/blog/the-difference-between-being-busy-and-being-productive-in-your-business/">The Difference Between Being Busy and Being Productive in Your Business</a></h3>
+<p>When your operations run well, your business feels different. Decisions happen faster, mistakes drop, and your team stops asking you […]</p>
+<a href="/blog/the-difference-between-being-busy-and-being-productive-in-your-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-03-02</p>
+<h3><a href="/blog/how-to-build-repeatable-workflows-that-scale-with-your-team/">How to Build Repeatable Workflows That Scale With Your Team</a></h3>
+<p>Running a business means managing dozens of moving parts every day. The owners who build reliable operations are the ones […]</p>
+<a href="/blog/how-to-build-repeatable-workflows-that-scale-with-your-team/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2026-03-01</p>
+<h3><a href="/blog/why-your-business-needs-a-weekly-operations-review/">Why Your Business Needs a Weekly Operations Review</a></h3>
+<p>Most business owners know what needs to happen in their business. The problem is not awareness. The problem is that […]</p>
+<a href="/blog/why-your-business-needs-a-weekly-operations-review/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-28</p>
+<h3><a href="/blog/how-to-identify-and-eliminate-waste-in-your-business-operations/">How to Identify and Eliminate Waste in Your Business Operations</a></h3>
+<p>When your operations run well, your business feels different. Decisions happen faster, mistakes drop, and your team stops asking you […]</p>
+<a href="/blog/how-to-identify-and-eliminate-waste-in-your-business-operations/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-27</p>
+<h3><a href="/blog/the-role-of-checklists-in-running-a-consistent-business/">The Role of Checklists in Running a Consistent Business</a></h3>
+<p>When your operations run well, your business feels different. Decisions happen faster, mistakes drop, and your team stops asking you […]</p>
+<a href="/blog/the-role-of-checklists-in-running-a-consistent-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-26</p>
+<h3><a href="/blog/how-to-transition-from-founder-led-operations-to-team-led-systems/">How to Transition from Founder-Led Operations to Team-Led Systems</a></h3>
+<p>Most business owners know what needs to happen in their business. The problem is not awareness. The problem is that […]</p>
+<a href="/blog/how-to-transition-from-founder-led-operations-to-team-led-systems/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">B</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-25</p>
+<h3><a href="/blog/building-an-operational-dashboard-that-tells-you-what-matters/">Building an Operational Dashboard That Tells You What Matters</a></h3>
+<p>When your operations run well, your business feels different. Decisions happen faster, mistakes drop, and your team stops asking you […]</p>
+<a href="/blog/building-an-operational-dashboard-that-tells-you-what-matters/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-24</p>
+<h3><a href="/blog/how-to-handle-operational-emergencies-without-losing-your-mind/">How to Handle Operational Emergencies Without Losing Your Mind</a></h3>
+<p>Running a business means managing dozens of moving parts every day. The owners who build reliable operations are the ones […]</p>
+<a href="/blog/how-to-handle-operational-emergencies-without-losing-your-mind/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-23</p>
+<h3><a href="/blog/the-hidden-cost-of-not-having-standard-operating-procedures/">The Hidden Cost of Not Having Standard Operating Procedures</a></h3>
+<p>Running a business means managing dozens of moving parts every day. The owners who build reliable operations are the ones […]</p>
+<a href="/blog/the-hidden-cost-of-not-having-standard-operating-procedures/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-22</p>
+<h3><a href="/blog/how-to-streamline-your-business-operations-in-30-days/">How to Streamline Your Business Operations in 30 Days</a></h3>
+<p>Running a business means managing dozens of moving parts every day. The owners who build reliable operations are the ones […]</p>
+<a href="/blog/how-to-streamline-your-business-operations-in-30-days/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-21</p>
+<h3><a href="/blog/why-operational-consistency-is-the-secret-to-customer-satisfaction/">Why Operational Consistency Is the Secret to Customer Satisfaction</a></h3>
+<p>When your operations run well, your business feels different. Decisions happen faster, mistakes drop, and your team stops asking you […]</p>
+<a href="/blog/why-operational-consistency-is-the-secret-to-customer-satisfaction/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-20</p>
+<h3><a href="/blog/how-to-write-a-business-plan-that-actually-gets-used/">How to Write a Business Plan That Actually Gets Used</a></h3>
+<p>A business plan is only as good as the action it drives. Most plans sit on a shelf collecting dust […]</p>
+<a href="/blog/how-to-write-a-business-plan-that-actually-gets-used/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-19</p>
+<h3><a href="/blog/the-one-page-business-plan-that-replaces-your-50-page-document/">The One-Page Business Plan That Replaces Your 50-Page Document</a></h3>
+<p>Every business needs a plan. Not a theoretical document that nobody reads, but a practical roadmap that tells your team […]</p>
+<a href="/blog/the-one-page-business-plan-that-replaces-your-50-page-document/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-18</p>
+<h3><a href="/blog/how-to-set-business-goals-that-your-team-can-actually-hit/">How to Set Business Goals That Your Team Can Actually Hit</a></h3>
+<p>The best business plans are living documents. They change as the business changes. They guide decisions in real time. At […]</p>
+<a href="/blog/how-to-set-business-goals-that-your-team-can-actually-hit/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-17</p>
+<h3><a href="/blog/why-most-business-plans-fail-and-how-to-fix-yours/">Why Most Business Plans Fail and How to Fix Yours</a></h3>
+<p>The best business plans are living documents. They change as the business changes. They guide decisions in real time. At […]</p>
+<a href="/blog/why-most-business-plans-fail-and-how-to-fix-yours/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-16</p>
+<h3><a href="/blog/how-to-create-a-90-day-action-plan-for-your-business/">How to Create a 90-Day Action Plan for Your Business</a></h3>
+<p>Every business needs a plan. Not a theoretical document that nobody reads, but a practical roadmap that tells your team […]</p>
+<a href="/blog/how-to-create-a-90-day-action-plan-for-your-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-15</p>
+<h3><a href="/blog/the-annual-planning-process-that-top-performing-businesses-use/">The Annual Planning Process That Top-Performing Businesses Use</a></h3>
+<p>Every business needs a plan. Not a theoretical document that nobody reads, but a practical roadmap that tells your team […]</p>
+<a href="/blog/the-annual-planning-process-that-top-performing-businesses-use/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-14</p>
+<h3><a href="/blog/how-to-align-your-business-plan-with-your-cash-flow-reality/">How to Align Your Business Plan With Your Cash Flow Reality</a></h3>
+<p>A business plan is only as good as the action it drives. Most plans sit on a shelf collecting dust […]</p>
+<a href="/blog/how-to-align-your-business-plan-with-your-cash-flow-reality/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">Q</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-13</p>
+<h3><a href="/blog/quarterly-business-reviews-that-drive-real-accountability/">Quarterly Business Reviews That Drive Real Accountability</a></h3>
+<p>The best business plans are living documents. They change as the business changes. They guide decisions in real time. At […]</p>
+<a href="/blog/quarterly-business-reviews-that-drive-real-accountability/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-12</p>
+<h3><a href="/blog/how-to-update-your-business-plan-when-the-market-changes/">How to Update Your Business Plan When the Market Changes</a></h3>
+<p>Every business needs a plan. Not a theoretical document that nobody reads, but a practical roadmap that tells your team […]</p>
+<a href="/blog/how-to-update-your-business-plan-when-the-market-changes/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-11</p>
+<h3><a href="/blog/the-business-plan-checklist-every-startup-founder-needs/">The Business Plan Checklist Every Startup Founder Needs</a></h3>
+<p>A business plan is only as good as the action it drives. Most plans sit on a shelf collecting dust […]</p>
+<a href="/blog/the-business-plan-checklist-every-startup-founder-needs/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-10</p>
+<h3><a href="/blog/how-to-build-a-strategic-roadmap-for-the-next-12-months/">How to Build a Strategic Roadmap for the Next 12 Months</a></h3>
+<p>Every business needs a plan. Not a theoretical document that nobody reads, but a practical roadmap that tells your team […]</p>
+<a href="/blog/how-to-build-a-strategic-roadmap-for-the-next-12-months/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-09</p>
+<h3><a href="/blog/why-your-business-plan-needs-fewer-goals-and-more-focus/">Why Your Business Plan Needs Fewer Goals and More Focus</a></h3>
+<p>Every business needs a plan. Not a theoretical document that nobody reads, but a practical roadmap that tells your team […]</p>
+<a href="/blog/why-your-business-plan-needs-fewer-goals-and-more-focus/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-08</p>
+<h3><a href="/blog/how-to-plan-for-business-growth-without-overextending-your-resources/">How to Plan for Business Growth Without Overextending Your Resources</a></h3>
+<p>Every business needs a plan. Not a theoretical document that nobody reads, but a practical roadmap that tells your team […]</p>
+<a href="/blog/how-to-plan-for-business-growth-without-overextending-your-resources/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-07</p>
+<h3><a href="/blog/the-three-stages-of-business-growth-every-owner-must-understand/">The Three Stages of Business Growth Every Owner Must Understand</a></h3>
+<p>Scaling a business is exciting until it becomes overwhelming. Growth without structure leads to burnout, quality issues, and cash flow […]</p>
+<a href="/blog/the-three-stages-of-business-growth-every-owner-must-understand/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-07</p>
+<h3><a href="/blog/how-to-build-simple-systems-that-your-team-will-actually-use/">How to Build Simple Systems That Your Team Will Actually Use</a></h3>
+<p>One of the fastest ways to slow a growing business down is to build systems that look good on paper […]</p>
+<a href="/blog/how-to-build-simple-systems-that-your-team-will-actually-use/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-07</p>
+<h3><a href="/blog/the-operating-cadence-that-makes-business-growth-predictable/">The Operating Cadence That Makes Business Growth Predictable</a></h3>
+<p>A lot of business owners think they have a “growth problem” when what they really have is a rhythm problem. […]</p>
+<a href="/blog/the-operating-cadence-that-makes-business-growth-predictable/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-07</p>
+<h3><a href="/blog/why-most-growing-businesses-feel-chaotic-and-how-to-fix-it/">Why Most Growing Businesses Feel Chaotic and How to Fix It</a></h3>
+<p>Growth is supposed to feel exciting. But for a lot of business owners, growth feels like the moment everything starts […]</p>
+<a href="/blog/why-most-growing-businesses-feel-chaotic-and-how-to-fix-it/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-06</p>
+<h3><a href="/blog/how-to-scale-your-business-without-sacrificing-quality/">How to Scale Your Business Without Sacrificing Quality</a></h3>
+<p>Not every business is ready to scale. And not every growth strategy works for every company. At Elixir Consulting Group, […]</p>
+<a href="/blog/how-to-scale-your-business-without-sacrificing-quality/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-05</p>
+<h3><a href="/blog/when-is-the-right-time-to-hire-your-next-employee/">When Is the Right Time to Hire Your Next Employee</a></h3>
+<p>Scaling a business is exciting until it becomes overwhelming. Growth without structure leads to burnout, quality issues, and cash flow […]</p>
+<a href="/blog/when-is-the-right-time-to-hire-your-next-employee/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-04</p>
+<h3><a href="/blog/how-to-build-infrastructure-before-your-business-demands-it/">How to Build Infrastructure Before Your Business Demands It</a></h3>
+<p>Scaling a business is exciting until it becomes overwhelming. Growth without structure leads to burnout, quality issues, and cash flow […]</p>
+<a href="/blog/how-to-build-infrastructure-before-your-business-demands-it/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-03</p>
+<h3><a href="/blog/the-scaling-mistakes-that-sink-otherwise-healthy-businesses/">The Scaling Mistakes That Sink Otherwise Healthy Businesses</a></h3>
+<p>Growth is not the same as scaling. Growth means more revenue. Scaling means more revenue without proportionally more effort, cost, […]</p>
+<a href="/blog/the-scaling-mistakes-that-sink-otherwise-healthy-businesses/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-02</p>
+<h3><a href="/blog/how-to-go-from-solopreneur-to-small-business-owner/">How to Go from Solopreneur to Small Business Owner</a></h3>
+<p>Growth is not the same as scaling. Growth means more revenue. Scaling means more revenue without proportionally more effort, cost, […]</p>
+<a href="/blog/how-to-go-from-solopreneur-to-small-business-owner/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-02-01</p>
+<h3><a href="/blog/how-to-know-if-your-business-model-can-actually-scale/">How to Know If Your Business Model Can Actually Scale</a></h3>
+<p>Growth is not the same as scaling. Growth means more revenue. Scaling means more revenue without proportionally more effort, cost, […]</p>
+<a href="/blog/how-to-know-if-your-business-model-can-actually-scale/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-31</p>
+<h3><a href="/blog/the-founders-guide-to-letting-go-and-scaling-up/">The Founder’s Guide to Letting Go and Scaling Up</a></h3>
+<p>Not every business is ready to scale. And not every growth strategy works for every company. At Elixir Consulting Group, […]</p>
+<a href="/blog/the-founders-guide-to-letting-go-and-scaling-up/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-30</p>
+<h3><a href="/blog/how-to-scale-your-service-business-beyond-a-one-person-operation/">How to Scale Your Service Business Beyond a One-Person Operation</a></h3>
+<p>Scaling a business is exciting until it becomes overwhelming. Growth without structure leads to burnout, quality issues, and cash flow […]</p>
+<a href="/blog/how-to-scale-your-service-business-beyond-a-one-person-operation/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">F</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-29</p>
+<h3><a href="/blog/five-signs-your-business-is-ready-to-scale/">Five Signs Your Business Is Ready to Scale</a></h3>
+<p>Not every business is ready to scale. And not every growth strategy works for every company. At Elixir Consulting Group, […]</p>
+<a href="/blog/five-signs-your-business-is-ready-to-scale/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-28</p>
+<h3><a href="/blog/how-to-finance-business-growth-without-taking-on-too-much-debt/">How to Finance Business Growth Without Taking on Too Much Debt</a></h3>
+<p>Not every business is ready to scale. And not every growth strategy works for every company. At Elixir Consulting Group, […]</p>
+<a href="/blog/how-to-finance-business-growth-without-taking-on-too-much-debt/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-27</p>
+<h3><a href="/blog/the-technology-stack-that-supports-scalable-growth/">The Technology Stack That Supports Scalable Growth</a></h3>
+<p>Not every business is ready to scale. And not every growth strategy works for every company. At Elixir Consulting Group, […]</p>
+<a href="/blog/the-technology-stack-that-supports-scalable-growth/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-26</p>
+<h3><a href="/blog/how-to-scale-your-customer-base-without-overwhelming-your-team/">How to Scale Your Customer Base Without Overwhelming Your Team</a></h3>
+<p>Not every business is ready to scale. And not every growth strategy works for every company. At Elixir Consulting Group, […]</p>
+<a href="/blog/how-to-scale-your-customer-base-without-overwhelming-your-team/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-25</p>
+<h3><a href="/blog/how-to-develop-a-competitive-strategy-when-you-are-the-underdog/">How to Develop a Competitive Strategy When You Are the Underdog</a></h3>
+<p>Every business owner makes strategic decisions every day, whether they realize it or not. The question is whether those decisions […]</p>
+<a href="/blog/how-to-develop-a-competitive-strategy-when-you-are-the-underdog/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-24</p>
+<h3><a href="/blog/the-strategic-thinking-framework-that-clarifies-every-business-decision/">The Strategic Thinking Framework That Clarifies Every Business Decision</a></h3>
+<p>The best business strategies are not complicated. They are clear, focused, and connected to the reality of your market, your […]</p>
+<a href="/blog/the-strategic-thinking-framework-that-clarifies-every-business-decision/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-23</p>
+<h3><a href="/blog/how-to-position-your-business-in-a-crowded-market/">How to Position Your Business in a Crowded Market</a></h3>
+<p>Strategy is not about having all the answers. It is about making clear choices that guide your business in the […]</p>
+<a href="/blog/how-to-position-your-business-in-a-crowded-market/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-22</p>
+<h3><a href="/blog/why-strategy-without-execution-is-just-a-dream/">Why Strategy Without Execution Is Just a Dream</a></h3>
+<p>Every business owner makes strategic decisions every day, whether they realize it or not. The question is whether those decisions […]</p>
+<a href="/blog/why-strategy-without-execution-is-just-a-dream/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-21</p>
+<h3><a href="/blog/the-swot-analysis-that-actually-helps-you-make-decisions/">The SWOT Analysis That Actually Helps You Make Decisions</a></h3>
+<p>Strategy is not about having all the answers. It is about making clear choices that guide your business in the […]</p>
+<a href="/blog/the-swot-analysis-that-actually-helps-you-make-decisions/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-20</p>
+<h3><a href="/blog/how-to-build-a-moat-around-your-small-business/">How to Build a Moat Around Your Small Business</a></h3>
+<p>Strategy is not about having all the answers. It is about making clear choices that guide your business in the […]</p>
+<a href="/blog/how-to-build-a-moat-around-your-small-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-19</p>
+<h3><a href="/blog/when-to-pivot-your-business-strategy-and-when-to-stay-the-course/">When to Pivot Your Business Strategy and When to Stay the Course</a></h3>
+<p>The best business strategies are not complicated. They are clear, focused, and connected to the reality of your market, your […]</p>
+<a href="/blog/when-to-pivot-your-business-strategy-and-when-to-stay-the-course/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-18</p>
+<h3><a href="/blog/how-to-align-your-team-around-a-single-strategic-priority/">How to Align Your Team Around a Single Strategic Priority</a></h3>
+<p>The best business strategies are not complicated. They are clear, focused, and connected to the reality of your market, your […]</p>
+<a href="/blog/how-to-align-your-team-around-a-single-strategic-priority/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-17</p>
+<h3><a href="/blog/the-difference-between-strategy-and-tactics-and-why-it-matters/">The Difference Between Strategy and Tactics and Why It Matters</a></h3>
+<p>Strategy is not about having all the answers. It is about making clear choices that guide your business in the […]</p>
+<a href="/blog/the-difference-between-strategy-and-tactics-and-why-it-matters/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-16</p>
+<h3><a href="/blog/how-to-conduct-a-meaningful-strategic-review-of-your-business/">How to Conduct a Meaningful Strategic Review of Your Business</a></h3>
+<p>Every business owner makes strategic decisions every day, whether they realize it or not. The question is whether those decisions […]</p>
+<a href="/blog/how-to-conduct-a-meaningful-strategic-review-of-your-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-15</p>
+<h3><a href="/blog/how-to-make-better-business-decisions-with-limited-information/">How to Make Better Business Decisions With Limited Information</a></h3>
+<p>Every business owner makes strategic decisions every day, whether they realize it or not. The question is whether those decisions […]</p>
+<a href="/blog/how-to-make-better-business-decisions-with-limited-information/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-14</p>
+<h3><a href="/blog/the-long-game-why-patience-is-a-strategic-advantage/">The Long Game: Why Patience Is a Strategic Advantage</a></h3>
+<p>Every business owner makes strategic decisions every day, whether they realize it or not. The question is whether those decisions […]</p>
+<a href="/blog/the-long-game-why-patience-is-a-strategic-advantage/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-13</p>
+<h3><a href="/blog/how-to-create-a-clear-value-proposition-for-your-business/">How to Create a Clear Value Proposition for Your Business</a></h3>
+<p>The best business strategies are not complicated. They are clear, focused, and connected to the reality of your market, your […]</p>
+<a href="/blog/how-to-create-a-clear-value-proposition-for-your-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-12</p>
+<h3><a href="/blog/the-client-onboarding-process-that-sets-the-tone-for-long-term-relationship/">The Client Onboarding Process That Sets the Tone for Long-Term Relationships</a></h3>
+<p>Keeping clients is more profitable than finding new ones. Most business owners know this, but few have a system for […]</p>
+<a href="/blog/the-client-onboarding-process-that-sets-the-tone-for-long-term-relationship/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-11</p>
+<h3><a href="/blog/how-to-increase-client-retention-by-20-percent-this-quarter/">How to Increase Client Retention by 20 Percent This Quarter</a></h3>
+<p>Keeping clients is more profitable than finding new ones. Most business owners know this, but few have a system for […]</p>
+<a href="/blog/how-to-increase-client-retention-by-20-percent-this-quarter/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">F</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-10</p>
+<h3><a href="/blog/five-warning-signs-a-client-is-about-to-leave-you/">Five Warning Signs a Client Is About to Leave You</a></h3>
+<p>Client retention is not about perfection. It is about consistency, communication, and showing clients that you are invested in their […]</p>
+<a href="/blog/five-warning-signs-a-client-is-about-to-leave-you/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-09</p>
+<h3><a href="/blog/how-to-build-a-client-feedback-loop-that-strengthens-relationships/">How to Build a Client Feedback Loop That Strengthens Relationships</a></h3>
+<p>Client retention is not about perfection. It is about consistency, communication, and showing clients that you are invested in their […]</p>
+<a href="/blog/how-to-build-a-client-feedback-loop-that-strengthens-relationships/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-08</p>
+<h3><a href="/blog/the-follow-up-system-that-turns-one-time-clients-into-repeat-customers/">The Follow-Up System That Turns One-Time Clients Into Repeat Customers</a></h3>
+<p>Losing a client is expensive. The cost of replacement includes marketing, sales time, onboarding, and the learning curve of a […]</p>
+<a href="/blog/the-follow-up-system-that-turns-one-time-clients-into-repeat-customers/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-07</p>
+<h3><a href="/blog/how-to-deliver-consistent-client-experiences-across-your-team/">How to Deliver Consistent Client Experiences Across Your Team</a></h3>
+<p>Keeping clients is more profitable than finding new ones. Most business owners know this, but few have a system for […]</p>
+<a href="/blog/how-to-deliver-consistent-client-experiences-across-your-team/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-06</p>
+<h3><a href="/blog/why-client-retention-is-more-profitable-than-client-acquisition/">Why Client Retention Is More Profitable Than Client Acquisition</a></h3>
+<p>Client retention is not about perfection. It is about consistency, communication, and showing clients that you are invested in their […]</p>
+<a href="/blog/why-client-retention-is-more-profitable-than-client-acquisition/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-05</p>
+<h3><a href="/blog/how-to-ask-clients-for-referrals-without-feeling-awkward/">How to Ask Clients for Referrals Without Feeling Awkward</a></h3>
+<p>Losing a client is expensive. The cost of replacement includes marketing, sales time, onboarding, and the learning curve of a […]</p>
+<a href="/blog/how-to-ask-clients-for-referrals-without-feeling-awkward/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-04</p>
+<h3><a href="/blog/the-quarterly-client-check-in-that-prevents-surprise-cancellations/">The Quarterly Client Check-In That Prevents Surprise Cancellations</a></h3>
+<p>Keeping clients is more profitable than finding new ones. Most business owners know this, but few have a system for […]</p>
+<a href="/blog/the-quarterly-client-check-in-that-prevents-surprise-cancellations/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-03</p>
+<h3><a href="/blog/how-to-handle-client-complaints-and-turn-them-into-loyalty/">How to Handle Client Complaints and Turn Them Into Loyalty</a></h3>
+<p>Client retention is not about perfection. It is about consistency, communication, and showing clients that you are invested in their […]</p>
+<a href="/blog/how-to-handle-client-complaints-and-turn-them-into-loyalty/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-02</p>
+<h3><a href="/blog/how-to-create-a-client-loyalty-program-for-a-service-business/">How to Create a Client Loyalty Program for a Service Business</a></h3>
+<p>Losing a client is expensive. The cost of replacement includes marketing, sales time, onboarding, and the learning curve of a […]</p>
+<a href="/blog/how-to-create-a-client-loyalty-program-for-a-service-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2026-01-01</p>
+<h3><a href="/blog/the-real-reason-clients-leave-and-what-you-can-do-about-it/">The Real Reason Clients Leave and What You Can Do About It</a></h3>
+<p>Client retention is not about perfection. It is about consistency, communication, and showing clients that you are invested in their […]</p>
+<a href="/blog/the-real-reason-clients-leave-and-what-you-can-do-about-it/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-31</p>
+<h3><a href="/blog/how-to-build-trust-with-clients-in-the-first-30-days/">How to Build Trust With Clients in the First 30 Days</a></h3>
+<p>Losing a client is expensive. The cost of replacement includes marketing, sales time, onboarding, and the learning curve of a […]</p>
+<a href="/blog/how-to-build-trust-with-clients-in-the-first-30-days/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-30</p>
+<h3><a href="/blog/how-to-analyze-your-competitors-without-obsessing-over-them/">How to Analyze Your Competitors Without Obsessing Over Them</a></h3>
+<p>Most business owners either ignore their competition entirely or obsess over every move their rivals make. Neither approach is productive. […]</p>
+<a href="/blog/how-to-analyze-your-competitors-without-obsessing-over-them/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-29</p>
+<h3><a href="/blog/the-competitive-intelligence-framework-for-small-business-owners/">The Competitive Intelligence Framework for Small Business Owners</a></h3>
+<p>Understanding your competition is important, but it should not consume you. The best competitive research gives you clarity about where […]</p>
+<a href="/blog/the-competitive-intelligence-framework-for-small-business-owners/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-28</p>
+<h3><a href="/blog/how-to-differentiate-your-business-when-competitors-copy-you/">How to Differentiate Your Business When Competitors Copy You</a></h3>
+<p>Understanding your competition is important, but it should not consume you. The best competitive research gives you clarity about where […]</p>
+<a href="/blog/how-to-differentiate-your-business-when-competitors-copy-you/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-27</p>
+<h3><a href="/blog/how-to-use-customer-feedback-to-outpace-your-competition/">How to Use Customer Feedback to Outpace Your Competition</a></h3>
+<p>Understanding your competition is important, but it should not consume you. The best competitive research gives you clarity about where […]</p>
+<a href="/blog/how-to-use-customer-feedback-to-outpace-your-competition/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-26</p>
+<h3><a href="/blog/the-market-research-basics-every-business-owner-should-know/">The Market Research Basics Every Business Owner Should Know</a></h3>
+<p>Most business owners either ignore their competition entirely or obsess over every move their rivals make. Neither approach is productive. […]</p>
+<a href="/blog/the-market-research-basics-every-business-owner-should-know/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-25</p>
+<h3><a href="/blog/how-to-identify-market-gaps-that-your-business-can-fill/">How to Identify Market Gaps That Your Business Can Fill</a></h3>
+<p>Most business owners either ignore their competition entirely or obsess over every move their rivals make. Neither approach is productive. […]</p>
+<a href="/blog/how-to-identify-market-gaps-that-your-business-can-fill/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-24</p>
+<h3><a href="/blog/why-knowing-your-ideal-client-profile-gives-you-a-competitive-edge/">Why Knowing Your Ideal Client Profile Gives You a Competitive Edge</a></h3>
+<p>Most business owners either ignore their competition entirely or obsess over every move their rivals make. Neither approach is productive. […]</p>
+<a href="/blog/why-knowing-your-ideal-client-profile-gives-you-a-competitive-edge/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-23</p>
+<h3><a href="/blog/how-to-monitor-industry-trends-without-getting-distracted/">How to Monitor Industry Trends Without Getting Distracted</a></h3>
+<p>Most business owners either ignore their competition entirely or obsess over every move their rivals make. Neither approach is productive. […]</p>
+<a href="/blog/how-to-monitor-industry-trends-without-getting-distracted/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-22</p>
+<h3><a href="/blog/the-pricing-analysis-that-helps-you-win-more-business/">The Pricing Analysis That Helps You Win More Business</a></h3>
+<p>Understanding your competition is important, but it should not consume you. The best competitive research gives you clarity about where […]</p>
+<a href="/blog/the-pricing-analysis-that-helps-you-win-more-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-21</p>
+<h3><a href="/blog/how-to-benchmark-your-business-performance-against-industry-standards/">How to Benchmark Your Business Performance Against Industry Standards</a></h3>
+<p>Understanding your competition is important, but it should not consume you. The best competitive research gives you clarity about where […]</p>
+<a href="/blog/how-to-benchmark-your-business-performance-against-industry-standards/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-20</p>
+<h3><a href="/blog/what-to-expect-when-working-with-a-business-consultant/">What to Expect When Working With a Business Consultant</a></h3>
+<p>Hiring a business consultant is a significant decision. You want someone who understands your business, respects your vision, and brings […]</p>
+<a href="/blog/what-to-expect-when-working-with-a-business-consultant/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-19</p>
+<h3><a href="/blog/the-five-questions-every-business-owner-should-ask-before-hiring-a-consulta/">The Five Questions Every Business Owner Should Ask Before Hiring a Consultant</a></h3>
+<p>Business consulting works best when it is practical, accountable, and focused on implementation. At Elixir Consulting Group, Dr. Connor Robertson […]</p>
+<a href="/blog/the-five-questions-every-business-owner-should-ask-before-hiring-a-consulta/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-18</p>
+<h3><a href="/blog/how-business-consulting-helps-you-see-what-you-cannot-see-alone/">How Business Consulting Helps You See What You Cannot See Alone</a></h3>
+<p>Hiring a business consultant is a significant decision. You want someone who understands your business, respects your vision, and brings […]</p>
+<a href="/blog/how-business-consulting-helps-you-see-what-you-cannot-see-alone/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-17</p>
+<h3><a href="/blog/the-elixir-consulting-approach-to-helping-small-businesses-grow/">The Elixir Consulting Approach to Helping Small Businesses Grow</a></h3>
+<p>Business consulting works best when it is practical, accountable, and focused on implementation. At Elixir Consulting Group, Dr. Connor Robertson […]</p>
+<a href="/blog/the-elixir-consulting-approach-to-helping-small-businesses-grow/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-16</p>
+<h3><a href="/blog/how-to-get-the-most-value-from-your-business-consulting-engagement/">How to Get the Most Value From Your Business Consulting Engagement</a></h3>
+<p>Hiring a business consultant is a significant decision. You want someone who understands your business, respects your vision, and brings […]</p>
+<a href="/blog/how-to-get-the-most-value-from-your-business-consulting-engagement/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-15</p>
+<h3><a href="/blog/why-the-best-consultants-focus-on-implementation-not-just-advice/">Why the Best Consultants Focus on Implementation Not Just Advice</a></h3>
+<p>Business consulting works best when it is practical, accountable, and focused on implementation. At Elixir Consulting Group, Dr. Connor Robertson […]</p>
+<a href="/blog/why-the-best-consultants-focus-on-implementation-not-just-advice/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-14</p>
+<h3><a href="/blog/how-dr-connor-robertson-built-elixir-consulting-group-on-practical-results/">How Dr. Connor Robertson Built Elixir Consulting Group on Practical Results</a></h3>
+<p>Hiring a business consultant is a significant decision. You want someone who understands your business, respects your vision, and brings […]</p>
+<a href="/blog/how-dr-connor-robertson-built-elixir-consulting-group-on-practical-results/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-13</p>
+<h3><a href="/blog/the-consulting-process-from-first-meeting-to-lasting-change/">The Consulting Process From First Meeting to Lasting Change</a></h3>
+<p>Business consulting works best when it is practical, accountable, and focused on implementation. At Elixir Consulting Group, Dr. Connor Robertson […]</p>
+<a href="/blog/the-consulting-process-from-first-meeting-to-lasting-change/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-12</p>
+<h3><a href="/blog/why-pittsburgh-businesses-choose-elixir-consulting-group/">Why Pittsburgh Businesses Choose Elixir Consulting Group</a></h3>
+<p>Business consulting works best when it is practical, accountable, and focused on implementation. At Elixir Consulting Group, Dr. Connor Robertson […]</p>
+<a href="/blog/why-pittsburgh-businesses-choose-elixir-consulting-group/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-11</p>
+<h3><a href="/blog/the-role-of-accountability-in-successful-business-consulting/">The Role of Accountability in Successful Business Consulting</a></h3>
+<p>Hiring a business consultant is a significant decision. You want someone who understands your business, respects your vision, and brings […]</p>
+<a href="/blog/the-role-of-accountability-in-successful-business-consulting/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-10</p>
+<h3><a href="/blog/how-to-know-if-your-business-needs-a-consultant-or-a-coach/">How to Know If Your Business Needs a Consultant or a Coach</a></h3>
+<p>Hiring a business consultant is a significant decision. You want someone who understands your business, respects your vision, and brings […]</p>
+<a href="/blog/how-to-know-if-your-business-needs-a-consultant-or-a-coach/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-09</p>
+<h3><a href="/blog/what-makes-a-great-business-consultant-according-to-dr-connor-robertson/">What Makes a Great Business Consultant According to Dr. Connor Robertson</a></h3>
+<p>Business consulting works best when it is practical, accountable, and focused on implementation. At Elixir Consulting Group, Dr. Connor Robertson […]</p>
+<a href="/blog/what-makes-a-great-business-consultant-according-to-dr-connor-robertson/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-08</p>
+<h3><a href="/blog/the-first-90-days-of-a-consulting-engagement-at-elixir-consulting-group/">The First 90 Days of a Consulting Engagement at Elixir Consulting Group</a></h3>
+<p>Business consulting works best when it is practical, accountable, and focused on implementation. At Elixir Consulting Group, Dr. Connor Robertson […]</p>
+<a href="/blog/the-first-90-days-of-a-consulting-engagement-at-elixir-consulting-group/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-07</p>
+<h3><a href="/blog/how-economic-cycles-affect-small-business-growth-strategies/">How Economic Cycles Affect Small Business Growth Strategies</a></h3>
+<p>Economic conditions affect every business decision. From hiring to pricing to inventory, the broader economic environment shapes what works and […]</p>
+<a href="/blog/how-economic-cycles-affect-small-business-growth-strategies/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-06</p>
+<h3><a href="/blog/what-rising-interest-rates-mean-for-your-business-decisions/">What Rising Interest Rates Mean for Your Business Decisions</a></h3>
+<p>Economic conditions affect every business decision. From hiring to pricing to inventory, the broader economic environment shapes what works and […]</p>
+<a href="/blog/what-rising-interest-rates-mean-for-your-business-decisions/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-05</p>
+<h3><a href="/blog/how-inflation-affects-small-business-pricing-and-profitability/">How Inflation Affects Small Business Pricing and Profitability</a></h3>
+<p>Economic conditions affect every business decision. From hiring to pricing to inventory, the broader economic environment shapes what works and […]</p>
+<a href="/blog/how-inflation-affects-small-business-pricing-and-profitability/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-04</p>
+<h3><a href="/blog/why-local-economic-conditions-matter-more-than-national-headlines/">Why Local Economic Conditions Matter More Than National Headlines</a></h3>
+<p>You do not need a degree in economics to make smart business decisions. But understanding a few key economic principles […]</p>
+<a href="/blog/why-local-economic-conditions-matter-more-than-national-headlines/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-03</p>
+<h3><a href="/blog/how-to-recession-proof-your-small-business/">How to Recession-Proof Your Small Business</a></h3>
+<p>You do not need a degree in economics to make smart business decisions. But understanding a few key economic principles […]</p>
+<a href="/blog/how-to-recession-proof-your-small-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-02</p>
+<h3><a href="/blog/the-economic-indicators-every-business-owner-should-watch/">The Economic Indicators Every Business Owner Should Watch</a></h3>
+<p>Economic conditions affect every business decision. From hiring to pricing to inventory, the broader economic environment shapes what works and […]</p>
+<a href="/blog/the-economic-indicators-every-business-owner-should-watch/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-12-01</p>
+<h3><a href="/blog/how-supply-chain-disruptions-create-opportunities-for-agile-businesses/">How Supply Chain Disruptions Create Opportunities for Agile Businesses</a></h3>
+<p>You do not need a degree in economics to make smart business decisions. But understanding a few key economic principles […]</p>
+<a href="/blog/how-supply-chain-disruptions-create-opportunities-for-agile-businesses/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">U</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-30</p>
+<h3><a href="/blog/understanding-the-gig-economy-and-what-it-means-for-your-workforce/">Understanding the Gig Economy and What It Means for Your Workforce</a></h3>
+<p>Economic conditions affect every business decision. From hiring to pricing to inventory, the broader economic environment shapes what works and […]</p>
+<a href="/blog/understanding-the-gig-economy-and-what-it-means-for-your-workforce/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-29</p>
+<h3><a href="/blog/how-to-build-a-business-that-thrives-in-any-economy/">How to Build a Business That Thrives in Any Economy</a></h3>
+<p>You do not need a degree in economics to make smart business decisions. But understanding a few key economic principles […]</p>
+<a href="/blog/how-to-build-a-business-that-thrives-in-any-economy/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-28</p>
+<h3><a href="/blog/the-cost-of-doing-nothing-during-economic-uncertainty/">The Cost of Doing Nothing During Economic Uncertainty</a></h3>
+<p>Economic conditions affect every business decision. From hiring to pricing to inventory, the broader economic environment shapes what works and […]</p>
+<a href="/blog/the-cost-of-doing-nothing-during-economic-uncertainty/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-27</p>
+<h3><a href="/blog/the-mindset-shift-that-separates-business-owners-from-entrepreneurs/">The Mindset Shift That Separates Business Owners From Entrepreneurs</a></h3>
+<p>Being an entrepreneur is one of the most rewarding and challenging paths you can take. The journey requires resilience, self-awareness, […]</p>
+<a href="/blog/the-mindset-shift-that-separates-business-owners-from-entrepreneurs/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-26</p>
+<h3><a href="/blog/how-to-overcome-the-fear-of-starting-a-business/">How to Overcome the Fear of Starting a Business</a></h3>
+<p>Being an entrepreneur is one of the most rewarding and challenging paths you can take. The journey requires resilience, self-awareness, […]</p>
+<a href="/blog/how-to-overcome-the-fear-of-starting-a-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-25</p>
+<h3><a href="/blog/the-first-year-of-business-ownership-what-nobody-tells-you/">The First Year of Business Ownership What Nobody Tells You</a></h3>
+<p>Being an entrepreneur is one of the most rewarding and challenging paths you can take. The journey requires resilience, self-awareness, […]</p>
+<a href="/blog/the-first-year-of-business-ownership-what-nobody-tells-you/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-24</p>
+<h3><a href="/blog/how-to-stay-motivated-when-business-growth-feels-slow/">How to Stay Motivated When Business Growth Feels Slow</a></h3>
+<p>Entrepreneurship is not just about starting a business. It is about building something that creates value, solves problems, and grows […]</p>
+<a href="/blog/how-to-stay-motivated-when-business-growth-feels-slow/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-23</p>
+<h3><a href="/blog/the-entrepreneurial-skills-that-matter-more-than-a-business-degree/">The Entrepreneurial Skills That Matter More Than a Business Degree</a></h3>
+<p>Being an entrepreneur is one of the most rewarding and challenging paths you can take. The journey requires resilience, self-awareness, […]</p>
+<a href="/blog/the-entrepreneurial-skills-that-matter-more-than-a-business-degree/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-22</p>
+<h3><a href="/blog/how-to-balance-work-and-life-when-you-run-your-own-business/">How to Balance Work and Life When You Run Your Own Business</a></h3>
+<p>Entrepreneurship is not just about starting a business. It is about building something that creates value, solves problems, and grows […]</p>
+<a href="/blog/how-to-balance-work-and-life-when-you-run-your-own-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-21</p>
+<h3><a href="/blog/why-every-entrepreneur-needs-a-mentor/">Why Every Entrepreneur Needs a Mentor</a></h3>
+<p>Entrepreneurship is not just about starting a business. It is about building something that creates value, solves problems, and grows […]</p>
+<a href="/blog/why-every-entrepreneur-needs-a-mentor/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-20</p>
+<h3><a href="/blog/how-to-build-a-business-around-your-strengths-not-just-your-passion/">How to Build a Business Around Your Strengths Not Just Your Passion</a></h3>
+<p>Entrepreneurship is not just about starting a business. It is about building something that creates value, solves problems, and grows […]</p>
+<a href="/blog/how-to-build-a-business-around-your-strengths-not-just-your-passion/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-19</p>
+<h3><a href="/blog/the-decision-making-habits-of-successful-entrepreneurs/">The Decision-Making Habits of Successful Entrepreneurs</a></h3>
+<p>Being an entrepreneur is one of the most rewarding and challenging paths you can take. The journey requires resilience, self-awareness, […]</p>
+<a href="/blog/the-decision-making-habits-of-successful-entrepreneurs/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-18</p>
+<h3><a href="/blog/how-to-validate-a-business-idea-before-you-invest-real-money/">How to Validate a Business Idea Before You Invest Real Money</a></h3>
+<p>Being an entrepreneur is one of the most rewarding and challenging paths you can take. The journey requires resilience, self-awareness, […]</p>
+<a href="/blog/how-to-validate-a-business-idea-before-you-invest-real-money/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-17</p>
+<h3><a href="/blog/why-entrepreneurs-who-build-systems-outperform-those-who-hustle/">Why Entrepreneurs Who Build Systems Outperform Those Who Hustle</a></h3>
+<p>Entrepreneurship is not just about starting a business. It is about building something that creates value, solves problems, and grows […]</p>
+<a href="/blog/why-entrepreneurs-who-build-systems-outperform-those-who-hustle/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-16</p>
+<h3><a href="/blog/the-loneliness-of-entrepreneurship-and-how-to-overcome-it/">The Loneliness of Entrepreneurship and How to Overcome It</a></h3>
+<p>Being an entrepreneur is one of the most rewarding and challenging paths you can take. The journey requires resilience, self-awareness, […]</p>
+<a href="/blog/the-loneliness-of-entrepreneurship-and-how-to-overcome-it/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-15</p>
+<h3><a href="/blog/how-to-develop-the-resilience-every-entrepreneur-needs/">How to Develop the Resilience Every Entrepreneur Needs</a></h3>
+<p>Entrepreneurship is not just about starting a business. It is about building something that creates value, solves problems, and grows […]</p>
+<a href="/blog/how-to-develop-the-resilience-every-entrepreneur-needs/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-14</p>
+<h3><a href="/blog/the-financial-reports-every-small-business-owner-should-read-monthly/">The Financial Reports Every Small Business Owner Should Read Monthly</a></h3>
+<p>Your financial statements tell a story about your business. The question is whether you can read that story and use […]</p>
+<a href="/blog/the-financial-reports-every-small-business-owner-should-read-monthly/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-13</p>
+<h3><a href="/blog/how-to-manage-cash-flow-so-you-never-run-out-of-money/">How to Manage Cash Flow So You Never Run Out of Money</a></h3>
+<p>Your financial statements tell a story about your business. The question is whether you can read that story and use […]</p>
+<a href="/blog/how-to-manage-cash-flow-so-you-never-run-out-of-money/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-12</p>
+<h3><a href="/blog/the-profit-first-model-and-why-it-works-for-small-businesses/">The Profit First Model and Why It Works for Small Businesses</a></h3>
+<p>Your financial statements tell a story about your business. The question is whether you can read that story and use […]</p>
+<a href="/blog/the-profit-first-model-and-why-it-works-for-small-businesses/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-11</p>
+<h3><a href="/blog/how-to-price-your-services-for-profitability-not-just-revenue/">How to Price Your Services for Profitability Not Just Revenue</a></h3>
+<p>Your financial statements tell a story about your business. The question is whether you can read that story and use […]</p>
+<a href="/blog/how-to-price-your-services-for-profitability-not-just-revenue/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">U</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-10</p>
+<h3><a href="/blog/understanding-your-break-even-point-and-why-it-matters/">Understanding Your Break-Even Point and Why It Matters</a></h3>
+<p>Financial literacy is one of the most important skills a business owner can develop. Understanding your numbers helps you make […]</p>
+<a href="/blog/understanding-your-break-even-point-and-why-it-matters/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-09</p>
+<h3><a href="/blog/how-to-build-a-financial-cushion-for-your-business/">How to Build a Financial Cushion for Your Business</a></h3>
+<p>Your financial statements tell a story about your business. The question is whether you can read that story and use […]</p>
+<a href="/blog/how-to-build-a-financial-cushion-for-your-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-08</p>
+<h3><a href="/blog/the-common-financial-mistakes-small-business-owners-make/">The Common Financial Mistakes Small Business Owners Make</a></h3>
+<p>Your financial statements tell a story about your business. The question is whether you can read that story and use […]</p>
+<a href="/blog/the-common-financial-mistakes-small-business-owners-make/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-07</p>
+<h3><a href="/blog/how-to-read-a-profit-and-loss-statement-like-a-business-consultant/">How to Read a Profit and Loss Statement Like a Business Consultant</a></h3>
+<p>Your financial statements tell a story about your business. The question is whether you can read that story and use […]</p>
+<a href="/blog/how-to-read-a-profit-and-loss-statement-like-a-business-consultant/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-06</p>
+<h3><a href="/blog/why-your-business-needs-a-monthly-financial-review-meeting/">Why Your Business Needs a Monthly Financial Review Meeting</a></h3>
+<p>Your financial statements tell a story about your business. The question is whether you can read that story and use […]</p>
+<a href="/blog/why-your-business-needs-a-monthly-financial-review-meeting/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-05</p>
+<h3><a href="/blog/how-to-create-a-budget-that-supports-business-growth/">How to Create a Budget That Supports Business Growth</a></h3>
+<p>Your financial statements tell a story about your business. The question is whether you can read that story and use […]</p>
+<a href="/blog/how-to-create-a-budget-that-supports-business-growth/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">U</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-04</p>
+<h3><a href="/blog/understanding-the-difference-between-revenue-profit-and-cash-flow/">Understanding the Difference Between Revenue Profit and Cash Flow</a></h3>
+<p>Financial literacy is one of the most important skills a business owner can develop. Understanding your numbers helps you make […]</p>
+<a href="/blog/understanding-the-difference-between-revenue-profit-and-cash-flow/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-03</p>
+<h3><a href="/blog/how-to-negotiate-better-terms-with-your-vendors-and-suppliers/">How to Negotiate Better Terms With Your Vendors and Suppliers</a></h3>
+<p>Financial literacy is one of the most important skills a business owner can develop. Understanding your numbers helps you make […]</p>
+<a href="/blog/how-to-negotiate-better-terms-with-your-vendors-and-suppliers/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-02</p>
+<h3><a href="/blog/tax-planning-strategies-every-small-business-owner-should-know/">Tax Planning Strategies Every Small Business Owner Should Know</a></h3>
+<p>Financial literacy is one of the most important skills a business owner can develop. Understanding your numbers helps you make […]</p>
+<a href="/blog/tax-planning-strategies-every-small-business-owner-should-know/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">I</div>
+<div class="blog-content">
+<p class="blog-date">2025-11-01</p>
+<h3><a href="/blog/is-franchising-right-for-you-a-guide-for-aspiring-business-owners/">Is Franchising Right for You: A Guide for Aspiring Business Owners</a></h3>
+<p>Owning a franchise is different from starting a business from scratch. The model is predefined, the brand is established, and […]</p>
+<a href="/blog/is-franchising-right-for-you-a-guide-for-aspiring-business-owners/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-31</p>
+<h3><a href="/blog/how-to-evaluate-a-franchise-opportunity-before-signing-the-agreement/">How to Evaluate a Franchise Opportunity Before Signing the Agreement</a></h3>
+<p>Owning a franchise is different from starting a business from scratch. The model is predefined, the brand is established, and […]</p>
+<a href="/blog/how-to-evaluate-a-franchise-opportunity-before-signing-the-agreement/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-30</p>
+<h3><a href="/blog/the-pros-and-cons-of-buying-a-franchise-vs-starting-from-scratch/">The Pros and Cons of Buying a Franchise vs Starting From Scratch</a></h3>
+<p>Owning a franchise is different from starting a business from scratch. The model is predefined, the brand is established, and […]</p>
+<a href="/blog/the-pros-and-cons-of-buying-a-franchise-vs-starting-from-scratch/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-29</p>
+<h3><a href="/blog/how-to-manage-a-franchise-location-like-a-business-owner/">How to Manage a Franchise Location Like a Business Owner</a></h3>
+<p>Owning a franchise is different from starting a business from scratch. The model is predefined, the brand is established, and […]</p>
+<a href="/blog/how-to-manage-a-franchise-location-like-a-business-owner/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-28</p>
+<h3><a href="/blog/how-to-scale-from-one-franchise-location-to-multiple-units/">How to Scale From One Franchise Location to Multiple Units</a></h3>
+<p>Franchising offers a unique path to business ownership. You get a proven system, brand recognition, and operational support. But it […]</p>
+<a href="/blog/how-to-scale-from-one-franchise-location-to-multiple-units/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-27</p>
+<h3><a href="/blog/the-financial-realities-of-franchise-ownership-nobody-talks-about/">The Financial Realities of Franchise Ownership Nobody Talks About</a></h3>
+<p>Owning a franchise is different from starting a business from scratch. The model is predefined, the brand is established, and […]</p>
+<a href="/blog/the-financial-realities-of-franchise-ownership-nobody-talks-about/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-26</p>
+<h3><a href="/blog/how-to-build-a-team-for-your-franchise-that-runs-without-you/">How to Build a Team for Your Franchise That Runs Without You</a></h3>
+<p>Franchising offers a unique path to business ownership. You get a proven system, brand recognition, and operational support. But it […]</p>
+<a href="/blog/how-to-build-a-team-for-your-franchise-that-runs-without-you/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-25</p>
+<h3><a href="/blog/the-franchise-business-plan-that-secures-funding/">The Franchise Business Plan That Secures Funding</a></h3>
+<p>Franchising offers a unique path to business ownership. You get a proven system, brand recognition, and operational support. But it […]</p>
+<a href="/blog/the-franchise-business-plan-that-secures-funding/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-24</p>
+<h3><a href="/blog/how-to-choose-the-right-franchise-for-your-market/">How to Choose the Right Franchise for Your Market</a></h3>
+<p>Franchising offers a unique path to business ownership. You get a proven system, brand recognition, and operational support. But it […]</p>
+<a href="/blog/how-to-choose-the-right-franchise-for-your-market/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-23</p>
+<h3><a href="/blog/what-to-look-for-in-a-franchise-disclosure-document/">What to Look for in a Franchise Disclosure Document</a></h3>
+<p>Franchising offers a unique path to business ownership. You get a proven system, brand recognition, and operational support. But it […]</p>
+<a href="/blog/what-to-look-for-in-a-franchise-disclosure-document/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-22</p>
+<h3><a href="/blog/the-small-business-funding-options-you-might-not-know-about/">The Small Business Funding Options You Might Not Know About</a></h3>
+<p>Funding your business growth does not always mean taking on debt. There are multiple paths to capital, and the best […]</p>
+<a href="/blog/the-small-business-funding-options-you-might-not-know-about/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-21</p>
+<h3><a href="/blog/how-to-prepare-your-business-for-a-bank-loan-application/">How to Prepare Your Business for a Bank Loan Application</a></h3>
+<p>Access to capital can make or break a growing business. Understanding your funding options, from traditional bank loans to alternative […]</p>
+<a href="/blog/how-to-prepare-your-business-for-a-bank-loan-application/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">S</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-20</p>
+<h3><a href="/blog/sba-loans-explained-what-they-are-and-how-to-qualify/">SBA Loans Explained: What They Are and How to Qualify</a></h3>
+<p>Access to capital can make or break a growing business. Understanding your funding options, from traditional bank loans to alternative […]</p>
+<a href="/blog/sba-loans-explained-what-they-are-and-how-to-qualify/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-19</p>
+<h3><a href="/blog/how-to-fund-business-growth-through-revenue-instead-of-debt/">How to Fund Business Growth Through Revenue Instead of Debt</a></h3>
+<p>Access to capital can make or break a growing business. Understanding your funding options, from traditional bank loans to alternative […]</p>
+<a href="/blog/how-to-fund-business-growth-through-revenue-instead-of-debt/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-18</p>
+<h3><a href="/blog/the-role-of-business-credit-in-accessing-growth-capital/">The Role of Business Credit in Accessing Growth Capital</a></h3>
+<p>Funding your business growth does not always mean taking on debt. There are multiple paths to capital, and the best […]</p>
+<a href="/blog/the-role-of-business-credit-in-accessing-growth-capital/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-17</p>
+<h3><a href="/blog/how-small-businesses-can-attract-investors-in-a-competitive-market/">How Small Businesses Can Attract Investors in a Competitive Market</a></h3>
+<p>Funding your business growth does not always mean taking on debt. There are multiple paths to capital, and the best […]</p>
+<a href="/blog/how-small-businesses-can-attract-investors-in-a-competitive-market/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
 </div>
 </div>
 <div class="card blog-card">
 <div class="blog-img">E</div>
 <div class="blog-content">
-<p class="blog-date">2026-03-22</p>
-<h3><a href="/blog/why-most-business-growth-plans-fail-and-how-to-fix/">Why Most Business Growth Plans Fail (And How to Fix Yours)</a></h3>
-<p>Most growth plans look great on paper but fail in execution. Here are the most common reasons growth plans stall and a practical framework for buildin...</p>
-<a href="/blog/why-most-business-growth-plans-fail-and-how-to-fix/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+<p class="blog-date">2025-10-16</p>
+<h3><a href="/blog/equipment-financing-vs-leasing-what-is-best-for-your-business/">Equipment Financing vs Leasing: What Is Best for Your Business</a></h3>
+<p>Funding your business growth does not always mean taking on debt. There are multiple paths to capital, and the best […]</p>
+<a href="/blog/equipment-financing-vs-leasing-what-is-best-for-your-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
 </div>
 </div>
 <div class="card blog-card">
-<div class="blog-img">E</div>
+<div class="blog-img">H</div>
 <div class="blog-content">
-<p class="blog-date">2026-03-15</p>
-<h3><a href="/blog/how-to-build-business-that-runs-without-you/">How to Build a Business That Runs Without You</a></h3>
-<p>The ultimate test of a well-built business is whether it can operate successfully without the owner's daily involvement. Here is how to get there....</p>
-<a href="/blog/how-to-build-business-that-runs-without-you/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+<p class="blog-date">2025-10-15</p>
+<h3><a href="/blog/how-to-bootstrap-your-business-when-outside-funding-is-not-available/">How to Bootstrap Your Business When Outside Funding Is Not Available</a></h3>
+<p>Funding your business growth does not always mean taking on debt. There are multiple paths to capital, and the best […]</p>
+<a href="/blog/how-to-bootstrap-your-business-when-outside-funding-is-not-available/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-14</p>
+<h3><a href="/blog/the-grant-opportunities-available-to-small-business-owners/">The Grant Opportunities Available to Small Business Owners</a></h3>
+<p>Funding your business growth does not always mean taking on debt. There are multiple paths to capital, and the best […]</p>
+<a href="/blog/the-grant-opportunities-available-to-small-business-owners/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-13</p>
+<h3><a href="/blog/how-to-create-financial-projections-that-impress-lenders/">How to Create Financial Projections That Impress Lenders</a></h3>
+<p>Funding your business growth does not always mean taking on debt. There are multiple paths to capital, and the best […]</p>
+<a href="/blog/how-to-create-financial-projections-that-impress-lenders/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-12</p>
+<h3><a href="/blog/how-to-foster-innovation-in-a-small-business-without-a-big-budget/">How to Foster Innovation in a Small Business Without a Big Budget</a></h3>
+<p>Innovation does not require a Silicon Valley budget. Small businesses innovate every day by solving problems, improving processes, and adopting […]</p>
+<a href="/blog/how-to-foster-innovation-in-a-small-business-without-a-big-budget/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-11</p>
+<h3><a href="/blog/the-innovation-habits-of-high-growth-small-businesses/">The Innovation Habits of High-Growth Small Businesses</a></h3>
+<p>The most innovative businesses are not always the ones with the biggest R&amp;D departments. Often, it is the small business […]</p>
+<a href="/blog/the-innovation-habits-of-high-growth-small-businesses/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-10</p>
+<h3><a href="/blog/how-to-use-technology-to-automate-and-improve-your-business/">How to Use Technology to Automate and Improve Your Business</a></h3>
+<p>Innovation does not require a Silicon Valley budget. Small businesses innovate every day by solving problems, improving processes, and adopting […]</p>
+<a href="/blog/how-to-use-technology-to-automate-and-improve-your-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-09</p>
+<h3><a href="/blog/why-small-businesses-that-embrace-ai-will-outperform-those-that-do-not/">Why Small Businesses That Embrace AI Will Outperform Those That Do Not</a></h3>
+<p>The most innovative businesses are not always the ones with the biggest R&amp;D departments. Often, it is the small business […]</p>
+<a href="/blog/why-small-businesses-that-embrace-ai-will-outperform-those-that-do-not/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-08</p>
+<h3><a href="/blog/how-to-test-new-ideas-in-your-business-without-risking-everything/">How to Test New Ideas in Your Business Without Risking Everything</a></h3>
+<p>The most innovative businesses are not always the ones with the biggest R&amp;D departments. Often, it is the small business […]</p>
+<a href="/blog/how-to-test-new-ideas-in-your-business-without-risking-everything/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-07</p>
+<h3><a href="/blog/the-digital-tools-that-save-small-businesses-10-hours-a-week/">The Digital Tools That Save Small Businesses 10 Hours a Week</a></h3>
+<p>Innovation does not require a Silicon Valley budget. Small businesses innovate every day by solving problems, improving processes, and adopting […]</p>
+<a href="/blog/the-digital-tools-that-save-small-businesses-10-hours-a-week/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-06</p>
+<h3><a href="/blog/how-to-encourage-creative-problem-solving-on-your-team/">How to Encourage Creative Problem Solving on Your Team</a></h3>
+<p>The most innovative businesses are not always the ones with the biggest R&amp;D departments. Often, it is the small business […]</p>
+<a href="/blog/how-to-encourage-creative-problem-solving-on-your-team/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-05</p>
+<h3><a href="/blog/how-to-adopt-new-technology-without-disrupting-your-operations/">How to Adopt New Technology Without Disrupting Your Operations</a></h3>
+<p>Innovation does not require a Silicon Valley budget. Small businesses innovate every day by solving problems, improving processes, and adopting […]</p>
+<a href="/blog/how-to-adopt-new-technology-without-disrupting-your-operations/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-04</p>
+<h3><a href="/blog/the-innovation-mindset-that-turns-problems-into-profitable-solutions/">The Innovation Mindset That Turns Problems Into Profitable Solutions</a></h3>
+<p>Innovation does not require a Silicon Valley budget. Small businesses innovate every day by solving problems, improving processes, and adopting […]</p>
+<a href="/blog/the-innovation-mindset-that-turns-problems-into-profitable-solutions/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-03</p>
+<h3><a href="/blog/how-to-build-a-culture-of-continuous-improvement-in-your-business/">How to Build a Culture of Continuous Improvement in Your Business</a></h3>
+<p>The most innovative businesses are not always the ones with the biggest R&amp;D departments. Often, it is the small business […]</p>
+<a href="/blog/how-to-build-a-culture-of-continuous-improvement-in-your-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-02</p>
+<h3><a href="/blog/how-to-expand-your-business-beyond-local-markets/">How to Expand Your Business Beyond Local Markets</a></h3>
+<p>The global economy creates opportunities for businesses of every size. Whether you are serving international clients remotely or exploring export […]</p>
+<a href="/blog/how-to-expand-your-business-beyond-local-markets/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-10-01</p>
+<h3><a href="/blog/the-basics-of-exporting-for-small-business-owners/">The Basics of Exporting for Small Business Owners</a></h3>
+<p>You do not need to be a multinational corporation to benefit from international thinking. Even local businesses can learn from […]</p>
+<a href="/blog/the-basics-of-exporting-for-small-business-owners/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-30</p>
+<h3><a href="/blog/how-to-serve-international-clients-from-a-local-office/">How to Serve International Clients From a Local Office</a></h3>
+<p>The global economy creates opportunities for businesses of every size. Whether you are serving international clients remotely or exploring export […]</p>
+<a href="/blog/how-to-serve-international-clients-from-a-local-office/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">U</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-29</p>
+<h3><a href="/blog/understanding-cross-cultural-communication-in-business/">Understanding Cross-Cultural Communication in Business</a></h3>
+<p>You do not need to be a multinational corporation to benefit from international thinking. Even local businesses can learn from […]</p>
+<a href="/blog/understanding-cross-cultural-communication-in-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-28</p>
+<h3><a href="/blog/how-to-build-a-global-network-while-running-a-local-business/">How to Build a Global Network While Running a Local Business</a></h3>
+<p>You do not need to be a multinational corporation to benefit from international thinking. Even local businesses can learn from […]</p>
+<a href="/blog/how-to-build-a-global-network-while-running-a-local-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-27</p>
+<h3><a href="/blog/the-opportunities-in-remote-service-delivery-for-small-firms/">The Opportunities in Remote Service Delivery for Small Firms</a></h3>
+<p>The global economy creates opportunities for businesses of every size. Whether you are serving international clients remotely or exploring export […]</p>
+<a href="/blog/the-opportunities-in-remote-service-delivery-for-small-firms/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-26</p>
+<h3><a href="/blog/how-global-trends-affect-local-business-strategy/">How Global Trends Affect Local Business Strategy</a></h3>
+<p>The global economy creates opportunities for businesses of every size. Whether you are serving international clients remotely or exploring export […]</p>
+<a href="/blog/how-global-trends-affect-local-business-strategy/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-25</p>
+<h3><a href="/blog/how-to-price-your-services-for-different-markets/">How to Price Your Services for Different Markets</a></h3>
+<p>The global economy creates opportunities for businesses of every size. Whether you are serving international clients remotely or exploring export […]</p>
+<a href="/blog/how-to-price-your-services-for-different-markets/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-24</p>
+<h3><a href="/blog/the-leadership-style-that-gets-the-best-results-from-small-teams/">The Leadership Style That Gets the Best Results From Small Teams</a></h3>
+<p>Leadership is not a title. It is a practice. The best leaders are constantly growing, learning, and adapting their approach […]</p>
+<a href="/blog/the-leadership-style-that-gets-the-best-results-from-small-teams/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-23</p>
+<h3><a href="/blog/how-to-lead-a-team-when-you-are-also-doing-the-work/">How to Lead a Team When You Are Also Doing the Work</a></h3>
+<p>Leadership is not a title. It is a practice. The best leaders are constantly growing, learning, and adapting their approach […]</p>
+<a href="/blog/how-to-lead-a-team-when-you-are-also-doing-the-work/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-22</p>
+<h3><a href="/blog/the-meeting-cadence-that-keeps-your-team-aligned-and-accountable/">The Meeting Cadence That Keeps Your Team Aligned and Accountable</a></h3>
+<p>As a business owner, your leadership sets the tone for everything in your organization. How you communicate, make decisions, and […]</p>
+<a href="/blog/the-meeting-cadence-that-keeps-your-team-aligned-and-accountable/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-21</p>
+<h3><a href="/blog/how-to-give-feedback-that-actually-changes-behavior/">How to Give Feedback That Actually Changes Behavior</a></h3>
+<p>Leadership is not a title. It is a practice. The best leaders are constantly growing, learning, and adapting their approach […]</p>
+<a href="/blog/how-to-give-feedback-that-actually-changes-behavior/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-20</p>
+<h3><a href="/blog/the-coaching-conversation-framework-for-business-leaders/">The Coaching Conversation Framework for Business Leaders</a></h3>
+<p>Leadership is not a title. It is a practice. The best leaders are constantly growing, learning, and adapting their approach […]</p>
+<a href="/blog/the-coaching-conversation-framework-for-business-leaders/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-19</p>
+<h3><a href="/blog/how-to-build-emotional-intelligence-as-a-business-leader/">How to Build Emotional Intelligence as a Business Leader</a></h3>
+<p>Leadership is not a title. It is a practice. The best leaders are constantly growing, learning, and adapting their approach […]</p>
+<a href="/blog/how-to-build-emotional-intelligence-as-a-business-leader/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-18</p>
+<h3><a href="/blog/the-delegation-framework-that-frees-up-your-time-as-a-leader/">The Delegation Framework That Frees Up Your Time as a Leader</a></h3>
+<p>As a business owner, your leadership sets the tone for everything in your organization. How you communicate, make decisions, and […]</p>
+<a href="/blog/the-delegation-framework-that-frees-up-your-time-as-a-leader/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-17</p>
+<h3><a href="/blog/how-to-develop-the-next-generation-of-leaders-in-your-business/">How to Develop the Next Generation of Leaders in Your Business</a></h3>
+<p>As a business owner, your leadership sets the tone for everything in your organization. How you communicate, make decisions, and […]</p>
+<a href="/blog/how-to-develop-the-next-generation-of-leaders-in-your-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-16</p>
+<h3><a href="/blog/why-leaders-who-listen-outperform-leaders-who-talk/">Why Leaders Who Listen Outperform Leaders Who Talk</a></h3>
+<p>As a business owner, your leadership sets the tone for everything in your organization. How you communicate, make decisions, and […]</p>
+<a href="/blog/why-leaders-who-listen-outperform-leaders-who-talk/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-15</p>
+<h3><a href="/blog/how-to-make-tough-decisions-without-alienating-your-team/">How to Make Tough Decisions Without Alienating Your Team</a></h3>
+<p>Leadership is not a title. It is a practice. The best leaders are constantly growing, learning, and adapting their approach […]</p>
+<a href="/blog/how-to-make-tough-decisions-without-alienating-your-team/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-14</p>
+<h3><a href="/blog/the-one-thing-great-leaders-do-every-single-day/">The One Thing Great Leaders Do Every Single Day</a></h3>
+<p>As a business owner, your leadership sets the tone for everything in your organization. How you communicate, make decisions, and […]</p>
+<a href="/blog/the-one-thing-great-leaders-do-every-single-day/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-13</p>
+<h3><a href="/blog/how-to-lead-through-change-without-losing-team-morale/">How to Lead Through Change Without Losing Team Morale</a></h3>
+<p>As a business owner, your leadership sets the tone for everything in your organization. How you communicate, make decisions, and […]</p>
+<a href="/blog/how-to-lead-through-change-without-losing-team-morale/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-12</p>
+<h3><a href="/blog/why-vulnerability-is-a-leadership-strength-not-a-weakness/">Why Vulnerability Is a Leadership Strength Not a Weakness</a></h3>
+<p>As a business owner, your leadership sets the tone for everything in your organization. How you communicate, make decisions, and […]</p>
+<a href="/blog/why-vulnerability-is-a-leadership-strength-not-a-weakness/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-11</p>
+<h3><a href="/blog/how-to-map-your-business-processes-from-start-to-finish/">How to Map Your Business Processes From Start to Finish</a></h3>
+<p>Process improvement does not mean starting from scratch. It means looking at how work actually gets done and finding ways […]</p>
+<a href="/blog/how-to-map-your-business-processes-from-start-to-finish/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-10</p>
+<h3><a href="/blog/the-lean-thinking-principles-that-apply-to-every-small-business/">The Lean Thinking Principles That Apply to Every Small Business</a></h3>
+<p>Every business has processes, whether they are documented or not. The difference between a smooth operation and a chaotic one […]</p>
+<a href="/blog/the-lean-thinking-principles-that-apply-to-every-small-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-09</p>
+<h3><a href="/blog/how-to-fix-a-broken-process-without-starting-over/">How to Fix a Broken Process Without Starting Over</a></h3>
+<p>Every business has processes, whether they are documented or not. The difference between a smooth operation and a chaotic one […]</p>
+<a href="/blog/how-to-fix-a-broken-process-without-starting-over/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-08</p>
+<h3><a href="/blog/the-process-audit-that-reveals-where-your-business-loses-time-and-money/">The Process Audit That Reveals Where Your Business Loses Time and Money</a></h3>
+<p>Process improvement does not mean starting from scratch. It means looking at how work actually gets done and finding ways […]</p>
+<a href="/blog/the-process-audit-that-reveals-where-your-business-loses-time-and-money/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-07</p>
+<h3><a href="/blog/how-to-standardize-your-workflows-for-consistency-and-speed/">How to Standardize Your Workflows for Consistency and Speed</a></h3>
+<p>Every business has processes, whether they are documented or not. The difference between a smooth operation and a chaotic one […]</p>
+<a href="/blog/how-to-standardize-your-workflows-for-consistency-and-speed/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-06</p>
+<h3><a href="/blog/why-simple-processes-beat-complex-systems-every-time/">Why Simple Processes Beat Complex Systems Every Time</a></h3>
+<p>Every business has processes, whether they are documented or not. The difference between a smooth operation and a chaotic one […]</p>
+<a href="/blog/why-simple-processes-beat-complex-systems-every-time/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-05</p>
+<h3><a href="/blog/how-to-get-your-team-to-follow-new-processes-without-pushback/">How to Get Your Team to Follow New Processes Without Pushback</a></h3>
+<p>Every business has processes, whether they are documented or not. The difference between a smooth operation and a chaotic one […]</p>
+<a href="/blog/how-to-get-your-team-to-follow-new-processes-without-pushback/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-04</p>
+<h3><a href="/blog/the-continuous-improvement-cycle-that-keeps-your-business-evolving/">The Continuous Improvement Cycle That Keeps Your Business Evolving</a></h3>
+<p>Process improvement does not mean starting from scratch. It means looking at how work actually gets done and finding ways […]</p>
+<a href="/blog/the-continuous-improvement-cycle-that-keeps-your-business-evolving/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-03</p>
+<h3><a href="/blog/how-to-automate-repetitive-tasks-and-focus-on-growth/">How to Automate Repetitive Tasks and Focus on Growth</a></h3>
+<p>Every business has processes, whether they are documented or not. The difference between a smooth operation and a chaotic one […]</p>
+<a href="/blog/how-to-automate-repetitive-tasks-and-focus-on-growth/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-02</p>
+<h3><a href="/blog/how-to-document-a-process-so-anyone-on-your-team-can-follow-it/">How to Document a Process So Anyone on Your Team Can Follow It</a></h3>
+<p>Every business has processes, whether they are documented or not. The difference between a smooth operation and a chaotic one […]</p>
+<a href="/blog/how-to-document-a-process-so-anyone-on-your-team-can-follow-it/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-09-01</p>
+<h3><a href="/blog/the-root-cause-analysis-method-that-solves-business-problems-permanently/">The Root Cause Analysis Method That Solves Business Problems Permanently</a></h3>
+<p>Every business has processes, whether they are documented or not. The difference between a smooth operation and a chaotic one […]</p>
+<a href="/blog/the-root-cause-analysis-method-that-solves-business-problems-permanently/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-31</p>
+<h3><a href="/blog/how-to-reduce-errors-and-rework-in-your-business-operations/">How to Reduce Errors and Rework in Your Business Operations</a></h3>
+<p>Every business has processes, whether they are documented or not. The difference between a smooth operation and a chaotic one […]</p>
+<a href="/blog/how-to-reduce-errors-and-rework-in-your-business-operations/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-30</p>
+<h3><a href="/blog/how-to-increase-revenue-without-increasing-your-workload/">How to Increase Revenue Without Increasing Your Workload</a></h3>
+<p>Revenue growth is the lifeblood of any business. But growing revenue the right way, sustainably, profitably, and without burning out […]</p>
+<a href="/blog/how-to-increase-revenue-without-increasing-your-workload/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-29</p>
+<h3><a href="/blog/the-pricing-strategy-that-increased-our-clients-revenue-by-30-percent/">The Pricing Strategy That Increased Our Clients’ Revenue by 30 Percent</a></h3>
+<p>More revenue does not always mean more profit. Understanding how to grow revenue while maintaining or improving profitability is one […]</p>
+<a href="/blog/the-pricing-strategy-that-increased-our-clients-revenue-by-30-percent/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-28</p>
+<h3><a href="/blog/how-to-build-multiple-revenue-streams-for-your-business/">How to Build Multiple Revenue Streams for Your Business</a></h3>
+<p>More revenue does not always mean more profit. Understanding how to grow revenue while maintaining or improving profitability is one […]</p>
+<a href="/blog/how-to-build-multiple-revenue-streams-for-your-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-27</p>
+<h3><a href="/blog/why-your-revenue-is-growing-but-your-profit-is-not/">Why Your Revenue Is Growing But Your Profit Is Not</a></h3>
+<p>Revenue growth is the lifeblood of any business. But growing revenue the right way, sustainably, profitably, and without burning out […]</p>
+<a href="/blog/why-your-revenue-is-growing-but-your-profit-is-not/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-26</p>
+<h3><a href="/blog/how-to-create-a-revenue-forecast-that-is-actually-useful/">How to Create a Revenue Forecast That Is Actually Useful</a></h3>
+<p>More revenue does not always mean more profit. Understanding how to grow revenue while maintaining or improving profitability is one […]</p>
+<a href="/blog/how-to-create-a-revenue-forecast-that-is-actually-useful/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-25</p>
+<h3><a href="/blog/the-upsell-and-cross-sell-strategies-that-boost-average-client-value/">The Upsell and Cross-Sell Strategies That Boost Average Client Value</a></h3>
+<p>Revenue growth is the lifeblood of any business. But growing revenue the right way, sustainably, profitably, and without burning out […]</p>
+<a href="/blog/the-upsell-and-cross-sell-strategies-that-boost-average-client-value/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-24</p>
+<h3><a href="/blog/how-to-raise-your-prices-without-losing-your-best-clients/">How to Raise Your Prices Without Losing Your Best Clients</a></h3>
+<p>More revenue does not always mean more profit. Understanding how to grow revenue while maintaining or improving profitability is one […]</p>
+<a href="/blog/how-to-raise-your-prices-without-losing-your-best-clients/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-23</p>
+<h3><a href="/blog/the-revenue-metrics-that-tell-you-if-your-business-is-healthy/">The Revenue Metrics That Tell You If Your Business Is Healthy</a></h3>
+<p>More revenue does not always mean more profit. Understanding how to grow revenue while maintaining or improving profitability is one […]</p>
+<a href="/blog/the-revenue-metrics-that-tell-you-if-your-business-is-healthy/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-22</p>
+<h3><a href="/blog/how-to-recover-lost-revenue-by-reactivating-past-clients/">How to Recover Lost Revenue by Reactivating Past Clients</a></h3>
+<p>Revenue growth is the lifeblood of any business. But growing revenue the right way, sustainably, profitably, and without burning out […]</p>
+<a href="/blog/how-to-recover-lost-revenue-by-reactivating-past-clients/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-21</p>
+<h3><a href="/blog/why-discounting-hurts-your-business-more-than-you-think/">Why Discounting Hurts Your Business More Than You Think</a></h3>
+<p>Revenue growth is the lifeblood of any business. But growing revenue the right way, sustainably, profitably, and without burning out […]</p>
+<a href="/blog/why-discounting-hurts-your-business-more-than-you-think/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-20</p>
+<h3><a href="/blog/how-to-set-revenue-goals-that-motivate-your-entire-team/">How to Set Revenue Goals That Motivate Your Entire Team</a></h3>
+<p>More revenue does not always mean more profit. Understanding how to grow revenue while maintaining or improving profitability is one […]</p>
+<a href="/blog/how-to-set-revenue-goals-that-motivate-your-entire-team/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-19</p>
+<h3><a href="/blog/the-revenue-growth-playbook-for-service-based-businesses/">The Revenue Growth Playbook for Service-Based Businesses</a></h3>
+<p>More revenue does not always mean more profit. Understanding how to grow revenue while maintaining or improving profitability is one […]</p>
+<a href="/blog/the-revenue-growth-playbook-for-service-based-businesses/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-18</p>
+<h3><a href="/blog/how-to-build-a-sales-process-that-converts-leads-into-clients/">How to Build a Sales Process That Converts Leads Into Clients</a></h3>
+<p>Sales is the engine of your business. Without a system for generating leads, nurturing prospects, and closing deals, growth is […]</p>
+<a href="/blog/how-to-build-a-sales-process-that-converts-leads-into-clients/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-17</p>
+<h3><a href="/blog/the-crm-setup-that-makes-sales-follow-up-automatic/">The CRM Setup That Makes Sales Follow-Up Automatic</a></h3>
+<p>Most small business owners did not start their company because they love selling. But sales is essential, and having a […]</p>
+<a href="/blog/the-crm-setup-that-makes-sales-follow-up-automatic/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-16</p>
+<h3><a href="/blog/how-to-create-a-sales-pipeline-that-gives-you-predictable-revenue/">How to Create a Sales Pipeline That Gives You Predictable Revenue</a></h3>
+<p>Most small business owners did not start their company because they love selling. But sales is essential, and having a […]</p>
+<a href="/blog/how-to-create-a-sales-pipeline-that-gives-you-predictable-revenue/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-15</p>
+<h3><a href="/blog/why-most-small-businesses-struggle-with-sales-and-how-to-fix-it/">Why Most Small Businesses Struggle With Sales and How to Fix It</a></h3>
+<p>Most small business owners did not start their company because they love selling. But sales is essential, and having a […]</p>
+<a href="/blog/why-most-small-businesses-struggle-with-sales-and-how-to-fix-it/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-14</p>
+<h3><a href="/blog/how-to-write-proposals-that-win-more-business/">How to Write Proposals That Win More Business</a></h3>
+<p>Sales is the engine of your business. Without a system for generating leads, nurturing prospects, and closing deals, growth is […]</p>
+<a href="/blog/how-to-write-proposals-that-win-more-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-13</p>
+<h3><a href="/blog/the-sales-script-framework-that-feels-natural-not-pushy/">The Sales Script Framework That Feels Natural Not Pushy</a></h3>
+<p>Most small business owners did not start their company because they love selling. But sales is essential, and having a […]</p>
+<a href="/blog/the-sales-script-framework-that-feels-natural-not-pushy/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-12</p>
+<h3><a href="/blog/how-to-train-your-team-to-sell-without-being-salespeople/">How to Train Your Team to Sell Without Being Salespeople</a></h3>
+<p>Most small business owners did not start their company because they love selling. But sales is essential, and having a […]</p>
+<a href="/blog/how-to-train-your-team-to-sell-without-being-salespeople/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-11</p>
+<h3><a href="/blog/how-to-shorten-your-sales-cycle-and-close-deals-faster/">How to Shorten Your Sales Cycle and Close Deals Faster</a></h3>
+<p>Sales is the engine of your business. Without a system for generating leads, nurturing prospects, and closing deals, growth is […]</p>
+<a href="/blog/how-to-shorten-your-sales-cycle-and-close-deals-faster/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-10</p>
+<h3><a href="/blog/the-lead-generation-strategy-that-works-for-service-businesses/">The Lead Generation Strategy That Works for Service Businesses</a></h3>
+<p>Sales is the engine of your business. Without a system for generating leads, nurturing prospects, and closing deals, growth is […]</p>
+<a href="/blog/the-lead-generation-strategy-that-works-for-service-businesses/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-09</p>
+<h3><a href="/blog/how-to-handle-sales-objections-with-confidence/">How to Handle Sales Objections With Confidence</a></h3>
+<p>Sales is the engine of your business. Without a system for generating leads, nurturing prospects, and closing deals, growth is […]</p>
+<a href="/blog/how-to-handle-sales-objections-with-confidence/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-08</p>
+<h3><a href="/blog/how-to-build-a-referral-engine-that-generates-consistent-new-business/">How to Build a Referral Engine That Generates Consistent New Business</a></h3>
+<p>Sales is the engine of your business. Without a system for generating leads, nurturing prospects, and closing deals, growth is […]</p>
+<a href="/blog/how-to-build-a-referral-engine-that-generates-consistent-new-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-07</p>
+<h3><a href="/blog/the-sales-dashboard-that-shows-you-what-is-working-and-what-is-not/">The Sales Dashboard That Shows You What Is Working and What Is Not</a></h3>
+<p>Most small business owners did not start their company because they love selling. But sales is essential, and having a […]</p>
+<a href="/blog/the-sales-dashboard-that-shows-you-what-is-working-and-what-is-not/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-06</p>
+<h3><a href="/blog/how-to-follow-up-with-prospects-without-being-annoying/">How to Follow Up With Prospects Without Being Annoying</a></h3>
+<p>Sales is the engine of your business. Without a system for generating leads, nurturing prospects, and closing deals, growth is […]</p>
+<a href="/blog/how-to-follow-up-with-prospects-without-being-annoying/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-05</p>
+<h3><a href="/blog/the-growth-strategy-that-works-for-businesses-under-10-employees/">The Growth Strategy That Works for Businesses Under 10 Employees</a></h3>
+<p>Growing a small business is a unique challenge. You have limited resources, a small team, and competition from every direction. […]</p>
+<a href="/blog/the-growth-strategy-that-works-for-businesses-under-10-employees/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-04</p>
+<h3><a href="/blog/how-to-grow-your-business-in-a-small-market-like-pittsburgh/">How to Grow Your Business in a Small Market Like Pittsburgh</a></h3>
+<p>Small business growth does not happen by accident. It requires intentional strategy, disciplined execution, and the willingness to evolve. At […]</p>
+<a href="/blog/how-to-grow-your-business-in-a-small-market-like-pittsburgh/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-03</p>
+<h3><a href="/blog/the-small-business-owners-guide-to-working-on-the-business-not-in-it/">The Small Business Owner’s Guide to Working On the Business Not In It</a></h3>
+<p>Small business growth does not happen by accident. It requires intentional strategy, disciplined execution, and the willingness to evolve. At […]</p>
+<a href="/blog/the-small-business-owners-guide-to-working-on-the-business-not-in-it/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-02</p>
+<h3><a href="/blog/how-to-build-a-brand-that-attracts-your-ideal-clients/">How to Build a Brand That Attracts Your Ideal Clients</a></h3>
+<p>Growing a small business is a unique challenge. You have limited resources, a small team, and competition from every direction. […]</p>
+<a href="/blog/how-to-build-a-brand-that-attracts-your-ideal-clients/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-08-01</p>
+<h3><a href="/blog/the-marketing-basics-that-every-small-business-owner-must-master/">The Marketing Basics That Every Small Business Owner Must Master</a></h3>
+<p>Growing a small business is a unique challenge. You have limited resources, a small team, and competition from every direction. […]</p>
+<a href="/blog/the-marketing-basics-that-every-small-business-owner-must-master/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-31</p>
+<h3><a href="/blog/how-to-build-a-business-that-runs-without-you-being-there-every-day/">How to Build a Business That Runs Without You Being There Every Day</a></h3>
+<p>Small business growth does not happen by accident. It requires intentional strategy, disciplined execution, and the willingness to evolve. At […]</p>
+<a href="/blog/how-to-build-a-business-that-runs-without-you-being-there-every-day/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-30</p>
+<h3><a href="/blog/the-networking-strategy-that-actually-produces-business-results/">The Networking Strategy That Actually Produces Business Results</a></h3>
+<p>Small business growth does not happen by accident. It requires intentional strategy, disciplined execution, and the willingness to evolve. At […]</p>
+<a href="/blog/the-networking-strategy-that-actually-produces-business-results/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-29</p>
+<h3><a href="/blog/how-to-compete-with-bigger-companies-as-a-small-business/">How to Compete With Bigger Companies as a Small Business</a></h3>
+<p>Growing a small business is a unique challenge. You have limited resources, a small team, and competition from every direction. […]</p>
+<a href="/blog/how-to-compete-with-bigger-companies-as-a-small-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-28</p>
+<h3><a href="/blog/the-customer-experience-advantage-small-businesses-have-over-corporations/">The Customer Experience Advantage Small Businesses Have Over Corporations</a></h3>
+<p>Growing a small business is a unique challenge. You have limited resources, a small team, and competition from every direction. […]</p>
+<a href="/blog/the-customer-experience-advantage-small-businesses-have-over-corporations/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-27</p>
+<h3><a href="/blog/how-to-build-a-sustainable-growth-rate-for-your-business/">How to Build a Sustainable Growth Rate for Your Business</a></h3>
+<p>Growing a small business is a unique challenge. You have limited resources, a small team, and competition from every direction. […]</p>
+<a href="/blog/how-to-build-a-sustainable-growth-rate-for-your-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-26</p>
+<h3><a href="/blog/the-growth-mindset-every-small-business-owner-needs-to-develop/">The Growth Mindset Every Small Business Owner Needs to Develop</a></h3>
+<p>Small business growth does not happen by accident. It requires intentional strategy, disciplined execution, and the willingness to evolve. At […]</p>
+<a href="/blog/the-growth-mindset-every-small-business-owner-needs-to-develop/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-25</p>
+<h3><a href="/blog/how-to-use-data-to-make-smarter-decisions-in-your-small-business/">How to Use Data to Make Smarter Decisions in Your Small Business</a></h3>
+<p>Growing a small business is a unique challenge. You have limited resources, a small team, and competition from every direction. […]</p>
+<a href="/blog/how-to-use-data-to-make-smarter-decisions-in-your-small-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-24</p>
+<h3><a href="/blog/why-small-business-growth-starts-with-the-owners-personal-development/">Why Small Business Growth Starts With the Owner’s Personal Development</a></h3>
+<p>Small business growth does not happen by accident. It requires intentional strategy, disciplined execution, and the willingness to evolve. At […]</p>
+<a href="/blog/why-small-business-growth-starts-with-the-owners-personal-development/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-23</p>
+<h3><a href="/blog/how-to-hire-the-right-people-for-your-small-business/">How to Hire the Right People for Your Small Business</a></h3>
+<p>The quality of your team determines the quality of your business. Hiring the right people, developing their skills, and creating […]</p>
+<a href="/blog/how-to-hire-the-right-people-for-your-small-business/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-22</p>
+<h3><a href="/blog/the-onboarding-process-that-gets-new-employees-productive-fast/">The Onboarding Process That Gets New Employees Productive Fast</a></h3>
+<p>Your team is your greatest asset and your greatest challenge. Managing people effectively requires clear expectations, consistent communication, and a […]</p>
+<a href="/blog/the-onboarding-process-that-gets-new-employees-productive-fast/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-21</p>
+<h3><a href="/blog/how-to-build-a-positive-team-culture-that-retains-top-talent/">How to Build a Positive Team Culture That Retains Top Talent</a></h3>
+<p>The quality of your team determines the quality of your business. Hiring the right people, developing their skills, and creating […]</p>
+<a href="/blog/how-to-build-a-positive-team-culture-that-retains-top-talent/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-20</p>
+<h3><a href="/blog/the-performance-review-system-that-actually-improves-performance/">The Performance Review System That Actually Improves Performance</a></h3>
+<p>Your team is your greatest asset and your greatest challenge. Managing people effectively requires clear expectations, consistent communication, and a […]</p>
+<a href="/blog/the-performance-review-system-that-actually-improves-performance/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-19</p>
+<h3><a href="/blog/how-to-manage-remote-and-hybrid-teams-effectively/">How to Manage Remote and Hybrid Teams Effectively</a></h3>
+<p>The quality of your team determines the quality of your business. Hiring the right people, developing their skills, and creating […]</p>
+<a href="/blog/how-to-manage-remote-and-hybrid-teams-effectively/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-18</p>
+<h3><a href="/blog/how-to-handle-conflict-on-your-team-without-avoiding-it/">How to Handle Conflict on Your Team Without Avoiding It</a></h3>
+<p>The quality of your team determines the quality of your business. Hiring the right people, developing their skills, and creating […]</p>
+<a href="/blog/how-to-handle-conflict-on-your-team-without-avoiding-it/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-17</p>
+<h3><a href="/blog/the-team-structure-that-supports-business-growth/">The Team Structure That Supports Business Growth</a></h3>
+<p>The quality of your team determines the quality of your business. Hiring the right people, developing their skills, and creating […]</p>
+<a href="/blog/the-team-structure-that-supports-business-growth/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-16</p>
+<h3><a href="/blog/how-to-build-accountability-into-your-team-without-micromanaging/">How to Build Accountability Into Your Team Without Micromanaging</a></h3>
+<p>Your team is your greatest asset and your greatest challenge. Managing people effectively requires clear expectations, consistent communication, and a […]</p>
+<a href="/blog/how-to-build-accountability-into-your-team-without-micromanaging/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-15</p>
+<h3><a href="/blog/the-weekly-team-meeting-agenda-that-actually-drives-results/">The Weekly Team Meeting Agenda That Actually Drives Results</a></h3>
+<p>The quality of your team determines the quality of your business. Hiring the right people, developing their skills, and creating […]</p>
+<a href="/blog/the-weekly-team-meeting-agenda-that-actually-drives-results/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-14</p>
+<h3><a href="/blog/how-to-identify-when-an-employee-is-in-the-wrong-role/">How to Identify When an Employee Is in the Wrong Role</a></h3>
+<p>Your team is your greatest asset and your greatest challenge. Managing people effectively requires clear expectations, consistent communication, and a […]</p>
+<a href="/blog/how-to-identify-when-an-employee-is-in-the-wrong-role/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-13</p>
+<h3><a href="/blog/the-compensation-strategy-that-attracts-and-retains-great-employees/">The Compensation Strategy That Attracts and Retains Great Employees</a></h3>
+<p>Your team is your greatest asset and your greatest challenge. Managing people effectively requires clear expectations, consistent communication, and a […]</p>
+<a href="/blog/the-compensation-strategy-that-attracts-and-retains-great-employees/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-12</p>
+<h3><a href="/blog/how-to-create-a-training-program-for-your-small-business-team/">How to Create a Training Program for Your Small Business Team</a></h3>
+<p>The quality of your team determines the quality of your business. Hiring the right people, developing their skills, and creating […]</p>
+<a href="/blog/how-to-create-a-training-program-for-your-small-business-team/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-11</p>
+<h3><a href="/blog/why-investing-in-your-team-is-the-best-investment-you-can-make/">Why Investing in Your Team Is the Best Investment You Can Make</a></h3>
+<p>The quality of your team determines the quality of your business. Hiring the right people, developing their skills, and creating […]</p>
+<a href="/blog/why-investing-in-your-team-is-the-best-investment-you-can-make/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-10</p>
+<h3><a href="/blog/how-to-set-up-key-performance-indicators-for-every-department/">How to Set Up Key Performance Indicators for Every Department</a></h3>
+<p>When your operations run well, your business feels different. Decisions happen faster, mistakes drop, and your team stops asking you […]</p>
+<a href="/blog/how-to-set-up-key-performance-indicators-for-every-department/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-09</p>
+<h3><a href="/blog/the-weekly-scorecard-that-tells-you-if-your-business-is-on-track/">The Weekly Scorecard That Tells You If Your Business Is on Track</a></h3>
+<p>Strategy is not about having all the answers. It is about making clear choices that guide your business in the […]</p>
+<a href="/blog/the-weekly-scorecard-that-tells-you-if-your-business-is-on-track/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-08</p>
+<h3><a href="/blog/how-to-create-a-project-management-system-for-your-small-team/">How to Create a Project Management System for Your Small Team</a></h3>
+<p>Process improvement does not mean starting from scratch. It means looking at how work actually gets done and finding ways […]</p>
+<a href="/blog/how-to-create-a-project-management-system-for-your-small-team/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-07</p>
+<h3><a href="/blog/the-communication-framework-that-prevents-misunderstandings-at-work/">The Communication Framework That Prevents Misunderstandings at Work</a></h3>
+<p>Your team is your greatest asset and your greatest challenge. Managing people effectively requires clear expectations, consistent communication, and a […]</p>
+<a href="/blog/the-communication-framework-that-prevents-misunderstandings-at-work/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-06</p>
+<h3><a href="/blog/how-to-prepare-your-business-for-sale-even-if-you-are-not-selling-yet/">How to Prepare Your Business for Sale Even If You Are Not Selling Yet</a></h3>
+<p>Every business owner makes strategic decisions every day, whether they realize it or not. The question is whether those decisions […]</p>
+<a href="/blog/how-to-prepare-your-business-for-sale-even-if-you-are-not-selling-yet/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-05</p>
+<h3><a href="/blog/the-time-management-habits-of-highly-effective-business-owners/">The Time Management Habits of Highly Effective Business Owners</a></h3>
+<p>Entrepreneurship is not just about starting a business. It is about building something that creates value, solves problems, and grows […]</p>
+<a href="/blog/the-time-management-habits-of-highly-effective-business-owners/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-04</p>
+<h3><a href="/blog/how-to-build-a-referral-network-that-keeps-your-pipeline-full/">How to Build a Referral Network That Keeps Your Pipeline Full</a></h3>
+<p>Sales is the engine of your business. Without a system for generating leads, nurturing prospects, and closing deals, growth is […]</p>
+<a href="/blog/how-to-build-a-referral-network-that-keeps-your-pipeline-full/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-03</p>
+<h3><a href="/blog/why-every-business-needs-an-annual-strategic-retreat/">Why Every Business Needs an Annual Strategic Retreat</a></h3>
+<p>Strategy is not about having all the answers. It is about making clear choices that guide your business in the […]</p>
+<a href="/blog/why-every-business-needs-an-annual-strategic-retreat/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-02</p>
+<h3><a href="/blog/how-to-build-a-consulting-ready-business-that-attracts-expert-help/">How to Build a Consulting-Ready Business That Attracts Expert Help</a></h3>
+<p>Hiring a business consultant is a significant decision. You want someone who understands your business, respects your vision, and brings […]</p>
+<a href="/blog/how-to-build-a-consulting-ready-business-that-attracts-expert-help/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2025-07-01</p>
+<h3><a href="/blog/the-business-growth-framework-used-by-elixir-consulting-group/">The Business Growth Framework Used by Elixir Consulting Group</a></h3>
+<p>Business consulting works best when it is practical, accountable, and focused on implementation. At Elixir Consulting Group, Dr. Connor Robertson […]</p>
+<a href="/blog/the-business-growth-framework-used-by-elixir-consulting-group/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">A</div>
+<div class="blog-content">
+<p class="blog-date">2019-12-09</p>
+<h3><a href="/blog/a-digital-prescription-for-the-pharma-industry-2/">A digital prescription for the pharma industry</a></h3>
+<p>Supported by a robust sales force and tight cost controls, Pharm Ltd. experienced sustained double-digit growth over a number of years, only to find that the...</p>
+<a href="/blog/a-digital-prescription-for-the-pharma-industry-2/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">W</div>
+<div class="blog-content">
+<p class="blog-date">2016-01-22</p>
+<h3><a href="/blog/within-the-construction-industry-as-their-overdraft/">Within the construction industry as their overdraft</a></h3>
+<p>Many businesses, large and small, have a huge source of great ideas that can help them improve, innovate, and grow, and yet so many of these companies never ...</p>
+<a href="/blog/within-the-construction-industry-as-their-overdraft/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">S</div>
+<div class="blog-content">
+<p class="blog-date">2016-01-22</p>
+<h3><a href="/blog/strategic-and-commercial-approach-with-technical-understanding/">Strategic and commercial approach with issues</a></h3>
+<p>Says Morgan Fraud, the author of The Thinking Corporation, “Given that we are all capable of contributing new ideas, the question becomes how do you successf...</p>
+<a href="/blog/strategic-and-commercial-approach-with-technical-understanding/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">S</div>
+<div class="blog-content">
+<p class="blog-date">2016-01-22</p>
+<h3><a href="/blog/seven-weeks-working-pro-bono-with-a-national-charity/">Seven weeks working ‘pro bono’ with a charity</a></h3>
+<p>Growth through innovation/creativity. Rather than be constrained by ideas for new products, services and new markets coming from just a few people, a Thinkin...</p>
+<a href="/blog/seven-weeks-working-pro-bono-with-a-national-charity/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">R</div>
+<div class="blog-content">
+<p class="blog-date">2016-01-22</p>
+<h3><a href="/blog/retail-banks-wake-up-to-digital-lending/">Retail banks wake up to digital lending this year</a></h3>
+<p>The effort vastly improved the company’s planning and execution functions, created and implemented a new stock policy that accounted for specific SKUs and ke...</p>
+<a href="/blog/retail-banks-wake-up-to-digital-lending/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">A</div>
+<div class="blog-content">
+<p class="blog-date">2016-01-22</p>
+<h3><a href="/blog/a-digital-prescription-for-the-pharma-industry/">A digital prescription for the pharma industry</a></h3>
+<p>Supported by a robust sales force and tight cost controls, Pharm Ltd. experienced sustained double-digit growth over a number of years, only to find that the...</p>
+<a href="/blog/a-digital-prescription-for-the-pharma-industry/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">H</div>
+<div class="blog-content">
+<p class="blog-date">2015-12-25</p>
+<h3><a href="/blog/harvest-great-ideas-from-your-companys-best-assets/">Harvest great ideas from your company’s best assets</a></h3>
+<p>In particular, the initial state of the company’s sales and operations planning capabilities limited their ability to account for demand variability or raw m...</p>
+<a href="/blog/harvest-great-ideas-from-your-companys-best-assets/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">T</div>
+<div class="blog-content">
+<p class="blog-date">2015-12-25</p>
+<h3><a href="/blog/three-social-media-hacks-for-the-busy-entrepreneur/">Three Social Media Hacks for the Busy Entrepreneur</a></h3>
+<p>The teams focused their efforts on a few of the highest-value S&amp;OP levers in order to review the current planning process, identify gaps in the planning infr...</p>
+<a href="/blog/three-social-media-hacks-for-the-busy-entrepreneur/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">S</div>
+<div class="blog-content">
+<p class="blog-date">2015-12-25</p>
+<h3><a href="/blog/stick-with-your-concept-but-do-your-homework/">Stick with Your Concept but Do Your Homework</a></h3>
+<p>With hundreds of medications in the market, Pharm Ltd. needed a proper method to predict and manage their inventory. Using a mean absolute percentage analysi...</p>
+<a href="/blog/stick-with-your-concept-but-do-your-homework/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+</div>
+</div>
+<div class="card blog-card">
+<div class="blog-img">N</div>
+<div class="blog-content">
+<p class="blog-date">2015-12-14</p>
+<h3><a href="/blog/narrow-your-focus-to-prevent-overanalysis/">Narrow Your Focus to Prevent Overanalysis</a></h3>
+<p>What is this highly valuable asset? Its own people. Says Morgan Fraud, the author of The Thinking Corporation, “Given that we are all capable of contributing...</p>
+<a href="/blog/narrow-your-focus-to-prevent-overanalysis/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
 </div>
 </div>
 

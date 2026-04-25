@@ -32,5 +32,1522 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/dr-connor-robertson/",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/resources/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/operations-consulting/",
+      "destination": "/services/operations/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sales-consulting/",
+      "destination": "/services/sales-strategy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/business-strategy/",
+      "destination": "/services/business-strategy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-consulting/",
+      "destination": "/services/ai-consulting/",
+      "statusCode": 301
+    },
+    {
+      "source": "/leadership-consulting/",
+      "destination": "/services/leadership/",
+      "statusCode": 301
+    },
+    {
+      "source": "/leadership-development/",
+      "destination": "/services/leadership/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sales-strategy/",
+      "destination": "/services/sales-strategy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/:slug/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/:slug/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/:slug/",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/page/:num/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/feed/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/comments/feed/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/elixir-consulting-group-our-approach-to-business-transformation/",
+      "destination": "/blog/elixir-consulting-group-our-approach-to-business-transformation/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-measure-business-performance-beyond-revenue/",
+      "destination": "/blog/how-to-measure-business-performance-beyond-revenue/",
+      "statusCode": 301
+    },
+    {
+      "source": "/digital-transformation-for-traditional-businesses-a-practical-guide/",
+      "destination": "/blog/digital-transformation-for-traditional-businesses-a-practical-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/5-signs-your-business-needs-a-strategy-overhaul/",
+      "destination": "/blog/5-signs-your-business-needs-a-strategy-overhaul/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-hiring-a-business-consultant-pays-for-itself-in-90-days/",
+      "destination": "/blog/why-hiring-a-business-consultant-pays-for-itself-in-90-days/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-small-business-guide-to-operational-efficiency-in-2026/",
+      "destination": "/blog/the-small-business-guide-to-operational-efficiency-in-2026/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-ai-consulting-is-helping-pittsburgh-businesses-grow-3x-faster/",
+      "destination": "/blog/how-ai-consulting-is-helping-pittsburgh-businesses-grow-3x-faster/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-business-owner-guide-to-effective-delegation/",
+      "destination": "/blog/the-business-owner-guide-to-effective-delegation/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-a-team-that-executes-without-micromanagement/",
+      "destination": "/blog/how-to-build-a-team-that-executes-without-micromanagement/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-improve-cash-flow-management-for-small-businesses/",
+      "destination": "/blog/how-to-improve-cash-flow-management-for-small-businesses/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-importance-of-role-clarity-in-a-growing-business/",
+      "destination": "/blog/the-importance-of-role-clarity-in-a-growing-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-set-quarterly-goals-that-your-team-can-actually-achieve/",
+      "destination": "/blog/how-to-set-quarterly-goals-that-your-team-can-actually-achieve/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-business-owners-in-pittsburgh-choose-elixir-consulting-group/",
+      "destination": "/blog/why-business-owners-in-pittsburgh-choose-elixir-consulting-group/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-create-a-repeatable-client-delivery-process/",
+      "destination": "/blog/how-to-create-a-repeatable-client-delivery-process/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-difference-between-strategy-and-execution-in-business/",
+      "destination": "/blog/the-difference-between-strategy-and-execution-in-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-reduce-owner-dependency-in-your-business/",
+      "destination": "/blog/how-to-reduce-owner-dependency-in-your-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/what-is-business-consulting-and-how-can-it-help-your-company/",
+      "destination": "/blog/what-is-business-consulting-and-how-can-it-help-your-company/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-run-a-weekly-leadership-meeting-that-actually-drives-results/",
+      "destination": "/blog/how-to-run-a-weekly-leadership-meeting-that-actually-drives-results/",
+      "statusCode": 301
+    },
+    {
+      "source": "/client-onboarding-best-practices-for-service-based-businesses/",
+      "destination": "/blog/client-onboarding-best-practices-for-service-based-businesses/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-dr-connor-robertson-helps-business-owners-build-scalable-operations/",
+      "destination": "/blog/how-dr-connor-robertson-helps-business-owners-build-scalable-operations/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-role-of-standard-operating-procedures-in-business-growth/",
+      "destination": "/blog/the-role-of-standard-operating-procedures-in-business-growth/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-a-sales-pipeline-that-runs-without-you/",
+      "destination": "/blog/how-to-build-a-sales-pipeline-that-runs-without-you/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-every-business-owner-needs-a-weekly-scorecard/",
+      "destination": "/blog/why-every-business-owner-needs-a-weekly-scorecard/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-five-signs-your-business-has-outgrown-its-current-systems/",
+      "destination": "/blog/the-five-signs-your-business-has-outgrown-its-current-systems/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-an-operating-system-for-your-small-business/",
+      "destination": "/blog/how-to-build-an-operating-system-for-your-small-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-document-your-core-business-processes-without-overcomplicating-them/",
+      "destination": "/blog/how-to-document-your-core-business-processes-without-overcomplicating-them/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-daily-operating-rhythm-every-small-business-needs/",
+      "destination": "/blog/the-daily-operating-rhythm-every-small-business-needs/",
+      "statusCode": 301
+    },
+    {
+      "source": "/five-operational-bottlenecks-that-slow-down-growing-companies/",
+      "destination": "/blog/five-operational-bottlenecks-that-slow-down-growing-companies/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-create-an-operations-manual-that-your-team-will-actually-follow/",
+      "destination": "/blog/how-to-create-an-operations-manual-that-your-team-will-actually-follow/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-difference-between-being-busy-and-being-productive-in-your-business/",
+      "destination": "/blog/the-difference-between-being-busy-and-being-productive-in-your-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-repeatable-workflows-that-scale-with-your-team/",
+      "destination": "/blog/how-to-build-repeatable-workflows-that-scale-with-your-team/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-your-business-needs-a-weekly-operations-review/",
+      "destination": "/blog/why-your-business-needs-a-weekly-operations-review/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-identify-and-eliminate-waste-in-your-business-operations/",
+      "destination": "/blog/how-to-identify-and-eliminate-waste-in-your-business-operations/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-role-of-checklists-in-running-a-consistent-business/",
+      "destination": "/blog/the-role-of-checklists-in-running-a-consistent-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-transition-from-founder-led-operations-to-team-led-systems/",
+      "destination": "/blog/how-to-transition-from-founder-led-operations-to-team-led-systems/",
+      "statusCode": 301
+    },
+    {
+      "source": "/building-an-operational-dashboard-that-tells-you-what-matters/",
+      "destination": "/blog/building-an-operational-dashboard-that-tells-you-what-matters/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-handle-operational-emergencies-without-losing-your-mind/",
+      "destination": "/blog/how-to-handle-operational-emergencies-without-losing-your-mind/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-hidden-cost-of-not-having-standard-operating-procedures/",
+      "destination": "/blog/the-hidden-cost-of-not-having-standard-operating-procedures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-streamline-your-business-operations-in-30-days/",
+      "destination": "/blog/how-to-streamline-your-business-operations-in-30-days/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-operational-consistency-is-the-secret-to-customer-satisfaction/",
+      "destination": "/blog/why-operational-consistency-is-the-secret-to-customer-satisfaction/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-write-a-business-plan-that-actually-gets-used/",
+      "destination": "/blog/how-to-write-a-business-plan-that-actually-gets-used/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-one-page-business-plan-that-replaces-your-50-page-document/",
+      "destination": "/blog/the-one-page-business-plan-that-replaces-your-50-page-document/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-set-business-goals-that-your-team-can-actually-hit/",
+      "destination": "/blog/how-to-set-business-goals-that-your-team-can-actually-hit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-most-business-plans-fail-and-how-to-fix-yours/",
+      "destination": "/blog/why-most-business-plans-fail-and-how-to-fix-yours/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-create-a-90-day-action-plan-for-your-business/",
+      "destination": "/blog/how-to-create-a-90-day-action-plan-for-your-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-annual-planning-process-that-top-performing-businesses-use/",
+      "destination": "/blog/the-annual-planning-process-that-top-performing-businesses-use/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-align-your-business-plan-with-your-cash-flow-reality/",
+      "destination": "/blog/how-to-align-your-business-plan-with-your-cash-flow-reality/",
+      "statusCode": 301
+    },
+    {
+      "source": "/quarterly-business-reviews-that-drive-real-accountability/",
+      "destination": "/blog/quarterly-business-reviews-that-drive-real-accountability/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-update-your-business-plan-when-the-market-changes/",
+      "destination": "/blog/how-to-update-your-business-plan-when-the-market-changes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-business-plan-checklist-every-startup-founder-needs/",
+      "destination": "/blog/the-business-plan-checklist-every-startup-founder-needs/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-a-strategic-roadmap-for-the-next-12-months/",
+      "destination": "/blog/how-to-build-a-strategic-roadmap-for-the-next-12-months/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-your-business-plan-needs-fewer-goals-and-more-focus/",
+      "destination": "/blog/why-your-business-plan-needs-fewer-goals-and-more-focus/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-plan-for-business-growth-without-overextending-your-resources/",
+      "destination": "/blog/how-to-plan-for-business-growth-without-overextending-your-resources/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-three-stages-of-business-growth-every-owner-must-understand/",
+      "destination": "/blog/the-three-stages-of-business-growth-every-owner-must-understand/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-simple-systems-that-your-team-will-actually-use/",
+      "destination": "/blog/how-to-build-simple-systems-that-your-team-will-actually-use/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-operating-cadence-that-makes-business-growth-predictable/",
+      "destination": "/blog/the-operating-cadence-that-makes-business-growth-predictable/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-most-growing-businesses-feel-chaotic-and-how-to-fix-it/",
+      "destination": "/blog/why-most-growing-businesses-feel-chaotic-and-how-to-fix-it/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-scale-your-business-without-sacrificing-quality/",
+      "destination": "/blog/how-to-scale-your-business-without-sacrificing-quality/",
+      "statusCode": 301
+    },
+    {
+      "source": "/when-is-the-right-time-to-hire-your-next-employee/",
+      "destination": "/blog/when-is-the-right-time-to-hire-your-next-employee/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-infrastructure-before-your-business-demands-it/",
+      "destination": "/blog/how-to-build-infrastructure-before-your-business-demands-it/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-scaling-mistakes-that-sink-otherwise-healthy-businesses/",
+      "destination": "/blog/the-scaling-mistakes-that-sink-otherwise-healthy-businesses/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-go-from-solopreneur-to-small-business-owner/",
+      "destination": "/blog/how-to-go-from-solopreneur-to-small-business-owner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-know-if-your-business-model-can-actually-scale/",
+      "destination": "/blog/how-to-know-if-your-business-model-can-actually-scale/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-founders-guide-to-letting-go-and-scaling-up/",
+      "destination": "/blog/the-founders-guide-to-letting-go-and-scaling-up/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-scale-your-service-business-beyond-a-one-person-operation/",
+      "destination": "/blog/how-to-scale-your-service-business-beyond-a-one-person-operation/",
+      "statusCode": 301
+    },
+    {
+      "source": "/five-signs-your-business-is-ready-to-scale/",
+      "destination": "/blog/five-signs-your-business-is-ready-to-scale/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-finance-business-growth-without-taking-on-too-much-debt/",
+      "destination": "/blog/how-to-finance-business-growth-without-taking-on-too-much-debt/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-technology-stack-that-supports-scalable-growth/",
+      "destination": "/blog/the-technology-stack-that-supports-scalable-growth/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-scale-your-customer-base-without-overwhelming-your-team/",
+      "destination": "/blog/how-to-scale-your-customer-base-without-overwhelming-your-team/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-develop-a-competitive-strategy-when-you-are-the-underdog/",
+      "destination": "/blog/how-to-develop-a-competitive-strategy-when-you-are-the-underdog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-strategic-thinking-framework-that-clarifies-every-business-decision/",
+      "destination": "/blog/the-strategic-thinking-framework-that-clarifies-every-business-decision/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-position-your-business-in-a-crowded-market/",
+      "destination": "/blog/how-to-position-your-business-in-a-crowded-market/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-strategy-without-execution-is-just-a-dream/",
+      "destination": "/blog/why-strategy-without-execution-is-just-a-dream/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-swot-analysis-that-actually-helps-you-make-decisions/",
+      "destination": "/blog/the-swot-analysis-that-actually-helps-you-make-decisions/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-a-moat-around-your-small-business/",
+      "destination": "/blog/how-to-build-a-moat-around-your-small-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/when-to-pivot-your-business-strategy-and-when-to-stay-the-course/",
+      "destination": "/blog/when-to-pivot-your-business-strategy-and-when-to-stay-the-course/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-align-your-team-around-a-single-strategic-priority/",
+      "destination": "/blog/how-to-align-your-team-around-a-single-strategic-priority/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-difference-between-strategy-and-tactics-and-why-it-matters/",
+      "destination": "/blog/the-difference-between-strategy-and-tactics-and-why-it-matters/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-conduct-a-meaningful-strategic-review-of-your-business/",
+      "destination": "/blog/how-to-conduct-a-meaningful-strategic-review-of-your-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-make-better-business-decisions-with-limited-information/",
+      "destination": "/blog/how-to-make-better-business-decisions-with-limited-information/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-long-game-why-patience-is-a-strategic-advantage/",
+      "destination": "/blog/the-long-game-why-patience-is-a-strategic-advantage/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-create-a-clear-value-proposition-for-your-business/",
+      "destination": "/blog/how-to-create-a-clear-value-proposition-for-your-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-client-onboarding-process-that-sets-the-tone-for-long-term-relationship/",
+      "destination": "/blog/the-client-onboarding-process-that-sets-the-tone-for-long-term-relationship/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-increase-client-retention-by-20-percent-this-quarter/",
+      "destination": "/blog/how-to-increase-client-retention-by-20-percent-this-quarter/",
+      "statusCode": 301
+    },
+    {
+      "source": "/five-warning-signs-a-client-is-about-to-leave-you/",
+      "destination": "/blog/five-warning-signs-a-client-is-about-to-leave-you/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-a-client-feedback-loop-that-strengthens-relationships/",
+      "destination": "/blog/how-to-build-a-client-feedback-loop-that-strengthens-relationships/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-follow-up-system-that-turns-one-time-clients-into-repeat-customers/",
+      "destination": "/blog/the-follow-up-system-that-turns-one-time-clients-into-repeat-customers/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-deliver-consistent-client-experiences-across-your-team/",
+      "destination": "/blog/how-to-deliver-consistent-client-experiences-across-your-team/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-client-retention-is-more-profitable-than-client-acquisition/",
+      "destination": "/blog/why-client-retention-is-more-profitable-than-client-acquisition/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-ask-clients-for-referrals-without-feeling-awkward/",
+      "destination": "/blog/how-to-ask-clients-for-referrals-without-feeling-awkward/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-quarterly-client-check-in-that-prevents-surprise-cancellations/",
+      "destination": "/blog/the-quarterly-client-check-in-that-prevents-surprise-cancellations/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-handle-client-complaints-and-turn-them-into-loyalty/",
+      "destination": "/blog/how-to-handle-client-complaints-and-turn-them-into-loyalty/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-create-a-client-loyalty-program-for-a-service-business/",
+      "destination": "/blog/how-to-create-a-client-loyalty-program-for-a-service-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-real-reason-clients-leave-and-what-you-can-do-about-it/",
+      "destination": "/blog/the-real-reason-clients-leave-and-what-you-can-do-about-it/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-trust-with-clients-in-the-first-30-days/",
+      "destination": "/blog/how-to-build-trust-with-clients-in-the-first-30-days/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-analyze-your-competitors-without-obsessing-over-them/",
+      "destination": "/blog/how-to-analyze-your-competitors-without-obsessing-over-them/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-competitive-intelligence-framework-for-small-business-owners/",
+      "destination": "/blog/the-competitive-intelligence-framework-for-small-business-owners/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-differentiate-your-business-when-competitors-copy-you/",
+      "destination": "/blog/how-to-differentiate-your-business-when-competitors-copy-you/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-use-customer-feedback-to-outpace-your-competition/",
+      "destination": "/blog/how-to-use-customer-feedback-to-outpace-your-competition/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-market-research-basics-every-business-owner-should-know/",
+      "destination": "/blog/the-market-research-basics-every-business-owner-should-know/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-identify-market-gaps-that-your-business-can-fill/",
+      "destination": "/blog/how-to-identify-market-gaps-that-your-business-can-fill/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-knowing-your-ideal-client-profile-gives-you-a-competitive-edge/",
+      "destination": "/blog/why-knowing-your-ideal-client-profile-gives-you-a-competitive-edge/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-monitor-industry-trends-without-getting-distracted/",
+      "destination": "/blog/how-to-monitor-industry-trends-without-getting-distracted/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-pricing-analysis-that-helps-you-win-more-business/",
+      "destination": "/blog/the-pricing-analysis-that-helps-you-win-more-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-benchmark-your-business-performance-against-industry-standards/",
+      "destination": "/blog/how-to-benchmark-your-business-performance-against-industry-standards/",
+      "statusCode": 301
+    },
+    {
+      "source": "/what-to-expect-when-working-with-a-business-consultant/",
+      "destination": "/blog/what-to-expect-when-working-with-a-business-consultant/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-five-questions-every-business-owner-should-ask-before-hiring-a-consulta/",
+      "destination": "/blog/the-five-questions-every-business-owner-should-ask-before-hiring-a-consulta/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-business-consulting-helps-you-see-what-you-cannot-see-alone/",
+      "destination": "/blog/how-business-consulting-helps-you-see-what-you-cannot-see-alone/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-elixir-consulting-approach-to-helping-small-businesses-grow/",
+      "destination": "/blog/the-elixir-consulting-approach-to-helping-small-businesses-grow/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-get-the-most-value-from-your-business-consulting-engagement/",
+      "destination": "/blog/how-to-get-the-most-value-from-your-business-consulting-engagement/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-the-best-consultants-focus-on-implementation-not-just-advice/",
+      "destination": "/blog/why-the-best-consultants-focus-on-implementation-not-just-advice/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-dr-connor-robertson-built-elixir-consulting-group-on-practical-results/",
+      "destination": "/blog/how-dr-connor-robertson-built-elixir-consulting-group-on-practical-results/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-consulting-process-from-first-meeting-to-lasting-change/",
+      "destination": "/blog/the-consulting-process-from-first-meeting-to-lasting-change/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-pittsburgh-businesses-choose-elixir-consulting-group/",
+      "destination": "/blog/why-pittsburgh-businesses-choose-elixir-consulting-group/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-role-of-accountability-in-successful-business-consulting/",
+      "destination": "/blog/the-role-of-accountability-in-successful-business-consulting/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-know-if-your-business-needs-a-consultant-or-a-coach/",
+      "destination": "/blog/how-to-know-if-your-business-needs-a-consultant-or-a-coach/",
+      "statusCode": 301
+    },
+    {
+      "source": "/what-makes-a-great-business-consultant-according-to-dr-connor-robertson/",
+      "destination": "/blog/what-makes-a-great-business-consultant-according-to-dr-connor-robertson/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-first-90-days-of-a-consulting-engagement-at-elixir-consulting-group/",
+      "destination": "/blog/the-first-90-days-of-a-consulting-engagement-at-elixir-consulting-group/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-economic-cycles-affect-small-business-growth-strategies/",
+      "destination": "/blog/how-economic-cycles-affect-small-business-growth-strategies/",
+      "statusCode": 301
+    },
+    {
+      "source": "/what-rising-interest-rates-mean-for-your-business-decisions/",
+      "destination": "/blog/what-rising-interest-rates-mean-for-your-business-decisions/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-inflation-affects-small-business-pricing-and-profitability/",
+      "destination": "/blog/how-inflation-affects-small-business-pricing-and-profitability/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-local-economic-conditions-matter-more-than-national-headlines/",
+      "destination": "/blog/why-local-economic-conditions-matter-more-than-national-headlines/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-recession-proof-your-small-business/",
+      "destination": "/blog/how-to-recession-proof-your-small-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-economic-indicators-every-business-owner-should-watch/",
+      "destination": "/blog/the-economic-indicators-every-business-owner-should-watch/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-supply-chain-disruptions-create-opportunities-for-agile-businesses/",
+      "destination": "/blog/how-supply-chain-disruptions-create-opportunities-for-agile-businesses/",
+      "statusCode": 301
+    },
+    {
+      "source": "/understanding-the-gig-economy-and-what-it-means-for-your-workforce/",
+      "destination": "/blog/understanding-the-gig-economy-and-what-it-means-for-your-workforce/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-a-business-that-thrives-in-any-economy/",
+      "destination": "/blog/how-to-build-a-business-that-thrives-in-any-economy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-cost-of-doing-nothing-during-economic-uncertainty/",
+      "destination": "/blog/the-cost-of-doing-nothing-during-economic-uncertainty/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-mindset-shift-that-separates-business-owners-from-entrepreneurs/",
+      "destination": "/blog/the-mindset-shift-that-separates-business-owners-from-entrepreneurs/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-overcome-the-fear-of-starting-a-business/",
+      "destination": "/blog/how-to-overcome-the-fear-of-starting-a-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-first-year-of-business-ownership-what-nobody-tells-you/",
+      "destination": "/blog/the-first-year-of-business-ownership-what-nobody-tells-you/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-stay-motivated-when-business-growth-feels-slow/",
+      "destination": "/blog/how-to-stay-motivated-when-business-growth-feels-slow/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-entrepreneurial-skills-that-matter-more-than-a-business-degree/",
+      "destination": "/blog/the-entrepreneurial-skills-that-matter-more-than-a-business-degree/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-balance-work-and-life-when-you-run-your-own-business/",
+      "destination": "/blog/how-to-balance-work-and-life-when-you-run-your-own-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-every-entrepreneur-needs-a-mentor/",
+      "destination": "/blog/why-every-entrepreneur-needs-a-mentor/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-a-business-around-your-strengths-not-just-your-passion/",
+      "destination": "/blog/how-to-build-a-business-around-your-strengths-not-just-your-passion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-decision-making-habits-of-successful-entrepreneurs/",
+      "destination": "/blog/the-decision-making-habits-of-successful-entrepreneurs/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-validate-a-business-idea-before-you-invest-real-money/",
+      "destination": "/blog/how-to-validate-a-business-idea-before-you-invest-real-money/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-entrepreneurs-who-build-systems-outperform-those-who-hustle/",
+      "destination": "/blog/why-entrepreneurs-who-build-systems-outperform-those-who-hustle/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-loneliness-of-entrepreneurship-and-how-to-overcome-it/",
+      "destination": "/blog/the-loneliness-of-entrepreneurship-and-how-to-overcome-it/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-develop-the-resilience-every-entrepreneur-needs/",
+      "destination": "/blog/how-to-develop-the-resilience-every-entrepreneur-needs/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-financial-reports-every-small-business-owner-should-read-monthly/",
+      "destination": "/blog/the-financial-reports-every-small-business-owner-should-read-monthly/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-manage-cash-flow-so-you-never-run-out-of-money/",
+      "destination": "/blog/how-to-manage-cash-flow-so-you-never-run-out-of-money/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-profit-first-model-and-why-it-works-for-small-businesses/",
+      "destination": "/blog/the-profit-first-model-and-why-it-works-for-small-businesses/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-price-your-services-for-profitability-not-just-revenue/",
+      "destination": "/blog/how-to-price-your-services-for-profitability-not-just-revenue/",
+      "statusCode": 301
+    },
+    {
+      "source": "/understanding-your-break-even-point-and-why-it-matters/",
+      "destination": "/blog/understanding-your-break-even-point-and-why-it-matters/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-a-financial-cushion-for-your-business/",
+      "destination": "/blog/how-to-build-a-financial-cushion-for-your-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-common-financial-mistakes-small-business-owners-make/",
+      "destination": "/blog/the-common-financial-mistakes-small-business-owners-make/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-read-a-profit-and-loss-statement-like-a-business-consultant/",
+      "destination": "/blog/how-to-read-a-profit-and-loss-statement-like-a-business-consultant/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-your-business-needs-a-monthly-financial-review-meeting/",
+      "destination": "/blog/why-your-business-needs-a-monthly-financial-review-meeting/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-create-a-budget-that-supports-business-growth/",
+      "destination": "/blog/how-to-create-a-budget-that-supports-business-growth/",
+      "statusCode": 301
+    },
+    {
+      "source": "/understanding-the-difference-between-revenue-profit-and-cash-flow/",
+      "destination": "/blog/understanding-the-difference-between-revenue-profit-and-cash-flow/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-negotiate-better-terms-with-your-vendors-and-suppliers/",
+      "destination": "/blog/how-to-negotiate-better-terms-with-your-vendors-and-suppliers/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tax-planning-strategies-every-small-business-owner-should-know/",
+      "destination": "/blog/tax-planning-strategies-every-small-business-owner-should-know/",
+      "statusCode": 301
+    },
+    {
+      "source": "/is-franchising-right-for-you-a-guide-for-aspiring-business-owners/",
+      "destination": "/blog/is-franchising-right-for-you-a-guide-for-aspiring-business-owners/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-evaluate-a-franchise-opportunity-before-signing-the-agreement/",
+      "destination": "/blog/how-to-evaluate-a-franchise-opportunity-before-signing-the-agreement/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-pros-and-cons-of-buying-a-franchise-vs-starting-from-scratch/",
+      "destination": "/blog/the-pros-and-cons-of-buying-a-franchise-vs-starting-from-scratch/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-manage-a-franchise-location-like-a-business-owner/",
+      "destination": "/blog/how-to-manage-a-franchise-location-like-a-business-owner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-scale-from-one-franchise-location-to-multiple-units/",
+      "destination": "/blog/how-to-scale-from-one-franchise-location-to-multiple-units/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-financial-realities-of-franchise-ownership-nobody-talks-about/",
+      "destination": "/blog/the-financial-realities-of-franchise-ownership-nobody-talks-about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-a-team-for-your-franchise-that-runs-without-you/",
+      "destination": "/blog/how-to-build-a-team-for-your-franchise-that-runs-without-you/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-franchise-business-plan-that-secures-funding/",
+      "destination": "/blog/the-franchise-business-plan-that-secures-funding/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-choose-the-right-franchise-for-your-market/",
+      "destination": "/blog/how-to-choose-the-right-franchise-for-your-market/",
+      "statusCode": 301
+    },
+    {
+      "source": "/what-to-look-for-in-a-franchise-disclosure-document/",
+      "destination": "/blog/what-to-look-for-in-a-franchise-disclosure-document/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-small-business-funding-options-you-might-not-know-about/",
+      "destination": "/blog/the-small-business-funding-options-you-might-not-know-about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-prepare-your-business-for-a-bank-loan-application/",
+      "destination": "/blog/how-to-prepare-your-business-for-a-bank-loan-application/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sba-loans-explained-what-they-are-and-how-to-qualify/",
+      "destination": "/blog/sba-loans-explained-what-they-are-and-how-to-qualify/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-fund-business-growth-through-revenue-instead-of-debt/",
+      "destination": "/blog/how-to-fund-business-growth-through-revenue-instead-of-debt/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-role-of-business-credit-in-accessing-growth-capital/",
+      "destination": "/blog/the-role-of-business-credit-in-accessing-growth-capital/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-small-businesses-can-attract-investors-in-a-competitive-market/",
+      "destination": "/blog/how-small-businesses-can-attract-investors-in-a-competitive-market/",
+      "statusCode": 301
+    },
+    {
+      "source": "/equipment-financing-vs-leasing-what-is-best-for-your-business/",
+      "destination": "/blog/equipment-financing-vs-leasing-what-is-best-for-your-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-bootstrap-your-business-when-outside-funding-is-not-available/",
+      "destination": "/blog/how-to-bootstrap-your-business-when-outside-funding-is-not-available/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-grant-opportunities-available-to-small-business-owners/",
+      "destination": "/blog/the-grant-opportunities-available-to-small-business-owners/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-create-financial-projections-that-impress-lenders/",
+      "destination": "/blog/how-to-create-financial-projections-that-impress-lenders/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-foster-innovation-in-a-small-business-without-a-big-budget/",
+      "destination": "/blog/how-to-foster-innovation-in-a-small-business-without-a-big-budget/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-innovation-habits-of-high-growth-small-businesses/",
+      "destination": "/blog/the-innovation-habits-of-high-growth-small-businesses/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-use-technology-to-automate-and-improve-your-business/",
+      "destination": "/blog/how-to-use-technology-to-automate-and-improve-your-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-small-businesses-that-embrace-ai-will-outperform-those-that-do-not/",
+      "destination": "/blog/why-small-businesses-that-embrace-ai-will-outperform-those-that-do-not/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-test-new-ideas-in-your-business-without-risking-everything/",
+      "destination": "/blog/how-to-test-new-ideas-in-your-business-without-risking-everything/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-digital-tools-that-save-small-businesses-10-hours-a-week/",
+      "destination": "/blog/the-digital-tools-that-save-small-businesses-10-hours-a-week/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-encourage-creative-problem-solving-on-your-team/",
+      "destination": "/blog/how-to-encourage-creative-problem-solving-on-your-team/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-adopt-new-technology-without-disrupting-your-operations/",
+      "destination": "/blog/how-to-adopt-new-technology-without-disrupting-your-operations/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-innovation-mindset-that-turns-problems-into-profitable-solutions/",
+      "destination": "/blog/the-innovation-mindset-that-turns-problems-into-profitable-solutions/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-a-culture-of-continuous-improvement-in-your-business/",
+      "destination": "/blog/how-to-build-a-culture-of-continuous-improvement-in-your-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-expand-your-business-beyond-local-markets/",
+      "destination": "/blog/how-to-expand-your-business-beyond-local-markets/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-basics-of-exporting-for-small-business-owners/",
+      "destination": "/blog/the-basics-of-exporting-for-small-business-owners/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-serve-international-clients-from-a-local-office/",
+      "destination": "/blog/how-to-serve-international-clients-from-a-local-office/",
+      "statusCode": 301
+    },
+    {
+      "source": "/understanding-cross-cultural-communication-in-business/",
+      "destination": "/blog/understanding-cross-cultural-communication-in-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-a-global-network-while-running-a-local-business/",
+      "destination": "/blog/how-to-build-a-global-network-while-running-a-local-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-opportunities-in-remote-service-delivery-for-small-firms/",
+      "destination": "/blog/the-opportunities-in-remote-service-delivery-for-small-firms/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-global-trends-affect-local-business-strategy/",
+      "destination": "/blog/how-global-trends-affect-local-business-strategy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-price-your-services-for-different-markets/",
+      "destination": "/blog/how-to-price-your-services-for-different-markets/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-leadership-style-that-gets-the-best-results-from-small-teams/",
+      "destination": "/blog/the-leadership-style-that-gets-the-best-results-from-small-teams/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-lead-a-team-when-you-are-also-doing-the-work/",
+      "destination": "/blog/how-to-lead-a-team-when-you-are-also-doing-the-work/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-meeting-cadence-that-keeps-your-team-aligned-and-accountable/",
+      "destination": "/blog/the-meeting-cadence-that-keeps-your-team-aligned-and-accountable/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-give-feedback-that-actually-changes-behavior/",
+      "destination": "/blog/how-to-give-feedback-that-actually-changes-behavior/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-coaching-conversation-framework-for-business-leaders/",
+      "destination": "/blog/the-coaching-conversation-framework-for-business-leaders/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-emotional-intelligence-as-a-business-leader/",
+      "destination": "/blog/how-to-build-emotional-intelligence-as-a-business-leader/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-delegation-framework-that-frees-up-your-time-as-a-leader/",
+      "destination": "/blog/the-delegation-framework-that-frees-up-your-time-as-a-leader/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-develop-the-next-generation-of-leaders-in-your-business/",
+      "destination": "/blog/how-to-develop-the-next-generation-of-leaders-in-your-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-leaders-who-listen-outperform-leaders-who-talk/",
+      "destination": "/blog/why-leaders-who-listen-outperform-leaders-who-talk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-make-tough-decisions-without-alienating-your-team/",
+      "destination": "/blog/how-to-make-tough-decisions-without-alienating-your-team/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-one-thing-great-leaders-do-every-single-day/",
+      "destination": "/blog/the-one-thing-great-leaders-do-every-single-day/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-lead-through-change-without-losing-team-morale/",
+      "destination": "/blog/how-to-lead-through-change-without-losing-team-morale/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-vulnerability-is-a-leadership-strength-not-a-weakness/",
+      "destination": "/blog/why-vulnerability-is-a-leadership-strength-not-a-weakness/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-map-your-business-processes-from-start-to-finish/",
+      "destination": "/blog/how-to-map-your-business-processes-from-start-to-finish/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-lean-thinking-principles-that-apply-to-every-small-business/",
+      "destination": "/blog/the-lean-thinking-principles-that-apply-to-every-small-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-fix-a-broken-process-without-starting-over/",
+      "destination": "/blog/how-to-fix-a-broken-process-without-starting-over/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-process-audit-that-reveals-where-your-business-loses-time-and-money/",
+      "destination": "/blog/the-process-audit-that-reveals-where-your-business-loses-time-and-money/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-standardize-your-workflows-for-consistency-and-speed/",
+      "destination": "/blog/how-to-standardize-your-workflows-for-consistency-and-speed/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-simple-processes-beat-complex-systems-every-time/",
+      "destination": "/blog/why-simple-processes-beat-complex-systems-every-time/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-get-your-team-to-follow-new-processes-without-pushback/",
+      "destination": "/blog/how-to-get-your-team-to-follow-new-processes-without-pushback/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-continuous-improvement-cycle-that-keeps-your-business-evolving/",
+      "destination": "/blog/the-continuous-improvement-cycle-that-keeps-your-business-evolving/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-automate-repetitive-tasks-and-focus-on-growth/",
+      "destination": "/blog/how-to-automate-repetitive-tasks-and-focus-on-growth/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-document-a-process-so-anyone-on-your-team-can-follow-it/",
+      "destination": "/blog/how-to-document-a-process-so-anyone-on-your-team-can-follow-it/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-root-cause-analysis-method-that-solves-business-problems-permanently/",
+      "destination": "/blog/the-root-cause-analysis-method-that-solves-business-problems-permanently/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-reduce-errors-and-rework-in-your-business-operations/",
+      "destination": "/blog/how-to-reduce-errors-and-rework-in-your-business-operations/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-increase-revenue-without-increasing-your-workload/",
+      "destination": "/blog/how-to-increase-revenue-without-increasing-your-workload/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-pricing-strategy-that-increased-our-clients-revenue-by-30-percent/",
+      "destination": "/blog/the-pricing-strategy-that-increased-our-clients-revenue-by-30-percent/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-multiple-revenue-streams-for-your-business/",
+      "destination": "/blog/how-to-build-multiple-revenue-streams-for-your-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-your-revenue-is-growing-but-your-profit-is-not/",
+      "destination": "/blog/why-your-revenue-is-growing-but-your-profit-is-not/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-create-a-revenue-forecast-that-is-actually-useful/",
+      "destination": "/blog/how-to-create-a-revenue-forecast-that-is-actually-useful/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-upsell-and-cross-sell-strategies-that-boost-average-client-value/",
+      "destination": "/blog/the-upsell-and-cross-sell-strategies-that-boost-average-client-value/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-raise-your-prices-without-losing-your-best-clients/",
+      "destination": "/blog/how-to-raise-your-prices-without-losing-your-best-clients/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-revenue-metrics-that-tell-you-if-your-business-is-healthy/",
+      "destination": "/blog/the-revenue-metrics-that-tell-you-if-your-business-is-healthy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-recover-lost-revenue-by-reactivating-past-clients/",
+      "destination": "/blog/how-to-recover-lost-revenue-by-reactivating-past-clients/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-discounting-hurts-your-business-more-than-you-think/",
+      "destination": "/blog/why-discounting-hurts-your-business-more-than-you-think/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-set-revenue-goals-that-motivate-your-entire-team/",
+      "destination": "/blog/how-to-set-revenue-goals-that-motivate-your-entire-team/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-revenue-growth-playbook-for-service-based-businesses/",
+      "destination": "/blog/the-revenue-growth-playbook-for-service-based-businesses/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-a-sales-process-that-converts-leads-into-clients/",
+      "destination": "/blog/how-to-build-a-sales-process-that-converts-leads-into-clients/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-crm-setup-that-makes-sales-follow-up-automatic/",
+      "destination": "/blog/the-crm-setup-that-makes-sales-follow-up-automatic/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-create-a-sales-pipeline-that-gives-you-predictable-revenue/",
+      "destination": "/blog/how-to-create-a-sales-pipeline-that-gives-you-predictable-revenue/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-most-small-businesses-struggle-with-sales-and-how-to-fix-it/",
+      "destination": "/blog/why-most-small-businesses-struggle-with-sales-and-how-to-fix-it/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-write-proposals-that-win-more-business/",
+      "destination": "/blog/how-to-write-proposals-that-win-more-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-sales-script-framework-that-feels-natural-not-pushy/",
+      "destination": "/blog/the-sales-script-framework-that-feels-natural-not-pushy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-train-your-team-to-sell-without-being-salespeople/",
+      "destination": "/blog/how-to-train-your-team-to-sell-without-being-salespeople/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-shorten-your-sales-cycle-and-close-deals-faster/",
+      "destination": "/blog/how-to-shorten-your-sales-cycle-and-close-deals-faster/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-lead-generation-strategy-that-works-for-service-businesses/",
+      "destination": "/blog/the-lead-generation-strategy-that-works-for-service-businesses/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-handle-sales-objections-with-confidence/",
+      "destination": "/blog/how-to-handle-sales-objections-with-confidence/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-a-referral-engine-that-generates-consistent-new-business/",
+      "destination": "/blog/how-to-build-a-referral-engine-that-generates-consistent-new-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-sales-dashboard-that-shows-you-what-is-working-and-what-is-not/",
+      "destination": "/blog/the-sales-dashboard-that-shows-you-what-is-working-and-what-is-not/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-follow-up-with-prospects-without-being-annoying/",
+      "destination": "/blog/how-to-follow-up-with-prospects-without-being-annoying/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-growth-strategy-that-works-for-businesses-under-10-employees/",
+      "destination": "/blog/the-growth-strategy-that-works-for-businesses-under-10-employees/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-grow-your-business-in-a-small-market-like-pittsburgh/",
+      "destination": "/blog/how-to-grow-your-business-in-a-small-market-like-pittsburgh/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-small-business-owners-guide-to-working-on-the-business-not-in-it/",
+      "destination": "/blog/the-small-business-owners-guide-to-working-on-the-business-not-in-it/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-a-brand-that-attracts-your-ideal-clients/",
+      "destination": "/blog/how-to-build-a-brand-that-attracts-your-ideal-clients/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-marketing-basics-that-every-small-business-owner-must-master/",
+      "destination": "/blog/the-marketing-basics-that-every-small-business-owner-must-master/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-a-business-that-runs-without-you-being-there-every-day/",
+      "destination": "/blog/how-to-build-a-business-that-runs-without-you-being-there-every-day/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-networking-strategy-that-actually-produces-business-results/",
+      "destination": "/blog/the-networking-strategy-that-actually-produces-business-results/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-compete-with-bigger-companies-as-a-small-business/",
+      "destination": "/blog/how-to-compete-with-bigger-companies-as-a-small-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-customer-experience-advantage-small-businesses-have-over-corporations/",
+      "destination": "/blog/the-customer-experience-advantage-small-businesses-have-over-corporations/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-a-sustainable-growth-rate-for-your-business/",
+      "destination": "/blog/how-to-build-a-sustainable-growth-rate-for-your-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-growth-mindset-every-small-business-owner-needs-to-develop/",
+      "destination": "/blog/the-growth-mindset-every-small-business-owner-needs-to-develop/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-use-data-to-make-smarter-decisions-in-your-small-business/",
+      "destination": "/blog/how-to-use-data-to-make-smarter-decisions-in-your-small-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-small-business-growth-starts-with-the-owners-personal-development/",
+      "destination": "/blog/why-small-business-growth-starts-with-the-owners-personal-development/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-hire-the-right-people-for-your-small-business/",
+      "destination": "/blog/how-to-hire-the-right-people-for-your-small-business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-onboarding-process-that-gets-new-employees-productive-fast/",
+      "destination": "/blog/the-onboarding-process-that-gets-new-employees-productive-fast/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-a-positive-team-culture-that-retains-top-talent/",
+      "destination": "/blog/how-to-build-a-positive-team-culture-that-retains-top-talent/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-performance-review-system-that-actually-improves-performance/",
+      "destination": "/blog/the-performance-review-system-that-actually-improves-performance/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-manage-remote-and-hybrid-teams-effectively/",
+      "destination": "/blog/how-to-manage-remote-and-hybrid-teams-effectively/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-handle-conflict-on-your-team-without-avoiding-it/",
+      "destination": "/blog/how-to-handle-conflict-on-your-team-without-avoiding-it/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-team-structure-that-supports-business-growth/",
+      "destination": "/blog/the-team-structure-that-supports-business-growth/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-accountability-into-your-team-without-micromanaging/",
+      "destination": "/blog/how-to-build-accountability-into-your-team-without-micromanaging/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-weekly-team-meeting-agenda-that-actually-drives-results/",
+      "destination": "/blog/the-weekly-team-meeting-agenda-that-actually-drives-results/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-identify-when-an-employee-is-in-the-wrong-role/",
+      "destination": "/blog/how-to-identify-when-an-employee-is-in-the-wrong-role/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-compensation-strategy-that-attracts-and-retains-great-employees/",
+      "destination": "/blog/the-compensation-strategy-that-attracts-and-retains-great-employees/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-create-a-training-program-for-your-small-business-team/",
+      "destination": "/blog/how-to-create-a-training-program-for-your-small-business-team/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-investing-in-your-team-is-the-best-investment-you-can-make/",
+      "destination": "/blog/why-investing-in-your-team-is-the-best-investment-you-can-make/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-set-up-key-performance-indicators-for-every-department/",
+      "destination": "/blog/how-to-set-up-key-performance-indicators-for-every-department/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-weekly-scorecard-that-tells-you-if-your-business-is-on-track/",
+      "destination": "/blog/the-weekly-scorecard-that-tells-you-if-your-business-is-on-track/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-create-a-project-management-system-for-your-small-team/",
+      "destination": "/blog/how-to-create-a-project-management-system-for-your-small-team/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-communication-framework-that-prevents-misunderstandings-at-work/",
+      "destination": "/blog/the-communication-framework-that-prevents-misunderstandings-at-work/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-prepare-your-business-for-sale-even-if-you-are-not-selling-yet/",
+      "destination": "/blog/how-to-prepare-your-business-for-sale-even-if-you-are-not-selling-yet/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-time-management-habits-of-highly-effective-business-owners/",
+      "destination": "/blog/the-time-management-habits-of-highly-effective-business-owners/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-a-referral-network-that-keeps-your-pipeline-full/",
+      "destination": "/blog/how-to-build-a-referral-network-that-keeps-your-pipeline-full/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-every-business-needs-an-annual-strategic-retreat/",
+      "destination": "/blog/why-every-business-needs-an-annual-strategic-retreat/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-build-a-consulting-ready-business-that-attracts-expert-help/",
+      "destination": "/blog/how-to-build-a-consulting-ready-business-that-attracts-expert-help/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-business-growth-framework-used-by-elixir-consulting-group/",
+      "destination": "/blog/the-business-growth-framework-used-by-elixir-consulting-group/",
+      "statusCode": 301
+    },
+    {
+      "source": "/a-digital-prescription-for-the-pharma-industry-2/",
+      "destination": "/blog/a-digital-prescription-for-the-pharma-industry-2/",
+      "statusCode": 301
+    },
+    {
+      "source": "/within-the-construction-industry-as-their-overdraft/",
+      "destination": "/blog/within-the-construction-industry-as-their-overdraft/",
+      "statusCode": 301
+    },
+    {
+      "source": "/strategic-and-commercial-approach-with-technical-understanding/",
+      "destination": "/blog/strategic-and-commercial-approach-with-technical-understanding/",
+      "statusCode": 301
+    },
+    {
+      "source": "/seven-weeks-working-pro-bono-with-a-national-charity/",
+      "destination": "/blog/seven-weeks-working-pro-bono-with-a-national-charity/",
+      "statusCode": 301
+    },
+    {
+      "source": "/retail-banks-wake-up-to-digital-lending/",
+      "destination": "/blog/retail-banks-wake-up-to-digital-lending/",
+      "statusCode": 301
+    },
+    {
+      "source": "/a-digital-prescription-for-the-pharma-industry/",
+      "destination": "/blog/a-digital-prescription-for-the-pharma-industry/",
+      "statusCode": 301
+    },
+    {
+      "source": "/harvest-great-ideas-from-your-companys-best-assets/",
+      "destination": "/blog/harvest-great-ideas-from-your-companys-best-assets/",
+      "statusCode": 301
+    },
+    {
+      "source": "/three-social-media-hacks-for-the-busy-entrepreneur/",
+      "destination": "/blog/three-social-media-hacks-for-the-busy-entrepreneur/",
+      "statusCode": 301
+    },
+    {
+      "source": "/stick-with-your-concept-but-do-your-homework/",
+      "destination": "/blog/stick-with-your-concept-but-do-your-homework/",
+      "statusCode": 301
+    },
+    {
+      "source": "/narrow-your-focus-to-prevent-overanalysis/",
+      "destination": "/blog/narrow-your-focus-to-prevent-overanalysis/",
+      "statusCode": 301
+    }
   ]
 }
