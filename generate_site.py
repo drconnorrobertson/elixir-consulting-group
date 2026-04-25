@@ -768,7 +768,7 @@ def make_page(title, description, path, body, schema="", canonical=None):
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{description}">
 <meta name="robots" content="index,follow">
-<meta name="google-site-verification" content="elixir-consulting-group-gsc-verify">
+<meta name="google-site-verification" content="googleb0b4e7581f87b498">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
