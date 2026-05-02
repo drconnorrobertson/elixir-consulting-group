@@ -10,7 +10,7 @@ from datetime import datetime
 
 DOMAIN = "https://elixirconsultinggroup.com"
 YEAR = "2026"
-DATE_NOW = "2026-04-23"
+DATE_NOW = "2026-05-02"
 ADDRESS = "429 Fourth Ave. Suite 300, Pittsburgh, PA 15219"
 
 # ─── Brand Colors & Design Tokens ──────────────────────────────────────
@@ -37,6 +37,8 @@ SHARED_CSS = f"""
 html{{scroll-behavior:smooth;-webkit-text-size-adjust:100%}}
 body{{font-family:'Inter',system-ui,-apple-system,sans-serif;color:{COLORS['text']};line-height:1.7;background:{COLORS['white']}}}
 img{{max-width:100%;height:auto;display:block}}
+img.lazy{{opacity:0;transition:opacity .3s}}
+img.lazy.loaded{{opacity:1}}
 a{{color:{COLORS['navy']};text-decoration:none;transition:color .2s}}
 a:hover{{color:{COLORS['gold']}}}
 h1,h2,h3,h4,h5,h6{{font-family:'Inter',system-ui,sans-serif;font-weight:700;line-height:1.2;color:{COLORS['navy']}}}
@@ -756,9 +758,14 @@ def make_page(title, description, path, body, schema="", canonical=None):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>{title}</title>
 <meta name="description" content="{description}">
+<meta name="theme-color" content="#002E5B">
 <link rel="canonical" href="{canonical}">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{description}">
 <meta property="og:url" content="{canonical}">
@@ -769,8 +776,6 @@ def make_page(title, description, path, body, schema="", canonical=None):
 <meta name="twitter:description" content="{description}">
 <meta name="robots" content="index,follow">
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>{SHARED_CSS}</style>
 {schema}
@@ -782,8 +787,9 @@ def make_page(title, description, path, body, schema="", canonical=None):
 </main>
 {make_footer()}
 <script>
-document.addEventListener('click',function(e){{if(!e.target.closest('.nav-menu')&&!e.target.closest('.nav-toggle'))document.querySelector('.nav-menu').classList.remove('active')}});
+document.addEventListener('click',function(e){{if(e.target.closest('.nav-toggle')){{document.querySelector('.nav-menu').classList.toggle('active')}}else if(!e.target.closest('.nav-menu')){{document.querySelector('.nav-menu').classList.remove('active')}}}});
 document.querySelectorAll('.faq-item').forEach(function(item){{item.querySelector('.faq-q').addEventListener('click',function(){{item.classList.toggle('active')}});}});
+if('IntersectionObserver' in window){{const observer=new IntersectionObserver(function(entries){{entries.forEach(function(entry){{if(entry.isIntersecting){{const img=entry.target;img.src=img.dataset.src;img.classList.add('loaded');observer.unobserve(img)}}}});}});document.querySelectorAll('img[data-src]').forEach(img=>observer.observe(img))}}else{{document.querySelectorAll('img[data-src]').forEach(function(img){{img.src=img.dataset.src}})}}
 </script>
 </body>
 </html>"""
@@ -1777,9 +1783,10 @@ def gen_sitemap():
         ("/industries/", "0.7", "monthly"),
         ("/case-studies/", "0.7", "monthly"),
         ("/blog/", "0.8", "weekly"),
-        ("/contact/", "0.7", "monthly"),
+        ("/contact/", "0.8", "monthly"),
         ("/faq/", "0.7", "monthly"),
-        ("/testimonials/", "0.7", "monthly"),
+        ("/testimonials/", "0.75", "monthly"),
+        ("/404.html", "0.2", "yearly"),
     ]
     for post in BLOG_POSTS:
         urls.append((f"/blog/{post['slug']}/", "0.6", "monthly"))
@@ -1813,16 +1820,50 @@ def gen_vercel_json():
                 "source": "/(.*)",
                 "headers": [
                     {"key": "X-Content-Type-Options", "value": "nosniff"},
-                    {"key": "X-Frame-Options", "value": "DENY"},
+                    {"key": "X-Frame-Options", "value": "SAMEORIGIN"},
                     {"key": "X-XSS-Protection", "value": "1; mode=block"},
-                    {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"}
+                    {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
+                    {"key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()"},
+                    {"key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains"}
                 ]
             },
             {
                 "source": "/(.*).html",
                 "headers": [
-                    {"key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400"}
+                    {"key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400"},
+                    {"key": "Content-Type", "value": "text/html; charset=utf-8"}
                 ]
+            },
+            {
+                "source": "/sitemap.xml",
+                "headers": [
+                    {"key": "Cache-Control", "value": "public, max-age=86400"},
+                    {"key": "Content-Type", "value": "application/xml"}
+                ]
+            },
+            {
+                "source": "/robots.txt",
+                "headers": [
+                    {"key": "Cache-Control", "value": "public, max-age=86400"},
+                    {"key": "Content-Type", "value": "text/plain"}
+                ]
+            }
+        ],
+        "redirects": [
+            {
+                "source": "/dr-connor-robertson/",
+                "destination": "/about/",
+                "statusCode": 301
+            },
+            {
+                "source": "/resources/",
+                "destination": "/blog/",
+                "statusCode": 301
+            },
+            {
+                "source": "/operations-consulting/",
+                "destination": "/services/operations/",
+                "statusCode": 301
             }
         ]
     }, indent=2)
@@ -2064,6 +2105,44 @@ write_page("/contact/", gen_contact())
 print("\n[14/14] FAQ & Testimonials")
 write_page("/faq/", gen_faq())
 write_page("/testimonials/", gen_testimonials())
+
+# 404 Page
+def gen_404():
+    body = """
+<section class="page-hero">
+<div class="container">
+<h1>Page Not Found</h1>
+<p>The page you are looking for does not exist or has been moved.</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div style="text-align:center;max-width:600px;margin:0 auto">
+<h2 style="margin-bottom:2rem">404</h2>
+<p style="font-size:1.1rem;margin-bottom:2rem;color:#666">We could not find the page you were looking for. Here are some helpful links to get you back on track.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:2rem 0">
+<a href="/" class="btn btn-primary">Home</a>
+<a href="/services/" class="btn btn-outline">Services</a>
+<a href="/blog/" class="btn btn-outline">Blog</a>
+<a href="/contact/" class="btn btn-primary">Contact Us</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="cta-banner">
+<div class="container">
+<h2>Need help finding what you are looking for?</h2>
+<p>Contact our team and we can point you in the right direction.</p>
+<a href="/contact/" class="btn btn-gold">Get in Touch</a>
+</div>
+</section>"""
+
+    return make_page("Page Not Found | Elixir Consulting Group", "The page you requested could not be found.", "/404", body)
+
+print("\n[15/15] 404 Page")
+write_page("/404.html", gen_404())
 
 # Sitemap, robots.txt, vercel.json
 print("\nGenerating sitemap.xml, robots.txt, vercel.json...")
