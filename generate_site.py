@@ -956,6 +956,66 @@ def gen_homepage():
 </div>
 </section>
 
+<section class="section">
+<div class="container">
+<div class="text-center" style="margin-bottom:48px">
+<span class="eyebrow">Resources</span>
+<h2>Books by Dr. Connor Robertson</h2>
+<p style="max-width:700px;margin:0 auto">Practical guides on business acquisitions, wealth building, and operational strategy. Each book distills the frameworks and systems Dr. Robertson uses with consulting clients into actionable playbooks.</p>
+</div>
+<div class="grid grid-3">
+<div class="card">
+<h3>Creative Acquisitions</h3>
+<p>The playbook for modern dealmakers. How to buy real businesses using flexible, creative, and durable acquisition strategies.</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+<a href="https://www.barnesandnoble.com/w/creative-acquisitions-by-dr-connor-robertson-connor-robertson/1148958050" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;font-size:.8rem">Barnes & Noble</a>
+<a href="https://www.kobo.com/us/en/ebook/creative-acquisitions-by-dr-connor-robertson" target="_blank" rel="noopener" class="btn btn-outline" style="padding:8px 16px;font-size:.8rem">Kobo</a>
+</div>
+</div>
+<div class="card">
+<h3>Buying Wealth</h3>
+<p>A straightforward guide to ownership and practical wealth-building through asset acquisition, disciplined leverage, and systematic growth.</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+<a href="https://play.google.com/store/books/details/Dr_Connor_Robertson_Buying_Wealth?id=Dw2HEQAAQBAJ" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;font-size:.8rem">Google Play</a>
+</div>
+</div>
+<div class="card">
+<h3>The 7 Minute Phone Call</h3>
+<p>How to restart stalled conversations and move deals forward faster. A practical guide to building trust through short, structured calls.</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+<a href="https://play.google.com/store/books/details/Dr_Connor_Robertson_The_7_Minute_Phone_Call?id=9QyHEQAAQBAJ" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;font-size:.8rem">Google Play</a>
+</div>
+</div>
+<div class="card">
+<h3>Buy The Building, Keep The Profits</h3>
+<p>Why the real money is in owning the real estate your company occupies, and how to structure the deal.</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+<a href="https://play.google.com/store/books/details/Dr_Connor_Robertson_Buy_the_Building_Keep_the_Prof?id=MRWfEQAAQBAJ" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;font-size:.8rem">Google Play</a>
+<a href="https://www.barnesandnoble.com/w/buy-the-building-keep-the-profits-by-dr-connor-robertson-connor-robertson/1148885434" target="_blank" rel="noopener" class="btn btn-outline" style="padding:8px 16px;font-size:.8rem">Barnes & Noble</a>
+<a href="https://www.kobo.com/us/en/ebook/buy-the-building-keep-the-profits-by-dr-connor-robertson" target="_blank" rel="noopener" class="btn btn-outline" style="padding:8px 16px;font-size:.8rem">Kobo</a>
+</div>
+</div>
+<div class="card">
+<h3>PadSplit Playbook</h3>
+<p>Scaling affordable housing through shared living. A practical guide for property owners and operators.</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+<a href="https://play.google.com/store/books/details/Dr_Connor_Robertson_Padsplit_Playbook_Scaling_Affo?id=9sSqEQAAQBAJ" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;font-size:.8rem">Google Play</a>
+<a href="https://www.barnesandnoble.com/w/padsplit-playbook-by-dr-connor-robertson-connor-robertson/1149135521" target="_blank" rel="noopener" class="btn btn-outline" style="padding:8px 16px;font-size:.8rem">Barnes & Noble</a>
+<a href="https://www.kobo.com/us/en/ebook/padsplit-playbook-by-dr-connor-robertson" target="_blank" rel="noopener" class="btn btn-outline" style="padding:8px 16px;font-size:.8rem">Kobo</a>
+</div>
+</div>
+<div class="card">
+<h3>Built to Run</h3>
+<p>Build systems and processes that let your business operate without constant owner involvement. The framework for owner-independent operations.</p>
+<p style="color:{COLORS['mid_gray']};font-size:.85rem;font-style:italic;margin-top:12px">Coming Soon</p>
+</div>
+</div>
+<div class="text-center" style="margin-top:40px">
+<a href="https://drconnorrobertsonbooks.com" target="_blank" rel="noopener" class="btn btn-primary">Browse All Books</a>
+</div>
+</div>
+</section>
+
 <section class="section section-gray">
 <div class="container">
 <div class="text-center" style="margin-bottom:48px">
@@ -1073,6 +1133,7 @@ def gen_about():
 <p>Dr. Connor Robertson is the founder and lead consultant at Elixir Consulting Group, bringing extensive experience in business strategy, operational growth, and organizational development.</p>
 <p>Through his work with entrepreneurs and established companies, Dr. Robertson helps organizations identify opportunities, improve performance, and achieve sustainable long-term success. His approach is hands-on and implementation-focused. He works alongside owners and leadership teams to install the systems, not just recommend them.</p>
 <p>Dr. Robertson's expertise spans business strategy, operations consulting, AI and digital transformation, sales system design, and leadership development. His work has helped businesses across industries build the structure they need to grow without chaos.</p>
+<p>He is the author of six books on business acquisitions and strategy, including <a href="https://www.barnesandnoble.com/w/creative-acquisitions-by-dr-connor-robertson-connor-robertson/1148958050" target="_blank" rel="noopener"><em>Creative Acquisitions</em></a>, <a href="https://play.google.com/store/books/details/Dr_Connor_Robertson_Buying_Wealth?id=Dw2HEQAAQBAJ" target="_blank" rel="noopener"><em>Buying Wealth</em></a>, and <a href="https://play.google.com/store/books/details/Dr_Connor_Robertson_The_7_Minute_Phone_Call?id=9QyHEQAAQBAJ" target="_blank" rel="noopener"><em>The 7 Minute Phone Call</em></a>. His books are available on <a href="https://www.barnesandnoble.com/s/Connor+Robertson" target="_blank" rel="noopener">Barnes & Noble</a>, <a href="https://play.google.com/store/books/details/Dr_Connor_Robertson_Buying_Wealth?id=Dw2HEQAAQBAJ" target="_blank" rel="noopener">Google Play</a>, and <a href="https://www.kobo.com/us/en/search?query=Connor+Robertson&fcsearchfield=Author" target="_blank" rel="noopener">Kobo</a>.</p>
 <a href="https://drconnorrobertson.com" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:12px">Visit DrConnorRobertson.com</a>
 </div>
 </div>

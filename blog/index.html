@@ -205,15 +205,6 @@ nav a{padding:12px 16px;width:100%;display:block}
 <div class="container">
 <div class="grid grid-3">
 <div class="card blog-card">
-<div class="blog-img" style="background:linear-gradient(135deg,rgba(0,46,91,.85),rgba(0,31,63,.9)),url(https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80) center/cover no-repeat"></div>
-<div class="blog-content">
-<p class="blog-date">2026-05-06</p>
-<h3><a href="/blog/agentic-ai-business-operations-2026/">Agentic AI Is Here: What It Means for Your Business in 2026</a></h3>
-<p>AI agents are no longer experimental. Businesses deploying agentic AI are averaging 171% ROI. Here is what every business owner needs to understand right now...</p>
-<a href="/blog/agentic-ai-business-operations-2026/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
-</div>
-</div>
-<div class="card blog-card">
 <div class="blog-img">E</div>
 <div class="blog-content">
 <p class="blog-date">2026-04-15</p>
@@ -458,101 +449,5 @@ document.addEventListener('click',function(e){if(e.target.closest('.nav-toggle')
 document.querySelectorAll('.faq-item').forEach(function(item){item.querySelector('.faq-q').addEventListener('click',function(){item.classList.toggle('active')});});
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){const img=entry.target;img.src=img.dataset.src;img.classList.add('loaded');observer.unobserve(img)}});});document.querySelectorAll('img[data-src]').forEach(img=>observer.observe(img))}else{document.querySelectorAll('img[data-src]').forEach(function(img){img.src=img.dataset.src})}
 </script>
-<!-- cross-network-section -->
-
-<style>
-.network-crosslinks {
-  background: #F8F9FA;
-  border-top: 3px solid #C9A84C;
-  padding: 56px 0 48px;
-  font-family: 'Inter', system-ui, sans-serif;
-}
-.network-crosslinks .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-.network-crosslinks .eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.78rem;
-  color: #C9A84C;
-  font-weight: 700;
-  margin-bottom: 8px;
-  display: block;
-}
-.network-crosslinks h2 {
-  font-size: 1.6rem;
-  color: #002E5B;
-  font-weight: 800;
-  margin-bottom: 32px;
-}
-.network-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-@media (max-width: 768px) { .network-grid { grid-template-columns: 1fr; } }
-.network-card {
-  background: #FFFFFF;
-  border-radius: 12px;
-  padding: 28px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  transition: transform 0.2s, box-shadow 0.2s;
-  border-top: 3px solid #C9A84C;
-}
-.network-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
-.network-card .source-tag {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: #C9A84C;
-  font-weight: 700;
-  margin-bottom: 10px;
-  display: block;
-}
-.network-card h3 {
-  font-size: 1rem;
-  color: #002E5B;
-  line-height: 1.4;
-  margin-bottom: 10px;
-  font-weight: 700;
-}
-.network-card h3 a {
-  color: #002E5B;
-  text-decoration: none;
-}
-.network-card h3 a:hover { color: #C9A84C; }
-.network-card p {
-  font-size: 0.87rem;
-  color: #555555;
-  line-height: 1.6;
-}
-</style>
-
-<section class="network-crosslinks" id="network-section">
-  <div class="container">
-    <span class="eyebrow">Around the Network</span>
-    <h2>From Dr. Connor Robertson&#39;s Network</h2>
-    <div class="network-grid">
-    <div class="network-card">
-      <span class="source-tag">The Pittsburgh Wire</span>
-      <h3><a href="https://www.thepittsburghwire.com/news/gecko-robotics-navy-71-million-contract-pittsburgh/" target="_blank" rel="noopener">Gecko Robotics Lands $71M U.S. Navy Contract, Putting Pittsburgh AI on Pacific Fleet Ships</a></h3>
-      <p>The Pittsburgh-based robotics and AI company will deploy wall-climbing robots and sensors across 18 Navy warships, condensing months-long inspections into days.</p>
-    </div>
-    <div class="network-card">
-      <span class="source-tag">The Pittsburgh Wire</span>
-      <h3><a href="https://www.thepittsburghwire.com/news/breeze-airways-launches-international-flights-pittsburgh/" target="_blank" rel="noopener">Breeze Airways Launches First International Flights From Pittsburgh With Routes to Cancun and Punta Cana</a></h3>
-      <p>Budget carrier Breeze Airways announces its first-ever international service from Pittsburgh International Airport, with nonstop flights to Cancun and Punta Cana beginning January 2027.</p>
-    </div>
-    <div class="network-card">
-      <span class="source-tag">Dr. Connor Robertson</span>
-      <h3><a href="https://drconnorrobertson.com/why-2026-is-the-best-window-to-buy-a-business/" target="_blank" rel="noopener">Why 2026 Is the Best Window in a Decade to Buy a Business</a></h3>
-      <p>The M&amp;A market is rebounding, motivated sellers are everywhere, and creative deal structures are making acquisitions more accessible than ever.</p>
-    </div>
-    </div>
-  </div>
-</section>
-<!-- /cross-network-section -->
 </body>
 </html>
