@@ -86,6 +86,11 @@
       "source": "/operations-consulting/",
       "destination": "/services/operations/",
       "statusCode": 301
+    },
+    {
+      "source": "/sitemap_index.xml",
+      "destination": "/sitemap.xml",
+      "statusCode": 301
     }
   ]
 }

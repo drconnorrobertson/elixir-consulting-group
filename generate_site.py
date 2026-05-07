@@ -749,6 +749,50 @@ def make_cta():
 </section>"""
 
 
+def make_breadcrumb_schema(path):
+    """Generate BreadcrumbList JSON-LD schema from the URL path."""
+    if path in ("/404", "/404.html") or path == "":
+        return ""
+    
+    items = [{"@type": "ListItem", "position": 1, "name": "Home", "item": DOMAIN + "/"}]
+    
+    # Map path segments to readable names
+    segment_names = {
+        "about": "About",
+        "services": "Services",
+        "business-strategy": "Business Strategy",
+        "ai-consulting": "AI Consulting",
+        "operations": "Operations",
+        "sales-strategy": "Sales Strategy",
+        "leadership": "Leadership",
+        "blog": "Blog",
+        "contact": "Contact",
+        "faq": "FAQ",
+        "industries": "Industries",
+        "case-studies": "Case Studies",
+        "testimonials": "Testimonials",
+    }
+    
+    parts = [p for p in path.strip("/").split("/") if p]
+    accumulated = ""
+    for i, part in enumerate(parts):
+        accumulated += f"/{part}"
+        name = segment_names.get(part, part.replace("-", " ").title())
+        pos = i + 2
+        item_url = DOMAIN + accumulated + "/"
+        items.append({"@type": "ListItem", "position": pos, "name": name, "item": item_url})
+    
+    import json as _json
+    schema_obj = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": items
+    }
+    return f"""<script type="application/ld+json">
+{_json.dumps(schema_obj)}
+</script>"""
+
+
 def make_page(title, description, path, body, schema="", canonical=None):
     if canonical is None:
         canonical = DOMAIN + path
@@ -779,6 +823,7 @@ def make_page(title, description, path, body, schema="", canonical=None):
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>{SHARED_CSS}</style>
 {schema}
+{make_breadcrumb_schema(path)}
 </head>
 <body>
 {make_header(path)}
@@ -839,6 +884,10 @@ def gen_homepage():
   "name": "Elixir Consulting Group",
   "description": "Business consulting firm specializing in operations, sales systems, AI consulting, and leadership development for business owners.",
   "url": "https://elixirconsultinggroup.com",
+  "logo": "https://elixirconsultinggroup.com/og-image.png",
+  "image": "https://elixirconsultinggroup.com/og-image.png",
+  "telephone": "+1-412-387-7656",
+  "email": "info@elixirconsultinggroup.com",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "429 Fourth Ave. Suite 300",
@@ -1084,7 +1133,7 @@ def gen_homepage():
 
 def gen_about():
     schema = """<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Elixir Consulting Group","url":"https://elixirconsultinggroup.com","founder":{"@type":"Person","name":"Dr. Connor Robertson","url":"https://drconnorrobertson.com"},"address":{"@type":"PostalAddress","streetAddress":"429 Fourth Ave. Suite 300","addressLocality":"Pittsburgh","addressRegion":"PA","postalCode":"15219","addressCountry":"US"}}
+{"@context":"https://schema.org","@type":"Organization","name":"Elixir Consulting Group","url":"https://elixirconsultinggroup.com","logo":"https://elixirconsultinggroup.com/og-image.png","image":"https://elixirconsultinggroup.com/og-image.png","telephone":"+1-412-387-7656","email":"info@elixirconsultinggroup.com","founder":{"@type":"Person","name":"Dr. Connor Robertson","url":"https://drconnorrobertson.com"},"address":{"@type":"PostalAddress","streetAddress":"429 Fourth Ave. Suite 300","addressLocality":"Pittsburgh","addressRegion":"PA","postalCode":"15219","addressCountry":"US"}}
 </script>"""
 
     body = f"""
@@ -1402,7 +1451,7 @@ def gen_city_page(slug, city, state_abbr, services_focus, intro, geo_description
 {json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faq_schema_items}, indent=2)}
 </script>
 <script type="application/ld+json">
-{json.dumps({"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Elixir Consulting Group", "description": f"Business consulting firm serving {city}, {state_abbr}. Specializing in operations, AI consulting, sales systems, and leadership development.", "url": f"https://elixirconsultinggroup.com/{slug}/", "address": {"@type": "PostalAddress", "streetAddress": "429 Fourth Ave. Suite 300", "addressLocality": "Pittsburgh", "addressRegion": "PA", "postalCode": "15219", "addressCountry": "US"}, "areaServed": {"@type": "City", "name": city}, "founder": {"@type": "Person", "name": "Dr. Connor Robertson", "url": "https://drconnorrobertson.com"}}, indent=2)}
+{json.dumps({"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Elixir Consulting Group", "description": f"Business consulting firm serving {city}, {state_abbr}. Specializing in operations, AI consulting, sales systems, and leadership development.", "url": f"https://elixirconsultinggroup.com/{slug}/", "logo": "https://elixirconsultinggroup.com/og-image.png", "image": "https://elixirconsultinggroup.com/og-image.png", "telephone": "+1-412-387-7656", "email": "info@elixirconsultinggroup.com", "address": {"@type": "PostalAddress", "streetAddress": "429 Fourth Ave. Suite 300", "addressLocality": "Pittsburgh", "addressRegion": "PA", "postalCode": "15219", "addressCountry": "US"}, "areaServed": {"@type": "City", "name": city}, "founder": {"@type": "Person", "name": "Dr. Connor Robertson", "url": "https://drconnorrobertson.com"}}, indent=2)}
 </script>"""
 
     services_cards = ""
@@ -1795,7 +1844,7 @@ def gen_testimonials():
 </div>\n"""
 
     schema = """<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"Elixir Consulting Group","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"47","bestRating":"5"}}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Elixir Consulting Group","url":"https://elixirconsultinggroup.com","logo":"https://elixirconsultinggroup.com/og-image.png","image":"https://elixirconsultinggroup.com/og-image.png","telephone":"+1-412-387-7656","email":"info@elixirconsultinggroup.com","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"47","bestRating":"5"}}
 </script>"""
 
     body = f"""
@@ -1849,6 +1898,14 @@ def gen_sitemap():
         ("/testimonials/", "0.75", "monthly"),
         ("/404.html", "0.2", "yearly"),
     ]
+    # Add consulting city pages
+    city_slugs = []
+    consulting_dir = os.path.join(SITE_DIR, "consulting")
+    if os.path.isdir(consulting_dir):
+        for d in sorted(os.listdir(consulting_dir)):
+            if os.path.isdir(os.path.join(consulting_dir, d)):
+                urls.append((f"/consulting/{d}/", "0.7", "monthly"))
+    
     for post in BLOG_POSTS:
         urls.append((f"/blog/{post['slug']}/", "0.6", "monthly"))
 
@@ -1869,7 +1926,8 @@ def gen_sitemap():
 def gen_robots():
     return f"""User-agent: *
 Allow: /
-Sitemap: {DOMAIN}/sitemap.xml"""
+Sitemap: {DOMAIN}/sitemap.xml
+Sitemap: {DOMAIN}/sitemap_index.xml"""
 
 
 def gen_vercel_json():
@@ -1924,6 +1982,11 @@ def gen_vercel_json():
             {
                 "source": "/operations-consulting/",
                 "destination": "/services/operations/",
+                "statusCode": 301
+            },
+            {
+                "source": "/sitemap_index.xml",
+                "destination": "/sitemap.xml",
                 "statusCode": 301
             }
         ]

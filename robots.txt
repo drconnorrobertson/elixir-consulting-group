@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://elixirconsultinggroup.com/sitemap.xml
+Sitemap: https://elixirconsultinggroup.com/sitemap_index.xml
