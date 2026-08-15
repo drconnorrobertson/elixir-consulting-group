@@ -333,8 +333,11 @@ h1,h2,h3,h4,h5,p,li,a,td{{overflow-wrap:break-word;word-wrap:break-word}}
 .nav-toggle.active span:nth-child(1){{transform:translateY(7px) rotate(45deg)}}
 .nav-toggle.active span:nth-child(2){{opacity:0}}
 .nav-toggle.active span:nth-child(3){{transform:translateY(-7px) rotate(-45deg)}}
-.nav-menu{{position:fixed;top:0;right:0;left:auto;bottom:auto;display:flex;flex-direction:column;align-items:stretch;gap:2px;width:min(320px,86vw);height:100vh;height:100dvh;margin:0;padding:80px 20px 32px;list-style:none;background:{COLORS['white']};box-shadow:-4px 0 24px rgba(0,0,0,.18);transform:translateX(105%);transition:transform .3s ease;z-index:1001;overflow-y:auto;-webkit-overflow-scrolling:touch}}
-.nav-menu.active{{transform:translateX(0)}}
+.nav-menu{{position:fixed;top:0;right:0;left:auto;bottom:auto;display:flex;flex-direction:column;align-items:stretch;gap:2px;width:min(320px,86vw);height:100vh;height:100dvh;margin:0;padding:80px 20px 32px;list-style:none;background:{COLORS['white']};box-shadow:-4px 0 24px rgba(0,0,0,.18);transform:translateX(105%);transition:transform .3s ease,visibility .3s;z-index:1001;overflow-y:auto;-webkit-overflow-scrolling:touch;visibility:hidden}}
+/* The drawer is only moved offscreen, so without `visibility` its nine links
+   stay in the tab order and are still announced while the menu is shut --
+   a keyboard user tabbing off the logo lands in a menu they cannot see. */
+.nav-menu.active{{transform:translateX(0);visibility:visible}}
 .nav-menu li{{width:100%;margin:0}}
 .nav-menu a{{display:flex;align-items:center;width:100%;min-height:48px;padding:12px 14px;font-size:1rem;font-weight:500;color:{COLORS['text']};border-radius:8px}}
 .nav-menu a:hover{{background:{COLORS['off_white']};color:{COLORS['navy']}}}
