@@ -35,7 +35,9 @@
 <meta name="twitter:image:alt" content="Business Consulting Pittsburgh, PA | Elixir Consulting Group">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -210,6 +212,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .post-meta img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.35)}
 .post-meta .dot{opacity:.5}
 .post-tag{display:inline-block;background:rgba(201,168,76,.16);color:#C9A84C;border:1px solid rgba(201,168,76,.4);border-radius:999px;padding:4px 12px;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+/* Article furniture: contents, share row, prev/next */
+.toc{max-width:760px;margin:0 auto 32px;background:#F8F9FA;border:1px solid #E2E8F0;border-left:4px solid #C9A84C;border-radius:0 12px 12px 0;padding:22px 26px}
+.toc-title{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#002E5B;margin-bottom:10px}
+.toc ol{margin:0;padding-left:1.15rem}
+.toc li{margin-bottom:7px;font-size:.95rem}
+.toc a{color:#555555;text-decoration:none}
+.toc a:hover{color:#C9A84C;text-decoration:underline}
+.share-row{max-width:760px;margin:36px auto 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-top:22px;border-top:1px solid #E2E8F0}
+.share-label{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#6C757D;margin-right:4px}
+.share-row a,.copy-link{display:inline-flex;align-items:center;min-height:40px;padding:8px 16px;border:1px solid #E2E8F0;border-radius:999px;background:#fff;font-size:.88rem;font-weight:600;color:#002E5B;cursor:pointer;font-family:inherit}
+.share-row a:hover,.copy-link:hover{border-color:#C9A84C;color:#002E5B}
+.prev-next{max-width:760px;margin:32px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pn-link{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid #E2E8F0;border-radius:12px;background:#fff;transition:border-color .2s,transform .2s}
+.pn-link:hover{border-color:#C9A84C;transform:translateY(-2px)}
+.pn-link span{font-size:.78rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#C9A84C}
+.pn-link strong{font-size:.98rem;line-height:1.35;color:#002E5B}
+.pn-next{text-align:right;align-items:flex-end}
+a.post-tag{text-decoration:none}
+a.post-tag:hover{background:rgba(201,168,76,.28);color:#C9A84C}
+
 .author-box{max-width:760px;margin:48px auto 0;display:flex;gap:24px;align-items:flex-start;background:#F8F9FA;border-radius:14px;padding:28px}
 .author-box img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .author-box h3{font-size:1.15rem;margin-bottom:2px}
@@ -318,6 +340,11 @@ main[style]{margin-top:64px!important}
 .post-card .pc-meta{font-size:.87rem}
 .post-card h3{font-size:1.12rem}
 .author-box{flex-direction:column;align-items:center;text-align:center;gap:16px;padding:24px 20px}
+.prev-next{grid-template-columns:1fr}
+.pn-next{text-align:left;align-items:flex-start}
+.toc{padding:18px 20px}
+.share-row{gap:8px}
+.share-row a,.copy-link{min-height:44px;font-size:.85rem;padding:8px 14px}
 .blog-toolbar{flex-direction:column;align-items:stretch}
 /* flex-basis grows the *height* once the toolbar stacks, so pin it back down */
 .blog-search{flex:0 0 auto;width:100%;min-height:52px}
@@ -347,7 +374,8 @@ main[style]{margin-top:64px!important}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{display:inline-flex;align-items:center;min-height:44px}
 /* Standalone links sitting inside cards and stat blocks are tap targets too.
    Links inline within a sentence stay as-is; WCAG exempts those. */
-.stat-label a,.contact-info-card p a,.post-card .pc-body>a{display:inline-flex;align-items:center;min-height:44px}
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a,a.post-tag,.post-meta a,.author-box p a,.contact-info-card a,.section a[href^="https://thepittsburghwire"],.section a[href^="https://www.youtube"]{display:inline-flex;align-items:center;min-height:44px}
+a.post-tag{padding:8px 16px}
 .breadcrumb a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
 .services-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}
 .faq-q{min-height:56px;padding:18px 20px}
@@ -484,7 +512,7 @@ img{max-width:60%;page-break-inside:avoid}
 </div>
 </div>
 <div class="header-inner">
-<a href="/" class="logo" aria-label="Elixir Consulting Group home">Elixir<span>.</span></a>
+<a href="/" class="logo" aria-label="Elixir Consulting Group home" aria-current="page">Elixir<span>.</span></a>
 <nav aria-label="Main">
 <button type="button" class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
 <span></span><span></span><span></span>
@@ -548,25 +576,25 @@ img{max-width:60%;page-break-inside:avoid}
 <div class="grid grid-3">
 <div class="card">
 <div class="card-icon">&#9881;</div>
-<h3>Operations & Systems</h3>
+<h3>Operations &amp; Systems</h3>
 <p>Process mapping, SOPs, workflow cleanup, role clarity, and weekly operating cadence that keeps execution consistent.</p>
 <a href="/services/operations/">Learn more &rarr;</a>
 </div>
 <div class="card">
 <div class="card-icon">&#128200;</div>
-<h3>Sales & Revenue Systems</h3>
+<h3>Sales &amp; Revenue Systems</h3>
 <p>Pipeline structure, follow-up standards, CRM configuration, and sales process that your team can run without guessing.</p>
 <a href="/services/sales-strategy/">Learn more &rarr;</a>
 </div>
 <div class="card">
 <div class="card-icon">&#129302;</div>
-<h3>AI & Digital Transformation</h3>
+<h3>AI &amp; Digital Transformation</h3>
 <p>Evaluate and implement AI tools, automate workflows, and adopt technology that improves efficiency without disruption.</p>
 <a href="/services/ai-consulting/">Learn more &rarr;</a>
 </div>
 <div class="card">
 <div class="card-icon">&#128101;</div>
-<h3>Leadership & Accountability</h3>
+<h3>Leadership &amp; Accountability</h3>
 <p>Weekly leadership rhythms, scorecards, owner-level visibility, and accountability structures that produce decisions.</p>
 <a href="/services/leadership/">Learn more &rarr;</a>
 </div>
@@ -578,7 +606,7 @@ img{max-width:60%;page-break-inside:avoid}
 </div>
 <div class="card">
 <div class="card-icon">&#128640;</div>
-<h3>Growth & Scaling</h3>
+<h3>Growth &amp; Scaling</h3>
 <p>Build the foundation to scale from $1M to $10M and beyond. Systems, team development, and infrastructure for sustainable growth.</p>
 <a href="/services/">Learn more &rarr;</a>
 </div>
@@ -634,12 +662,12 @@ img{max-width:60%;page-break-inside:avoid}
 </div>
 <div class="grid grid-4">
 <div class="card" style="padding:24px"><div class="ind-icon" style="font-size:1.6rem;margin-bottom:8px">&#9881;</div><h3 style="font-size:1.05rem"><a href="/industries/professional-services/">Professional Services</a></h3><p style="font-size:.9rem;margin-bottom:0">Consulting firms, agencies, law offices, and accounting practices that need...</p></div>
-<div class="card" style="padding:24px"><div class="ind-icon" style="font-size:1.6rem;margin-bottom:8px">&#9879;</div><h3 style="font-size:1.05rem"><a href="/industries/construction-trades/">Construction & Trades</a></h3><p style="font-size:.9rem;margin-bottom:0">General contractors, specialty trades, and construction companies that need...</p></div>
+<div class="card" style="padding:24px"><div class="ind-icon" style="font-size:1.6rem;margin-bottom:8px">&#9879;</div><h3 style="font-size:1.05rem"><a href="/industries/construction-trades/">Construction &amp; Trades</a></h3><p style="font-size:.9rem;margin-bottom:0">General contractors, specialty trades, and construction companies that need...</p></div>
 <div class="card" style="padding:24px"><div class="ind-icon" style="font-size:1.6rem;margin-bottom:8px">&#9764;</div><h3 style="font-size:1.05rem"><a href="/industries/healthcare/">Healthcare</a></h3><p style="font-size:.9rem;margin-bottom:0">Medical practices, dental offices, therapy clinics, and healthcare organizations...</p></div>
 <div class="card" style="padding:24px"><div class="ind-icon" style="font-size:1.6rem;margin-bottom:8px">&#9878;</div><h3 style="font-size:1.05rem"><a href="/industries/manufacturing/">Manufacturing</a></h3><p style="font-size:.9rem;margin-bottom:0">Production facilities and manufacturers that need process optimization, quality...</p></div>
 <div class="card" style="padding:24px"><div class="ind-icon" style="font-size:1.6rem;margin-bottom:8px">&#128187;</div><h3 style="font-size:1.05rem"><a href="/industries/technology/">Technology</a></h3><p style="font-size:.9rem;margin-bottom:0">Software companies, IT services, and tech startups that need scalable operations...</p></div>
 <div class="card" style="padding:24px"><div class="ind-icon" style="font-size:1.6rem;margin-bottom:8px">&#127968;</div><h3 style="font-size:1.05rem"><a href="/industries/real-estate/">Real Estate</a></h3><p style="font-size:.9rem;margin-bottom:0">Brokerages, property managers, and real estate investors that need deal flow...</p></div>
-<div class="card" style="padding:24px"><div class="ind-icon" style="font-size:1.6rem;margin-bottom:8px">&#128722;</div><h3 style="font-size:1.05rem"><a href="/industries/retail-ecommerce/">Retail & E-Commerce</a></h3><p style="font-size:.9rem;margin-bottom:0">Brick-and-mortar retailers and online sellers that need inventory management...</p></div>
+<div class="card" style="padding:24px"><div class="ind-icon" style="font-size:1.6rem;margin-bottom:8px">&#128722;</div><h3 style="font-size:1.05rem"><a href="/industries/retail-ecommerce/">Retail &amp; E-Commerce</a></h3><p style="font-size:.9rem;margin-bottom:0">Brick-and-mortar retailers and online sellers that need inventory management...</p></div>
 <div class="card" style="padding:24px"><div class="ind-icon" style="font-size:1.6rem;margin-bottom:8px">&#128176;</div><h3 style="font-size:1.05rem"><a href="/industries/financial-services/">Financial Services</a></h3><p style="font-size:.9rem;margin-bottom:0">Wealth management firms, insurance agencies, and financial planners that need...</p></div>
 
 </div>
@@ -662,7 +690,7 @@ img{max-width:60%;page-break-inside:avoid}
 <div style="background:#F8F9FA;border-radius:16px;padding:48px;text-align:center">
 <img src="/images/dr-connor-robertson.jpg" alt="Dr. Connor Robertson, Founder and Lead Consultant at Elixir Consulting Group" width="800" height="800" style="border-radius:50%;width:clamp(140px,40vw,160px);height:clamp(140px,40vw,160px);object-fit:cover;margin:0 auto 24px;display:block" loading="lazy">
 <h3 style="margin-bottom:4px">Dr. Connor Robertson</h3>
-<p style="color:#6C757D;margin-bottom:16px">Founder & Lead Consultant</p>
+<p style="color:#6C757D;margin-bottom:16px">Founder &amp; Lead Consultant</p>
 <p style="font-size:.9rem">Specializing in business strategy, operations, AI consulting, and organizational development.</p>
 </div>
 </div>
@@ -681,7 +709,7 @@ img{max-width:60%;page-break-inside:avoid}
 <h3>Creative Acquisitions</h3>
 <p>The playbook for modern dealmakers. How to buy real businesses using flexible, creative, and durable acquisition strategies.</p>
 <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
-<a href="https://www.barnesandnoble.com/w/creative-acquisitions-by-dr-connor-robertson-connor-robertson/1148958050" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;font-size:.8rem">Barnes & Noble</a>
+<a href="https://www.barnesandnoble.com/w/creative-acquisitions-by-dr-connor-robertson-connor-robertson/1148958050" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;font-size:.8rem">Barnes &amp; Noble</a>
 <a href="https://www.kobo.com/us/en/ebook/creative-acquisitions-by-dr-connor-robertson" target="_blank" rel="noopener" class="btn btn-outline" style="padding:8px 16px;font-size:.8rem">Kobo</a>
 </div>
 </div>
@@ -704,7 +732,7 @@ img{max-width:60%;page-break-inside:avoid}
 <p>Why the real money is in owning the real estate your company occupies, and how to structure the deal.</p>
 <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
 <a href="https://play.google.com/store/books/details/Dr_Connor_Robertson_Buy_the_Building_Keep_the_Prof?id=MRWfEQAAQBAJ" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;font-size:.8rem">Google Play</a>
-<a href="https://www.barnesandnoble.com/w/buy-the-building-keep-the-profits-by-dr-connor-robertson-connor-robertson/1148885434" target="_blank" rel="noopener" class="btn btn-outline" style="padding:8px 16px;font-size:.8rem">Barnes & Noble</a>
+<a href="https://www.barnesandnoble.com/w/buy-the-building-keep-the-profits-by-dr-connor-robertson-connor-robertson/1148885434" target="_blank" rel="noopener" class="btn btn-outline" style="padding:8px 16px;font-size:.8rem">Barnes &amp; Noble</a>
 <a href="https://www.kobo.com/us/en/ebook/buy-the-building-keep-the-profits-by-dr-connor-robertson" target="_blank" rel="noopener" class="btn btn-outline" style="padding:8px 16px;font-size:.8rem">Kobo</a>
 </div>
 </div>
@@ -713,7 +741,7 @@ img{max-width:60%;page-break-inside:avoid}
 <p>Scaling affordable housing through shared living. A practical guide for property owners and operators.</p>
 <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
 <a href="https://play.google.com/store/books/details/Dr_Connor_Robertson_Padsplit_Playbook_Scaling_Affo?id=9sSqEQAAQBAJ" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 16px;font-size:.8rem">Google Play</a>
-<a href="https://www.barnesandnoble.com/w/padsplit-playbook-by-dr-connor-robertson-connor-robertson/1149135521" target="_blank" rel="noopener" class="btn btn-outline" style="padding:8px 16px;font-size:.8rem">Barnes & Noble</a>
+<a href="https://www.barnesandnoble.com/w/padsplit-playbook-by-dr-connor-robertson-connor-robertson/1149135521" target="_blank" rel="noopener" class="btn btn-outline" style="padding:8px 16px;font-size:.8rem">Barnes &amp; Noble</a>
 <a href="https://www.kobo.com/us/en/ebook/padsplit-playbook-by-dr-connor-robertson" target="_blank" rel="noopener" class="btn btn-outline" style="padding:8px 16px;font-size:.8rem">Kobo</a>
 </div>
 </div>
@@ -749,7 +777,7 @@ img{max-width:60%;page-break-inside:avoid}
 <div class="testimonial-card">
 <p class="quote">"Our experience with Elixir exceeded expectations. They implemented systems that broke down silos between departments and gave our leadership team real visibility into what was working and what was not."</p>
 <p class="author">Rachel T.</p>
-<p class="role">Founder & Managing Partner</p>
+<p class="role">Founder &amp; Managing Partner</p>
 </div>
 <div class="testimonial-card">
 <p class="quote">"Working with Elixir reshaped our business foundation. Their approach simplified our operations without stripping away what made us unique. We now run on a weekly cadence that keeps everyone aligned."</p>
@@ -808,7 +836,7 @@ img{max-width:60%;page-break-inside:avoid}
 </div>
 <div class="post-list">
 <article class="post-card" data-cat="Leadership" data-search="the middle manager advantage: why your best 2026 leadership investment isn't at the top 2026 leadership research points to the same conclusion: middle managers, not executives, are becoming the deciding factor in whether a growing business... leadership">
-<a href="/blog/middle-manager-advantage-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1200&amp;q=80" alt="The Middle Manager Advantage: Why Your Best 2026 Leadership Investment Isn't at the Top - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/middle-manager-advantage-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1200&amp;q=80" alt="The Middle Manager Advantage: Why Your Best 2026 Leadership Investment Isn't at the Top - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
 <p class="pc-cat">Leadership</p>
 <h3><a href="/blog/middle-manager-advantage-2026/">The Middle Manager Advantage: Why Your Best 2026 Leadership Investment Isn't at the Top</a></h3>
@@ -817,18 +845,18 @@ img{max-width:60%;page-break-inside:avoid}
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="the data center boom is coming to pittsburgh: what it means for your business before it arrives at least 12 data center sites are planned across southwestern pennsylvania, backed by more than $90 billion in announced ai and energy investment. here... ai &amp; technology">
-<a href="/blog/pittsburgh-data-center-boom-business-impact-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&amp;q=80" alt="The Data Center Boom Is Coming to Pittsburgh: What It Means for Your Business Before It Arrives - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/pittsburgh-data-center-boom-business-impact-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&amp;q=80" alt="The Data Center Boom Is Coming to Pittsburgh: What It Means for Your Business Before It Arrives - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/pittsburgh-data-center-boom-business-impact-2026/">The Data Center Boom Is Coming to Pittsburgh: What It Means for Your Business Before It Arrives</a></h3>
 <p>At least 12 data center sites are planned across Southwestern Pennsylvania, backed by more than $90 billion in announced AI and energy investment. Here...</p>
 <p class="pc-meta"><time datetime="2026-08-12">August 12, 2026</time> <span aria-hidden="true">&middot;</span> 6 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="the invisible sales cycle: winning deals decided before you hear from the buyer forrester found 94% of b2b buyers used ai during their last purchase, and 61% of the buying journey now finishes before a vendor is ever contacted. here... sales &amp; revenue">
-<a href="/blog/invisible-sales-cycle-b2b-buying-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=1200&amp;q=80" alt="The Invisible Sales Cycle: Winning Deals Decided Before You Hear From the Buyer - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/invisible-sales-cycle-b2b-buying-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=1200&amp;q=80" alt="The Invisible Sales Cycle: Winning Deals Decided Before You Hear From the Buyer - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/invisible-sales-cycle-b2b-buying-2026/">The Invisible Sales Cycle: Winning Deals Decided Before You Hear From the Buyer</a></h3>
 <p>Forrester found 94% of B2B buyers used AI during their last purchase, and 61% of the buying journey now finishes before a vendor is ever contacted. Here...</p>
 <p class="pc-meta"><time datetime="2026-08-09">August 9, 2026</time> <span aria-hidden="true">&middot;</span> 5 min read</p>
@@ -995,6 +1023,13 @@ q.setAttribute('aria-expanded','false');
 function tog(){var open=!item.classList.contains('active');item.classList.toggle('active',open);q.setAttribute('aria-expanded',open?'true':'false')}
 q.addEventListener('click',tog);
 q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}});
+});
+document.querySelectorAll('.copy-link').forEach(function(btn){
+btn.addEventListener('click',function(){
+var url=btn.getAttribute('data-url'),done=function(){var t=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=t},1600)};
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done).catch(function(){prompt('Copy this link:',url)})}
+else{prompt('Copy this link:',url)}
+});
 });
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){const img=entry.target;img.src=img.dataset.src;img.classList.add('loaded');observer.unobserve(img)}});});document.querySelectorAll('img[data-src]').forEach(img=>observer.observe(img))}else{document.querySelectorAll('img[data-src]').forEach(function(img){img.src=img.dataset.src})}
 </script>

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Page Not Found | Elixir Consulting Group</title>
-<meta name="description" content="The page you requested could not be found.">
+<meta name="description" content="That page could not be found. Search the site, or browse services, case studies, industries, and the blog.">
 <meta name="author" content="Dr. Connor Robertson">
 <meta name="theme-color" content="#002E5B">
 <meta name="format-detection" content="telephone=yes">
@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 <link rel="dns-prefetch" href="https://images.unsplash.com">
 <meta property="og:title" content="Page Not Found | Elixir Consulting Group">
-<meta property="og:description" content="The page you requested could not be found.">
+<meta property="og:description" content="That page could not be found. Search the site, or browse services, case studies, industries, and the blog.">
 <meta property="og:url" content="https://elixirconsultinggroup.com/404">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Elixir Consulting Group">
@@ -30,12 +30,14 @@
 <meta property="og:image:alt" content="Page Not Found | Elixir Consulting Group">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Page Not Found | Elixir Consulting Group">
-<meta name="twitter:description" content="The page you requested could not be found.">
+<meta name="twitter:description" content="That page could not be found. Search the site, or browse services, case studies, industries, and the blog.">
 <meta name="twitter:image" content="https://elixirconsultinggroup.com/images/og-image.png">
 <meta name="twitter:image:alt" content="Page Not Found | Elixir Consulting Group">
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -210,6 +212,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .post-meta img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.35)}
 .post-meta .dot{opacity:.5}
 .post-tag{display:inline-block;background:rgba(201,168,76,.16);color:#C9A84C;border:1px solid rgba(201,168,76,.4);border-radius:999px;padding:4px 12px;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+/* Article furniture: contents, share row, prev/next */
+.toc{max-width:760px;margin:0 auto 32px;background:#F8F9FA;border:1px solid #E2E8F0;border-left:4px solid #C9A84C;border-radius:0 12px 12px 0;padding:22px 26px}
+.toc-title{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#002E5B;margin-bottom:10px}
+.toc ol{margin:0;padding-left:1.15rem}
+.toc li{margin-bottom:7px;font-size:.95rem}
+.toc a{color:#555555;text-decoration:none}
+.toc a:hover{color:#C9A84C;text-decoration:underline}
+.share-row{max-width:760px;margin:36px auto 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-top:22px;border-top:1px solid #E2E8F0}
+.share-label{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#6C757D;margin-right:4px}
+.share-row a,.copy-link{display:inline-flex;align-items:center;min-height:40px;padding:8px 16px;border:1px solid #E2E8F0;border-radius:999px;background:#fff;font-size:.88rem;font-weight:600;color:#002E5B;cursor:pointer;font-family:inherit}
+.share-row a:hover,.copy-link:hover{border-color:#C9A84C;color:#002E5B}
+.prev-next{max-width:760px;margin:32px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pn-link{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid #E2E8F0;border-radius:12px;background:#fff;transition:border-color .2s,transform .2s}
+.pn-link:hover{border-color:#C9A84C;transform:translateY(-2px)}
+.pn-link span{font-size:.78rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#C9A84C}
+.pn-link strong{font-size:.98rem;line-height:1.35;color:#002E5B}
+.pn-next{text-align:right;align-items:flex-end}
+a.post-tag{text-decoration:none}
+a.post-tag:hover{background:rgba(201,168,76,.28);color:#C9A84C}
+
 .author-box{max-width:760px;margin:48px auto 0;display:flex;gap:24px;align-items:flex-start;background:#F8F9FA;border-radius:14px;padding:28px}
 .author-box img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .author-box h3{font-size:1.15rem;margin-bottom:2px}
@@ -318,6 +340,11 @@ main[style]{margin-top:64px!important}
 .post-card .pc-meta{font-size:.87rem}
 .post-card h3{font-size:1.12rem}
 .author-box{flex-direction:column;align-items:center;text-align:center;gap:16px;padding:24px 20px}
+.prev-next{grid-template-columns:1fr}
+.pn-next{text-align:left;align-items:flex-start}
+.toc{padding:18px 20px}
+.share-row{gap:8px}
+.share-row a,.copy-link{min-height:44px;font-size:.85rem;padding:8px 14px}
 .blog-toolbar{flex-direction:column;align-items:stretch}
 /* flex-basis grows the *height* once the toolbar stacks, so pin it back down */
 .blog-search{flex:0 0 auto;width:100%;min-height:52px}
@@ -347,7 +374,8 @@ main[style]{margin-top:64px!important}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{display:inline-flex;align-items:center;min-height:44px}
 /* Standalone links sitting inside cards and stat blocks are tap targets too.
    Links inline within a sentence stay as-is; WCAG exempts those. */
-.stat-label a,.contact-info-card p a,.post-card .pc-body>a{display:inline-flex;align-items:center;min-height:44px}
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a,a.post-tag,.post-meta a,.author-box p a,.contact-info-card a,.section a[href^="https://thepittsburghwire"],.section a[href^="https://www.youtube"]{display:inline-flex;align-items:center;min-height:44px}
+a.post-tag{padding:8px 16px}
 .breadcrumb a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
 .services-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}
 .faq-q{min-height:56px;padding:18px 20px}
@@ -427,7 +455,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 
 
-
+<meta name="robots" content="noindex,follow">
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -468,29 +496,46 @@ img{max-width:60%;page-break-inside:avoid}
 <section class="page-hero">
 <div class="container">
 <h1>Page Not Found</h1>
-<p>The page you are looking for does not exist or has been moved.</p>
+<p>That page does not exist or has moved. Here is how to find what you were after.</p>
 </div>
 </section>
 
 <section class="section">
-<div class="container">
-<div style="text-align:center;max-width:600px;margin:0 auto">
-<h2 style="margin-bottom:2rem">404</h2>
-<p style="font-size:1.1rem;margin-bottom:2rem;color:#666">We could not find the page you were looking for. Here are some helpful links to get you back on track.</p>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:2rem 0">
-<a href="/" class="btn btn-primary">Home</a>
-<a href="/services/" class="btn btn-outline">Services</a>
-<a href="/blog/" class="btn btn-outline">Blog</a>
-<a href="/contact/" class="btn btn-primary">Contact Us</a>
+<div class="container" style="max-width:760px">
+<div class="text-center" style="margin-bottom:32px">
+<span class="eyebrow">Search</span>
+<h2>Try searching the site</h2>
 </div>
+<form action="/search/" method="GET" style="display:flex;gap:10px;flex-wrap:wrap">
+<label for="nf-q" style="position:absolute;left:-9999px">Search</label>
+<input id="nf-q" name="q" type="search" class="blog-search" style="flex:1 1 240px" placeholder="Try: operations cadence, sales pipeline, exit planning...">
+<button type="submit" class="btn btn-primary">Search</button>
+</form>
+</div>
+</section>
+
+<section class="section section-gray">
+<div class="container">
+<div class="text-center" style="margin-bottom:40px">
+<span class="eyebrow">Popular Destinations</span>
+<h2>Or Start Here</h2>
+</div>
+<div class="grid grid-3">
+<div class="card"><h3><a href="/services/">Services</a></h3><p>Five ways we install structure: strategy, AI, operations, sales, and leadership.</p></div>
+<div class="card"><h3><a href="/process/">How We Work</a></h3><p>The five phases of an engagement, with durations and deliverables.</p></div>
+<div class="card"><h3><a href="/case-studies/">Case Studies</a></h3><p>Four engagements documented end to end, with the numbers that changed.</p></div>
+<div class="card"><h3><a href="/industries/">Industries</a></h3><p>Sector-specific context across the eight industries we work in most.</p></div>
+<div class="card"><h3><a href="/blog/">The Blog</a></h3><p>Hundreds of articles on operations, sales, leadership, and AI adoption.</p></div>
+<div class="card"><h3><a href="/contact/">Contact</a></h3><p>Book a consult, or call (412) 387-7656 and talk to us directly.</p></div>
 </div>
 </div>
 </section>
 
 <section class="cta-banner">
 <div class="container">
-<h2>Need help finding what you are looking for?</h2>
-<p>Contact our team and we can point you in the right direction.</p>
+<span class="eyebrow">Still Stuck?</span>
+<h2>Tell Us What You Were Looking For</h2>
+<p>If a link sent you here, we would like to know. Call (412) 387-7656 or email info@elixirconsultinggroup.com.</p>
 <a href="/contact/" class="btn btn-gold">Get in Touch</a>
 </div>
 </section>
@@ -583,6 +628,13 @@ q.setAttribute('aria-expanded','false');
 function tog(){var open=!item.classList.contains('active');item.classList.toggle('active',open);q.setAttribute('aria-expanded',open?'true':'false')}
 q.addEventListener('click',tog);
 q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}});
+});
+document.querySelectorAll('.copy-link').forEach(function(btn){
+btn.addEventListener('click',function(){
+var url=btn.getAttribute('data-url'),done=function(){var t=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=t},1600)};
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done).catch(function(){prompt('Copy this link:',url)})}
+else{prompt('Copy this link:',url)}
+});
 });
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){const img=entry.target;img.src=img.dataset.src;img.classList.add('loaded');observer.unobserve(img)}});});document.querySelectorAll('img[data-src]').forEach(img=>observer.observe(img))}else{document.querySelectorAll('img[data-src]').forEach(function(img){img.src=img.dataset.src})}
 </script>

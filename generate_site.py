@@ -8,6 +8,7 @@ import os
 import re
 import json
 import html as htmllib
+from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 from datetime import datetime
 
 DOMAIN = "https://elixirconsultinggroup.com"
@@ -214,6 +215,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .post-meta img{{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.35)}}
 .post-meta .dot{{opacity:.5}}
 .post-tag{{display:inline-block;background:rgba(201,168,76,.16);color:{COLORS['gold']};border:1px solid rgba(201,168,76,.4);border-radius:999px;padding:4px 12px;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}}
+/* Article furniture: contents, share row, prev/next */
+.toc{{max-width:760px;margin:0 auto 32px;background:{COLORS['off_white']};border:1px solid {COLORS['border']};border-left:4px solid {COLORS['gold']};border-radius:0 12px 12px 0;padding:22px 26px}}
+.toc-title{{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:{COLORS['navy']};margin-bottom:10px}}
+.toc ol{{margin:0;padding-left:1.15rem}}
+.toc li{{margin-bottom:7px;font-size:.95rem}}
+.toc a{{color:{COLORS['text_light']};text-decoration:none}}
+.toc a:hover{{color:{COLORS['gold']};text-decoration:underline}}
+.share-row{{max-width:760px;margin:36px auto 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-top:22px;border-top:1px solid {COLORS['border']}}}
+.share-label{{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:{COLORS['mid_gray']};margin-right:4px}}
+.share-row a,.copy-link{{display:inline-flex;align-items:center;min-height:40px;padding:8px 16px;border:1px solid {COLORS['border']};border-radius:999px;background:#fff;font-size:.88rem;font-weight:600;color:{COLORS['navy']};cursor:pointer;font-family:inherit}}
+.share-row a:hover,.copy-link:hover{{border-color:{COLORS['gold']};color:{COLORS['navy']}}}
+.prev-next{{max-width:760px;margin:32px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}}
+.pn-link{{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid {COLORS['border']};border-radius:12px;background:#fff;transition:border-color .2s,transform .2s}}
+.pn-link:hover{{border-color:{COLORS['gold']};transform:translateY(-2px)}}
+.pn-link span{{font-size:.78rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:{COLORS['gold']}}}
+.pn-link strong{{font-size:.98rem;line-height:1.35;color:{COLORS['navy']}}}
+.pn-next{{text-align:right;align-items:flex-end}}
+a.post-tag{{text-decoration:none}}
+a.post-tag:hover{{background:rgba(201,168,76,.28);color:{COLORS['gold']}}}
+
 .author-box{{max-width:760px;margin:48px auto 0;display:flex;gap:24px;align-items:flex-start;background:{COLORS['off_white']};border-radius:14px;padding:28px}}
 .author-box img{{width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0}}
 .author-box h3{{font-size:1.15rem;margin-bottom:2px}}
@@ -322,6 +343,11 @@ main[style]{{margin-top:64px!important}}
 .post-card .pc-meta{{font-size:.87rem}}
 .post-card h3{{font-size:1.12rem}}
 .author-box{{flex-direction:column;align-items:center;text-align:center;gap:16px;padding:24px 20px}}
+.prev-next{{grid-template-columns:1fr}}
+.pn-next{{text-align:left;align-items:flex-start}}
+.toc{{padding:18px 20px}}
+.share-row{{gap:8px}}
+.share-row a,.copy-link{{min-height:44px;font-size:.85rem;padding:8px 14px}}
 .blog-toolbar{{flex-direction:column;align-items:stretch}}
 /* flex-basis grows the *height* once the toolbar stacks, so pin it back down */
 .blog-search{{flex:0 0 auto;width:100%;min-height:52px}}
@@ -351,7 +377,8 @@ main[style]{{margin-top:64px!important}}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{{display:inline-flex;align-items:center;min-height:44px}}
 /* Standalone links sitting inside cards and stat blocks are tap targets too.
    Links inline within a sentence stay as-is; WCAG exempts those. */
-.stat-label a,.contact-info-card p a,.post-card .pc-body>a{{display:inline-flex;align-items:center;min-height:44px}}
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a,a.post-tag,.post-meta a,.author-box p a,.contact-info-card a,.section a[href^="https://thepittsburghwire"],.section a[href^="https://www.youtube"]{{display:inline-flex;align-items:center;min-height:44px}}
+a.post-tag{{padding:8px 16px}}
 .breadcrumb a{{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}}
 .services-link{{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}}
 .faq-q{{min-height:56px;padding:18px 20px}}
@@ -1215,9 +1242,11 @@ SERVICE_FAQS = {
 
 # ─── Helper Functions ───────────────────────────────────────────────────
 def make_header(active_path="/"):
+    home_current = ' aria-current="page"' if active_path == "/" else ""
     nav_html = ""
     for label, path in NAV_ITEMS:
-        cls = ' style="color:#002E5B;font-weight:700"' if path == active_path else ""
+        active = path == active_path or (path != "/" and active_path.startswith(path))
+        cls = ' style="color:#002E5B;font-weight:700" aria-current="page"' if active else ""
         nav_html += f'<li><a href="{path}"{cls}>{label}</a></li>\n'
     nav_html += f'<li><a href="/contact/" class="btn btn-primary">Book a Consult</a></li>'
 
@@ -1233,7 +1262,7 @@ def make_header(active_path="/"):
 </div>
 </div>
 <div class="header-inner">
-<a href="/" class="logo" aria-label="Elixir Consulting Group home">Elixir<span>.</span></a>
+<a href="/" class="logo" aria-label="Elixir Consulting Group home"{home_current}>Elixir<span>.</span></a>
 <nav aria-label="Main">
 <button type="button" class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
 <span></span><span></span><span></span>
@@ -1549,6 +1578,12 @@ def make_page(title, description, path, body, schema="", canonical=None,
 """
 
     faq_schema = make_faq_schema(faq) if faq else ""
+    robots_meta = ('<meta name="robots" content="index,follow,max-image-preview:large,'
+                   'max-snippet:-1,max-video-preview:-1">')
+    if "name=\"robots\"" in extra_head:
+        # A page that sets its own robots directive (the 404) must not also get
+        # the indexable default -- two conflicting tags is undefined behaviour.
+        robots_meta = ""
     global_schema = make_global_schema()
 
     return f"""<!DOCTYPE html>
@@ -1586,9 +1621,11 @@ def make_page(title, description, path, body, schema="", canonical=None,
 <meta name="twitter:description" content="{desc_a}">
 <meta name="twitter:image" content="{image_a}">
 <meta name="twitter:image:alt" content="{title_a}">
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+{robots_meta}
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
 <style>{SHARED_CSS}</style>
 {global_schema}
 {schema}
@@ -1630,14 +1667,47 @@ function tog(){{var open=!item.classList.contains('active');item.classList.toggl
 q.addEventListener('click',tog);
 q.addEventListener('keydown',function(e){{if(e.key==='Enter'||e.key===' '){{e.preventDefault();tog()}}}});
 }});
+document.querySelectorAll('.copy-link').forEach(function(btn){{
+btn.addEventListener('click',function(){{
+var url=btn.getAttribute('data-url'),done=function(){{var t=btn.textContent;btn.textContent='Copied';setTimeout(function(){{btn.textContent=t}},1600)}};
+if(navigator.clipboard&&navigator.clipboard.writeText){{navigator.clipboard.writeText(url).then(done).catch(function(){{prompt('Copy this link:',url)}})}}
+else{{prompt('Copy this link:',url)}}
+}});
+}});
 if('IntersectionObserver' in window){{const observer=new IntersectionObserver(function(entries){{entries.forEach(function(entry){{if(entry.isIntersecting){{const img=entry.target;img.src=img.dataset.src;img.classList.add('loaded');observer.unobserve(img)}}}});}});document.querySelectorAll('img[data-src]').forEach(img=>observer.observe(img))}}else{{document.querySelectorAll('img[data-src]').forEach(function(img){{img.src=img.dataset.src}})}}
 </script>
 </body>
 </html>"""
 
 
+_ENTITY_RE = re.compile(r"&(?!amp;|lt;|gt;|quot;|apos;|nbsp;|#\d+;|#x[0-9a-fA-F]+;|[a-zA-Z][a-zA-Z0-9]{1,10};)")
+_SKIP_RE = re.compile(r"(<(?:script|style)\b[^>]*>.*?</(?:script|style)>|<[^>]+>)", re.S | re.I)
+
+
+def escape_stray_ampersands(html):
+    """Escape bare `&` in text content across a finished page.
+
+    Copy is written inline in dozens of places ("Sales & Revenue", "AI & Digital
+    Transformation"), and escaping each by hand is the kind of thing that stays
+    correct for exactly one edit. Doing it once at write time covers every page,
+    and skips tags, scripts, and styles so JSON-LD and CSS are untouched.
+    Already-valid entities are left alone, which keeps the pass idempotent.
+    """
+    out = []
+    for chunk in _SKIP_RE.split(html):
+        if chunk[:7].lower() in ("<script", "<style ") or chunk[:8].lower() == "<style>":
+            # JSON-LD and CSS are their own languages; leave them alone.
+            out.append(chunk)
+        else:
+            # Attribute values need this too: ingested articles carry image URLs
+            # with a raw "?w=1200&q=80" query.
+            out.append(_ENTITY_RE.sub("&amp;", chunk))
+    return "".join(out)
+
+
 def write_page(path, content):
     """Write an HTML page to the correct file path."""
+    content = escape_stray_ampersands(content)
     if path.endswith("/"):
         filepath = path + "index.html"
     else:
@@ -2085,7 +2155,7 @@ def gen_about():
 <p>Dr. Connor Robertson is the founder and lead consultant at Elixir Consulting Group, bringing extensive experience in business strategy, operational growth, and organizational development.</p>
 <p>Through his work with entrepreneurs and established companies, Dr. Robertson helps organizations identify opportunities, improve performance, and achieve sustainable long-term success. His approach is hands-on and implementation-focused. He works alongside owners and leadership teams to install the systems, not just recommend them.</p>
 <p>Dr. Robertson's expertise spans business strategy, operations consulting, AI and digital transformation, sales system design, and leadership development. His work has helped businesses across industries build the structure they need to grow without chaos.</p>
-<p>He is the author of six books on business acquisitions and strategy, including <a href="https://www.barnesandnoble.com/w/creative-acquisitions-by-dr-connor-robertson-connor-robertson/1148958050" target="_blank" rel="noopener"><em>Creative Acquisitions</em></a>, <a href="https://play.google.com/store/books/details/Dr_Connor_Robertson_Buying_Wealth?id=Dw2HEQAAQBAJ" target="_blank" rel="noopener"><em>Buying Wealth</em></a>, and <a href="https://play.google.com/store/books/details/Dr_Connor_Robertson_The_7_Minute_Phone_Call?id=9QyHEQAAQBAJ" target="_blank" rel="noopener"><em>The 7 Minute Phone Call</em></a>. His books are available on <a href="https://www.barnesandnoble.com/s/Connor+Robertson" target="_blank" rel="noopener">Barnes & Noble</a>, <a href="https://play.google.com/store/books/details/Dr_Connor_Robertson_Buying_Wealth?id=Dw2HEQAAQBAJ" target="_blank" rel="noopener">Google Play</a>, and <a href="https://www.kobo.com/us/en/search?query=Connor+Robertson&fcsearchfield=Author" target="_blank" rel="noopener">Kobo</a>.</p>
+<p>He is the author of six books on business acquisitions and strategy, including <a href="https://www.barnesandnoble.com/w/creative-acquisitions-by-dr-connor-robertson-connor-robertson/1148958050" target="_blank" rel="noopener"><em>Creative Acquisitions</em></a>, <a href="https://play.google.com/store/books/details/Dr_Connor_Robertson_Buying_Wealth?id=Dw2HEQAAQBAJ" target="_blank" rel="noopener"><em>Buying Wealth</em></a>, and <a href="https://play.google.com/store/books/details/Dr_Connor_Robertson_The_7_Minute_Phone_Call?id=9QyHEQAAQBAJ" target="_blank" rel="noopener"><em>The 7 Minute Phone Call</em></a>. His books are available on <a href="https://www.barnesandnoble.com/s/Connor+Robertson" target="_blank" rel="noopener">Barnes & Noble</a>, <a href="https://play.google.com/store/books/details/Dr_Connor_Robertson_Buying_Wealth?id=Dw2HEQAAQBAJ" target="_blank" rel="noopener">Google Play</a>, and <a href="https://www.kobo.com/us/en/search?query=Connor+Robertson&amp;fcsearchfield=Author" target="_blank" rel="noopener">Kobo</a>.</p>
 <a href="https://drconnorrobertson.com" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:12px">Visit DrConnorRobertson.com</a>
 </div>
 </div>
@@ -2320,6 +2390,7 @@ def gen_service_page(slug, title, tagline, intro, items, outcomes, all_posts=Non
 </div>
 </section>
 
+{{PROOF}}
 {faq_section}
 {related_html}
 {make_cta()}
@@ -2328,6 +2399,46 @@ def gen_service_page(slug, title, tagline, intro, items, outcomes, all_posts=Non
         "ai-consulting": "AI Consulting for Business Owners | Elixir Consulting",
         "leadership": "Leadership Consulting & Coaching | Elixir Consulting",
     }
+    sector_links = " ".join(
+        f'<a href="/industries/{i["slug"]}/" class="services-link">{i["name"]}</a>'
+        for i in INDUSTRIES)
+    proof = next((c for c in CASE_STUDIES
+                  if any(sv[1] == f"/services/{slug}/" for sv in c["services"])), None)
+    proof_html = ""
+    if proof:
+        metrics = "".join(
+            f'<div class="stat-card"><span class="stat-num" style="color:{COLORS["gold"]}">{v}</span>'
+            f'<span class="stat-label" style="color:rgba(255,255,255,.85)">{l}</span></div>'
+            for v, l in proof["metrics"])
+        proof_html = f"""
+<section class="section section-navy">
+<div class="container">
+<div class="text-center" style="margin-bottom:36px">
+<span class="eyebrow">Proof</span>
+<h2>{proof['title']}</h2>
+<p style="max-width:640px;margin:0 auto">{proof['challenge']}</p>
+</div>
+<div class="grid grid-3">{metrics}</div>
+<div class="text-center" style="margin-top:32px">
+<a href="/case-studies/{proof['slug']}/" class="btn btn-gold">Read the Full Case Study</a>
+</div>
+</div>
+</section>
+"""
+
+    proof_html += f"""
+<section class="section">
+<div class="container text-center">
+<span class="eyebrow">By Sector</span>
+<h2 style="margin-bottom:20px">{title} in Your Industry</h2>
+<p style="max-width:640px;margin:0 auto 20px">The method transfers between industries. The context does not, so each sector has its own page.</p>
+<div style="max-width:860px;margin:0 auto">{sector_links}</div>
+</div>
+</section>
+"""
+    # The f-string above renders {{PROOF}} down to a single-braced marker.
+    body = body.replace("{PROOF}", proof_html)
+
     service_schema = '<script type="application/ld+json">\n' + json.dumps({
         "@context": "https://schema.org",
         "@type": "Service",
@@ -2592,9 +2703,29 @@ def consulting_faqs(page):
     ]
 
 
-def gen_consulting_page(page, siblings):
+def gen_consulting_page(page, siblings, all_posts=None):
+    all_posts = all_posts or []
     city = page["city"]
     faqs = consulting_faqs(page)
+    related = related_by_keywords(all_posts, [city, page["state"], "Pittsburgh", "local", "regional"], 3)
+    related_html = ""
+    if related:
+        related_html = f"""
+<section class="related-posts">
+<div class="container">
+<div class="text-center" style="margin-bottom:32px">
+<span class="eyebrow">Further Reading</span>
+<h2>Articles for {city} Business Owners</h2>
+</div>
+<div class="post-list">
+{"".join(post_card(p) for p in related)}
+</div>
+<div class="text-center" style="margin-top:28px">
+<a href="/blog/" class="btn btn-outline">Browse All Articles</a>
+</div>
+</div>
+</section>
+"""
 
     service_cards = ""
     for name, href in CONSULTING_SERVICES:
@@ -2607,8 +2738,11 @@ def gen_consulting_page(page, siblings):
     nearby = [p for p in siblings if p["slug"] != page["slug"]]
     seed = sum(ord(c) for c in page["slug"])
     nearby = [nearby[(seed + i) % len(nearby)] for i in range(min(8, len(nearby)))] if nearby else []
-    nearby_links = " &nbsp;&middot;&nbsp; ".join(
-        f'<a href="/consulting/{p["slug"]}/">{p["city"]}</a>' for p in nearby)
+    # Chips rather than a run-on sentence: this is a link list, and at phone
+    # width inline links separated by dots are too small to tap reliably.
+    nearby_links = "".join(
+        f'<a href="/consulting/{p["slug"]}/" class="services-link">{esc_text(p["city"])}</a>'
+        for p in nearby)
 
     testimonial = TESTIMONIALS[seed % len(TESTIMONIALS)]
 
@@ -2683,6 +2817,8 @@ def gen_consulting_page(page, siblings):
 </section>
 
 {render_faq_section(faqs, f"{city} Consulting FAQs", gray=False)}
+
+{related_html}
 
 <section class="section section-gray">
 <div class="container text-center">
@@ -2850,7 +2986,7 @@ def gen_industry_page(ind, all_posts):
 <div class="container">
 <div class="split-2 split-center">
 <div>
-<span class="eyebrow">{name} Case Study</span>
+<span class="eyebrow">{esc_text(name)} Case Study</span>
 <h2>{case['title']}</h2>
 <p>{case['challenge']}</p>
 <a href="/case-studies/{case['slug']}/" class="btn btn-gold" style="margin-top:12px">Read the Full Case Study</a>
@@ -2878,8 +3014,8 @@ def gen_industry_page(ind, all_posts):
 <div class="container">
 <p class="breadcrumb"><a href="/">Home</a> / <a href="/industries/">Industries</a> / {name}</p>
 <p style="margin-bottom:14px"><span class="post-tag">Industry</span></p>
-<h1>Business Consulting for {name}</h1>
-<p>{clip(ind['short'], 190)}</p>
+<h1>Business Consulting for {esc_text(name)}</h1>
+<p>{esc_text(clip(ind['short'], 190))}</p>
 <div style="margin-top:24px">
 <a href="/contact/" class="btn btn-gold">Book a Consult</a>
 <a href="{PHONE_HREF}" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff">Call {PHONE}</a>
@@ -2894,13 +3030,13 @@ def gen_industry_page(ind, all_posts):
 <div class="split-2 split-center">
 <div>
 <span class="eyebrow">The Context</span>
-<h2>What Makes {name} Different</h2>
+<h2>What Makes {esc_text(name)} Different</h2>
 <p>{ind['intro']}</p>
 <p>We work with owner-led {name.lower()} businesses that have proven demand and are held back by how the work gets done rather than whether anyone wants it.</p>
 <a href="/case-studies/" class="btn btn-outline" style="margin-top:8px">See Client Results</a>
 </div>
 <div>
-<img src="{esc_attr(ind['image'])}" alt="{esc_attr(name)} business operations - Elixir Consulting Group" width="800" height="600" loading="lazy" decoding="async" style="border-radius:14px;width:100%;height:340px;object-fit:cover">
+<img src="{esc_attr(ind['image'])}" alt="{esc_attr(name)} business operations - Elixir Consulting Group" width="800" height="600"{responsive_attrs(ind['image'], '(max-width:900px) 100vw, 560px')} loading="lazy" decoding="async" style="border-radius:14px;width:100%;height:340px;object-fit:cover">
 </div>
 </div>
 </div>
@@ -2910,7 +3046,7 @@ def gen_industry_page(ind, all_posts):
 <div class="container">
 <div class="text-center" style="margin-bottom:44px">
 <span class="eyebrow">Common Constraints</span>
-<h2>What We See in {name}</h2>
+<h2>What We See in {esc_text(name)}</h2>
 <p style="max-width:680px;margin:0 auto">These are the patterns that come up most often. If two or more sound familiar, there is usually a systems problem underneath them.</p>
 </div>
 <div class="grid grid-2">
@@ -2924,7 +3060,7 @@ def gen_industry_page(ind, all_posts):
 <div class="split-1-2">
 <div>
 <span class="eyebrow">Our Approach</span>
-<h2>How We Work in {name}</h2>
+<h2>How We Work in {esc_text(name)}</h2>
 <p>Implementation, not recommendations. We build the systems with your team and stay involved long enough to know they stuck.</p>
 <div class="contact-info-card" style="margin-top:20px">
 <h3 style="margin-bottom:10px">Expected Outcomes</h3>
@@ -2946,7 +3082,7 @@ def gen_industry_page(ind, all_posts):
 <div class="container">
 <div class="text-center" style="margin-bottom:44px">
 <span class="eyebrow">Services</span>
-<h2>Where {name} Engagements Usually Start</h2>
+<h2>Where {esc_text(name)} Engagements Usually Start</h2>
 </div>
 <div class="grid grid-3">
 <div class="card"><h3><a href="/services/operations/">Operations Consulting</a></h3><p>Process mapping, SOPs, role clarity, and the weekly cadence that keeps delivery consistent.</p><a href="/services/operations/">Learn more &rarr;</a></div>
@@ -2962,7 +3098,7 @@ def gen_industry_page(ind, all_posts):
 <div class="container">
 <div class="text-center" style="margin-bottom:32px">
 <span class="eyebrow">Further Reading</span>
-<h2>Articles Relevant to {name}</h2>
+<h2>Articles Relevant to {esc_text(name)}</h2>
 </div>
 <div class="post-list">
 {related_cards}
@@ -3168,9 +3304,9 @@ def gen_industries():
     for ind in INDUSTRIES:
         cards += f"""<div class="industry-card card">
 <div class="ind-icon">{ind['icon']}</div>
-<h3><a href="/industries/{ind['slug']}/">{ind['name']}</a></h3>
-<p>{ind['short']}</p>
-<a href="/industries/{ind['slug']}/">{ind['name']} consulting &rarr;</a>
+<h3><a href="/industries/{ind['slug']}/">{esc_text(ind['name'])}</a></h3>
+<p>{esc_text(ind['short'])}</p>
+<a href="/industries/{ind['slug']}/">{esc_text(ind['name'])} consulting &rarr;</a>
 </div>\n"""
 
     schema = '<script type="application/ld+json">\n' + json.dumps({
@@ -3348,6 +3484,20 @@ CATEGORY_RULES = [
                             "local", "western-pa"]),
 ]
 
+# Artwork inherited from earlier tooling that no longer resolves. Substituted at
+# ingest so a 404 never reaches a reader or a social card.
+BROKEN_IMAGE_REPLACEMENTS = {
+    "photo-_PwUa6vMgEI": "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+}
+
+
+def repair_image_url(url):
+    for bad, good in BROKEN_IMAGE_REPLACEMENTS.items():
+        if bad in url:
+            return re.sub(r"https://images\.unsplash\.com/[^?]+", good, url)
+    return url
+
+
 # Images already served elsewhere on the site, grouped so a post without its own
 # artwork still gets something topical instead of an empty grey box.
 CATEGORY_IMAGES = {
@@ -3418,8 +3568,84 @@ def _find_balanced(html, start, tag="div"):
     return html[open_end + 1:html.rfind("<", open_end, i)]
 
 
+IMAGE_DIMS_FILE = "data/image-dimensions.json"
+_IMAGE_DIMS = None
+
+
+def load_image_dims():
+    global _IMAGE_DIMS
+    if _IMAGE_DIMS is None:
+        path = os.path.join(SITE_DIR, IMAGE_DIMS_FILE)
+        if os.path.isfile(path):
+            with open(path, encoding="utf-8") as f:
+                _IMAGE_DIMS = json.load(f)
+        else:
+            _IMAGE_DIMS = {}
+    return _IMAGE_DIMS
+
+
+def save_image_dims():
+    if _IMAGE_DIMS:
+        path = os.path.join(SITE_DIR, IMAGE_DIMS_FILE)
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(_IMAGE_DIMS, f, indent=2, sort_keys=True)
+            f.write("\n")
+
+
+def image_dimensions(url):
+    """Real pixel dimensions for a remote image, cached to disk.
+
+    Width and height attributes let the browser reserve the right space before
+    the image loads, which is the difference between a stable article and one
+    that jumps as you read. Measured once, cached in the repo, and guessed at
+    16:9 only if the network is unavailable on a first encounter.
+    """
+    dims = load_image_dims()
+    if url in dims:
+        return tuple(dims[url])
+    guess = (1200, 675)
+    try:
+        import io
+        import urllib.request
+        from PIL import Image
+        req = urllib.request.Request(url, headers={"User-Agent": "elixir-site-generator"})
+        with urllib.request.urlopen(req, timeout=12) as resp:
+            img = Image.open(io.BytesIO(resp.read()))
+            guess = img.size
+        print(f"  Measured {guess[0]}x{guess[1]}: {url[:70]}")
+    except Exception:
+        print(f"  ! Could not measure, assuming 16:9: {url[:70]}")
+        return guess
+    dims[url] = list(guess)
+    return guess
+
+
+def annotate_body_images(html):
+    """Give in-article images explicit dimensions and lazy loading."""
+
+    def sub(m):
+        tag = m.group(0)
+        src = re.search(r'src="([^"]+)"', tag)
+        if not src:
+            return tag
+        url = repair_image_url(htmllib.unescape(src.group(1)))
+        if url != htmllib.unescape(src.group(1)):
+            tag = tag.replace(src.group(1), esc_attr(url))
+        if "width=" not in tag or "height=" not in tag:
+            w, h = image_dimensions(url)
+            tag = tag[:-1].rstrip() + f' width="{w}" height="{h}">'
+        if "loading=" not in tag:
+            tag = tag[:-1].rstrip() + ' loading="lazy" decoding="async">'
+        return tag
+
+    return re.sub(r"<img\b[^>]*>", sub, html)
+
+
 def clean_article_html(html):
     """Normalize legacy markup so every post renders through the same stylesheet."""
+    # Dead assets inherited from the original WordPress site.
+    html = re.sub(r'<img\b[^>]*wp-content/plugins[^>]*>', "", html)
     # Unwrap Elementor/WordPress page-builder scaffolding left over from the
     # original site migration -- the wrappers carry no styles here, only noise.
     for _ in range(12):
@@ -3435,6 +3661,7 @@ def clean_article_html(html):
     html = re.sub(r"<(/?)h1\b", r"<\1h2", html)
     html = re.sub(r"<section class=\"related-posts\">.*?</section>", "", html, flags=re.S)
     html = _rebalance_divs(html)
+    html = annotate_body_images(html)
     html = re.sub(r"\n{3,}", "\n\n", html)
     return html.strip()
 
@@ -3641,13 +3868,15 @@ def load_all_posts():
         if slug in store:
             p["custom_faqs"] = store[slug]
     save_custom_faqs(store)
+    save_image_dims()
 
     out = []
     for p in posts.values():
         p["title"] = p["title"].strip()
         p["category"] = classify_post(p["slug"], p["title"])
         p["description"] = (p["description"] or clip(p["content"], 160)).strip()
-        p["image"] = p["image"] or CATEGORY_IMAGES.get(p["category"], CATEGORY_IMAGES["Insights"])
+        p["image"] = repair_image_url(p["image"]) if p["image"] else CATEGORY_IMAGES.get(
+            p["category"], CATEGORY_IMAGES["Insights"])
         p["image_alt"] = p["image_alt"] or f"{p['title']} - Elixir Consulting Group"
         p["og_image"] = p["image"].replace("w=800", "w=1200")
         p["read_min"] = read_minutes(p["content"])
@@ -3766,10 +3995,32 @@ def related_posts(post, all_posts, count=3):
     return picked
 
 
+def responsive_attrs(url, sizes, widths=(400, 800, 1200)):
+    """srcset/sizes for Unsplash-hosted artwork, which resizes via ?w=.
+
+    Anything else (a local file, another host) gets no srcset rather than a
+    guessed one that would 404.
+    """
+    if "images.unsplash.com" not in url:
+        return ""
+    parts = urlsplit(url)
+    # Rebuild the query properly: a regex strip left "?w=800&q=80" as "&q=80",
+    # which then took a second "?" and produced an unfetchable URL.
+    query = [(k, v) for k, v in parse_qsl(parts.query) if k != "w"]
+
+    def at(width):
+        q = urlencode(query + [("w", str(width))])
+        return urlunsplit((parts.scheme, parts.netloc, parts.path, q, parts.fragment))
+
+    srcset = ", ".join(f"{esc_attr(at(w))} {w}w" for w in widths)
+    return f' srcset="{srcset}" sizes="{esc_attr(sizes)}"'
+
+
 def post_card(p, lazy=True):
     loading = 'loading="lazy" decoding="async"' if lazy else 'loading="eager" fetchpriority="high"'
+    rs = responsive_attrs(p["image"], "(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px")
     return f"""<article class="post-card" data-cat="{esc_attr(p['category'])}" data-search="{esc_attr((p['title'] + ' ' + p['excerpt'] + ' ' + p['category']).lower())}">
-<a href="{p['url']}" tabindex="-1" aria-hidden="true"><img class="thumb" src="{esc_attr(p['image'])}" alt="{esc_attr(p['image_alt'])}" width="800" height="450" {loading}></a>
+<a href="{p['url']}" tabindex="-1" aria-hidden="true"><img class="thumb" src="{esc_attr(p['image'])}" alt="{esc_attr(p['image_alt'])}" width="800" height="450"{rs} {loading}></a>
 <div class="pc-body">
 <p class="pc-cat">{p['category']}</p>
 <h3><a href="{p['url']}">{esc_text(p['title'])}</a></h3>
@@ -3839,7 +4090,7 @@ def gen_blog_index(all_posts):
 
 <a href="{featured['url']}" style="display:block" aria-label="Featured article: {esc_attr(featured['title'])}">
 <div class="featured-post">
-<img src="{esc_attr(featured['image'])}" alt="{esc_attr(featured['image_alt'])}" width="800" height="450" fetchpriority="high" decoding="async">
+<img src="{esc_attr(featured['image'])}" alt="{esc_attr(featured['image_alt'])}" width="800" height="450"{responsive_attrs(featured['image'], '(max-width:968px) 100vw, 640px')} fetchpriority="high" decoding="async">
 <div class="fp-body">
 <p class="pc-cat" style="margin-bottom:10px">Latest &middot; {featured['category']}</p>
 <h2>{esc_text(featured['title'])}</h2>
@@ -3853,7 +4104,8 @@ def gen_blog_index(all_posts):
 <div class="text-center" style="margin-bottom:28px">
 <span class="eyebrow">Browse by Topic</span>
 <div style="margin-top:12px">{category_links}</div>
-<p style="margin-top:14px;font-size:.95rem">All articles are written by <a href="/blog/author/dr-connor-robertson/">Dr. Connor Robertson</a>. <a href="/feed.xml">Subscribe via RSS</a>.</p>
+<p style="margin-top:14px;font-size:.95rem">All articles are written by Dr. Connor Robertson.</p>
+<div style="margin-top:6px"><a href="/blog/author/dr-connor-robertson/" class="services-link">Author archive</a><a href="/feed.xml" class="services-link">Subscribe via RSS</a></div>
 </div>
 
 <div class="blog-toolbar">
@@ -3941,6 +4193,38 @@ def seo_title_for(title, suffix=" | Elixir Consulting Group"):
     return title[:62].rsplit(" ", 1)[0].rstrip(" ,.;:-")
 
 
+def heading_id(text, used):
+    base = re.sub(r"[^a-z0-9]+", "-", strip_tags(text).lower()).strip("-")[:60] or "section"
+    slug, n = base, 2
+    while slug in used:
+        slug, n = f"{base}-{n}", n + 1
+    used.add(slug)
+    return slug
+
+
+def add_heading_anchors(html):
+    """Give every H2 in an article body a stable id and return the outline.
+
+    Ids come from the heading text, so a link shared today still lands on the
+    right section after the archive is rebuilt.
+    """
+    used, outline = set(), []
+
+    def sub(m):
+        attrs, text = m.group(1), m.group(2)
+        existing = re.search(r'id="([^"]+)"', attrs)
+        hid = existing.group(1) if existing else heading_id(text, used)
+        if existing:
+            used.add(hid)
+        else:
+            attrs = f'{attrs} id="{hid}"'
+        outline.append((hid, strip_tags(text).strip()))
+        return f"<h2{attrs}>{text}</h2>"
+
+    html = re.sub(r"<h2([^>]*)>(.*?)</h2>", sub, html, flags=re.S)
+    return html, outline
+
+
 def gen_blog_post(post, all_posts):
     rel = related_posts(post, all_posts)
     rel_cards = "".join(post_card(p) for p in rel)
@@ -3975,11 +4259,43 @@ def gen_blog_post(post, all_posts):
         "isPartOf": {"@type": "Blog", "name": "Elixir Consulting Group Blog", "@id": DOMAIN + "/blog/"},
     }) + '\n</script>'
 
+    content, outline = add_heading_anchors(post["content"])
+    toc = ""
+    if len(outline) >= 3:
+        links = "".join(
+            f'<li><a href="#{hid}">{esc_text(text)}</a></li>\n' for hid, text in outline)
+        toc = f"""<nav class="toc" aria-label="Table of contents">
+<p class="toc-title">In this article</p>
+<ol>
+{links}</ol>
+</nav>"""
+
+    idx = next((i for i, p in enumerate(all_posts) if p["slug"] == post["slug"]), None)
+    prev_post = all_posts[idx + 1] if idx is not None and idx + 1 < len(all_posts) else None
+    next_post = all_posts[idx - 1] if idx not in (None, 0) else None
+    nav_links = ""
+    if prev_post or next_post:
+        left = (f'<a class="pn-link" href="{prev_post["url"]}"><span>&larr; Previous</span>'
+                f'<strong>{esc_text(clip(prev_post["title"], 70))}</strong></a>') if prev_post else "<span></span>"
+        right = (f'<a class="pn-link pn-next" href="{next_post["url"]}"><span>Next &rarr;</span>'
+                 f'<strong>{esc_text(clip(next_post["title"], 70))}</strong></a>') if next_post else "<span></span>"
+        nav_links = f'<nav class="prev-next" aria-label="More articles">{left}{right}</nav>'
+
+    share_url = DOMAIN + post["url"]
+    share_title = post["title"]
+    share = f"""<div class="share-row">
+<span class="share-label">Share</span>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url={esc_attr(share_url)}" target="_blank" rel="noopener" aria-label="Share on LinkedIn">LinkedIn</a>
+<a href="https://x.com/intent/tweet?url={esc_attr(share_url)}&amp;text={esc_attr(share_title)}" target="_blank" rel="noopener" aria-label="Share on X">X</a>
+<a href="mailto:?subject={esc_attr(share_title)}&amp;body={esc_attr(share_url)}" aria-label="Share by email">Email</a>
+<button type="button" class="copy-link" data-url="{esc_attr(share_url)}">Copy link</button>
+</div>"""
+
     body = f"""
 <section class="page-hero">
 <div class="container">
-<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / {esc_text(clip(post['title'], 48))}</p>
-<p style="margin-bottom:14px"><span class="post-tag">{post['category']}</span></p>
+<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / <a href="/blog/category/{category_slug(post['category'])}/">{post['category']}</a> / {esc_text(clip(post['title'], 40))}</p>
+<p style="margin-bottom:14px"><a href="/blog/category/{category_slug(post['category'])}/" class="post-tag">{post['category']}</a></p>
 <h1 style="font-size:clamp(1.65rem,4.2vw,2.6rem);max-width:900px;margin-left:auto;margin-right:auto">{esc_text(post['title'])}</h1>
 <p>{esc_text(post['excerpt'])}</p>
 <div class="post-meta">
@@ -3996,11 +4312,16 @@ def gen_blog_post(post, all_posts):
 <section class="section">
 <div class="container">
 <figure style="max-width:860px;margin:0 auto 8px">
-<img class="article-hero-img" src="{esc_attr(post['image'])}" alt="{esc_attr(post['image_alt'])}" width="1200" height="630" fetchpriority="high" decoding="async">
+<img class="article-hero-img" src="{esc_attr(post['image'])}" alt="{esc_attr(post['image_alt'])}" width="1200" height="630"{responsive_attrs(post['image'], '(max-width:900px) 100vw, 860px')} fetchpriority="high" decoding="async">
 </figure>
+{toc}
 <article class="article-body" id="post-body">
-{post['content']}
+{content}
 </article>
+
+{share}
+
+{nav_links}
 
 <div class="author-box">
 <img src="{HEADSHOT}" alt="{HEADSHOT_ALT}" width="192" height="192" loading="lazy" decoding="async">
@@ -4373,7 +4694,7 @@ def gen_author_page(all_posts):
 {make_cta()}
 """
     return make_page(
-        "Dr. Connor Robertson | Articles & Insights | Elixir Consulting",
+        "Articles by Dr. Connor Robertson | Elixir Consulting",
         f"All {len(all_posts)} articles by Dr. Connor Robertson, founder of Elixir Consulting Group, on operations, sales systems, leadership, AI adoption, and business growth.",
         "/blog/author/dr-connor-robertson/",
         body,
@@ -4596,49 +4917,159 @@ window.location.href=href;
 
 
 def gen_faq():
-    faq_schema_items = []
-    faq_html = ""
-    for q, a in FAQ_ITEMS:
-        faq_html += f"""<div class="faq-item">
-<div class="faq-q">{q}</div>
-<div class="faq-a"><p>{a}</p></div>
-</div>\n"""
-        faq_schema_items.append({
-            "@type": "Question",
-            "name": q,
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": a
-            }
-        })
+    # FAQ_ITEMS stays the flat canonical list (other pages index into it).
+    # This page groups them, adds the questions that only make sense here, and
+    # gives each group an anchor so answers can be linked directly.
+    by_text = dict(FAQ_ITEMS)
 
-    schema = f"""<script type="application/ld+json">
-{json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faq_schema_items}, indent=2)}
-</script>"""
+    def pick(*starts):
+        out = []
+        for s in starts:
+            for q, a in FAQ_ITEMS:
+                if q.startswith(s):
+                    out.append((q, a))
+                    break
+        return out
+
+    groups = [
+        ("fit", "Is This a Fit?", pick(
+            "What types of businesses",
+            "What industries do you specialize in",
+            "Do you work with businesses outside",
+        ) + [
+            ("What size business is too small for you?",
+             "If you are under roughly $500K in revenue and still finding your market, the constraint is usually demand rather than structure, and consulting is the wrong spend. We would rather tell you that than take the engagement."),
+            ("What if we already know what our problems are?",
+             "Most owners do. Knowing is rarely the constraint; execution is. If you have a clear list of what needs to change and it has not changed in six months, that gap is exactly what we work on."),
+        ]),
+        ("engagement", "How Engagements Work", pick(
+            "What does the initial engagement look like",
+            "How long does a typical engagement last",
+            "Do you replace our existing team",
+            "Do you offer ongoing advisory",
+        ) + [
+            ("What do you need from us?",
+             "Access and attendance. We need to talk to the people doing the work, not just leadership, and we need the leadership team in the weekly sessions. Engagements fail when the owner delegates the implementation and stops showing up."),
+            ("Do you work on-site or remotely?",
+             "Both. The assessment usually benefits from on-site time, and implementation works well in a hybrid rhythm. Our virtual process is structured to be as effective as in-person work, which is how we serve clients nationwide from Pittsburgh."),
+        ]),
+        ("pricing", "Pricing & Investment", pick(
+            "How much does it cost to work with",
+        ) + [
+            ("Is the first consult free?",
+             "Yes. There is no cost and no obligation. It exists so both sides can decide whether the work makes sense before anyone commits."),
+            ("Do you offer project-based or retainer pricing?",
+             "Both. Project pricing suits a defined scope with a clear end; a retainer suits ongoing implementation and advisory. We recommend one after the consult, once we both know what the work actually involves."),
+            ("What happens if it is not working?",
+             "We tell you. The weekly measurement exists precisely so that a system nobody is adopting becomes visible in week three rather than month five. Then we change the design, because the design was wrong."),
+        ]),
+        ("results", "Results & Measurement", pick(
+            "What results can I expect",
+            "How is Elixir different",
+        ) + [
+            ("How quickly do results appear?",
+             "Cadence and role clarity changes tend to show up within the first 30 to 60 days. Financial effects usually follow over a quarter or two as the new systems compound. Our case studies document specific timelines."),
+            ("How do you measure whether it worked?",
+             "We set baseline metrics at the start and review them weekly. The measures are always things your team can see and influence, not abstractions that only appear in a quarterly report."),
+        ]),
+        ("services", "Services & Capabilities", pick(
+            "Can you help with AI and technology adoption",
+            "Can you help us prepare our business for a sale",
+            "What is a leadership cadence",
+        )),
+        ("about", "About Elixir", pick(
+            "What makes Dr. Connor Robertson qualified",
+            "How do I get started",
+        ) + [
+            ("Who will actually do the work?",
+             "Dr. Robertson leads engagements personally rather than handing them to a junior team. The implementation model only works when the person designing the systems is in the room while they get adopted."),
+        ]),
+    ]
+
+    all_qa = [qa for _slug, _title, qas in groups for qa in qas]
+
+    nav = "".join(
+        f'<a href="#{slug}" class="services-link">{title}</a>' for slug, title, _ in groups)
+
+    sections = ""
+    for slug, title, qas in groups:
+        rows = "".join(
+            f'<div class="faq-item"><div class="faq-q" role="button" tabindex="0">{q}</div>'
+            f'<div class="faq-a"><p>{a}</p></div></div>\n' for q, a in qas)
+        sections += f"""<div id="{slug}" style="margin-bottom:44px;scroll-margin-top:130px">
+<h2 style="margin-bottom:18px">{title}</h2>
+{rows}
+</div>\n"""
+
+    schema = '<script type="application/ld+json">\n' + json.dumps({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": q,
+             "acceptedAnswer": {"@type": "Answer", "text": a}}
+            for q, a in all_qa
+        ],
+    }) + '\n</script>'
 
     body = f"""
 <section class="page-hero">
 <div class="container">
 <p class="breadcrumb"><a href="/">Home</a> / FAQ</p>
 <h1>Frequently Asked Questions</h1>
-<p>Common questions about working with Elixir Consulting Group.</p>
+<p>{len(all_qa)} answers on fit, process, pricing, results, and what working together actually involves. If yours is not here, ask directly.</p>
+<div style="margin-top:24px">
+<a href="/contact/" class="btn btn-gold">Ask Us Directly</a>
+<a href="{PHONE_HREF}" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff">Call {PHONE}</a>
+</div>
+</div>
+</section>
+
+{make_trust_bar()}
+
+<section class="section-sm" style="border-bottom:1px solid {COLORS['border']}">
+<div class="container text-center">
+<span class="eyebrow">Jump To</span>
+<div style="margin-top:12px">{nav}</div>
 </div>
 </section>
 
 <section class="section">
-<div class="container" style="max-width:800px">
-{faq_html}
+<div class="container" style="max-width:860px">
+{sections}
+</div>
+</section>
+
+<section class="section section-navy">
+<div class="container">
+<div class="text-center" style="margin-bottom:36px">
+<span class="eyebrow">Still Deciding?</span>
+<h2>Three Places to Look Next</h2>
+</div>
+<div class="grid grid-3">
+<div class="card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14)">
+<h3 style="color:#fff"><a href="/process/" style="color:#fff">How We Work</a></h3>
+<p style="color:rgba(255,255,255,.8)">The five phases of an engagement, with durations and what you get at each stage.</p>
+</div>
+<div class="card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14)">
+<h3 style="color:#fff"><a href="/case-studies/" style="color:#fff">Case Studies</a></h3>
+<p style="color:rgba(255,255,255,.8)">Four engagements documented end to end, with the numbers that changed.</p>
+</div>
+<div class="card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14)">
+<h3 style="color:#fff"><a href="/blog/" style="color:#fff">The Blog</a></h3>
+<p style="color:rgba(255,255,255,.8)">Hundreds of articles on the specific problems we solve, free to read.</p>
+</div>
+</div>
 </div>
 </section>
 
 {make_cta()}
 """
     return make_page(
-        "FAQ | Elixir Consulting Group | Business Consulting Questions",
-        "Answers to frequently asked questions about Elixir Consulting Group's business consulting services, pricing, process, and engagement structure.",
+        "FAQ | Business Consulting Questions | Elixir Consulting Group",
+        f"{len(all_qa)} answers on fit, engagement structure, pricing, results, and services from Elixir Consulting Group. Pittsburgh, PA and nationwide.",
         "/faq/",
         body,
-        schema
+        schema,
     )
 
 
@@ -5002,7 +5433,30 @@ def gen_vercel_json():
                     {"key": "X-XSS-Protection", "value": "1; mode=block"},
                     {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
                     {"key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()"},
-                    {"key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains"}
+                    {"key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains; preload"},
+                    {"key": "Cross-Origin-Opener-Policy", "value": "same-origin"},
+                    {"key": "X-DNS-Prefetch-Control", "value": "on"},
+                    {
+                        # The site inlines its CSS and page scripts, so
+                        # 'unsafe-inline' is required for style-src and
+                        # script-src. Everything else is locked to the two
+                        # external hosts actually used: Google Fonts and the
+                        # Unsplash image CDN.
+                        "key": "Content-Security-Policy",
+                        "value": (
+                            "default-src 'self'; "
+                            "script-src 'self' 'unsafe-inline'; "
+                            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+                            "font-src 'self' https://fonts.gstatic.com; "
+                            "img-src 'self' data: https://images.unsplash.com; "
+                            "connect-src 'self'; "
+                            "form-action 'self' mailto:; "
+                            "frame-ancestors 'self'; "
+                            "base-uri 'self'; "
+                            "object-src 'none'; "
+                            "upgrade-insecure-requests"
+                        ),
+                    }
                 ]
             },
             {
@@ -5031,6 +5485,31 @@ def gen_vercel_json():
                 "headers": [
                     {"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}
                 ]
+            },
+            {
+                "source": "/feed.xml",
+                "headers": [
+                    {"key": "Cache-Control", "value": "public, max-age=3600"},
+                    {"key": "Content-Type", "value": "application/rss+xml; charset=utf-8"}
+                ]
+            },
+            {
+                "source": "/search-index.json",
+                "headers": [
+                    {"key": "Cache-Control", "value": "public, max-age=3600"},
+                    {"key": "Content-Type", "value": "application/json; charset=utf-8"}
+                ]
+            },
+            {
+                "source": "/site.webmanifest",
+                "headers": [
+                    {"key": "Cache-Control", "value": "public, max-age=604800"},
+                    {"key": "Content-Type", "value": "application/manifest+json"}
+                ]
+            },
+            {
+                "source": "/.well-known/security.txt",
+                "headers": [{"key": "Content-Type", "value": "text/plain; charset=utf-8"}]
             },
             {
                 "source": "/favicon.svg",
@@ -5350,7 +5829,8 @@ CONSULTING_PAGES = load_consulting_pages()
 print(f"  Loaded {len(CONSULTING_PAGES)} location pages")
 write_page("/consulting/", gen_consulting_index(CONSULTING_PAGES))
 for cpage in CONSULTING_PAGES:
-    write_page(f"/consulting/{cpage['slug']}/", gen_consulting_page(cpage, CONSULTING_PAGES))
+    write_page(f"/consulting/{cpage['slug']}/",
+               gen_consulting_page(cpage, CONSULTING_PAGES, INDEX_POSTS))
 
 # Contact
 print("\n[15/16] Contact & FAQ")
@@ -5363,38 +5843,62 @@ write_page("/testimonials/", gen_testimonials())
 
 # 404 Page
 def gen_404():
-    body = """
+    body = f"""
 <section class="page-hero">
 <div class="container">
 <h1>Page Not Found</h1>
-<p>The page you are looking for does not exist or has been moved.</p>
+<p>That page does not exist or has moved. Here is how to find what you were after.</p>
 </div>
 </section>
 
 <section class="section">
-<div class="container">
-<div style="text-align:center;max-width:600px;margin:0 auto">
-<h2 style="margin-bottom:2rem">404</h2>
-<p style="font-size:1.1rem;margin-bottom:2rem;color:#666">We could not find the page you were looking for. Here are some helpful links to get you back on track.</p>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:2rem 0">
-<a href="/" class="btn btn-primary">Home</a>
-<a href="/services/" class="btn btn-outline">Services</a>
-<a href="/blog/" class="btn btn-outline">Blog</a>
-<a href="/contact/" class="btn btn-primary">Contact Us</a>
+<div class="container" style="max-width:760px">
+<div class="text-center" style="margin-bottom:32px">
+<span class="eyebrow">Search</span>
+<h2>Try searching the site</h2>
 </div>
+<form action="/search/" method="GET" style="display:flex;gap:10px;flex-wrap:wrap">
+<label for="nf-q" style="position:absolute;left:-9999px">Search</label>
+<input id="nf-q" name="q" type="search" class="blog-search" style="flex:1 1 240px" placeholder="Try: operations cadence, sales pipeline, exit planning...">
+<button type="submit" class="btn btn-primary">Search</button>
+</form>
+</div>
+</section>
+
+<section class="section section-gray">
+<div class="container">
+<div class="text-center" style="margin-bottom:40px">
+<span class="eyebrow">Popular Destinations</span>
+<h2>Or Start Here</h2>
+</div>
+<div class="grid grid-3">
+<div class="card"><h3><a href="/services/">Services</a></h3><p>Five ways we install structure: strategy, AI, operations, sales, and leadership.</p></div>
+<div class="card"><h3><a href="/process/">How We Work</a></h3><p>The five phases of an engagement, with durations and deliverables.</p></div>
+<div class="card"><h3><a href="/case-studies/">Case Studies</a></h3><p>Four engagements documented end to end, with the numbers that changed.</p></div>
+<div class="card"><h3><a href="/industries/">Industries</a></h3><p>Sector-specific context across the eight industries we work in most.</p></div>
+<div class="card"><h3><a href="/blog/">The Blog</a></h3><p>Hundreds of articles on operations, sales, leadership, and AI adoption.</p></div>
+<div class="card"><h3><a href="/contact/">Contact</a></h3><p>Book a consult, or call {PHONE} and talk to us directly.</p></div>
 </div>
 </div>
 </section>
 
 <section class="cta-banner">
 <div class="container">
-<h2>Need help finding what you are looking for?</h2>
-<p>Contact our team and we can point you in the right direction.</p>
+<span class="eyebrow">Still Stuck?</span>
+<h2>Tell Us What You Were Looking For</h2>
+<p>If a link sent you here, we would like to know. Call {PHONE} or email {EMAIL}.</p>
 <a href="/contact/" class="btn btn-gold">Get in Touch</a>
 </div>
 </section>"""
 
-    return make_page("Page Not Found | Elixir Consulting Group", "The page you requested could not be found.", "/404", body)
+    return make_page(
+        "Page Not Found | Elixir Consulting Group",
+        "That page could not be found. Search the site, or browse services, case studies, industries, and the blog.",
+        "/404",
+        body,
+        extra_head='<meta name="robots" content="noindex,follow">',
+    )
+
 
 print("\n[15.7/16] 404 Page")
 write_page("/404.html", gen_404())

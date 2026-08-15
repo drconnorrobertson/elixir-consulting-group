@@ -39,7 +39,9 @@
 <meta name="twitter:image:alt" content="From Hustle to System: How High-Growth Small Businesses Are Building Predictable Revenue in 2026">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -214,6 +216,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .post-meta img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.35)}
 .post-meta .dot{opacity:.5}
 .post-tag{display:inline-block;background:rgba(201,168,76,.16);color:#C9A84C;border:1px solid rgba(201,168,76,.4);border-radius:999px;padding:4px 12px;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+/* Article furniture: contents, share row, prev/next */
+.toc{max-width:760px;margin:0 auto 32px;background:#F8F9FA;border:1px solid #E2E8F0;border-left:4px solid #C9A84C;border-radius:0 12px 12px 0;padding:22px 26px}
+.toc-title{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#002E5B;margin-bottom:10px}
+.toc ol{margin:0;padding-left:1.15rem}
+.toc li{margin-bottom:7px;font-size:.95rem}
+.toc a{color:#555555;text-decoration:none}
+.toc a:hover{color:#C9A84C;text-decoration:underline}
+.share-row{max-width:760px;margin:36px auto 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-top:22px;border-top:1px solid #E2E8F0}
+.share-label{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#6C757D;margin-right:4px}
+.share-row a,.copy-link{display:inline-flex;align-items:center;min-height:40px;padding:8px 16px;border:1px solid #E2E8F0;border-radius:999px;background:#fff;font-size:.88rem;font-weight:600;color:#002E5B;cursor:pointer;font-family:inherit}
+.share-row a:hover,.copy-link:hover{border-color:#C9A84C;color:#002E5B}
+.prev-next{max-width:760px;margin:32px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pn-link{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid #E2E8F0;border-radius:12px;background:#fff;transition:border-color .2s,transform .2s}
+.pn-link:hover{border-color:#C9A84C;transform:translateY(-2px)}
+.pn-link span{font-size:.78rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#C9A84C}
+.pn-link strong{font-size:.98rem;line-height:1.35;color:#002E5B}
+.pn-next{text-align:right;align-items:flex-end}
+a.post-tag{text-decoration:none}
+a.post-tag:hover{background:rgba(201,168,76,.28);color:#C9A84C}
+
 .author-box{max-width:760px;margin:48px auto 0;display:flex;gap:24px;align-items:flex-start;background:#F8F9FA;border-radius:14px;padding:28px}
 .author-box img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .author-box h3{font-size:1.15rem;margin-bottom:2px}
@@ -322,6 +344,11 @@ main[style]{margin-top:64px!important}
 .post-card .pc-meta{font-size:.87rem}
 .post-card h3{font-size:1.12rem}
 .author-box{flex-direction:column;align-items:center;text-align:center;gap:16px;padding:24px 20px}
+.prev-next{grid-template-columns:1fr}
+.pn-next{text-align:left;align-items:flex-start}
+.toc{padding:18px 20px}
+.share-row{gap:8px}
+.share-row a,.copy-link{min-height:44px;font-size:.85rem;padding:8px 14px}
 .blog-toolbar{flex-direction:column;align-items:stretch}
 /* flex-basis grows the *height* once the toolbar stacks, so pin it back down */
 .blog-search{flex:0 0 auto;width:100%;min-height:52px}
@@ -351,7 +378,8 @@ main[style]{margin-top:64px!important}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{display:inline-flex;align-items:center;min-height:44px}
 /* Standalone links sitting inside cards and stat blocks are tap targets too.
    Links inline within a sentence stay as-is; WCAG exempts those. */
-.stat-label a,.contact-info-card p a,.post-card .pc-body>a{display:inline-flex;align-items:center;min-height:44px}
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a,a.post-tag,.post-meta a,.author-box p a,.contact-info-card a,.section a[href^="https://thepittsburghwire"],.section a[href^="https://www.youtube"]{display:inline-flex;align-items:center;min-height:44px}
+a.post-tag{padding:8px 16px}
 .breadcrumb a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
 .services-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}
 .faq-q{min-height:56px;padding:18px 20px}
@@ -465,7 +493,7 @@ img{max-width:60%;page-break-inside:avoid}
 <li><a href="/industries/">Industries</a></li>
 <li><a href="/process/">Process</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
-<li><a href="/blog/">Blog</a></li>
+<li><a href="/blog/" style="color:#002E5B;font-weight:700" aria-current="page">Blog</a></li>
 <li><a href="/faq/">FAQ</a></li>
 <li><a href="/contact/">Contact</a></li>
 <li><a href="/contact/" class="btn btn-primary">Book a Consult</a></li>
@@ -477,8 +505,8 @@ img{max-width:60%;page-break-inside:avoid}
 
 <section class="page-hero">
 <div class="container">
-<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / From Hustle to System: How High-Growth Small...</p>
-<p style="margin-bottom:14px"><span class="post-tag">Sales & Revenue</span></p>
+<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / <a href="/blog/category/sales-revenue/">Sales &amp; Revenue</a> / From Hustle to System: How...</p>
+<p style="margin-bottom:14px"><a href="/blog/category/sales-revenue/" class="post-tag">Sales &amp; Revenue</a></p>
 <h1 style="font-size:clamp(1.65rem,4.2vw,2.6rem);max-width:900px;margin-left:auto;margin-right:auto">From Hustle to System: How High-Growth Small Businesses Are Building Predictable Revenue in 2026</h1>
 <p>The most profitable small businesses in 2026 stopped relying on hustle and built revenue systems instead. Here is exactly how they did it and what you...</p>
 <div class="post-meta">
@@ -495,10 +523,21 @@ img{max-width:60%;page-break-inside:avoid}
 <section class="section">
 <div class="container">
 <figure style="max-width:860px;margin:0 auto 8px">
-<img class="article-hero-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&amp;q=80" alt="From Hustle to System: How High-Growth Small Businesses Are Building Predictable Revenue in 2026 - Elixir Consulting Group" width="1200" height="630" fetchpriority="high" decoding="async">
+<img class="article-hero-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&amp;q=80" alt="From Hustle to System: How High-Growth Small Businesses Are Building Predictable Revenue in 2026 - Elixir Consulting Group" width="1200" height="630" srcset="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=1200 1200w" sizes="(max-width:900px) 100vw, 860px" fetchpriority="high" decoding="async">
 </figure>
+<nav class="toc" aria-label="Table of contents">
+<p class="toc-title">In this article</p>
+<ol>
+<li><a href="#what-a-revenue-system-actually-is">What a Revenue System Actually Is</a></li>
+<li><a href="#the-four-components-that-separate-systems-from-activities">The Four Components That Separate Systems From Activities</a></li>
+<li><a href="#what-the-data-is-saying-in-2026">What the Data Is Saying in 2026</a></li>
+<li><a href="#the-role-ai-is-now-playing-in-revenue-systems">The Role AI Is Now Playing in Revenue Systems</a></li>
+<li><a href="#the-diagnostic-question-every-owner-should-ask-right-now">The Diagnostic Question Every Owner Should Ask Right Now</a></li>
+<li><a href="#how-to-start-building-the-system-in-q3-2026">How to Start Building the System in Q3 2026</a></li>
+</ol>
+</nav>
 <article class="article-body" id="post-body">
-<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80" alt="Business professional reviewing revenue analytics and sales data on a laptop, representing predictable revenue systems for small businesses in 2026" style="width:100%;border-radius:12px;margin-bottom:40px;max-height:480px;object-fit:cover">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&amp;q=80" alt="Business professional reviewing revenue analytics and sales data on a laptop, representing predictable revenue systems for small businesses in 2026" style="width:100%;border-radius:12px;margin-bottom:40px;max-height:480px;object-fit:cover" width="1200" height="855" loading="lazy" decoding="async">
 
 <p>There is a version of small business success that looks impressive from the outside and is completely unsustainable from the inside. Revenue that spikes when the owner is working hard and contracts when they are not. A sales pipeline that depends on referrals that come in when they come in. A team that is always reactive because the next deal could arrive at any moment or not arrive at all. A business that has grown, but that no one including the owner would describe as predictable.</p>
 
@@ -506,7 +545,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 <p>Understanding what a revenue system actually is, and why building one is the single highest-leverage thing most business owners can do in the second half of 2026, is what this article is about.</p>
 
-<h2>What a Revenue System Actually Is</h2>
+<h2 id="what-a-revenue-system-actually-is">What a Revenue System Actually Is</h2>
 
 <p>A revenue system is not a CRM subscription. It is not a sales script or a monthly email newsletter. It is the complete set of interconnected processes that consistently move the right prospects through the right journey to become paying clients, without requiring the owner to personally orchestrate each step. It has inputs, it has defined stages, it has measurable outputs, and it operates whether or not the owner is in the room.</p>
 
@@ -514,7 +553,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 <p>A revenue system inverts this dynamic. The pipeline moves because the system runs. The owner's job shifts from being the engine to being the architect. That shift, once made, is worth more than any individual deal.</p>
 
-<h2>The Four Components That Separate Systems From Activities</h2>
+<h2 id="the-four-components-that-separate-systems-from-activities">The Four Components That Separate Systems From Activities</h2>
 
 <p>In working with small businesses across a wide range of industries, the difference between those with real revenue systems and those still relying on hustle consistently comes down to four things. Not the presence of tools. Not the size of the marketing budget. These four structural elements.</p>
 
@@ -526,7 +565,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 <p><strong>A retention and expansion mechanism.</strong> The most underbuilt component in almost every small business revenue system is the process for growing revenue from existing clients. In most service businesses, existing client expansion is worth more per dollar of effort than new client acquisition by a significant margin. Yet the process for identifying expansion opportunities, presenting them, and closing them is typically entirely ad hoc. Building a deliberate rhythm for reviewing client relationships and identifying upsell and cross-sell opportunities is one of the fastest ways to add revenue to a business that already has a solid client base.</p>
 
-<h2>What the Data Is Saying in 2026</h2>
+<h2 id="what-the-data-is-saying-in-2026">What the Data Is Saying in 2026</h2>
 
 <p>The performance gap between businesses with systematized revenue processes and those without has widened considerably in the past 18 months. A convergence of factors has accelerated this: AI tools have dramatically reduced the cost and complexity of running consistent outreach sequences, CRM platforms have become accessible to businesses of almost any size, and the competitive environment has made the businesses that can move fast and follow up consistently much more visible in the market.</p>
 
@@ -534,7 +573,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 <p>These are not marginal improvements. They represent the kind of structural advantage that compounds over time and becomes very difficult for competitors to close once it has been established.</p>
 
-<h2>The Role AI Is Now Playing in Revenue Systems</h2>
+<h2 id="the-role-ai-is-now-playing-in-revenue-systems">The Role AI Is Now Playing in Revenue Systems</h2>
 
 <p>It would be impossible to write about revenue systems in mid-2026 without addressing what AI has changed about how they are built and run. The honest answer is: a great deal, particularly in the areas of follow-up and pipeline management.</p>
 
@@ -546,13 +585,13 @@ img{max-width:60%;page-break-inside:avoid}
 
 <blockquote>"The owners who will win the back half of 2026 are not the ones who find a better tool. They are the ones who finally build the system the tool was designed to run." &mdash; Dr. Connor Robertson</blockquote>
 
-<h2>The Diagnostic Question Every Owner Should Ask Right Now</h2>
+<h2 id="the-diagnostic-question-every-owner-should-ask-right-now">The Diagnostic Question Every Owner Should Ask Right Now</h2>
 
 <p>If your business ran without you for 30 days, specifically without you making sales calls, following up on proposals, or checking in on existing clients, what would happen to your revenue pipeline? If the honest answer is that it would stall, then you do not have a revenue system. You have a revenue dependency. That dependency may have gotten you to where you are, but it is the ceiling on where you can go.</p>
 
 <p>The diagnostic is not meant to be alarming. Most business owners who have built successful companies have done so through this kind of personal hustle, and that is genuinely admirable. The point is that the same behaviors that built the business to its current level are often the precise behaviors that prevent it from reaching the next level. The transition from owner-as-salesperson to business-with-a-revenue-system is one of the most significant inflection points in the growth trajectory of any small business.</p>
 
-<h2>How to Start Building the System in Q3 2026</h2>
+<h2 id="how-to-start-building-the-system-in-q3-2026">How to Start Building the System in Q3 2026</h2>
 
 <p>The good news is that building a revenue system does not require a complete overhaul of how your business operates. It requires picking one component and making it systematic. Choose the piece that is most broken or most obviously improvable in your current operation. For most businesses, this is follow-up. If you can build a documented, partially automated follow-up sequence in the next 60 days, you will close more of the opportunities already in your pipeline without generating a single new lead.</p>
 
@@ -568,6 +607,16 @@ img{max-width:60%;page-break-inside:avoid}
 <a href="/contact/" class="btn btn-primary" style="margin-top:8px">Book a Strategy Call</a>
 </div>
 </article>
+
+<div class="share-row">
+<span class="share-label">Share</span>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://elixirconsultinggroup.com/blog/revenue-systems-small-business-2026/" target="_blank" rel="noopener" aria-label="Share on LinkedIn">LinkedIn</a>
+<a href="https://x.com/intent/tweet?url=https://elixirconsultinggroup.com/blog/revenue-systems-small-business-2026/&amp;text=From Hustle to System: How High-Growth Small Businesses Are Building Predictable Revenue in 2026" target="_blank" rel="noopener" aria-label="Share on X">X</a>
+<a href="mailto:?subject=From Hustle to System: How High-Growth Small Businesses Are Building Predictable Revenue in 2026&amp;body=https://elixirconsultinggroup.com/blog/revenue-systems-small-business-2026/" aria-label="Share by email">Email</a>
+<button type="button" class="copy-link" data-url="https://elixirconsultinggroup.com/blog/revenue-systems-small-business-2026/">Copy link</button>
+</div>
+
+<nav class="prev-next" aria-label="More articles"><a class="pn-link" href="/blog/brand-voice-ai-content-2026/"><span>&larr; Previous</span><strong>Why Your Brand Voice Matters More Than Ever in an AI-Generated World</strong></a><a class="pn-link pn-next" href="/blog/pittsburgh-2026-economic-boom-founders-guide/"><span>Next &rarr;</span><strong>Positioning Your Business for Pittsburgh's 2026 Economic Boom</strong></a></nav>
 
 <div class="author-box">
 <img src="/images/dr-connor-robertson.jpg" alt="Dr. Connor Robertson, Founder and Lead Consultant at Elixir Consulting Group" width="192" height="192" loading="lazy" decoding="async">
@@ -614,27 +663,27 @@ img{max-width:60%;page-break-inside:avoid}
 </div>
 <div class="post-list">
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to build multiple revenue streams for your business more revenue does not always mean more profit. understanding how to grow revenue while maintaining or improving profitability is one of the most... sales &amp; revenue">
-<a href="/blog/how-to-build-multiple-revenue-streams-for-your-business/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Build Multiple Revenue Streams for Your Business - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-build-multiple-revenue-streams-for-your-business/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Build Multiple Revenue Streams for Your Business - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-build-multiple-revenue-streams-for-your-business/">How to Build Multiple Revenue Streams for Your Business</a></h3>
 <p>More revenue does not always mean more profit. Understanding how to grow revenue while maintaining or improving profitability is one of the most...</p>
 <p class="pc-meta"><time datetime="2025-08-28">August 28, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="why your revenue is growing but your profit is not revenue growth is the lifeblood of any business. but growing revenue the right way, sustainably, profitably, and without burning out your team, requires... sales &amp; revenue">
-<a href="/blog/why-your-revenue-is-growing-but-your-profit-is-not/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="Why Your Revenue Is Growing But Your Profit Is Not - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/why-your-revenue-is-growing-but-your-profit-is-not/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="Why Your Revenue Is Growing But Your Profit Is Not - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/why-your-revenue-is-growing-but-your-profit-is-not/">Why Your Revenue Is Growing But Your Profit Is Not</a></h3>
 <p>Revenue growth is the lifeblood of any business. But growing revenue the right way, sustainably, profitably, and without burning out your team, requires...</p>
 <p class="pc-meta"><time datetime="2025-08-27">August 27, 2025</time> <span aria-hidden="true">&middot;</span> 4 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to create a revenue forecast that is actually useful how to create a revenue forecast that is actually useful. more revenue does not always mean more profit. understanding how to grow revenue while... sales &amp; revenue">
-<a href="/blog/how-to-create-a-revenue-forecast-that-is-actually-useful/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Create a Revenue Forecast That Is Actually Useful - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-create-a-revenue-forecast-that-is-actually-useful/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Create a Revenue Forecast That Is Actually Useful - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-create-a-revenue-forecast-that-is-actually-useful/">How to Create a Revenue Forecast That Is Actually Useful</a></h3>
 <p>How to Create a Revenue Forecast That Is Actually Useful. More revenue does not always mean more profit. Understanding how to grow revenue while...</p>
 <p class="pc-meta"><time datetime="2025-08-26">August 26, 2025</time> <span aria-hidden="true">&middot;</span> 4 min read</p>
@@ -746,6 +795,13 @@ q.setAttribute('aria-expanded','false');
 function tog(){var open=!item.classList.contains('active');item.classList.toggle('active',open);q.setAttribute('aria-expanded',open?'true':'false')}
 q.addEventListener('click',tog);
 q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}});
+});
+document.querySelectorAll('.copy-link').forEach(function(btn){
+btn.addEventListener('click',function(){
+var url=btn.getAttribute('data-url'),done=function(){var t=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=t},1600)};
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done).catch(function(){prompt('Copy this link:',url)})}
+else{prompt('Copy this link:',url)}
+});
 });
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){const img=entry.target;img.src=img.dataset.src;img.classList.add('loaded');observer.unobserve(img)}});});document.querySelectorAll('img[data-src]').forEach(img=>observer.observe(img))}else{document.querySelectorAll('img[data-src]').forEach(function(img){img.src=img.dataset.src})}
 </script>

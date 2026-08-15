@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>AI & Technology Articles | Elixir Consulting Group Blog</title>
+<title>AI &amp; Technology Articles | Elixir Consulting Group Blog</title>
 <meta name="description" content="Practical coverage of AI adoption, automation, and digital transformation for owner-led businesses. Less hype, more implementation. 22 articles from...">
 <meta name="author" content="Dr. Connor Robertson">
 <meta name="theme-color" content="#002E5B">
@@ -35,7 +35,9 @@
 <meta name="twitter:image:alt" content="AI &amp; Technology Articles | Elixir Consulting Group Blog">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -210,6 +212,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .post-meta img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.35)}
 .post-meta .dot{opacity:.5}
 .post-tag{display:inline-block;background:rgba(201,168,76,.16);color:#C9A84C;border:1px solid rgba(201,168,76,.4);border-radius:999px;padding:4px 12px;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+/* Article furniture: contents, share row, prev/next */
+.toc{max-width:760px;margin:0 auto 32px;background:#F8F9FA;border:1px solid #E2E8F0;border-left:4px solid #C9A84C;border-radius:0 12px 12px 0;padding:22px 26px}
+.toc-title{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#002E5B;margin-bottom:10px}
+.toc ol{margin:0;padding-left:1.15rem}
+.toc li{margin-bottom:7px;font-size:.95rem}
+.toc a{color:#555555;text-decoration:none}
+.toc a:hover{color:#C9A84C;text-decoration:underline}
+.share-row{max-width:760px;margin:36px auto 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-top:22px;border-top:1px solid #E2E8F0}
+.share-label{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#6C757D;margin-right:4px}
+.share-row a,.copy-link{display:inline-flex;align-items:center;min-height:40px;padding:8px 16px;border:1px solid #E2E8F0;border-radius:999px;background:#fff;font-size:.88rem;font-weight:600;color:#002E5B;cursor:pointer;font-family:inherit}
+.share-row a:hover,.copy-link:hover{border-color:#C9A84C;color:#002E5B}
+.prev-next{max-width:760px;margin:32px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pn-link{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid #E2E8F0;border-radius:12px;background:#fff;transition:border-color .2s,transform .2s}
+.pn-link:hover{border-color:#C9A84C;transform:translateY(-2px)}
+.pn-link span{font-size:.78rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#C9A84C}
+.pn-link strong{font-size:.98rem;line-height:1.35;color:#002E5B}
+.pn-next{text-align:right;align-items:flex-end}
+a.post-tag{text-decoration:none}
+a.post-tag:hover{background:rgba(201,168,76,.28);color:#C9A84C}
+
 .author-box{max-width:760px;margin:48px auto 0;display:flex;gap:24px;align-items:flex-start;background:#F8F9FA;border-radius:14px;padding:28px}
 .author-box img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .author-box h3{font-size:1.15rem;margin-bottom:2px}
@@ -318,6 +340,11 @@ main[style]{margin-top:64px!important}
 .post-card .pc-meta{font-size:.87rem}
 .post-card h3{font-size:1.12rem}
 .author-box{flex-direction:column;align-items:center;text-align:center;gap:16px;padding:24px 20px}
+.prev-next{grid-template-columns:1fr}
+.pn-next{text-align:left;align-items:flex-start}
+.toc{padding:18px 20px}
+.share-row{gap:8px}
+.share-row a,.copy-link{min-height:44px;font-size:.85rem;padding:8px 14px}
 .blog-toolbar{flex-direction:column;align-items:stretch}
 /* flex-basis grows the *height* once the toolbar stacks, so pin it back down */
 .blog-search{flex:0 0 auto;width:100%;min-height:52px}
@@ -347,7 +374,8 @@ main[style]{margin-top:64px!important}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{display:inline-flex;align-items:center;min-height:44px}
 /* Standalone links sitting inside cards and stat blocks are tap targets too.
    Links inline within a sentence stay as-is; WCAG exempts those. */
-.stat-label a,.contact-info-card p a,.post-card .pc-body>a{display:inline-flex;align-items:center;min-height:44px}
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a,a.post-tag,.post-meta a,.author-box p a,.contact-info-card a,.section a[href^="https://thepittsburghwire"],.section a[href^="https://www.youtube"]{display:inline-flex;align-items:center;min-height:44px}
+a.post-tag{padding:8px 16px}
 .breadcrumb a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
 .services-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}
 .faq-q{min-height:56px;padding:18px 20px}
@@ -461,7 +489,7 @@ img{max-width:60%;page-break-inside:avoid}
 <li><a href="/industries/">Industries</a></li>
 <li><a href="/process/">Process</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
-<li><a href="/blog/">Blog</a></li>
+<li><a href="/blog/" style="color:#002E5B;font-weight:700" aria-current="page">Blog</a></li>
 <li><a href="/faq/">FAQ</a></li>
 <li><a href="/contact/">Contact</a></li>
 <li><a href="/contact/" class="btn btn-primary">Book a Consult</a></li>
@@ -473,9 +501,9 @@ img{max-width:60%;page-break-inside:avoid}
 
 <section class="page-hero">
 <div class="container">
-<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / AI & Technology</p>
+<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / AI &amp; Technology</p>
 <p style="margin-bottom:14px"><span class="post-tag">Category</span></p>
-<h1>AI & Technology</h1>
+<h1>AI &amp; Technology</h1>
 <p>Practical coverage of AI adoption, automation, and digital transformation for owner-led businesses. Less hype, more implementation.</p>
 <p style="margin-top:12px;font-size:.95rem;color:rgba(255,255,255,.7)">22 articles</p>
 </div>
@@ -485,198 +513,198 @@ img{max-width:60%;page-break-inside:avoid}
 <div class="container">
 <div class="post-list">
 <article class="post-card" data-cat="AI &amp; Technology" data-search="the data center boom is coming to pittsburgh: what it means for your business before it arrives at least 12 data center sites are planned across southwestern pennsylvania, backed by more than $90 billion in announced ai and energy investment. here... ai &amp; technology">
-<a href="/blog/pittsburgh-data-center-boom-business-impact-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&amp;q=80" alt="The Data Center Boom Is Coming to Pittsburgh: What It Means for Your Business Before It Arrives - Elixir Consulting Group" width="800" height="450" loading="eager" fetchpriority="high"></a>
+<a href="/blog/pittsburgh-data-center-boom-business-impact-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&amp;q=80" alt="The Data Center Boom Is Coming to Pittsburgh: What It Means for Your Business Before It Arrives - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="eager" fetchpriority="high"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/pittsburgh-data-center-boom-business-impact-2026/">The Data Center Boom Is Coming to Pittsburgh: What It Means for Your Business Before It Arrives</a></h3>
 <p>At least 12 data center sites are planned across Southwestern Pennsylvania, backed by more than $90 billion in announced AI and energy investment. Here...</p>
 <p class="pc-meta"><time datetime="2026-08-12">August 12, 2026</time> <span aria-hidden="true">&middot;</span> 6 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="the agentic ai shift: how small businesses are winning big in 2026 67% of small businesses using ai automation saw 20%+ revenue growth last year. agentic ai delivers 171% average roi. here is how small businesses are... ai &amp; technology">
-<a href="/blog/agentic-ai-small-business-operations-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&amp;q=80" alt="The Agentic AI Shift: How Small Businesses Are Winning Big in 2026 - Elixir Consulting Group" width="800" height="450" loading="eager" fetchpriority="high"></a>
+<a href="/blog/agentic-ai-small-business-operations-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&amp;q=80" alt="The Agentic AI Shift: How Small Businesses Are Winning Big in 2026 - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="eager" fetchpriority="high"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/agentic-ai-small-business-operations-2026/">The Agentic AI Shift: How Small Businesses Are Winning Big in 2026</a></h3>
 <p>67% of small businesses using AI automation saw 20%+ revenue growth last year. Agentic AI delivers 171% average ROI. Here is how small businesses are...</p>
 <p class="pc-meta"><time datetime="2026-08-01">August 1, 2026</time> <span aria-hidden="true">&middot;</span> 6 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="the leadership gap: why ai investments fail without the right leadership foundation 89% of small businesses now use ai, but most are not seeing real roi. a 2026 mckinsey analysis shows the problem is leadership, not technology. here is... ai &amp; technology">
-<a href="/blog/leadership-gap-ai-business-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&amp;q=80" alt="The Leadership Gap: Why AI Investments Fail Without the Right Leadership Foundation - Elixir Consulting Group" width="800" height="450" loading="eager" fetchpriority="high"></a>
+<a href="/blog/leadership-gap-ai-business-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&amp;q=80" alt="The Leadership Gap: Why AI Investments Fail Without the Right Leadership Foundation - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="eager" fetchpriority="high"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/leadership-gap-ai-business-2026/">The Leadership Gap: Why AI Investments Fail Without the Right Leadership Foundation</a></h3>
 <p>89% of small businesses now use AI, but most are not seeing real ROI. A 2026 McKinsey analysis shows the problem is leadership, not technology. Here is...</p>
 <p class="pc-meta"><time datetime="2026-07-29">July 29, 2026</time> <span aria-hidden="true">&middot;</span> 7 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="why your brand voice matters more than ever in an ai-generated world ai-generated content is everywhere in 2026. the businesses pulling ahead are the ones with a brand voice that cannot be replicated by a prompt. here is... ai &amp; technology">
-<a href="/blog/brand-voice-ai-content-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&amp;q=80" alt="Why Your Brand Voice Matters More Than Ever in an AI-Generated World - Elixir Consulting Group" width="800" height="450" loading="eager" fetchpriority="high"></a>
+<a href="/blog/brand-voice-ai-content-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&amp;q=80" alt="Why Your Brand Voice Matters More Than Ever in an AI-Generated World - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="eager" fetchpriority="high"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/brand-voice-ai-content-2026/">Why Your Brand Voice Matters More Than Ever in an AI-Generated World</a></h3>
 <p>AI-generated content is everywhere in 2026. The businesses pulling ahead are the ones with a brand voice that cannot be replicated by a prompt. Here is...</p>
 <p class="pc-meta"><time datetime="2026-07-15">July 15, 2026</time> <span aria-hidden="true">&middot;</span> 8 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="the integration advantage: why small businesses with five ai tools are still falling behind the average small business now runs five ai tools. most are still not saving time. the problem is not the tools — it is the lack of integration. here is... ai &amp; technology">
-<a href="/blog/ai-tool-integration-strategy-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&amp;q=80" alt="The Integration Advantage: Why Small Businesses With Five AI Tools Are Still Falling Behind - Elixir Consulting Group" width="800" height="450" loading="eager" fetchpriority="high"></a>
+<a href="/blog/ai-tool-integration-strategy-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&amp;q=80" alt="The Integration Advantage: Why Small Businesses With Five AI Tools Are Still Falling Behind - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="eager" fetchpriority="high"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/ai-tool-integration-strategy-2026/">The Integration Advantage: Why Small Businesses With Five AI Tools Are Still Falling Behind</a></h3>
 <p>The average small business now runs five AI tools. Most are still not saving time. The problem is not the tools — it is the lack of integration. Here is...</p>
 <p class="pc-meta"><time datetime="2026-07-08">July 8, 2026</time> <span aria-hidden="true">&middot;</span> 7 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="agentic ai is here: what it means for your business in 2026 ai agents are no longer experimental. in 2026, businesses deploying agentic ai systems are averaging 171% roi. here is what every business owner needs... ai &amp; technology">
-<a href="/blog/agentic-ai-business-operations-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&amp;q=80" alt="Agentic AI Is Here: What It Means for Your Business in 2026 - Elixir Consulting Group" width="800" height="450" loading="eager" fetchpriority="high"></a>
+<a href="/blog/agentic-ai-business-operations-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&amp;q=80" alt="Agentic AI Is Here: What It Means for Your Business in 2026 - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="eager" fetchpriority="high"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/agentic-ai-business-operations-2026/">Agentic AI Is Here: What It Means for Your Business in 2026</a></h3>
 <p>AI agents are no longer experimental. In 2026, businesses deploying agentic AI systems are averaging 171% ROI. Here is what every business owner needs...</p>
 <p class="pc-meta"><time datetime="2026-05-06">May 6, 2026</time> <span aria-hidden="true">&middot;</span> 7 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="why every business owner needs an ai strategy in 2026 dr. connor robertson explains why business owners who do not have an ai strategy in 2026 are leaving money on the table and falling behind competitors... ai &amp; technology">
-<a href="/blog/why-every-business-owner-needs-ai-strategy-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&amp;q=80" alt="Why Every Business Owner Needs an AI Strategy in 2026 - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/why-every-business-owner-needs-ai-strategy-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&amp;q=80" alt="Why Every Business Owner Needs an AI Strategy in 2026 - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/why-every-business-owner-needs-ai-strategy-2026/">Why Every Business Owner Needs an AI Strategy in 2026</a></h3>
 <p>Dr. Connor Robertson explains why business owners who do not have an AI strategy in 2026 are leaving money on the table and falling behind competitors...</p>
 <p class="pc-meta"><time datetime="2026-04-24">April 24, 2026</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="ai implementation for small business: a step-by-step guide ai adoption does not have to be overwhelming. this step-by-step guide shows small business owners how to implement ai tools that deliver real roi... ai &amp; technology">
-<a href="/blog/ai-implementation-small-business-step-by-step-guide/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="AI Implementation for Small Business: A Step-by-Step Guide - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/ai-implementation-small-business-step-by-step-guide/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="AI Implementation for Small Business: A Step-by-Step Guide - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/ai-implementation-small-business-step-by-step-guide/">AI Implementation for Small Business: A Step-by-Step Guide</a></h3>
 <p>AI adoption does not have to be overwhelming. This step-by-step guide shows small business owners how to implement AI tools that deliver real ROI...</p>
 <p class="pc-meta"><time datetime="2026-04-20">April 20, 2026</time> <span aria-hidden="true">&middot;</span> 2 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="how ai consulting is helping pittsburgh businesses grow 3x faster the ai revolution is here, and pittsburgh is leading the charge artificial intelligence is no longer a futuristic concept reserved […] ai &amp; technology">
-<a href="/blog/how-ai-consulting-is-helping-pittsburgh-businesses-grow-3x-faster/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="How AI Consulting Is Helping Pittsburgh Businesses Grow 3x Faster - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-ai-consulting-is-helping-pittsburgh-businesses-grow-3x-faster/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="How AI Consulting Is Helping Pittsburgh Businesses Grow 3x Faster - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/how-ai-consulting-is-helping-pittsburgh-businesses-grow-3x-faster/">How AI Consulting Is Helping Pittsburgh Businesses Grow 3x Faster</a></h3>
 <p>The AI Revolution Is Here, and Pittsburgh Is Leading the Charge Artificial intelligence is no longer a futuristic concept reserved […]</p>
 <p class="pc-meta"><time datetime="2026-04-19">April 19, 2026</time> <span aria-hidden="true">&middot;</span> 4 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="digital transformation for traditional businesses: a practical guide why digital transformation matters for traditional businesses digital transformation has become one of the most talked-about concepts in business, but […] ai &amp; technology">
-<a href="/blog/digital-transformation-for-traditional-businesses-a-practical-guide/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="Digital Transformation for Traditional Businesses: A Practical Guide - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/digital-transformation-for-traditional-businesses-a-practical-guide/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="Digital Transformation for Traditional Businesses: A Practical Guide - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/digital-transformation-for-traditional-businesses-a-practical-guide/">Digital Transformation for Traditional Businesses: A Practical Guide</a></h3>
 <p>Why Digital Transformation Matters for Traditional Businesses Digital transformation has become one of the most talked-about concepts in business, but […]</p>
 <p class="pc-meta"><time datetime="2026-04-19">April 19, 2026</time> <span aria-hidden="true">&middot;</span> 5 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="how ai is transforming small business operations in 2026 ai is no longer just for enterprise companies. in 2026, small businesses are leveraging artificial intelligence to automate workflows, improve... ai &amp; technology">
-<a href="/blog/how-ai-is-transforming-small-business-operations-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="How AI Is Transforming Small Business Operations in 2026 - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-ai-is-transforming-small-business-operations-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="How AI Is Transforming Small Business Operations in 2026 - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/how-ai-is-transforming-small-business-operations-2026/">How AI Is Transforming Small Business Operations in 2026</a></h3>
 <p>AI is no longer just for enterprise companies. In 2026, small businesses are leveraging artificial intelligence to automate workflows, improve...</p>
 <p class="pc-meta"><time datetime="2026-04-15">April 15, 2026</time> <span aria-hidden="true">&middot;</span> 1 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="how pittsburgh businesses are using ai to outperform competitors pittsburgh has become a national leader in practical ai adoption for small and mid-sized businesses. here is how local companies are gaining an edge... ai &amp; technology">
-<a href="/blog/pittsburgh-businesses-using-ai-outperform-competitors/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="How Pittsburgh Businesses Are Using AI to Outperform Competitors - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/pittsburgh-businesses-using-ai-outperform-competitors/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="How Pittsburgh Businesses Are Using AI to Outperform Competitors - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/pittsburgh-businesses-using-ai-outperform-competitors/">How Pittsburgh Businesses Are Using AI to Outperform Competitors</a></h3>
 <p>Pittsburgh has become a national leader in practical AI adoption for small and mid-sized businesses. Here is how local companies are gaining an edge...</p>
 <p class="pc-meta"><time datetime="2026-04-14">April 14, 2026</time> <span aria-hidden="true">&middot;</span> 2 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="ai-powered sales systems for growing businesses dr. connor robertson explains how growing businesses can use ai to build sales systems that generate consistent pipeline and revenue without scaling... ai &amp; technology">
-<a href="/blog/ai-powered-sales-systems-for-growing-businesses/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="AI-Powered Sales Systems for Growing Businesses - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/ai-powered-sales-systems-for-growing-businesses/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="AI-Powered Sales Systems for Growing Businesses - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/ai-powered-sales-systems-for-growing-businesses/">AI-Powered Sales Systems for Growing Businesses</a></h3>
 <p>Dr. Connor Robertson explains how growing businesses can use AI to build sales systems that generate consistent pipeline and revenue without scaling...</p>
 <p class="pc-meta"><time datetime="2026-04-10">April 10, 2026</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="the executive's guide to digital transformation in 2026 digital transformation in 2026 looks different than it did five years ago. here is what executives need to know to lead their organizations through... ai &amp; technology">
-<a href="/blog/executives-guide-digital-transformation-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="The Executive's Guide to Digital Transformation in 2026 - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/executives-guide-digital-transformation-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="The Executive's Guide to Digital Transformation in 2026 - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/executives-guide-digital-transformation-2026/">The Executive's Guide to Digital Transformation in 2026</a></h3>
 <p>Digital transformation in 2026 looks different than it did five years ago. Here is what executives need to know to lead their organizations through...</p>
 <p class="pc-meta"><time datetime="2026-03-28">March 28, 2026</time> <span aria-hidden="true">&middot;</span> 2 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="digital transformation for traditional businesses digital transformation does not have to mean a complete technology overhaul. for traditional businesses, the most effective approach is incremental and... ai &amp; technology">
-<a href="/blog/digital-transformation-for-traditional-businesses/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="Digital Transformation for Traditional Businesses - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/digital-transformation-for-traditional-businesses/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="Digital Transformation for Traditional Businesses - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/digital-transformation-for-traditional-businesses/">Digital Transformation for Traditional Businesses</a></h3>
 <p>Digital transformation does not have to mean a complete technology overhaul. For traditional businesses, the most effective approach is incremental and...</p>
 <p class="pc-meta"><time datetime="2026-03-18">March 18, 2026</time> <span aria-hidden="true">&middot;</span> 1 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="ai tools every business owner should be using in 2026 the ai tool landscape has matured significantly. here are the categories of ai tools that are delivering real value for business owners right now. ai &amp; technology">
-<a href="/blog/ai-tools-every-business-owner-should-use-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="AI Tools Every Business Owner Should Be Using in 2026 - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/ai-tools-every-business-owner-should-use-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="AI Tools Every Business Owner Should Be Using in 2026 - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/ai-tools-every-business-owner-should-use-2026/">AI Tools Every Business Owner Should Be Using in 2026</a></h3>
 <p>The AI tool landscape has matured significantly. Here are the categories of AI tools that are delivering real value for business owners right now.</p>
 <p class="pc-meta"><time datetime="2026-02-10">February 10, 2026</time> <span aria-hidden="true">&middot;</span> 1 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="how to use technology to automate and improve your business innovation does not require a silicon valley budget. small businesses innovate every day by solving problems, improving processes, and adopting new... ai &amp; technology">
-<a href="/blog/how-to-use-technology-to-automate-and-improve-your-business/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="How to Use Technology to Automate and Improve Your Business - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-use-technology-to-automate-and-improve-your-business/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="How to Use Technology to Automate and Improve Your Business - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/how-to-use-technology-to-automate-and-improve-your-business/">How to Use Technology to Automate and Improve Your Business</a></h3>
 <p>Innovation does not require a Silicon Valley budget. Small businesses innovate every day by solving problems, improving processes, and adopting new...</p>
 <p class="pc-meta"><time datetime="2025-10-10">October 10, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="why small businesses that embrace ai will outperform those that do not the most innovative businesses are not always the ones with the biggest r&amp;#038;d departments. often, it is the small business owner who finds a better... ai &amp; technology">
-<a href="/blog/why-small-businesses-that-embrace-ai-will-outperform-those-that-do-not/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="Why Small Businesses That Embrace AI Will Outperform Those That Do Not - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/why-small-businesses-that-embrace-ai-will-outperform-those-that-do-not/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="Why Small Businesses That Embrace AI Will Outperform Those That Do Not - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/why-small-businesses-that-embrace-ai-will-outperform-those-that-do-not/">Why Small Businesses That Embrace AI Will Outperform Those That Do Not</a></h3>
 <p>The most innovative businesses are not always the ones with the biggest R&amp;#038;D departments. Often, it is the small business owner who finds a better...</p>
 <p class="pc-meta"><time datetime="2025-10-09">October 9, 2025</time> <span aria-hidden="true">&middot;</span> 4 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="how to adopt new technology without disrupting your operations how to adopt new technology without disrupting your operations. innovation does not require a silicon valley budget. small businesses innovate every day... ai &amp; technology">
-<a href="/blog/how-to-adopt-new-technology-without-disrupting-your-operations/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="How to Adopt New Technology Without Disrupting Your Operations - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-adopt-new-technology-without-disrupting-your-operations/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="How to Adopt New Technology Without Disrupting Your Operations - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/how-to-adopt-new-technology-without-disrupting-your-operations/">How to Adopt New Technology Without Disrupting Your Operations</a></h3>
 <p>How to Adopt New Technology Without Disrupting Your Operations. Innovation does not require a Silicon Valley budget. Small businesses innovate every day...</p>
 <p class="pc-meta"><time datetime="2025-10-05">October 5, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="how to automate repetitive tasks and focus on growth how to automate repetitive tasks and focus on growth. every business has processes, whether they are documented or not. the difference between a smooth... ai &amp; technology">
-<a href="/blog/how-to-automate-repetitive-tasks-and-focus-on-growth/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&amp;q=80" alt="How to Automate Repetitive Tasks and Focus on Growth - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-automate-repetitive-tasks-and-focus-on-growth/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&amp;q=80" alt="How to Automate Repetitive Tasks and Focus on Growth - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/how-to-automate-repetitive-tasks-and-focus-on-growth/">How to Automate Repetitive Tasks and Focus on Growth</a></h3>
 <p>How to Automate Repetitive Tasks and Focus on Growth. Every business has processes, whether they are documented or not. The difference between a smooth...</p>
 <p class="pc-meta"><time datetime="2025-09-03">September 3, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="the crm setup that makes sales follow-up automatic most small business owners did not start their company because they love selling. but sales is essential, and having a […] ai &amp; technology">
-<a href="/blog/the-crm-setup-that-makes-sales-follow-up-automatic/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="The CRM Setup That Makes Sales Follow-Up Automatic - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/the-crm-setup-that-makes-sales-follow-up-automatic/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="The CRM Setup That Makes Sales Follow-Up Automatic - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/the-crm-setup-that-makes-sales-follow-up-automatic/">The CRM Setup That Makes Sales Follow-Up Automatic</a></h3>
 <p>Most small business owners did not start their company because they love selling. But sales is essential, and having a […]</p>
 <p class="pc-meta"><time datetime="2025-08-17">August 17, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="how to use data to make smarter decisions in your small business how to use data to make smarter decisions in your small business. growing a small business is a unique challenge. you have limited resources, a small... ai &amp; technology">
-<a href="/blog/how-to-use-data-to-make-smarter-decisions-in-your-small-business/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&amp;q=80" alt="How to Use Data to Make Smarter Decisions in Your Small Business - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-use-data-to-make-smarter-decisions-in-your-small-business/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&amp;q=80" alt="How to Use Data to Make Smarter Decisions in Your Small Business - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/how-to-use-data-to-make-smarter-decisions-in-your-small-business/">How to Use Data to Make Smarter Decisions in Your Small Business</a></h3>
 <p>How to Use Data to Make Smarter Decisions in Your Small Business. Growing a small business is a unique challenge. You have limited resources, a small...</p>
 <p class="pc-meta"><time datetime="2025-07-25">July 25, 2025</time> <span aria-hidden="true">&middot;</span> 4 min read</p>
@@ -691,7 +719,7 @@ img{max-width:60%;page-break-inside:avoid}
 <div class="container text-center">
 <span class="eyebrow">Browse</span>
 <h2 style="margin-bottom:24px">Other Categories</h2>
-<div><a href="/blog/category/sales-revenue/" class="services-link">Sales & Revenue</a><a href="/blog/category/operations/" class="services-link">Operations</a><a href="/blog/category/leadership/" class="services-link">Leadership</a><a href="/blog/category/strategy-growth/" class="services-link">Strategy & Growth</a><a href="/blog/category/finance-exit/" class="services-link">Finance & Exit</a><a href="/blog/category/pittsburgh-local/" class="services-link">Pittsburgh & Local</a><a href="/blog/category/insights/" class="services-link">Insights</a></div>
+<div><a href="/blog/category/sales-revenue/" class="services-link">Sales &amp; Revenue</a><a href="/blog/category/operations/" class="services-link">Operations</a><a href="/blog/category/leadership/" class="services-link">Leadership</a><a href="/blog/category/strategy-growth/" class="services-link">Strategy &amp; Growth</a><a href="/blog/category/finance-exit/" class="services-link">Finance &amp; Exit</a><a href="/blog/category/pittsburgh-local/" class="services-link">Pittsburgh &amp; Local</a><a href="/blog/category/insights/" class="services-link">Insights</a></div>
 <div style="margin-top:28px"><a href="/blog/" class="btn btn-outline">All 332 Articles</a></div>
 </div>
 </section>
@@ -700,20 +728,20 @@ img{max-width:60%;page-break-inside:avoid}
 <div class="container">
 <div class="text-center" style="margin-bottom:36px">
 <span class="eyebrow">Questions</span>
-<h2>AI & Technology FAQs</h2>
+<h2>AI &amp; Technology FAQs</h2>
 
 </div>
 <div style="max-width:820px;margin:0 auto">
 <div class="faq-item">
-<div class="faq-q" role="button" tabindex="0">How many ai & technology articles are there?</div>
-<div class="faq-a"><p>This archive currently holds 22 articles on ai & technology, part of a library of 332 across every topic we cover.</p></div>
+<div class="faq-q" role="button" tabindex="0">How many ai &amp; technology articles are there?</div>
+<div class="faq-a"><p>This archive currently holds 22 articles on ai &amp; technology, part of a library of 332 across every topic we cover.</p></div>
 </div>
 <div class="faq-item">
 <div class="faq-q" role="button" tabindex="0">Who writes these articles?</div>
 <div class="faq-a"><p>Dr. Connor Robertson, founder and lead consultant at Elixir Consulting Group, drawing on hands-on implementation work with owner-led businesses.</p></div>
 </div>
 <div class="faq-item">
-<div class="faq-q" role="button" tabindex="0">Do you offer consulting in ai & technology?</div>
+<div class="faq-q" role="button" tabindex="0">Do you offer consulting in ai &amp; technology?</div>
 <div class="faq-a"><p>Yes. Reading is a fine start, but the articles describe systems we install directly with clients. Book a consult or call (412) 387-7656 to talk about your specific situation.</p></div>
 </div>
 <div class="faq-item">
@@ -823,6 +851,13 @@ q.setAttribute('aria-expanded','false');
 function tog(){var open=!item.classList.contains('active');item.classList.toggle('active',open);q.setAttribute('aria-expanded',open?'true':'false')}
 q.addEventListener('click',tog);
 q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}});
+});
+document.querySelectorAll('.copy-link').forEach(function(btn){
+btn.addEventListener('click',function(){
+var url=btn.getAttribute('data-url'),done=function(){var t=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=t},1600)};
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done).catch(function(){prompt('Copy this link:',url)})}
+else{prompt('Copy this link:',url)}
+});
 });
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){const img=entry.target;img.src=img.dataset.src;img.classList.add('loaded');observer.unobserve(img)}});});document.querySelectorAll('img[data-src]').forEach(img=>observer.observe(img))}else{document.querySelectorAll('img[data-src]').forEach(function(img){img.src=img.dataset.src})}
 </script>

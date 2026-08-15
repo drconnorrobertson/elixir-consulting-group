@@ -35,7 +35,9 @@
 <meta name="twitter:image:alt" content="Operations Consulting in Pittsburgh, PA | Elixir">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -210,6 +212,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .post-meta img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.35)}
 .post-meta .dot{opacity:.5}
 .post-tag{display:inline-block;background:rgba(201,168,76,.16);color:#C9A84C;border:1px solid rgba(201,168,76,.4);border-radius:999px;padding:4px 12px;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+/* Article furniture: contents, share row, prev/next */
+.toc{max-width:760px;margin:0 auto 32px;background:#F8F9FA;border:1px solid #E2E8F0;border-left:4px solid #C9A84C;border-radius:0 12px 12px 0;padding:22px 26px}
+.toc-title{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#002E5B;margin-bottom:10px}
+.toc ol{margin:0;padding-left:1.15rem}
+.toc li{margin-bottom:7px;font-size:.95rem}
+.toc a{color:#555555;text-decoration:none}
+.toc a:hover{color:#C9A84C;text-decoration:underline}
+.share-row{max-width:760px;margin:36px auto 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-top:22px;border-top:1px solid #E2E8F0}
+.share-label{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#6C757D;margin-right:4px}
+.share-row a,.copy-link{display:inline-flex;align-items:center;min-height:40px;padding:8px 16px;border:1px solid #E2E8F0;border-radius:999px;background:#fff;font-size:.88rem;font-weight:600;color:#002E5B;cursor:pointer;font-family:inherit}
+.share-row a:hover,.copy-link:hover{border-color:#C9A84C;color:#002E5B}
+.prev-next{max-width:760px;margin:32px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pn-link{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid #E2E8F0;border-radius:12px;background:#fff;transition:border-color .2s,transform .2s}
+.pn-link:hover{border-color:#C9A84C;transform:translateY(-2px)}
+.pn-link span{font-size:.78rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#C9A84C}
+.pn-link strong{font-size:.98rem;line-height:1.35;color:#002E5B}
+.pn-next{text-align:right;align-items:flex-end}
+a.post-tag{text-decoration:none}
+a.post-tag:hover{background:rgba(201,168,76,.28);color:#C9A84C}
+
 .author-box{max-width:760px;margin:48px auto 0;display:flex;gap:24px;align-items:flex-start;background:#F8F9FA;border-radius:14px;padding:28px}
 .author-box img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .author-box h3{font-size:1.15rem;margin-bottom:2px}
@@ -318,6 +340,11 @@ main[style]{margin-top:64px!important}
 .post-card .pc-meta{font-size:.87rem}
 .post-card h3{font-size:1.12rem}
 .author-box{flex-direction:column;align-items:center;text-align:center;gap:16px;padding:24px 20px}
+.prev-next{grid-template-columns:1fr}
+.pn-next{text-align:left;align-items:flex-start}
+.toc{padding:18px 20px}
+.share-row{gap:8px}
+.share-row a,.copy-link{min-height:44px;font-size:.85rem;padding:8px 14px}
 .blog-toolbar{flex-direction:column;align-items:stretch}
 /* flex-basis grows the *height* once the toolbar stacks, so pin it back down */
 .blog-search{flex:0 0 auto;width:100%;min-height:52px}
@@ -347,7 +374,8 @@ main[style]{margin-top:64px!important}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{display:inline-flex;align-items:center;min-height:44px}
 /* Standalone links sitting inside cards and stat blocks are tap targets too.
    Links inline within a sentence stay as-is; WCAG exempts those. */
-.stat-label a,.contact-info-card p a,.post-card .pc-body>a{display:inline-flex;align-items:center;min-height:44px}
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a,a.post-tag,.post-meta a,.author-box p a,.contact-info-card a,.section a[href^="https://thepittsburghwire"],.section a[href^="https://www.youtube"]{display:inline-flex;align-items:center;min-height:44px}
+a.post-tag{padding:8px 16px}
 .breadcrumb a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
 .services-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}
 .faq-q{min-height:56px;padding:18px 20px}
@@ -569,10 +597,10 @@ img{max-width:60%;page-break-inside:avoid}
 </div>
 <div class="grid grid-3">
 <div class="card"><div class="card-icon">&#9881;</div><h3><a href="/services/operations/">Process Mapping</a></h3><p>Document and optimize your core workflows for consistent delivery.</p><a href="/services/operations/" style="font-weight:600;font-size:.9rem">Learn more &rarr;</a></div>
-<div class="card"><div class="card-icon">&#9881;</div><h3><a href="/services/operations/">SOPs & Documentation</a></h3><p>Build standard operating procedures that your Pittsburgh team actually uses.</p><a href="/services/operations/" style="font-weight:600;font-size:.9rem">Learn more &rarr;</a></div>
+<div class="card"><div class="card-icon">&#9881;</div><h3><a href="/services/operations/">SOPs &amp; Documentation</a></h3><p>Build standard operating procedures that your Pittsburgh team actually uses.</p><a href="/services/operations/" style="font-weight:600;font-size:.9rem">Learn more &rarr;</a></div>
 <div class="card"><div class="card-icon">&#9881;</div><h3><a href="/services/operations/">Weekly Operating Cadence</a></h3><p>Install a structured weekly rhythm that keeps your business on track.</p><a href="/services/operations/" style="font-weight:600;font-size:.9rem">Learn more &rarr;</a></div>
 <div class="card"><div class="card-icon">&#9881;</div><h3><a href="/services/operations/">Role Clarity</a></h3><p>Define clear responsibilities and accountability structures.</p><a href="/services/operations/" style="font-weight:600;font-size:.9rem">Learn more &rarr;</a></div>
-<div class="card"><div class="card-icon">&#9881;</div><h3><a href="/services/operations/">Hiring & Onboarding</a></h3><p>Build repeatable systems that get new team members productive faster.</p><a href="/services/operations/" style="font-weight:600;font-size:.9rem">Learn more &rarr;</a></div>
+<div class="card"><div class="card-icon">&#9881;</div><h3><a href="/services/operations/">Hiring &amp; Onboarding</a></h3><p>Build repeatable systems that get new team members productive faster.</p><a href="/services/operations/" style="font-weight:600;font-size:.9rem">Learn more &rarr;</a></div>
 <div class="card"><div class="card-icon">&#9881;</div><h3><a href="/services/operations/">Tool Optimization</a></h3><p>Streamline your tech stack to reduce friction and improve efficiency.</p><a href="/services/operations/" style="font-weight:600;font-size:.9rem">Learn more &rarr;</a></div>
 
 </div>
@@ -733,6 +761,13 @@ q.setAttribute('aria-expanded','false');
 function tog(){var open=!item.classList.contains('active');item.classList.toggle('active',open);q.setAttribute('aria-expanded',open?'true':'false')}
 q.addEventListener('click',tog);
 q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}});
+});
+document.querySelectorAll('.copy-link').forEach(function(btn){
+btn.addEventListener('click',function(){
+var url=btn.getAttribute('data-url'),done=function(){var t=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=t},1600)};
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done).catch(function(){prompt('Copy this link:',url)})}
+else{prompt('Copy this link:',url)}
+});
 });
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){const img=entry.target;img.src=img.dataset.src;img.classList.add('loaded');observer.unobserve(img)}});});document.querySelectorAll('img[data-src]').forEach(img=>observer.observe(img))}else{document.querySelectorAll('img[data-src]').forEach(function(img){img.src=img.dataset.src})}
 </script>

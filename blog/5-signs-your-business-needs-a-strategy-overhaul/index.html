@@ -39,7 +39,9 @@
 <meta name="twitter:image:alt" content="5 Signs Your Business Needs a Strategy Overhaul">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -214,6 +216,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .post-meta img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.35)}
 .post-meta .dot{opacity:.5}
 .post-tag{display:inline-block;background:rgba(201,168,76,.16);color:#C9A84C;border:1px solid rgba(201,168,76,.4);border-radius:999px;padding:4px 12px;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+/* Article furniture: contents, share row, prev/next */
+.toc{max-width:760px;margin:0 auto 32px;background:#F8F9FA;border:1px solid #E2E8F0;border-left:4px solid #C9A84C;border-radius:0 12px 12px 0;padding:22px 26px}
+.toc-title{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#002E5B;margin-bottom:10px}
+.toc ol{margin:0;padding-left:1.15rem}
+.toc li{margin-bottom:7px;font-size:.95rem}
+.toc a{color:#555555;text-decoration:none}
+.toc a:hover{color:#C9A84C;text-decoration:underline}
+.share-row{max-width:760px;margin:36px auto 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-top:22px;border-top:1px solid #E2E8F0}
+.share-label{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#6C757D;margin-right:4px}
+.share-row a,.copy-link{display:inline-flex;align-items:center;min-height:40px;padding:8px 16px;border:1px solid #E2E8F0;border-radius:999px;background:#fff;font-size:.88rem;font-weight:600;color:#002E5B;cursor:pointer;font-family:inherit}
+.share-row a:hover,.copy-link:hover{border-color:#C9A84C;color:#002E5B}
+.prev-next{max-width:760px;margin:32px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pn-link{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid #E2E8F0;border-radius:12px;background:#fff;transition:border-color .2s,transform .2s}
+.pn-link:hover{border-color:#C9A84C;transform:translateY(-2px)}
+.pn-link span{font-size:.78rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#C9A84C}
+.pn-link strong{font-size:.98rem;line-height:1.35;color:#002E5B}
+.pn-next{text-align:right;align-items:flex-end}
+a.post-tag{text-decoration:none}
+a.post-tag:hover{background:rgba(201,168,76,.28);color:#C9A84C}
+
 .author-box{max-width:760px;margin:48px auto 0;display:flex;gap:24px;align-items:flex-start;background:#F8F9FA;border-radius:14px;padding:28px}
 .author-box img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .author-box h3{font-size:1.15rem;margin-bottom:2px}
@@ -322,6 +344,11 @@ main[style]{margin-top:64px!important}
 .post-card .pc-meta{font-size:.87rem}
 .post-card h3{font-size:1.12rem}
 .author-box{flex-direction:column;align-items:center;text-align:center;gap:16px;padding:24px 20px}
+.prev-next{grid-template-columns:1fr}
+.pn-next{text-align:left;align-items:flex-start}
+.toc{padding:18px 20px}
+.share-row{gap:8px}
+.share-row a,.copy-link{min-height:44px;font-size:.85rem;padding:8px 14px}
 .blog-toolbar{flex-direction:column;align-items:stretch}
 /* flex-basis grows the *height* once the toolbar stacks, so pin it back down */
 .blog-search{flex:0 0 auto;width:100%;min-height:52px}
@@ -351,7 +378,8 @@ main[style]{margin-top:64px!important}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{display:inline-flex;align-items:center;min-height:44px}
 /* Standalone links sitting inside cards and stat blocks are tap targets too.
    Links inline within a sentence stay as-is; WCAG exempts those. */
-.stat-label a,.contact-info-card p a,.post-card .pc-body>a{display:inline-flex;align-items:center;min-height:44px}
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a,a.post-tag,.post-meta a,.author-box p a,.contact-info-card a,.section a[href^="https://thepittsburghwire"],.section a[href^="https://www.youtube"]{display:inline-flex;align-items:center;min-height:44px}
+a.post-tag{padding:8px 16px}
 .breadcrumb a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
 .services-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}
 .faq-q{min-height:56px;padding:18px 20px}
@@ -465,7 +493,7 @@ img{max-width:60%;page-break-inside:avoid}
 <li><a href="/industries/">Industries</a></li>
 <li><a href="/process/">Process</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
-<li><a href="/blog/">Blog</a></li>
+<li><a href="/blog/" style="color:#002E5B;font-weight:700" aria-current="page">Blog</a></li>
 <li><a href="/faq/">FAQ</a></li>
 <li><a href="/contact/">Contact</a></li>
 <li><a href="/contact/" class="btn btn-primary">Book a Consult</a></li>
@@ -477,8 +505,8 @@ img{max-width:60%;page-break-inside:avoid}
 
 <section class="page-hero">
 <div class="container">
-<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / 5 Signs Your Business Needs a Strategy Overhaul</p>
-<p style="margin-bottom:14px"><span class="post-tag">Strategy & Growth</span></p>
+<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / <a href="/blog/category/strategy-growth/">Strategy &amp; Growth</a> / 5 Signs Your Business Needs a...</p>
+<p style="margin-bottom:14px"><a href="/blog/category/strategy-growth/" class="post-tag">Strategy &amp; Growth</a></p>
 <h1 style="font-size:clamp(1.65rem,4.2vw,2.6rem);max-width:900px;margin-left:auto;margin-right:auto">5 Signs Your Business Needs a Strategy Overhaul</h1>
 <p>Is Your Business Sending You Warning Signals? Every business goes through cycles of growth, stability, and stagnation. The challenge for […]</p>
 <div class="post-meta">
@@ -495,41 +523,63 @@ img{max-width:60%;page-break-inside:avoid}
 <section class="section">
 <div class="container">
 <figure style="max-width:860px;margin:0 auto 8px">
-<img class="article-hero-img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&amp;q=80" alt="5 Signs Your Business Needs a Strategy Overhaul - Elixir Consulting Group" width="1200" height="630" fetchpriority="high" decoding="async">
+<img class="article-hero-img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&amp;q=80" alt="5 Signs Your Business Needs a Strategy Overhaul - Elixir Consulting Group" width="1200" height="630" srcset="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1200 1200w" sizes="(max-width:900px) 100vw, 860px" fetchpriority="high" decoding="async">
 </figure>
+<nav class="toc" aria-label="Table of contents">
+<p class="toc-title">In this article</p>
+<ol>
+<li><a href="#is-your-business-sending-you-warning-signals">Is Your Business Sending You Warning Signals?</a></li>
+<li><a href="#sign-1-your-revenue-is-growing-but-your-profits-are-not">Sign 1: Your Revenue Is Growing but Your Profits Are Not</a></li>
+<li><a href="#sign-2-you-cannot-take-a-vacation-without-the-business-suffe">Sign 2: You Cannot Take a Vacation Without the Business Suffering</a></li>
+<li><a href="#sign-3-your-best-people-are-leaving">Sign 3: Your Best People Are Leaving</a></li>
+<li><a href="#sign-4-you-are-competing-primarily-on-price">Sign 4: You Are Competing Primarily on Price</a></li>
+<li><a href="#sign-5-you-have-not-updated-your-strategy-in-over-a-year">Sign 5: You Have Not Updated Your Strategy in Over a Year</a></li>
+<li><a href="#the-cost-of-inaction">The Cost of Inaction</a></li>
+</ol>
+</nav>
 <article class="article-body" id="post-body">
-<h2>Is Your Business Sending You Warning Signals?</h2>
+<h2 id="is-your-business-sending-you-warning-signals">Is Your Business Sending You Warning Signals?</h2>
 <p>Every business goes through cycles of growth, stability, and stagnation. The challenge for most owners is recognizing when they have moved from a healthy growth phase into a pattern of decline before it is too late to course-correct. At <a href="https://elixirconsultinggroup.com">Elixir Consulting Group</a>, Dr. Connor Robertson has worked with hundreds of business owners, and the pattern is remarkably consistent: the businesses that thrive are the ones whose owners recognize the warning signs early and act decisively.</p>
 <p>If you are experiencing even two or three of the following signs, it may be time for a serious strategic overhaul.</p>
-<h2>Sign 1: Your Revenue Is Growing but Your Profits Are Not</h2>
+<h2 id="sign-1-your-revenue-is-growing-but-your-profits-are-not">Sign 1: Your Revenue Is Growing but Your Profits Are Not</h2>
 <p>This is perhaps the most dangerous trap in business because it feels like progress. Revenue is going up, so things must be working, right? Not necessarily. Revenue growth without corresponding profit growth usually indicates one of several underlying problems: your pricing has not kept pace with your costs, you are acquiring unprofitable customers, operational inefficiency is eating into your margins, or you are over-investing in growth before your foundation is solid.</p>
 <p>According to <a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights" target="_blank" rel="noopener">McKinsey</a>, nearly 40 percent of growing companies are actually destroying value because their growth is unprofitable. The fix requires a fundamental rethinking of your business model, pricing strategy, and cost structure.</p>
 <h3>What to Do About It</h3>
 <p>Start by conducting a profitability analysis at the customer, product, and channel level. You may discover that a small percentage of your customers are generating the vast majority of your profits while others are actually costing you money. Dr. Connor Robertson regularly helps clients restructure their customer portfolios to focus on the relationships that drive real profitability.</p>
-<h2>Sign 2: You Cannot Take a Vacation Without the Business Suffering</h2>
+<h2 id="sign-2-you-cannot-take-a-vacation-without-the-business-suffe">Sign 2: You Cannot Take a Vacation Without the Business Suffering</h2>
 <p>If your business cannot function without you for two weeks, you do not own a business. You own a job. This is a hard truth that many entrepreneurs resist, but it is one of the clearest indicators that your strategy needs an overhaul.</p>
 <p>Owner dependency is a strategic problem, not an operational one. It usually means that critical knowledge lives in your head instead of in documented systems, your team lacks the authority or confidence to make decisions, and your business model is built around your personal capacity rather than scalable processes.</p>
 <h3>What to Do About It</h3>
 <p>Building an owner-independent business requires deliberate effort over time. The first step is to identify the five to ten decisions that only you currently make and develop a framework that allows your team to handle them. <a href="https://drconnorrobertson.com" target="_blank" rel="noopener">Dr. Connor Robertson</a> specializes in helping business owners make this transition from operator to true owner.</p>
-<h2>Sign 3: Your Best People Are Leaving</h2>
+<h2 id="sign-3-your-best-people-are-leaving">Sign 3: Your Best People Are Leaving</h2>
 <p>High employee turnover is expensive, but it is also a symptom of a deeper strategic problem. When your best performers leave, they are telling you something important: either they do not see a future in your organization, they are frustrated by lack of systems and clarity, or they have found a better opportunity because your compensation or culture is not competitive.</p>
 <p>Research from <a href="https://hbr.org/topic/subject/talent-management" target="_blank" rel="noopener">Harvard Business Review</a> shows that the cost of replacing a skilled employee ranges from 50 to 200 percent of their annual salary. But the real cost is not just financial. It is the lost institutional knowledge, disrupted client relationships, and team morale damage that compounds over time.</p>
 <h3>What to Do About It</h3>
 <p>Start by having honest conversations with your remaining top performers. Ask them what would make them consider leaving and what would make them want to stay for the next five years. Their answers will give you a roadmap for the strategic changes your business needs.</p>
-<h2>Sign 4: You Are Competing Primarily on Price</h2>
+<h2 id="sign-4-you-are-competing-primarily-on-price">Sign 4: You Are Competing Primarily on Price</h2>
 <p>If your sales conversations always come back to price, your strategy has a differentiation problem. Price competition is a race to the bottom that no small business can win against larger, better-capitalized competitors.</p>
 <p>The businesses that command premium pricing are those that have a clear value proposition, a distinct market position, and a reputation for delivering exceptional results. If you cannot articulate why a customer should choose you at a higher price point, that is a strategic gap that needs to be addressed. <a href="https://thepittsburghwire.com" target="_blank" rel="noopener">The Pittsburgh Wire</a> regularly profiles businesses that have successfully differentiated themselves in competitive markets.</p>
 <h3>What to Do About It</h3>
 <p>Work with a strategic consultant to define your unique value proposition and develop messaging that communicates it effectively. At Elixir Consulting Group, we help clients identify their competitive advantages and build go-to-market strategies that allow them to compete on value rather than price.</p>
-<h2>Sign 5: You Have Not Updated Your Strategy in Over a Year</h2>
+<h2 id="sign-5-you-have-not-updated-your-strategy-in-over-a-year">Sign 5: You Have Not Updated Your Strategy in Over a Year</h2>
 <p>Markets change, competitors evolve, and customer expectations shift constantly. A strategy that worked 18 months ago may be actively working against you today. Yet many business owners treat their strategy as a set-it-and-forget-it exercise.</p>
 <p>According to <a href="https://www.forbes.com/sites/forbesbusinesscouncil/" target="_blank" rel="noopener">Forbes</a>, the most successful small businesses review and update their strategic plans quarterly. This does not mean starting from scratch every three months. It means regularly assessing whether your assumptions still hold, whether your competitive landscape has changed, and whether your execution is aligned with your strategic priorities.</p>
 <h3>What to Do About It</h3>
 <p>Implement a quarterly strategic review process. Block out a half-day every three months to step back from day-to-day operations and evaluate your business from a strategic perspective. If you do not have a framework for conducting this review, Elixir Consulting Group can help you build one that becomes a permanent part of your operating rhythm.</p>
-<h2>The Cost of Inaction</h2>
+<h2 id="the-cost-of-inaction">The Cost of Inaction</h2>
 <p>The biggest risk in business is not making a wrong decision. It is making no decision at all. If you have recognized two or more of these signs in your business, the time to act is now. Every week you wait is another week of declining margins, lost talent, and missed opportunities.</p>
 <p><a href="/contact/">Contact Elixir Consulting Group</a> to schedule a strategic assessment with Dr. Connor Robertson. Together, we will build a plan to get your business back on track and positioned for sustainable growth.</p>
 </article>
+
+<div class="share-row">
+<span class="share-label">Share</span>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://elixirconsultinggroup.com/blog/5-signs-your-business-needs-a-strategy-overhaul/" target="_blank" rel="noopener" aria-label="Share on LinkedIn">LinkedIn</a>
+<a href="https://x.com/intent/tweet?url=https://elixirconsultinggroup.com/blog/5-signs-your-business-needs-a-strategy-overhaul/&amp;text=5 Signs Your Business Needs a Strategy Overhaul" target="_blank" rel="noopener" aria-label="Share on X">X</a>
+<a href="mailto:?subject=5 Signs Your Business Needs a Strategy Overhaul&amp;body=https://elixirconsultinggroup.com/blog/5-signs-your-business-needs-a-strategy-overhaul/" aria-label="Share by email">Email</a>
+<button type="button" class="copy-link" data-url="https://elixirconsultinggroup.com/blog/5-signs-your-business-needs-a-strategy-overhaul/">Copy link</button>
+</div>
+
+<nav class="prev-next" aria-label="More articles"><a class="pn-link" href="/blog/the-business-owner-guide-to-effective-delegation/"><span>&larr; Previous</span><strong>The Business Owner Guide to Effective Delegation</strong></a><a class="pn-link pn-next" href="/blog/digital-transformation-for-traditional-businesses-a-practical-guide/"><span>Next &rarr;</span><strong>Digital Transformation for Traditional Businesses: A Practical Guide</strong></a></nav>
 
 <div class="author-box">
 <img src="/images/dr-connor-robertson.jpg" alt="Dr. Connor Robertson, Founder and Lead Consultant at Elixir Consulting Group" width="192" height="192" loading="lazy" decoding="async">
@@ -576,27 +626,27 @@ img{max-width:60%;page-break-inside:avoid}
 </div>
 <div class="post-list">
 <article class="post-card" data-cat="Strategy &amp; Growth" data-search="why most business plans fail and how to fix yours the best business plans are living documents. they change as the business changes. they guide decisions in real time. at elixir consulting group, dr... strategy &amp; growth">
-<a href="/blog/why-most-business-plans-fail-and-how-to-fix-yours/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="Why Most Business Plans Fail and How to Fix Yours - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/why-most-business-plans-fail-and-how-to-fix-yours/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="Why Most Business Plans Fail and How to Fix Yours - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Strategy & Growth</p>
+<p class="pc-cat">Strategy &amp; Growth</p>
 <h3><a href="/blog/why-most-business-plans-fail-and-how-to-fix-yours/">Why Most Business Plans Fail and How to Fix Yours</a></h3>
 <p>The best business plans are living documents. They change as the business changes. They guide decisions in real time. At Elixir Consulting Group, Dr...</p>
 <p class="pc-meta"><time datetime="2026-02-17">February 17, 2026</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Strategy &amp; Growth" data-search="how to create a 90-day action plan for your business every business needs a plan. not a theoretical document that nobody reads, but a practical roadmap that tells your team where you are going and how you... strategy &amp; growth">
-<a href="/blog/how-to-create-a-90-day-action-plan-for-your-business/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&amp;q=80" alt="How to Create a 90-Day Action Plan for Your Business - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-create-a-90-day-action-plan-for-your-business/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&amp;q=80" alt="How to Create a 90-Day Action Plan for Your Business - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Strategy & Growth</p>
+<p class="pc-cat">Strategy &amp; Growth</p>
 <h3><a href="/blog/how-to-create-a-90-day-action-plan-for-your-business/">How to Create a 90-Day Action Plan for Your Business</a></h3>
 <p>Every business needs a plan. Not a theoretical document that nobody reads, but a practical roadmap that tells your team where you are going and how you...</p>
 <p class="pc-meta"><time datetime="2026-02-16">February 16, 2026</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Strategy &amp; Growth" data-search="how to align your business plan with your cash flow reality a business plan is only as good as the action it drives. most plans sit on a shelf collecting dust because they were written to impress rather than to... strategy &amp; growth">
-<a href="/blog/how-to-align-your-business-plan-with-your-cash-flow-reality/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&amp;q=80" alt="How to Align Your Business Plan With Your Cash Flow Reality - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-align-your-business-plan-with-your-cash-flow-reality/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&amp;q=80" alt="How to Align Your Business Plan With Your Cash Flow Reality - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Strategy & Growth</p>
+<p class="pc-cat">Strategy &amp; Growth</p>
 <h3><a href="/blog/how-to-align-your-business-plan-with-your-cash-flow-reality/">How to Align Your Business Plan With Your Cash Flow Reality</a></h3>
 <p>A business plan is only as good as the action it drives. Most plans sit on a shelf collecting dust because they were written to impress rather than to...</p>
 <p class="pc-meta"><time datetime="2026-02-14">February 14, 2026</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
@@ -708,6 +758,13 @@ q.setAttribute('aria-expanded','false');
 function tog(){var open=!item.classList.contains('active');item.classList.toggle('active',open);q.setAttribute('aria-expanded',open?'true':'false')}
 q.addEventListener('click',tog);
 q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}});
+});
+document.querySelectorAll('.copy-link').forEach(function(btn){
+btn.addEventListener('click',function(){
+var url=btn.getAttribute('data-url'),done=function(){var t=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=t},1600)};
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done).catch(function(){prompt('Copy this link:',url)})}
+else{prompt('Copy this link:',url)}
+});
 });
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){const img=entry.target;img.src=img.dataset.src;img.classList.add('loaded');observer.unobserve(img)}});});document.querySelectorAll('img[data-src]').forEach(img=>observer.observe(img))}else{document.querySelectorAll('img[data-src]').forEach(function(img){img.src=img.dataset.src})}
 </script>

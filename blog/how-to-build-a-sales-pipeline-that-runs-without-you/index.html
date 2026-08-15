@@ -39,7 +39,9 @@
 <meta name="twitter:image:alt" content="How to Build a Sales Pipeline That Runs Without You">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -214,6 +216,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .post-meta img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.35)}
 .post-meta .dot{opacity:.5}
 .post-tag{display:inline-block;background:rgba(201,168,76,.16);color:#C9A84C;border:1px solid rgba(201,168,76,.4);border-radius:999px;padding:4px 12px;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+/* Article furniture: contents, share row, prev/next */
+.toc{max-width:760px;margin:0 auto 32px;background:#F8F9FA;border:1px solid #E2E8F0;border-left:4px solid #C9A84C;border-radius:0 12px 12px 0;padding:22px 26px}
+.toc-title{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#002E5B;margin-bottom:10px}
+.toc ol{margin:0;padding-left:1.15rem}
+.toc li{margin-bottom:7px;font-size:.95rem}
+.toc a{color:#555555;text-decoration:none}
+.toc a:hover{color:#C9A84C;text-decoration:underline}
+.share-row{max-width:760px;margin:36px auto 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-top:22px;border-top:1px solid #E2E8F0}
+.share-label{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#6C757D;margin-right:4px}
+.share-row a,.copy-link{display:inline-flex;align-items:center;min-height:40px;padding:8px 16px;border:1px solid #E2E8F0;border-radius:999px;background:#fff;font-size:.88rem;font-weight:600;color:#002E5B;cursor:pointer;font-family:inherit}
+.share-row a:hover,.copy-link:hover{border-color:#C9A84C;color:#002E5B}
+.prev-next{max-width:760px;margin:32px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pn-link{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid #E2E8F0;border-radius:12px;background:#fff;transition:border-color .2s,transform .2s}
+.pn-link:hover{border-color:#C9A84C;transform:translateY(-2px)}
+.pn-link span{font-size:.78rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#C9A84C}
+.pn-link strong{font-size:.98rem;line-height:1.35;color:#002E5B}
+.pn-next{text-align:right;align-items:flex-end}
+a.post-tag{text-decoration:none}
+a.post-tag:hover{background:rgba(201,168,76,.28);color:#C9A84C}
+
 .author-box{max-width:760px;margin:48px auto 0;display:flex;gap:24px;align-items:flex-start;background:#F8F9FA;border-radius:14px;padding:28px}
 .author-box img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .author-box h3{font-size:1.15rem;margin-bottom:2px}
@@ -322,6 +344,11 @@ main[style]{margin-top:64px!important}
 .post-card .pc-meta{font-size:.87rem}
 .post-card h3{font-size:1.12rem}
 .author-box{flex-direction:column;align-items:center;text-align:center;gap:16px;padding:24px 20px}
+.prev-next{grid-template-columns:1fr}
+.pn-next{text-align:left;align-items:flex-start}
+.toc{padding:18px 20px}
+.share-row{gap:8px}
+.share-row a,.copy-link{min-height:44px;font-size:.85rem;padding:8px 14px}
 .blog-toolbar{flex-direction:column;align-items:stretch}
 /* flex-basis grows the *height* once the toolbar stacks, so pin it back down */
 .blog-search{flex:0 0 auto;width:100%;min-height:52px}
@@ -351,7 +378,8 @@ main[style]{margin-top:64px!important}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{display:inline-flex;align-items:center;min-height:44px}
 /* Standalone links sitting inside cards and stat blocks are tap targets too.
    Links inline within a sentence stay as-is; WCAG exempts those. */
-.stat-label a,.contact-info-card p a,.post-card .pc-body>a{display:inline-flex;align-items:center;min-height:44px}
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a,a.post-tag,.post-meta a,.author-box p a,.contact-info-card a,.section a[href^="https://thepittsburghwire"],.section a[href^="https://www.youtube"]{display:inline-flex;align-items:center;min-height:44px}
+a.post-tag{padding:8px 16px}
 .breadcrumb a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
 .services-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}
 .faq-q{min-height:56px;padding:18px 20px}
@@ -465,7 +493,7 @@ img{max-width:60%;page-break-inside:avoid}
 <li><a href="/industries/">Industries</a></li>
 <li><a href="/process/">Process</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
-<li><a href="/blog/">Blog</a></li>
+<li><a href="/blog/" style="color:#002E5B;font-weight:700" aria-current="page">Blog</a></li>
 <li><a href="/faq/">FAQ</a></li>
 <li><a href="/contact/">Contact</a></li>
 <li><a href="/contact/" class="btn btn-primary">Book a Consult</a></li>
@@ -477,8 +505,8 @@ img{max-width:60%;page-break-inside:avoid}
 
 <section class="page-hero">
 <div class="container">
-<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / How to Build a Sales Pipeline That Runs...</p>
-<p style="margin-bottom:14px"><span class="post-tag">Sales & Revenue</span></p>
+<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / <a href="/blog/category/sales-revenue/">Sales &amp; Revenue</a> / How to Build a Sales Pipeline That...</p>
+<p style="margin-bottom:14px"><a href="/blog/category/sales-revenue/" class="post-tag">Sales &amp; Revenue</a></p>
 <h1 style="font-size:clamp(1.65rem,4.2vw,2.6rem);max-width:900px;margin-left:auto;margin-right:auto">How to Build a Sales Pipeline That Runs Without You</h1>
 <p>One of the most common challenges business owners face is a sales process that depends entirely on them. When the […]</p>
 <div class="post-meta">
@@ -495,18 +523,27 @@ img{max-width:60%;page-break-inside:avoid}
 <section class="section">
 <div class="container">
 <figure style="max-width:860px;margin:0 auto 8px">
-<img class="article-hero-img" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Build a Sales Pipeline That Runs Without You - Elixir Consulting Group" width="1200" height="630" fetchpriority="high" decoding="async">
+<img class="article-hero-img" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Build a Sales Pipeline That Runs Without You - Elixir Consulting Group" width="1200" height="630" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:900px) 100vw, 860px" fetchpriority="high" decoding="async">
 </figure>
+<nav class="toc" aria-label="Table of contents">
+<p class="toc-title">In this article</p>
+<ol>
+<li><a href="#define-your-pipeline-stages">Define Your Pipeline Stages</a></li>
+<li><a href="#create-follow-up-sequences">Create Follow-Up Sequences</a></li>
+<li><a href="#install-tracking-and-reporting">Install Tracking and Reporting</a></li>
+<li><a href="#train-and-document">Train and Document</a></li>
+</ol>
+</nav>
 <article class="article-body" id="post-body">
 <p>One of the most common challenges business owners face is a sales process that depends entirely on them. When the owner is the only person who can close deals, growth stalls every time they step away. Building a sales pipeline that runs without you is not just possible. It is essential for sustainable growth.</p>
 <p><a href="/about/">Dr. Connor Robertson</a> at <a href="/blog/">Elixir Consulting Group</a> specializes in helping business owners build <a href="/services/">sales systems</a> that are repeatable, measurable, and independent of any single person.</p>
-<h2>Define Your Pipeline Stages</h2>
+<h2 id="define-your-pipeline-stages">Define Your Pipeline Stages</h2>
 <p>Every sales pipeline needs clearly defined stages. A typical structure includes lead identification, initial contact, discovery call, proposal, negotiation, and close. Each stage should have specific criteria that must be met before a lead advances. This removes ambiguity and gives your sales team a clear path to follow.</p>
-<h2>Create Follow-Up Sequences</h2>
+<h2 id="create-follow-up-sequences">Create Follow-Up Sequences</h2>
 <p>Most deals are lost because of poor follow-up, not because of poor products or services. Build a structured follow-up sequence for each stage of your pipeline. Define how many touches should happen, through which channels, and at what intervals. This is where consistency wins over talent.</p>
-<h2>Install Tracking and Reporting</h2>
+<h2 id="install-tracking-and-reporting">Install Tracking and Reporting</h2>
 <p>You need visibility into your pipeline at all times. Track the number of leads at each stage, conversion rates between stages, average deal size, and average time to close. Review these metrics weekly as part of your <a href="/blog/">leadership scorecard</a>.</p>
-<h2>Train and Document</h2>
+<h2 id="train-and-document">Train and Document</h2>
 <p>Your sales process should be documented well enough that a new hire can follow it within their first week. Include scripts, email templates, objection handling guides, and examples of successful proposals. The goal is to make your sales process a system, not an art form.</p>
 <p>If your sales pipeline is inconsistent or depends too much on you, <a href="/contact/">schedule a consultation</a> with <a href="/about/">Dr. Connor Robertson</a> to start building a system that works.</p>
 <h3>Related Articles from Dr. Connor Robertson</h3>
@@ -527,6 +564,16 @@ img{max-width:60%;page-break-inside:avoid}
 <h3>More From Dr. Robertson</h3>
 <p>Get additional sales strategy insights from <a href="https://drconnorrobertson.com" target="_blank" rel="noopener">Dr. Connor Robertson</a>. Explore Pittsburgh business trends and opportunities at <a href="https://thepittsburghwire.com" target="_blank" rel="noopener">The Pittsburgh Wire</a>.</p>
 </article>
+
+<div class="share-row">
+<span class="share-label">Share</span>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://elixirconsultinggroup.com/blog/how-to-build-a-sales-pipeline-that-runs-without-you/" target="_blank" rel="noopener" aria-label="Share on LinkedIn">LinkedIn</a>
+<a href="https://x.com/intent/tweet?url=https://elixirconsultinggroup.com/blog/how-to-build-a-sales-pipeline-that-runs-without-you/&amp;text=How to Build a Sales Pipeline That Runs Without You" target="_blank" rel="noopener" aria-label="Share on X">X</a>
+<a href="mailto:?subject=How to Build a Sales Pipeline That Runs Without You&amp;body=https://elixirconsultinggroup.com/blog/how-to-build-a-sales-pipeline-that-runs-without-you/" aria-label="Share by email">Email</a>
+<button type="button" class="copy-link" data-url="https://elixirconsultinggroup.com/blog/how-to-build-a-sales-pipeline-that-runs-without-you/">Copy link</button>
+</div>
+
+<nav class="prev-next" aria-label="More articles"><a class="pn-link" href="/blog/how-to-build-business-that-runs-without-you/"><span>&larr; Previous</span><strong>How to Build a Business That Runs Without You</strong></a><a class="pn-link pn-next" href="/blog/digital-transformation-for-traditional-businesses/"><span>Next &rarr;</span><strong>Digital Transformation for Traditional Businesses</strong></a></nav>
 
 <div class="author-box">
 <img src="/images/dr-connor-robertson.jpg" alt="Dr. Connor Robertson, Founder and Lead Consultant at Elixir Consulting Group" width="192" height="192" loading="lazy" decoding="async">
@@ -573,27 +620,27 @@ img{max-width:60%;page-break-inside:avoid}
 </div>
 <div class="post-list">
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to develop the next generation of leaders in your business how to develop the next generation of leaders in your business. as a business owner, your leadership sets the tone for everything in your organization... sales &amp; revenue">
-<a href="/blog/how-to-develop-the-next-generation-of-leaders-in-your-business/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=1200&amp;q=80" alt="How to Develop the Next Generation of Leaders in Your Business - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-develop-the-next-generation-of-leaders-in-your-business/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=1200&amp;q=80" alt="How to Develop the Next Generation of Leaders in Your Business - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-develop-the-next-generation-of-leaders-in-your-business/">How to Develop the Next Generation of Leaders in Your Business</a></h3>
 <p>How to Develop the Next Generation of Leaders in Your Business. As a business owner, your leadership sets the tone for everything in your organization...</p>
 <p class="pc-meta"><time datetime="2025-09-17">September 17, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="why leaders who listen outperform leaders who talk why leaders who listen outperform leaders who talk. as a business owner, your leadership sets the tone for everything in your organization. how you... sales &amp; revenue">
-<a href="/blog/why-leaders-who-listen-outperform-leaders-who-talk/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="Why Leaders Who Listen Outperform Leaders Who Talk - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/why-leaders-who-listen-outperform-leaders-who-talk/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="Why Leaders Who Listen Outperform Leaders Who Talk - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/why-leaders-who-listen-outperform-leaders-who-talk/">Why Leaders Who Listen Outperform Leaders Who Talk</a></h3>
 <p>Why Leaders Who Listen Outperform Leaders Who Talk. As a business owner, your leadership sets the tone for everything in your organization. How you...</p>
 <p class="pc-meta"><time datetime="2025-09-16">September 16, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="the one thing great leaders do every single day the one thing great leaders do every single day. as a business owner, your leadership sets the tone for everything in your organization. how you... sales &amp; revenue">
-<a href="/blog/the-one-thing-great-leaders-do-every-single-day/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&amp;q=80" alt="The One Thing Great Leaders Do Every Single Day - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/the-one-thing-great-leaders-do-every-single-day/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&amp;q=80" alt="The One Thing Great Leaders Do Every Single Day - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/the-one-thing-great-leaders-do-every-single-day/">The One Thing Great Leaders Do Every Single Day</a></h3>
 <p>The One Thing Great Leaders Do Every Single Day. As a business owner, your leadership sets the tone for everything in your organization. How you...</p>
 <p class="pc-meta"><time datetime="2025-09-14">September 14, 2025</time> <span aria-hidden="true">&middot;</span> 2 min read</p>
@@ -705,6 +752,13 @@ q.setAttribute('aria-expanded','false');
 function tog(){var open=!item.classList.contains('active');item.classList.toggle('active',open);q.setAttribute('aria-expanded',open?'true':'false')}
 q.addEventListener('click',tog);
 q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}});
+});
+document.querySelectorAll('.copy-link').forEach(function(btn){
+btn.addEventListener('click',function(){
+var url=btn.getAttribute('data-url'),done=function(){var t=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=t},1600)};
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done).catch(function(){prompt('Copy this link:',url)})}
+else{prompt('Copy this link:',url)}
+});
 });
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){const img=entry.target;img.src=img.dataset.src;img.classList.add('loaded');observer.unobserve(img)}});});document.querySelectorAll('img[data-src]').forEach(img=>observer.observe(img))}else{document.querySelectorAll('img[data-src]').forEach(function(img){img.src=img.dataset.src})}
 </script>

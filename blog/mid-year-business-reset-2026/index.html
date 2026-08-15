@@ -39,7 +39,9 @@
 <meta name="twitter:image:alt" content="The Mid-Year Business Reset: How to Finish 2026 Stronger Than You Started">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -214,6 +216,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .post-meta img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.35)}
 .post-meta .dot{opacity:.5}
 .post-tag{display:inline-block;background:rgba(201,168,76,.16);color:#C9A84C;border:1px solid rgba(201,168,76,.4);border-radius:999px;padding:4px 12px;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+/* Article furniture: contents, share row, prev/next */
+.toc{max-width:760px;margin:0 auto 32px;background:#F8F9FA;border:1px solid #E2E8F0;border-left:4px solid #C9A84C;border-radius:0 12px 12px 0;padding:22px 26px}
+.toc-title{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#002E5B;margin-bottom:10px}
+.toc ol{margin:0;padding-left:1.15rem}
+.toc li{margin-bottom:7px;font-size:.95rem}
+.toc a{color:#555555;text-decoration:none}
+.toc a:hover{color:#C9A84C;text-decoration:underline}
+.share-row{max-width:760px;margin:36px auto 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-top:22px;border-top:1px solid #E2E8F0}
+.share-label{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#6C757D;margin-right:4px}
+.share-row a,.copy-link{display:inline-flex;align-items:center;min-height:40px;padding:8px 16px;border:1px solid #E2E8F0;border-radius:999px;background:#fff;font-size:.88rem;font-weight:600;color:#002E5B;cursor:pointer;font-family:inherit}
+.share-row a:hover,.copy-link:hover{border-color:#C9A84C;color:#002E5B}
+.prev-next{max-width:760px;margin:32px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pn-link{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid #E2E8F0;border-radius:12px;background:#fff;transition:border-color .2s,transform .2s}
+.pn-link:hover{border-color:#C9A84C;transform:translateY(-2px)}
+.pn-link span{font-size:.78rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#C9A84C}
+.pn-link strong{font-size:.98rem;line-height:1.35;color:#002E5B}
+.pn-next{text-align:right;align-items:flex-end}
+a.post-tag{text-decoration:none}
+a.post-tag:hover{background:rgba(201,168,76,.28);color:#C9A84C}
+
 .author-box{max-width:760px;margin:48px auto 0;display:flex;gap:24px;align-items:flex-start;background:#F8F9FA;border-radius:14px;padding:28px}
 .author-box img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .author-box h3{font-size:1.15rem;margin-bottom:2px}
@@ -322,6 +344,11 @@ main[style]{margin-top:64px!important}
 .post-card .pc-meta{font-size:.87rem}
 .post-card h3{font-size:1.12rem}
 .author-box{flex-direction:column;align-items:center;text-align:center;gap:16px;padding:24px 20px}
+.prev-next{grid-template-columns:1fr}
+.pn-next{text-align:left;align-items:flex-start}
+.toc{padding:18px 20px}
+.share-row{gap:8px}
+.share-row a,.copy-link{min-height:44px;font-size:.85rem;padding:8px 14px}
 .blog-toolbar{flex-direction:column;align-items:stretch}
 /* flex-basis grows the *height* once the toolbar stacks, so pin it back down */
 .blog-search{flex:0 0 auto;width:100%;min-height:52px}
@@ -351,7 +378,8 @@ main[style]{margin-top:64px!important}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{display:inline-flex;align-items:center;min-height:44px}
 /* Standalone links sitting inside cards and stat blocks are tap targets too.
    Links inline within a sentence stay as-is; WCAG exempts those. */
-.stat-label a,.contact-info-card p a,.post-card .pc-body>a{display:inline-flex;align-items:center;min-height:44px}
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a,a.post-tag,.post-meta a,.author-box p a,.contact-info-card a,.section a[href^="https://thepittsburghwire"],.section a[href^="https://www.youtube"]{display:inline-flex;align-items:center;min-height:44px}
+a.post-tag{padding:8px 16px}
 .breadcrumb a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
 .services-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}
 .faq-q{min-height:56px;padding:18px 20px}
@@ -465,7 +493,7 @@ img{max-width:60%;page-break-inside:avoid}
 <li><a href="/industries/">Industries</a></li>
 <li><a href="/process/">Process</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
-<li><a href="/blog/">Blog</a></li>
+<li><a href="/blog/" style="color:#002E5B;font-weight:700" aria-current="page">Blog</a></li>
 <li><a href="/faq/">FAQ</a></li>
 <li><a href="/contact/">Contact</a></li>
 <li><a href="/contact/" class="btn btn-primary">Book a Consult</a></li>
@@ -477,8 +505,8 @@ img{max-width:60%;page-break-inside:avoid}
 
 <section class="page-hero">
 <div class="container">
-<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / The Mid-Year Business Reset: How to Finish...</p>
-<p style="margin-bottom:14px"><span class="post-tag">Insights</span></p>
+<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / <a href="/blog/category/insights/">Insights</a> / The Mid-Year Business Reset: How to...</p>
+<p style="margin-bottom:14px"><a href="/blog/category/insights/" class="post-tag">Insights</a></p>
 <h1 style="font-size:clamp(1.65rem,4.2vw,2.6rem);max-width:900px;margin-left:auto;margin-right:auto">The Mid-Year Business Reset: How to Finish 2026 Stronger Than You Started</h1>
 <p>July 1 is the most underused strategic checkpoint in business. Here is the mid-year reset process high-performing owners use to course-correct and...</p>
 <div class="post-meta">
@@ -495,10 +523,22 @@ img{max-width:60%;page-break-inside:avoid}
 <section class="section">
 <div class="container">
 <figure style="max-width:860px;margin:0 auto 8px">
-<img class="article-hero-img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&amp;q=80" alt="The Mid-Year Business Reset: How to Finish 2026 Stronger Than You Started - Elixir Consulting Group" width="1200" height="630" fetchpriority="high" decoding="async">
+<img class="article-hero-img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&amp;q=80" alt="The Mid-Year Business Reset: How to Finish 2026 Stronger Than You Started - Elixir Consulting Group" width="1200" height="630" srcset="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1200 1200w" sizes="(max-width:900px) 100vw, 860px" fetchpriority="high" decoding="async">
 </figure>
+<nav class="toc" aria-label="Table of contents">
+<p class="toc-title">In this article</p>
+<ol>
+<li><a href="#start-with-the-numbers-not-the-stories">Start With the Numbers, Not the Stories</a></li>
+<li><a href="#read-the-gap-honestly">Read the Gap Honestly</a></li>
+<li><a href="#the-people-audit">The People Audit</a></li>
+<li><a href="#the-operations-reset">The Operations Reset</a></li>
+<li><a href="#set-three-priorities-for-h2-not-ten">Set Three Priorities for H2, Not Ten</a></li>
+<li><a href="#the-30-day-sprint-after-the-reset">The 30-Day Sprint After the Reset</a></li>
+<li><a href="#the-business-that-treats-july-1-as-a-reset-has-an-advantage">The Business That Treats July 1 as a Reset Has an Advantage</a></li>
+</ol>
+</nav>
 <article class="article-body" id="post-body">
-<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80" alt="Business owner reviewing mid-year performance data and strategy on laptop" style="width:100%;border-radius:12px;margin-bottom:40px;max-height:480px;object-fit:cover">
+<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&amp;q=80" alt="Business owner reviewing mid-year performance data and strategy on laptop" style="width:100%;border-radius:12px;margin-bottom:40px;max-height:480px;object-fit:cover" width="1200" height="801" loading="lazy" decoding="async">
 
 <p>Today is July 1. The year is exactly halfway done. And for most business owners, that fact will pass without a second thought. There will be client calls to return, invoices to send, problems to solve, and the quiet tyranny of daily operations will carry everyone straight from June into July without anyone pausing to ask the question that actually matters: are we on track, and if not, what are we going to do about it before time runs out?</p>
 
@@ -506,7 +546,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 <p>Here is how to run a mid-year reset that actually changes something.</p>
 
-<h2>Start With the Numbers, Not the Stories</h2>
+<h2 id="start-with-the-numbers-not-the-stories">Start With the Numbers, Not the Stories</h2>
 
 <p>Before you do anything else, pull five numbers: revenue versus plan, gross margin versus plan, cash on hand versus where you projected it would be, your top three revenue sources as a percentage of total, and your headcount or operating cost as a percentage of revenue. These five figures tell you almost everything you need to know about the health of the business and whether your first-half assumptions were correct.</p>
 
@@ -514,7 +554,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 <p>What you are looking for is not just whether you are ahead or behind plan. You are looking for the shape of the gap. A business that started the year strong and has been decelerating since March is in a very different position than one that started slow and has been building momentum since April, even if both end up at the same place on June 30. The trend tells you more than the absolute number.</p>
 
-<h2>Read the Gap Honestly</h2>
+<h2 id="read-the-gap-honestly">Read the Gap Honestly</h2>
 
 <p>If you are behind on revenue, the mid-year reset requires you to answer a harder question than "how do we close the gap." The harder question is: why are we behind? There are three common answers, and they call for three different responses.</p>
 
@@ -526,7 +566,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 <p>Be honest about which of these three you are actually dealing with. Blaming market conditions when the real problem is execution is a trap many business owners fall into, and it is a trap that compounds over time.</p>
 
-<h2>The People Audit</h2>
+<h2 id="the-people-audit">The People Audit</h2>
 
 <p>Once the financial picture is clear, turn to the people question. By mid-year, you have enough data to know whether each person on your team is in the right role and performing at the level the business needs. Early in the year, it is easy to give people the benefit of the doubt. By July, patterns have emerged.</p>
 
@@ -534,7 +574,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 <p>According to Gallup's 2026 State of the Global Workplace report, businesses that conduct structured mid-year performance conversations see 23% higher engagement scores and meaningfully lower voluntary turnover in the second half of the year compared to those that wait for annual reviews. The conversation itself is an intervention. People who understand clearly how their performance is being evaluated and what success looks like in the second half perform better. That is not management theory. It is a practical outcome you can produce in July.</p>
 
-<h2>The Operations Reset</h2>
+<h2 id="the-operations-reset">The Operations Reset</h2>
 
 <p>Six months of running a business creates operational drift. Processes that were well-defined in January get modified informally, workarounds become standard practice, and systems that were supposed to save time start to generate their own overhead. The mid-year reset is the right moment to identify where that drift has happened and decide what to do about it.</p>
 
@@ -542,7 +582,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 <blockquote>"The mid-year reset is not about judging the first half. It is about giving yourself a second chance to design the year." -- Dr. Connor Robertson</blockquote>
 
-<h2>Set Three Priorities for H2, Not Ten</h2>
+<h2 id="set-three-priorities-for-h2-not-ten">Set Three Priorities for H2, Not Ten</h2>
 
 <p>The most common mistake business owners make in mid-year planning is creating a long list of things they want to do in the second half. It feels productive. It looks thorough. It rarely works. The businesses that execute well in H2 are the ones that identify three priorities, resource them properly, and protect them from the constant pressure to add more.</p>
 
@@ -550,7 +590,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 <p>For most businesses, at least one of the three should be directly tied to revenue generation, one to operational improvement or cost management, and one to a longer-range investment in capability, whether that means a team hire, a technology upgrade, a market expansion, or a client relationship that sets up 2027. The combination of near-term revenue work, operational discipline, and future-building is the H2 portfolio that tends to produce the best full-year outcomes.</p>
 
-<h2>The 30-Day Sprint After the Reset</h2>
+<h2 id="the-30-day-sprint-after-the-reset">The 30-Day Sprint After the Reset</h2>
 
 <p>A mid-year review that produces insight but no action is an expensive meeting. The output of the reset should be a specific 30-day sprint: three to five concrete actions, each with a clear owner and a deadline before August 1. These are not aspirational directions. They are commitments with accountability attached.</p>
 
@@ -558,7 +598,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 <p>This is true at the macro level for the business and the micro level for individual leaders. If the mid-year review identified that your sales follow-up process is inconsistent, the 30-day sprint action is not "improve follow-up." It is "document the five-step follow-up sequence, share it with the team by July 8, and review results in the weekly meeting starting July 15."</p>
 
-<h2>The Business That Treats July 1 as a Reset Has an Advantage</h2>
+<h2 id="the-business-that-treats-july-1-as-a-reset-has-an-advantage">The Business That Treats July 1 as a Reset Has an Advantage</h2>
 
 <p>Most of your competitors will not do this. They will roll from June into July into August doing what they have been doing, hoping the second half takes care of itself. Some of them will get lucky. Most of them will arrive at December with a gap between where they wanted to be and where they ended up, and a list of things they planned to do but never got around to.</p>
 
@@ -574,6 +614,16 @@ img{max-width:60%;page-break-inside:avoid}
 <a href="/contact/" class="btn btn-primary" style="margin-top:8px">Book a Strategy Call</a>
 </div>
 </article>
+
+<div class="share-row">
+<span class="share-label">Share</span>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://elixirconsultinggroup.com/blog/mid-year-business-reset-2026/" target="_blank" rel="noopener" aria-label="Share on LinkedIn">LinkedIn</a>
+<a href="https://x.com/intent/tweet?url=https://elixirconsultinggroup.com/blog/mid-year-business-reset-2026/&amp;text=The Mid-Year Business Reset: How to Finish 2026 Stronger Than You Started" target="_blank" rel="noopener" aria-label="Share on X">X</a>
+<a href="mailto:?subject=The Mid-Year Business Reset: How to Finish 2026 Stronger Than You Started&amp;body=https://elixirconsultinggroup.com/blog/mid-year-business-reset-2026/" aria-label="Share by email">Email</a>
+<button type="button" class="copy-link" data-url="https://elixirconsultinggroup.com/blog/mid-year-business-reset-2026/">Copy link</button>
+</div>
+
+<nav class="prev-next" aria-label="More articles"><a class="pn-link" href="/blog/2026-ma-window-best-time-sell-business/"><span>&larr; Previous</span><strong>The 2026 M&amp;A Window: Why Business Owners Have Never Had a Better...</strong></a><a class="pn-link pn-next" href="/blog/ai-tool-integration-strategy-2026/"><span>Next &rarr;</span><strong>The Integration Advantage: Why Small Businesses With Five AI Tools...</strong></a></nav>
 
 <div class="author-box">
 <img src="/images/dr-connor-robertson.jpg" alt="Dr. Connor Robertson, Founder and Lead Consultant at Elixir Consulting Group" width="192" height="192" loading="lazy" decoding="async">
@@ -620,7 +670,7 @@ img{max-width:60%;page-break-inside:avoid}
 </div>
 <div class="post-list">
 <article class="post-card" data-cat="Insights" data-search="how to build a business that thrives in any economy how to build a business that thrives in any economy. you do not need a degree in economics to make smart business decisions. but understanding a few key... insights">
-<a href="/blog/how-to-build-a-business-that-thrives-in-any-economy/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&amp;q=80" alt="How to Build a Business That Thrives in Any Economy - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-build-a-business-that-thrives-in-any-economy/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&amp;q=80" alt="How to Build a Business That Thrives in Any Economy - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
 <p class="pc-cat">Insights</p>
 <h3><a href="/blog/how-to-build-a-business-that-thrives-in-any-economy/">How to Build a Business That Thrives in Any Economy</a></h3>
@@ -629,7 +679,7 @@ img{max-width:60%;page-break-inside:avoid}
 </div>
 </article>
 <article class="post-card" data-cat="Insights" data-search="the mindset shift that separates business owners from entrepreneurs being an entrepreneur is one of the most rewarding and challenging paths you can take. the journey requires resilience, self-awareness, […] insights">
-<a href="/blog/the-mindset-shift-that-separates-business-owners-from-entrepreneurs/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=1200&amp;q=80" alt="The Mindset Shift That Separates Business Owners From Entrepreneurs - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/the-mindset-shift-that-separates-business-owners-from-entrepreneurs/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=1200&amp;q=80" alt="The Mindset Shift That Separates Business Owners From Entrepreneurs - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
 <p class="pc-cat">Insights</p>
 <h3><a href="/blog/the-mindset-shift-that-separates-business-owners-from-entrepreneurs/">The Mindset Shift That Separates Business Owners From Entrepreneurs</a></h3>
@@ -638,7 +688,7 @@ img{max-width:60%;page-break-inside:avoid}
 </div>
 </article>
 <article class="post-card" data-cat="Insights" data-search="how to overcome the fear of starting a business being an entrepreneur is one of the most rewarding and challenging paths you can take. the journey requires resilience, self-awareness, and a... insights">
-<a href="/blog/how-to-overcome-the-fear-of-starting-a-business/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&amp;q=80" alt="How to Overcome the Fear of Starting a Business - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-overcome-the-fear-of-starting-a-business/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&amp;q=80" alt="How to Overcome the Fear of Starting a Business - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
 <p class="pc-cat">Insights</p>
 <h3><a href="/blog/how-to-overcome-the-fear-of-starting-a-business/">How to Overcome the Fear of Starting a Business</a></h3>
@@ -752,6 +802,13 @@ q.setAttribute('aria-expanded','false');
 function tog(){var open=!item.classList.contains('active');item.classList.toggle('active',open);q.setAttribute('aria-expanded',open?'true':'false')}
 q.addEventListener('click',tog);
 q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}});
+});
+document.querySelectorAll('.copy-link').forEach(function(btn){
+btn.addEventListener('click',function(){
+var url=btn.getAttribute('data-url'),done=function(){var t=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=t},1600)};
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done).catch(function(){prompt('Copy this link:',url)})}
+else{prompt('Copy this link:',url)}
+});
 });
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){const img=entry.target;img.src=img.dataset.src;img.classList.add('loaded');observer.unobserve(img)}});});document.querySelectorAll('img[data-src]').forEach(img=>observer.observe(img))}else{document.querySelectorAll('img[data-src]').forEach(function(img){img.src=img.dataset.src})}
 </script>

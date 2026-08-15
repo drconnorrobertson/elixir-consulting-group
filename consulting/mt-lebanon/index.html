@@ -35,7 +35,9 @@
 <meta name="twitter:image:alt" content="Mt. Lebanon, PA Business Consulting Services | Elixir">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -210,6 +212,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .post-meta img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.35)}
 .post-meta .dot{opacity:.5}
 .post-tag{display:inline-block;background:rgba(201,168,76,.16);color:#C9A84C;border:1px solid rgba(201,168,76,.4);border-radius:999px;padding:4px 12px;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+/* Article furniture: contents, share row, prev/next */
+.toc{max-width:760px;margin:0 auto 32px;background:#F8F9FA;border:1px solid #E2E8F0;border-left:4px solid #C9A84C;border-radius:0 12px 12px 0;padding:22px 26px}
+.toc-title{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#002E5B;margin-bottom:10px}
+.toc ol{margin:0;padding-left:1.15rem}
+.toc li{margin-bottom:7px;font-size:.95rem}
+.toc a{color:#555555;text-decoration:none}
+.toc a:hover{color:#C9A84C;text-decoration:underline}
+.share-row{max-width:760px;margin:36px auto 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-top:22px;border-top:1px solid #E2E8F0}
+.share-label{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#6C757D;margin-right:4px}
+.share-row a,.copy-link{display:inline-flex;align-items:center;min-height:40px;padding:8px 16px;border:1px solid #E2E8F0;border-radius:999px;background:#fff;font-size:.88rem;font-weight:600;color:#002E5B;cursor:pointer;font-family:inherit}
+.share-row a:hover,.copy-link:hover{border-color:#C9A84C;color:#002E5B}
+.prev-next{max-width:760px;margin:32px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pn-link{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid #E2E8F0;border-radius:12px;background:#fff;transition:border-color .2s,transform .2s}
+.pn-link:hover{border-color:#C9A84C;transform:translateY(-2px)}
+.pn-link span{font-size:.78rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#C9A84C}
+.pn-link strong{font-size:.98rem;line-height:1.35;color:#002E5B}
+.pn-next{text-align:right;align-items:flex-end}
+a.post-tag{text-decoration:none}
+a.post-tag:hover{background:rgba(201,168,76,.28);color:#C9A84C}
+
 .author-box{max-width:760px;margin:48px auto 0;display:flex;gap:24px;align-items:flex-start;background:#F8F9FA;border-radius:14px;padding:28px}
 .author-box img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .author-box h3{font-size:1.15rem;margin-bottom:2px}
@@ -318,6 +340,11 @@ main[style]{margin-top:64px!important}
 .post-card .pc-meta{font-size:.87rem}
 .post-card h3{font-size:1.12rem}
 .author-box{flex-direction:column;align-items:center;text-align:center;gap:16px;padding:24px 20px}
+.prev-next{grid-template-columns:1fr}
+.pn-next{text-align:left;align-items:flex-start}
+.toc{padding:18px 20px}
+.share-row{gap:8px}
+.share-row a,.copy-link{min-height:44px;font-size:.85rem;padding:8px 14px}
 .blog-toolbar{flex-direction:column;align-items:stretch}
 /* flex-basis grows the *height* once the toolbar stacks, so pin it back down */
 .blog-search{flex:0 0 auto;width:100%;min-height:52px}
@@ -347,7 +374,8 @@ main[style]{margin-top:64px!important}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{display:inline-flex;align-items:center;min-height:44px}
 /* Standalone links sitting inside cards and stat blocks are tap targets too.
    Links inline within a sentence stay as-is; WCAG exempts those. */
-.stat-label a,.contact-info-card p a,.post-card .pc-body>a{display:inline-flex;align-items:center;min-height:44px}
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a,a.post-tag,.post-meta a,.author-box p a,.contact-info-card a,.section a[href^="https://thepittsburghwire"],.section a[href^="https://www.youtube"]{display:inline-flex;align-items:center;min-height:44px}
+a.post-tag{padding:8px 16px}
 .breadcrumb a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
 .services-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}
 .faq-q{min-height:56px;padding:18px 20px}
@@ -618,11 +646,55 @@ img{max-width:60%;page-break-inside:avoid}
 </div>
 </section>
 
+
+<section class="related-posts">
+<div class="container">
+<div class="text-center" style="margin-bottom:32px">
+<span class="eyebrow">Further Reading</span>
+<h2>Articles for Mt. Lebanon Business Owners</h2>
+</div>
+<div class="post-list">
+<article class="post-card" data-cat="Pittsburgh &amp; Local" data-search="pittsburgh's $1.7 billion startup surge: what it signals for business owners in 2026 pittsburgh startups raised $1.7 billion in q1 2026, led by skild ai's $1.4b robotics round. here is what this regional investment surge means for... pittsburgh &amp; local">
+<a href="/blog/pittsburgh-startup-surge-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&amp;q=80" alt="Pittsburgh's $1.7 Billion Startup Surge: What It Signals for Business Owners in 2026 - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
+<div class="pc-body">
+<p class="pc-cat">Pittsburgh &amp; Local</p>
+<h3><a href="/blog/pittsburgh-startup-surge-2026/">Pittsburgh's $1.7 Billion Startup Surge: What It Signals for Business Owners in 2026</a></h3>
+<p>Pittsburgh startups raised $1.7 billion in Q1 2026, led by Skild AI's $1.4B robotics round. Here is what this regional investment surge means for...</p>
+<p class="pc-meta"><time datetime="2026-06-03">June 3, 2026</time> <span aria-hidden="true">&middot;</span> 7 min read</p>
+</div>
+</article>
+<article class="post-card" data-cat="Pittsburgh &amp; Local" data-search="positioning your business for pittsburgh's 2026 economic boom pittsburgh's economic development strategy is reshaping the region with billions in investment across ai, robotics, life sciences, and energy. here is... pittsburgh &amp; local">
+<a href="/blog/pittsburgh-2026-economic-boom-founders-guide/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&amp;q=80" alt="Positioning Your Business for Pittsburgh's 2026 Economic Boom - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
+<div class="pc-body">
+<p class="pc-cat">Pittsburgh &amp; Local</p>
+<h3><a href="/blog/pittsburgh-2026-economic-boom-founders-guide/">Positioning Your Business for Pittsburgh's 2026 Economic Boom</a></h3>
+<p>Pittsburgh's economic development strategy is reshaping the region with billions in investment across AI, robotics, life sciences, and energy. Here is...</p>
+<p class="pc-meta"><time datetime="2026-07-25">July 25, 2026</time> <span aria-hidden="true">&middot;</span> 5 min read</p>
+</div>
+</article>
+<article class="post-card" data-cat="Pittsburgh &amp; Local" data-search="805,000 people came to pittsburgh. did your business capture any of that value? pittsburgh just broke the all-time nfl draft attendance record with 805,000 visitors and up to $200m in economic impact. here is what the event revealed... pittsburgh &amp; local">
+<a href="/blog/pittsburgh-nfl-draft-record-2026-business-lessons/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&amp;q=80" alt="805,000 People Came to Pittsburgh. Did Your Business Capture Any of That Value? - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
+<div class="pc-body">
+<p class="pc-cat">Pittsburgh &amp; Local</p>
+<h3><a href="/blog/pittsburgh-nfl-draft-record-2026-business-lessons/">805,000 People Came to Pittsburgh. Did Your Business Capture Any of That Value?</a></h3>
+<p>Pittsburgh just broke the all-time NFL Draft attendance record with 805,000 visitors and up to $200M in economic impact. Here is what the event revealed...</p>
+<p class="pc-meta"><time datetime="2026-06-17">June 17, 2026</time> <span aria-hidden="true">&middot;</span> 6 min read</p>
+</div>
+</article>
+
+</div>
+<div class="text-center" style="margin-top:28px">
+<a href="/blog/" class="btn btn-outline">Browse All Articles</a>
+</div>
+</div>
+</section>
+
+
 <section class="section section-gray">
 <div class="container text-center">
 <span class="eyebrow">Nearby</span>
 <h2 style="margin-bottom:16px">Other Areas We Serve</h2>
-<p style="max-width:760px;margin:0 auto 12px"><a href="/consulting/philadelphia/">Philadelphia</a> &nbsp;&middot;&nbsp; <a href="/consulting/pittsburgh/">Pittsburgh</a> &nbsp;&middot;&nbsp; <a href="/consulting/robinson-township/">Robinson Township</a> &nbsp;&middot;&nbsp; <a href="/consulting/ross-township/">Ross Township</a> &nbsp;&middot;&nbsp; <a href="/consulting/scranton/">Scranton</a> &nbsp;&middot;&nbsp; <a href="/consulting/sewickley/">Sewickley</a> &nbsp;&middot;&nbsp; <a href="/consulting/state-college/">State College</a> &nbsp;&middot;&nbsp; <a href="/consulting/upper-st-clair/">Upper St. Clair</a></p>
+<p style="max-width:760px;margin:0 auto 12px"><a href="/consulting/philadelphia/" class="services-link">Philadelphia</a><a href="/consulting/pittsburgh/" class="services-link">Pittsburgh</a><a href="/consulting/robinson-township/" class="services-link">Robinson Township</a><a href="/consulting/ross-township/" class="services-link">Ross Township</a><a href="/consulting/scranton/" class="services-link">Scranton</a><a href="/consulting/sewickley/" class="services-link">Sewickley</a><a href="/consulting/state-college/" class="services-link">State College</a><a href="/consulting/upper-st-clair/" class="services-link">Upper St. Clair</a></p>
 <a href="/consulting/" class="btn btn-outline" style="margin-top:16px">View All Locations</a>
 </div>
 </section>
@@ -725,6 +797,13 @@ q.setAttribute('aria-expanded','false');
 function tog(){var open=!item.classList.contains('active');item.classList.toggle('active',open);q.setAttribute('aria-expanded',open?'true':'false')}
 q.addEventListener('click',tog);
 q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}});
+});
+document.querySelectorAll('.copy-link').forEach(function(btn){
+btn.addEventListener('click',function(){
+var url=btn.getAttribute('data-url'),done=function(){var t=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=t},1600)};
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done).catch(function(){prompt('Copy this link:',url)})}
+else{prompt('Copy this link:',url)}
+});
 });
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){const img=entry.target;img.src=img.dataset.src;img.classList.add('loaded');observer.unobserve(img)}});});document.querySelectorAll('img[data-src]').forEach(img=>observer.observe(img))}else{document.querySelectorAll('img[data-src]').forEach(function(img){img.src=img.dataset.src})}
 </script>

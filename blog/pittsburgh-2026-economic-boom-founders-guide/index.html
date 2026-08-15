@@ -39,7 +39,9 @@
 <meta name="twitter:image:alt" content="Positioning Your Business for Pittsburgh's 2026 Economic Boom">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -214,6 +216,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .post-meta img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.35)}
 .post-meta .dot{opacity:.5}
 .post-tag{display:inline-block;background:rgba(201,168,76,.16);color:#C9A84C;border:1px solid rgba(201,168,76,.4);border-radius:999px;padding:4px 12px;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+/* Article furniture: contents, share row, prev/next */
+.toc{max-width:760px;margin:0 auto 32px;background:#F8F9FA;border:1px solid #E2E8F0;border-left:4px solid #C9A84C;border-radius:0 12px 12px 0;padding:22px 26px}
+.toc-title{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#002E5B;margin-bottom:10px}
+.toc ol{margin:0;padding-left:1.15rem}
+.toc li{margin-bottom:7px;font-size:.95rem}
+.toc a{color:#555555;text-decoration:none}
+.toc a:hover{color:#C9A84C;text-decoration:underline}
+.share-row{max-width:760px;margin:36px auto 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-top:22px;border-top:1px solid #E2E8F0}
+.share-label{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#6C757D;margin-right:4px}
+.share-row a,.copy-link{display:inline-flex;align-items:center;min-height:40px;padding:8px 16px;border:1px solid #E2E8F0;border-radius:999px;background:#fff;font-size:.88rem;font-weight:600;color:#002E5B;cursor:pointer;font-family:inherit}
+.share-row a:hover,.copy-link:hover{border-color:#C9A84C;color:#002E5B}
+.prev-next{max-width:760px;margin:32px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pn-link{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid #E2E8F0;border-radius:12px;background:#fff;transition:border-color .2s,transform .2s}
+.pn-link:hover{border-color:#C9A84C;transform:translateY(-2px)}
+.pn-link span{font-size:.78rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#C9A84C}
+.pn-link strong{font-size:.98rem;line-height:1.35;color:#002E5B}
+.pn-next{text-align:right;align-items:flex-end}
+a.post-tag{text-decoration:none}
+a.post-tag:hover{background:rgba(201,168,76,.28);color:#C9A84C}
+
 .author-box{max-width:760px;margin:48px auto 0;display:flex;gap:24px;align-items:flex-start;background:#F8F9FA;border-radius:14px;padding:28px}
 .author-box img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .author-box h3{font-size:1.15rem;margin-bottom:2px}
@@ -322,6 +344,11 @@ main[style]{margin-top:64px!important}
 .post-card .pc-meta{font-size:.87rem}
 .post-card h3{font-size:1.12rem}
 .author-box{flex-direction:column;align-items:center;text-align:center;gap:16px;padding:24px 20px}
+.prev-next{grid-template-columns:1fr}
+.pn-next{text-align:left;align-items:flex-start}
+.toc{padding:18px 20px}
+.share-row{gap:8px}
+.share-row a,.copy-link{min-height:44px;font-size:.85rem;padding:8px 14px}
 .blog-toolbar{flex-direction:column;align-items:stretch}
 /* flex-basis grows the *height* once the toolbar stacks, so pin it back down */
 .blog-search{flex:0 0 auto;width:100%;min-height:52px}
@@ -351,7 +378,8 @@ main[style]{margin-top:64px!important}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{display:inline-flex;align-items:center;min-height:44px}
 /* Standalone links sitting inside cards and stat blocks are tap targets too.
    Links inline within a sentence stay as-is; WCAG exempts those. */
-.stat-label a,.contact-info-card p a,.post-card .pc-body>a{display:inline-flex;align-items:center;min-height:44px}
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a,a.post-tag,.post-meta a,.author-box p a,.contact-info-card a,.section a[href^="https://thepittsburghwire"],.section a[href^="https://www.youtube"]{display:inline-flex;align-items:center;min-height:44px}
+a.post-tag{padding:8px 16px}
 .breadcrumb a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
 .services-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}
 .faq-q{min-height:56px;padding:18px 20px}
@@ -465,7 +493,7 @@ img{max-width:60%;page-break-inside:avoid}
 <li><a href="/industries/">Industries</a></li>
 <li><a href="/process/">Process</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
-<li><a href="/blog/">Blog</a></li>
+<li><a href="/blog/" style="color:#002E5B;font-weight:700" aria-current="page">Blog</a></li>
 <li><a href="/faq/">FAQ</a></li>
 <li><a href="/contact/">Contact</a></li>
 <li><a href="/contact/" class="btn btn-primary">Book a Consult</a></li>
@@ -477,8 +505,8 @@ img{max-width:60%;page-break-inside:avoid}
 
 <section class="page-hero">
 <div class="container">
-<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / Positioning Your Business for Pittsburgh's...</p>
-<p style="margin-bottom:14px"><span class="post-tag">Pittsburgh & Local</span></p>
+<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / <a href="/blog/category/pittsburgh-local/">Pittsburgh &amp; Local</a> / Positioning Your Business for...</p>
+<p style="margin-bottom:14px"><a href="/blog/category/pittsburgh-local/" class="post-tag">Pittsburgh &amp; Local</a></p>
 <h1 style="font-size:clamp(1.65rem,4.2vw,2.6rem);max-width:900px;margin-left:auto;margin-right:auto">Positioning Your Business for Pittsburgh's 2026 Economic Boom</h1>
 <p>Pittsburgh's economic development strategy is reshaping the region with billions in investment across AI, robotics, life sciences, and energy. Here is...</p>
 <div class="post-meta">
@@ -495,22 +523,32 @@ img{max-width:60%;page-break-inside:avoid}
 <section class="section">
 <div class="container">
 <figure style="max-width:860px;margin:0 auto 8px">
-<img class="article-hero-img" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&amp;q=80" alt="Positioning Your Business for Pittsburgh's 2026 Economic Boom - Elixir Consulting Group" width="1200" height="630" fetchpriority="high" decoding="async">
+<img class="article-hero-img" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&amp;q=80" alt="Positioning Your Business for Pittsburgh's 2026 Economic Boom - Elixir Consulting Group" width="1200" height="630" srcset="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&amp;w=1200 1200w" sizes="(max-width:900px) 100vw, 860px" fetchpriority="high" decoding="async">
 </figure>
+<nav class="toc" aria-label="Table of contents">
+<p class="toc-title">In this article</p>
+<ol>
+<li><a href="#why-economic-development-waves-matter-for-small-businesses">Why Economic Development Waves Matter for Small Businesses</a></li>
+<li><a href="#the-three-growth-sectors-you-need-to-understand">The Three Growth Sectors You Need to Understand</a></li>
+<li><a href="#the-strategic-moves-that-will-define-the-next-24-months">The Strategic Moves That Will Define the Next 24 Months</a></li>
+<li><a href="#downtown-pittsburgh-is-becoming-a-real-option-again">Downtown Pittsburgh Is Becoming a Real Option Again</a></li>
+<li><a href="#how-to-audit-your-business-against-this-opportunity">How to Audit Your Business Against This Opportunity</a></li>
+</ol>
+</nav>
 <article class="article-body" id="post-body">
-<img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80" alt="Modern glass office buildings representing Pittsburgh's economic growth and investment surge in 2026" style="width:100%;border-radius:12px;margin-bottom:40px;max-height:480px;object-fit:cover">
+<img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&amp;q=80" alt="Modern glass office buildings representing Pittsburgh's economic growth and investment surge in 2026" style="width:100%;border-radius:12px;margin-bottom:40px;max-height:480px;object-fit:cover" width="1200" height="800" loading="lazy" decoding="async">
 
 <p>Pittsburgh does not get nearly enough credit for what is quietly happening here. While national business media fixates on coastal tech hubs, the Steel City has been executing one of the most deliberate economic transformations in American history. As of 2026, Downtown Pittsburgh alone has attracted more than $7.48 billion in new and announced investment since 2006. The Allegheny Conference has identified AI and robotics, life sciences, and energy as the region's strategic growth sectors. A brand-new economic development organization, The Technology Collaborative, launched this year specifically to build industry clusters in Advanced Electronics, Cybersecurity, and Robotics. Mayor O'Connor's team is actively recruiting businesses and residents downtown with new financial tools and land-use incentives.</p>
 
 <p>That is not background noise. That is a signal. And if you run a small or mid-sized business in the Pittsburgh region, the question is simple: are you positioned to capture what comes next, or are you watching from the sidelines?</p>
 
-<h2>Why Economic Development Waves Matter for Small Businesses</h2>
+<h2 id="why-economic-development-waves-matter-for-small-businesses">Why Economic Development Waves Matter for Small Businesses</h2>
 
 <p>Large-scale economic development investments do not just benefit the companies receiving the capital. They create downstream demand that flows to every business in the regional ecosystem. When a robotics company opens a facility, it needs local accountants, staffing firms, marketing agencies, commercial landlords, logistics providers, and professional service consultants. When a life sciences firm expands in Pittsburgh, it creates demand for specialized HR services, technology integrators, office fit-out contractors, and executive coaches.</p>
 
 <p>The challenge is that most small business owners are too deep in daily operations to notice regional economic shifts until the opportunity window has already closed. The businesses that benefit most from economic booms are the ones that identified the opportunity 12 to 18 months before the wave crested and repositioned deliberately. That window is open right now.</p>
 
-<h2>The Three Growth Sectors You Need to Understand</h2>
+<h2 id="the-three-growth-sectors-you-need-to-understand">The Three Growth Sectors You Need to Understand</h2>
 
 <p>The Allegheny Conference's 2026 policy priorities were explicit about where the region's development energy will concentrate. Understanding these sectors is not about pivoting your business entirely. It is about knowing where the new client budget is flowing and whether your services map to that demand.</p>
 
@@ -520,7 +558,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 <p>Nuclear energy and advanced manufacturing round out the picture. Pittsburgh's long industrial heritage makes it a natural fit for the advanced manufacturing renaissance happening across Western Pennsylvania. Collaborations around nuclear deployment are gaining momentum, with implications for jobs, supply chains, and adjacent businesses. Construction, logistics, skilled trades, and technical services all benefit when major manufacturing and energy projects activate.</p>
 
-<h2>The Strategic Moves That Will Define the Next 24 Months</h2>
+<h2 id="the-strategic-moves-that-will-define-the-next-24-months">The Strategic Moves That Will Define the Next 24 Months</h2>
 
 <p>Positioning for regional economic growth is not about chasing every opportunity. It is about making targeted adjustments to your go-to-market approach, your operational capacity, and your service delivery model so that when the right clients come looking, you are already visible and credible.</p>
 
@@ -530,7 +568,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 <p>The third move is operational readiness. Growth opportunities become liabilities when you cannot deliver at scale. Before you go after larger clients or higher contract values, audit your delivery infrastructure. Do you have documented processes? Can a new team member get productive in two weeks or two months? Is your project management system built for complexity or just simplicity? As reported by <a href="https://thepittsburghwire.com" target="_blank" rel="noopener">The Pittsburgh Wire</a>, the region's business environment is attracting significant outside attention. When that attention generates inbound interest in your business, you need to be able to say yes and execute.</p>
 
-<h2>Downtown Pittsburgh Is Becoming a Real Option Again</h2>
+<h2 id="downtown-pittsburgh-is-becoming-a-real-option-again">Downtown Pittsburgh Is Becoming a Real Option Again</h2>
 
 <p>One underappreciated piece of Pittsburgh's 2026 economic story is what is happening downtown. After years of pandemic-era vacancy and slow recovery, Mayor O'Connor's new economic development team is deploying innovative land-use and financial tools to convert commercial buildings to residential, draw businesses downtown, and create the kind of foot traffic that makes a central business district function.</p>
 
@@ -538,7 +576,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 <p>If your business model can operate downtown, it is worth modeling what that presence would cost and what it would open up. A downtown address in Pittsburgh in 2026 carries different positioning weight than it did five years ago, and the trajectory is clearly upward.</p>
 
-<h2>How to Audit Your Business Against This Opportunity</h2>
+<h2 id="how-to-audit-your-business-against-this-opportunity">How to Audit Your Business Against This Opportunity</h2>
 
 <p>The most practical thing you can do after reading this is run a simple positioning audit. Ask yourself three questions. First, which of the three growth sectors touches my current client base, even indirectly? Second, what would it take to develop one credible case study or reference in that sector in the next 90 days? Third, if my revenue doubled in the next 18 months, would my operations support that, or would the growth create chaos?</p>
 
@@ -548,6 +586,16 @@ img{max-width:60%;page-break-inside:avoid}
 
 <p>Pittsburgh's moment is real. The question is whether your business is set up to capture it.</p>
 </article>
+
+<div class="share-row">
+<span class="share-label">Share</span>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://elixirconsultinggroup.com/blog/pittsburgh-2026-economic-boom-founders-guide/" target="_blank" rel="noopener" aria-label="Share on LinkedIn">LinkedIn</a>
+<a href="https://x.com/intent/tweet?url=https://elixirconsultinggroup.com/blog/pittsburgh-2026-economic-boom-founders-guide/&amp;text=Positioning Your Business for Pittsburgh's 2026 Economic Boom" target="_blank" rel="noopener" aria-label="Share on X">X</a>
+<a href="mailto:?subject=Positioning Your Business for Pittsburgh's 2026 Economic Boom&amp;body=https://elixirconsultinggroup.com/blog/pittsburgh-2026-economic-boom-founders-guide/" aria-label="Share by email">Email</a>
+<button type="button" class="copy-link" data-url="https://elixirconsultinggroup.com/blog/pittsburgh-2026-economic-boom-founders-guide/">Copy link</button>
+</div>
+
+<nav class="prev-next" aria-label="More articles"><a class="pn-link" href="/blog/revenue-systems-small-business-2026/"><span>&larr; Previous</span><strong>From Hustle to System: How High-Growth Small Businesses Are...</strong></a><a class="pn-link pn-next" href="/blog/leadership-gap-ai-business-2026/"><span>Next &rarr;</span><strong>The Leadership Gap: Why AI Investments Fail Without the Right...</strong></a></nav>
 
 <div class="author-box">
 <img src="/images/dr-connor-robertson.jpg" alt="Dr. Connor Robertson, Founder and Lead Consultant at Elixir Consulting Group" width="192" height="192" loading="lazy" decoding="async">
@@ -594,27 +642,27 @@ img{max-width:60%;page-break-inside:avoid}
 </div>
 <div class="post-list">
 <article class="post-card" data-cat="Pittsburgh &amp; Local" data-search="why pittsburgh businesses choose elixir consulting group why pittsburgh businesses choose elixir consulting group. business consulting works best when it is practical, accountable, and focused on... pittsburgh &amp; local">
-<a href="/blog/why-pittsburgh-businesses-choose-elixir-consulting-group/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1200&amp;q=80" alt="Why Pittsburgh Businesses Choose Elixir Consulting Group - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/why-pittsburgh-businesses-choose-elixir-consulting-group/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1200&amp;q=80" alt="Why Pittsburgh Businesses Choose Elixir Consulting Group - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Pittsburgh & Local</p>
+<p class="pc-cat">Pittsburgh &amp; Local</p>
 <h3><a href="/blog/why-pittsburgh-businesses-choose-elixir-consulting-group/">Why Pittsburgh Businesses Choose Elixir Consulting Group</a></h3>
 <p>Why Pittsburgh Businesses Choose Elixir Consulting Group. Business consulting works best when it is practical, accountable, and focused on...</p>
 <p class="pc-meta"><time datetime="2025-12-12">December 12, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Pittsburgh &amp; Local" data-search="why local economic conditions matter more than national headlines you do not need a degree in economics to make smart business decisions. but understanding a few key economic principles […] pittsburgh &amp; local">
-<a href="/blog/why-local-economic-conditions-matter-more-than-national-headlines/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?w=1200&amp;q=80" alt="Why Local Economic Conditions Matter More Than National Headlines - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/why-local-economic-conditions-matter-more-than-national-headlines/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?w=1200&amp;q=80" alt="Why Local Economic Conditions Matter More Than National Headlines - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Pittsburgh & Local</p>
+<p class="pc-cat">Pittsburgh &amp; Local</p>
 <h3><a href="/blog/why-local-economic-conditions-matter-more-than-national-headlines/">Why Local Economic Conditions Matter More Than National Headlines</a></h3>
 <p>You do not need a degree in economics to make smart business decisions. But understanding a few key economic principles […]</p>
 <p class="pc-meta"><time datetime="2025-12-04">December 4, 2025</time> <span aria-hidden="true">&middot;</span> 4 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Pittsburgh &amp; Local" data-search="how to build a global network while running a local business how to build a global network while running a local business. you do not need to be a multinational corporation to benefit from international thinking... pittsburgh &amp; local">
-<a href="/blog/how-to-build-a-global-network-while-running-a-local-business/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?w=1200&amp;q=80" alt="How to Build a Global Network While Running a Local Business - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-build-a-global-network-while-running-a-local-business/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?w=1200&amp;q=80" alt="How to Build a Global Network While Running a Local Business - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Pittsburgh & Local</p>
+<p class="pc-cat">Pittsburgh &amp; Local</p>
 <h3><a href="/blog/how-to-build-a-global-network-while-running-a-local-business/">How to Build a Global Network While Running a Local Business</a></h3>
 <p>How to Build a Global Network While Running a Local Business. You do not need to be a multinational corporation to benefit from international thinking...</p>
 <p class="pc-meta"><time datetime="2025-09-28">September 28, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
@@ -726,6 +774,13 @@ q.setAttribute('aria-expanded','false');
 function tog(){var open=!item.classList.contains('active');item.classList.toggle('active',open);q.setAttribute('aria-expanded',open?'true':'false')}
 q.addEventListener('click',tog);
 q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}});
+});
+document.querySelectorAll('.copy-link').forEach(function(btn){
+btn.addEventListener('click',function(){
+var url=btn.getAttribute('data-url'),done=function(){var t=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=t},1600)};
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done).catch(function(){prompt('Copy this link:',url)})}
+else{prompt('Copy this link:',url)}
+});
 });
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){const img=entry.target;img.src=img.dataset.src;img.classList.add('loaded');observer.unobserve(img)}});});document.querySelectorAll('img[data-src]').forEach(img=>observer.observe(img))}else{document.querySelectorAll('img[data-src]').forEach(function(img){img.src=img.dataset.src})}
 </script>

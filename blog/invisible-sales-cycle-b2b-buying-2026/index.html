@@ -39,7 +39,9 @@
 <meta name="twitter:image:alt" content="The Invisible Sales Cycle: Winning Deals Decided Before You Hear From the Buyer">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -214,6 +216,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .post-meta img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.35)}
 .post-meta .dot{opacity:.5}
 .post-tag{display:inline-block;background:rgba(201,168,76,.16);color:#C9A84C;border:1px solid rgba(201,168,76,.4);border-radius:999px;padding:4px 12px;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+/* Article furniture: contents, share row, prev/next */
+.toc{max-width:760px;margin:0 auto 32px;background:#F8F9FA;border:1px solid #E2E8F0;border-left:4px solid #C9A84C;border-radius:0 12px 12px 0;padding:22px 26px}
+.toc-title{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#002E5B;margin-bottom:10px}
+.toc ol{margin:0;padding-left:1.15rem}
+.toc li{margin-bottom:7px;font-size:.95rem}
+.toc a{color:#555555;text-decoration:none}
+.toc a:hover{color:#C9A84C;text-decoration:underline}
+.share-row{max-width:760px;margin:36px auto 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-top:22px;border-top:1px solid #E2E8F0}
+.share-label{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#6C757D;margin-right:4px}
+.share-row a,.copy-link{display:inline-flex;align-items:center;min-height:40px;padding:8px 16px;border:1px solid #E2E8F0;border-radius:999px;background:#fff;font-size:.88rem;font-weight:600;color:#002E5B;cursor:pointer;font-family:inherit}
+.share-row a:hover,.copy-link:hover{border-color:#C9A84C;color:#002E5B}
+.prev-next{max-width:760px;margin:32px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pn-link{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid #E2E8F0;border-radius:12px;background:#fff;transition:border-color .2s,transform .2s}
+.pn-link:hover{border-color:#C9A84C;transform:translateY(-2px)}
+.pn-link span{font-size:.78rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#C9A84C}
+.pn-link strong{font-size:.98rem;line-height:1.35;color:#002E5B}
+.pn-next{text-align:right;align-items:flex-end}
+a.post-tag{text-decoration:none}
+a.post-tag:hover{background:rgba(201,168,76,.28);color:#C9A84C}
+
 .author-box{max-width:760px;margin:48px auto 0;display:flex;gap:24px;align-items:flex-start;background:#F8F9FA;border-radius:14px;padding:28px}
 .author-box img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .author-box h3{font-size:1.15rem;margin-bottom:2px}
@@ -322,6 +344,11 @@ main[style]{margin-top:64px!important}
 .post-card .pc-meta{font-size:.87rem}
 .post-card h3{font-size:1.12rem}
 .author-box{flex-direction:column;align-items:center;text-align:center;gap:16px;padding:24px 20px}
+.prev-next{grid-template-columns:1fr}
+.pn-next{text-align:left;align-items:flex-start}
+.toc{padding:18px 20px}
+.share-row{gap:8px}
+.share-row a,.copy-link{min-height:44px;font-size:.85rem;padding:8px 14px}
 .blog-toolbar{flex-direction:column;align-items:stretch}
 /* flex-basis grows the *height* once the toolbar stacks, so pin it back down */
 .blog-search{flex:0 0 auto;width:100%;min-height:52px}
@@ -351,7 +378,8 @@ main[style]{margin-top:64px!important}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{display:inline-flex;align-items:center;min-height:44px}
 /* Standalone links sitting inside cards and stat blocks are tap targets too.
    Links inline within a sentence stay as-is; WCAG exempts those. */
-.stat-label a,.contact-info-card p a,.post-card .pc-body>a{display:inline-flex;align-items:center;min-height:44px}
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a,a.post-tag,.post-meta a,.author-box p a,.contact-info-card a,.section a[href^="https://thepittsburghwire"],.section a[href^="https://www.youtube"]{display:inline-flex;align-items:center;min-height:44px}
+a.post-tag{padding:8px 16px}
 .breadcrumb a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
 .services-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}
 .faq-q{min-height:56px;padding:18px 20px}
@@ -465,7 +493,7 @@ img{max-width:60%;page-break-inside:avoid}
 <li><a href="/industries/">Industries</a></li>
 <li><a href="/process/">Process</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
-<li><a href="/blog/">Blog</a></li>
+<li><a href="/blog/" style="color:#002E5B;font-weight:700" aria-current="page">Blog</a></li>
 <li><a href="/faq/">FAQ</a></li>
 <li><a href="/contact/">Contact</a></li>
 <li><a href="/contact/" class="btn btn-primary">Book a Consult</a></li>
@@ -477,8 +505,8 @@ img{max-width:60%;page-break-inside:avoid}
 
 <section class="page-hero">
 <div class="container">
-<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / The Invisible Sales Cycle: Winning Deals...</p>
-<p style="margin-bottom:14px"><span class="post-tag">Sales & Revenue</span></p>
+<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / <a href="/blog/category/sales-revenue/">Sales &amp; Revenue</a> / The Invisible Sales Cycle: Winning...</p>
+<p style="margin-bottom:14px"><a href="/blog/category/sales-revenue/" class="post-tag">Sales &amp; Revenue</a></p>
 <h1 style="font-size:clamp(1.65rem,4.2vw,2.6rem);max-width:900px;margin-left:auto;margin-right:auto">The Invisible Sales Cycle: Winning Deals Decided Before You Hear From the Buyer</h1>
 <p>Forrester found 94% of B2B buyers used AI during their last purchase, and 61% of the buying journey now finishes before a vendor is ever contacted. Here...</p>
 <div class="post-meta">
@@ -495,14 +523,26 @@ img{max-width:60%;page-break-inside:avoid}
 <section class="section">
 <div class="container">
 <figure style="max-width:860px;margin:0 auto 8px">
-<img class="article-hero-img" src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=1200&amp;q=80" alt="The Invisible Sales Cycle: Winning Deals Decided Before You Hear From the Buyer - Elixir Consulting Group" width="1200" height="630" fetchpriority="high" decoding="async">
+<img class="article-hero-img" src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=1200&amp;q=80" alt="The Invisible Sales Cycle: Winning Deals Decided Before You Hear From the Buyer - Elixir Consulting Group" width="1200" height="630" srcset="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&amp;w=1200 1200w" sizes="(max-width:900px) 100vw, 860px" fetchpriority="high" decoding="async">
 </figure>
+<nav class="toc" aria-label="Table of contents">
+<p class="toc-title">In this article</p>
+<ol>
+<li><a href="#the-numbers-behind-the-silence">The Numbers Behind the Silence</a></li>
+<li><a href="#why-deals-are-slowing-down-even-though-research-is-faster">Why Deals Are Slowing Down Even Though Research Is Faster</a></li>
+<li><a href="#what-still-moves-the-decision">What Still Moves the Decision</a></li>
+<li><a href="#five-adjustments-that-work-right-now">Five Adjustments That Work Right Now</a></li>
+<li><a href="#the-structural-advantage-smaller-firms-have">The Structural Advantage Smaller Firms Have</a></li>
+<li><a href="#where-to-start">Where to Start</a></li>
+<li><a href="#is-your-sales-process-built-for-how-buyers-actually-buy">Is Your Sales Process Built for How Buyers Actually Buy?</a></li>
+</ol>
+</nav>
 <article class="article-body" id="post-body">
 <p>Here is a pattern I see in nearly every sales pipeline review I run: a prospect books a call, arrives with detailed questions about pricing tiers and implementation timelines, and appears to already know the competitive landscape better than the sales rep does. The rep leaves the call feeling good. The deal then sits for eleven weeks.</p>
 
 <p>That is not a closing problem. It is a visibility problem, and 2026 data explains exactly why it is getting worse.</p>
 
-<h2>The Numbers Behind the Silence</h2>
+<h2 id="the-numbers-behind-the-silence">The Numbers Behind the Silence</h2>
 
 <p>Forrester's 2026 Buyers' Journey Survey, which covered roughly 18,000 business buyers worldwide, found that 94% of them used AI at some point during their most recent purchase. That is not a niche behavior among technology buyers. That is the default.</p>
 
@@ -515,7 +555,7 @@ img{max-width:60%;page-break-inside:avoid}
 <p class="stat-label">of the B2B buying journey is finished before a buyer ever contacts a vendor, according to Forrester research</p>
 </div>
 
-<h2>Why Deals Are Slowing Down Even Though Research Is Faster</h2>
+<h2 id="why-deals-are-slowing-down-even-though-research-is-faster">Why Deals Are Slowing Down Even Though Research Is Faster</h2>
 
 <p>You might expect that better-informed buyers would move faster. The opposite is happening. Median B2B sales cycles now run about 84 days, with the average pulled up to roughly 134 days by longer enterprise deals. Cycles have lengthened by about 22% since 2022.</p>
 
@@ -527,7 +567,7 @@ img{max-width:60%;page-break-inside:avoid}
 <p>"The modern sales challenge is not convincing one person you are right. It is equipping one person to convince five colleagues on your behalf, in a meeting you will never attend."</p>
 </div>
 
-<h2>What Still Moves the Decision</h2>
+<h2 id="what-still-moves-the-decision">What Still Moves the Decision</h2>
 
 <p>The natural reaction to all of this is fatalism: if most of the decision happens invisibly, why invest in selling at all? The data argues against that conclusion.</p>
 
@@ -535,7 +575,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 <p>That distinction should drive your strategy. Your job in the invisible phase is to be a source AI systems can find, cite, and summarize accurately. Your job in the visible phase is to supply the human proof that survives the fact-check.</p>
 
-<h2>Five Adjustments That Work Right Now</h2>
+<h2 id="five-adjustments-that-work-right-now">Five Adjustments That Work Right Now</h2>
 
 <p>These are the changes I recommend to owners of service businesses and small B2B firms who are watching cycles stretch without knowing why.</p>
 
@@ -547,7 +587,7 @@ img{max-width:60%;page-break-inside:avoid}
 <li><strong>Re-baseline your pipeline math.</strong> If your forecast still assumes a 45-day cycle and the market is running 84, you are not missing your number because of effort. You are missing it because of arithmetic. Adjust the model, then adjust the activity required to fill it.</li>
 </ul>
 
-<h2>The Structural Advantage Smaller Firms Have</h2>
+<h2 id="the-structural-advantage-smaller-firms-have">The Structural Advantage Smaller Firms Have</h2>
 
 <p>There is a version of this shift that favors smaller companies, and it is worth naming. Large competitors typically respond to longer cycles by adding process: more approval gates, more standardized collateral, more layers between the buyer and anyone who can make a decision. That is exactly the wrong response in a consensus-limited market.</p>
 
@@ -555,18 +595,28 @@ img{max-width:60%;page-break-inside:avoid}
 
 <p>The firms losing ground right now are not the ones with weaker products. They are the ones still running a sales process designed for a buyer who calls early, decides alone, and moves quickly. That buyer is now the exception.</p>
 
-<h2>Where to Start</h2>
+<h2 id="where-to-start">Where to Start</h2>
 
 <p>Pick one deal that has been stalled for more than 60 days. Do not chase it with another follow-up email. Instead, answer three questions: who else is in the room, what does each of them need to say yes, and what document would let your champion make that case without you present. Then build that document.</p>
 
 <p>Do that for five stalled deals and you will learn more about your real sales problem than another quarter of activity metrics will teach you. The invisible sales cycle is not unwinnable. It simply rewards preparation over persuasion, and most businesses have not yet rebalanced toward the former.</p>
 
 <div class="cta-banner">
-<h2>Is Your Sales Process Built for How Buyers Actually Buy?</h2>
+<h2 id="is-your-sales-process-built-for-how-buyers-actually-buy">Is Your Sales Process Built for How Buyers Actually Buy?</h2>
 <p>Elixir Consulting Group helps business owners rebuild sales systems around the modern buying journey, from pipeline math to the assets that move committees. Let us take a look at yours.</p>
 <a href="/contact/" class="btn btn-gold">Schedule a Free Consultation</a>
 </div>
 </article>
+
+<div class="share-row">
+<span class="share-label">Share</span>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://elixirconsultinggroup.com/blog/invisible-sales-cycle-b2b-buying-2026/" target="_blank" rel="noopener" aria-label="Share on LinkedIn">LinkedIn</a>
+<a href="https://x.com/intent/tweet?url=https://elixirconsultinggroup.com/blog/invisible-sales-cycle-b2b-buying-2026/&amp;text=The Invisible Sales Cycle: Winning Deals Decided Before You Hear From the Buyer" target="_blank" rel="noopener" aria-label="Share on X">X</a>
+<a href="mailto:?subject=The Invisible Sales Cycle: Winning Deals Decided Before You Hear From the Buyer&amp;body=https://elixirconsultinggroup.com/blog/invisible-sales-cycle-b2b-buying-2026/" aria-label="Share by email">Email</a>
+<button type="button" class="copy-link" data-url="https://elixirconsultinggroup.com/blog/invisible-sales-cycle-b2b-buying-2026/">Copy link</button>
+</div>
+
+<nav class="prev-next" aria-label="More articles"><a class="pn-link" href="/blog/agentic-ai-small-business-operations-2026/"><span>&larr; Previous</span><strong>The Agentic AI Shift: How Small Businesses Are Winning Big in 2026</strong></a><a class="pn-link pn-next" href="/blog/pittsburgh-data-center-boom-business-impact-2026/"><span>Next &rarr;</span><strong>The Data Center Boom Is Coming to Pittsburgh: What It Means for...</strong></a></nav>
 
 <div class="author-box">
 <img src="/images/dr-connor-robertson.jpg" alt="Dr. Connor Robertson, Founder and Lead Consultant at Elixir Consulting Group" width="192" height="192" loading="lazy" decoding="async">
@@ -613,27 +663,27 @@ img{max-width:60%;page-break-inside:avoid}
 </div>
 <div class="post-list">
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to build a sales process that converts leads into clients sales is the engine of your business. without a system for generating leads, nurturing prospects, and closing deals, growth is […] sales &amp; revenue">
-<a href="/blog/how-to-build-a-sales-process-that-converts-leads-into-clients/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&amp;q=80" alt="How to Build a Sales Process That Converts Leads Into Clients - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-build-a-sales-process-that-converts-leads-into-clients/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&amp;q=80" alt="How to Build a Sales Process That Converts Leads Into Clients - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-build-a-sales-process-that-converts-leads-into-clients/">How to Build a Sales Process That Converts Leads Into Clients</a></h3>
 <p>Sales is the engine of your business. Without a system for generating leads, nurturing prospects, and closing deals, growth is […]</p>
 <p class="pc-meta"><time datetime="2025-08-18">August 18, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to create a sales pipeline that gives you predictable revenue most small business owners did not start their company because they love selling. but sales is essential, and having a system makes it manageable. at... sales &amp; revenue">
-<a href="/blog/how-to-create-a-sales-pipeline-that-gives-you-predictable-revenue/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Create a Sales Pipeline That Gives You Predictable Revenue - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-create-a-sales-pipeline-that-gives-you-predictable-revenue/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Create a Sales Pipeline That Gives You Predictable Revenue - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-create-a-sales-pipeline-that-gives-you-predictable-revenue/">How to Create a Sales Pipeline That Gives You Predictable Revenue</a></h3>
 <p>Most small business owners did not start their company because they love selling. But sales is essential, and having a system makes it manageable. At...</p>
 <p class="pc-meta"><time datetime="2025-08-16">August 16, 2025</time> <span aria-hidden="true">&middot;</span> 4 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="why most small businesses struggle with sales and how to fix it why most small businesses struggle with sales and how to fix it. most small business owners did not start their company because they love selling. but... sales &amp; revenue">
-<a href="/blog/why-most-small-businesses-struggle-with-sales-and-how-to-fix-it/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="Why Most Small Businesses Struggle With Sales and How to Fix It - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/why-most-small-businesses-struggle-with-sales-and-how-to-fix-it/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="Why Most Small Businesses Struggle With Sales and How to Fix It - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/why-most-small-businesses-struggle-with-sales-and-how-to-fix-it/">Why Most Small Businesses Struggle With Sales and How to Fix It</a></h3>
 <p>Why Most Small Businesses Struggle With Sales and How to Fix It. Most small business owners did not start their company because they love selling. But...</p>
 <p class="pc-meta"><time datetime="2025-08-15">August 15, 2025</time> <span aria-hidden="true">&middot;</span> 4 min read</p>
@@ -745,6 +795,13 @@ q.setAttribute('aria-expanded','false');
 function tog(){var open=!item.classList.contains('active');item.classList.toggle('active',open);q.setAttribute('aria-expanded',open?'true':'false')}
 q.addEventListener('click',tog);
 q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}});
+});
+document.querySelectorAll('.copy-link').forEach(function(btn){
+btn.addEventListener('click',function(){
+var url=btn.getAttribute('data-url'),done=function(){var t=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=t},1600)};
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done).catch(function(){prompt('Copy this link:',url)})}
+else{prompt('Copy this link:',url)}
+});
 });
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){const img=entry.target;img.src=img.dataset.src;img.classList.add('loaded');observer.unobserve(img)}});});document.querySelectorAll('img[data-src]').forEach(img=>observer.observe(img))}else{document.querySelectorAll('img[data-src]').forEach(function(img){img.src=img.dataset.src})}
 </script>

@@ -39,7 +39,9 @@
 <meta name="twitter:image:alt" content="How to Build Simple Systems That Your Team Will Actually Use">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -214,6 +216,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .post-meta img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.35)}
 .post-meta .dot{opacity:.5}
 .post-tag{display:inline-block;background:rgba(201,168,76,.16);color:#C9A84C;border:1px solid rgba(201,168,76,.4);border-radius:999px;padding:4px 12px;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+/* Article furniture: contents, share row, prev/next */
+.toc{max-width:760px;margin:0 auto 32px;background:#F8F9FA;border:1px solid #E2E8F0;border-left:4px solid #C9A84C;border-radius:0 12px 12px 0;padding:22px 26px}
+.toc-title{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#002E5B;margin-bottom:10px}
+.toc ol{margin:0;padding-left:1.15rem}
+.toc li{margin-bottom:7px;font-size:.95rem}
+.toc a{color:#555555;text-decoration:none}
+.toc a:hover{color:#C9A84C;text-decoration:underline}
+.share-row{max-width:760px;margin:36px auto 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-top:22px;border-top:1px solid #E2E8F0}
+.share-label{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#6C757D;margin-right:4px}
+.share-row a,.copy-link{display:inline-flex;align-items:center;min-height:40px;padding:8px 16px;border:1px solid #E2E8F0;border-radius:999px;background:#fff;font-size:.88rem;font-weight:600;color:#002E5B;cursor:pointer;font-family:inherit}
+.share-row a:hover,.copy-link:hover{border-color:#C9A84C;color:#002E5B}
+.prev-next{max-width:760px;margin:32px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pn-link{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid #E2E8F0;border-radius:12px;background:#fff;transition:border-color .2s,transform .2s}
+.pn-link:hover{border-color:#C9A84C;transform:translateY(-2px)}
+.pn-link span{font-size:.78rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#C9A84C}
+.pn-link strong{font-size:.98rem;line-height:1.35;color:#002E5B}
+.pn-next{text-align:right;align-items:flex-end}
+a.post-tag{text-decoration:none}
+a.post-tag:hover{background:rgba(201,168,76,.28);color:#C9A84C}
+
 .author-box{max-width:760px;margin:48px auto 0;display:flex;gap:24px;align-items:flex-start;background:#F8F9FA;border-radius:14px;padding:28px}
 .author-box img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .author-box h3{font-size:1.15rem;margin-bottom:2px}
@@ -322,6 +344,11 @@ main[style]{margin-top:64px!important}
 .post-card .pc-meta{font-size:.87rem}
 .post-card h3{font-size:1.12rem}
 .author-box{flex-direction:column;align-items:center;text-align:center;gap:16px;padding:24px 20px}
+.prev-next{grid-template-columns:1fr}
+.pn-next{text-align:left;align-items:flex-start}
+.toc{padding:18px 20px}
+.share-row{gap:8px}
+.share-row a,.copy-link{min-height:44px;font-size:.85rem;padding:8px 14px}
 .blog-toolbar{flex-direction:column;align-items:stretch}
 /* flex-basis grows the *height* once the toolbar stacks, so pin it back down */
 .blog-search{flex:0 0 auto;width:100%;min-height:52px}
@@ -351,7 +378,8 @@ main[style]{margin-top:64px!important}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{display:inline-flex;align-items:center;min-height:44px}
 /* Standalone links sitting inside cards and stat blocks are tap targets too.
    Links inline within a sentence stay as-is; WCAG exempts those. */
-.stat-label a,.contact-info-card p a,.post-card .pc-body>a{display:inline-flex;align-items:center;min-height:44px}
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a,a.post-tag,.post-meta a,.author-box p a,.contact-info-card a,.section a[href^="https://thepittsburghwire"],.section a[href^="https://www.youtube"]{display:inline-flex;align-items:center;min-height:44px}
+a.post-tag{padding:8px 16px}
 .breadcrumb a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
 .services-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}
 .faq-q{min-height:56px;padding:18px 20px}
@@ -465,7 +493,7 @@ img{max-width:60%;page-break-inside:avoid}
 <li><a href="/industries/">Industries</a></li>
 <li><a href="/process/">Process</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
-<li><a href="/blog/">Blog</a></li>
+<li><a href="/blog/" style="color:#002E5B;font-weight:700" aria-current="page">Blog</a></li>
 <li><a href="/faq/">FAQ</a></li>
 <li><a href="/contact/">Contact</a></li>
 <li><a href="/contact/" class="btn btn-primary">Book a Consult</a></li>
@@ -477,8 +505,8 @@ img{max-width:60%;page-break-inside:avoid}
 
 <section class="page-hero">
 <div class="container">
-<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / How to Build Simple Systems That Your Team...</p>
-<p style="margin-bottom:14px"><span class="post-tag">Operations</span></p>
+<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / <a href="/blog/category/operations/">Operations</a> / How to Build Simple Systems That...</p>
+<p style="margin-bottom:14px"><a href="/blog/category/operations/" class="post-tag">Operations</a></p>
 <h1 style="font-size:clamp(1.65rem,4.2vw,2.6rem);max-width:900px;margin-left:auto;margin-right:auto">How to Build Simple Systems That Your Team Will Actually Use</h1>
 <p>One of the fastest ways to slow a growing business down is to build systems that look good on paper […]</p>
 <div class="post-meta">
@@ -495,81 +523,112 @@ img{max-width:60%;page-break-inside:avoid}
 <section class="section">
 <div class="container">
 <figure style="max-width:860px;margin:0 auto 8px">
-<img class="article-hero-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&amp;q=80" alt="How to Build Simple Systems That Your Team Will Actually Use - Elixir Consulting Group" width="1200" height="630" fetchpriority="high" decoding="async">
+<img class="article-hero-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&amp;q=80" alt="How to Build Simple Systems That Your Team Will Actually Use - Elixir Consulting Group" width="1200" height="630" srcset="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&amp;w=1200 1200w" sizes="(max-width:900px) 100vw, 860px" fetchpriority="high" decoding="async">
 </figure>
+<nav class="toc" aria-label="Table of contents">
+<p class="toc-title">In this article</p>
+<ol>
+<li><a href="#why-most-business-systems-fail">Why most business systems fail</a></li>
+<li><a href="#what-a-simple-system-actually-means">What a “simple system” actually means</a></li>
+<li><a href="#start-with-the-problems-that-repeat">Start with the problems that repeat</a></li>
+<li><a href="#build-systems-around-decisions-not-activities">Build systems around decisions, not activities</a></li>
+<li><a href="#the-five-step-process-to-building-a-usable-system">The five step process to building a usable system</a></li>
+<li><a href="#step-1-map-what-actually-happens-today">Step 1: map what actually happens today</a></li>
+<li><a href="#step-2-define-the-outcome-not-just-the-steps">Step 2: define the outcome, not just the steps</a></li>
+<li><a href="#step-3-reduce-the-system-to-the-fewest-steps-possible">Step 3: reduce the system to the fewest steps possible</a></li>
+<li><a href="#step-4-assign-a-single-owner">Step 4: assign a single owner</a></li>
+<li><a href="#step-5-connect-the-system-to-cadence">Step 5: connect the system to cadence</a></li>
+<li><a href="#examples-of-simple-systems-that-work">Examples of simple systems that work</a></li>
+<li><a href="#why-documentation-should-be-short-and-visual">Why documentation should be short and visual</a></li>
+<li><a href="#how-systems-reduce-the-owner-bottleneck">How systems reduce the owner bottleneck</a></li>
+<li><a href="#pittsburgh-pa-note-for-local-businesses">Pittsburgh, PA note for local businesses</a></li>
+<li><a href="#how-elixir-consulting-group-helps">How Elixir Consulting Group helps</a></li>
+<li><a href="#related-articles-from-elixir-consulting-group">Related articles from Elixir Consulting Group</a></li>
+</ol>
+</nav>
 <article class="article-body" id="post-body">
 <p>One of the fastest ways to slow a growing business down is to build systems that look good on paper but never get used in real life.</p>
 <p>Most owners know they need systems. The problem is not awareness. The problem is that many systems are overbuilt, overdocumented, and disconnected from how the team actually works. When that happens, people ignore them and go back to doing things their own way.</p>
 <p>At Elixir Consulting Group in Pittsburgh, PA, we focus on simple systems that survive contact with reality. If a system cannot be run on a busy week, it is not a system. It is just documentation.</p>
-<h2>Why most business systems fail</h2>
+<h2 id="why-most-business-systems-fail">Why most business systems fail</h2>
 <p>Systems usually fail for one of three reasons.</p>
 <p>They are too complex<br />They are built without the people who use them<br />They are not connected to ownership or cadence</p>
 <p>A system that requires a long explanation will be skipped. A system that lives in a folder nobody opens will be ignored. A system with no owner will decay.</p>
 <p>The goal is not to create perfect documentation. The goal is to create clarity that holds up under pressure.</p>
-<h2>What a “simple system” actually means</h2>
+<h2 id="what-a-simple-system-actually-means">What a “simple system” actually means</h2>
 <p>Simple does not mean sloppy. Simple means usable.</p>
 <p>A simple system has these characteristics:<br />It fits on one page or one screen<br />It is easy to explain in five minutes<br />It has a clear owner<br />It connects to a weekly rhythm<br />It removes guesswork</p>
 <p>If your system needs a training session every time someone uses it, it is probably too heavy.</p>
-<h2>Start with the problems that repeat</h2>
+<h2 id="start-with-the-problems-that-repeat">Start with the problems that repeat</h2>
 <p>Do not start by documenting everything. Start by fixing the pain.</p>
 <p>Look for issues that show up every week:<br />Leads not followed up consistently<br />Confusion during client onboarding<br />Projects stalling between steps<br />Quality issues repeating<br />Reporting not delivered on time</p>
 <p>These are signals that a system is missing or unclear.</p>
 <p>Pick one problem. Build one system. Let it stabilize. Then move on to the next.</p>
-<h2>Build systems around decisions, not activities</h2>
+<h2 id="build-systems-around-decisions-not-activities">Build systems around decisions, not activities</h2>
 <p>Most systems fail because they focus on activities instead of decisions.</p>
 <p>Bad system example<br />“Sales reps should follow up with leads.”</p>
 <p>Good system example<br />“All inbound leads are contacted within five minutes during business hours. If contact is not made after three attempts, the lead moves to a follow up sequence owned by the sales manager.”</p>
 <p>The second version removes decision making from the moment. The system tells people what to do.</p>
-<h2>The five step process to building a usable system</h2>
+<h2 id="the-five-step-process-to-building-a-usable-system">The five step process to building a usable system</h2>
 <p>This process works for operations, sales, onboarding, and delivery.</p>
-<h2>Step 1: map what actually happens today</h2>
+<h2 id="step-1-map-what-actually-happens-today">Step 1: map what actually happens today</h2>
 <p>Do not map what you wish was happening. Map what is actually happening.</p>
 <p>Ask:<br />Who touches this first<br />What happens next<br />Where does it get stuck<br />Where do mistakes repeat<br />Who decides what happens next</p>
 <p>This gives you the raw material for a system that fits reality.</p>
-<h2>Step 2: define the outcome, not just the steps</h2>
+<h2 id="step-2-define-the-outcome-not-just-the-steps">Step 2: define the outcome, not just the steps</h2>
 <p>Every system needs a clear outcome.</p>
 <p>Examples:<br />Lead contacted within five minutes<br />Client onboarded within 72 hours<br />Project moved to the next stage within 48 hours<br />Weekly report delivered by Friday at 3 pm</p>
 <p>If the outcome is unclear, the system will drift.</p>
-<h2>Step 3: reduce the system to the fewest steps possible</h2>
+<h2 id="step-3-reduce-the-system-to-the-fewest-steps-possible">Step 3: reduce the system to the fewest steps possible</h2>
 <p>Most systems fail because they try to account for every edge case.</p>
 <p>Do not do that.</p>
 <p>Design the system for the 80 percent case. Handle edge cases when they happen.</p>
 <p>Ask:<br />What are the minimum steps needed for this to work<br />What steps are redundant<br />What steps exist only because of habit</p>
 <p>Fewer steps increase compliance.</p>
-<h2>Step 4: assign a single owner</h2>
+<h2 id="step-4-assign-a-single-owner">Step 4: assign a single owner</h2>
 <p>Every system needs one owner.</p>
 <p>Not a group. Not “the team.” One person.</p>
 <p>The owner is responsible for:<br />Keeping the system up to date<br />Watching performance<br />Fixing breakdowns<br />Training new team members</p>
 <p>Ownership is what keeps a system alive.</p>
-<h2>Step 5: connect the system to cadence</h2>
+<h2 id="step-5-connect-the-system-to-cadence">Step 5: connect the system to cadence</h2>
 <p>A system that is not reviewed weekly will decay.</p>
 <p>Connect the system to your operating cadence:<br />Track one or two metrics on the scorecard<br />Review performance weekly<br />Discuss issues in the leadership meeting<br />Adjust the system when it breaks</p>
 <p>This is how systems improve instead of becoming stale.</p>
-<h2>Examples of simple systems that work</h2>
+<h2 id="examples-of-simple-systems-that-work">Examples of simple systems that work</h2>
 <p>Sales lead handling system<br />Inbound leads contacted within five minutes. If not reached after three attempts, move to follow up sequence. Owner: Sales manager.</p>
 <p>Client onboarding system<br />Onboarding checklist completed within 72 hours. Welcome email sent, kickoff call scheduled, access provided. Owner: Client success lead.</p>
 <p>Project handoff system<br />No project moves forward without a defined owner, next step, and due date. Owner: Operations lead.</p>
 <p>These are not complicated. They are effective.</p>
-<h2>Why documentation should be short and visual</h2>
+<h2 id="why-documentation-should-be-short-and-visual">Why documentation should be short and visual</h2>
 <p>Long documents do not get read. Visual systems do.</p>
 <p>Good formats include:<br />Checklists<br />Simple flowcharts<br />One page SOPs<br />Bullet point steps</p>
 <p>If someone cannot understand the system in under five minutes, it will not be followed consistently.</p>
-<h2>How systems reduce the owner bottleneck</h2>
+<h2 id="how-systems-reduce-the-owner-bottleneck">How systems reduce the owner bottleneck</h2>
 <p>When systems are clear, fewer decisions escalate to the owner.</p>
 <p>The team stops asking:<br />“What should I do here”</p>
 <p>And starts asking:<br />“Is this the right outcome”</p>
 <p>That shift is what allows owners to step back without losing control.</p>
-<h2>Pittsburgh, PA note for local businesses</h2>
+<h2 id="pittsburgh-pa-note-for-local-businesses">Pittsburgh, PA note for local businesses</h2>
 <p>Pittsburgh businesses often grow through strong relationships and reputation. That strength can become a weakness if systems stay informal too long.</p>
 <p>Simple systems protect culture. They allow good people to do good work without confusion. That is how local businesses scale without losing what makes them special.</p>
-<h2>How Elixir Consulting Group helps</h2>
+<h2 id="how-elixir-consulting-group-helps">How Elixir Consulting Group helps</h2>
 <p>Elixir Consulting Group helps business owners identify where systems are breaking down and build simple replacements that teams actually use. We focus on usability, ownership, and cadence so systems hold up under real pressure.</p>
 <p>If you want help building systems that stick, start with a consult.</p>
-<h2>Related articles from Elixir Consulting Group</h2>
+<h2 id="related-articles-from-elixir-consulting-group">Related articles from Elixir Consulting Group</h2>
 <p>Continue learning with these related articles from Dr. Connor Robertson at Elixir Consulting Group:</p>
 <p>For more insights on operational excellence, see <a href="https://www.mckinsey.com/capabilities/operations/our-insights" target="_blank" rel="noopener">McKinsey&#8217;s research on operations management</a>.</p>
 <p>According to <a href="https://hbr.org/topic/subject/operations-strategy" target="_blank" rel="noopener">Harvard Business Review</a>, businesses with documented operational processes consistently outperform those without them.</p>
 </article>
+
+<div class="share-row">
+<span class="share-label">Share</span>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://elixirconsultinggroup.com/blog/how-to-build-simple-systems-that-your-team-will-actually-use/" target="_blank" rel="noopener" aria-label="Share on LinkedIn">LinkedIn</a>
+<a href="https://x.com/intent/tweet?url=https://elixirconsultinggroup.com/blog/how-to-build-simple-systems-that-your-team-will-actually-use/&amp;text=How to Build Simple Systems That Your Team Will Actually Use" target="_blank" rel="noopener" aria-label="Share on X">X</a>
+<a href="mailto:?subject=How to Build Simple Systems That Your Team Will Actually Use&amp;body=https://elixirconsultinggroup.com/blog/how-to-build-simple-systems-that-your-team-will-actually-use/" aria-label="Share by email">Email</a>
+<button type="button" class="copy-link" data-url="https://elixirconsultinggroup.com/blog/how-to-build-simple-systems-that-your-team-will-actually-use/">Copy link</button>
+</div>
+
+<nav class="prev-next" aria-label="More articles"><a class="pn-link" href="/blog/how-to-scale-your-business-without-sacrificing-quality/"><span>&larr; Previous</span><strong>How to Scale Your Business Without Sacrificing Quality</strong></a><a class="pn-link pn-next" href="/blog/the-operating-cadence-that-makes-business-growth-predictable/"><span>Next &rarr;</span><strong>The Operating Cadence That Makes Business Growth Predictable</strong></a></nav>
 
 <div class="author-box">
 <img src="/images/dr-connor-robertson.jpg" alt="Dr. Connor Robertson, Founder and Lead Consultant at Elixir Consulting Group" width="192" height="192" loading="lazy" decoding="async">
@@ -616,7 +675,7 @@ img{max-width:60%;page-break-inside:avoid}
 </div>
 <div class="post-list">
 <article class="post-card" data-cat="Operations" data-search="how to document your core business processes without overcomplicating them most business owners know what needs to happen in their business. the problem is not awareness. the problem is that […] operations">
-<a href="/blog/how-to-document-your-core-business-processes-without-overcomplicating-them/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&amp;q=80" alt="How to Document Your Core Business Processes Without Overcomplicating Them - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-document-your-core-business-processes-without-overcomplicating-them/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&amp;q=80" alt="How to Document Your Core Business Processes Without Overcomplicating Them - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
 <p class="pc-cat">Operations</p>
 <h3><a href="/blog/how-to-document-your-core-business-processes-without-overcomplicating-them/">How to Document Your Core Business Processes Without Overcomplicating Them</a></h3>
@@ -625,7 +684,7 @@ img{max-width:60%;page-break-inside:avoid}
 </div>
 </article>
 <article class="post-card" data-cat="Operations" data-search="five operational bottlenecks that slow down growing companies when your operations run well, your business feels different. decisions happen faster, mistakes drop, and your team stops asking you […] operations">
-<a href="/blog/five-operational-bottlenecks-that-slow-down-growing-companies/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&amp;q=80" alt="Five Operational Bottlenecks That Slow Down Growing Companies - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/five-operational-bottlenecks-that-slow-down-growing-companies/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&amp;q=80" alt="Five Operational Bottlenecks That Slow Down Growing Companies - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
 <p class="pc-cat">Operations</p>
 <h3><a href="/blog/five-operational-bottlenecks-that-slow-down-growing-companies/">Five Operational Bottlenecks That Slow Down Growing Companies</a></h3>
@@ -634,7 +693,7 @@ img{max-width:60%;page-break-inside:avoid}
 </div>
 </article>
 <article class="post-card" data-cat="Operations" data-search="how to create an operations manual that your team will actually follow when your operations run well, your business feels different. decisions happen faster, mistakes drop, and your team stops asking you what to do next. dr... operations">
-<a href="/blog/how-to-create-an-operations-manual-that-your-team-will-actually-follow/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&amp;q=80" alt="How to Create an Operations Manual That Your Team Will Actually Follow - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-create-an-operations-manual-that-your-team-will-actually-follow/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&amp;q=80" alt="How to Create an Operations Manual That Your Team Will Actually Follow - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
 <p class="pc-cat">Operations</p>
 <h3><a href="/blog/how-to-create-an-operations-manual-that-your-team-will-actually-follow/">How to Create an Operations Manual That Your Team Will Actually Follow</a></h3>
@@ -748,6 +807,13 @@ q.setAttribute('aria-expanded','false');
 function tog(){var open=!item.classList.contains('active');item.classList.toggle('active',open);q.setAttribute('aria-expanded',open?'true':'false')}
 q.addEventListener('click',tog);
 q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}});
+});
+document.querySelectorAll('.copy-link').forEach(function(btn){
+btn.addEventListener('click',function(){
+var url=btn.getAttribute('data-url'),done=function(){var t=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=t},1600)};
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done).catch(function(){prompt('Copy this link:',url)})}
+else{prompt('Copy this link:',url)}
+});
 });
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){const img=entry.target;img.src=img.dataset.src;img.classList.add('loaded');observer.unobserve(img)}});});document.querySelectorAll('img[data-src]').forEach(img=>observer.observe(img))}else{document.querySelectorAll('img[data-src]').forEach(function(img){img.src=img.dataset.src})}
 </script>

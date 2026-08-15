@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Sales & Revenue Articles | Elixir Consulting Group Blog</title>
+<title>Sales &amp; Revenue Articles | Elixir Consulting Group Blog</title>
 <meta name="description" content="Pipeline structure, follow-up discipline, pricing, and the revenue systems that make forecasting something other than a guess. 38 articles from Elixir...">
 <meta name="author" content="Dr. Connor Robertson">
 <meta name="theme-color" content="#002E5B">
@@ -35,7 +35,9 @@
 <meta name="twitter:image:alt" content="Sales &amp; Revenue Articles | Elixir Consulting Group Blog">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -210,6 +212,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .post-meta img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.35)}
 .post-meta .dot{opacity:.5}
 .post-tag{display:inline-block;background:rgba(201,168,76,.16);color:#C9A84C;border:1px solid rgba(201,168,76,.4);border-radius:999px;padding:4px 12px;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+/* Article furniture: contents, share row, prev/next */
+.toc{max-width:760px;margin:0 auto 32px;background:#F8F9FA;border:1px solid #E2E8F0;border-left:4px solid #C9A84C;border-radius:0 12px 12px 0;padding:22px 26px}
+.toc-title{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#002E5B;margin-bottom:10px}
+.toc ol{margin:0;padding-left:1.15rem}
+.toc li{margin-bottom:7px;font-size:.95rem}
+.toc a{color:#555555;text-decoration:none}
+.toc a:hover{color:#C9A84C;text-decoration:underline}
+.share-row{max-width:760px;margin:36px auto 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-top:22px;border-top:1px solid #E2E8F0}
+.share-label{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#6C757D;margin-right:4px}
+.share-row a,.copy-link{display:inline-flex;align-items:center;min-height:40px;padding:8px 16px;border:1px solid #E2E8F0;border-radius:999px;background:#fff;font-size:.88rem;font-weight:600;color:#002E5B;cursor:pointer;font-family:inherit}
+.share-row a:hover,.copy-link:hover{border-color:#C9A84C;color:#002E5B}
+.prev-next{max-width:760px;margin:32px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pn-link{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid #E2E8F0;border-radius:12px;background:#fff;transition:border-color .2s,transform .2s}
+.pn-link:hover{border-color:#C9A84C;transform:translateY(-2px)}
+.pn-link span{font-size:.78rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#C9A84C}
+.pn-link strong{font-size:.98rem;line-height:1.35;color:#002E5B}
+.pn-next{text-align:right;align-items:flex-end}
+a.post-tag{text-decoration:none}
+a.post-tag:hover{background:rgba(201,168,76,.28);color:#C9A84C}
+
 .author-box{max-width:760px;margin:48px auto 0;display:flex;gap:24px;align-items:flex-start;background:#F8F9FA;border-radius:14px;padding:28px}
 .author-box img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .author-box h3{font-size:1.15rem;margin-bottom:2px}
@@ -318,6 +340,11 @@ main[style]{margin-top:64px!important}
 .post-card .pc-meta{font-size:.87rem}
 .post-card h3{font-size:1.12rem}
 .author-box{flex-direction:column;align-items:center;text-align:center;gap:16px;padding:24px 20px}
+.prev-next{grid-template-columns:1fr}
+.pn-next{text-align:left;align-items:flex-start}
+.toc{padding:18px 20px}
+.share-row{gap:8px}
+.share-row a,.copy-link{min-height:44px;font-size:.85rem;padding:8px 14px}
 .blog-toolbar{flex-direction:column;align-items:stretch}
 /* flex-basis grows the *height* once the toolbar stacks, so pin it back down */
 .blog-search{flex:0 0 auto;width:100%;min-height:52px}
@@ -347,7 +374,8 @@ main[style]{margin-top:64px!important}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{display:inline-flex;align-items:center;min-height:44px}
 /* Standalone links sitting inside cards and stat blocks are tap targets too.
    Links inline within a sentence stay as-is; WCAG exempts those. */
-.stat-label a,.contact-info-card p a,.post-card .pc-body>a{display:inline-flex;align-items:center;min-height:44px}
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a,a.post-tag,.post-meta a,.author-box p a,.contact-info-card a,.section a[href^="https://thepittsburghwire"],.section a[href^="https://www.youtube"]{display:inline-flex;align-items:center;min-height:44px}
+a.post-tag{padding:8px 16px}
 .breadcrumb a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
 .services-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}
 .faq-q{min-height:56px;padding:18px 20px}
@@ -461,7 +489,7 @@ img{max-width:60%;page-break-inside:avoid}
 <li><a href="/industries/">Industries</a></li>
 <li><a href="/process/">Process</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
-<li><a href="/blog/">Blog</a></li>
+<li><a href="/blog/" style="color:#002E5B;font-weight:700" aria-current="page">Blog</a></li>
 <li><a href="/faq/">FAQ</a></li>
 <li><a href="/contact/">Contact</a></li>
 <li><a href="/contact/" class="btn btn-primary">Book a Consult</a></li>
@@ -473,9 +501,9 @@ img{max-width:60%;page-break-inside:avoid}
 
 <section class="page-hero">
 <div class="container">
-<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / Sales & Revenue</p>
+<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / Sales &amp; Revenue</p>
 <p style="margin-bottom:14px"><span class="post-tag">Category</span></p>
-<h1>Sales & Revenue</h1>
+<h1>Sales &amp; Revenue</h1>
 <p>Pipeline structure, follow-up discipline, pricing, and the revenue systems that make forecasting something other than a guess.</p>
 <p style="margin-top:12px;font-size:.95rem;color:rgba(255,255,255,.7)">38 articles</p>
 </div>
@@ -485,342 +513,342 @@ img{max-width:60%;page-break-inside:avoid}
 <div class="container">
 <div class="post-list">
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="the invisible sales cycle: winning deals decided before you hear from the buyer forrester found 94% of b2b buyers used ai during their last purchase, and 61% of the buying journey now finishes before a vendor is ever contacted. here... sales &amp; revenue">
-<a href="/blog/invisible-sales-cycle-b2b-buying-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=1200&amp;q=80" alt="The Invisible Sales Cycle: Winning Deals Decided Before You Hear From the Buyer - Elixir Consulting Group" width="800" height="450" loading="eager" fetchpriority="high"></a>
+<a href="/blog/invisible-sales-cycle-b2b-buying-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=1200&amp;q=80" alt="The Invisible Sales Cycle: Winning Deals Decided Before You Hear From the Buyer - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="eager" fetchpriority="high"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/invisible-sales-cycle-b2b-buying-2026/">The Invisible Sales Cycle: Winning Deals Decided Before You Hear From the Buyer</a></h3>
 <p>Forrester found 94% of B2B buyers used AI during their last purchase, and 61% of the buying journey now finishes before a vendor is ever contacted. Here...</p>
 <p class="pc-meta"><time datetime="2026-08-09">August 9, 2026</time> <span aria-hidden="true">&middot;</span> 5 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="from hustle to system: how high-growth small businesses are building predictable revenue in 2026 the most profitable small businesses in 2026 stopped relying on hustle and built revenue systems instead. here is exactly how they did it and what you... sales &amp; revenue">
-<a href="/blog/revenue-systems-small-business-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&amp;q=80" alt="From Hustle to System: How High-Growth Small Businesses Are Building Predictable Revenue in 2026 - Elixir Consulting Group" width="800" height="450" loading="eager" fetchpriority="high"></a>
+<a href="/blog/revenue-systems-small-business-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&amp;q=80" alt="From Hustle to System: How High-Growth Small Businesses Are Building Predictable Revenue in 2026 - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="eager" fetchpriority="high"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/revenue-systems-small-business-2026/">From Hustle to System: How High-Growth Small Businesses Are Building Predictable Revenue in 2026</a></h3>
 <p>The most profitable small businesses in 2026 stopped relying on hustle and built revenue systems instead. Here is exactly how they did it and what you...</p>
 <p class="pc-meta"><time datetime="2026-07-22">July 22, 2026</time> <span aria-hidden="true">&middot;</span> 8 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to scale your business from $500k to $5m in revenue scaling from $500k to $5m is the most dangerous growth phase for any business. here is the playbook for making that leap without breaking what already... sales &amp; revenue">
-<a href="/blog/how-to-scale-business-500k-to-5m-revenue/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&amp;q=80" alt="How to Scale Your Business From $500K to $5M in Revenue - Elixir Consulting Group" width="800" height="450" loading="eager" fetchpriority="high"></a>
+<a href="/blog/how-to-scale-business-500k-to-5m-revenue/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&amp;q=80" alt="How to Scale Your Business From $500K to $5M in Revenue - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="eager" fetchpriority="high"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-scale-business-500k-to-5m-revenue/">How to Scale Your Business From $500K to $5M in Revenue</a></h3>
 <p>Scaling from $500K to $5M is the most dangerous growth phase for any business. Here is the playbook for making that leap without breaking what already...</p>
 <p class="pc-meta"><time datetime="2026-04-22">April 22, 2026</time> <span aria-hidden="true">&middot;</span> 2 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to measure business performance beyond revenue revenue is important, but it tells you only part of the story. a business generating strong revenue can still be […] sales &amp; revenue">
-<a href="/blog/how-to-measure-business-performance-beyond-revenue/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Measure Business Performance Beyond Revenue - Elixir Consulting Group" width="800" height="450" loading="eager" fetchpriority="high"></a>
+<a href="/blog/how-to-measure-business-performance-beyond-revenue/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Measure Business Performance Beyond Revenue - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="eager" fetchpriority="high"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-measure-business-performance-beyond-revenue/">How to Measure Business Performance Beyond Revenue</a></h3>
 <p>Revenue is important, but it tells you only part of the story. A business generating strong revenue can still be […]</p>
 <p class="pc-meta"><time datetime="2026-04-21">April 21, 2026</time> <span aria-hidden="true">&middot;</span> 1 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to run a weekly leadership meeting that actually drives results most leadership meetings are a waste of time. they turn into status updates, tangents, and discussions that lead nowhere. but […] sales &amp; revenue">
-<a href="/blog/how-to-run-a-weekly-leadership-meeting-that-actually-drives-results/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&amp;q=80" alt="How to Run a Weekly Leadership Meeting That Actually Drives Results - Elixir Consulting Group" width="800" height="450" loading="eager" fetchpriority="high"></a>
+<a href="/blog/how-to-run-a-weekly-leadership-meeting-that-actually-drives-results/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&amp;q=80" alt="How to Run a Weekly Leadership Meeting That Actually Drives Results - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="eager" fetchpriority="high"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-run-a-weekly-leadership-meeting-that-actually-drives-results/">How to Run a Weekly Leadership Meeting That Actually Drives Results</a></h3>
 <p>Most leadership meetings are a waste of time. They turn into status updates, tangents, and discussions that lead nowhere. But […]</p>
 <p class="pc-meta"><time datetime="2026-03-26">March 26, 2026</time> <span aria-hidden="true">&middot;</span> 2 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to build a sales pipeline that runs without you one of the most common challenges business owners face is a sales process that depends entirely on them. when the […] sales &amp; revenue">
-<a href="/blog/how-to-build-a-sales-pipeline-that-runs-without-you/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Build a Sales Pipeline That Runs Without You - Elixir Consulting Group" width="800" height="450" loading="eager" fetchpriority="high"></a>
+<a href="/blog/how-to-build-a-sales-pipeline-that-runs-without-you/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Build a Sales Pipeline That Runs Without You - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="eager" fetchpriority="high"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-build-a-sales-pipeline-that-runs-without-you/">How to Build a Sales Pipeline That Runs Without You</a></h3>
 <p>One of the most common challenges business owners face is a sales process that depends entirely on them. When the […]</p>
 <p class="pc-meta"><time datetime="2026-03-17">March 17, 2026</time> <span aria-hidden="true">&middot;</span> 2 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="the pricing analysis that helps you win more business the pricing analysis that helps you win more business. understanding your competition is important, but it should not consume you. the best competitive... sales &amp; revenue">
-<a href="/blog/the-pricing-analysis-that-helps-you-win-more-business/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&amp;q=80" alt="The Pricing Analysis That Helps You Win More Business - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/the-pricing-analysis-that-helps-you-win-more-business/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&amp;q=80" alt="The Pricing Analysis That Helps You Win More Business - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/the-pricing-analysis-that-helps-you-win-more-business/">The Pricing Analysis That Helps You Win More Business</a></h3>
 <p>The Pricing Analysis That Helps You Win More Business. Understanding your competition is important, but it should not consume you. The best competitive...</p>
 <p class="pc-meta"><time datetime="2025-12-22">December 22, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how inflation affects small business pricing and profitability how inflation affects small business pricing and profitability. economic conditions affect every business decision. from hiring to pricing to inventory... sales &amp; revenue">
-<a href="/blog/how-inflation-affects-small-business-pricing-and-profitability/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&amp;q=80" alt="How Inflation Affects Small Business Pricing and Profitability - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-inflation-affects-small-business-pricing-and-profitability/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&amp;q=80" alt="How Inflation Affects Small Business Pricing and Profitability - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-inflation-affects-small-business-pricing-and-profitability/">How Inflation Affects Small Business Pricing and Profitability</a></h3>
 <p>How Inflation Affects Small Business Pricing and Profitability. Economic conditions affect every business decision. From hiring to pricing to inventory...</p>
 <p class="pc-meta"><time datetime="2025-12-05">December 5, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to price your services for profitability not just revenue how to price your services for profitability not just revenue. your financial statements tell a story about your business. the question is whether you... sales &amp; revenue">
-<a href="/blog/how-to-price-your-services-for-profitability-not-just-revenue/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Price Your Services for Profitability Not Just Revenue - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-price-your-services-for-profitability-not-just-revenue/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Price Your Services for Profitability Not Just Revenue - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-price-your-services-for-profitability-not-just-revenue/">How to Price Your Services for Profitability Not Just Revenue</a></h3>
 <p>How to Price Your Services for Profitability Not Just Revenue. Your financial statements tell a story about your business. The question is whether you...</p>
 <p class="pc-meta"><time datetime="2025-11-11">November 11, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to negotiate better terms with your vendors and suppliers how to negotiate better terms with your vendors and suppliers. financial literacy is one of the most important skills a business owner can develop... sales &amp; revenue">
-<a href="/blog/how-to-negotiate-better-terms-with-your-vendors-and-suppliers/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&amp;q=80" alt="How to Negotiate Better Terms With Your Vendors and Suppliers - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-negotiate-better-terms-with-your-vendors-and-suppliers/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&amp;q=80" alt="How to Negotiate Better Terms With Your Vendors and Suppliers - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-negotiate-better-terms-with-your-vendors-and-suppliers/">How to Negotiate Better Terms With Your Vendors and Suppliers</a></h3>
 <p>How to Negotiate Better Terms With Your Vendors and Suppliers. Financial literacy is one of the most important skills a business owner can develop...</p>
 <p class="pc-meta"><time datetime="2025-11-03">November 3, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to fund business growth through revenue instead of debt how to fund business growth through revenue instead of debt. access to capital can make or break a growing business. understanding your funding options... sales &amp; revenue">
-<a href="/blog/how-to-fund-business-growth-through-revenue-instead-of-debt/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Fund Business Growth Through Revenue Instead of Debt - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-fund-business-growth-through-revenue-instead-of-debt/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Fund Business Growth Through Revenue Instead of Debt - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-fund-business-growth-through-revenue-instead-of-debt/">How to Fund Business Growth Through Revenue Instead of Debt</a></h3>
 <p>How to Fund Business Growth Through Revenue Instead of Debt. Access to capital can make or break a growing business. Understanding your funding options...</p>
 <p class="pc-meta"><time datetime="2025-10-19">October 19, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to lead a team when you are also doing the work leadership is not a title. it is a practice. the best leaders are constantly growing, learning, and adapting their approach to meet the needs of their... sales &amp; revenue">
-<a href="/blog/how-to-lead-a-team-when-you-are-also-doing-the-work/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&amp;q=80" alt="How to Lead a Team When You Are Also Doing the Work - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-lead-a-team-when-you-are-also-doing-the-work/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&amp;q=80" alt="How to Lead a Team When You Are Also Doing the Work - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-lead-a-team-when-you-are-also-doing-the-work/">How to Lead a Team When You Are Also Doing the Work</a></h3>
 <p>Leadership is not a title. It is a practice. The best leaders are constantly growing, learning, and adapting their approach to meet the needs of their...</p>
 <p class="pc-meta"><time datetime="2025-09-23">September 23, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to build emotional intelligence as a business leader how to build emotional intelligence as a business leader. leadership is not a title. it is a practice. the best leaders are constantly growing, learning... sales &amp; revenue">
-<a href="/blog/how-to-build-emotional-intelligence-as-a-business-leader/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1200&amp;q=80" alt="How to Build Emotional Intelligence as a Business Leader - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-build-emotional-intelligence-as-a-business-leader/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1200&amp;q=80" alt="How to Build Emotional Intelligence as a Business Leader - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-build-emotional-intelligence-as-a-business-leader/">How to Build Emotional Intelligence as a Business Leader</a></h3>
 <p>How to Build Emotional Intelligence as a Business Leader. Leadership is not a title. It is a practice. The best leaders are constantly growing, learning...</p>
 <p class="pc-meta"><time datetime="2025-09-19">September 19, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to develop the next generation of leaders in your business how to develop the next generation of leaders in your business. as a business owner, your leadership sets the tone for everything in your organization... sales &amp; revenue">
-<a href="/blog/how-to-develop-the-next-generation-of-leaders-in-your-business/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=1200&amp;q=80" alt="How to Develop the Next Generation of Leaders in Your Business - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-develop-the-next-generation-of-leaders-in-your-business/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=1200&amp;q=80" alt="How to Develop the Next Generation of Leaders in Your Business - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-develop-the-next-generation-of-leaders-in-your-business/">How to Develop the Next Generation of Leaders in Your Business</a></h3>
 <p>How to Develop the Next Generation of Leaders in Your Business. As a business owner, your leadership sets the tone for everything in your organization...</p>
 <p class="pc-meta"><time datetime="2025-09-17">September 17, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="why leaders who listen outperform leaders who talk why leaders who listen outperform leaders who talk. as a business owner, your leadership sets the tone for everything in your organization. how you... sales &amp; revenue">
-<a href="/blog/why-leaders-who-listen-outperform-leaders-who-talk/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="Why Leaders Who Listen Outperform Leaders Who Talk - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/why-leaders-who-listen-outperform-leaders-who-talk/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="Why Leaders Who Listen Outperform Leaders Who Talk - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/why-leaders-who-listen-outperform-leaders-who-talk/">Why Leaders Who Listen Outperform Leaders Who Talk</a></h3>
 <p>Why Leaders Who Listen Outperform Leaders Who Talk. As a business owner, your leadership sets the tone for everything in your organization. How you...</p>
 <p class="pc-meta"><time datetime="2025-09-16">September 16, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="the one thing great leaders do every single day the one thing great leaders do every single day. as a business owner, your leadership sets the tone for everything in your organization. how you... sales &amp; revenue">
-<a href="/blog/the-one-thing-great-leaders-do-every-single-day/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&amp;q=80" alt="The One Thing Great Leaders Do Every Single Day - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/the-one-thing-great-leaders-do-every-single-day/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&amp;q=80" alt="The One Thing Great Leaders Do Every Single Day - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/the-one-thing-great-leaders-do-every-single-day/">The One Thing Great Leaders Do Every Single Day</a></h3>
 <p>The One Thing Great Leaders Do Every Single Day. As a business owner, your leadership sets the tone for everything in your organization. How you...</p>
 <p class="pc-meta"><time datetime="2025-09-14">September 14, 2025</time> <span aria-hidden="true">&middot;</span> 2 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to lead through change without losing team morale how to lead through change without losing team morale. as a business owner, your leadership sets the tone for everything in your organization. how you... sales &amp; revenue">
-<a href="/blog/how-to-lead-through-change-without-losing-team-morale/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&amp;q=80" alt="How to Lead Through Change Without Losing Team Morale - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-lead-through-change-without-losing-team-morale/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&amp;q=80" alt="How to Lead Through Change Without Losing Team Morale - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-lead-through-change-without-losing-team-morale/">How to Lead Through Change Without Losing Team Morale</a></h3>
 <p>How to Lead Through Change Without Losing Team Morale. As a business owner, your leadership sets the tone for everything in your organization. How you...</p>
 <p class="pc-meta"><time datetime="2025-09-13">September 13, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="why vulnerability is a leadership strength not a weakness why vulnerability is a leadership strength not a weakness. as a business owner, your leadership sets the tone for everything in your organization. how... sales &amp; revenue">
-<a href="/blog/why-vulnerability-is-a-leadership-strength-not-a-weakness/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&amp;q=80" alt="Why Vulnerability Is a Leadership Strength Not a Weakness - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/why-vulnerability-is-a-leadership-strength-not-a-weakness/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&amp;q=80" alt="Why Vulnerability Is a Leadership Strength Not a Weakness - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/why-vulnerability-is-a-leadership-strength-not-a-weakness/">Why Vulnerability Is a Leadership Strength Not a Weakness</a></h3>
 <p>Why Vulnerability Is a Leadership Strength Not a Weakness. As a business owner, your leadership sets the tone for everything in your organization. How...</p>
 <p class="pc-meta"><time datetime="2025-09-12">September 12, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to increase revenue without increasing your workload revenue growth is the lifeblood of any business. but growing revenue the right way, sustainably, profitably, and without burning out […] sales &amp; revenue">
-<a href="/blog/how-to-increase-revenue-without-increasing-your-workload/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Increase Revenue Without Increasing Your Workload - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-increase-revenue-without-increasing-your-workload/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Increase Revenue Without Increasing Your Workload - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-increase-revenue-without-increasing-your-workload/">How to Increase Revenue Without Increasing Your Workload</a></h3>
 <p>Revenue growth is the lifeblood of any business. But growing revenue the right way, sustainably, profitably, and without burning out […]</p>
 <p class="pc-meta"><time datetime="2025-08-30">August 30, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="the pricing strategy that increased our clients’ revenue by 30 percent more revenue does not always mean more profit. understanding how to grow revenue while maintaining or improving profitability is one […] sales &amp; revenue">
-<a href="/blog/the-pricing-strategy-that-increased-our-clients-revenue-by-30-percent/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&amp;q=80" alt="The Pricing Strategy That Increased Our Clients’ Revenue by 30 Percent - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/the-pricing-strategy-that-increased-our-clients-revenue-by-30-percent/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&amp;q=80" alt="The Pricing Strategy That Increased Our Clients’ Revenue by 30 Percent - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/the-pricing-strategy-that-increased-our-clients-revenue-by-30-percent/">The Pricing Strategy That Increased Our Clients’ Revenue by 30 Percent</a></h3>
 <p>More revenue does not always mean more profit. Understanding how to grow revenue while maintaining or improving profitability is one […]</p>
 <p class="pc-meta"><time datetime="2025-08-29">August 29, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to build multiple revenue streams for your business more revenue does not always mean more profit. understanding how to grow revenue while maintaining or improving profitability is one of the most... sales &amp; revenue">
-<a href="/blog/how-to-build-multiple-revenue-streams-for-your-business/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Build Multiple Revenue Streams for Your Business - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-build-multiple-revenue-streams-for-your-business/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Build Multiple Revenue Streams for Your Business - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-build-multiple-revenue-streams-for-your-business/">How to Build Multiple Revenue Streams for Your Business</a></h3>
 <p>More revenue does not always mean more profit. Understanding how to grow revenue while maintaining or improving profitability is one of the most...</p>
 <p class="pc-meta"><time datetime="2025-08-28">August 28, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="why your revenue is growing but your profit is not revenue growth is the lifeblood of any business. but growing revenue the right way, sustainably, profitably, and without burning out your team, requires... sales &amp; revenue">
-<a href="/blog/why-your-revenue-is-growing-but-your-profit-is-not/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="Why Your Revenue Is Growing But Your Profit Is Not - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/why-your-revenue-is-growing-but-your-profit-is-not/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="Why Your Revenue Is Growing But Your Profit Is Not - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/why-your-revenue-is-growing-but-your-profit-is-not/">Why Your Revenue Is Growing But Your Profit Is Not</a></h3>
 <p>Revenue growth is the lifeblood of any business. But growing revenue the right way, sustainably, profitably, and without burning out your team, requires...</p>
 <p class="pc-meta"><time datetime="2025-08-27">August 27, 2025</time> <span aria-hidden="true">&middot;</span> 4 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to create a revenue forecast that is actually useful how to create a revenue forecast that is actually useful. more revenue does not always mean more profit. understanding how to grow revenue while... sales &amp; revenue">
-<a href="/blog/how-to-create-a-revenue-forecast-that-is-actually-useful/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Create a Revenue Forecast That Is Actually Useful - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-create-a-revenue-forecast-that-is-actually-useful/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Create a Revenue Forecast That Is Actually Useful - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-create-a-revenue-forecast-that-is-actually-useful/">How to Create a Revenue Forecast That Is Actually Useful</a></h3>
 <p>How to Create a Revenue Forecast That Is Actually Useful. More revenue does not always mean more profit. Understanding how to grow revenue while...</p>
 <p class="pc-meta"><time datetime="2025-08-26">August 26, 2025</time> <span aria-hidden="true">&middot;</span> 4 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="the revenue metrics that tell you if your business is healthy the revenue metrics that tell you if your business is healthy. more revenue does not always mean more profit. understanding how to grow revenue while... sales &amp; revenue">
-<a href="/blog/the-revenue-metrics-that-tell-you-if-your-business-is-healthy/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="The Revenue Metrics That Tell You If Your Business Is Healthy - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/the-revenue-metrics-that-tell-you-if-your-business-is-healthy/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="The Revenue Metrics That Tell You If Your Business Is Healthy - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/the-revenue-metrics-that-tell-you-if-your-business-is-healthy/">The Revenue Metrics That Tell You If Your Business Is Healthy</a></h3>
 <p>The Revenue Metrics That Tell You If Your Business Is Healthy. More revenue does not always mean more profit. Understanding how to grow revenue while...</p>
 <p class="pc-meta"><time datetime="2025-08-23">August 23, 2025</time> <span aria-hidden="true">&middot;</span> 4 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to recover lost revenue by reactivating past clients how to recover lost revenue by reactivating past clients. revenue growth is the lifeblood of any business. but growing revenue the right way... sales &amp; revenue">
-<a href="/blog/how-to-recover-lost-revenue-by-reactivating-past-clients/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Recover Lost Revenue by Reactivating Past Clients - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-recover-lost-revenue-by-reactivating-past-clients/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Recover Lost Revenue by Reactivating Past Clients - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-recover-lost-revenue-by-reactivating-past-clients/">How to Recover Lost Revenue by Reactivating Past Clients</a></h3>
 <p>How to Recover Lost Revenue by Reactivating Past Clients. Revenue growth is the lifeblood of any business. But growing revenue the right way...</p>
 <p class="pc-meta"><time datetime="2025-08-22">August 22, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to set revenue goals that motivate your entire team how to set revenue goals that motivate your entire team. more revenue does not always mean more profit. understanding how to grow revenue while... sales &amp; revenue">
-<a href="/blog/how-to-set-revenue-goals-that-motivate-your-entire-team/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&amp;q=80" alt="How to Set Revenue Goals That Motivate Your Entire Team - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-set-revenue-goals-that-motivate-your-entire-team/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&amp;q=80" alt="How to Set Revenue Goals That Motivate Your Entire Team - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-set-revenue-goals-that-motivate-your-entire-team/">How to Set Revenue Goals That Motivate Your Entire Team</a></h3>
 <p>How to Set Revenue Goals That Motivate Your Entire Team. More revenue does not always mean more profit. Understanding how to grow revenue while...</p>
 <p class="pc-meta"><time datetime="2025-08-20">August 20, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="the revenue growth playbook for service-based businesses the revenue growth playbook for service-based businesses. more revenue does not always mean more profit. understanding how to grow revenue while... sales &amp; revenue">
-<a href="/blog/the-revenue-growth-playbook-for-service-based-businesses/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="The Revenue Growth Playbook for Service-Based Businesses - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/the-revenue-growth-playbook-for-service-based-businesses/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="The Revenue Growth Playbook for Service-Based Businesses - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/the-revenue-growth-playbook-for-service-based-businesses/">The Revenue Growth Playbook for Service-Based Businesses</a></h3>
 <p>The Revenue Growth Playbook for Service-Based Businesses. More revenue does not always mean more profit. Understanding how to grow revenue while...</p>
 <p class="pc-meta"><time datetime="2025-08-19">August 19, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to build a sales process that converts leads into clients sales is the engine of your business. without a system for generating leads, nurturing prospects, and closing deals, growth is […] sales &amp; revenue">
-<a href="/blog/how-to-build-a-sales-process-that-converts-leads-into-clients/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&amp;q=80" alt="How to Build a Sales Process That Converts Leads Into Clients - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-build-a-sales-process-that-converts-leads-into-clients/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&amp;q=80" alt="How to Build a Sales Process That Converts Leads Into Clients - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-build-a-sales-process-that-converts-leads-into-clients/">How to Build a Sales Process That Converts Leads Into Clients</a></h3>
 <p>Sales is the engine of your business. Without a system for generating leads, nurturing prospects, and closing deals, growth is […]</p>
 <p class="pc-meta"><time datetime="2025-08-18">August 18, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to create a sales pipeline that gives you predictable revenue most small business owners did not start their company because they love selling. but sales is essential, and having a system makes it manageable. at... sales &amp; revenue">
-<a href="/blog/how-to-create-a-sales-pipeline-that-gives-you-predictable-revenue/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Create a Sales Pipeline That Gives You Predictable Revenue - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-create-a-sales-pipeline-that-gives-you-predictable-revenue/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Create a Sales Pipeline That Gives You Predictable Revenue - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-create-a-sales-pipeline-that-gives-you-predictable-revenue/">How to Create a Sales Pipeline That Gives You Predictable Revenue</a></h3>
 <p>Most small business owners did not start their company because they love selling. But sales is essential, and having a system makes it manageable. At...</p>
 <p class="pc-meta"><time datetime="2025-08-16">August 16, 2025</time> <span aria-hidden="true">&middot;</span> 4 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="why most small businesses struggle with sales and how to fix it why most small businesses struggle with sales and how to fix it. most small business owners did not start their company because they love selling. but... sales &amp; revenue">
-<a href="/blog/why-most-small-businesses-struggle-with-sales-and-how-to-fix-it/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="Why Most Small Businesses Struggle With Sales and How to Fix It - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/why-most-small-businesses-struggle-with-sales-and-how-to-fix-it/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="Why Most Small Businesses Struggle With Sales and How to Fix It - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/why-most-small-businesses-struggle-with-sales-and-how-to-fix-it/">Why Most Small Businesses Struggle With Sales and How to Fix It</a></h3>
 <p>Why Most Small Businesses Struggle With Sales and How to Fix It. Most small business owners did not start their company because they love selling. But...</p>
 <p class="pc-meta"><time datetime="2025-08-15">August 15, 2025</time> <span aria-hidden="true">&middot;</span> 4 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="the sales script framework that feels natural not pushy the sales script framework that feels natural not pushy. most small business owners did not start their company because they love selling. but sales is... sales &amp; revenue">
-<a href="/blog/the-sales-script-framework-that-feels-natural-not-pushy/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="The Sales Script Framework That Feels Natural Not Pushy - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/the-sales-script-framework-that-feels-natural-not-pushy/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="The Sales Script Framework That Feels Natural Not Pushy - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/the-sales-script-framework-that-feels-natural-not-pushy/">The Sales Script Framework That Feels Natural Not Pushy</a></h3>
 <p>The Sales Script Framework That Feels Natural Not Pushy. Most small business owners did not start their company because they love selling. But sales is...</p>
 <p class="pc-meta"><time datetime="2025-08-13">August 13, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to train your team to sell without being salespeople how to train your team to sell without being salespeople. most small business owners did not start their company because they love selling. but sales is... sales &amp; revenue">
-<a href="/blog/how-to-train-your-team-to-sell-without-being-salespeople/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="How to Train Your Team to Sell Without Being Salespeople - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-train-your-team-to-sell-without-being-salespeople/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="How to Train Your Team to Sell Without Being Salespeople - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-train-your-team-to-sell-without-being-salespeople/">How to Train Your Team to Sell Without Being Salespeople</a></h3>
 <p>How to Train Your Team to Sell Without Being Salespeople. Most small business owners did not start their company because they love selling. But sales is...</p>
 <p class="pc-meta"><time datetime="2025-08-12">August 12, 2025</time> <span aria-hidden="true">&middot;</span> 4 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to shorten your sales cycle and close deals faster how to shorten your sales cycle and close deals faster. sales is the engine of your business. without a system for generating leads, nurturing prospects... sales &amp; revenue">
-<a href="/blog/how-to-shorten-your-sales-cycle-and-close-deals-faster/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Shorten Your Sales Cycle and Close Deals Faster - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-shorten-your-sales-cycle-and-close-deals-faster/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Shorten Your Sales Cycle and Close Deals Faster - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-shorten-your-sales-cycle-and-close-deals-faster/">How to Shorten Your Sales Cycle and Close Deals Faster</a></h3>
 <p>How to Shorten Your Sales Cycle and Close Deals Faster. Sales is the engine of your business. Without a system for generating leads, nurturing prospects...</p>
 <p class="pc-meta"><time datetime="2025-08-11">August 11, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="the lead generation strategy that works for service businesses the lead generation strategy that works for service businesses. sales is the engine of your business. without a system for generating leads, nurturing... sales &amp; revenue">
-<a href="/blog/the-lead-generation-strategy-that-works-for-service-businesses/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&amp;q=80" alt="The Lead Generation Strategy That Works for Service Businesses - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/the-lead-generation-strategy-that-works-for-service-businesses/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&amp;q=80" alt="The Lead Generation Strategy That Works for Service Businesses - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/the-lead-generation-strategy-that-works-for-service-businesses/">The Lead Generation Strategy That Works for Service Businesses</a></h3>
 <p>The Lead Generation Strategy That Works for Service Businesses. Sales is the engine of your business. Without a system for generating leads, nurturing...</p>
 <p class="pc-meta"><time datetime="2025-08-10">August 10, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to handle sales objections with confidence how to handle sales objections with confidence. sales is the engine of your business. without a system for generating leads, nurturing prospects, and... sales &amp; revenue">
-<a href="/blog/how-to-handle-sales-objections-with-confidence/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Handle Sales Objections With Confidence - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-handle-sales-objections-with-confidence/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Handle Sales Objections With Confidence - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-handle-sales-objections-with-confidence/">How to Handle Sales Objections With Confidence</a></h3>
 <p>How to Handle Sales Objections With Confidence. Sales is the engine of your business. Without a system for generating leads, nurturing prospects, and...</p>
 <p class="pc-meta"><time datetime="2025-08-09">August 9, 2025</time> <span aria-hidden="true">&middot;</span> 3 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="the sales dashboard that shows you what is working and what is not the sales dashboard that shows you what is working and what is not. most small business owners did not start their company because they love selling... sales &amp; revenue">
-<a href="/blog/the-sales-dashboard-that-shows-you-what-is-working-and-what-is-not/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&amp;q=80" alt="The Sales Dashboard That Shows You What Is Working and What Is Not - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/the-sales-dashboard-that-shows-you-what-is-working-and-what-is-not/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&amp;q=80" alt="The Sales Dashboard That Shows You What Is Working and What Is Not - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/the-sales-dashboard-that-shows-you-what-is-working-and-what-is-not/">The Sales Dashboard That Shows You What Is Working and What Is Not</a></h3>
 <p>The Sales Dashboard That Shows You What Is Working and What Is Not. Most small business owners did not start their company because they love selling...</p>
 <p class="pc-meta"><time datetime="2025-08-07">August 7, 2025</time> <span aria-hidden="true">&middot;</span> 4 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to follow up with prospects without being annoying how to follow up with prospects without being annoying. sales is the engine of your business. without a system for generating leads, nurturing prospects... sales &amp; revenue">
-<a href="/blog/how-to-follow-up-with-prospects-without-being-annoying/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Follow Up With Prospects Without Being Annoying - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-follow-up-with-prospects-without-being-annoying/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Follow Up With Prospects Without Being Annoying - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-follow-up-with-prospects-without-being-annoying/">How to Follow Up With Prospects Without Being Annoying</a></h3>
 <p>How to Follow Up With Prospects Without Being Annoying. Sales is the engine of your business. Without a system for generating leads, nurturing prospects...</p>
 <p class="pc-meta"><time datetime="2025-08-06">August 6, 2025</time> <span aria-hidden="true">&middot;</span> 4 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="Sales &amp; Revenue" data-search="how to build a referral network that keeps your pipeline full how to build a referral network that keeps your pipeline full. sales is the engine of your business. without a system for generating leads, nurturing... sales &amp; revenue">
-<a href="/blog/how-to-build-a-referral-network-that-keeps-your-pipeline-full/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Build a Referral Network That Keeps Your Pipeline Full - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-to-build-a-referral-network-that-keeps-your-pipeline-full/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&amp;q=80" alt="How to Build a Referral Network That Keeps Your Pipeline Full - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">Sales & Revenue</p>
+<p class="pc-cat">Sales &amp; Revenue</p>
 <h3><a href="/blog/how-to-build-a-referral-network-that-keeps-your-pipeline-full/">How to Build a Referral Network That Keeps Your Pipeline Full</a></h3>
 <p>How to Build a Referral Network That Keeps Your Pipeline Full. Sales is the engine of your business. Without a system for generating leads, nurturing...</p>
 <p class="pc-meta"><time datetime="2025-07-04">July 4, 2025</time> <span aria-hidden="true">&middot;</span> 4 min read</p>
@@ -835,7 +863,7 @@ img{max-width:60%;page-break-inside:avoid}
 <div class="container text-center">
 <span class="eyebrow">Browse</span>
 <h2 style="margin-bottom:24px">Other Categories</h2>
-<div><a href="/blog/category/ai-technology/" class="services-link">AI & Technology</a><a href="/blog/category/operations/" class="services-link">Operations</a><a href="/blog/category/leadership/" class="services-link">Leadership</a><a href="/blog/category/strategy-growth/" class="services-link">Strategy & Growth</a><a href="/blog/category/finance-exit/" class="services-link">Finance & Exit</a><a href="/blog/category/pittsburgh-local/" class="services-link">Pittsburgh & Local</a><a href="/blog/category/insights/" class="services-link">Insights</a></div>
+<div><a href="/blog/category/ai-technology/" class="services-link">AI &amp; Technology</a><a href="/blog/category/operations/" class="services-link">Operations</a><a href="/blog/category/leadership/" class="services-link">Leadership</a><a href="/blog/category/strategy-growth/" class="services-link">Strategy &amp; Growth</a><a href="/blog/category/finance-exit/" class="services-link">Finance &amp; Exit</a><a href="/blog/category/pittsburgh-local/" class="services-link">Pittsburgh &amp; Local</a><a href="/blog/category/insights/" class="services-link">Insights</a></div>
 <div style="margin-top:28px"><a href="/blog/" class="btn btn-outline">All 332 Articles</a></div>
 </div>
 </section>
@@ -844,20 +872,20 @@ img{max-width:60%;page-break-inside:avoid}
 <div class="container">
 <div class="text-center" style="margin-bottom:36px">
 <span class="eyebrow">Questions</span>
-<h2>Sales & Revenue FAQs</h2>
+<h2>Sales &amp; Revenue FAQs</h2>
 
 </div>
 <div style="max-width:820px;margin:0 auto">
 <div class="faq-item">
-<div class="faq-q" role="button" tabindex="0">How many sales & revenue articles are there?</div>
-<div class="faq-a"><p>This archive currently holds 38 articles on sales & revenue, part of a library of 332 across every topic we cover.</p></div>
+<div class="faq-q" role="button" tabindex="0">How many sales &amp; revenue articles are there?</div>
+<div class="faq-a"><p>This archive currently holds 38 articles on sales &amp; revenue, part of a library of 332 across every topic we cover.</p></div>
 </div>
 <div class="faq-item">
 <div class="faq-q" role="button" tabindex="0">Who writes these articles?</div>
 <div class="faq-a"><p>Dr. Connor Robertson, founder and lead consultant at Elixir Consulting Group, drawing on hands-on implementation work with owner-led businesses.</p></div>
 </div>
 <div class="faq-item">
-<div class="faq-q" role="button" tabindex="0">Do you offer consulting in sales & revenue?</div>
+<div class="faq-q" role="button" tabindex="0">Do you offer consulting in sales &amp; revenue?</div>
 <div class="faq-a"><p>Yes. Reading is a fine start, but the articles describe systems we install directly with clients. Book a consult or call (412) 387-7656 to talk about your specific situation.</p></div>
 </div>
 <div class="faq-item">
@@ -967,6 +995,13 @@ q.setAttribute('aria-expanded','false');
 function tog(){var open=!item.classList.contains('active');item.classList.toggle('active',open);q.setAttribute('aria-expanded',open?'true':'false')}
 q.addEventListener('click',tog);
 q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}});
+});
+document.querySelectorAll('.copy-link').forEach(function(btn){
+btn.addEventListener('click',function(){
+var url=btn.getAttribute('data-url'),done=function(){var t=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=t},1600)};
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done).catch(function(){prompt('Copy this link:',url)})}
+else{prompt('Copy this link:',url)}
+});
 });
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){const img=entry.target;img.src=img.dataset.src;img.classList.add('loaded');observer.unobserve(img)}});});document.querySelectorAll('img[data-src]').forEach(img=>observer.observe(img))}else{document.querySelectorAll('img[data-src]').forEach(function(img){img.src=img.dataset.src})}
 </script>

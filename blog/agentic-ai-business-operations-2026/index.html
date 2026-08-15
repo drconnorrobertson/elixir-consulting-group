@@ -39,7 +39,9 @@
 <meta name="twitter:image:alt" content="Agentic AI Is Here: What It Means for Your Business in 2026">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -214,6 +216,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .post-meta img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.35)}
 .post-meta .dot{opacity:.5}
 .post-tag{display:inline-block;background:rgba(201,168,76,.16);color:#C9A84C;border:1px solid rgba(201,168,76,.4);border-radius:999px;padding:4px 12px;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+/* Article furniture: contents, share row, prev/next */
+.toc{max-width:760px;margin:0 auto 32px;background:#F8F9FA;border:1px solid #E2E8F0;border-left:4px solid #C9A84C;border-radius:0 12px 12px 0;padding:22px 26px}
+.toc-title{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#002E5B;margin-bottom:10px}
+.toc ol{margin:0;padding-left:1.15rem}
+.toc li{margin-bottom:7px;font-size:.95rem}
+.toc a{color:#555555;text-decoration:none}
+.toc a:hover{color:#C9A84C;text-decoration:underline}
+.share-row{max-width:760px;margin:36px auto 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-top:22px;border-top:1px solid #E2E8F0}
+.share-label{font-size:.78rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#6C757D;margin-right:4px}
+.share-row a,.copy-link{display:inline-flex;align-items:center;min-height:40px;padding:8px 16px;border:1px solid #E2E8F0;border-radius:999px;background:#fff;font-size:.88rem;font-weight:600;color:#002E5B;cursor:pointer;font-family:inherit}
+.share-row a:hover,.copy-link:hover{border-color:#C9A84C;color:#002E5B}
+.prev-next{max-width:760px;margin:32px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pn-link{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid #E2E8F0;border-radius:12px;background:#fff;transition:border-color .2s,transform .2s}
+.pn-link:hover{border-color:#C9A84C;transform:translateY(-2px)}
+.pn-link span{font-size:.78rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#C9A84C}
+.pn-link strong{font-size:.98rem;line-height:1.35;color:#002E5B}
+.pn-next{text-align:right;align-items:flex-end}
+a.post-tag{text-decoration:none}
+a.post-tag:hover{background:rgba(201,168,76,.28);color:#C9A84C}
+
 .author-box{max-width:760px;margin:48px auto 0;display:flex;gap:24px;align-items:flex-start;background:#F8F9FA;border-radius:14px;padding:28px}
 .author-box img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .author-box h3{font-size:1.15rem;margin-bottom:2px}
@@ -322,6 +344,11 @@ main[style]{margin-top:64px!important}
 .post-card .pc-meta{font-size:.87rem}
 .post-card h3{font-size:1.12rem}
 .author-box{flex-direction:column;align-items:center;text-align:center;gap:16px;padding:24px 20px}
+.prev-next{grid-template-columns:1fr}
+.pn-next{text-align:left;align-items:flex-start}
+.toc{padding:18px 20px}
+.share-row{gap:8px}
+.share-row a,.copy-link{min-height:44px;font-size:.85rem;padding:8px 14px}
 .blog-toolbar{flex-direction:column;align-items:stretch}
 /* flex-basis grows the *height* once the toolbar stacks, so pin it back down */
 .blog-search{flex:0 0 auto;width:100%;min-height:52px}
@@ -351,7 +378,8 @@ main[style]{margin-top:64px!important}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{display:inline-flex;align-items:center;min-height:44px}
 /* Standalone links sitting inside cards and stat blocks are tap targets too.
    Links inline within a sentence stay as-is; WCAG exempts those. */
-.stat-label a,.contact-info-card p a,.post-card .pc-body>a{display:inline-flex;align-items:center;min-height:44px}
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a,a.post-tag,.post-meta a,.author-box p a,.contact-info-card a,.section a[href^="https://thepittsburghwire"],.section a[href^="https://www.youtube"]{display:inline-flex;align-items:center;min-height:44px}
+a.post-tag{padding:8px 16px}
 .breadcrumb a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
 .services-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}
 .faq-q{min-height:56px;padding:18px 20px}
@@ -465,7 +493,7 @@ img{max-width:60%;page-break-inside:avoid}
 <li><a href="/industries/">Industries</a></li>
 <li><a href="/process/">Process</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
-<li><a href="/blog/">Blog</a></li>
+<li><a href="/blog/" style="color:#002E5B;font-weight:700" aria-current="page">Blog</a></li>
 <li><a href="/faq/">FAQ</a></li>
 <li><a href="/contact/">Contact</a></li>
 <li><a href="/contact/" class="btn btn-primary">Book a Consult</a></li>
@@ -477,8 +505,8 @@ img{max-width:60%;page-break-inside:avoid}
 
 <section class="page-hero">
 <div class="container">
-<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / Agentic AI Is Here: What It Means for Your...</p>
-<p style="margin-bottom:14px"><span class="post-tag">AI & Technology</span></p>
+<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / <a href="/blog/category/ai-technology/">AI &amp; Technology</a> / Agentic AI Is Here: What It Means...</p>
+<p style="margin-bottom:14px"><a href="/blog/category/ai-technology/" class="post-tag">AI &amp; Technology</a></p>
 <h1 style="font-size:clamp(1.65rem,4.2vw,2.6rem);max-width:900px;margin-left:auto;margin-right:auto">Agentic AI Is Here: What It Means for Your Business in 2026</h1>
 <p>AI agents are no longer experimental. In 2026, businesses deploying agentic AI systems are averaging 171% ROI. Here is what every business owner needs...</p>
 <div class="post-meta">
@@ -495,16 +523,28 @@ img{max-width:60%;page-break-inside:avoid}
 <section class="section">
 <div class="container">
 <figure style="max-width:860px;margin:0 auto 8px">
-<img class="article-hero-img" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&amp;q=80" alt="Agentic AI Is Here: What It Means for Your Business in 2026 - Elixir Consulting Group" width="1200" height="630" fetchpriority="high" decoding="async">
+<img class="article-hero-img" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&amp;q=80" alt="Agentic AI Is Here: What It Means for Your Business in 2026 - Elixir Consulting Group" width="1200" height="630" srcset="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&amp;w=1200 1200w" sizes="(max-width:900px) 100vw, 860px" fetchpriority="high" decoding="async">
 </figure>
+<nav class="toc" aria-label="Table of contents">
+<p class="toc-title">In this article</p>
+<ol>
+<li><a href="#what-agentic-actually-means">What "Agentic" Actually Means</a></li>
+<li><a href="#the-numbers-are-real">The Numbers Are Real</a></li>
+<li><a href="#where-the-real-roi-is-coming-from">Where the Real ROI Is Coming From</a></li>
+<li><a href="#the-mistake-most-business-owners-will-make">The Mistake Most Business Owners Will Make</a></li>
+<li><a href="#what-about-the-risk">What About the Risk?</a></li>
+<li><a href="#the-competitive-window-is-narrow">The Competitive Window Is Narrow</a></li>
+<li><a href="#how-to-get-started">How to Get Started</a></li>
+</ol>
+</nav>
 <article class="article-body" id="post-body">
-<img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&q=80" alt="Agentic AI neural network visualization representing autonomous AI systems for business" style="width:100%;border-radius:12px;margin-bottom:40px;max-height:480px;object-fit:cover">
+<img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&amp;q=80" alt="Agentic AI neural network visualization representing autonomous AI systems for business" style="width:100%;border-radius:12px;margin-bottom:40px;max-height:480px;object-fit:cover" width="1200" height="675" loading="lazy" decoding="async">
 
 <p>For most of the past three years, AI in business meant a chatbot on your website, a writing assistant for your marketing team, or a tool that helped you draft emails faster. Those tools delivered real value, and they still do. But something meaningfully different is happening in 2026, and most business owners are not paying close enough attention to it.</p>
 
 <p>Agentic AI has arrived. Not as a concept, not as a beta product reserved for enterprise technology teams, but as a commercially deployed capability that businesses across every sector are already using to automate complete workflows without human involvement at every step. The businesses that understand what this shift actually means, and move early to take advantage of it, will have a structural advantage over their competitors that will be very difficult to close.</p>
 
-<h2>What "Agentic" Actually Means</h2>
+<h2 id="what-agentic-actually-means">What "Agentic" Actually Means</h2>
 
 <p>The term gets used loosely, so it is worth being precise. An AI agent is not simply a tool that responds to prompts. It is a system capable of pursuing multi-step goals autonomously, making decisions along the way, using external tools and data sources, and completing complex tasks from start to finish without a human orchestrating each individual action.</p>
 
@@ -512,7 +552,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 <p>In practice this looks like: an agent that monitors your inbox, identifies client requests, pulls the relevant account information from your CRM, drafts a response, flags anything requiring judgment, and routes completed tasks for review. All of that happens without anyone touching it. Or an agent that monitors inventory data, identifies when reorder thresholds are approaching, generates purchase orders, and submits them to your vendors. Or one that tracks your ad performance across platforms, generates a weekly summary with recommendations, and queues up the next iteration of creative for approval.</p>
 
-<h2>The Numbers Are Real</h2>
+<h2 id="the-numbers-are-real">The Numbers Are Real</h2>
 
 <p>The performance data coming out of early 2026 deployments is not marginal. Organizations deploying agentic systems are averaging 171% ROI, with U.S. companies reporting even higher returns at an average of 192%. That is not a rounding error. It represents a step-change improvement over what traditional automation has delivered.</p>
 
@@ -520,7 +560,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 <p>These numbers matter not because you should care about market sizing, but because they tell you that the competitive landscape is shifting fast. The business sitting across from you in your industry may already be running operations that would have required two additional employees a year ago.</p>
 
-<h2>Where the Real ROI Is Coming From</h2>
+<h2 id="where-the-real-roi-is-coming-from">Where the Real ROI Is Coming From</h2>
 
 <p>The highest-return use cases in 2026 are clustering in four areas: customer service and communication handling, financial process automation, research and competitive intelligence, and internal workflow coordination. Each of these is worth examining on its own terms.</p>
 
@@ -532,7 +572,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 <p><strong>Internal workflow coordination.</strong> Scheduling, task routing, project status tracking, onboarding sequences, and recurring operational checklists are all areas where agents eliminate the coordination overhead that quietly consumes enormous amounts of management time. The question is never whether these things need to happen. It is whether a human needs to be the one making sure they happen at each step.</p>
 
-<h2>The Mistake Most Business Owners Will Make</h2>
+<h2 id="the-mistake-most-business-owners-will-make">The Mistake Most Business Owners Will Make</h2>
 
 <p>I am going to be direct about this because I see it constantly in the businesses we work with. The most common mistake business owners will make with agentic AI is trying to automate chaos. If your processes are unclear, inconsistently followed, or only living inside people's heads, deploying an AI agent on top of them will not fix that. It will accelerate the dysfunction.</p>
 
@@ -542,7 +582,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 <blockquote>"The companies winning with AI agents in 2026 are not the ones with the best technology. They are the ones with the clearest processes." &mdash; Dr. Connor Robertson</blockquote>
 
-<h2>What About the Risk?</h2>
+<h2 id="what-about-the-risk">What About the Risk?</h2>
 
 <p>It would be irresponsible to write about agentic AI without acknowledging the legitimate concerns. Gartner has projected that over 40% of agentic AI projects will be canceled by the end of 2027 due to escalating costs, unclear business value, or inadequate risk controls. That is a meaningful failure rate, and it deserves to be taken seriously.</p>
 
@@ -550,7 +590,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 <p>None of this means you should wait. It means you should build thoughtfully. Start with contained, high-frequency workflows where errors are recoverable and the improvement over the status quo is easy to measure. Expand from there.</p>
 
-<h2>The Competitive Window Is Narrow</h2>
+<h2 id="the-competitive-window-is-narrow">The Competitive Window Is Narrow</h2>
 
 <p>Technology adoption curves in business are not linear. There is typically a window during which early adopters gain a genuine structural advantage before the technology becomes table stakes and everyone has it. We are in that window right now for agentic AI.</p>
 
@@ -558,7 +598,7 @@ img{max-width:60%;page-break-inside:avoid}
 
 <p>That compounding advantage is what makes this moment feel different from prior technology transitions. The gap between businesses that move now and businesses that wait another 12 to 18 months will be harder to close than most owners currently appreciate.</p>
 
-<h2>How to Get Started</h2>
+<h2 id="how-to-get-started">How to Get Started</h2>
 
 <p>If you are serious about getting agentic AI into your business operations this year, here is the practical starting point. Identify your three highest-frequency, most clearly defined workflows. These are the processes your team runs every week, the ones that follow a predictable pattern and where the steps are well understood even if not formally documented. Pick the one where a failure would be most recoverable and the time savings would be most immediate. Map that process in writing. Then bring in the right technical resources to implement it.</p>
 
@@ -572,6 +612,16 @@ img{max-width:60%;page-break-inside:avoid}
 <a href="/contact/" class="btn btn-primary" style="margin-top:8px">Book a Strategy Call</a>
 </div>
 </article>
+
+<div class="share-row">
+<span class="share-label">Share</span>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://elixirconsultinggroup.com/blog/agentic-ai-business-operations-2026/" target="_blank" rel="noopener" aria-label="Share on LinkedIn">LinkedIn</a>
+<a href="https://x.com/intent/tweet?url=https://elixirconsultinggroup.com/blog/agentic-ai-business-operations-2026/&amp;text=Agentic AI Is Here: What It Means for Your Business in 2026" target="_blank" rel="noopener" aria-label="Share on X">X</a>
+<a href="mailto:?subject=Agentic AI Is Here: What It Means for Your Business in 2026&amp;body=https://elixirconsultinggroup.com/blog/agentic-ai-business-operations-2026/" aria-label="Share by email">Email</a>
+<button type="button" class="copy-link" data-url="https://elixirconsultinggroup.com/blog/agentic-ai-business-operations-2026/">Copy link</button>
+</div>
+
+<nav class="prev-next" aria-label="More articles"><a class="pn-link" href="/blog/pittsburgh-nfl-draft-2026-business-impact/"><span>&larr; Previous</span><strong>Pittsburgh's NFL Draft Moment: What $150 Million in Economic...</strong></a><a class="pn-link pn-next" href="/blog/revenue-operations-framework-small-business-2026/"><span>Next &rarr;</span><strong>The RevOps Revolution: How Small Businesses Are Building Revenue...</strong></a></nav>
 
 <div class="author-box">
 <img src="/images/dr-connor-robertson.jpg" alt="Dr. Connor Robertson, Founder and Lead Consultant at Elixir Consulting Group" width="192" height="192" loading="lazy" decoding="async">
@@ -618,27 +668,27 @@ img{max-width:60%;page-break-inside:avoid}
 </div>
 <div class="post-list">
 <article class="post-card" data-cat="AI &amp; Technology" data-search="how ai consulting is helping pittsburgh businesses grow 3x faster the ai revolution is here, and pittsburgh is leading the charge artificial intelligence is no longer a futuristic concept reserved […] ai &amp; technology">
-<a href="/blog/how-ai-consulting-is-helping-pittsburgh-businesses-grow-3x-faster/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="How AI Consulting Is Helping Pittsburgh Businesses Grow 3x Faster - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-ai-consulting-is-helping-pittsburgh-businesses-grow-3x-faster/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="How AI Consulting Is Helping Pittsburgh Businesses Grow 3x Faster - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/how-ai-consulting-is-helping-pittsburgh-businesses-grow-3x-faster/">How AI Consulting Is Helping Pittsburgh Businesses Grow 3x Faster</a></h3>
 <p>The AI Revolution Is Here, and Pittsburgh Is Leading the Charge Artificial intelligence is no longer a futuristic concept reserved […]</p>
 <p class="pc-meta"><time datetime="2026-04-19">April 19, 2026</time> <span aria-hidden="true">&middot;</span> 4 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="digital transformation for traditional businesses: a practical guide why digital transformation matters for traditional businesses digital transformation has become one of the most talked-about concepts in business, but […] ai &amp; technology">
-<a href="/blog/digital-transformation-for-traditional-businesses-a-practical-guide/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="Digital Transformation for Traditional Businesses: A Practical Guide - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/digital-transformation-for-traditional-businesses-a-practical-guide/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="Digital Transformation for Traditional Businesses: A Practical Guide - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/digital-transformation-for-traditional-businesses-a-practical-guide/">Digital Transformation for Traditional Businesses: A Practical Guide</a></h3>
 <p>Why Digital Transformation Matters for Traditional Businesses Digital transformation has become one of the most talked-about concepts in business, but […]</p>
 <p class="pc-meta"><time datetime="2026-04-19">April 19, 2026</time> <span aria-hidden="true">&middot;</span> 5 min read</p>
 </div>
 </article>
 <article class="post-card" data-cat="AI &amp; Technology" data-search="how ai is transforming small business operations in 2026 ai is no longer just for enterprise companies. in 2026, small businesses are leveraging artificial intelligence to automate workflows, improve... ai &amp; technology">
-<a href="/blog/how-ai-is-transforming-small-business-operations-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="How AI Is Transforming Small Business Operations in 2026 - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<a href="/blog/how-ai-is-transforming-small-business-operations-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="How AI Is Transforming Small Business Operations in 2026 - Elixir Consulting Group" width="800" height="450" srcset="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=400 400w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=800 800w, https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&amp;w=1200 1200w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 360px" loading="lazy" decoding="async"></a>
 <div class="pc-body">
-<p class="pc-cat">AI & Technology</p>
+<p class="pc-cat">AI &amp; Technology</p>
 <h3><a href="/blog/how-ai-is-transforming-small-business-operations-2026/">How AI Is Transforming Small Business Operations in 2026</a></h3>
 <p>AI is no longer just for enterprise companies. In 2026, small businesses are leveraging artificial intelligence to automate workflows, improve...</p>
 <p class="pc-meta"><time datetime="2026-04-15">April 15, 2026</time> <span aria-hidden="true">&middot;</span> 1 min read</p>
@@ -750,6 +800,13 @@ q.setAttribute('aria-expanded','false');
 function tog(){var open=!item.classList.contains('active');item.classList.toggle('active',open);q.setAttribute('aria-expanded',open?'true':'false')}
 q.addEventListener('click',tog);
 q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}});
+});
+document.querySelectorAll('.copy-link').forEach(function(btn){
+btn.addEventListener('click',function(){
+var url=btn.getAttribute('data-url'),done=function(){var t=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=t},1600)};
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done).catch(function(){prompt('Copy this link:',url)})}
+else{prompt('Copy this link:',url)}
+});
 });
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){const img=entry.target;img.src=img.dataset.src;img.classList.add('loaded');observer.unobserve(img)}});});document.querySelectorAll('img[data-src]').forEach(img=>observer.observe(img))}else{document.querySelectorAll('img[data-src]').forEach(function(img){img.src=img.dataset.src})}
 </script>
