@@ -181,8 +181,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 
 /* Trust bar */
 .trust-bar{{background:{COLORS['off_white']};border-top:1px solid {COLORS['border']};border-bottom:1px solid {COLORS['border']};padding:22px 0}}
-.trust-row{{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 36px;text-align:center}}
-.trust-item{{display:flex;align-items:center;gap:9px;font-size:.92rem;font-weight:600;color:{COLORS['navy']}}}
+.trust-row{{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px 28px;text-align:center}}
+.trust-item{{display:flex;align-items:center;gap:8px;font-size:.88rem;font-weight:600;color:{COLORS['navy']};white-space:nowrap}}
+@media(max-width:1180px){{.trust-item{{font-size:.83rem}}.trust-row{{gap:10px 20px}}}}
 .trust-item span{{color:{COLORS['gold']};font-size:1.05rem;line-height:1}}
 
 /* Article typography (blog) */
@@ -348,6 +349,9 @@ main[style]{{margin-top:64px!important}}
 .footer li{{margin-bottom:0}}
 .footer li a{{display:inline-block;min-height:44px;padding:11px 0;line-height:1.45}}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{{display:inline-flex;align-items:center;min-height:44px}}
+/* Standalone links sitting inside cards and stat blocks are tap targets too.
+   Links inline within a sentence stay as-is; WCAG exempts those. */
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a{{display:inline-flex;align-items:center;min-height:44px}}
 .breadcrumb a{{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}}
 .services-link{{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}}
 .faq-q{{min-height:56px;padding:18px 20px}}
@@ -402,13 +406,31 @@ h1{{font-size:1.7rem}}
 *,*::before,*::after{{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 .card:hover,.post-card:hover,.btn:hover{{transform:none}}
 }}
+@media print{{
+.header,.topbar,.nav-backdrop,.cta-banner,.cta-section,.related-posts,.trust-bar,.skip-link,.blog-toolbar,.load-more-wrap,.footer form,button{{display:none!important}}
+.site-main{{margin-top:0}}
+body{{color:#000;background:#fff;font-size:11pt;line-height:1.45}}
+h1,h2,h3,h4{{color:#000;page-break-after:avoid}}
+.page-hero,.hero,.section-navy{{background:none!important;color:#000!important;padding:0 0 12pt}}
+.page-hero h1,.page-hero p,.hero h1,.hero p,.section-navy h2,.section-navy p{{color:#000!important}}
+.section,.section-sm{{padding:12pt 0}}
+.card,.industry-card,.post-card{{box-shadow:none;border:1px solid #ccc;page-break-inside:avoid}}
+.article-body{{max-width:none;font-size:11pt}}
+a[href^="/"]::after{{content:" (elixirconsultinggroup.com" attr(href) ")";font-size:9pt;color:#444}}
+a[href^="http"]::after{{content:" (" attr(href) ")";font-size:9pt;color:#444}}
+.footer{{background:none;color:#000;border-top:1px solid #ccc}}
+.footer a,.footer h4{{color:#000}}
+.faq-item .faq-a{{max-height:none!important;padding:0 0 8pt!important;overflow:visible}}
+.faq-q::after{{display:none}}
+img{{max-width:60%;page-break-inside:avoid}}
+}}
 """
 
 NAV_ITEMS = [
-    ("Home", "/"),
     ("About", "/about/"),
     ("Services", "/services/"),
     ("Industries", "/industries/"),
+    ("Process", "/process/"),
     ("Case Studies", "/case-studies/"),
     ("Blog", "/blog/"),
     ("FAQ", "/faq/"),
@@ -871,49 +893,286 @@ BLOG_POSTS = [
 # ─── Case Studies ───────────────────────────────────────────────────────
 CASE_STUDIES = [
     {
+        "slug": "manufacturing-delivery-delays",
         "title": "Manufacturing Firm Reduces Delivery Delays by 40%",
         "industry": "Manufacturing",
+        "profile": "45 employees | $12M revenue | Western Pennsylvania",
+        "duration": "5-month engagement",
+        "services": [("Operations Consulting", "/services/operations/"), ("Leadership Consulting", "/services/leadership/")],
         "challenge": "A 45-person manufacturing company was experiencing chronic delivery delays, inconsistent quality, and growing client complaints. The owner was personally managing every production issue.",
         "solution": "We mapped the entire production workflow, identified three major bottleneck points, and installed a weekly production cadence with clear accountability. SOPs were built for quality checkpoints, and a simple dashboard gave leadership real-time visibility into order status.",
-        "results": ["40% reduction in delivery delays within 90 days", "Client complaints dropped by 60%", "Owner reclaimed 12 hours per week", "Team adopted weekly scorecards for ongoing accountability"]
+        "results": ["40% reduction in delivery delays within 90 days", "Client complaints dropped by 60%", "Owner reclaimed 12 hours per week", "Team adopted weekly scorecards for ongoing accountability"],
+        "metrics": [("40%", "Fewer delivery delays"), ("60%", "Drop in complaints"), ("12 hrs", "Owner time reclaimed weekly")],
+        "quote": "We thought we had a people problem. It turned out we had a handoff problem, and nobody could see it because nobody had ever drawn the process on a wall.",
+        "quote_role": "Owner, Manufacturing Client",
+        "situation": """<p>The company had grown from 18 to 45 employees in four years without changing how work moved through the shop. Every order still passed through the owner at least twice, once for scheduling and once when something went wrong. By the time we were brought in, "something went wrong" was the normal case rather than the exception.</p>
+<p>Delivery dates were being quoted from memory. Production scheduling lived in a spreadsheet that one person maintained and nobody else fully understood. Quality issues were caught at final inspection, which meant rework happened at the most expensive possible moment. Client complaints had roughly doubled year over year, and two long-standing accounts had put the company on notice.</p>
+<p>What made this hard to diagnose from the inside is that no individual step was broken. Every department could point to work leaving their area on time. The delay was accumulating in the gaps between departments, where nobody owned the handoff and nobody was measuring it.</p>""",
+        "approach": """<h3>Mapping what actually happened</h3>
+<p>We started by walking a real order through the building end to end, timestamping every stage, including the waiting. That exercise produced a process map that contradicted the one leadership believed was true. Three bottlenecks accounted for most of the accumulated delay: an undocumented approval step before cutting, a materials staging area with no ownership, and a final inspection queue that had no prioritization logic.</p>
+<h3>Installing the cadence</h3>
+<p>We built a daily 15-minute production huddle around a visible board showing every active order and its stage. The rule was simple: any order that had not moved in 24 hours got named out loud, with a person and a date attached. Weekly, the leadership team reviewed the same board at a higher altitude and looked at trends rather than individual orders.</p>
+<h3>Writing SOPs people would use</h3>
+<p>Quality checkpoints were moved upstream and documented as one-page checklists at the station where the work happened, not in a binder in the office. Each checklist named the person accountable and the specific condition that had to be true before the work moved on.</p>
+<h3>Making status visible without asking</h3>
+<p>A simple dashboard, built on tools the company already owned, gave leadership real-time order status. The point was not sophisticated analytics. The point was that the owner stopped being the routing mechanism for information.</p>""",
+        "outcome": """<p>Within 90 days, delivery delays were down 40% and client complaints had dropped roughly 60%. The two at-risk accounts stayed. The owner's own estimate was that he recovered about 12 hours a week, which he redirected into business development for the first time in three years.</p>
+<p>The change that mattered most was not any single fix. It was that problems started surfacing in the daily huddle while they were still small, rather than surfacing at final inspection when they were expensive. Eighteen months later the company was still running the same board.</p>""",
     },
     {
+        "slug": "professional-services-close-rate",
         "title": "Professional Services Firm Doubles Close Rate",
         "industry": "Professional Services",
+        "profile": "22 employees | $4.5M revenue | Multi-state",
+        "duration": "4-month engagement",
+        "services": [("Sales Strategy", "/services/sales-strategy/"), ("Operations Consulting", "/services/operations/")],
         "challenge": "A growing consulting firm had strong inbound interest but was closing less than 20% of qualified leads. Follow-up was inconsistent, proposals took too long, and there was no structured sales process.",
         "solution": "We built a five-stage sales pipeline with clear criteria for each stage, standardized proposal templates, and installed a weekly pipeline review cadence. CRM was cleaned up and configured to support the new process.",
-        "results": ["Close rate improved from 18% to 38%", "Average proposal turnaround reduced from 5 days to 1 day", "Pipeline visibility enabled better revenue forecasting", "Sales team adopted the process with minimal resistance"]
+        "results": ["Close rate improved from 18% to 38%", "Average proposal turnaround reduced from 5 days to 1 day", "Pipeline visibility enabled better revenue forecasting", "Sales team adopted the process with minimal resistance"],
+        "metrics": [("18% to 38%", "Close rate"), ("5 days to 1", "Proposal turnaround"), ("100%", "Pipeline visibility")],
+        "quote": "We were not losing deals to competitors. We were losing them to the twelve days it took us to send a proposal.",
+        "quote_role": "Managing Partner, Professional Services Client",
+        "situation": """<p>This firm had the problem most owners would say they want: more qualified inbound than they could handle. The trouble was that interest was not converting. Roughly one in five qualified conversations turned into signed work, and nobody could explain why the other four went quiet.</p>
+<p>The diagnosis owners usually reach for here is that they need better leads or a better closer. Neither was true. The firm's win rate on deals that reached a proposal was actually strong. The losses were happening earlier and quieter, in the space between an interested conversation and a document arriving in someone's inbox.</p>
+<p>Follow-up depended entirely on who owned the relationship and how busy that person was that week. Proposals were written from scratch every time, which meant a five-day average turnaround and occasionally twelve. By then, the urgency that generated the inquiry had evaporated.</p>""",
+        "approach": """<h3>Defining what a stage actually means</h3>
+<p>We built a five-stage pipeline where advancement required a specific, observable condition rather than a feeling. A deal did not move to "Proposal" because it felt promising. It moved because a decision-maker had confirmed budget authority and a timeline. This single change removed most of the optimism from the forecast.</p>
+<h3>Killing the blank page</h3>
+<p>We built modular proposal templates covering the firm's five most common engagement types, with the pricing logic already embedded. Writing a proposal became assembling one. Turnaround dropped to a single day, and the quality became more consistent than when every partner wrote from scratch.</p>
+<h3>Follow-up as a system, not a personality trait</h3>
+<p>Every stage got a defined follow-up standard with a maximum elapsed time and an owner. The CRM was reconfigured to surface anything past that threshold. Nobody had to remember; the system remembered.</p>
+<h3>A weekly review with teeth</h3>
+<p>The pipeline review moved from an ad hoc conversation to a standing 45-minute meeting with a fixed agenda: what moved, what did not, and what specifically happens next on every stalled deal.</p>""",
+        "outcome": """<p>Close rate moved from 18% to 38% over the engagement. Proposal turnaround went from a five-day average to one day. Because stage criteria were now observable, the firm could forecast revenue with enough confidence to make hiring decisions ahead of demand rather than after it.</p>
+<p>The team's adoption was faster than expected, largely because the new process removed work rather than adding it. Partners were no longer writing proposals from scratch or trying to remember who they owed a follow-up.</p>""",
     },
     {
+        "slug": "construction-operating-cadence",
         "title": "Construction Company Installs Operating Cadence",
         "industry": "Construction",
+        "profile": "60 employees | $8M revenue | Regional",
+        "duration": "6-month engagement",
+        "services": [("Leadership Consulting", "/services/leadership/"), ("Operations Consulting", "/services/operations/")],
         "challenge": "A regional construction company with $8M in revenue was growing fast but struggling with project coordination, subcontractor management, and internal communication. The leadership team spent most of their time in reactive mode.",
         "solution": "We installed a leadership cadence with weekly strategic meetings, daily huddles for project managers, and a scorecard system that tracked key metrics across all active projects. Role clarity was established for project handoffs.",
-        "results": ["Leadership meetings went from reactive to strategic", "Project handoff errors reduced by 70%", "Subcontractor coordination improved significantly", "Owner was able to focus on business development instead of operations"]
+        "results": ["Leadership meetings went from reactive to strategic", "Project handoff errors reduced by 70%", "Subcontractor coordination improved significantly", "Owner was able to focus on business development instead of operations"],
+        "metrics": [("70%", "Fewer handoff errors"), ("100%", "Projects on one scorecard"), ("6 mo", "To full adoption")],
+        "quote": "Our leadership meetings used to be three hours of updates nobody acted on. Now they are forty minutes and we leave with decisions.",
+        "quote_role": "President, Construction Client",
+        "situation": """<p>Growth had outrun coordination. The company was running more concurrent projects than at any point in its history, and the informal communication that worked at half the size had stopped working entirely. Project managers were solving the same problems in parallel without knowing it.</p>
+<p>Leadership meetings had become status recitations. Each person reported what happened, nobody made decisions, and the meeting ran three hours because there was no mechanism to end a topic. The genuinely urgent items were being handled in hallway conversations afterward, which meant they were invisible to everyone not in the hallway.</p>
+<p>Handoffs between estimating, project management, and field crews were where most of the cost leaked. Assumptions made during estimating were not reliably transmitted, so field crews discovered scope surprises at the worst possible time.</p>""",
+        "approach": """<h3>Two cadences, two altitudes</h3>
+<p>Project managers got a daily 15-minute huddle focused strictly on blockers and the next 24 hours. Leadership got a weekly meeting with a fixed agenda built around a scorecard, where the only items discussed were metrics off target and decisions requiring the group. Everything else moved to written updates.</p>
+<h3>One scorecard for every project</h3>
+<p>We built a single scorecard covering all active projects with a consistent set of measures: schedule variance, budget variance, open RFIs, and safety incidents. Consistency mattered more than sophistication. When every project reports the same numbers the same way, outliers announce themselves.</p>
+<h3>Making the handoff a real event</h3>
+<p>The estimating-to-field handoff was redesigned as a documented meeting with a checklist of assumptions, exclusions, and known risks. It added roughly 40 minutes per project and removed the category of surprise that had been the most expensive.</p>
+<h3>Naming who owns what</h3>
+<p>We wrote a one-page accountability chart for each seat, defining what that role owns, what it is measured on, and what it decides without escalating. Most disputes turned out to be about ownership rather than competence.</p>""",
+        "outcome": """<p>Handoff errors fell roughly 70%. Leadership meetings shortened to 40 minutes and produced decisions rather than updates. Subcontractor coordination improved because project managers were working from a shared picture instead of individual ones.</p>
+<p>The owner's time shifted measurably toward business development. That was the outcome he had wanted for years and had not been able to reach, because the business had no mechanism to run without him inside it every day.</p>""",
     },
     {
+        "slug": "healthcare-patient-operations",
         "title": "Healthcare Practice Streamlines Patient Operations",
         "industry": "Healthcare",
+        "profile": "4 locations | 70 staff | Regional practice",
+        "duration": "6-month engagement",
+        "services": [("Operations Consulting", "/services/operations/"), ("Leadership Consulting", "/services/leadership/")],
         "challenge": "A multi-location healthcare practice was struggling with inconsistent patient experiences across locations, high staff turnover, and operational complexity that was growing faster than revenue.",
         "solution": "We standardized patient intake and communication workflows across all locations, built onboarding systems for new staff, and created a centralized reporting dashboard. Leadership meetings were restructured around metrics instead of anecdotes.",
-        "results": ["Patient satisfaction scores improved by 35%", "New staff onboarding time reduced by 50%", "Operations became consistent across all locations", "Revenue per location increased through better retention"]
+        "results": ["Patient satisfaction scores improved by 35%", "New staff onboarding time reduced by 50%", "Operations became consistent across all locations", "Revenue per location increased through better retention"],
+        "metrics": [("35%", "Higher patient satisfaction"), ("50%", "Faster onboarding"), ("4", "Locations aligned")],
+        "quote": "Each office had quietly invented its own version of the practice. Patients could feel the difference even when we could not.",
+        "quote_role": "Practice Administrator, Healthcare Client",
+        "situation": """<p>Four locations had been added over six years, each largely inheriting the habits of whoever opened it. There was no single documented way to intake a patient, confirm an appointment, or handle a callback. Each office had drifted into its own version, and the differences had compounded quietly.</p>
+<p>Patients noticed. Satisfaction scores varied by more than 20 points between the highest and lowest location, and the practice had no way to explain the gap because it had no way to compare the underlying process.</p>
+<p>Staff turnover made it worse. New hires were trained by shadowing whoever was available, which propagated whatever local variant that person happened to use. Onboarding took roughly eight weeks to full productivity, and every departure reset the clock.</p>""",
+        "approach": """<h3>Finding the best existing version</h3>
+<p>Rather than designing an ideal workflow in a conference room, we documented how each location actually handled intake, scheduling, and follow-up, then assembled a standard from the best-performing pieces. Staff were far more willing to adopt a process that visibly came from their own colleagues.</p>
+<h3>Onboarding that does not depend on who is free</h3>
+<p>We built a structured 30-day onboarding path with defined milestones, a named owner for each week, and simple competency checks. New staff stopped learning by osmosis.</p>
+<h3>One set of numbers</h3>
+<p>A centralized dashboard reported the same measures for every location: appointment adherence, callback response time, patient satisfaction, and staffing levels. For the first time, the leadership team could see whether a location was struggling or simply different.</p>
+<h3>Meetings about metrics, not anecdotes</h3>
+<p>Leadership meetings were rebuilt around the dashboard. The shift from "here is a story about a difficult morning" to "this measure moved and here is why" changed what the group spent its attention on.</p>""",
+        "outcome": """<p>Patient satisfaction improved roughly 35% overall, driven mostly by the lower-performing locations converging on the standard. Onboarding time to full productivity dropped by about half. Revenue per location rose, primarily through better patient retention rather than new acquisition.</p>
+<p>The durable result was comparability. Once every location ran the same process and reported the same measures, leadership could tell the difference between a local problem and a systemic one, which is a distinction the practice had never been able to make.</p>""",
     },
 ]
 
 # ─── Industries ─────────────────────────────────────────────────────────
 INDUSTRIES = [
-    ("Professional Services", "Consulting firms, agencies, law offices, and accounting practices that need better client delivery and business development systems."),
-    ("Construction & Trades", "General contractors, specialty trades, and construction companies that need project coordination, estimating systems, and operational structure."),
-    ("Healthcare", "Medical practices, dental offices, therapy clinics, and healthcare organizations that need streamlined patient operations and staff management."),
-    ("Manufacturing", "Production facilities and manufacturers that need process optimization, quality systems, and supply chain coordination."),
-    ("Technology", "Software companies, IT services, and tech startups that need scalable operations and structured growth frameworks."),
-    ("Real Estate", "Brokerages, property managers, and real estate investors that need deal flow systems and operational efficiency."),
-    ("Retail & E-Commerce", "Brick-and-mortar retailers and online sellers that need inventory management, customer experience systems, and growth strategy."),
-    ("Financial Services", "Wealth management firms, insurance agencies, and financial planners that need client management and compliance-friendly operations."),
+    {
+        "slug": "professional-services",
+        "name": "Professional Services",
+        "icon": "&#9881;",
+        "image": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80",
+        "short": "Consulting firms, agencies, law offices, and accounting practices that need better client delivery and business development systems.",
+        "intro": "Professional services firms sell the time and judgment of their people, which makes every operational weakness a margin problem. When delivery depends on who happens to be assigned, quality swings, utilization is hard to plan, and partners end up doing work they should have delegated two levels down.",
+        "challenges": [
+            ("Delivery quality varies by who is staffed", "Without documented delivery standards, every engagement is a fresh improvisation and clients experience a different firm depending on the team."),
+            ("Business development competes with billable work", "Partners who are the best sellers are also the best deliverers, so pipeline dries up whenever the firm gets busy."),
+            ("Utilization is measured after the fact", "Staffing decisions get made reactively, which produces simultaneous burnout and bench time inside the same quarter."),
+            ("Scope creep goes unpriced", "Additional work gets absorbed rather than billed because there is no defined change process."),
+        ],
+        "approach": [
+            ("Productize the delivery", "Define your two or three core engagement types with a documented scope, sequence, and deliverable set so quality does not depend on the assignment."),
+            ("Separate selling from delivering", "Install a business development cadence that survives a busy quarter, with owners and weekly commitments that are not the first thing dropped."),
+            ("Forward-looking staffing", "Build a simple capacity model that looks eight weeks ahead, so hiring and bench decisions are made on data rather than panic."),
+            ("A real change-order process", "Define what counts as out of scope and the exact steps to price it, so the conversation happens before the work does."),
+        ],
+        "outcomes": ["Consistent delivery regardless of team assignment", "Pipeline that does not collapse when the firm gets busy", "Higher realization rates on billed hours", "Partners spending time at the altitude they are paid for"],
+    },
+    {
+        "slug": "construction-trades",
+        "name": "Construction & Trades",
+        "icon": "&#9879;",
+        "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+        "short": "General contractors, specialty trades, and construction companies that need project coordination, estimating systems, and operational structure.",
+        "intro": "Construction businesses lose money in the gaps: between estimating and the field, between the general and the subs, between what was assumed and what was communicated. The work itself is rarely the problem. The coordination around it usually is.",
+        "challenges": [
+            ("Estimating assumptions never reach the field", "Crews discover scope surprises on site, at the point where fixing them is most expensive."),
+            ("Every project reports differently", "Without a common scorecard, leadership cannot tell a struggling job from a normal one until the numbers land."),
+            ("Subcontractor coordination lives in text messages", "Commitments are made individually and tracked nowhere, so accountability evaporates the moment a schedule slips."),
+            ("The owner is the escalation path for everything", "Growth is capped by how many decisions one person can absorb in a day."),
+        ],
+        "approach": [
+            ("Formalize the handoff", "Turn estimating-to-field into a documented meeting with assumptions, exclusions, and known risks written down and acknowledged."),
+            ("One scorecard across all jobs", "Schedule variance, budget variance, open RFIs, and safety on every project, reported identically, so outliers surface themselves."),
+            ("Daily huddle, weekly review", "Fifteen minutes on blockers at the project level; a fixed-agenda leadership meeting on trends and decisions."),
+            ("Written accountability by seat", "Define what each role owns, is measured on, and can decide without escalating."),
+        ],
+        "outcomes": ["Fewer scope surprises discovered on site", "Comparable data across every active job", "Subcontractor commitments that are tracked and enforced", "Owner time redirected from firefighting to backlog"],
+    },
+    {
+        "slug": "healthcare",
+        "name": "Healthcare",
+        "icon": "&#9764;",
+        "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
+        "short": "Medical practices, dental offices, therapy clinics, and healthcare organizations that need streamlined patient operations and staff management.",
+        "intro": "Healthcare practices carry a documentation burden most businesses never face, and then run their actual operations on undocumented habit. Multi-location practices drift especially fast, because each office quietly invents its own version of the practice.",
+        "challenges": [
+            ("Patient experience varies by location", "Intake, scheduling, and follow-up drift apart until patients can feel the difference between offices."),
+            ("Onboarding happens by shadowing", "New staff learn whatever local variant their trainer uses, which propagates inconsistency with every hire."),
+            ("Turnover resets institutional knowledge", "When process lives in people rather than documents, every departure costs more than a salary."),
+            ("Leadership decides from anecdotes", "Without comparable measures across sites, the loudest story wins the agenda."),
+        ],
+        "approach": [
+            ("Standardize from the best existing version", "Document how each location actually works, then build the standard from the highest-performing pieces. Adoption is far easier when the process visibly came from colleagues."),
+            ("Structured 30-day onboarding", "Defined milestones, a named owner per week, and simple competency checks, so productivity does not depend on who was free that day."),
+            ("One dashboard, every site", "Appointment adherence, callback response time, satisfaction, and staffing reported identically across locations."),
+            ("Metric-led leadership meetings", "Replace status stories with a standing review of the measures that move."),
+        ],
+        "outcomes": ["Consistent patient experience across every location", "Onboarding time to productivity cut substantially", "Comparable data that separates local problems from systemic ones", "Better retention driving revenue per location"],
+    },
+    {
+        "slug": "manufacturing",
+        "name": "Manufacturing",
+        "icon": "&#9878;",
+        "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
+        "short": "Production facilities and manufacturers that need process optimization, quality systems, and supply chain coordination.",
+        "intro": "Manufacturers usually have more data than most businesses and less visibility. The numbers exist in the ERP; what is missing is the cadence that turns them into decisions before a problem reaches final inspection.",
+        "challenges": [
+            ("Delay accumulates between departments", "Every area reports finishing on time while orders still ship late, because nobody owns the gaps."),
+            ("Quality is caught at the end", "Final inspection is the most expensive possible place to discover a defect."),
+            ("Scheduling lives in one person's head", "A single spreadsheet and a single expert is a continuity risk, not a system."),
+            ("Owner as routing mechanism", "When status flows through one person, that person becomes the constraint on throughput."),
+        ],
+        "approach": [
+            ("Walk a real order end to end", "Timestamp every stage including the waiting. The resulting map almost always contradicts the one leadership believes."),
+            ("Move quality checks upstream", "One-page checklists at the station where the work happens, with a named owner and a specific pass condition."),
+            ("Daily production huddle", "A visible board of active orders; anything that has not moved in 24 hours gets a person and a date attached out loud."),
+            ("Status without asking", "A simple dashboard on tools you already own, so information stops being routed through the owner."),
+        ],
+        "outcomes": ["Measurable reduction in delivery delays", "Defects caught upstream where rework is cheap", "Scheduling knowledge documented rather than personal", "Leadership seeing problems while they are still small"],
+    },
+    {
+        "slug": "technology",
+        "name": "Technology",
+        "icon": "&#128187;",
+        "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80",
+        "short": "Software companies, IT services, and tech startups that need scalable operations and structured growth frameworks.",
+        "intro": "Technology companies are usually excellent at building product and improvised everywhere else. The engineering org has rituals, retrospectives, and metrics; sales, onboarding, and support often have none of it, and that asymmetry is what stalls growth after product-market fit.",
+        "challenges": [
+            ("Go-to-market has no operating rhythm", "Engineering runs on cadence while revenue functions run on individual heroics."),
+            ("Customer onboarding is bespoke every time", "Time-to-value varies wildly, which shows up later as churn nobody can attribute."),
+            ("Support absorbs product debt silently", "Recurring issues get handled ticket by ticket instead of aggregated into a product signal."),
+            ("Hiring outpaces the operating model", "Headcount grows faster than the documentation and ownership needed to absorb it."),
+        ],
+        "approach": [
+            ("Extend cadence past engineering", "Weekly pipeline and retention reviews with the same discipline the product org already applies to itself."),
+            ("Standardize time-to-value", "Define the onboarding path, its milestones, and the measure that tells you a customer is actually live."),
+            ("Close the support-to-product loop", "Aggregate ticket themes into a standing review so recurring pain becomes roadmap input."),
+            ("Documented ownership before the next hire", "Write the accountability chart ahead of headcount, not after the confusion."),
+        ],
+        "outcomes": ["Revenue functions running on rhythm, not heroics", "Predictable time-to-value and lower early churn", "Support volume feeding the roadmap", "Onboarding that scales with headcount"],
+    },
+    {
+        "slug": "real-estate",
+        "name": "Real Estate",
+        "icon": "&#127968;",
+        "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
+        "short": "Brokerages, property managers, and real estate investors that need deal flow systems and operational efficiency.",
+        "intro": "Real estate businesses run on deal flow and follow-up, and both degrade quietly. The pipeline looks healthy right up until the month it does not, because nothing in the process forces an honest look at what is actually progressing.",
+        "challenges": [
+            ("Deal flow depends on individual relationships", "When sourcing lives entirely with one or two people, the business inherits their bandwidth as a ceiling."),
+            ("Follow-up is inconsistent by nature of the work", "Long cycles and constant interruption make it easy for a warm lead to go cold unnoticed."),
+            ("Property operations vary by manager", "Tenant experience, maintenance response, and reporting drift apart across a portfolio."),
+            ("Reporting is assembled, not produced", "Investor and owner reporting eats days each month because the underlying data is scattered."),
+        ],
+        "approach": [
+            ("Systematize sourcing", "Define the channels, the weekly activity targets, and the owner for each, so deal flow is a process rather than a personality."),
+            ("Follow-up standards with a clock", "Every stage gets a maximum elapsed time and an owner; the CRM surfaces anything past it."),
+            ("A property operations standard", "One documented approach to maintenance intake, tenant communication, and turnover across the portfolio."),
+            ("Reporting that assembles itself", "Standardize the inputs so the monthly package is generated rather than reconstructed."),
+        ],
+        "outcomes": ["Deal flow that does not depend on one person's calendar", "Fewer warm leads lost to silence", "Consistent tenant and owner experience across properties", "Monthly reporting in hours instead of days"],
+    },
+    {
+        "slug": "retail-ecommerce",
+        "name": "Retail & E-Commerce",
+        "icon": "&#128722;",
+        "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
+        "short": "Brick-and-mortar retailers and online sellers that need inventory management, customer experience systems, and growth strategy.",
+        "intro": "Retail and e-commerce businesses live and die on working capital and repeat purchase, and both are downstream of operational discipline. Most owners we meet are optimizing ad spend while inventory decisions quietly consume the margin those ads generated.",
+        "challenges": [
+            ("Inventory decisions are made on instinct", "Overstock ties up cash while stockouts hand revenue to a competitor, often in the same month."),
+            ("Customer experience is inconsistent across channels", "In-store, online, and support each behave differently, which erodes the repeat purchase rate."),
+            ("Acquisition cost is tracked, retention is not", "Marketing gets scrutinized weekly while the far cheaper lever goes unmeasured."),
+            ("Peak season exposes every weak process", "The systems that hold at normal volume fail exactly when the stakes are highest."),
+        ],
+        "approach": [
+            ("Inventory on a reorder discipline", "Defined reorder points, lead-time assumptions, and a weekly review, so purchasing stops being a gut call."),
+            ("One customer standard across channels", "Document the experience you intend, then make each channel meet it."),
+            ("Measure retention explicitly", "Repeat rate, time between purchases, and cohort value alongside acquisition cost."),
+            ("Rehearse peak before it arrives", "Stress the process at planned volume and fix what breaks while it is cheap to fix."),
+        ],
+        "outcomes": ["Working capital freed from the wrong inventory", "A consistent experience that supports repeat purchase", "Retention treated as a managed metric", "Peak season that runs on process rather than adrenaline"],
+    },
+    {
+        "slug": "financial-services",
+        "name": "Financial Services",
+        "icon": "&#128176;",
+        "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
+        "short": "Wealth management firms, insurance agencies, and financial planners that need client management and compliance-friendly operations.",
+        "intro": "Financial services firms operate under real compliance constraints, and those constraints are usually blamed for operational drag that has a different cause. Documented process is not in tension with compliance; it is the thing that makes compliance survivable.",
+        "challenges": [
+            ("Client service depends on the advisor", "Service levels vary across the book, and the firm has no way to see it until a client leaves."),
+            ("Compliance work is reactive", "Documentation gets assembled under audit pressure rather than produced as a byproduct of normal work."),
+            ("Onboarding a new client takes too long", "Paperwork-heavy processes with no defined sequence stretch time-to-funded."),
+            ("Succession risk sits unaddressed", "Relationships live with individuals, which caps enterprise value and creates continuity exposure."),
+        ],
+        "approach": [
+            ("Define the service model by segment", "Document what each client tier receives and when, so service is a standard rather than a habit."),
+            ("Compliance as a byproduct", "Design workflows so the documentation an audit requires is produced during normal work, not reconstructed after."),
+            ("A defined onboarding sequence", "Named steps, owners, and elapsed-time targets from signed to funded."),
+            ("Institutionalize the relationship", "Move client knowledge into shared systems so the firm, not the individual, owns the relationship."),
+        ],
+        "outcomes": ["Consistent service across the entire book", "Audit readiness without a fire drill", "Faster time from signed to funded", "Reduced key-person risk and higher enterprise value"],
+    },
 ]
-
-INDUSTRY_ICONS = ["&#9881;", "&#9879;", "&#9764;", "&#9878;", "&#128187;", "&#127968;", "&#128722;", "&#128176;"]
-
 
 # ─── Service Page FAQs ──────────────────────────────────────────────────
 SERVICE_FAQS = {
@@ -967,6 +1226,7 @@ def make_header(active_path="/"):
 <div class="topbar-inner">
 <span class="topbar-note">Pittsburgh, PA &middot; Serving business owners nationwide</span>
 <span class="topbar-links">
+<a href="/search/" aria-label="Search the site">&#9906; Search</a>
 <a href="{PHONE_HREF}">&#9742; {PHONE}</a>
 <a href="mailto:{EMAIL}">&#9993; Email Us</a>
 </span>
@@ -992,9 +1252,9 @@ def make_trust_bar():
 <div class="trust-row">
 <span class="trust-item"><span>&#9733;</span> 150+ businesses served</span>
 <span class="trust-item"><span>&#10003;</span> 92% client retention</span>
-<span class="trust-item"><span>&#9873;</span> Founded by Dr. Connor Robertson</span>
-<span class="trust-item"><span>&#9781;</span> Implementation, not just advice</span>
-<span class="trust-item"><span>&#9992;</span> Pittsburgh based, nationwide reach</span>
+<span class="trust-item"><span>&#9873;</span> Led by Dr. Connor Robertson</span>
+<span class="trust-item"><span>&#9781;</span> Implementation, not advice</span>
+<span class="trust-item"><span>&#9992;</span> Pittsburgh based, nationwide</span>
 </div>
 </div>
 </div>"""
@@ -1151,8 +1411,11 @@ def make_footer():
 <li><a href="/industries/">Industries</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
 <li><a href="/blog/">Blog</a></li>
+<li><a href="/blog/author/dr-connor-robertson/">Articles by Dr. Robertson</a></li>
+<li><a href="/process/">How We Work</a></li>
 <li><a href="/faq/">FAQ</a></li>
 <li><a href="/testimonials/">Testimonials</a></li>
+<li><a href="/search/">Search</a></li>
 </ul>
 </div>
 <div>
@@ -1253,12 +1516,24 @@ def esc_text(s):
     return str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
+def og_image_for(path):
+    """Use a page's own Open Graph card when make_og_images.py has produced one.
+
+    Falls back to the site-wide card, so adding a page never yields a broken
+    social preview and generating a card for it later needs no template change.
+    """
+    slug = path.strip("/").replace("/", "-") or "home"
+    if os.path.isfile(os.path.join(SITE_DIR, "images", "og", f"{slug}.png")):
+        return f"{DOMAIN}/images/og/{slug}.png"
+    return OG_IMAGE
+
+
 def make_page(title, description, path, body, schema="", canonical=None,
               image=None, og_type="website", extra_head="", faq=None,
               published=None, modified=None, crumb_override=None, og_title=None):
     if canonical is None:
         canonical = DOMAIN + path
-    image = image or OG_IMAGE
+    image = image or og_image_for(path)
     description = clip(description, 158)
 
     title_a = esc_attr(og_title or title)
@@ -1289,10 +1564,13 @@ def make_page(title, description, path, body, schema="", canonical=None,
 <meta name="format-detection" content="telephone=yes">
 <link rel="canonical" href="{canonical}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/images/og-image.png">
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Elixir Consulting Group Blog" href="/feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
 <meta property="og:title" content="{title_a}">
 <meta property="og:description" content="{desc_a}">
 <meta property="og:url" content="{canonical}">
@@ -1375,7 +1653,8 @@ def write_page(path, content):
 
 # ─── Page Generators ───────────────────────────────────────────────────
 
-def gen_homepage():
+def gen_homepage(all_posts=None):
+    all_posts = all_posts or []
     testimonials_html = ""
     for t in TESTIMONIALS[:6]:
         testimonials_html += f"""<div class="testimonial-card">
@@ -1384,16 +1663,17 @@ def gen_homepage():
 <p class="role">{t['role']}</p>
 </div>\n"""
 
-    blog_cards = ""
-    for post in BLOG_POSTS[:3]:
-        blog_cards += f"""<div class="card blog-card">
-<div class="blog-img">E</div>
-<div class="blog-content">
-<p class="blog-date">{post['date']}</p>
-<h3><a href="/blog/{post['slug']}/">{post['title']}</a></h3>
-<p>{post['excerpt'][:120]}...</p>
-</div>
-</div>\n"""
+    industry_cards = ""
+    for ind in INDUSTRIES:
+        industry_cards += (
+            f'<div class="card" style="padding:24px">'
+            f'<div class="ind-icon" style="font-size:1.6rem;margin-bottom:8px">{ind["icon"]}</div>'
+            f'<h3 style="font-size:1.05rem"><a href="/industries/{ind["slug"]}/">{ind["name"]}</a></h3>'
+            f'<p style="font-size:.9rem;margin-bottom:0">{clip(ind["short"], 85)}</p></div>\n')
+
+    featured = all_posts[:3]
+    blog_cards = "".join(post_card(p) for p in featured)
+    post_count = len(all_posts)
 
     schema = """<script type="application/ld+json">
 {
@@ -1501,6 +1781,61 @@ def gen_homepage():
 <p>Build the foundation to scale from $1M to $10M and beyond. Systems, team development, and infrastructure for sustainable growth.</p>
 <a href="/services/">Learn more &rarr;</a>
 </div>
+</div>
+</div>
+</section>
+
+<section class="section section-navy">
+<div class="container">
+<div class="text-center" style="margin-bottom:44px">
+<span class="eyebrow">Proof</span>
+<h2>What Changes When the Systems Go In</h2>
+<p style="max-width:660px;margin:0 auto">Four documented engagements. Details are generalized to protect client confidentiality; the numbers are not.</p>
+</div>
+<div class="grid grid-4">
+<div class="stat-card"><span class="stat-num" style="color:{COLORS['gold']}">40%</span><span class="stat-label" style="color:rgba(255,255,255,.85)">Fewer delivery delays<br><a href="/case-studies/manufacturing-delivery-delays/" style="color:{COLORS['gold']};font-size:.85rem">Manufacturing &rarr;</a></span></div>
+<div class="stat-card"><span class="stat-num" style="color:{COLORS['gold']}">2x</span><span class="stat-label" style="color:rgba(255,255,255,.85)">Close rate<br><a href="/case-studies/professional-services-close-rate/" style="color:{COLORS['gold']};font-size:.85rem">Professional Services &rarr;</a></span></div>
+<div class="stat-card"><span class="stat-num" style="color:{COLORS['gold']}">70%</span><span class="stat-label" style="color:rgba(255,255,255,.85)">Fewer handoff errors<br><a href="/case-studies/construction-operating-cadence/" style="color:{COLORS['gold']};font-size:.85rem">Construction &rarr;</a></span></div>
+<div class="stat-card"><span class="stat-num" style="color:{COLORS['gold']}">35%</span><span class="stat-label" style="color:rgba(255,255,255,.85)">Higher satisfaction<br><a href="/case-studies/healthcare-patient-operations/" style="color:{COLORS['gold']};font-size:.85rem">Healthcare &rarr;</a></span></div>
+</div>
+<div class="text-center" style="margin-top:36px">
+<a href="/case-studies/" class="btn btn-gold">Read the Case Studies</a>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="split-2 split-center">
+<div>
+<span class="eyebrow">How We Work</span>
+<h2>Implementation Is the Product</h2>
+<p>Most consulting engagements end at the recommendation. Ours starts there. We map how work actually moves through your business, design the systems with your leadership team, then sit in the room while they get adopted and fix what does not survive contact with reality.</p>
+<p>Engagements run roughly 90 days to six months and end when your team runs the cadence without us.</p>
+<a href="/process/" class="btn btn-primary" style="margin-top:8px">See the Full Process</a>
+</div>
+<div>
+<div class="process-step"><div class="step-num">01</div><div class="step-content"><h3>Consult</h3><p>An honest read on whether we are the right partner, including when the answer is no.</p></div></div>
+<div class="process-step"><div class="step-num">02</div><div class="step-content"><h3>Structured Assessment</h3><p>We map what actually happens, not what the org chart says should.</p></div></div>
+<div class="process-step"><div class="step-num">03</div><div class="step-content"><h3>Design</h3><p>Cadence, scorecards, and ownership built with your team, not for them.</p></div></div>
+<div class="process-step"><div class="step-num">04</div><div class="step-content"><h3>Implementation</h3><p>We run the first cycles alongside your people and adjust while adjustment is cheap.</p></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section section-gray">
+<div class="container">
+<div class="text-center" style="margin-bottom:44px">
+<span class="eyebrow">Industries</span>
+<h2>Sector Context, Not Generic Advice</h2>
+<p style="max-width:660px;margin:0 auto">The frameworks transfer between industries because the constraints are structural. The context does not, which is why each sector gets its own page.</p>
+</div>
+<div class="grid grid-4">
+{industry_cards}
+</div>
+<div class="text-center" style="margin-top:32px">
+<a href="/industries/" class="btn btn-outline">All Eight Industries</a>
 </div>
 </div>
 </section>
@@ -1630,12 +1965,31 @@ def gen_homepage():
 <div class="text-center" style="margin-bottom:48px">
 <span class="eyebrow">Insights</span>
 <h2>Latest From the Blog</h2>
+<p style="max-width:620px;margin:0 auto">{post_count} articles on operations, sales systems, AI adoption, leadership, and growth.</p>
 </div>
-<div class="grid grid-3">
+<div class="post-list">
 {blog_cards}
 </div>
 <div class="text-center" style="margin-top:32px">
 <a href="/blog/" class="btn btn-outline">View All Articles</a>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="text-center" style="margin-bottom:36px">
+<span class="eyebrow">Where We Work</span>
+<h2>Pittsburgh Based. Nationwide Reach.</h2>
+<p style="max-width:680px;margin:0 auto">Our office is at {ADDRESS}. Roughly half of our clients are outside the region, working with us through a structured virtual process that produces the same outcomes.</p>
+</div>
+<div class="text-center" style="max-width:860px;margin:0 auto">
+<a href="/pittsburgh-business-consultant/" class="services-link">Pittsburgh</a>
+<a href="/pittsburgh-ai-consulting/" class="services-link">Pittsburgh AI</a>
+<a href="/pittsburgh-operations-consulting/" class="services-link">Pittsburgh Operations</a>
+<a href="/cranberry-township-business-consultant/" class="services-link">Cranberry Township</a>
+<a href="/wexford-business-consultant/" class="services-link">Wexford</a>
+<a href="/consulting/" class="services-link">All Locations</a>
 </div>
 </div>
 </section>
@@ -1860,7 +2214,8 @@ def gen_services_overview():
     )
 
 
-def gen_service_page(slug, title, tagline, intro, items, outcomes):
+def gen_service_page(slug, title, tagline, intro, items, outcomes, all_posts=None):
+    all_posts = all_posts or []
     items_html = ""
     for item in items:
         items_html += f"""<div class="card"><h3>{item[0]}</h3><p>{item[1]}</p></div>\n"""
@@ -1900,19 +2255,11 @@ def gen_service_page(slug, title, tagline, intro, items, outcomes):
         "leadership": ["leadership", "cadence", "accountability", "runs without"],
     }
     keywords = related_keywords.get(slug, [])
-    related_posts = []
-    for post in BLOG_POSTS:
-        if len(related_posts) >= 3:
-            break
-        title_lower = post["title"].lower()
-        if any(kw in title_lower for kw in keywords):
-            related_posts.append(post)
+    related_articles = related_by_keywords(all_posts, [title] + keywords, 3) if all_posts else []
 
     related_html = ""
-    if related_posts:
-        cards = ""
-        for post in related_posts:
-            cards += f"""<div class="card blog-card"><div class="blog-content"><p class="blog-date">{post['date']}</p><h3><a href="/blog/{post['slug']}/">{post['title']}</a></h3><p>{post['excerpt'][:120]}...</p></div></div>\n"""
+    if related_articles:
+        cards = "".join(post_card(post) for post in related_articles)
         related_html = f"""
 <section class="section">
 <div class="container">
@@ -1920,7 +2267,7 @@ def gen_service_page(slug, title, tagline, intro, items, outcomes):
 <span class="eyebrow">Related Reading</span>
 <h2>From the Blog</h2>
 </div>
-<div class="grid grid-3">{cards}</div>
+<div class="post-list">{cards}</div>
 </div>
 </section>
 """
@@ -1981,6 +2328,27 @@ def gen_service_page(slug, title, tagline, intro, items, outcomes):
         "ai-consulting": "AI Consulting for Business Owners | Elixir Consulting",
         "leadership": "Leadership Consulting & Coaching | Elixir Consulting",
     }
+    service_schema = '<script type="application/ld+json">\n' + json.dumps({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": title,
+        "serviceType": title,
+        "description": clip(tagline + " " + intro, 300),
+        "provider": {"@id": DOMAIN + "/#organization"},
+        "areaServed": {"@type": "Country", "name": "United States"},
+        "url": DOMAIN + f"/services/{slug}/",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": f"{title} deliverables",
+            "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": i[0],
+                                                   "description": i[1]}}
+                for i in items
+            ],
+        },
+    }) + '\n</script>'
+    schema = service_schema + "\n" + schema
+
     return make_page(
         seo_titles.get(slug, f"{title} | Elixir Consulting Group"),
         f"{tagline} Elixir Consulting Group provides {title.lower()} services for business owners in Pittsburgh, PA and nationwide.",
@@ -2107,7 +2475,7 @@ def gen_city_page(slug, city, state_abbr, services_focus, intro, geo_description
         "pittsburgh-operations-consulting": ("Operations Consulting", "operations consulting, process design, and weekly operating cadence"),
     }.get(slug, ("Business Consultant", "business strategy, operations, sales systems, and leadership development"))
     return make_page(
-        f"{focus[0]} in {city}, {state_abbr} | Elixir Consulting",
+        f"{focus[0]} in {city}, {state_abbr} | Elixir",
         clip(f"Elixir Consulting Group provides {focus[1]} for businesses in {city}, {state_abbr}. Implementation-focused engagements. Call {PHONE}.", 158),
         f"/{slug}/",
         body,
@@ -2429,49 +2797,435 @@ def gen_consulting_index(pages):
     )
 
 
+# ─── Industry detail pages ─────────────────────────────────────────────
+
+def industry_faqs(ind):
+    name = ind["name"]
+    return [
+        (f"Do you have experience with {name.lower()} businesses?",
+         f"Yes. {name} is one of the sectors we work in regularly. That said, the problems we solve are structural rather than sector-specific: unclear process, weak accountability, inconsistent follow-through, and owner dependency show up the same way in every industry. We bring the operating system and learn the domain detail from your team."),
+        (f"What does a {name.lower()} engagement typically involve?",
+         "Every engagement starts with a consult, then a structured assessment of how work actually moves through your business today. From there we identify the few changes with the largest effect and build them alongside your team. Most engagements run 90 days to six months."),
+        ("Will this disrupt our day-to-day operations?",
+         "No. We work alongside your existing team and introduce changes in phases. We do not stop the business to rebuild it. The point of the work is that your team keeps running while the systems get better underneath them."),
+        ("How do you measure whether it worked?",
+         "We set baseline metrics at the start and review them weekly. The specific measures depend on the engagement, but they are always things your team can see and influence, not abstractions that only appear in a quarterly report."),
+        (f"How much does consulting for a {name.lower()} business cost?",
+         f"Pricing depends on scope and the size of your business. We offer both project-based and retainer arrangements. The first step is a consult to determine whether there is a fit before discussing pricing. Call {PHONE} to start that conversation."),
+    ]
+
+
+def gen_industry_page(ind, all_posts):
+    faqs = industry_faqs(ind)
+    name = ind["name"]
+
+    challenges = "".join(
+        f'<div class="card"><h3>{t}</h3><p>{d}</p></div>\n' for t, d in ind["challenges"])
+    approach = "".join(
+        f'<div class="process-step"><div class="step-num">{i:02d}</div>'
+        f'<div class="step-content"><h3>{t}</h3><p>{d}</p></div></div>\n'
+        for i, (t, d) in enumerate(ind["approach"], 1))
+    outcomes = "".join(f"<li>{o}</li>\n" for o in ind["outcomes"])
+
+    others = [x for x in INDUSTRIES if x["slug"] != ind["slug"]]
+    seed = sum(ord(c) for c in ind["slug"])
+    other_cards = "".join(
+        f'<div class="card"><div class="ind-icon">{o["icon"]}</div>'
+        f'<h3><a href="/industries/{o["slug"]}/">{o["name"]}</a></h3>'
+        f'<p>{clip(o["short"], 110)}</p></div>\n'
+        for o in [others[(seed + i) % len(others)] for i in range(3)])
+
+    related = related_by_keywords(all_posts, [name] + [t for t, _ in ind["challenges"]], 3)
+    related_cards = "".join(post_card(p) for p in related)
+
+    case = next((c for c in CASE_STUDIES if c["industry"].lower() in name.lower()
+                 or name.lower().startswith(c["industry"].lower())), None)
+    case_html = ""
+    if case:
+        metrics = "".join(
+            f'<div><span class="stat-num" style="font-size:1.8rem">{v}</span>'
+            f'<br><span class="stat-label">{l}</span></div>' for v, l in case["metrics"])
+        case_html = f"""
+<section class="section section-navy">
+<div class="container">
+<div class="split-2 split-center">
+<div>
+<span class="eyebrow">{name} Case Study</span>
+<h2>{case['title']}</h2>
+<p>{case['challenge']}</p>
+<a href="/case-studies/{case['slug']}/" class="btn btn-gold" style="margin-top:12px">Read the Full Case Study</a>
+</div>
+<div class="split-stats">{metrics}</div>
+</div>
+</div>
+</section>
+"""
+
+    schema = '<script type="application/ld+json">\n' + json.dumps({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": f"Business Consulting for {name}",
+        "serviceType": "Business Consulting",
+        "description": clip(ind["intro"], 300),
+        "provider": {"@id": DOMAIN + "/#organization"},
+        "areaServed": {"@type": "Country", "name": "United States"},
+        "audience": {"@type": "BusinessAudience", "audienceType": name},
+        "url": DOMAIN + f"/industries/{ind['slug']}/",
+    }) + '\n</script>'
+
+    body = f"""
+<section class="page-hero">
+<div class="container">
+<p class="breadcrumb"><a href="/">Home</a> / <a href="/industries/">Industries</a> / {name}</p>
+<p style="margin-bottom:14px"><span class="post-tag">Industry</span></p>
+<h1>Business Consulting for {name}</h1>
+<p>{clip(ind['short'], 190)}</p>
+<div style="margin-top:24px">
+<a href="/contact/" class="btn btn-gold">Book a Consult</a>
+<a href="{PHONE_HREF}" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff">Call {PHONE}</a>
+</div>
+</div>
+</section>
+
+{make_trust_bar()}
+
+<section class="section">
+<div class="container">
+<div class="split-2 split-center">
+<div>
+<span class="eyebrow">The Context</span>
+<h2>What Makes {name} Different</h2>
+<p>{ind['intro']}</p>
+<p>We work with owner-led {name.lower()} businesses that have proven demand and are held back by how the work gets done rather than whether anyone wants it.</p>
+<a href="/case-studies/" class="btn btn-outline" style="margin-top:8px">See Client Results</a>
+</div>
+<div>
+<img src="{esc_attr(ind['image'])}" alt="{esc_attr(name)} business operations - Elixir Consulting Group" width="800" height="600" loading="lazy" decoding="async" style="border-radius:14px;width:100%;height:340px;object-fit:cover">
+</div>
+</div>
+</div>
+</section>
+
+<section class="section section-gray">
+<div class="container">
+<div class="text-center" style="margin-bottom:44px">
+<span class="eyebrow">Common Constraints</span>
+<h2>What We See in {name}</h2>
+<p style="max-width:680px;margin:0 auto">These are the patterns that come up most often. If two or more sound familiar, there is usually a systems problem underneath them.</p>
+</div>
+<div class="grid grid-2">
+{challenges}
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="split-1-2">
+<div>
+<span class="eyebrow">Our Approach</span>
+<h2>How We Work in {name}</h2>
+<p>Implementation, not recommendations. We build the systems with your team and stay involved long enough to know they stuck.</p>
+<div class="contact-info-card" style="margin-top:20px">
+<h3 style="margin-bottom:10px">Expected Outcomes</h3>
+<ul style="margin:0 0 0 1.1rem;padding-left:.5rem">
+{outcomes}
+</ul>
+</div>
+</div>
+<div>
+{approach}
+</div>
+</div>
+</div>
+</section>
+
+{case_html}
+
+<section class="section{'' if case_html else ' section-gray'}">
+<div class="container">
+<div class="text-center" style="margin-bottom:44px">
+<span class="eyebrow">Services</span>
+<h2>Where {name} Engagements Usually Start</h2>
+</div>
+<div class="grid grid-3">
+<div class="card"><h3><a href="/services/operations/">Operations Consulting</a></h3><p>Process mapping, SOPs, role clarity, and the weekly cadence that keeps delivery consistent.</p><a href="/services/operations/">Learn more &rarr;</a></div>
+<div class="card"><h3><a href="/services/sales-strategy/">Sales Strategy</a></h3><p>Pipeline structure, follow-up standards, and CRM configuration your team will actually run.</p><a href="/services/sales-strategy/">Learn more &rarr;</a></div>
+<div class="card"><h3><a href="/services/leadership/">Leadership Consulting</a></h3><p>Meeting rhythm, scorecards, and accountability that produce decisions instead of updates.</p><a href="/services/leadership/">Learn more &rarr;</a></div>
+</div>
+</div>
+</section>
+
+{render_faq_section(faqs, f"{name} Consulting FAQs", gray=bool(case_html))}
+
+<section class="related-posts">
+<div class="container">
+<div class="text-center" style="margin-bottom:32px">
+<span class="eyebrow">Further Reading</span>
+<h2>Articles Relevant to {name}</h2>
+</div>
+<div class="post-list">
+{related_cards}
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container text-center">
+<span class="eyebrow">More Sectors</span>
+<h2 style="margin-bottom:36px">Other Industries We Serve</h2>
+<div class="grid grid-3">
+{other_cards}
+</div>
+<a href="/industries/" class="btn btn-outline" style="margin-top:32px">View All Industries</a>
+</div>
+</section>
+
+{make_cta()}
+"""
+    return make_page(
+        f"{name} Consulting | Elixir Consulting Group",
+        clip(f"Operations, sales, and leadership consulting for {name.lower()} businesses. {ind['short']}", 158),
+        f"/industries/{ind['slug']}/",
+        body,
+        schema,
+        faq=faqs,
+        crumb_override=name,
+    )
+
+
+# ─── Case study detail pages ───────────────────────────────────────────
+
+def case_study_faqs(cs):
+    return [
+        ("Is this a real engagement?",
+         "Yes. Details are generalized and the client is not named to protect confidentiality, but the situation, the work, and the outcomes reflect an actual engagement."),
+        (f"How long did the {cs['industry'].lower()} engagement take?",
+         f"This was a {cs['duration'].replace(' engagement', '')} engagement. Most of our work runs between 90 days and six months depending on scope, and many clients continue with monthly advisory support afterward."),
+        ("Would this approach work for a business our size?",
+         "The specific interventions scale, but the sequence does not change: map what actually happens, find the few constraints that matter, install cadence and ownership, then measure weekly. We work with businesses roughly between $1M and $30M in revenue."),
+        ("How quickly do results usually appear?",
+         "Cadence and role clarity changes tend to show up inside the first 30 to 60 days. Financial effects usually follow over a quarter or two as the new systems compound."),
+        ("How do we find out whether we have a similar problem?",
+         f"Book a consult. We will talk through how work moves through your business today and tell you honestly whether there is a fit. Call {PHONE} or use the contact page."),
+    ]
+
+
+def gen_case_study_page(cs, all_posts):
+    faqs = case_study_faqs(cs)
+
+    metrics = "".join(
+        f'<div class="stat-card card"><span class="stat-num">{v}</span>'
+        f'<span class="stat-label">{l}</span></div>\n' for v, l in cs["metrics"])
+    results = "".join(f"<li>{r}</li>\n" for r in cs["results"])
+    services = " ".join(
+        f'<a href="{href}" class="services-link">{name}</a>' for name, href in cs["services"])
+
+    others = [c for c in CASE_STUDIES if c["slug"] != cs["slug"]]
+    other_cards = "".join(
+        f'<div class="card"><p class="pc-cat">{o["industry"]}</p>'
+        f'<h3><a href="/case-studies/{o["slug"]}/">{o["title"]}</a></h3>'
+        f'<p>{clip(o["challenge"], 120)}</p>'
+        f'<a href="/case-studies/{o["slug"]}/">Read the case study &rarr;</a></div>\n' for o in others)
+
+    related = related_by_keywords(all_posts, [cs["industry"]] + [s for s, _ in cs["services"]], 3)
+    related_cards = "".join(post_card(p) for p in related)
+
+    schema = '<script type="application/ld+json">\n' + json.dumps({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": clip(cs["title"], 110),
+        "description": clip(cs["challenge"], 300),
+        "articleSection": "Case Study",
+        "datePublished": "2026-01-15",
+        "dateModified": DATE_NOW,
+        "inLanguage": "en-US",
+        "image": [OG_IMAGE],
+        "about": {"@type": "Thing", "name": cs["industry"]},
+        "author": {"@id": DOMAIN + "/#founder"},
+        "publisher": {"@id": DOMAIN + "/#organization"},
+        "mainEntityOfPage": {"@type": "WebPage", "@id": DOMAIN + f"/case-studies/{cs['slug']}/"},
+    }) + '\n</script>'
+
+    body = f"""
+<section class="page-hero">
+<div class="container">
+<p class="breadcrumb"><a href="/">Home</a> / <a href="/case-studies/">Case Studies</a> / {esc_text(clip(cs['title'], 40))}</p>
+<p style="margin-bottom:14px"><span class="post-tag">{cs['industry']} Case Study</span></p>
+<h1 style="font-size:clamp(1.65rem,4.2vw,2.6rem)">{cs['title']}</h1>
+<p>{cs['profile']} &middot; {cs['duration']}</p>
+</div>
+</section>
+
+<section class="section-sm" style="background:{COLORS['off_white']};border-bottom:1px solid {COLORS['border']}">
+<div class="container">
+<div class="grid grid-3">
+{metrics}
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<article class="article-body">
+<h2>The Situation</h2>
+{cs['situation']}
+
+<blockquote>"{cs['quote']}" &mdash; {cs['quote_role']}</blockquote>
+
+<h2>What We Did</h2>
+{cs['approach']}
+
+<h2>The Outcome</h2>
+{cs['outcome']}
+</article>
+
+<div style="max-width:760px;margin:40px auto 0">
+<div class="contact-info-card">
+<span class="eyebrow">Results at a Glance</span>
+<ul style="margin:12px 0 0 1.1rem">
+{results}
+</ul>
+</div>
+<div style="margin-top:24px">
+<p style="font-weight:600;color:{COLORS['navy']};margin-bottom:10px">Services involved in this engagement</p>
+{services}
+</div>
+</div>
+</div>
+</section>
+
+<section class="cta-banner">
+<div class="container">
+<span class="eyebrow">Recognize Any of This?</span>
+<h2>Find Out Where Your Business Is Actually Stuck</h2>
+<p>A consult is a conversation about how work moves through your business today, and an honest read on whether we are the right partner for it.</p>
+<a href="/contact/" class="btn btn-gold">Book a Consult</a>
+</div>
+</section>
+
+{render_faq_section(faqs, "Questions About This Engagement", gray=False)}
+
+<section class="section section-gray">
+<div class="container">
+<div class="text-center" style="margin-bottom:36px">
+<span class="eyebrow">More Results</span>
+<h2>Other Case Studies</h2>
+</div>
+<div class="grid grid-3">
+{other_cards}
+</div>
+</div>
+</section>
+
+<section class="related-posts" style="background:#fff">
+<div class="container">
+<div class="text-center" style="margin-bottom:32px">
+<span class="eyebrow">Further Reading</span>
+<h2>Related Articles</h2>
+</div>
+<div class="post-list">
+{related_cards}
+</div>
+</div>
+</section>
+
+{make_cta()}
+"""
+    return make_page(
+        seo_title_for(cs["title"]),
+        clip(f"{cs['industry']} case study: {cs['challenge']}", 158),
+        f"/case-studies/{cs['slug']}/",
+        body,
+        schema,
+        og_title=cs["title"],
+        faq=faqs,
+        crumb_override=clip(cs["title"], 60),
+    )
+
+
+def related_by_keywords(all_posts, keywords, count=3):
+    """Pick posts whose title or category best matches a set of keywords.
+
+    Used to wire industry and case study pages into the blog archive so no page
+    is a dead end and topical authority accumulates around each theme.
+    """
+    words = set()
+    for k in keywords:
+        for w in re.findall(r"[a-z]{4,}", k.lower()):
+            words.add(w)
+    scored = []
+    for i, p in enumerate(all_posts):
+        hay = (p["title"] + " " + p["category"] + " " + p["excerpt"]).lower()
+        score = sum(1 for w in words if w in hay)
+        scored.append((-score, i, p))
+    scored.sort(key=lambda x: (x[0], x[1]))
+    return [p for _, _, p in scored[:count]]
+
+
 def gen_industries():
     cards = ""
-    for i, (name, desc) in enumerate(INDUSTRIES):
+    for ind in INDUSTRIES:
         cards += f"""<div class="industry-card card">
-<div class="ind-icon">{INDUSTRY_ICONS[i]}</div>
-<h3>{name}</h3>
-<p>{desc}</p>
+<div class="ind-icon">{ind['icon']}</div>
+<h3><a href="/industries/{ind['slug']}/">{ind['name']}</a></h3>
+<p>{ind['short']}</p>
+<a href="/industries/{ind['slug']}/">{ind['name']} consulting &rarr;</a>
 </div>\n"""
+
+    schema = '<script type="application/ld+json">\n' + json.dumps({
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Industries Served",
+        "url": DOMAIN + "/industries/",
+        "description": "Sectors Elixir Consulting Group works in, and the operational patterns specific to each.",
+        "hasPart": [
+            {"@type": "WebPage", "name": f"Business Consulting for {i['name']}",
+             "url": DOMAIN + f"/industries/{i['slug']}/"} for i in INDUSTRIES
+        ],
+    }) + '\n</script>'
 
     body = f"""
 <section class="page-hero">
 <div class="container">
 <p class="breadcrumb"><a href="/">Home</a> / Industries</p>
 <h1>Industries We Serve</h1>
-<p>Our frameworks are designed to work across industries because core operational challenges tend to be universal.</p>
+<p>The operational problems we solve are structural, so the frameworks transfer. The context does not, which is why each sector gets its own page.</p>
 </div>
 </section>
 
+{make_trust_bar()}
+
 <section class="section">
 <div class="container">
+<div class="text-center" style="margin-bottom:44px">
+<span class="eyebrow">Eight Sectors</span>
+<h2>Pick Your Industry</h2>
+<p style="max-width:660px;margin:0 auto">Each page covers the constraints we see most often in that sector, how we approach them, and the outcomes to expect.</p>
+</div>
 <div class="grid grid-2">
 {cards}
 </div>
 </div>
 </section>
 
-<section class="section section-gray">
+<section class="section section-navy">
 <div class="container text-center">
-<span class="eyebrow">Not Sure If We Can Help?</span>
+<span class="eyebrow">Not Listed?</span>
 <h2>Most Operational Challenges Are Universal</h2>
-<p style="max-width:600px;margin:0 auto 24px">Whether you are in manufacturing, healthcare, or professional services, the core problems are the same: inconsistent execution, owner dependency, and lack of structure. We solve these across industries.</p>
-<a href="/contact/" class="btn btn-primary">Book a Consult</a>
+<p style="max-width:640px;margin:0 auto 24px">Whether you are in manufacturing, healthcare, or professional services, the core problems repeat: inconsistent execution, owner dependency, and no structure underneath the growth. If your sector is not above, that does not mean we cannot help.</p>
+<a href="/contact/" class="btn btn-gold">Book a Consult</a>
 </div>
 </section>
-
-{make_cta()}
 """
-    body += render_faq_section(INDUSTRIES_FAQS, "Industry FAQs", gray=False)
+    body += render_faq_section(INDUSTRIES_FAQS, "Industry FAQs")
+    body += make_cta()
     return make_page(
         "Industries We Serve | Elixir Consulting Group",
-        "Elixir Consulting Group works across professional services, construction, healthcare, manufacturing, technology, real estate, and retail. Operations, sales, and leadership systems that transfer between industries.",
+        "Operations, sales, and leadership consulting across professional services, construction, healthcare, manufacturing, technology, real estate, retail, and financial services.",
         "/industries/",
         body,
+        schema,
         faq=INDUSTRIES_FAQS,
     )
 
@@ -2479,30 +3233,49 @@ def gen_industries():
 def gen_case_studies():
     cards = ""
     for cs in CASE_STUDIES:
-        results_html = "".join([f"<li>{r}</li>" for r in cs['results']])
+        results_html = "".join([f"<li>{r}</li>" for r in cs['results'][:3]])
+        metrics_html = " ".join(
+            f'<span style="display:inline-block;margin-right:18px"><strong style="color:{COLORS["navy"]};font-size:1.25rem">{v}</strong> '
+            f'<span style="font-size:.85rem;color:{COLORS["mid_gray"]}">{l}</span></span>'
+            for v, l in cs['metrics'][:2])
         cards += f"""<div class="card" style="padding:0;overflow:hidden">
 <div style="background:{COLORS['navy']};padding:24px 32px;color:{COLORS['white']}">
 <span style="font-size:.8rem;text-transform:uppercase;letter-spacing:1px;color:{COLORS['gold']}">{cs['industry']}</span>
-<h3 style="color:{COLORS['white']};margin-top:8px">{cs['title']}</h3>
+<h3 style="color:{COLORS['white']};margin-top:8px"><a href="/case-studies/{cs['slug']}/" style="color:{COLORS['white']}">{cs['title']}</a></h3>
+<p style="color:rgba(255,255,255,.7);font-size:.85rem;margin-bottom:0">{cs['profile']}</p>
 </div>
 <div style="padding:32px">
+<div style="margin-bottom:18px">{metrics_html}</div>
 <h4 style="color:{COLORS['navy']};margin-bottom:8px">Challenge</h4>
 <p>{cs['challenge']}</p>
-<h4 style="color:{COLORS['navy']};margin-bottom:8px">Solution</h4>
-<p>{cs['solution']}</p>
 <h4 style="color:{COLORS['navy']};margin-bottom:8px">Results</h4>
 <ul style="list-style:none;padding:0">{results_html}</ul>
+<a href="/case-studies/{cs['slug']}/" class="btn btn-outline" style="margin-top:16px">Read the Full Case Study</a>
 </div>
 </div>\n"""
+
+    schema = '<script type="application/ld+json">\n' + json.dumps({
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Client Case Studies",
+        "url": DOMAIN + "/case-studies/",
+        "description": "Documented engagements from Elixir Consulting Group across manufacturing, professional services, construction, and healthcare.",
+        "hasPart": [
+            {"@type": "Article", "headline": c["title"],
+             "url": DOMAIN + f"/case-studies/{c['slug']}/"} for c in CASE_STUDIES
+        ],
+    }) + '\n</script>'
 
     body = f"""
 <section class="page-hero">
 <div class="container">
 <p class="breadcrumb"><a href="/">Home</a> / Case Studies</p>
 <h1>Case Studies</h1>
-<p>Real results from real businesses. See how Elixir Consulting Group helps companies build structure and improve execution.</p>
+<p>Four engagements, documented end to end: what was actually broken, what we built, and what changed. Details are generalized to protect client confidentiality.</p>
 </div>
 </section>
+
+{make_trust_bar()}
 
 <section class="section">
 <div class="container">
@@ -2512,14 +3285,33 @@ def gen_case_studies():
 </div>
 </section>
 
-{make_cta()}
+<section class="section section-navy">
+<div class="container">
+<div class="text-center" style="margin-bottom:40px">
+<span class="eyebrow">The Common Thread</span>
+<h2>The Same Sequence Every Time</h2>
+<p style="max-width:660px;margin:0 auto">Different industries, different symptoms, one method.</p>
+</div>
+<div class="grid grid-4">
+<div class="stat-card"><span class="stat-num" style="color:{COLORS['gold']}">01</span><span class="stat-label" style="color:rgba(255,255,255,.85)">Map what actually happens</span></div>
+<div class="stat-card"><span class="stat-num" style="color:{COLORS['gold']}">02</span><span class="stat-label" style="color:rgba(255,255,255,.85)">Find the few real constraints</span></div>
+<div class="stat-card"><span class="stat-num" style="color:{COLORS['gold']}">03</span><span class="stat-label" style="color:rgba(255,255,255,.85)">Install cadence and ownership</span></div>
+<div class="stat-card"><span class="stat-num" style="color:{COLORS['gold']}">04</span><span class="stat-label" style="color:rgba(255,255,255,.85)">Measure weekly until it sticks</span></div>
+</div>
+<div class="text-center" style="margin-top:36px">
+<a href="/process/" class="btn btn-gold">See How Engagements Work</a>
+</div>
+</div>
+</section>
 """
-    body += render_faq_section(CASE_STUDY_FAQS, "Case Study FAQs", gray=False)
+    body += render_faq_section(CASE_STUDY_FAQS, "Case Study FAQs")
+    body += make_cta()
     return make_page(
         "Case Studies | Elixir Consulting Group",
         "Real case studies from Elixir Consulting Group engagements across manufacturing, professional services, construction, and healthcare. See the systems installed and the results they produced.",
         "/case-studies/",
         body,
+        schema,
         faq=CASE_STUDY_FAQS,
     )
 
@@ -2997,6 +3789,9 @@ def gen_blog_index(all_posts):
     counts = {}
     for p in all_posts:
         counts[p["category"]] = counts.get(p["category"], 0) + 1
+    category_links = "".join(
+        f'<a href="/blog/category/{category_slug(c)}/" class="services-link">{c} ({counts[c]})</a>'
+        for c in CATEGORY_ORDER if counts.get(c))
     chips = '<button type="button" class="filter-chip active" data-filter="all">All ({})</button>'.format(len(all_posts))
     for cat in CATEGORY_ORDER:
         if counts.get(cat):
@@ -3054,6 +3849,12 @@ def gen_blog_index(all_posts):
 </div>
 </div>
 </a>
+
+<div class="text-center" style="margin-bottom:28px">
+<span class="eyebrow">Browse by Topic</span>
+<div style="margin-top:12px">{category_links}</div>
+<p style="margin-top:14px;font-size:.95rem">All articles are written by <a href="/blog/author/dr-connor-robertson/">Dr. Connor Robertson</a>. <a href="/feed.xml">Subscribe via RSS</a>.</p>
+</div>
 
 <div class="blog-toolbar">
 <label class="sr-only" for="blog-search" style="position:absolute;left:-9999px">Search articles</label>
@@ -3183,7 +3984,7 @@ def gen_blog_post(post, all_posts):
 <p>{esc_text(post['excerpt'])}</p>
 <div class="post-meta">
 <img src="{HEADSHOT}" alt="{HEADSHOT_ALT}" width="88" height="88" loading="lazy" decoding="async">
-<span>By <a href="/about/" style="color:#fff;font-weight:600">Dr. Connor Robertson</a></span>
+<span>By <a href="/blog/author/dr-connor-robertson/" style="color:#fff;font-weight:600">Dr. Connor Robertson</a></span>
 <span class="dot" aria-hidden="true">&middot;</span>
 <time datetime="{post['date']}">{pretty_date(post['date'])}</time>
 <span class="dot" aria-hidden="true">&middot;</span>
@@ -3207,7 +4008,7 @@ def gen_blog_post(post, all_posts):
 <h3>Dr. Connor Robertson</h3>
 <p class="author-role">Founder &amp; Lead Consultant, Elixir Consulting Group</p>
 <p>Dr. Robertson works hands-on with owners and leadership teams to install operations, sales, and leadership systems that hold up under growth. He is the author of six books on acquisitions and business strategy.</p>
-<p style="margin-bottom:0"><a href="/about/">Read the full bio</a> &nbsp;&middot;&nbsp; <a href="/contact/">Book a consult</a></p>
+<p style="margin-bottom:0"><a href="/about/">Read the full bio</a> &nbsp;&middot;&nbsp; <a href="/blog/author/dr-connor-robertson/">All his articles</a> &nbsp;&middot;&nbsp; <a href="/contact/">Book a consult</a></p>
 </div>
 </div>
 </div>
@@ -3249,6 +4050,439 @@ def gen_blog_post(post, all_posts):
     )
 
 
+# ─── Process page ──────────────────────────────────────────────────────
+
+PROCESS_STEPS = [
+    ("Consult", "60&ndash;90 minutes",
+     "We talk through your business: what is working, what keeps breaking, and what you want the next twelve months to look like. No deck, no pitch. At the end of it you get an honest read on whether we are the right partner, including when the answer is no.",
+     ["What is actually constraining growth right now", "Whether the problem is structural or situational", "A clear yes or no on fit"]),
+    ("Structured Assessment", "2&ndash;3 weeks",
+     "We map how work really moves through your business, not how the org chart says it should. That means walking real jobs end to end, interviewing the people doing the work, and looking at the numbers you already have. The output is a written picture of your current state and the few constraints that matter most.",
+     ["A process map built from observation, not assumption", "Baseline metrics we will measure against", "A prioritized list of the highest-leverage changes"]),
+    ("Design", "1&ndash;2 weeks",
+     "We design the systems with your leadership team rather than for them. Cadence, scorecards, ownership, and documented workflows get built to fit how your business actually operates. Anything too complicated to run without us is the wrong design.",
+     ["Meeting rhythm and agendas", "Scorecards with owners for each measure", "SOPs written where the work happens"]),
+    ("Implementation", "8&ndash;16 weeks",
+     "This is the part most firms skip. We sit in the meetings, run the first cycles alongside your team, and fix what does not survive contact with reality. Systems get adjusted while people are learning them, which is the only window where adjustment is cheap.",
+     ["Weekly working sessions with your team", "Live adjustment as the systems meet reality", "Adoption measured, not assumed"]),
+    ("Handover & Advisory", "Ongoing, optional",
+     "The engagement ends when your team runs the cadence without us in the room. Many clients continue with monthly advisory to keep the systems evolving as the business changes, but that is a choice rather than a requirement.",
+     ["Your team running the cadence independently", "Documented systems that survive turnover", "Optional monthly advisory"]),
+]
+
+PROCESS_FAQS = [
+    ("How long does a full engagement take?",
+     "Most engagements run between 90 days and six months end to end. The assessment and design phases are short; implementation is where the time goes, because adoption cannot be rushed without losing it."),
+    ("What do you need from our team?",
+     "Access and attendance. We need to talk to the people doing the work, not just leadership, and we need the leadership team in the weekly sessions. Engagements fail when the owner delegates the implementation and stops showing up."),
+    ("Do you work on-site or remotely?",
+     "Both. The assessment usually benefits from on-site time, and implementation works well in a hybrid rhythm. Our virtual process is structured to be as effective as in-person work, which is how we serve clients nationwide from Pittsburgh."),
+    ("What happens if it is not working?",
+     "We tell you. The weekly measurement exists precisely so that a system that is not being adopted becomes visible in week three rather than month five. Then we change the design, because the design was wrong."),
+    ("Is the first consult really free?",
+     "Yes. There is no cost and no obligation. It exists so both sides can decide whether the work makes sense."),
+    ("What does it cost?",
+     f"Pricing depends on scope and business size, and we offer both project-based and retainer arrangements. We discuss it after the consult, once we both know what the work actually involves. Call {PHONE} to start."),
+]
+
+
+def gen_process():
+    steps = ""
+    for i, (name, dur, desc, deliverables) in enumerate(PROCESS_STEPS, 1):
+        items = "".join(f"<li>{d}</li>\n" for d in deliverables)
+        steps += f"""<div class="card" style="border-left:4px solid {COLORS['gold']}">
+<div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;margin-bottom:10px">
+<span class="stat-num" style="font-size:1.6rem">{i:02d}</span>
+<h3 style="margin-bottom:0">{name}</h3>
+<span class="post-tag" style="color:{COLORS['navy']};background:{COLORS['off_white']};border-color:{COLORS['border']}">{dur}</span>
+</div>
+<p>{desc}</p>
+<p style="font-weight:600;color:{COLORS['navy']};margin-bottom:6px;font-size:.9rem">What you get</p>
+<ul class="checklist" style="list-style:none;padding-left:0;margin-left:0">
+{items}
+</ul>
+</div>\n"""
+
+    schema = '<script type="application/ld+json">\n' + json.dumps({
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How an Elixir Consulting Group engagement works",
+        "description": "The five phases of a business consulting engagement, from initial consult through handover.",
+        "totalTime": "P180D",
+        "step": [
+            {"@type": "HowToStep", "position": i, "name": name,
+             "text": re.sub(r"<[^>]+>", "", desc)}
+            for i, (name, _d, desc, _x) in enumerate(PROCESS_STEPS, 1)
+        ],
+    }) + '\n</script>'
+
+    body = f"""
+<section class="page-hero">
+<div class="container">
+<p class="breadcrumb"><a href="/">Home</a> / Process</p>
+<h1>How We Work</h1>
+<p>Five phases, roughly 90 days to six months. The engagement ends when your team runs the systems without us in the room.</p>
+<div style="margin-top:24px">
+<a href="/contact/" class="btn btn-gold">Book a Consult</a>
+<a href="/case-studies/" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff">See the Results</a>
+</div>
+</div>
+</section>
+
+{make_trust_bar()}
+
+<section class="section">
+<div class="container">
+<div class="text-center" style="margin-bottom:44px;max-width:720px;margin-left:auto;margin-right:auto">
+<span class="eyebrow">The Method</span>
+<h2>Implementation Is the Product</h2>
+<p>Most consulting engagements end at the recommendation. Ours starts there. The assessment and the design matter, but they are inputs. What you are actually buying is a team that sits in the room while the systems get adopted and fixes what does not survive contact with reality.</p>
+</div>
+<div class="grid grid-2">
+{steps}
+</div>
+</div>
+</section>
+
+<section class="section section-navy">
+<div class="container">
+<div class="text-center" style="margin-bottom:40px">
+<span class="eyebrow">What We Will Not Do</span>
+<h2>Being Clear About the Boundaries</h2>
+</div>
+<div class="grid grid-3">
+<div class="card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14)">
+<h3 style="color:#fff">Hand you a binder</h3>
+<p style="color:rgba(255,255,255,.8)">A report you have to implement alone is the failure mode we exist to avoid. If we are not in the room for implementation, the engagement has not started.</p>
+</div>
+<div class="card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14)">
+<h3 style="color:#fff">Replace your team</h3>
+<p style="color:rgba(255,255,255,.8)">We build on the people you already have. If the honest answer is that a seat is wrong, we will say so, but our default is that the systems are the problem.</p>
+</div>
+<div class="card" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14)">
+<h3 style="color:#fff">Take work that will not succeed</h3>
+<p style="color:rgba(255,255,255,.8)">If the leadership team is not going to show up weekly, the engagement will fail regardless of the design. We would rather tell you that during the consult.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="text-center" style="margin-bottom:40px">
+<span class="eyebrow">Where We Start</span>
+<h2>Five Service Areas, One Method</h2>
+</div>
+<div class="grid grid-3">
+<div class="card"><h3><a href="/services/operations/">Operations</a></h3><p>Process, SOPs, role clarity, and the weekly cadence that keeps delivery consistent.</p></div>
+<div class="card"><h3><a href="/services/sales-strategy/">Sales Strategy</a></h3><p>Pipeline structure, follow-up standards, and CRM configuration your team will run.</p></div>
+<div class="card"><h3><a href="/services/leadership/">Leadership</a></h3><p>Meeting rhythm, scorecards, and accountability that produce decisions.</p></div>
+<div class="card"><h3><a href="/services/business-strategy/">Business Strategy</a></h3><p>Growth roadmaps and execution frameworks tied to weekly action.</p></div>
+<div class="card"><h3><a href="/services/ai-consulting/">AI Consulting</a></h3><p>Practical AI evaluation, implementation, and team adoption without disruption.</p></div>
+<div class="card"><h3><a href="/industries/">By Industry</a></h3><p>Sector-specific context across eight industries we work in regularly.</p></div>
+</div>
+</div>
+</section>
+
+{render_faq_section(PROCESS_FAQS, "Process FAQs")}
+
+{make_cta()}
+"""
+    return make_page(
+        "How We Work | Our Consulting Process | Elixir Consulting Group",
+        "The five phases of an Elixir Consulting Group engagement: consult, assessment, design, implementation, and handover. Typically 90 days to six months.",
+        "/process/",
+        body,
+        schema,
+        faq=PROCESS_FAQS,
+    )
+
+
+# ─── Blog category archives ────────────────────────────────────────────
+
+def category_slug(name):
+    return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+
+
+CATEGORY_INTROS = {
+    "AI & Technology": "Practical coverage of AI adoption, automation, and digital transformation for owner-led businesses. Less hype, more implementation.",
+    "Sales & Revenue": "Pipeline structure, follow-up discipline, pricing, and the revenue systems that make forecasting something other than a guess.",
+    "Operations": "Process design, SOPs, workflow, and the operating cadence that turns effort into consistent output.",
+    "Leadership": "Meeting rhythm, accountability, hiring, delegation, and the work of building a team that executes without you.",
+    "Strategy & Growth": "Positioning, planning, and the execution frameworks that connect a strategy to what happens on Monday.",
+    "Finance & Exit": "Margin, cash flow, valuation, acquisitions, and preparing a business to be worth buying.",
+    "Pittsburgh & Local": "Regional economic coverage and what it means for business owners in Western Pennsylvania.",
+    "Insights": "General commentary on running an owner-led business well.",
+}
+
+
+def gen_category_page(cat, posts, all_posts):
+    slug = category_slug(cat)
+    cards = "".join(post_card(p, lazy=(i > 5)) for i, p in enumerate(posts))
+    intro = CATEGORY_INTROS.get(cat, f"Articles on {cat.lower()} from Elixir Consulting Group.")
+
+    others = "".join(
+        f'<a href="/blog/category/{category_slug(c)}/" class="services-link">{c}</a>'
+        for c in CATEGORY_ORDER if c != cat and any(p["category"] == c for p in all_posts))
+
+    faqs = [
+        (f"How many {cat.lower()} articles are there?",
+         f"This archive currently holds {len(posts)} articles on {cat.lower()}, part of a library of {len(all_posts)} across every topic we cover."),
+        ("Who writes these articles?",
+         "Dr. Connor Robertson, founder and lead consultant at Elixir Consulting Group, drawing on hands-on implementation work with owner-led businesses."),
+        (f"Do you offer consulting in {cat.lower()}?",
+         f"Yes. Reading is a fine start, but the articles describe systems we install directly with clients. Book a consult or call {PHONE} to talk about your specific situation."),
+        ("How often is this archive updated?",
+         "New articles are published regularly. The newest work appears first on this page and on the main blog index."),
+    ]
+
+    schema = '<script type="application/ld+json">\n' + json.dumps({
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": f"{cat} Articles",
+        "url": DOMAIN + f"/blog/category/{slug}/",
+        "description": intro,
+        "isPartOf": {"@type": "Blog", "@id": DOMAIN + "/blog/"},
+        "mainEntity": {
+            "@type": "ItemList",
+            "numberOfItems": len(posts),
+            "itemListElement": [
+                {"@type": "ListItem", "position": i, "url": DOMAIN + p["url"], "name": p["title"]}
+                for i, p in enumerate(posts[:30], 1)
+            ],
+        },
+    }) + '\n</script>'
+
+    body = f"""
+<section class="page-hero">
+<div class="container">
+<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / {cat}</p>
+<p style="margin-bottom:14px"><span class="post-tag">Category</span></p>
+<h1>{cat}</h1>
+<p>{intro}</p>
+<p style="margin-top:12px;font-size:.95rem;color:rgba(255,255,255,.7)">{len(posts)} articles</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="post-list">
+{cards}
+</div>
+</div>
+</section>
+
+<section class="section section-gray">
+<div class="container text-center">
+<span class="eyebrow">Browse</span>
+<h2 style="margin-bottom:24px">Other Categories</h2>
+<div>{others}</div>
+<div style="margin-top:28px"><a href="/blog/" class="btn btn-outline">All {len(all_posts)} Articles</a></div>
+</div>
+</section>
+
+{render_faq_section(faqs, f"{cat} FAQs", gray=False)}
+
+{make_cta()}
+"""
+    return make_page(
+        f"{cat} Articles | Elixir Consulting Group Blog",
+        clip(intro + f" {len(posts)} articles from Elixir Consulting Group.", 158),
+        f"/blog/category/{slug}/",
+        body,
+        schema,
+        faq=faqs,
+        crumb_override=cat,
+    )
+
+
+# ─── Author archive ────────────────────────────────────────────────────
+
+def gen_author_page(all_posts):
+    recent = all_posts[:36]
+    cards = "".join(post_card(p, lazy=(i > 5)) for i, p in enumerate(recent))
+    counts = {}
+    for p in all_posts:
+        counts[p["category"]] = counts.get(p["category"], 0) + 1
+    cat_links = "".join(
+        f'<a href="/blog/category/{category_slug(c)}/" class="services-link">{c} ({counts[c]})</a>'
+        for c in CATEGORY_ORDER if counts.get(c))
+
+    faqs = [
+        ("Who is Dr. Connor Robertson?",
+         "Dr. Connor Robertson is the founder and lead consultant at Elixir Consulting Group, a Pittsburgh-based firm that installs operations, sales, and leadership systems in owner-led businesses. He is the author of six books on acquisitions and business strategy."),
+        ("Does he write all of these articles himself?",
+         f"Yes. Every one of the {len(all_posts)} articles in this archive is written from his own implementation work with clients."),
+        ("Can I work with him directly?",
+         "Yes. Engagements are led personally rather than handed to a junior team, because the implementation model only works when the person designing the systems is in the room while they are adopted."),
+        ("Where else can I find his work?",
+         "At drconnorrobertson.com, and his books are available through Barnes & Noble, Google Play, and Kobo."),
+    ]
+
+    schema = '<script type="application/ld+json">\n' + json.dumps({
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "url": DOMAIN + "/blog/author/dr-connor-robertson/",
+        "mainEntity": {"@id": DOMAIN + "/#founder"},
+        "about": {"@id": DOMAIN + "/#founder"},
+    }) + '\n</script>'
+
+    body = f"""
+<section class="page-hero">
+<div class="container">
+<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / Author</p>
+<img src="{HEADSHOT}" alt="{HEADSHOT_ALT}" width="800" height="800" style="width:150px;height:150px;border-radius:50%;object-fit:cover;margin:0 auto 20px;display:block;border:3px solid rgba(201,168,76,.5)" fetchpriority="high" decoding="async">
+<h1>Dr. Connor Robertson</h1>
+<p>Founder &amp; Lead Consultant, Elixir Consulting Group. {len(all_posts)} articles on operations, sales systems, leadership, and growth.</p>
+<div style="margin-top:24px">
+<a href="/about/" class="btn btn-gold">Full Bio</a>
+<a href="/contact/" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff">Book a Consult</a>
+</div>
+</div>
+</section>
+
+{make_trust_bar()}
+
+<section class="section">
+<div class="container">
+<div class="text-center" style="margin-bottom:36px">
+<span class="eyebrow">Browse by Topic</span>
+<h2>Categories</h2>
+</div>
+<div class="text-center" style="max-width:820px;margin:0 auto">{cat_links}</div>
+</div>
+</section>
+
+<section class="section section-gray">
+<div class="container">
+<div class="text-center" style="margin-bottom:36px">
+<span class="eyebrow">Latest</span>
+<h2>Recent Articles</h2>
+</div>
+<div class="post-list">
+{cards}
+</div>
+<div class="text-center" style="margin-top:36px">
+<a href="/blog/" class="btn btn-primary">All {len(all_posts)} Articles</a>
+</div>
+</div>
+</section>
+
+{render_faq_section(faqs, "About the Author", gray=False)}
+
+{make_cta()}
+"""
+    return make_page(
+        "Dr. Connor Robertson | Articles & Insights | Elixir Consulting",
+        f"All {len(all_posts)} articles by Dr. Connor Robertson, founder of Elixir Consulting Group, on operations, sales systems, leadership, AI adoption, and business growth.",
+        "/blog/author/dr-connor-robertson/",
+        body,
+        schema,
+        faq=faqs,
+        crumb_override="Dr. Connor Robertson",
+    )
+
+
+# ─── Site search ───────────────────────────────────────────────────────
+
+def gen_search_page(all_posts, page_count):
+    faqs = [
+        ("How does this search work?",
+         f"It searches titles, summaries, and categories across all {all_posts} articles plus every service, industry, location, and case study page. It runs entirely in your browser, so nothing you type is sent anywhere."),
+        ("I cannot find what I am looking for.",
+         f"Try a shorter or more general term, or browse the blog by category. If it is a question about your own business rather than a topic, call {PHONE} or book a consult and ask directly."),
+        ("Do you have articles on my industry?",
+         "Probably. Start with the industries pages, which link to the most relevant articles for each of the eight sectors we work in most often."),
+    ]
+
+    body = f"""
+<section class="page-hero">
+<div class="container">
+<p class="breadcrumb"><a href="/">Home</a> / Search</p>
+<h1>Search</h1>
+<p>Search {page_count} pages across the site: articles, services, industries, case studies, and locations.</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container" style="max-width:860px">
+<label for="site-search" style="position:absolute;left:-9999px">Search the site</label>
+<input type="search" id="site-search" class="blog-search" style="width:100%;font-size:1.05rem;padding:16px 18px" placeholder="Try: operations cadence, sales pipeline, exit planning..." autocomplete="off" autofocus>
+<p id="search-count" style="margin-top:14px;color:{COLORS['mid_gray']};font-size:.92rem">Start typing to search.</p>
+<div id="search-results" style="margin-top:24px"></div>
+<div id="search-empty" style="display:none;text-align:center;padding:40px 0">
+<p>Nothing matched that search.</p>
+<p><a href="/blog/" class="btn btn-outline">Browse the blog</a> <a href="/contact/" class="btn btn-primary">Ask us directly</a></p>
+</div>
+</div>
+</section>
+
+{render_faq_section(faqs, "Search Help")}
+
+{make_cta()}
+
+<script>
+/* The index is a static JSON file so this page stays a plain static asset --
+   no server, no third-party search service, nothing typed here leaves the browser. */
+(function(){{
+var input=document.getElementById('site-search');
+var out=document.getElementById('search-results');
+var count=document.getElementById('search-count');
+var empty=document.getElementById('search-empty');
+var idx=[],ready=false;
+fetch('/search-index.json').then(function(r){{return r.json()}}).then(function(d){{
+idx=d;ready=true;if(input.value)run();
+}}).catch(function(){{count.textContent='Search index could not be loaded. Try the blog index instead.'}});
+function esc(s){{return String(s).replace(/[&<>"]/g,function(c){{return {{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[c]}})}}
+function run(){{
+var q=input.value.trim().toLowerCase();
+if(!ready){{count.textContent='Loading index...';return}}
+if(q.length<2){{out.innerHTML='';empty.style.display='none';count.textContent='Start typing to search.';return}}
+var terms=q.split(/\\s+/);
+/* Match a trimmed stem as well as the literal term, so "manufacturing" still
+   finds "manufacturers" and "operations" finds "operational". */
+var stems=terms.map(function(t){{return t.length>=6?t.slice(0,t.length-3):t}});
+var hits=[],loose=[];
+for(var i=0;i<idx.length;i++){{
+var it=idx[i],hay=it.s,title=it.t.toLowerCase(),score=0,matched=0;
+for(var t=0;t<terms.length;t++){{
+var exact=hay.indexOf(terms[t])>-1;
+if(!exact&&hay.indexOf(stems[t])<0)continue;
+matched++;
+score+=(title.indexOf(terms[t])>-1?4:(title.indexOf(stems[t])>-1?3:(exact?2:1)));
+}}
+if(matched===terms.length)hits.push([score+10,it]);
+else if(matched>0)loose.push([score,it]);
+}}
+/* Requiring every term is right when it finds enough; when a multi-word query
+   is too narrow, fall back to partial matches rather than showing nothing. */
+if(hits.length<3&&loose.length)hits=hits.concat(loose);
+hits.sort(function(a,b){{return b[0]-a[0]}});
+count.textContent=hits.length+(hits.length===1?' result':' results');
+empty.style.display=hits.length?'none':'block';
+out.innerHTML=hits.slice(0,60).map(function(h){{
+var it=h[1];
+return '<div class="card" style="margin-bottom:14px;padding:20px 24px">'+
+'<p class="pc-cat">'+esc(it.k)+'</p>'+
+'<h3 style="font-size:1.05rem;margin-bottom:6px"><a href="'+esc(it.u)+'">'+esc(it.t)+'</a></h3>'+
+'<p style="font-size:.93rem;margin-bottom:0">'+esc(it.d)+'</p></div>';
+}}).join('');
+}}
+input.addEventListener('input',run);
+var pre=new URLSearchParams(location.search).get('q');
+if(pre){{input.value=pre;run()}}
+}})();
+</script>
+"""
+    return make_page(
+        "Search | Elixir Consulting Group",
+        f"Search {page_count} pages across Elixir Consulting Group: articles on operations, sales, leadership, and AI, plus services, industries, case studies, and locations.",
+        "/search/",
+        body,
+        faq=faqs,
+    )
+
+
 def gen_contact():
     body = f"""
 <section class="page-hero">
@@ -3266,13 +4500,17 @@ def gen_contact():
 <span class="eyebrow">Get in Touch</span>
 <h2>Book a Consult</h2>
 <p>Every engagement starts with a consult where we learn about your business, goals, and current constraints. There is no obligation and no pressure. If there is a fit, we will discuss next steps.</p>
-<form action="#" method="POST" style="margin-top:32px">
-<div class="form-group"><label>Full Name</label><input type="text" name="name" required placeholder="Your full name"></div>
-<div class="form-group"><label>Email</label><input type="email" name="email" required placeholder="your@email.com"></div>
-<div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="(555) 123-4567"></div>
-<div class="form-group"><label>Company Name</label><input type="text" name="company" placeholder="Your company"></div>
-<div class="form-group"><label>How Can We Help?</label>
-<select name="service">
+<div class="contact-strip" style="margin-bottom:28px">
+<a href="{PHONE_HREF}"><span class="ic">&#9742;</span> {PHONE}</a>
+<a href="mailto:{EMAIL}"><span class="ic">&#9993;</span> Email Us</a>
+</div>
+<form id="consult-form" action="mailto:{EMAIL}" method="POST" enctype="text/plain" style="margin-top:8px">
+<div class="form-group"><label for="cf-name">Full Name</label><input id="cf-name" type="text" name="name" required autocomplete="name" placeholder="Your full name"></div>
+<div class="form-group"><label for="cf-email">Email</label><input id="cf-email" type="email" name="email" required autocomplete="email" placeholder="your@email.com"></div>
+<div class="form-group"><label for="cf-phone">Phone</label><input id="cf-phone" type="tel" name="phone" autocomplete="tel" placeholder="(555) 123-4567"></div>
+<div class="form-group"><label for="cf-company">Company Name</label><input id="cf-company" type="text" name="company" autocomplete="organization" placeholder="Your company"></div>
+<div class="form-group"><label for="cf-service">How Can We Help?</label>
+<select id="cf-service" name="service">
 <option value="">Select a service area</option>
 <option value="business-strategy">Business Strategy</option>
 <option value="ai-consulting">AI Consulting</option>
@@ -3282,12 +4520,51 @@ def gen_contact():
 <option value="other">Other</option>
 </select>
 </div>
-<div class="form-group"><label>Message</label><textarea name="message" placeholder="Tell us about your business and what you are looking to improve..."></textarea></div>
-<button type="submit" class="btn btn-primary" style="width:100%">Submit</button>
+<div class="form-group"><label for="cf-message">Message</label><textarea id="cf-message" name="message" placeholder="Tell us about your business and what you are looking to improve..."></textarea></div>
+<button type="submit" class="btn btn-primary" style="width:100%">Request a Consult</button>
+<p id="cf-status" role="status" aria-live="polite" style="margin-top:14px;font-size:.9rem;color:{COLORS['mid_gray']}">
+Prefer to skip the form? Call <a href="{PHONE_HREF}">{PHONE}</a> or email <a href="mailto:{EMAIL}">{EMAIL}</a>.
+</p>
 </form>
+<script>
+/* This is a static site with no server to post to. Rather than let a submit
+   silently discard a lead, compose the message and hand it to the visitor's
+   mail client, and keep the phone number visible either way. Swap the handler
+   for a real endpoint when one exists. */
+(function(){{
+var form=document.getElementById('consult-form');
+var status=document.getElementById('cf-status');
+if(!form)return;
+form.addEventListener('submit',function(e){{
+e.preventDefault();
+var get=function(id){{var el=document.getElementById(id);return el?el.value.trim():''}};
+var name=get('cf-name'),email=get('cf-email');
+if(!name||!email){{status.textContent='Please add your name and email so we can reply.';return}}
+var lines=[
+'Name: '+name,
+'Email: '+email,
+'Phone: '+(get('cf-phone')||'not provided'),
+'Company: '+(get('cf-company')||'not provided'),
+'Service area: '+(get('cf-service')||'not specified'),
+'',
+get('cf-message')||'(no message)'
+].join('\n');
+var href='mailto:{EMAIL}'
+  +'?subject='+encodeURIComponent('Consult request from '+name)
+  +'&body='+encodeURIComponent(lines);
+status.innerHTML='Opening your email app with the details filled in. If nothing happens, email <a href="mailto:{EMAIL}">{EMAIL}</a> or call <a href="{PHONE_HREF}">{PHONE}</a>.';
+window.location.href=href;
+}});
+}})();
+</script>
 </div>
 <div>
 <div class="contact-info-card" style="margin-top:48px">
+<h3>Call or Email</h3>
+<p style="margin-bottom:6px"><a href="{PHONE_HREF}" style="font-weight:700;font-size:1.15rem">{PHONE}</a></p>
+<p><a href="mailto:{EMAIL}">{EMAIL}</a></p>
+</div>
+<div class="contact-info-card">
 <h3>Office Location</h3>
 <p>{ADDRESS}</p>
 </div>
@@ -3374,18 +4651,40 @@ def gen_testimonials():
 <p class="role">{t['role']}</p>
 </div>\n"""
 
-    schema = """<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Elixir Consulting Group","url":"https://elixirconsultinggroup.com","logo":"https://elixirconsultinggroup.com/images/og-image.png","image":"https://elixirconsultinggroup.com/images/og-image.png","telephone":"+1-412-387-7656","email":"info@elixirconsultinggroup.com","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"47","bestRating":"5"}}
-</script>"""
+    # Individual Review items for the testimonials actually shown on this page.
+    # No aggregateRating: numeric star ratings were never collected for these,
+    # and asserting one that nothing on the page supports is exactly the kind of
+    # self-serving markup search engines discount or penalize.
+    schema = '<script type="application/ld+json">\n' + json.dumps({
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Client testimonials for Elixir Consulting Group",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": i,
+                "item": {
+                    "@type": "Review",
+                    "reviewBody": t["text"],
+                    "author": {"@type": "Person", "name": t["name"], "jobTitle": t["role"]},
+                    "itemReviewed": {"@id": DOMAIN + "/#organization"},
+                    "publisher": {"@id": DOMAIN + "/#organization"},
+                },
+            }
+            for i, t in enumerate(TESTIMONIALS, 1)
+        ],
+    }) + '\n</script>'
 
     body = f"""
 <section class="page-hero">
 <div class="container">
 <p class="breadcrumb"><a href="/">Home</a> / Testimonials</p>
 <h1>Client Testimonials</h1>
-<p>What business owners and leaders say about working with Elixir Consulting Group.</p>
+<p>What business owners and leaders say about working with Elixir Consulting Group. Names are abbreviated at client request; several engagements involved exit planning or leadership restructuring that clients prefer to keep private.</p>
 </div>
 </section>
+
+{make_trust_bar()}
 
 <section class="section">
 <div class="container">
@@ -3395,12 +4694,30 @@ def gen_testimonials():
 </div>
 </section>
 
-{make_cta()}
+<section class="section section-navy">
+<div class="container">
+<div class="text-center" style="margin-bottom:40px">
+<span class="eyebrow">Beyond the Quotes</span>
+<h2>The Documented Version</h2>
+<p style="max-width:660px;margin:0 auto">Testimonials are useful, but numbers are better. Each case study below covers a full engagement: what was broken, what we built, and what measurably changed.</p>
+</div>
+<div class="grid grid-4">
+<div class="stat-card"><span class="stat-num" style="color:{COLORS['gold']}">40%</span><span class="stat-label" style="color:rgba(255,255,255,.85)">Fewer delivery delays</span></div>
+<div class="stat-card"><span class="stat-num" style="color:{COLORS['gold']}">2x</span><span class="stat-label" style="color:rgba(255,255,255,.85)">Close rate</span></div>
+<div class="stat-card"><span class="stat-num" style="color:{COLORS['gold']}">70%</span><span class="stat-label" style="color:rgba(255,255,255,.85)">Fewer handoff errors</span></div>
+<div class="stat-card"><span class="stat-num" style="color:{COLORS['gold']}">35%</span><span class="stat-label" style="color:rgba(255,255,255,.85)">Higher satisfaction</span></div>
+</div>
+<div class="text-center" style="margin-top:36px">
+<a href="/case-studies/" class="btn btn-gold">Read the Case Studies</a>
+</div>
+</div>
+</section>
 """
-    body += render_faq_section(TESTIMONIAL_FAQS, "Testimonial FAQs", gray=False)
+    body += render_faq_section(TESTIMONIAL_FAQS, "Testimonial FAQs")
+    body += make_cta()
     return make_page(
         "Client Testimonials | Elixir Consulting Group",
-        "Read testimonials from business owners who worked with Elixir Consulting Group on operations, sales systems, and leadership cadence. Pittsburgh, PA and nationwide.",
+        "Testimonials from business owners who worked with Elixir Consulting Group on operations, sales systems, and leadership cadence. Pittsburgh, PA and nationwide.",
         "/testimonials/",
         body,
         schema,
@@ -3408,51 +4725,138 @@ def gen_testimonials():
     )
 
 
-def gen_sitemap(all_posts=None, consulting_pages=None):
-    urls = [
-        ("/", "1.0", "weekly"),
-        ("/about/", "0.8", "monthly"),
-        ("/services/", "0.9", "monthly"),
-        ("/services/business-strategy/", "0.8", "monthly"),
-        ("/services/ai-consulting/", "0.8", "monthly"),
-        ("/services/operations/", "0.8", "monthly"),
-        ("/services/sales-strategy/", "0.8", "monthly"),
-        ("/services/leadership/", "0.8", "monthly"),
-        ("/pittsburgh-business-consultant/", "0.9", "monthly"),
-        ("/pittsburgh-ai-consulting/", "0.9", "monthly"),
-        ("/pittsburgh-operations-consulting/", "0.9", "monthly"),
-        ("/cranberry-township-business-consultant/", "0.8", "monthly"),
-        ("/wexford-business-consultant/", "0.8", "monthly"),
-        ("/industries/", "0.7", "monthly"),
-        ("/case-studies/", "0.7", "monthly"),
-        ("/blog/", "0.8", "weekly"),
-        ("/contact/", "0.8", "monthly"),
-        ("/faq/", "0.7", "monthly"),
-        ("/testimonials/", "0.75", "monthly"),
-        ("/consulting/", "0.8", "monthly"),
-    ]
+# ─── Feeds, search index, and static site assets ───────────────────────
 
-    # lastmod defaults to the build date; blog posts carry their publish date.
-    lastmod = {}
+def rfc822(iso):
+    try:
+        y, m, d = (int(x) for x in iso.split("-"))
+        dt = datetime(y, m, d, 12, 0, 0)
+        days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+        mons = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        return f"{days[dt.weekday()]}, {d:02d} {mons[m-1]} {y} 12:00:00 +0000"
+    except Exception:
+        return "Thu, 01 Jan 2026 12:00:00 +0000"
 
-    consulting_pages = consulting_pages or []
-    if consulting_pages:
-        for p in consulting_pages:
-            urls.append((f"/consulting/{p['slug']}/", "0.7", "monthly"))
-    else:
-        consulting_dir = os.path.join(SITE_DIR, "consulting")
-        if os.path.isdir(consulting_dir):
-            for d in sorted(os.listdir(consulting_dir)):
-                if os.path.isdir(os.path.join(consulting_dir, d)):
-                    urls.append((f"/consulting/{d}/", "0.7", "monthly"))
 
-    posts = all_posts if all_posts is not None else []
-    for i, post in enumerate(posts):
-        # The newest posts get a higher priority than the long tail.
-        priority = "0.75" if i < 12 else "0.6"
-        urls.append((post["url"], priority, "monthly"))
-        lastmod[post["url"]] = post.get("modified") or post["date"]
+def xml_escape(s):
+    return (str(s).replace("&", "&amp;").replace("<", "&lt;")
+            .replace(">", "&gt;").replace('"', "&quot;").replace("'", "&apos;"))
 
+
+def gen_rss(all_posts, limit=50):
+    items = ""
+    for p in all_posts[:limit]:
+        items += f"""  <item>
+    <title>{xml_escape(p['title'])}</title>
+    <link>{DOMAIN}{p['url']}</link>
+    <guid isPermaLink="true">{DOMAIN}{p['url']}</guid>
+    <description>{xml_escape(p['excerpt'])}</description>
+    <category>{xml_escape(p['category'])}</category>
+    <dc:creator>Dr. Connor Robertson</dc:creator>
+    <pubDate>{rfc822(p['date'])}</pubDate>
+  </item>\n"""
+
+    return f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+  <title>Elixir Consulting Group Blog</title>
+  <link>{DOMAIN}/blog/</link>
+  <atom:link href="{DOMAIN}/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Practical articles on business strategy, operations, AI adoption, sales systems, and leadership for owner-led companies.</description>
+  <language>en-us</language>
+  <copyright>Copyright {YEAR} Elixir Consulting Group</copyright>
+  <managingEditor>{EMAIL} (Dr. Connor Robertson)</managingEditor>
+  <webMaster>{EMAIL} (Elixir Consulting Group)</webMaster>
+  <lastBuildDate>{rfc822(all_posts[0]['date'] if all_posts else DATE_NOW)}</lastBuildDate>
+  <image>
+    <url>{OG_IMAGE}</url>
+    <title>Elixir Consulting Group Blog</title>
+    <link>{DOMAIN}/blog/</link>
+  </image>
+{items}</channel>
+</rss>"""
+
+
+def gen_search_index(all_posts, consulting_pages):
+    """Static JSON index powering /search/.
+
+    Kept deliberately small: a title, a URL, a short description, a kind label,
+    and one pre-lowercased haystack string the page can substring-match. At a few
+    hundred entries this stays well under the size where a real search service
+    would be worth the dependency.
+    """
+    entries = []
+
+    def add(title, url, desc, kind, extra=""):
+        entries.append({
+            "t": title, "u": url, "d": clip(desc, 150), "k": kind,
+            "s": " ".join([title, desc, kind, extra]).lower(),
+        })
+
+    add("Home", "/", "Business consulting for owner-led companies: operations, sales systems, and leadership cadence.", "Page")
+    add("About Dr. Connor Robertson", "/about/", "Founder and lead consultant at Elixir Consulting Group, author of six books on acquisitions and strategy.", "Page", "bio founder team")
+    add("How We Work", "/process/", "The five phases of an engagement: consult, assessment, design, implementation, handover.", "Page", "process method engagement phases")
+    add("Services", "/services/", "Five core consulting services covering strategy, AI, operations, sales, and leadership.", "Page")
+    add("Contact", "/contact/", f"Book a consult. Call {PHONE} or email {EMAIL}.", "Page", "book consult phone email")
+    add("FAQ", "/faq/", "Answers on pricing, process, engagement length, and what working together involves.", "Page", "questions pricing cost")
+    add("Testimonials", "/testimonials/", "What clients say about working with Elixir Consulting Group.", "Page", "reviews clients")
+    add("Case Studies", "/case-studies/", "Documented engagements with the systems installed and the results they produced.", "Page", "results proof")
+    add("Industries", "/industries/", "Eight sectors we work in regularly, with the constraints specific to each.", "Page")
+    add("Consulting Locations", "/consulting/", "Regions served, from Pittsburgh across Pennsylvania and nationwide.", "Page", "locations cities areas")
+    add("Search", "/search/", "Search every page on the site.", "Page")
+
+    for slug, title, desc in [
+        ("business-strategy", "Business Strategy Consulting", "Strategic planning, growth roadmaps, competitive analysis, and execution frameworks."),
+        ("ai-consulting", "AI Consulting & Digital Transformation", "AI readiness, workflow automation, tool selection, and team adoption."),
+        ("operations", "Operations Consulting", "Process mapping, SOPs, role clarity, and weekly operating cadence."),
+        ("sales-strategy", "Sales Strategy & Revenue Systems", "Pipeline design, follow-up systems, CRM optimization, and forecasting."),
+        ("leadership", "Leadership Consulting & Executive Coaching", "Leadership cadence, scorecards, accountability, and succession planning."),
+    ]:
+        add(title, f"/services/{slug}/", desc, "Service")
+
+    for ind in INDUSTRIES:
+        add(f"{ind['name']} Consulting", f"/industries/{ind['slug']}/", ind["short"], "Industry")
+
+    for cs in CASE_STUDIES:
+        add(cs["title"], f"/case-studies/{cs['slug']}/", cs["challenge"], "Case Study", cs["industry"])
+
+    for cat in CATEGORY_ORDER:
+        if any(p["category"] == cat for p in all_posts):
+            add(f"{cat} Articles", f"/blog/category/{category_slug(cat)}/",
+                CATEGORY_INTROS.get(cat, ""), "Category")
+
+    for cp in consulting_pages:
+        add(f"Business Consulting in {cp['city']}, {cp['state']}",
+            f"/consulting/{cp['slug']}/", cp["tagline"], "Location")
+
+    for landing, city in [
+        ("pittsburgh-business-consultant", "Pittsburgh"),
+        ("pittsburgh-ai-consulting", "Pittsburgh AI"),
+        ("pittsburgh-operations-consulting", "Pittsburgh Operations"),
+        ("cranberry-township-business-consultant", "Cranberry Township"),
+        ("wexford-business-consultant", "Wexford"),
+    ]:
+        add(f"{city} Business Consulting", f"/{landing}/",
+            f"Consulting services for businesses in {city} and the surrounding area.", "Location")
+
+    for p in all_posts:
+        add(p["title"], p["url"], p["excerpt"], p["category"])
+
+    return json.dumps(entries, separators=(",", ":"))
+
+
+def gen_sitemap_index(names):
+    parts = "".join(
+        f"  <sitemap>\n    <loc>{DOMAIN}/{n}</loc>\n    <lastmod>{DATE_NOW}</lastmod>\n  </sitemap>\n"
+        for n in names)
+    return f"""<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{parts}</sitemapindex>"""
+
+
+def gen_urlset(urls, lastmod=None):
+    lastmod = lastmod or {}
     entries = ""
     for path, priority, freq in urls:
         entries += f"""  <url>
@@ -3461,17 +4865,128 @@ def gen_sitemap(all_posts=None, consulting_pages=None):
     <changefreq>{freq}</changefreq>
     <priority>{priority}</priority>
   </url>\n"""
-
     return f"""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {entries}</urlset>"""
 
 
+def gen_manifest():
+    return json.dumps({
+        "name": "Elixir Consulting Group",
+        "short_name": "Elixir",
+        "description": "Business consulting for owner-led companies: operations, sales systems, and leadership cadence.",
+        "start_url": "/",
+        "scope": "/",
+        "display": "standalone",
+        "background_color": "#FFFFFF",
+        "theme_color": COLORS["navy"],
+        "lang": "en-US",
+        "icons": [
+            {"src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"},
+            {"src": "/images/icon-192.png", "sizes": "192x192", "type": "image/png"},
+            {"src": "/images/icon-512.png", "sizes": "512x512", "type": "image/png"},
+        ],
+    }, indent=2)
+
+
+def gen_security_txt():
+    return f"""Contact: mailto:{EMAIL}
+Contact: tel:+14123877656
+Preferred-Languages: en
+Canonical: {DOMAIN}/.well-known/security.txt
+Expires: 2027-12-31T23:59:59.000Z
+Policy: {DOMAIN}/contact/
+
+# Elixir Consulting Group runs a static marketing site. If you have found a
+# security issue, email the address above and we will respond within one
+# business day.
+"""
+
+
+def gen_humans_txt():
+    return f"""/* TEAM */
+Founder & Lead Consultant: Dr. Connor Robertson
+Site: {DOMAIN}
+Contact: {EMAIL}
+Location: Pittsburgh, Pennsylvania, USA
+
+/* SITE */
+Last update: {DATE_NOW}
+Standards: HTML5, CSS3, JSON-LD
+Components: Static site generator (Python), no runtime dependencies
+Typography: Inter
+"""
+
+
 def gen_robots():
-    return f"""User-agent: *
+    return f"""# Elixir Consulting Group
+User-agent: *
 Allow: /
+Disallow: /search?
+Disallow: /*?q=
+
+# Crawl the whole site; nothing here is private.
 Sitemap: {DOMAIN}/sitemap.xml
-Sitemap: {DOMAIN}/sitemap_index.xml"""
+Sitemap: {DOMAIN}/sitemap-pages.xml
+Sitemap: {DOMAIN}/sitemap-blog.xml
+Sitemap: {DOMAIN}/sitemap-locations.xml
+"""
+
+
+# Core pages, split out so the sitemap index can group them separately from
+# the blog archive and the location pages. Large sitemaps are easier for search
+# engines to process (and for us to debug) when they are partitioned by type.
+CORE_SITEMAP_URLS = [
+    ("/", "1.0", "weekly"),
+    ("/about/", "0.85", "monthly"),
+    ("/process/", "0.85", "monthly"),
+    ("/services/", "0.9", "monthly"),
+    ("/services/business-strategy/", "0.85", "monthly"),
+    ("/services/ai-consulting/", "0.85", "monthly"),
+    ("/services/operations/", "0.85", "monthly"),
+    ("/services/sales-strategy/", "0.85", "monthly"),
+    ("/services/leadership/", "0.85", "monthly"),
+    ("/industries/", "0.8", "monthly"),
+    ("/case-studies/", "0.8", "monthly"),
+    ("/blog/", "0.85", "daily"),
+    ("/blog/author/dr-connor-robertson/", "0.6", "weekly"),
+    ("/contact/", "0.85", "monthly"),
+    ("/faq/", "0.75", "monthly"),
+    ("/testimonials/", "0.75", "monthly"),
+    ("/search/", "0.3", "yearly"),
+]
+
+
+def sitemap_pages_urls():
+    urls = list(CORE_SITEMAP_URLS)
+    for ind in INDUSTRIES:
+        urls.append((f"/industries/{ind['slug']}/", "0.75", "monthly"))
+    for cs in CASE_STUDIES:
+        urls.append((f"/case-studies/{cs['slug']}/", "0.75", "monthly"))
+    return urls
+
+
+def sitemap_blog_urls(all_posts, categories):
+    urls = [(f"/blog/category/{category_slug(c)}/", "0.7", "weekly") for c in categories]
+    lastmod = {}
+    for i, post in enumerate(all_posts):
+        urls.append((post["url"], "0.75" if i < 12 else "0.6", "monthly"))
+        lastmod[post["url"]] = post.get("modified") or post["date"]
+    return urls, lastmod
+
+
+def sitemap_location_urls(consulting_pages):
+    urls = [
+        ("/consulting/", "0.8", "monthly"),
+        ("/pittsburgh-business-consultant/", "0.9", "monthly"),
+        ("/pittsburgh-ai-consulting/", "0.9", "monthly"),
+        ("/pittsburgh-operations-consulting/", "0.9", "monthly"),
+        ("/cranberry-township-business-consultant/", "0.8", "monthly"),
+        ("/wexford-business-consultant/", "0.8", "monthly"),
+    ]
+    for cp in consulting_pages:
+        urls.append((f"/consulting/{cp['slug']}/", "0.7", "monthly"))
+    return urls
 
 
 def gen_vercel_json():
@@ -3575,20 +5090,33 @@ print("=" * 60)
 print("Elixir Consulting Group - Static Site Generator")
 print("=" * 60)
 
-# Homepage
-print("\n[1/14] Homepage")
-write_page("/index.html", gen_homepage())
+# Ingest the blog first. Reading finishes before any write, so re-running is
+# safe, and every downstream page can cross-link into the real archive.
+print("\n[1/16] Reading the blog archive")
+ALL_POSTS = load_all_posts()
+# Canonicalized duplicates still get a page, but they stay out of the index,
+# the related-post pool, and the sitemap so only the original competes.
+INDEX_POSTS = [p for p in ALL_POSTS if not p.get("duplicate_of")]
+POSTS_BY_CATEGORY = {}
+for post in INDEX_POSTS:
+    POSTS_BY_CATEGORY.setdefault(post["category"], []).append(post)
+ACTIVE_CATEGORIES = [c for c in CATEGORY_ORDER if POSTS_BY_CATEGORY.get(c)]
+print(f"  {len(ALL_POSTS)} posts ({len(INDEX_POSTS)} canonical) across "
+      f"{len(ACTIVE_CATEGORIES)} categories")
+
+print("\n[2/16] Homepage")
+write_page("/index.html", gen_homepage(INDEX_POSTS))
 
 # About
-print("\n[2/14] About")
+print("\n[3/16] About")
 write_page("/about/", gen_about())
 
 # Services Overview
-print("\n[3/14] Services Overview")
+print("\n[3.5/16] Services Overview")
 write_page("/services/", gen_services_overview())
 
 # Service Pages
-print("\n[4/14] Business Strategy")
+print("\n[4/16] Business Strategy")
 write_page("/services/business-strategy/", gen_service_page(
     "business-strategy",
     "Business Strategy Consulting",
@@ -3608,10 +5136,11 @@ write_page("/services/business-strategy/", gen_service_page(
         "Stronger competitive positioning",
         "Better decision-making across the leadership team",
         "Increased business value and exit readiness",
-    ]
+    ],
+    all_posts=INDEX_POSTS,
 ))
 
-print("\n[5/14] AI Consulting")
+print("\n[5/16] AI Consulting")
 write_page("/services/ai-consulting/", gen_service_page(
     "ai-consulting",
     "AI Consulting & Digital Transformation",
@@ -3631,10 +5160,11 @@ write_page("/services/ai-consulting/", gen_service_page(
         "Improved customer response time and satisfaction",
         "Lower operational costs through automation",
         "Technology that supports growth without adding headcount",
-    ]
+    ],
+    all_posts=INDEX_POSTS,
 ))
 
-print("\n[6/14] Operations Consulting")
+print("\n[6/16] Operations Consulting")
 write_page("/services/operations/", gen_service_page(
     "operations",
     "Operations Consulting",
@@ -3654,10 +5184,11 @@ write_page("/services/operations/", gen_service_page(
         "Reduced errors and rework across the team",
         "Faster onboarding for new hires",
         "Predictable operations that scale with growth",
-    ]
+    ],
+    all_posts=INDEX_POSTS,
 ))
 
-print("\n[7/14] Sales Strategy")
+print("\n[7/16] Sales Strategy")
 write_page("/services/sales-strategy/", gen_service_page(
     "sales-strategy",
     "Sales Strategy & Revenue Systems",
@@ -3677,10 +5208,11 @@ write_page("/services/sales-strategy/", gen_service_page(
         "Predictable revenue pipeline with real visibility",
         "Sales team aligned on process instead of improvising",
         "Less stress around sales performance",
-    ]
+    ],
+    all_posts=INDEX_POSTS,
 ))
 
-print("\n[8/14] Leadership Consulting")
+print("\n[8/16] Leadership Consulting")
 write_page("/services/leadership/", gen_service_page(
     "leadership",
     "Leadership Consulting & Executive Coaching",
@@ -3700,34 +5232,47 @@ write_page("/services/leadership/", gen_service_page(
         "Better visibility into what is working and what is not",
         "Reduced owner involvement in day-to-day decisions",
         "Stronger leadership team capable of running the business independently",
-    ]
+    ],
+    all_posts=INDEX_POSTS,
 ))
 
-# Industries
-print("\n[9/14] Industries")
+# Industries and case studies need the post list for cross-linking, so they
+# are generated after the blog ingest below.
+print("\n[9/16] Industries index")
 write_page("/industries/", gen_industries())
 
-# Case Studies
-print("\n[10/14] Case Studies")
+print("\n[10/16] Case Studies index")
 write_page("/case-studies/", gen_case_studies())
+
+print("\n[10.5/16] Process")
+write_page("/process/", gen_process())
 
 # Blog: ingest everything on disk first, then re-render the whole archive so
 # posts written by other tooling share this template. Reading completes before
 # any write, so the pass is safe to re-run.
-print("\n[11/14] Blog Index & Posts")
-ALL_POSTS = load_all_posts()
-# Canonicalized duplicates still get a page, but they stay out of the index,
-# the related-post pool, and the sitemap so only the original competes.
-INDEX_POSTS = [p for p in ALL_POSTS if not p.get("duplicate_of")]
-print(f"  Loaded {len(ALL_POSTS)} blog posts ({len(INDEX_POSTS)} canonical)")
+print("\n[11/16] Blog Index")
 write_page("/blog/", gen_blog_index(INDEX_POSTS))
 
-print("\n[12/14] Blog Posts")
+print("\n[12/16] Blog Posts")
 for post in ALL_POSTS:
     write_page(post["url"], gen_blog_post(post, INDEX_POSTS))
 
+# Category archives give each of the eight topics its own indexable landing
+# page, which a 330-post flat archive cannot do on its own.
+print("\n[13/16] Blog Category Archives & Author Page")
+for cat in ACTIVE_CATEGORIES:
+    write_page(f"/blog/category/{category_slug(cat)}/",
+               gen_category_page(cat, POSTS_BY_CATEGORY[cat], INDEX_POSTS))
+write_page("/blog/author/dr-connor-robertson/", gen_author_page(INDEX_POSTS))
+
+print("\n[14/16] Industry & Case Study Detail Pages")
+for ind in INDUSTRIES:
+    write_page(f"/industries/{ind['slug']}/", gen_industry_page(ind, INDEX_POSTS))
+for cs in CASE_STUDIES:
+    write_page(f"/case-studies/{cs['slug']}/", gen_case_study_page(cs, INDEX_POSTS))
+
 # City Pages
-print("\n[12.5/14] City-Specific Service Pages")
+print("\n[14.5/16] City-Specific Service Pages")
 
 write_page("/pittsburgh-business-consultant/", gen_city_page(
     "pittsburgh-business-consultant", "Pittsburgh", "PA",
@@ -3800,7 +5345,7 @@ write_page("/wexford-business-consultant/", gen_city_page(
 ))
 
 # Regional consulting pages (same ingest-then-rerender approach as the blog)
-print("\n[12.75/14] Regional Consulting Pages")
+print("\n[14.75/16] Regional Consulting Pages")
 CONSULTING_PAGES = load_consulting_pages()
 print(f"  Loaded {len(CONSULTING_PAGES)} location pages")
 write_page("/consulting/", gen_consulting_index(CONSULTING_PAGES))
@@ -3808,11 +5353,11 @@ for cpage in CONSULTING_PAGES:
     write_page(f"/consulting/{cpage['slug']}/", gen_consulting_page(cpage, CONSULTING_PAGES))
 
 # Contact
-print("\n[13/14] Contact")
+print("\n[15/16] Contact & FAQ")
 write_page("/contact/", gen_contact())
 
 # FAQ
-print("\n[14/14] FAQ & Testimonials")
+print("\n[15.5/16] Testimonials")
 write_page("/faq/", gen_faq())
 write_page("/testimonials/", gen_testimonials())
 
@@ -3851,22 +5396,39 @@ def gen_404():
 
     return make_page("Page Not Found | Elixir Consulting Group", "The page you requested could not be found.", "/404", body)
 
-print("\n[15/15] 404 Page")
+print("\n[15.7/16] 404 Page")
 write_page("/404.html", gen_404())
 
-# Sitemap, robots.txt, vercel.json
-print("\nGenerating sitemap.xml, robots.txt, vercel.json...")
-with open(os.path.join(SITE_DIR, "sitemap.xml"), "w") as f:
-    f.write(gen_sitemap(INDEX_POSTS, CONSULTING_PAGES))
-print("  Created: sitemap.xml")
+# Search page needs the final page count, so it is written last among pages.
+print("\n[15.9/16] Search")
+SEARCH_INDEX = gen_search_index(INDEX_POSTS, CONSULTING_PAGES)
+write_page("/search/", gen_search_page(len(INDEX_POSTS), len(json.loads(SEARCH_INDEX))))
 
-with open(os.path.join(SITE_DIR, "robots.txt"), "w") as f:
-    f.write(gen_robots())
-print("  Created: robots.txt")
+# Sitemaps, feeds, and static assets
+print("\n[16/16] Sitemaps, feeds, and site assets")
 
-with open(os.path.join(SITE_DIR, "vercel.json"), "w") as f:
-    f.write(gen_vercel_json())
-print("  Created: vercel.json")
+
+def write_asset(name, content):
+    path = os.path.join(SITE_DIR, name)
+    os.makedirs(os.path.dirname(path), exist_ok=True) if os.path.dirname(name) else None
+    with open(path, "w", encoding="utf-8") as fh:
+        fh.write(content)
+    print(f"  Created: /{name}")
+
+
+BLOG_URLS, BLOG_LASTMOD = sitemap_blog_urls(INDEX_POSTS, ACTIVE_CATEGORIES)
+write_asset("sitemap-pages.xml", gen_urlset(sitemap_pages_urls()))
+write_asset("sitemap-blog.xml", gen_urlset(BLOG_URLS, BLOG_LASTMOD))
+write_asset("sitemap-locations.xml", gen_urlset(sitemap_location_urls(CONSULTING_PAGES)))
+write_asset("sitemap.xml", gen_sitemap_index(
+    ["sitemap-pages.xml", "sitemap-blog.xml", "sitemap-locations.xml"]))
+write_asset("feed.xml", gen_rss(INDEX_POSTS))
+write_asset("search-index.json", SEARCH_INDEX)
+write_asset("site.webmanifest", gen_manifest())
+write_asset("robots.txt", gen_robots())
+write_asset("humans.txt", gen_humans_txt())
+write_asset(".well-known/security.txt", gen_security_txt())
+write_asset("vercel.json", gen_vercel_json())
 
 # Count files
 total = 0
@@ -3876,8 +5438,13 @@ for root, dirs, files in os.walk(SITE_DIR):
             total += 1
 print(f"\n{'='*60}")
 print(f"DONE! Generated {total} HTML pages + sitemap + robots.txt + vercel.json")
-print(f"  {len(ALL_POSTS)} blog posts, {len(CONSULTING_PAGES)} location pages, "
-      f"{len(open(os.path.join(SITE_DIR, 'sitemap.xml')).read().split('<url>')) - 1} sitemap URLs")
+_sitemap_urls = sum(
+    open(os.path.join(SITE_DIR, n)).read().count("<url>")
+    for n in ("sitemap-pages.xml", "sitemap-blog.xml", "sitemap-locations.xml"))
+print(f"  {len(ALL_POSTS)} posts, {len(ACTIVE_CATEGORIES)} category archives, "
+      f"{len(INDUSTRIES)} industry pages, {len(CASE_STUDIES)} case studies, "
+      f"{len(CONSULTING_PAGES)} location pages")
+print(f"  {_sitemap_urls} URLs across 3 sitemaps + RSS feed + search index")
 print("  Every page: Organization + WebSite + Person graph, FAQPage, BreadcrumbList,")
-print("  canonical, OG/Twitter card. Blog posts also carry BlogPosting.")
+print("  canonical, OG/Twitter card. Posts add BlogPosting; industries add Service.")
 print(f"{'='*60}")

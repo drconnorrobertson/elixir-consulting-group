@@ -4,32 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>AI Consulting in Pittsburgh, PA | Elixir Consulting</title>
+<title>AI Consulting in Pittsburgh, PA | Elixir</title>
 <meta name="description" content="Elixir Consulting Group provides AI consulting and digital transformation for businesses in Pittsburgh, PA. Implementation-focused engagements. Call (412)...">
 <meta name="author" content="Dr. Connor Robertson">
 <meta name="theme-color" content="#002E5B">
 <meta name="format-detection" content="telephone=yes">
 <link rel="canonical" href="https://elixirconsultinggroup.com/pittsburgh-ai-consulting/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/images/og-image.png">
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Elixir Consulting Group Blog" href="/feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<meta property="og:title" content="AI Consulting in Pittsburgh, PA | Elixir Consulting">
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
+<meta property="og:title" content="AI Consulting in Pittsburgh, PA | Elixir">
 <meta property="og:description" content="Elixir Consulting Group provides AI consulting and digital transformation for businesses in Pittsburgh, PA. Implementation-focused engagements. Call (412)...">
 <meta property="og:url" content="https://elixirconsultinggroup.com/pittsburgh-ai-consulting/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Elixir Consulting Group">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://elixirconsultinggroup.com/images/og-image.png">
+<meta property="og:image" content="https://elixirconsultinggroup.com/images/og/pittsburgh-ai-consulting.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="AI Consulting in Pittsburgh, PA | Elixir Consulting">
+<meta property="og:image:alt" content="AI Consulting in Pittsburgh, PA | Elixir">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Consulting in Pittsburgh, PA | Elixir Consulting">
+<meta name="twitter:title" content="AI Consulting in Pittsburgh, PA | Elixir">
 <meta name="twitter:description" content="Elixir Consulting Group provides AI consulting and digital transformation for businesses in Pittsburgh, PA. Implementation-focused engagements. Call (412)...">
-<meta name="twitter:image" content="https://elixirconsultinggroup.com/images/og-image.png">
-<meta name="twitter:image:alt" content="AI Consulting in Pittsburgh, PA | Elixir Consulting">
+<meta name="twitter:image" content="https://elixirconsultinggroup.com/images/og/pittsburgh-ai-consulting.png">
+<meta name="twitter:image:alt" content="AI Consulting in Pittsburgh, PA | Elixir">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -174,8 +177,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 
 /* Trust bar */
 .trust-bar{background:#F8F9FA;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;padding:22px 0}
-.trust-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 36px;text-align:center}
-.trust-item{display:flex;align-items:center;gap:9px;font-size:.92rem;font-weight:600;color:#002E5B}
+.trust-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px 28px;text-align:center}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:.88rem;font-weight:600;color:#002E5B;white-space:nowrap}
+@media(max-width:1180px){.trust-item{font-size:.83rem}.trust-row{gap:10px 20px}}
 .trust-item span{color:#C9A84C;font-size:1.05rem;line-height:1}
 
 /* Article typography (blog) */
@@ -341,6 +345,9 @@ main[style]{margin-top:64px!important}
 .footer li{margin-bottom:0}
 .footer li a{display:inline-block;min-height:44px;padding:11px 0;line-height:1.45}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{display:inline-flex;align-items:center;min-height:44px}
+/* Standalone links sitting inside cards and stat blocks are tap targets too.
+   Links inline within a sentence stay as-is; WCAG exempts those. */
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a{display:inline-flex;align-items:center;min-height:44px}
 .breadcrumb a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
 .services-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}
 .faq-q{min-height:56px;padding:18px 20px}
@@ -394,6 +401,24 @@ h1{font-size:1.7rem}
 @media(prefers-reduced-motion:reduce){
 *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 .card:hover,.post-card:hover,.btn:hover{transform:none}
+}
+@media print{
+.header,.topbar,.nav-backdrop,.cta-banner,.cta-section,.related-posts,.trust-bar,.skip-link,.blog-toolbar,.load-more-wrap,.footer form,button{display:none!important}
+.site-main{margin-top:0}
+body{color:#000;background:#fff;font-size:11pt;line-height:1.45}
+h1,h2,h3,h4{color:#000;page-break-after:avoid}
+.page-hero,.hero,.section-navy{background:none!important;color:#000!important;padding:0 0 12pt}
+.page-hero h1,.page-hero p,.hero h1,.hero p,.section-navy h2,.section-navy p{color:#000!important}
+.section,.section-sm{padding:12pt 0}
+.card,.industry-card,.post-card{box-shadow:none;border:1px solid #ccc;page-break-inside:avoid}
+.article-body{max-width:none;font-size:11pt}
+a[href^="/"]::after{content:" (elixirconsultinggroup.com" attr(href) ")";font-size:9pt;color:#444}
+a[href^="http"]::after{content:" (" attr(href) ")";font-size:9pt;color:#444}
+.footer{background:none;color:#000;border-top:1px solid #ccc}
+.footer a,.footer h4{color:#000}
+.faq-item .faq-a{max-height:none!important;padding:0 0 8pt!important;overflow:visible}
+.faq-q::after{display:none}
+img{max-width:60%;page-break-inside:avoid}
 }
 </style>
 <script type="application/ld+json">
@@ -491,6 +516,7 @@ h1{font-size:1.7rem}
 <div class="topbar-inner">
 <span class="topbar-note">Pittsburgh, PA &middot; Serving business owners nationwide</span>
 <span class="topbar-links">
+<a href="/search/" aria-label="Search the site">&#9906; Search</a>
 <a href="tel:+14123877656">&#9742; (412) 387-7656</a>
 <a href="mailto:info@elixirconsultinggroup.com">&#9993; Email Us</a>
 </span>
@@ -503,10 +529,10 @@ h1{font-size:1.7rem}
 <span></span><span></span><span></span>
 </button>
 <ul class="nav-menu" id="nav-menu">
-<li><a href="/">Home</a></li>
 <li><a href="/about/">About</a></li>
 <li><a href="/services/">Services</a></li>
 <li><a href="/industries/">Industries</a></li>
+<li><a href="/process/">Process</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
 <li><a href="/blog/">Blog</a></li>
 <li><a href="/faq/">FAQ</a></li>
@@ -647,8 +673,11 @@ h1{font-size:1.7rem}
 <li><a href="/industries/">Industries</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
 <li><a href="/blog/">Blog</a></li>
+<li><a href="/blog/author/dr-connor-robertson/">Articles by Dr. Robertson</a></li>
+<li><a href="/process/">How We Work</a></li>
 <li><a href="/faq/">FAQ</a></li>
 <li><a href="/testimonials/">Testimonials</a></li>
+<li><a href="/search/">Search</a></li>
 </ul>
 </div>
 <div>

@@ -11,24 +11,27 @@
 <meta name="format-detection" content="telephone=yes">
 <link rel="canonical" href="https://elixirconsultinggroup.com/case-studies/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/images/og-image.png">
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Elixir Consulting Group Blog" href="/feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
 <meta property="og:title" content="Case Studies | Elixir Consulting Group">
 <meta property="og:description" content="Real case studies from Elixir Consulting Group engagements across manufacturing, professional services, construction, and healthcare. See the systems...">
 <meta property="og:url" content="https://elixirconsultinggroup.com/case-studies/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Elixir Consulting Group">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://elixirconsultinggroup.com/images/og-image.png">
+<meta property="og:image" content="https://elixirconsultinggroup.com/images/og/case-studies.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Case Studies | Elixir Consulting Group">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Case Studies | Elixir Consulting Group">
 <meta name="twitter:description" content="Real case studies from Elixir Consulting Group engagements across manufacturing, professional services, construction, and healthcare. See the systems...">
-<meta name="twitter:image" content="https://elixirconsultinggroup.com/images/og-image.png">
+<meta name="twitter:image" content="https://elixirconsultinggroup.com/images/og/case-studies.png">
 <meta name="twitter:image:alt" content="Case Studies | Elixir Consulting Group">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
@@ -174,8 +177,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 
 /* Trust bar */
 .trust-bar{background:#F8F9FA;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;padding:22px 0}
-.trust-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 36px;text-align:center}
-.trust-item{display:flex;align-items:center;gap:9px;font-size:.92rem;font-weight:600;color:#002E5B}
+.trust-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px 28px;text-align:center}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:.88rem;font-weight:600;color:#002E5B;white-space:nowrap}
+@media(max-width:1180px){.trust-item{font-size:.83rem}.trust-row{gap:10px 20px}}
 .trust-item span{color:#C9A84C;font-size:1.05rem;line-height:1}
 
 /* Article typography (blog) */
@@ -341,6 +345,9 @@ main[style]{margin-top:64px!important}
 .footer li{margin-bottom:0}
 .footer li a{display:inline-block;min-height:44px;padding:11px 0;line-height:1.45}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{display:inline-flex;align-items:center;min-height:44px}
+/* Standalone links sitting inside cards and stat blocks are tap targets too.
+   Links inline within a sentence stay as-is; WCAG exempts those. */
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a{display:inline-flex;align-items:center;min-height:44px}
 .breadcrumb a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
 .services-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}
 .faq-q{min-height:56px;padding:18px 20px}
@@ -395,11 +402,31 @@ h1{font-size:1.7rem}
 *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 .card:hover,.post-card:hover,.btn:hover{transform:none}
 }
+@media print{
+.header,.topbar,.nav-backdrop,.cta-banner,.cta-section,.related-posts,.trust-bar,.skip-link,.blog-toolbar,.load-more-wrap,.footer form,button{display:none!important}
+.site-main{margin-top:0}
+body{color:#000;background:#fff;font-size:11pt;line-height:1.45}
+h1,h2,h3,h4{color:#000;page-break-after:avoid}
+.page-hero,.hero,.section-navy{background:none!important;color:#000!important;padding:0 0 12pt}
+.page-hero h1,.page-hero p,.hero h1,.hero p,.section-navy h2,.section-navy p{color:#000!important}
+.section,.section-sm{padding:12pt 0}
+.card,.industry-card,.post-card{box-shadow:none;border:1px solid #ccc;page-break-inside:avoid}
+.article-body{max-width:none;font-size:11pt}
+a[href^="/"]::after{content:" (elixirconsultinggroup.com" attr(href) ")";font-size:9pt;color:#444}
+a[href^="http"]::after{content:" (" attr(href) ")";font-size:9pt;color:#444}
+.footer{background:none;color:#000;border-top:1px solid #ccc}
+.footer a,.footer h4{color:#000}
+.faq-item .faq-a{max-height:none!important;padding:0 0 8pt!important;overflow:visible}
+.faq-q::after{display:none}
+img{max-width:60%;page-break-inside:avoid}
+}
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://elixirconsultinggroup.com/#organization", "name": "Elixir Consulting Group", "alternateName": "Elixir Consulting", "url": "https://elixirconsultinggroup.com", "logo": {"@type": "ImageObject", "url": "https://elixirconsultinggroup.com/images/og-image.png", "width": 1200, "height": 630}, "image": "https://elixirconsultinggroup.com/images/og-image.png", "description": "Business consulting firm specializing in operations, sales systems, AI adoption, and leadership development for owner-led companies. Headquartered in Pittsburgh, PA, serving clients nationwide.", "telephone": "+1-412-387-7656", "email": "info@elixirconsultinggroup.com", "foundingDate": "2019", "address": {"@type": "PostalAddress", "streetAddress": "429 Fourth Ave. Suite 300", "addressLocality": "Pittsburgh", "addressRegion": "PA", "postalCode": "15219", "addressCountry": "US"}, "areaServed": {"@type": "Country", "name": "United States"}, "founder": {"@id": "https://elixirconsultinggroup.com/#founder"}, "knowsAbout": ["Business Strategy Consulting", "Operations Consulting", "AI Consulting", "Sales Strategy", "Leadership Development", "Exit Planning", "Business Process Improvement"], "contactPoint": {"@type": "ContactPoint", "telephone": "+1-412-387-7656", "email": "info@elixirconsultinggroup.com", "contactType": "sales", "areaServed": "US", "availableLanguage": "English"}, "sameAs": ["https://drconnorrobertson.com", "https://thepittsburghwire.com", "https://www.youtube.com/@TheProspectingShow"]}, {"@type": "Person", "@id": "https://elixirconsultinggroup.com/#founder", "name": "Dr. Connor Robertson", "url": "https://drconnorrobertson.com", "image": "https://elixirconsultinggroup.com/images/dr-connor-robertson.jpg", "jobTitle": "Founder & Lead Consultant", "worksFor": {"@id": "https://elixirconsultinggroup.com/#organization"}, "sameAs": ["https://drconnorrobertson.com", "https://drconnorrobertsonbooks.com", "https://www.barnesandnoble.com/s/Connor+Robertson"]}, {"@type": "WebSite", "@id": "https://elixirconsultinggroup.com/#website", "url": "https://elixirconsultinggroup.com", "name": "Elixir Consulting Group", "publisher": {"@id": "https://elixirconsultinggroup.com/#organization"}, "inLanguage": "en-US"}]}
 </script>
-
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Client Case Studies", "url": "https://elixirconsultinggroup.com/case-studies/", "description": "Documented engagements from Elixir Consulting Group across manufacturing, professional services, construction, and healthcare.", "hasPart": [{"@type": "Article", "headline": "Manufacturing Firm Reduces Delivery Delays by 40%", "url": "https://elixirconsultinggroup.com/case-studies/manufacturing-delivery-delays/"}, {"@type": "Article", "headline": "Professional Services Firm Doubles Close Rate", "url": "https://elixirconsultinggroup.com/case-studies/professional-services-close-rate/"}, {"@type": "Article", "headline": "Construction Company Installs Operating Cadence", "url": "https://elixirconsultinggroup.com/case-studies/construction-operating-cadence/"}, {"@type": "Article", "headline": "Healthcare Practice Streamlines Patient Operations", "url": "https://elixirconsultinggroup.com/case-studies/healthcare-patient-operations/"}]}
+</script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are these case studies from real engagements?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Details are generalized and client names are withheld to protect confidentiality, but the situations, interventions, and outcomes reflect real engagements."}}, {"@type": "Question", "name": "How quickly do results usually appear?", "acceptedAnswer": {"@type": "Answer", "text": "Operational changes such as meeting cadence and role clarity tend to show up within the first 30 to 60 days. Revenue and margin effects typically follow over a full quarter or two as the new systems compound."}}, {"@type": "Question", "name": "What results can I expect?", "acceptedAnswer": {"@type": "Answer", "text": "Clients typically see improved operational consistency, better sales follow-through, clearer accountability across their teams, and reduced stress for the owner. Specific outcomes depend on where your business is starting from and which systems we install."}}, {"@type": "Question", "name": "How long does a typical engagement last?", "acceptedAnswer": {"@type": "Answer", "text": "Most engagements run between 90 days and 6 months depending on the scope. Some clients continue with ongoing advisory support after the initial implementation phase is complete."}}, {"@type": "Question", "name": "How do I get started?", "acceptedAnswer": {"@type": "Answer", "text": "The first step is to book a consult. You can do that through our contact page or by reaching out directly. During the consult, we will discuss your business and determine if there is a fit for an engagement."}}]}
 </script>
@@ -416,6 +443,7 @@ h1{font-size:1.7rem}
 <div class="topbar-inner">
 <span class="topbar-note">Pittsburgh, PA &middot; Serving business owners nationwide</span>
 <span class="topbar-links">
+<a href="/search/" aria-label="Search the site">&#9906; Search</a>
 <a href="tel:+14123877656">&#9742; (412) 387-7656</a>
 <a href="mailto:info@elixirconsultinggroup.com">&#9993; Email Us</a>
 </span>
@@ -428,10 +456,10 @@ h1{font-size:1.7rem}
 <span></span><span></span><span></span>
 </button>
 <ul class="nav-menu" id="nav-menu">
-<li><a href="/">Home</a></li>
 <li><a href="/about/">About</a></li>
 <li><a href="/services/">Services</a></li>
 <li><a href="/industries/">Industries</a></li>
+<li><a href="/process/">Process</a></li>
 <li><a href="/case-studies/" style="color:#002E5B;font-weight:700">Case Studies</a></li>
 <li><a href="/blog/">Blog</a></li>
 <li><a href="/faq/">FAQ</a></li>
@@ -447,9 +475,21 @@ h1{font-size:1.7rem}
 <div class="container">
 <p class="breadcrumb"><a href="/">Home</a> / Case Studies</p>
 <h1>Case Studies</h1>
-<p>Real results from real businesses. See how Elixir Consulting Group helps companies build structure and improve execution.</p>
+<p>Four engagements, documented end to end: what was actually broken, what we built, and what changed. Details are generalized to protect client confidentiality.</p>
 </div>
 </section>
+
+<div class="trust-bar">
+<div class="container">
+<div class="trust-row">
+<span class="trust-item"><span>&#9733;</span> 150+ businesses served</span>
+<span class="trust-item"><span>&#10003;</span> 92% client retention</span>
+<span class="trust-item"><span>&#9873;</span> Led by Dr. Connor Robertson</span>
+<span class="trust-item"><span>&#9781;</span> Implementation, not advice</span>
+<span class="trust-item"><span>&#9992;</span> Pittsburgh based, nationwide</span>
+</div>
+</div>
+</div>
 
 <section class="section">
 <div class="container">
@@ -457,57 +497,61 @@ h1{font-size:1.7rem}
 <div class="card" style="padding:0;overflow:hidden">
 <div style="background:#002E5B;padding:24px 32px;color:#FFFFFF">
 <span style="font-size:.8rem;text-transform:uppercase;letter-spacing:1px;color:#C9A84C">Manufacturing</span>
-<h3 style="color:#FFFFFF;margin-top:8px">Manufacturing Firm Reduces Delivery Delays by 40%</h3>
+<h3 style="color:#FFFFFF;margin-top:8px"><a href="/case-studies/manufacturing-delivery-delays/" style="color:#FFFFFF">Manufacturing Firm Reduces Delivery Delays by 40%</a></h3>
+<p style="color:rgba(255,255,255,.7);font-size:.85rem;margin-bottom:0">45 employees | $12M revenue | Western Pennsylvania</p>
 </div>
 <div style="padding:32px">
+<div style="margin-bottom:18px"><span style="display:inline-block;margin-right:18px"><strong style="color:#002E5B;font-size:1.25rem">40%</strong> <span style="font-size:.85rem;color:#6C757D">Fewer delivery delays</span></span> <span style="display:inline-block;margin-right:18px"><strong style="color:#002E5B;font-size:1.25rem">60%</strong> <span style="font-size:.85rem;color:#6C757D">Drop in complaints</span></span></div>
 <h4 style="color:#002E5B;margin-bottom:8px">Challenge</h4>
 <p>A 45-person manufacturing company was experiencing chronic delivery delays, inconsistent quality, and growing client complaints. The owner was personally managing every production issue.</p>
-<h4 style="color:#002E5B;margin-bottom:8px">Solution</h4>
-<p>We mapped the entire production workflow, identified three major bottleneck points, and installed a weekly production cadence with clear accountability. SOPs were built for quality checkpoints, and a simple dashboard gave leadership real-time visibility into order status.</p>
 <h4 style="color:#002E5B;margin-bottom:8px">Results</h4>
-<ul style="list-style:none;padding:0"><li>40% reduction in delivery delays within 90 days</li><li>Client complaints dropped by 60%</li><li>Owner reclaimed 12 hours per week</li><li>Team adopted weekly scorecards for ongoing accountability</li></ul>
+<ul style="list-style:none;padding:0"><li>40% reduction in delivery delays within 90 days</li><li>Client complaints dropped by 60%</li><li>Owner reclaimed 12 hours per week</li></ul>
+<a href="/case-studies/manufacturing-delivery-delays/" class="btn btn-outline" style="margin-top:16px">Read the Full Case Study</a>
 </div>
 </div>
 <div class="card" style="padding:0;overflow:hidden">
 <div style="background:#002E5B;padding:24px 32px;color:#FFFFFF">
 <span style="font-size:.8rem;text-transform:uppercase;letter-spacing:1px;color:#C9A84C">Professional Services</span>
-<h3 style="color:#FFFFFF;margin-top:8px">Professional Services Firm Doubles Close Rate</h3>
+<h3 style="color:#FFFFFF;margin-top:8px"><a href="/case-studies/professional-services-close-rate/" style="color:#FFFFFF">Professional Services Firm Doubles Close Rate</a></h3>
+<p style="color:rgba(255,255,255,.7);font-size:.85rem;margin-bottom:0">22 employees | $4.5M revenue | Multi-state</p>
 </div>
 <div style="padding:32px">
+<div style="margin-bottom:18px"><span style="display:inline-block;margin-right:18px"><strong style="color:#002E5B;font-size:1.25rem">18% to 38%</strong> <span style="font-size:.85rem;color:#6C757D">Close rate</span></span> <span style="display:inline-block;margin-right:18px"><strong style="color:#002E5B;font-size:1.25rem">5 days to 1</strong> <span style="font-size:.85rem;color:#6C757D">Proposal turnaround</span></span></div>
 <h4 style="color:#002E5B;margin-bottom:8px">Challenge</h4>
 <p>A growing consulting firm had strong inbound interest but was closing less than 20% of qualified leads. Follow-up was inconsistent, proposals took too long, and there was no structured sales process.</p>
-<h4 style="color:#002E5B;margin-bottom:8px">Solution</h4>
-<p>We built a five-stage sales pipeline with clear criteria for each stage, standardized proposal templates, and installed a weekly pipeline review cadence. CRM was cleaned up and configured to support the new process.</p>
 <h4 style="color:#002E5B;margin-bottom:8px">Results</h4>
-<ul style="list-style:none;padding:0"><li>Close rate improved from 18% to 38%</li><li>Average proposal turnaround reduced from 5 days to 1 day</li><li>Pipeline visibility enabled better revenue forecasting</li><li>Sales team adopted the process with minimal resistance</li></ul>
+<ul style="list-style:none;padding:0"><li>Close rate improved from 18% to 38%</li><li>Average proposal turnaround reduced from 5 days to 1 day</li><li>Pipeline visibility enabled better revenue forecasting</li></ul>
+<a href="/case-studies/professional-services-close-rate/" class="btn btn-outline" style="margin-top:16px">Read the Full Case Study</a>
 </div>
 </div>
 <div class="card" style="padding:0;overflow:hidden">
 <div style="background:#002E5B;padding:24px 32px;color:#FFFFFF">
 <span style="font-size:.8rem;text-transform:uppercase;letter-spacing:1px;color:#C9A84C">Construction</span>
-<h3 style="color:#FFFFFF;margin-top:8px">Construction Company Installs Operating Cadence</h3>
+<h3 style="color:#FFFFFF;margin-top:8px"><a href="/case-studies/construction-operating-cadence/" style="color:#FFFFFF">Construction Company Installs Operating Cadence</a></h3>
+<p style="color:rgba(255,255,255,.7);font-size:.85rem;margin-bottom:0">60 employees | $8M revenue | Regional</p>
 </div>
 <div style="padding:32px">
+<div style="margin-bottom:18px"><span style="display:inline-block;margin-right:18px"><strong style="color:#002E5B;font-size:1.25rem">70%</strong> <span style="font-size:.85rem;color:#6C757D">Fewer handoff errors</span></span> <span style="display:inline-block;margin-right:18px"><strong style="color:#002E5B;font-size:1.25rem">100%</strong> <span style="font-size:.85rem;color:#6C757D">Projects on one scorecard</span></span></div>
 <h4 style="color:#002E5B;margin-bottom:8px">Challenge</h4>
 <p>A regional construction company with $8M in revenue was growing fast but struggling with project coordination, subcontractor management, and internal communication. The leadership team spent most of their time in reactive mode.</p>
-<h4 style="color:#002E5B;margin-bottom:8px">Solution</h4>
-<p>We installed a leadership cadence with weekly strategic meetings, daily huddles for project managers, and a scorecard system that tracked key metrics across all active projects. Role clarity was established for project handoffs.</p>
 <h4 style="color:#002E5B;margin-bottom:8px">Results</h4>
-<ul style="list-style:none;padding:0"><li>Leadership meetings went from reactive to strategic</li><li>Project handoff errors reduced by 70%</li><li>Subcontractor coordination improved significantly</li><li>Owner was able to focus on business development instead of operations</li></ul>
+<ul style="list-style:none;padding:0"><li>Leadership meetings went from reactive to strategic</li><li>Project handoff errors reduced by 70%</li><li>Subcontractor coordination improved significantly</li></ul>
+<a href="/case-studies/construction-operating-cadence/" class="btn btn-outline" style="margin-top:16px">Read the Full Case Study</a>
 </div>
 </div>
 <div class="card" style="padding:0;overflow:hidden">
 <div style="background:#002E5B;padding:24px 32px;color:#FFFFFF">
 <span style="font-size:.8rem;text-transform:uppercase;letter-spacing:1px;color:#C9A84C">Healthcare</span>
-<h3 style="color:#FFFFFF;margin-top:8px">Healthcare Practice Streamlines Patient Operations</h3>
+<h3 style="color:#FFFFFF;margin-top:8px"><a href="/case-studies/healthcare-patient-operations/" style="color:#FFFFFF">Healthcare Practice Streamlines Patient Operations</a></h3>
+<p style="color:rgba(255,255,255,.7);font-size:.85rem;margin-bottom:0">4 locations | 70 staff | Regional practice</p>
 </div>
 <div style="padding:32px">
+<div style="margin-bottom:18px"><span style="display:inline-block;margin-right:18px"><strong style="color:#002E5B;font-size:1.25rem">35%</strong> <span style="font-size:.85rem;color:#6C757D">Higher patient satisfaction</span></span> <span style="display:inline-block;margin-right:18px"><strong style="color:#002E5B;font-size:1.25rem">50%</strong> <span style="font-size:.85rem;color:#6C757D">Faster onboarding</span></span></div>
 <h4 style="color:#002E5B;margin-bottom:8px">Challenge</h4>
 <p>A multi-location healthcare practice was struggling with inconsistent patient experiences across locations, high staff turnover, and operational complexity that was growing faster than revenue.</p>
-<h4 style="color:#002E5B;margin-bottom:8px">Solution</h4>
-<p>We standardized patient intake and communication workflows across all locations, built onboarding systems for new staff, and created a centralized reporting dashboard. Leadership meetings were restructured around metrics instead of anecdotes.</p>
 <h4 style="color:#002E5B;margin-bottom:8px">Results</h4>
-<ul style="list-style:none;padding:0"><li>Patient satisfaction scores improved by 35%</li><li>New staff onboarding time reduced by 50%</li><li>Operations became consistent across all locations</li><li>Revenue per location increased through better retention</li></ul>
+<ul style="list-style:none;padding:0"><li>Patient satisfaction scores improved by 35%</li><li>New staff onboarding time reduced by 50%</li><li>Operations became consistent across all locations</li></ul>
+<a href="/case-studies/healthcare-patient-operations/" class="btn btn-outline" style="margin-top:16px">Read the Full Case Study</a>
 </div>
 </div>
 
@@ -515,15 +559,25 @@ h1{font-size:1.7rem}
 </div>
 </section>
 
-<section class="cta-banner">
+<section class="section section-navy">
 <div class="container">
-<span class="eyebrow">Ready to Get Started?</span>
-<h2>Build the Structure Your Business Needs</h2>
-<p>The first step is a consult to understand your business and determine if there is a fit.</p>
-<a href="/contact/" class="btn btn-gold">Book a Consult</a>
+<div class="text-center" style="margin-bottom:40px">
+<span class="eyebrow">The Common Thread</span>
+<h2>The Same Sequence Every Time</h2>
+<p style="max-width:660px;margin:0 auto">Different industries, different symptoms, one method.</p>
+</div>
+<div class="grid grid-4">
+<div class="stat-card"><span class="stat-num" style="color:#C9A84C">01</span><span class="stat-label" style="color:rgba(255,255,255,.85)">Map what actually happens</span></div>
+<div class="stat-card"><span class="stat-num" style="color:#C9A84C">02</span><span class="stat-label" style="color:rgba(255,255,255,.85)">Find the few real constraints</span></div>
+<div class="stat-card"><span class="stat-num" style="color:#C9A84C">03</span><span class="stat-label" style="color:rgba(255,255,255,.85)">Install cadence and ownership</span></div>
+<div class="stat-card"><span class="stat-num" style="color:#C9A84C">04</span><span class="stat-label" style="color:rgba(255,255,255,.85)">Measure weekly until it sticks</span></div>
+</div>
+<div class="text-center" style="margin-top:36px">
+<a href="/process/" class="btn btn-gold">See How Engagements Work</a>
+</div>
 </div>
 </section>
-<section class="section">
+<section class="section section-gray">
 <div class="container">
 <div class="text-center" style="margin-bottom:36px">
 <span class="eyebrow">Questions</span>
@@ -553,6 +607,13 @@ h1{font-size:1.7rem}
 </div>
 
 </div>
+</div>
+</section><section class="cta-banner">
+<div class="container">
+<span class="eyebrow">Ready to Get Started?</span>
+<h2>Build the Structure Your Business Needs</h2>
+<p>The first step is a consult to understand your business and determine if there is a fit.</p>
+<a href="/contact/" class="btn btn-gold">Book a Consult</a>
 </div>
 </section>
 </main>
@@ -584,8 +645,11 @@ h1{font-size:1.7rem}
 <li><a href="/industries/">Industries</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
 <li><a href="/blog/">Blog</a></li>
+<li><a href="/blog/author/dr-connor-robertson/">Articles by Dr. Robertson</a></li>
+<li><a href="/process/">How We Work</a></li>
 <li><a href="/faq/">FAQ</a></li>
 <li><a href="/testimonials/">Testimonials</a></li>
+<li><a href="/search/">Search</a></li>
 </ul>
 </div>
 <div>

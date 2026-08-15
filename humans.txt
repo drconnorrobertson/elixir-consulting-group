@@ -1,0 +1,11 @@
+/* TEAM */
+Founder & Lead Consultant: Dr. Connor Robertson
+Site: https://elixirconsultinggroup.com
+Contact: info@elixirconsultinggroup.com
+Location: Pittsburgh, Pennsylvania, USA
+
+/* SITE */
+Last update: 2026-08-15
+Standards: HTML5, CSS3, JSON-LD
+Components: Static site generator (Python), no runtime dependencies
+Typography: Inter

@@ -1,4 +1,11 @@
+# Elixir Consulting Group
 User-agent: *
 Allow: /
+Disallow: /search?
+Disallow: /*?q=
+
+# Crawl the whole site; nothing here is private.
 Sitemap: https://elixirconsultinggroup.com/sitemap.xml
-Sitemap: https://elixirconsultinggroup.com/sitemap_index.xml
+Sitemap: https://elixirconsultinggroup.com/sitemap-pages.xml
+Sitemap: https://elixirconsultinggroup.com/sitemap-blog.xml
+Sitemap: https://elixirconsultinggroup.com/sitemap-locations.xml

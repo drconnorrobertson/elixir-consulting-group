@@ -11,24 +11,27 @@
 <meta name="format-detection" content="telephone=yes">
 <link rel="canonical" href="https://elixirconsultinggroup.com/services/ai-consulting/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/images/og-image.png">
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Elixir Consulting Group Blog" href="/feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
 <meta property="og:title" content="AI Consulting for Business Owners | Elixir Consulting">
 <meta property="og:description" content="Evaluate, implement, and optimize AI tools that improve efficiency without disrupting your operations. Elixir Consulting Group provides ai consulting &amp;...">
 <meta property="og:url" content="https://elixirconsultinggroup.com/services/ai-consulting/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Elixir Consulting Group">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://elixirconsultinggroup.com/images/og-image.png">
+<meta property="og:image" content="https://elixirconsultinggroup.com/images/og/services-ai-consulting.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="AI Consulting for Business Owners | Elixir Consulting">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AI Consulting for Business Owners | Elixir Consulting">
 <meta name="twitter:description" content="Evaluate, implement, and optimize AI tools that improve efficiency without disrupting your operations. Elixir Consulting Group provides ai consulting &amp;...">
-<meta name="twitter:image" content="https://elixirconsultinggroup.com/images/og-image.png">
+<meta name="twitter:image" content="https://elixirconsultinggroup.com/images/og/services-ai-consulting.png">
 <meta name="twitter:image:alt" content="AI Consulting for Business Owners | Elixir Consulting">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
@@ -174,8 +177,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 
 /* Trust bar */
 .trust-bar{background:#F8F9FA;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;padding:22px 0}
-.trust-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 36px;text-align:center}
-.trust-item{display:flex;align-items:center;gap:9px;font-size:.92rem;font-weight:600;color:#002E5B}
+.trust-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px 28px;text-align:center}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:.88rem;font-weight:600;color:#002E5B;white-space:nowrap}
+@media(max-width:1180px){.trust-item{font-size:.83rem}.trust-row{gap:10px 20px}}
 .trust-item span{color:#C9A84C;font-size:1.05rem;line-height:1}
 
 /* Article typography (blog) */
@@ -341,6 +345,9 @@ main[style]{margin-top:64px!important}
 .footer li{margin-bottom:0}
 .footer li a{display:inline-block;min-height:44px;padding:11px 0;line-height:1.45}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{display:inline-flex;align-items:center;min-height:44px}
+/* Standalone links sitting inside cards and stat blocks are tap targets too.
+   Links inline within a sentence stay as-is; WCAG exempts those. */
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a{display:inline-flex;align-items:center;min-height:44px}
 .breadcrumb a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
 .services-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}
 .faq-q{min-height:56px;padding:18px 20px}
@@ -395,9 +402,30 @@ h1{font-size:1.7rem}
 *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 .card:hover,.post-card:hover,.btn:hover{transform:none}
 }
+@media print{
+.header,.topbar,.nav-backdrop,.cta-banner,.cta-section,.related-posts,.trust-bar,.skip-link,.blog-toolbar,.load-more-wrap,.footer form,button{display:none!important}
+.site-main{margin-top:0}
+body{color:#000;background:#fff;font-size:11pt;line-height:1.45}
+h1,h2,h3,h4{color:#000;page-break-after:avoid}
+.page-hero,.hero,.section-navy{background:none!important;color:#000!important;padding:0 0 12pt}
+.page-hero h1,.page-hero p,.hero h1,.hero p,.section-navy h2,.section-navy p{color:#000!important}
+.section,.section-sm{padding:12pt 0}
+.card,.industry-card,.post-card{box-shadow:none;border:1px solid #ccc;page-break-inside:avoid}
+.article-body{max-width:none;font-size:11pt}
+a[href^="/"]::after{content:" (elixirconsultinggroup.com" attr(href) ")";font-size:9pt;color:#444}
+a[href^="http"]::after{content:" (" attr(href) ")";font-size:9pt;color:#444}
+.footer{background:none;color:#000;border-top:1px solid #ccc}
+.footer a,.footer h4{color:#000}
+.faq-item .faq-a{max-height:none!important;padding:0 0 8pt!important;overflow:visible}
+.faq-q::after{display:none}
+img{max-width:60%;page-break-inside:avoid}
+}
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://elixirconsultinggroup.com/#organization", "name": "Elixir Consulting Group", "alternateName": "Elixir Consulting", "url": "https://elixirconsultinggroup.com", "logo": {"@type": "ImageObject", "url": "https://elixirconsultinggroup.com/images/og-image.png", "width": 1200, "height": 630}, "image": "https://elixirconsultinggroup.com/images/og-image.png", "description": "Business consulting firm specializing in operations, sales systems, AI adoption, and leadership development for owner-led companies. Headquartered in Pittsburgh, PA, serving clients nationwide.", "telephone": "+1-412-387-7656", "email": "info@elixirconsultinggroup.com", "foundingDate": "2019", "address": {"@type": "PostalAddress", "streetAddress": "429 Fourth Ave. Suite 300", "addressLocality": "Pittsburgh", "addressRegion": "PA", "postalCode": "15219", "addressCountry": "US"}, "areaServed": {"@type": "Country", "name": "United States"}, "founder": {"@id": "https://elixirconsultinggroup.com/#founder"}, "knowsAbout": ["Business Strategy Consulting", "Operations Consulting", "AI Consulting", "Sales Strategy", "Leadership Development", "Exit Planning", "Business Process Improvement"], "contactPoint": {"@type": "ContactPoint", "telephone": "+1-412-387-7656", "email": "info@elixirconsultinggroup.com", "contactType": "sales", "areaServed": "US", "availableLanguage": "English"}, "sameAs": ["https://drconnorrobertson.com", "https://thepittsburghwire.com", "https://www.youtube.com/@TheProspectingShow"]}, {"@type": "Person", "@id": "https://elixirconsultinggroup.com/#founder", "name": "Dr. Connor Robertson", "url": "https://drconnorrobertson.com", "image": "https://elixirconsultinggroup.com/images/dr-connor-robertson.jpg", "jobTitle": "Founder & Lead Consultant", "worksFor": {"@id": "https://elixirconsultinggroup.com/#organization"}, "sameAs": ["https://drconnorrobertson.com", "https://drconnorrobertsonbooks.com", "https://www.barnesandnoble.com/s/Connor+Robertson"]}, {"@type": "WebSite", "@id": "https://elixirconsultinggroup.com/#website", "url": "https://elixirconsultinggroup.com", "name": "Elixir Consulting Group", "publisher": {"@id": "https://elixirconsultinggroup.com/#organization"}, "inLanguage": "en-US"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Service", "name": "AI Consulting & Digital Transformation", "serviceType": "AI Consulting & Digital Transformation", "description": "Evaluate, implement, and optimize AI tools that improve efficiency without disrupting your operations. AI and digital transformation are not about chasing the latest technology. They are about finding the right tools to solve real problems in your business. At Elixir Consulting Group, we help...", "provider": {"@id": "https://elixirconsultinggroup.com/#organization"}, "areaServed": {"@type": "Country", "name": "United States"}, "url": "https://elixirconsultinggroup.com/services/ai-consulting/", "hasOfferCatalog": {"@type": "OfferCatalog", "name": "AI Consulting & Digital Transformation deliverables", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Readiness Assessment", "description": "Evaluate your current technology stack and identify where AI can deliver the highest impact with the least disruption."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Workflow Automation", "description": "Implement AI-powered automation for repetitive tasks like data entry, scheduling, reporting, and client communication."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Tool Selection & Implementation", "description": "Navigate the AI tool landscape and implement solutions that fit your business size, budget, and technical capacity."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Data Analysis & Insights", "description": "Deploy AI analytics tools that surface actionable insights from your existing business data."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Team Training & Adoption", "description": "Ensure your team understands and adopts new tools through structured training and change management."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Digital Process Design", "description": "Redesign manual workflows into digital processes that scale efficiently as your business grows."}}]}}
 </script>
 <script type="application/ld+json">
 {
@@ -461,6 +489,7 @@ h1{font-size:1.7rem}
 <div class="topbar-inner">
 <span class="topbar-note">Pittsburgh, PA &middot; Serving business owners nationwide</span>
 <span class="topbar-links">
+<a href="/search/" aria-label="Search the site">&#9906; Search</a>
 <a href="tel:+14123877656">&#9742; (412) 387-7656</a>
 <a href="mailto:info@elixirconsultinggroup.com">&#9993; Email Us</a>
 </span>
@@ -473,10 +502,10 @@ h1{font-size:1.7rem}
 <span></span><span></span><span></span>
 </button>
 <ul class="nav-menu" id="nav-menu">
-<li><a href="/">Home</a></li>
 <li><a href="/about/">About</a></li>
 <li><a href="/services/">Services</a></li>
 <li><a href="/industries/">Industries</a></li>
+<li><a href="/process/">Process</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
 <li><a href="/blog/">Blog</a></li>
 <li><a href="/faq/">FAQ</a></li>
@@ -562,9 +591,33 @@ h1{font-size:1.7rem}
 <span class="eyebrow">Related Reading</span>
 <h2>From the Blog</h2>
 </div>
-<div class="grid grid-3"><div class="card blog-card"><div class="blog-content"><p class="blog-date">2026-04-15</p><h3><a href="/blog/how-ai-is-transforming-small-business-operations-2026/">How AI Is Transforming Small Business Operations in 2026</a></h3><p>AI is no longer just for enterprise companies. In 2026, small businesses are leveraging artificial intelligence to autom...</p></div></div>
-<div class="card blog-card"><div class="blog-content"><p class="blog-date">2026-03-18</p><h3><a href="/blog/digital-transformation-for-traditional-businesses/">Digital Transformation for Traditional Businesses</a></h3><p>Digital transformation does not have to mean a complete technology overhaul. For traditional businesses, the most effect...</p></div></div>
-<div class="card blog-card"><div class="blog-content"><p class="blog-date">2026-02-10</p><h3><a href="/blog/ai-tools-every-business-owner-should-use-2026/">AI Tools Every Business Owner Should Be Using in 2026</a></h3><p>The AI tool landscape has matured significantly. Here are the categories of AI tools that are delivering real value for ...</p></div></div>
+<div class="post-list"><article class="post-card" data-cat="AI &amp; Technology" data-search="digital transformation for traditional businesses: a practical guide why digital transformation matters for traditional businesses digital transformation has become one of the most talked-about concepts in business, but […] ai &amp; technology">
+<a href="/blog/digital-transformation-for-traditional-businesses-a-practical-guide/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="Digital Transformation for Traditional Businesses: A Practical Guide - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<div class="pc-body">
+<p class="pc-cat">AI & Technology</p>
+<h3><a href="/blog/digital-transformation-for-traditional-businesses-a-practical-guide/">Digital Transformation for Traditional Businesses: A Practical Guide</a></h3>
+<p>Why Digital Transformation Matters for Traditional Businesses Digital transformation has become one of the most talked-about concepts in business, but […]</p>
+<p class="pc-meta"><time datetime="2026-04-19">April 19, 2026</time> <span aria-hidden="true">&middot;</span> 5 min read</p>
+</div>
+</article>
+<article class="post-card" data-cat="AI &amp; Technology" data-search="the executive's guide to digital transformation in 2026 digital transformation in 2026 looks different than it did five years ago. here is what executives need to know to lead their organizations through... ai &amp; technology">
+<a href="/blog/executives-guide-digital-transformation-2026/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="The Executive's Guide to Digital Transformation in 2026 - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<div class="pc-body">
+<p class="pc-cat">AI & Technology</p>
+<h3><a href="/blog/executives-guide-digital-transformation-2026/">The Executive's Guide to Digital Transformation in 2026</a></h3>
+<p>Digital transformation in 2026 looks different than it did five years ago. Here is what executives need to know to lead their organizations through...</p>
+<p class="pc-meta"><time datetime="2026-03-28">March 28, 2026</time> <span aria-hidden="true">&middot;</span> 2 min read</p>
+</div>
+</article>
+<article class="post-card" data-cat="AI &amp; Technology" data-search="digital transformation for traditional businesses digital transformation does not have to mean a complete technology overhaul. for traditional businesses, the most effective approach is incremental and... ai &amp; technology">
+<a href="/blog/digital-transformation-for-traditional-businesses/" tabindex="-1" aria-hidden="true"><img class="thumb" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&amp;q=80" alt="Digital Transformation for Traditional Businesses - Elixir Consulting Group" width="800" height="450" loading="lazy" decoding="async"></a>
+<div class="pc-body">
+<p class="pc-cat">AI & Technology</p>
+<h3><a href="/blog/digital-transformation-for-traditional-businesses/">Digital Transformation for Traditional Businesses</a></h3>
+<p>Digital transformation does not have to mean a complete technology overhaul. For traditional businesses, the most effective approach is incremental and...</p>
+<p class="pc-meta"><time datetime="2026-03-18">March 18, 2026</time> <span aria-hidden="true">&middot;</span> 1 min read</p>
+</div>
+</article>
 </div>
 </div>
 </section>
@@ -607,8 +660,11 @@ h1{font-size:1.7rem}
 <li><a href="/industries/">Industries</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
 <li><a href="/blog/">Blog</a></li>
+<li><a href="/blog/author/dr-connor-robertson/">Articles by Dr. Robertson</a></li>
+<li><a href="/process/">How We Work</a></li>
 <li><a href="/faq/">FAQ</a></li>
 <li><a href="/testimonials/">Testimonials</a></li>
+<li><a href="/search/">Search</a></li>
 </ul>
 </div>
 <div>

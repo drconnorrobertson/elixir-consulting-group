@@ -11,10 +11,13 @@
 <meta name="format-detection" content="telephone=yes">
 <link rel="canonical" href="https://elixirconsultinggroup.com/blog/how-to-ask-clients-for-referrals-without-feeling-awkward/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/images/og-image.png">
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Elixir Consulting Group Blog" href="/feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
 <meta property="og:title" content="How to Ask Clients for Referrals Without Feeling Awkward">
 <meta property="og:description" content="Losing a client is expensive. The cost of replacement includes marketing, sales time, onboarding, and the learning curve of a new relationship. Dr. Connor...">
 <meta property="og:url" content="https://elixirconsultinggroup.com/blog/how-to-ask-clients-for-referrals-without-feeling-awkward/">
@@ -178,8 +181,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 
 /* Trust bar */
 .trust-bar{background:#F8F9FA;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;padding:22px 0}
-.trust-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 36px;text-align:center}
-.trust-item{display:flex;align-items:center;gap:9px;font-size:.92rem;font-weight:600;color:#002E5B}
+.trust-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px 28px;text-align:center}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:.88rem;font-weight:600;color:#002E5B;white-space:nowrap}
+@media(max-width:1180px){.trust-item{font-size:.83rem}.trust-row{gap:10px 20px}}
 .trust-item span{color:#C9A84C;font-size:1.05rem;line-height:1}
 
 /* Article typography (blog) */
@@ -345,6 +349,9 @@ main[style]{margin-top:64px!important}
 .footer li{margin-bottom:0}
 .footer li a{display:inline-block;min-height:44px;padding:11px 0;line-height:1.45}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{display:inline-flex;align-items:center;min-height:44px}
+/* Standalone links sitting inside cards and stat blocks are tap targets too.
+   Links inline within a sentence stay as-is; WCAG exempts those. */
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a{display:inline-flex;align-items:center;min-height:44px}
 .breadcrumb a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
 .services-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}
 .faq-q{min-height:56px;padding:18px 20px}
@@ -399,6 +406,24 @@ h1{font-size:1.7rem}
 *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 .card:hover,.post-card:hover,.btn:hover{transform:none}
 }
+@media print{
+.header,.topbar,.nav-backdrop,.cta-banner,.cta-section,.related-posts,.trust-bar,.skip-link,.blog-toolbar,.load-more-wrap,.footer form,button{display:none!important}
+.site-main{margin-top:0}
+body{color:#000;background:#fff;font-size:11pt;line-height:1.45}
+h1,h2,h3,h4{color:#000;page-break-after:avoid}
+.page-hero,.hero,.section-navy{background:none!important;color:#000!important;padding:0 0 12pt}
+.page-hero h1,.page-hero p,.hero h1,.hero p,.section-navy h2,.section-navy p{color:#000!important}
+.section,.section-sm{padding:12pt 0}
+.card,.industry-card,.post-card{box-shadow:none;border:1px solid #ccc;page-break-inside:avoid}
+.article-body{max-width:none;font-size:11pt}
+a[href^="/"]::after{content:" (elixirconsultinggroup.com" attr(href) ")";font-size:9pt;color:#444}
+a[href^="http"]::after{content:" (" attr(href) ")";font-size:9pt;color:#444}
+.footer{background:none;color:#000;border-top:1px solid #ccc}
+.footer a,.footer h4{color:#000}
+.faq-item .faq-a{max-height:none!important;padding:0 0 8pt!important;overflow:visible}
+.faq-q::after{display:none}
+img{max-width:60%;page-break-inside:avoid}
+}
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://elixirconsultinggroup.com/#organization", "name": "Elixir Consulting Group", "alternateName": "Elixir Consulting", "url": "https://elixirconsultinggroup.com", "logo": {"@type": "ImageObject", "url": "https://elixirconsultinggroup.com/images/og-image.png", "width": 1200, "height": 630}, "image": "https://elixirconsultinggroup.com/images/og-image.png", "description": "Business consulting firm specializing in operations, sales systems, AI adoption, and leadership development for owner-led companies. Headquartered in Pittsburgh, PA, serving clients nationwide.", "telephone": "+1-412-387-7656", "email": "info@elixirconsultinggroup.com", "foundingDate": "2019", "address": {"@type": "PostalAddress", "streetAddress": "429 Fourth Ave. Suite 300", "addressLocality": "Pittsburgh", "addressRegion": "PA", "postalCode": "15219", "addressCountry": "US"}, "areaServed": {"@type": "Country", "name": "United States"}, "founder": {"@id": "https://elixirconsultinggroup.com/#founder"}, "knowsAbout": ["Business Strategy Consulting", "Operations Consulting", "AI Consulting", "Sales Strategy", "Leadership Development", "Exit Planning", "Business Process Improvement"], "contactPoint": {"@type": "ContactPoint", "telephone": "+1-412-387-7656", "email": "info@elixirconsultinggroup.com", "contactType": "sales", "areaServed": "US", "availableLanguage": "English"}, "sameAs": ["https://drconnorrobertson.com", "https://thepittsburghwire.com", "https://www.youtube.com/@TheProspectingShow"]}, {"@type": "Person", "@id": "https://elixirconsultinggroup.com/#founder", "name": "Dr. Connor Robertson", "url": "https://drconnorrobertson.com", "image": "https://elixirconsultinggroup.com/images/dr-connor-robertson.jpg", "jobTitle": "Founder & Lead Consultant", "worksFor": {"@id": "https://elixirconsultinggroup.com/#organization"}, "sameAs": ["https://drconnorrobertson.com", "https://drconnorrobertsonbooks.com", "https://www.barnesandnoble.com/s/Connor+Robertson"]}, {"@type": "WebSite", "@id": "https://elixirconsultinggroup.com/#website", "url": "https://elixirconsultinggroup.com", "name": "Elixir Consulting Group", "publisher": {"@id": "https://elixirconsultinggroup.com/#organization"}, "inLanguage": "en-US"}]}
@@ -422,6 +447,7 @@ h1{font-size:1.7rem}
 <div class="topbar-inner">
 <span class="topbar-note">Pittsburgh, PA &middot; Serving business owners nationwide</span>
 <span class="topbar-links">
+<a href="/search/" aria-label="Search the site">&#9906; Search</a>
 <a href="tel:+14123877656">&#9742; (412) 387-7656</a>
 <a href="mailto:info@elixirconsultinggroup.com">&#9993; Email Us</a>
 </span>
@@ -434,10 +460,10 @@ h1{font-size:1.7rem}
 <span></span><span></span><span></span>
 </button>
 <ul class="nav-menu" id="nav-menu">
-<li><a href="/">Home</a></li>
 <li><a href="/about/">About</a></li>
 <li><a href="/services/">Services</a></li>
 <li><a href="/industries/">Industries</a></li>
+<li><a href="/process/">Process</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
 <li><a href="/blog/">Blog</a></li>
 <li><a href="/faq/">FAQ</a></li>
@@ -457,7 +483,7 @@ h1{font-size:1.7rem}
 <p>Losing a client is expensive. The cost of replacement includes marketing, sales time, onboarding, and the learning curve of a new relationship. Dr...</p>
 <div class="post-meta">
 <img src="/images/dr-connor-robertson.jpg" alt="Dr. Connor Robertson, Founder and Lead Consultant at Elixir Consulting Group" width="88" height="88" loading="lazy" decoding="async">
-<span>By <a href="/about/" style="color:#fff;font-weight:600">Dr. Connor Robertson</a></span>
+<span>By <a href="/blog/author/dr-connor-robertson/" style="color:#fff;font-weight:600">Dr. Connor Robertson</a></span>
 <span class="dot" aria-hidden="true">&middot;</span>
 <time datetime="2026-01-05">January 5, 2026</time>
 <span class="dot" aria-hidden="true">&middot;</span>
@@ -503,7 +529,7 @@ h1{font-size:1.7rem}
 <h3>Dr. Connor Robertson</h3>
 <p class="author-role">Founder &amp; Lead Consultant, Elixir Consulting Group</p>
 <p>Dr. Robertson works hands-on with owners and leadership teams to install operations, sales, and leadership systems that hold up under growth. He is the author of six books on acquisitions and business strategy.</p>
-<p style="margin-bottom:0"><a href="/about/">Read the full bio</a> &nbsp;&middot;&nbsp; <a href="/contact/">Book a consult</a></p>
+<p style="margin-bottom:0"><a href="/about/">Read the full bio</a> &nbsp;&middot;&nbsp; <a href="/blog/author/dr-connor-robertson/">All his articles</a> &nbsp;&middot;&nbsp; <a href="/contact/">Book a consult</a></p>
 </div>
 </div>
 </div>
@@ -614,8 +640,11 @@ h1{font-size:1.7rem}
 <li><a href="/industries/">Industries</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
 <li><a href="/blog/">Blog</a></li>
+<li><a href="/blog/author/dr-connor-robertson/">Articles by Dr. Robertson</a></li>
+<li><a href="/process/">How We Work</a></li>
 <li><a href="/faq/">FAQ</a></li>
 <li><a href="/testimonials/">Testimonials</a></li>
+<li><a href="/search/">Search</a></li>
 </ul>
 </div>
 <div>

@@ -1,0 +1,10 @@
+Contact: mailto:info@elixirconsultinggroup.com
+Contact: tel:+14123877656
+Preferred-Languages: en
+Canonical: https://elixirconsultinggroup.com/.well-known/security.txt
+Expires: 2027-12-31T23:59:59.000Z
+Policy: https://elixirconsultinggroup.com/contact/
+
+# Elixir Consulting Group runs a static marketing site. If you have found a
+# security issue, email the address above and we will respond within one
+# business day.

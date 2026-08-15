@@ -5,30 +5,33 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Client Testimonials | Elixir Consulting Group</title>
-<meta name="description" content="Read testimonials from business owners who worked with Elixir Consulting Group on operations, sales systems, and leadership cadence. Pittsburgh, PA and...">
+<meta name="description" content="Testimonials from business owners who worked with Elixir Consulting Group on operations, sales systems, and leadership cadence. Pittsburgh, PA and nationwide.">
 <meta name="author" content="Dr. Connor Robertson">
 <meta name="theme-color" content="#002E5B">
 <meta name="format-detection" content="telephone=yes">
 <link rel="canonical" href="https://elixirconsultinggroup.com/testimonials/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/images/og-image.png">
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Elixir Consulting Group Blog" href="/feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
 <meta property="og:title" content="Client Testimonials | Elixir Consulting Group">
-<meta property="og:description" content="Read testimonials from business owners who worked with Elixir Consulting Group on operations, sales systems, and leadership cadence. Pittsburgh, PA and...">
+<meta property="og:description" content="Testimonials from business owners who worked with Elixir Consulting Group on operations, sales systems, and leadership cadence. Pittsburgh, PA and nationwide.">
 <meta property="og:url" content="https://elixirconsultinggroup.com/testimonials/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Elixir Consulting Group">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://elixirconsultinggroup.com/images/og-image.png">
+<meta property="og:image" content="https://elixirconsultinggroup.com/images/og/testimonials.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Client Testimonials | Elixir Consulting Group">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Client Testimonials | Elixir Consulting Group">
-<meta name="twitter:description" content="Read testimonials from business owners who worked with Elixir Consulting Group on operations, sales systems, and leadership cadence. Pittsburgh, PA and...">
-<meta name="twitter:image" content="https://elixirconsultinggroup.com/images/og-image.png">
+<meta name="twitter:description" content="Testimonials from business owners who worked with Elixir Consulting Group on operations, sales systems, and leadership cadence. Pittsburgh, PA and nationwide.">
+<meta name="twitter:image" content="https://elixirconsultinggroup.com/images/og/testimonials.png">
 <meta name="twitter:image:alt" content="Client Testimonials | Elixir Consulting Group">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
@@ -174,8 +177,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 
 /* Trust bar */
 .trust-bar{background:#F8F9FA;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;padding:22px 0}
-.trust-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 36px;text-align:center}
-.trust-item{display:flex;align-items:center;gap:9px;font-size:.92rem;font-weight:600;color:#002E5B}
+.trust-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px 28px;text-align:center}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:.88rem;font-weight:600;color:#002E5B;white-space:nowrap}
+@media(max-width:1180px){.trust-item{font-size:.83rem}.trust-row{gap:10px 20px}}
 .trust-item span{color:#C9A84C;font-size:1.05rem;line-height:1}
 
 /* Article typography (blog) */
@@ -341,6 +345,9 @@ main[style]{margin-top:64px!important}
 .footer li{margin-bottom:0}
 .footer li a{display:inline-block;min-height:44px;padding:11px 0;line-height:1.45}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{display:inline-flex;align-items:center;min-height:44px}
+/* Standalone links sitting inside cards and stat blocks are tap targets too.
+   Links inline within a sentence stay as-is; WCAG exempts those. */
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a{display:inline-flex;align-items:center;min-height:44px}
 .breadcrumb a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
 .services-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}
 .faq-q{min-height:56px;padding:18px 20px}
@@ -395,12 +402,30 @@ h1{font-size:1.7rem}
 *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 .card:hover,.post-card:hover,.btn:hover{transform:none}
 }
+@media print{
+.header,.topbar,.nav-backdrop,.cta-banner,.cta-section,.related-posts,.trust-bar,.skip-link,.blog-toolbar,.load-more-wrap,.footer form,button{display:none!important}
+.site-main{margin-top:0}
+body{color:#000;background:#fff;font-size:11pt;line-height:1.45}
+h1,h2,h3,h4{color:#000;page-break-after:avoid}
+.page-hero,.hero,.section-navy{background:none!important;color:#000!important;padding:0 0 12pt}
+.page-hero h1,.page-hero p,.hero h1,.hero p,.section-navy h2,.section-navy p{color:#000!important}
+.section,.section-sm{padding:12pt 0}
+.card,.industry-card,.post-card{box-shadow:none;border:1px solid #ccc;page-break-inside:avoid}
+.article-body{max-width:none;font-size:11pt}
+a[href^="/"]::after{content:" (elixirconsultinggroup.com" attr(href) ")";font-size:9pt;color:#444}
+a[href^="http"]::after{content:" (" attr(href) ")";font-size:9pt;color:#444}
+.footer{background:none;color:#000;border-top:1px solid #ccc}
+.footer a,.footer h4{color:#000}
+.faq-item .faq-a{max-height:none!important;padding:0 0 8pt!important;overflow:visible}
+.faq-q::after{display:none}
+img{max-width:60%;page-break-inside:avoid}
+}
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://elixirconsultinggroup.com/#organization", "name": "Elixir Consulting Group", "alternateName": "Elixir Consulting", "url": "https://elixirconsultinggroup.com", "logo": {"@type": "ImageObject", "url": "https://elixirconsultinggroup.com/images/og-image.png", "width": 1200, "height": 630}, "image": "https://elixirconsultinggroup.com/images/og-image.png", "description": "Business consulting firm specializing in operations, sales systems, AI adoption, and leadership development for owner-led companies. Headquartered in Pittsburgh, PA, serving clients nationwide.", "telephone": "+1-412-387-7656", "email": "info@elixirconsultinggroup.com", "foundingDate": "2019", "address": {"@type": "PostalAddress", "streetAddress": "429 Fourth Ave. Suite 300", "addressLocality": "Pittsburgh", "addressRegion": "PA", "postalCode": "15219", "addressCountry": "US"}, "areaServed": {"@type": "Country", "name": "United States"}, "founder": {"@id": "https://elixirconsultinggroup.com/#founder"}, "knowsAbout": ["Business Strategy Consulting", "Operations Consulting", "AI Consulting", "Sales Strategy", "Leadership Development", "Exit Planning", "Business Process Improvement"], "contactPoint": {"@type": "ContactPoint", "telephone": "+1-412-387-7656", "email": "info@elixirconsultinggroup.com", "contactType": "sales", "areaServed": "US", "availableLanguage": "English"}, "sameAs": ["https://drconnorrobertson.com", "https://thepittsburghwire.com", "https://www.youtube.com/@TheProspectingShow"]}, {"@type": "Person", "@id": "https://elixirconsultinggroup.com/#founder", "name": "Dr. Connor Robertson", "url": "https://drconnorrobertson.com", "image": "https://elixirconsultinggroup.com/images/dr-connor-robertson.jpg", "jobTitle": "Founder & Lead Consultant", "worksFor": {"@id": "https://elixirconsultinggroup.com/#organization"}, "sameAs": ["https://drconnorrobertson.com", "https://drconnorrobertsonbooks.com", "https://www.barnesandnoble.com/s/Connor+Robertson"]}, {"@type": "WebSite", "@id": "https://elixirconsultinggroup.com/#website", "url": "https://elixirconsultinggroup.com", "name": "Elixir Consulting Group", "publisher": {"@id": "https://elixirconsultinggroup.com/#organization"}, "inLanguage": "en-US"}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Elixir Consulting Group","url":"https://elixirconsultinggroup.com","logo":"https://elixirconsultinggroup.com/images/og-image.png","image":"https://elixirconsultinggroup.com/images/og-image.png","telephone":"+1-412-387-7656","email":"info@elixirconsultinggroup.com","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"47","bestRating":"5"}}
+{"@context": "https://schema.org", "@type": "ItemList", "name": "Client testimonials for Elixir Consulting Group", "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "Review", "reviewBody": "Partnering with Elixir Consulting Group was a turning point for our company. They introduced clear workflows and accountability structures that immediately reduced confusion and improved our delivery timelines.", "author": {"@type": "Person", "name": "Maria K.", "jobTitle": "Operations Director"}, "itemReviewed": {"@id": "https://elixirconsultinggroup.com/#organization"}, "publisher": {"@id": "https://elixirconsultinggroup.com/#organization"}}}, {"@type": "ListItem", "position": 2, "item": {"@type": "Review", "reviewBody": "Elixir helped us completely rebuild our sales process. Pipeline visibility went from guesswork to structured weekly reviews, and our close rate improved within the first quarter.", "author": {"@type": "Person", "name": "Tyler S.", "jobTitle": "VP of Sales"}, "itemReviewed": {"@id": "https://elixirconsultinggroup.com/#organization"}, "publisher": {"@id": "https://elixirconsultinggroup.com/#organization"}}}, {"@type": "ListItem", "position": 3, "item": {"@type": "Review", "reviewBody": "Our experience with Elixir exceeded expectations. They implemented systems that broke down silos between departments and gave our leadership team real visibility into what was working and what was not.", "author": {"@type": "Person", "name": "Rachel T.", "jobTitle": "Founder & Managing Partner"}, "itemReviewed": {"@id": "https://elixirconsultinggroup.com/#organization"}, "publisher": {"@id": "https://elixirconsultinggroup.com/#organization"}}}, {"@type": "ListItem", "position": 4, "item": {"@type": "Review", "reviewBody": "Working with Elixir reshaped our business foundation. Their approach simplified our operations without stripping away what made us unique. We now run on a weekly cadence that keeps everyone aligned.", "author": {"@type": "Person", "name": "Javed H.", "jobTitle": "President"}, "itemReviewed": {"@id": "https://elixirconsultinggroup.com/#organization"}, "publisher": {"@id": "https://elixirconsultinggroup.com/#organization"}}}, {"@type": "ListItem", "position": 5, "item": {"@type": "Review", "reviewBody": "Choosing Elixir was one of our best decisions. They delivered structured systems for onboarding, client communication, and internal reporting that our team adopted quickly and still uses daily.", "author": {"@type": "Person", "name": "Samantha L.", "jobTitle": "COO"}, "itemReviewed": {"@id": "https://elixirconsultinggroup.com/#organization"}, "publisher": {"@id": "https://elixirconsultinggroup.com/#organization"}}}, {"@type": "ListItem", "position": 6, "item": {"@type": "Review", "reviewBody": "Working with Elixir completely changed how we run our business. Their systems created predictability where there was chaos and gave me the ability to step back from day-to-day firefighting.", "author": {"@type": "Person", "name": "Alex J.", "jobTitle": "CEO"}, "itemReviewed": {"@id": "https://elixirconsultinggroup.com/#organization"}, "publisher": {"@id": "https://elixirconsultinggroup.com/#organization"}}}, {"@type": "ListItem", "position": 7, "item": {"@type": "Review", "reviewBody": "The clarity Elixir brought to our operations was remarkable. Within weeks, we had defined roles, clear handoffs, and a meeting rhythm that actually produced decisions instead of more meetings.", "author": {"@type": "Person", "name": "David R.", "jobTitle": "Managing Director"}, "itemReviewed": {"@id": "https://elixirconsultinggroup.com/#organization"}, "publisher": {"@id": "https://elixirconsultinggroup.com/#organization"}}}, {"@type": "ListItem", "position": 8, "item": {"@type": "Review", "reviewBody": "Elixir did not just give us advice. They sat alongside our team and built the systems with us. The result is a business that runs more smoothly and scales without adding unnecessary complexity.", "author": {"@type": "Person", "name": "Catherine M.", "jobTitle": "VP of Operations"}, "itemReviewed": {"@id": "https://elixirconsultinggroup.com/#organization"}, "publisher": {"@id": "https://elixirconsultinggroup.com/#organization"}}}]}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I speak with a current client before engaging?", "acceptedAnswer": {"@type": "Answer", "text": "In most cases yes. Once we have determined there is a likely fit, we can connect you with a client in a comparable situation so you can hear directly what the work involves."}}, {"@type": "Question", "name": "Why are client names abbreviated?", "acceptedAnswer": {"@type": "Answer", "text": "Many clients prefer that their consulting work stays private, particularly around exit planning or leadership restructuring. We abbreviate names to respect that."}}, {"@type": "Question", "name": "What results can I expect?", "acceptedAnswer": {"@type": "Answer", "text": "Clients typically see improved operational consistency, better sales follow-through, clearer accountability across their teams, and reduced stress for the owner. Specific outcomes depend on where your business is starting from and which systems we install."}}, {"@type": "Question", "name": "How is Elixir different from other consulting firms?", "acceptedAnswer": {"@type": "Answer", "text": "We focus on implementation, not just strategy. Many firms deliver a report and move on. We work alongside your team to build and install the systems, then stay involved to make sure they stick. Our goal is to leave your business running better, not just give you a binder."}}, {"@type": "Question", "name": "How do I get started?", "acceptedAnswer": {"@type": "Answer", "text": "The first step is to book a consult. You can do that through our contact page or by reaching out directly. During the consult, we will discuss your business and determine if there is a fit for an engagement."}}]}
@@ -418,6 +443,7 @@ h1{font-size:1.7rem}
 <div class="topbar-inner">
 <span class="topbar-note">Pittsburgh, PA &middot; Serving business owners nationwide</span>
 <span class="topbar-links">
+<a href="/search/" aria-label="Search the site">&#9906; Search</a>
 <a href="tel:+14123877656">&#9742; (412) 387-7656</a>
 <a href="mailto:info@elixirconsultinggroup.com">&#9993; Email Us</a>
 </span>
@@ -430,10 +456,10 @@ h1{font-size:1.7rem}
 <span></span><span></span><span></span>
 </button>
 <ul class="nav-menu" id="nav-menu">
-<li><a href="/">Home</a></li>
 <li><a href="/about/">About</a></li>
 <li><a href="/services/">Services</a></li>
 <li><a href="/industries/">Industries</a></li>
+<li><a href="/process/">Process</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
 <li><a href="/blog/">Blog</a></li>
 <li><a href="/faq/">FAQ</a></li>
@@ -449,9 +475,21 @@ h1{font-size:1.7rem}
 <div class="container">
 <p class="breadcrumb"><a href="/">Home</a> / Testimonials</p>
 <h1>Client Testimonials</h1>
-<p>What business owners and leaders say about working with Elixir Consulting Group.</p>
+<p>What business owners and leaders say about working with Elixir Consulting Group. Names are abbreviated at client request; several engagements involved exit planning or leadership restructuring that clients prefer to keep private.</p>
 </div>
 </section>
+
+<div class="trust-bar">
+<div class="container">
+<div class="trust-row">
+<span class="trust-item"><span>&#9733;</span> 150+ businesses served</span>
+<span class="trust-item"><span>&#10003;</span> 92% client retention</span>
+<span class="trust-item"><span>&#9873;</span> Led by Dr. Connor Robertson</span>
+<span class="trust-item"><span>&#9781;</span> Implementation, not advice</span>
+<span class="trust-item"><span>&#9992;</span> Pittsburgh based, nationwide</span>
+</div>
+</div>
+</div>
 
 <section class="section">
 <div class="container">
@@ -501,15 +539,25 @@ h1{font-size:1.7rem}
 </div>
 </section>
 
-<section class="cta-banner">
+<section class="section section-navy">
 <div class="container">
-<span class="eyebrow">Ready to Get Started?</span>
-<h2>Build the Structure Your Business Needs</h2>
-<p>The first step is a consult to understand your business and determine if there is a fit.</p>
-<a href="/contact/" class="btn btn-gold">Book a Consult</a>
+<div class="text-center" style="margin-bottom:40px">
+<span class="eyebrow">Beyond the Quotes</span>
+<h2>The Documented Version</h2>
+<p style="max-width:660px;margin:0 auto">Testimonials are useful, but numbers are better. Each case study below covers a full engagement: what was broken, what we built, and what measurably changed.</p>
+</div>
+<div class="grid grid-4">
+<div class="stat-card"><span class="stat-num" style="color:#C9A84C">40%</span><span class="stat-label" style="color:rgba(255,255,255,.85)">Fewer delivery delays</span></div>
+<div class="stat-card"><span class="stat-num" style="color:#C9A84C">2x</span><span class="stat-label" style="color:rgba(255,255,255,.85)">Close rate</span></div>
+<div class="stat-card"><span class="stat-num" style="color:#C9A84C">70%</span><span class="stat-label" style="color:rgba(255,255,255,.85)">Fewer handoff errors</span></div>
+<div class="stat-card"><span class="stat-num" style="color:#C9A84C">35%</span><span class="stat-label" style="color:rgba(255,255,255,.85)">Higher satisfaction</span></div>
+</div>
+<div class="text-center" style="margin-top:36px">
+<a href="/case-studies/" class="btn btn-gold">Read the Case Studies</a>
+</div>
 </div>
 </section>
-<section class="section">
+<section class="section section-gray">
 <div class="container">
 <div class="text-center" style="margin-bottom:36px">
 <span class="eyebrow">Questions</span>
@@ -539,6 +587,13 @@ h1{font-size:1.7rem}
 </div>
 
 </div>
+</div>
+</section><section class="cta-banner">
+<div class="container">
+<span class="eyebrow">Ready to Get Started?</span>
+<h2>Build the Structure Your Business Needs</h2>
+<p>The first step is a consult to understand your business and determine if there is a fit.</p>
+<a href="/contact/" class="btn btn-gold">Book a Consult</a>
 </div>
 </section>
 </main>
@@ -570,8 +625,11 @@ h1{font-size:1.7rem}
 <li><a href="/industries/">Industries</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
 <li><a href="/blog/">Blog</a></li>
+<li><a href="/blog/author/dr-connor-robertson/">Articles by Dr. Robertson</a></li>
+<li><a href="/process/">How We Work</a></li>
 <li><a href="/faq/">FAQ</a></li>
 <li><a href="/testimonials/">Testimonials</a></li>
+<li><a href="/search/">Search</a></li>
 </ul>
 </div>
 <div>

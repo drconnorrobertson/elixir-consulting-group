@@ -5,30 +5,33 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Industries We Serve | Elixir Consulting Group</title>
-<meta name="description" content="Elixir Consulting Group works across professional services, construction, healthcare, manufacturing, technology, real estate, and retail. Operations...">
+<meta name="description" content="Operations, sales, and leadership consulting across professional services, construction, healthcare, manufacturing, technology, real estate, retail, and...">
 <meta name="author" content="Dr. Connor Robertson">
 <meta name="theme-color" content="#002E5B">
 <meta name="format-detection" content="telephone=yes">
 <link rel="canonical" href="https://elixirconsultinggroup.com/industries/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/images/og-image.png">
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Elixir Consulting Group Blog" href="/feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
 <meta property="og:title" content="Industries We Serve | Elixir Consulting Group">
-<meta property="og:description" content="Elixir Consulting Group works across professional services, construction, healthcare, manufacturing, technology, real estate, and retail. Operations...">
+<meta property="og:description" content="Operations, sales, and leadership consulting across professional services, construction, healthcare, manufacturing, technology, real estate, retail, and...">
 <meta property="og:url" content="https://elixirconsultinggroup.com/industries/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Elixir Consulting Group">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://elixirconsultinggroup.com/images/og-image.png">
+<meta property="og:image" content="https://elixirconsultinggroup.com/images/og/industries.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Industries We Serve | Elixir Consulting Group">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Industries We Serve | Elixir Consulting Group">
-<meta name="twitter:description" content="Elixir Consulting Group works across professional services, construction, healthcare, manufacturing, technology, real estate, and retail. Operations...">
-<meta name="twitter:image" content="https://elixirconsultinggroup.com/images/og-image.png">
+<meta name="twitter:description" content="Operations, sales, and leadership consulting across professional services, construction, healthcare, manufacturing, technology, real estate, retail, and...">
+<meta name="twitter:image" content="https://elixirconsultinggroup.com/images/og/industries.png">
 <meta name="twitter:image:alt" content="Industries We Serve | Elixir Consulting Group">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
@@ -174,8 +177,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 
 /* Trust bar */
 .trust-bar{background:#F8F9FA;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;padding:22px 0}
-.trust-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 36px;text-align:center}
-.trust-item{display:flex;align-items:center;gap:9px;font-size:.92rem;font-weight:600;color:#002E5B}
+.trust-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px 28px;text-align:center}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:.88rem;font-weight:600;color:#002E5B;white-space:nowrap}
+@media(max-width:1180px){.trust-item{font-size:.83rem}.trust-row{gap:10px 20px}}
 .trust-item span{color:#C9A84C;font-size:1.05rem;line-height:1}
 
 /* Article typography (blog) */
@@ -341,6 +345,9 @@ main[style]{margin-top:64px!important}
 .footer li{margin-bottom:0}
 .footer li a{display:inline-block;min-height:44px;padding:11px 0;line-height:1.45}
 .card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{display:inline-flex;align-items:center;min-height:44px}
+/* Standalone links sitting inside cards and stat blocks are tap targets too.
+   Links inline within a sentence stay as-is; WCAG exempts those. */
+.stat-label a,.contact-info-card p a,.post-card .pc-body>a{display:inline-flex;align-items:center;min-height:44px}
 .breadcrumb a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
 .services-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}
 .faq-q{min-height:56px;padding:18px 20px}
@@ -395,11 +402,31 @@ h1{font-size:1.7rem}
 *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 .card:hover,.post-card:hover,.btn:hover{transform:none}
 }
+@media print{
+.header,.topbar,.nav-backdrop,.cta-banner,.cta-section,.related-posts,.trust-bar,.skip-link,.blog-toolbar,.load-more-wrap,.footer form,button{display:none!important}
+.site-main{margin-top:0}
+body{color:#000;background:#fff;font-size:11pt;line-height:1.45}
+h1,h2,h3,h4{color:#000;page-break-after:avoid}
+.page-hero,.hero,.section-navy{background:none!important;color:#000!important;padding:0 0 12pt}
+.page-hero h1,.page-hero p,.hero h1,.hero p,.section-navy h2,.section-navy p{color:#000!important}
+.section,.section-sm{padding:12pt 0}
+.card,.industry-card,.post-card{box-shadow:none;border:1px solid #ccc;page-break-inside:avoid}
+.article-body{max-width:none;font-size:11pt}
+a[href^="/"]::after{content:" (elixirconsultinggroup.com" attr(href) ")";font-size:9pt;color:#444}
+a[href^="http"]::after{content:" (" attr(href) ")";font-size:9pt;color:#444}
+.footer{background:none;color:#000;border-top:1px solid #ccc}
+.footer a,.footer h4{color:#000}
+.faq-item .faq-a{max-height:none!important;padding:0 0 8pt!important;overflow:visible}
+.faq-q::after{display:none}
+img{max-width:60%;page-break-inside:avoid}
+}
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://elixirconsultinggroup.com/#organization", "name": "Elixir Consulting Group", "alternateName": "Elixir Consulting", "url": "https://elixirconsultinggroup.com", "logo": {"@type": "ImageObject", "url": "https://elixirconsultinggroup.com/images/og-image.png", "width": 1200, "height": 630}, "image": "https://elixirconsultinggroup.com/images/og-image.png", "description": "Business consulting firm specializing in operations, sales systems, AI adoption, and leadership development for owner-led companies. Headquartered in Pittsburgh, PA, serving clients nationwide.", "telephone": "+1-412-387-7656", "email": "info@elixirconsultinggroup.com", "foundingDate": "2019", "address": {"@type": "PostalAddress", "streetAddress": "429 Fourth Ave. Suite 300", "addressLocality": "Pittsburgh", "addressRegion": "PA", "postalCode": "15219", "addressCountry": "US"}, "areaServed": {"@type": "Country", "name": "United States"}, "founder": {"@id": "https://elixirconsultinggroup.com/#founder"}, "knowsAbout": ["Business Strategy Consulting", "Operations Consulting", "AI Consulting", "Sales Strategy", "Leadership Development", "Exit Planning", "Business Process Improvement"], "contactPoint": {"@type": "ContactPoint", "telephone": "+1-412-387-7656", "email": "info@elixirconsultinggroup.com", "contactType": "sales", "areaServed": "US", "availableLanguage": "English"}, "sameAs": ["https://drconnorrobertson.com", "https://thepittsburghwire.com", "https://www.youtube.com/@TheProspectingShow"]}, {"@type": "Person", "@id": "https://elixirconsultinggroup.com/#founder", "name": "Dr. Connor Robertson", "url": "https://drconnorrobertson.com", "image": "https://elixirconsultinggroup.com/images/dr-connor-robertson.jpg", "jobTitle": "Founder & Lead Consultant", "worksFor": {"@id": "https://elixirconsultinggroup.com/#organization"}, "sameAs": ["https://drconnorrobertson.com", "https://drconnorrobertsonbooks.com", "https://www.barnesandnoble.com/s/Connor+Robertson"]}, {"@type": "WebSite", "@id": "https://elixirconsultinggroup.com/#website", "url": "https://elixirconsultinggroup.com", "name": "Elixir Consulting Group", "publisher": {"@id": "https://elixirconsultinggroup.com/#organization"}, "inLanguage": "en-US"}]}
 </script>
-
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Industries Served", "url": "https://elixirconsultinggroup.com/industries/", "description": "Sectors Elixir Consulting Group works in, and the operational patterns specific to each.", "hasPart": [{"@type": "WebPage", "name": "Business Consulting for Professional Services", "url": "https://elixirconsultinggroup.com/industries/professional-services/"}, {"@type": "WebPage", "name": "Business Consulting for Construction & Trades", "url": "https://elixirconsultinggroup.com/industries/construction-trades/"}, {"@type": "WebPage", "name": "Business Consulting for Healthcare", "url": "https://elixirconsultinggroup.com/industries/healthcare/"}, {"@type": "WebPage", "name": "Business Consulting for Manufacturing", "url": "https://elixirconsultinggroup.com/industries/manufacturing/"}, {"@type": "WebPage", "name": "Business Consulting for Technology", "url": "https://elixirconsultinggroup.com/industries/technology/"}, {"@type": "WebPage", "name": "Business Consulting for Real Estate", "url": "https://elixirconsultinggroup.com/industries/real-estate/"}, {"@type": "WebPage", "name": "Business Consulting for Retail & E-Commerce", "url": "https://elixirconsultinggroup.com/industries/retail-ecommerce/"}, {"@type": "WebPage", "name": "Business Consulting for Financial Services", "url": "https://elixirconsultinggroup.com/industries/financial-services/"}]}
+</script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What industries do you specialize in?", "acceptedAnswer": {"@type": "Answer", "text": "We work across industries including professional services, construction, healthcare, manufacturing, technology, real estate, and retail. Our frameworks are designed to be industry-agnostic because the core operational challenges tend to be universal."}}, {"@type": "Question", "name": "Do you need industry-specific experience to help our business?", "acceptedAnswer": {"@type": "Answer", "text": "In most cases, no. The core problems we solve -- unclear process, weak accountability, inconsistent follow-through, owner dependency -- are structural rather than industry-specific. We learn the domain details from your team and bring the operating system."}}, {"@type": "Question", "name": "What if our industry is heavily regulated?", "acceptedAnswer": {"@type": "Answer", "text": "Regulated environments generally benefit more from documented process, not less. We build systems that fit inside your compliance requirements rather than working around them."}}, {"@type": "Question", "name": "What types of businesses does Elixir Consulting Group work with?", "acceptedAnswer": {"@type": "Answer", "text": "We work with small to mid-sized businesses, typically between $1M and $30M in revenue, across a wide range of industries. Our clients tend to be owner-operated or have small leadership teams that are ready to install more structure and improve execution."}}, {"@type": "Question", "name": "Do you work with businesses outside of Pittsburgh?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. While we are proudly based in Pittsburgh, PA, we work with clients remotely across the United States. Our virtual consulting process is structured to be just as effective as in-person work."}}]}
 </script>
@@ -416,6 +443,7 @@ h1{font-size:1.7rem}
 <div class="topbar-inner">
 <span class="topbar-note">Pittsburgh, PA &middot; Serving business owners nationwide</span>
 <span class="topbar-links">
+<a href="/search/" aria-label="Search the site">&#9906; Search</a>
 <a href="tel:+14123877656">&#9742; (412) 387-7656</a>
 <a href="mailto:info@elixirconsultinggroup.com">&#9993; Email Us</a>
 </span>
@@ -428,10 +456,10 @@ h1{font-size:1.7rem}
 <span></span><span></span><span></span>
 </button>
 <ul class="nav-menu" id="nav-menu">
-<li><a href="/">Home</a></li>
 <li><a href="/about/">About</a></li>
 <li><a href="/services/">Services</a></li>
 <li><a href="/industries/" style="color:#002E5B;font-weight:700">Industries</a></li>
+<li><a href="/process/">Process</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
 <li><a href="/blog/">Blog</a></li>
 <li><a href="/faq/">FAQ</a></li>
@@ -447,76 +475,92 @@ h1{font-size:1.7rem}
 <div class="container">
 <p class="breadcrumb"><a href="/">Home</a> / Industries</p>
 <h1>Industries We Serve</h1>
-<p>Our frameworks are designed to work across industries because core operational challenges tend to be universal.</p>
+<p>The operational problems we solve are structural, so the frameworks transfer. The context does not, which is why each sector gets its own page.</p>
 </div>
 </section>
 
+<div class="trust-bar">
+<div class="container">
+<div class="trust-row">
+<span class="trust-item"><span>&#9733;</span> 150+ businesses served</span>
+<span class="trust-item"><span>&#10003;</span> 92% client retention</span>
+<span class="trust-item"><span>&#9873;</span> Led by Dr. Connor Robertson</span>
+<span class="trust-item"><span>&#9781;</span> Implementation, not advice</span>
+<span class="trust-item"><span>&#9992;</span> Pittsburgh based, nationwide</span>
+</div>
+</div>
+</div>
+
 <section class="section">
 <div class="container">
+<div class="text-center" style="margin-bottom:44px">
+<span class="eyebrow">Eight Sectors</span>
+<h2>Pick Your Industry</h2>
+<p style="max-width:660px;margin:0 auto">Each page covers the constraints we see most often in that sector, how we approach them, and the outcomes to expect.</p>
+</div>
 <div class="grid grid-2">
 <div class="industry-card card">
 <div class="ind-icon">&#9881;</div>
-<h3>Professional Services</h3>
+<h3><a href="/industries/professional-services/">Professional Services</a></h3>
 <p>Consulting firms, agencies, law offices, and accounting practices that need better client delivery and business development systems.</p>
+<a href="/industries/professional-services/">Professional Services consulting &rarr;</a>
 </div>
 <div class="industry-card card">
 <div class="ind-icon">&#9879;</div>
-<h3>Construction & Trades</h3>
+<h3><a href="/industries/construction-trades/">Construction & Trades</a></h3>
 <p>General contractors, specialty trades, and construction companies that need project coordination, estimating systems, and operational structure.</p>
+<a href="/industries/construction-trades/">Construction & Trades consulting &rarr;</a>
 </div>
 <div class="industry-card card">
 <div class="ind-icon">&#9764;</div>
-<h3>Healthcare</h3>
+<h3><a href="/industries/healthcare/">Healthcare</a></h3>
 <p>Medical practices, dental offices, therapy clinics, and healthcare organizations that need streamlined patient operations and staff management.</p>
+<a href="/industries/healthcare/">Healthcare consulting &rarr;</a>
 </div>
 <div class="industry-card card">
 <div class="ind-icon">&#9878;</div>
-<h3>Manufacturing</h3>
+<h3><a href="/industries/manufacturing/">Manufacturing</a></h3>
 <p>Production facilities and manufacturers that need process optimization, quality systems, and supply chain coordination.</p>
+<a href="/industries/manufacturing/">Manufacturing consulting &rarr;</a>
 </div>
 <div class="industry-card card">
 <div class="ind-icon">&#128187;</div>
-<h3>Technology</h3>
+<h3><a href="/industries/technology/">Technology</a></h3>
 <p>Software companies, IT services, and tech startups that need scalable operations and structured growth frameworks.</p>
+<a href="/industries/technology/">Technology consulting &rarr;</a>
 </div>
 <div class="industry-card card">
 <div class="ind-icon">&#127968;</div>
-<h3>Real Estate</h3>
+<h3><a href="/industries/real-estate/">Real Estate</a></h3>
 <p>Brokerages, property managers, and real estate investors that need deal flow systems and operational efficiency.</p>
+<a href="/industries/real-estate/">Real Estate consulting &rarr;</a>
 </div>
 <div class="industry-card card">
 <div class="ind-icon">&#128722;</div>
-<h3>Retail & E-Commerce</h3>
+<h3><a href="/industries/retail-ecommerce/">Retail & E-Commerce</a></h3>
 <p>Brick-and-mortar retailers and online sellers that need inventory management, customer experience systems, and growth strategy.</p>
+<a href="/industries/retail-ecommerce/">Retail & E-Commerce consulting &rarr;</a>
 </div>
 <div class="industry-card card">
 <div class="ind-icon">&#128176;</div>
-<h3>Financial Services</h3>
+<h3><a href="/industries/financial-services/">Financial Services</a></h3>
 <p>Wealth management firms, insurance agencies, and financial planners that need client management and compliance-friendly operations.</p>
+<a href="/industries/financial-services/">Financial Services consulting &rarr;</a>
 </div>
 
 </div>
 </div>
 </section>
 
-<section class="section section-gray">
+<section class="section section-navy">
 <div class="container text-center">
-<span class="eyebrow">Not Sure If We Can Help?</span>
+<span class="eyebrow">Not Listed?</span>
 <h2>Most Operational Challenges Are Universal</h2>
-<p style="max-width:600px;margin:0 auto 24px">Whether you are in manufacturing, healthcare, or professional services, the core problems are the same: inconsistent execution, owner dependency, and lack of structure. We solve these across industries.</p>
-<a href="/contact/" class="btn btn-primary">Book a Consult</a>
-</div>
-</section>
-
-<section class="cta-banner">
-<div class="container">
-<span class="eyebrow">Ready to Get Started?</span>
-<h2>Build the Structure Your Business Needs</h2>
-<p>The first step is a consult to understand your business and determine if there is a fit.</p>
+<p style="max-width:640px;margin:0 auto 24px">Whether you are in manufacturing, healthcare, or professional services, the core problems repeat: inconsistent execution, owner dependency, and no structure underneath the growth. If your sector is not above, that does not mean we cannot help.</p>
 <a href="/contact/" class="btn btn-gold">Book a Consult</a>
 </div>
 </section>
-<section class="section">
+<section class="section section-gray">
 <div class="container">
 <div class="text-center" style="margin-bottom:36px">
 <span class="eyebrow">Questions</span>
@@ -546,6 +590,13 @@ h1{font-size:1.7rem}
 </div>
 
 </div>
+</div>
+</section><section class="cta-banner">
+<div class="container">
+<span class="eyebrow">Ready to Get Started?</span>
+<h2>Build the Structure Your Business Needs</h2>
+<p>The first step is a consult to understand your business and determine if there is a fit.</p>
+<a href="/contact/" class="btn btn-gold">Book a Consult</a>
 </div>
 </section>
 </main>
@@ -577,8 +628,11 @@ h1{font-size:1.7rem}
 <li><a href="/industries/">Industries</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
 <li><a href="/blog/">Blog</a></li>
+<li><a href="/blog/author/dr-connor-robertson/">Articles by Dr. Robertson</a></li>
+<li><a href="/process/">How We Work</a></li>
 <li><a href="/faq/">FAQ</a></li>
 <li><a href="/testimonials/">Testimonials</a></li>
+<li><a href="/search/">Search</a></li>
 </ul>
 </div>
 <div>
