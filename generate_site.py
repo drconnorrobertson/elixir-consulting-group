@@ -158,23 +158,101 @@ nav .btn-primary:hover{{background:{COLORS['navy_light']};color:{COLORS['white']
 .industry-card:hover{{border-color:{COLORS['gold']};box-shadow:0 4px 20px rgba(0,0,0,.08)}}
 .industry-card .ind-icon{{font-size:2rem;margin-bottom:12px}}
 
-/* Responsive */
+/* ===== MOBILE OPTIMIZATION PASS =====
+   The off-canvas drawer is positioned with transform (not `right:-100%`):
+   .header sets backdrop-filter, which makes it the containing block for its
+   fixed children, and a percentage offset there resolved against a viewport
+   that the drawer itself had widened -- the menu never came on screen and
+   every page scrolled ~50px horizontally. translateX(105%) is relative to
+   the drawer's own width, so neither problem can recur. */
+html,body{{overflow-x:hidden}}
+body{{max-width:100%}}
+img,video,iframe{{max-width:100%;height:auto}}
+h1,h2,h3,h4,h5,p,li,a,td{{overflow-wrap:break-word;word-wrap:break-word}}
+.nav-toggle{{display:none}}
+.nav-backdrop{{display:none}}
+.split-2{{display:grid;grid-template-columns:1fr 1fr;gap:60px}}
+.split-2.split-center{{align-items:center}}
+.split-1-2{{display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start}}
+.split-stats{{display:grid;grid-template-columns:1fr 1fr;gap:24px}}
+.contact-line{{display:flex;align-items:center;min-height:48px;font-size:1.05rem;font-weight:600}}
 @media(max-width:968px){{
 .footer-grid{{grid-template-columns:1fr 1fr}}
 .grid-3{{grid-template-columns:1fr}}
 }}
+@media(max-width:900px){{
+.split-2,.split-1-2{{grid-template-columns:1fr;gap:36px}}
+}}
 @media(max-width:768px){{
+.nav-toggle{{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;padding:0;margin-right:-6px;background:none;border:0;cursor:pointer;position:relative;z-index:1002;flex-shrink:0}}
+.nav-toggle span{{display:block;width:24px;height:2px;margin:0;border-radius:2px;background:{COLORS['navy']};transition:transform .3s,opacity .3s}}
+.nav-toggle.active span:nth-child(1){{transform:translateY(7px) rotate(45deg)}}
+.nav-toggle.active span:nth-child(2){{opacity:0}}
+.nav-toggle.active span:nth-child(3){{transform:translateY(-7px) rotate(-45deg)}}
+.nav-menu{{position:fixed;top:0;right:0;left:auto;bottom:auto;display:flex;flex-direction:column;align-items:stretch;gap:2px;width:min(320px,86vw);height:100vh;margin:0;padding:80px 20px 32px;list-style:none;background:{COLORS['white']};box-shadow:-4px 0 24px rgba(0,0,0,.18);transform:translateX(105%);transition:transform .3s ease;z-index:1001;overflow-y:auto;-webkit-overflow-scrolling:touch}}
+.nav-menu.active{{transform:translateX(0)}}
+.nav-menu li{{width:100%;margin:0}}
+.nav-menu a{{display:flex;align-items:center;width:100%;min-height:48px;padding:12px 14px;font-size:1rem;font-weight:500;color:{COLORS['text']};border-radius:8px}}
+.nav-menu a:hover{{background:{COLORS['off_white']};color:{COLORS['navy']}}}
+.nav-menu .btn,.nav-menu .btn-primary{{justify-content:center;margin-top:10px;color:{COLORS['white']};background:{COLORS['navy']}}}
+.nav-backdrop{{display:block;position:fixed;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .3s;z-index:1000}}
+.nav-backdrop.active{{opacity:1;pointer-events:auto}}
+.header{{z-index:1001}}
+body.nav-open{{overflow:hidden}}
 .header-inner{{height:64px}}
-.nav-menu{{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:{COLORS['white']};flex-direction:column;padding:80px 32px 32px;box-shadow:-4px 0 20px rgba(0,0,0,.1);transition:right .3s;z-index:999}}
-.nav-menu.active{{right:0}}
-nav ul{{flex-direction:column;gap:4px;width:100%}}
-nav a{{padding:12px 16px;width:100%;display:block}}
-.nav-toggle{{display:block;z-index:1000}}
-.hero{{padding:80px 0 60px}}
-.section{{padding:50px 0}}
-.grid-2,.grid-4{{grid-template-columns:1fr}}
-.footer-grid{{grid-template-columns:1fr}}
-.process-step{{flex-direction:column;text-align:center;align-items:center}}
+main[style]{{margin-top:64px!important}}
+.logo{{display:inline-flex;align-items:center;min-height:44px}}
+.grid{{gap:20px}}
+.grid-2,.grid-3,.grid-4{{grid-template-columns:1fr}}
+.footer-grid{{grid-template-columns:1fr;gap:28px}}
+.process-step{{flex-direction:row;text-align:left;align-items:flex-start;gap:16px}}
+/* touch targets >=44px */
+.btn{{display:inline-flex;align-items:center;justify-content:center;min-height:48px}}
+.footer li{{margin-bottom:0}}
+.footer li a{{display:inline-block;min-height:44px;padding:11px 0;line-height:1.45}}
+.card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a{{display:inline-flex;align-items:center;min-height:44px}}
+.breadcrumb a{{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}}
+.services-link{{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}}
+.faq-q{{min-height:56px;padding:18px 20px}}
+/* no sub-14px body copy */
+.breadcrumb{{font-size:.9rem}}
+.footer-desc{{font-size:.95rem}}
+.footer-bottom{{font-size:.9rem}}
+.footer li a{{font-size:.95rem}}
+.eyebrow{{font-size:.875rem}}
+.stat-label{{font-size:.95rem}}
+.card p{{font-size:1rem}}
+.testimonial-card .quote{{font-size:1rem}}
+.testimonial-card .role{{font-size:.9rem}}
+.blog-card .blog-date{{font-size:.9rem}}
+/* 16px input text avoids iOS focus zoom */
+.form-group input,.form-group select,.form-group textarea{{font-size:16px;min-height:48px}}
+.form-group textarea{{min-height:130px}}
+.form-group label{{font-size:.95rem}}
+button[type=submit]{{width:100%;min-height:52px}}
+}}
+@media(max-width:480px){{
+.container{{padding:0 20px}}
+.section{{padding:44px 0}}
+.section-sm{{padding:32px 0}}
+.card,.industry-card{{padding:24px 20px}}
+.testimonial-card{{padding:22px 20px}}
+.contact-info-card{{padding:24px 20px}}
+.hero{{padding:72px 0 52px}}
+.page-hero{{padding:56px 0 36px}}
+.cta-banner{{padding:44px 0}}
+.footer{{padding:44px 0 0}}
+.hero .btn,.cta-banner .btn,.page-hero .btn{{width:100%;margin-right:0;margin-bottom:12px}}
+.stat-num{{font-size:2rem}}
+.split-stats{{gap:16px}}
+.blog-card .blog-img{{height:160px}}
+}}
+@media(max-width:360px){{
+.container{{padding:0 16px}}
+h1{{font-size:1.7rem}}
+.logo{{font-size:1.15rem}}
+.stat-num{{font-size:1.8rem}}
+.split-stats{{grid-template-columns:1fr}}
 }}
 """
 
@@ -670,10 +748,10 @@ def make_header(active_path="/"):
 <div class="header-inner">
 <a href="/" class="logo">Elixir<span>.</span></a>
 <nav>
-<button class="nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('active')" aria-label="Toggle menu">
+<button type="button" class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
 <span></span><span></span><span></span>
 </button>
-<ul class="nav-menu">
+<ul class="nav-menu" id="nav-menu">
 {nav_html}
 </ul>
 </nav>
@@ -688,7 +766,7 @@ def make_footer():
 <div>
 <h4>Elixir Consulting Group</h4>
 <p class="footer-desc">Business growth, operations, and execution support for owners who want results. Based in Pittsburgh, PA. Serving clients nationwide.</p>
-<p style="margin-top:16px;font-size:.85rem">{ADDRESS}</p>
+<p style="margin-top:16px;font-size:.9rem">{ADDRESS}</p>
 </div>
 <div>
 <h4>Services</h4>
@@ -725,6 +803,8 @@ def make_footer():
 <h4>Connect</h4>
 <ul>
 <li><a href="/contact/">Contact Us</a></li>
+<li><a href="tel:+14123877656">(412) 387-7656</a></li>
+<li><a href="mailto:info@elixirconsultinggroup.com">info@elixirconsultinggroup.com</a></li>
 <li><a href="https://drconnorrobertson.com" target="_blank" rel="noopener">Dr. Connor Robertson</a></li>
 <li><a href="https://thepittsburghwire.com" target="_blank" rel="noopener">The Pittsburgh Wire</a></li>
 <li><a href="https://www.youtube.com/@TheProspectingShow" target="_blank" rel="noopener">The Prospecting Show</a></li>
@@ -801,7 +881,7 @@ def make_page(title, description, path, body, schema="", canonical=None):
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>{title}</title>
 <meta name="description" content="{description}">
@@ -826,13 +906,31 @@ def make_page(title, description, path, body, schema="", canonical=None):
 {make_breadcrumb_schema(path)}
 </head>
 <body>
+<div class="nav-backdrop" aria-hidden="true"></div>
 {make_header(path)}
 <main style="margin-top:72px">
 {body}
 </main>
 {make_footer()}
 <script>
-document.addEventListener('click',function(e){{if(e.target.closest('.nav-toggle')){{document.querySelector('.nav-menu').classList.toggle('active')}}else if(!e.target.closest('.nav-menu')){{document.querySelector('.nav-menu').classList.remove('active')}}}});
+(function(){{
+var menu=document.querySelector('.nav-menu')||document.querySelector('.nav-links');
+var toggle=document.querySelector('.nav-toggle');
+var backdrop=document.querySelector('.nav-backdrop');
+if(!menu||!toggle)return;
+function setOpen(open){{
+menu.classList.toggle('active',open);
+toggle.classList.toggle('active',open);
+if(backdrop)backdrop.classList.toggle('active',open);
+document.body.classList.toggle('nav-open',open);
+toggle.setAttribute('aria-expanded',open?'true':'false');
+}}
+toggle.addEventListener('click',function(e){{e.stopPropagation();setOpen(!menu.classList.contains('active'))}});
+if(backdrop)backdrop.addEventListener('click',function(){{setOpen(false)}});
+menu.addEventListener('click',function(e){{if(e.target.closest('a'))setOpen(false)}});
+document.addEventListener('keydown',function(e){{if(e.key==='Escape')setOpen(false)}});
+window.addEventListener('resize',function(){{if(window.innerWidth>768)setOpen(false)}});
+}})();
 document.querySelectorAll('.faq-item').forEach(function(item){{item.querySelector('.faq-q').addEventListener('click',function(){{item.classList.toggle('active')}});}});
 if('IntersectionObserver' in window){{const observer=new IntersectionObserver(function(entries){{entries.forEach(function(entry){{if(entry.isIntersecting){{const img=entry.target;img.src=img.dataset.src;img.classList.add('loaded');observer.unobserve(img)}}}});}});document.querySelectorAll('img[data-src]').forEach(img=>observer.observe(img))}}else{{document.querySelectorAll('img[data-src]').forEach(function(img){{img.src=img.dataset.src}})}}
 </script>
@@ -987,7 +1085,7 @@ def gen_homepage():
 
 <section class="section">
 <div class="container">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+<div class="split-2 split-center">
 <div>
 <span class="eyebrow">About the Founder</span>
 <h2>Dr. Connor Robertson</h2>
@@ -996,7 +1094,7 @@ def gen_homepage():
 <a href="https://drconnorrobertson.com" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:8px">Learn More About Dr. Robertson</a>
 </div>
 <div style="background:{COLORS['off_white']};border-radius:16px;padding:48px;text-align:center">
-<div style="width:120px;height:120px;border-radius:50%;background:{COLORS['navy']};margin:0 auto 24px;display:flex;align-items:center;justify-content:center;color:{COLORS['gold']};font-size:2.5rem;font-weight:700">CR</div>
+<img src="/images/dr-connor-robertson.jpg" alt="Dr. Connor Robertson, Founder and Lead Consultant at Elixir Consulting Group" width="800" height="800" style="border-radius:50%;width:clamp(140px,40vw,160px);height:clamp(140px,40vw,160px);object-fit:cover;margin:0 auto 24px;display:block" loading="lazy">
 <h3 style="margin-bottom:4px">Dr. Connor Robertson</h3>
 <p style="color:{COLORS['mid_gray']};margin-bottom:16px">Founder & Lead Consultant</p>
 <p style="font-size:.9rem">Specializing in business strategy, operations, AI consulting, and organizational development.</p>
@@ -1147,7 +1245,7 @@ def gen_about():
 
 <section class="section">
 <div class="container">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+<div class="split-2 split-center">
 <div>
 <span class="eyebrow">Our Story</span>
 <h2>From Chaos to Structure</h2>
@@ -1157,7 +1255,7 @@ def gen_about():
 </div>
 <div style="background:{COLORS['off_white']};border-radius:16px;padding:48px">
 <h3 style="margin-bottom:24px">By the Numbers</h3>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+<div class="split-stats">
 <div><span class="stat-num" style="font-size:2rem">150+</span><br><span class="stat-label">Businesses Served</span></div>
 <div><span class="stat-num" style="font-size:2rem">92%</span><br><span class="stat-label">Retention Rate</span></div>
 <div><span class="stat-num" style="font-size:2rem">50+</span><br><span class="stat-label">Industries</span></div>
@@ -1170,9 +1268,9 @@ def gen_about():
 
 <section class="section section-gray">
 <div class="container">
-<div style="display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start">
+<div class="split-1-2">
 <div style="text-align:center">
-<div style="width:160px;height:160px;border-radius:50%;background:{COLORS['navy']};margin:0 auto 24px;display:flex;align-items:center;justify-content:center;color:{COLORS['gold']};font-size:3rem;font-weight:700">CR</div>
+<img src="/images/dr-connor-robertson.jpg" alt="Dr. Connor Robertson, Founder and Lead Consultant at Elixir Consulting Group" width="800" height="800" style="width:clamp(180px,58vw,240px);height:clamp(180px,58vw,240px);border-radius:50%;object-fit:cover;margin:0 auto 20px;display:block;box-shadow:0 10px 34px rgba(0,46,91,.20)" fetchpriority="high">
 <h3>Dr. Connor Robertson</h3>
 <p style="color:{COLORS['mid_gray']}">Founder & Lead Consultant</p>
 </div>
@@ -1732,7 +1830,7 @@ def gen_contact():
 
 <section class="section">
 <div class="container">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:60px">
+<div class="split-2">
 <div>
 <span class="eyebrow">Get in Touch</span>
 <h2>Book a Consult</h2>

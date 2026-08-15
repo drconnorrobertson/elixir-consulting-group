@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>How to Use Customer Feedback to Outpace Your Competition | Elixir Consulting Group</title>
 <meta name="description" content="Understanding your competition is important, but it should not consume you. The best competitive research gives you clarity about where […]">
 <link rel="canonical" href="https://elixirconsultinggroup.com/blog/how-to-use-customer-feedback-to-outpace-your-competition/">
@@ -121,8 +121,6 @@ nav .btn-primary:hover{background:#003D7A;color:#FFFFFF}
 }
 @media(max-width:768px){
 .header-inner{height:64px}
-.nav-menu{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:#FFFFFF;flex-direction:column;padding:80px 32px 32px;box-shadow:-4px 0 20px rgba(0,0,0,.1);transition:right .3s;z-index:999}
-.nav-menu.active{right:0}
 nav ul{flex-direction:column;gap:4px;width:100%}
 nav a{padding:12px 16px;width:100%;display:block}
 .nav-toggle{display:block;z-index:1000}
@@ -130,6 +128,115 @@ nav a{padding:12px 16px;width:100%;display:block}
 .section{padding:50px 0}
 .grid-2,.grid-4{grid-template-columns:1fr}
 .footer-grid{grid-template-columns:1fr}
+}
+
+/* ===== MOBILE OPTIMIZATION PASS ===== */
+html,body{overflow-x:hidden}
+body{max-width:100%}
+img,video,iframe{max-width:100%;height:auto}
+h1,h2,h3,h4,h5,p,li,a,td{overflow-wrap:break-word;word-wrap:break-word}
+.nav-toggle{display:none}
+.nav-backdrop{display:none}
+.split-2{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.split-2.split-center{align-items:center}
+.split-1-2{display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start}
+.split-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.contact-line{display:flex;align-items:center;min-height:48px;font-size:1.05rem;font-weight:600}
+@media(max-width:900px){
+.split-2,.split-1-2{grid-template-columns:1fr;gap:36px}
+}
+@media(max-width:768px){
+/* --- off-canvas navigation --- */
+.nav-toggle{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;padding:0;margin-right:-6px;background:none;border:0;cursor:pointer;position:relative;z-index:1002;flex-shrink:0}
+.nav-toggle span{display:block;width:24px;height:2px;margin:0;border-radius:2px;background:#002E5B;transition:transform .3s,opacity .3s}
+.nav .nav-toggle span{background:#FFFFFF}
+/* drawer is white: darken the bars once it is open so the X stays visible */
+.nav .nav-toggle.active span{background:#002E5B}
+.nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.active span:nth-child(2){opacity:0}
+.nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-menu,.nav-links{position:fixed;top:0;right:0;left:auto;bottom:auto;display:flex;flex-direction:column;align-items:stretch;gap:2px;width:min(320px,86vw);height:100vh;margin:0;padding:80px 20px 32px;list-style:none;background:#FFFFFF;box-shadow:-4px 0 24px rgba(0,0,0,.18);transform:translateX(105%);transition:transform .3s ease;z-index:1001;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.nav-menu.active,.nav-links.active{transform:translateX(0)}
+.nav-menu li,.nav-links li{width:100%;margin:0}
+.nav-menu a,.nav-links a{display:flex;align-items:center;width:100%;min-height:48px;padding:12px 14px;font-size:1rem;font-weight:500;color:#1A1A2E;border-radius:8px}
+.nav-menu a:hover,.nav-links a:hover{background:#F8F9FA;color:#002E5B}
+.nav-menu .btn,.nav-menu .btn-primary{justify-content:center;margin-top:10px;color:#FFFFFF;background:#002E5B}
+/* this template pins .nav-cta's text colour with !important; keep the gold
+   background so the dark text stays legible inside the white drawer */
+.nav-links .nav-cta{justify-content:center;margin-top:10px;background:#C9A84C}
+.nav-backdrop{display:block;position:fixed;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .3s;z-index:1000}
+.nav-backdrop.active{opacity:1;pointer-events:auto}
+/* header/nav own a stacking context; keep it above the backdrop so the
+   drawer (which lives inside it) is not covered */
+.header,.nav{z-index:1001}
+body.nav-open{overflow:hidden}
+.header-inner{height:64px}
+main[style]{margin-top:64px!important}
+.logo,.nav-logo{display:inline-flex;align-items:center;min-height:44px}
+/* --- stacking --- */
+.grid{gap:20px}
+.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr;gap:28px}
+.process-step{flex-direction:row;text-align:left;align-items:flex-start;gap:16px}
+/* --- touch targets (>=44px) --- */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px}
+.footer li{margin-bottom:0}
+.footer li a{display:inline-block;min-height:44px;padding:11px 0;line-height:1.45}
+.breadcrumb a{display:inline-block;padding:6px 2px}
+.services-link{display:inline-flex;align-items:center;min-height:44px;margin-bottom:10px}
+.faq-q{min-height:56px;padding:18px 20px}
+.blog-card h3 a,.network-card h3 a{display:inline-block;padding:4px 0}
+/* --- readable type (no sub-14px body copy) --- */
+.breadcrumb{font-size:.9rem}
+.footer-desc{font-size:.95rem}
+.footer-bottom{font-size:.9rem}
+.footer li a{font-size:.95rem}
+.eyebrow{font-size:.875rem}
+.stat-label{font-size:.95rem}
+.card p{font-size:1rem}
+.testimonial-card .quote{font-size:1rem}
+.testimonial-card .role{font-size:.9rem}
+.blog-card .blog-date{font-size:.9rem}
+.network-crosslinks .eyebrow{font-size:.8rem}
+.network-card .source-tag{font-size:.78rem}
+.network-card h3{font-size:1.05rem}
+.network-card p{font-size:.95rem}
+/* --- forms: 16px avoids iOS focus zoom --- */
+.form-group input,.form-group select,.form-group textarea{font-size:16px;min-height:48px}
+.form-group textarea{min-height:130px}
+.form-group label{font-size:.95rem}
+button[type=submit]{width:100%;min-height:52px}
+}
+@media(max-width:480px){
+.container{padding:0 20px}
+.section{padding:44px 0}
+.section-sm{padding:32px 0}
+.card,.industry-card{padding:24px 20px}
+.testimonial-card{padding:22px 20px}
+.contact-info-card{padding:24px 20px}
+.hero{padding:72px 0 52px}
+.page-hero{padding:56px 0 36px}
+.cta-banner,.cta-section{padding:44px 0}
+.content-section{padding:40px 0}
+.footer{padding:44px 0 0}
+.hero .btn,.cta-banner .btn,.cta-section .btn,.page-hero .btn{width:100%;margin-right:0;margin-bottom:12px}
+.stat-num{font-size:2rem}
+.split-stats{gap:16px}
+.blog-card .blog-img{height:160px}
+}
+@media(max-width:360px){
+.container{padding:0 16px}
+h1{font-size:1.7rem}
+.logo,.nav-logo{font-size:1.15rem}
+.stat-num{font-size:1.8rem}
+.split-stats{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+/* standalone text CTAs and link lists need a real tap area */
+.card>a,.card h3 a,.blog-card .blog-content a,.industry-card a,.footer p a,.container.text-center>div>a{display:inline-flex;align-items:center;min-height:44px}
+.breadcrumb a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
+/* uppercase micro-labels: lift off 12.8px */
+.network-crosslinks .eyebrow,.network-card .source-tag,.tag{font-size:.85rem}
 }
 </style>
 <script type="application/ld+json">
@@ -140,14 +247,15 @@ nav a{padding:12px 16px;width:100%;display:block}
 </script>
 </head>
 <body>
+<div class="nav-backdrop" aria-hidden="true"></div>
 <header class="header">
 <div class="header-inner">
 <a href="/" class="logo">Elixir<span>.</span></a>
 <nav>
-<button class="nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('active')" aria-label="Toggle menu">
+<button type="button" class="nav-toggle" aria-label="Toggle menu">
 <span></span><span></span><span></span>
 </button>
-<ul class="nav-menu">
+<ul class="nav-menu" id="nav-menu">
 <li><a href="/">Home</a></li>
 <li><a href="/about/">About</a></li>
 <li><a href="/services/">Services</a></li>
@@ -222,7 +330,7 @@ nav a{padding:12px 16px;width:100%;display:block}
 <div>
 <h4>Elixir Consulting Group</h4>
 <p class="footer-desc">Business growth, operations, and execution support for owners who want results. Based in Pittsburgh, PA. Serving clients nationwide.</p>
-<p style="margin-top:16px;font-size:.85rem">429 Fourth Ave. Suite 300, Pittsburgh, PA 15219</p>
+<p style="margin-top:16px;font-size:.9rem">429 Fourth Ave. Suite 300, Pittsburgh, PA 15219</p>
 </div>
 <div>
 <h4>Services</h4>
@@ -259,6 +367,8 @@ nav a{padding:12px 16px;width:100%;display:block}
 <h4>Connect</h4>
 <ul>
 <li><a href="/contact/">Contact Us</a></li>
+<li><a href="tel:+14123877656">(412) 387-7656</a></li>
+<li><a href="mailto:info@elixirconsultinggroup.com">info@elixirconsultinggroup.com</a></li>
 <li><a href="https://drconnorrobertson.com" target="_blank" rel="noopener">Dr. Connor Robertson</a></li>
 <li><a href="https://thepittsburghwire.com" target="_blank" rel="noopener">The Pittsburgh Wire</a></li>
 <li><a href="https://www.youtube.com/@TheProspectingShow" target="_blank" rel="noopener">The Prospecting Show</a></li>
@@ -271,8 +381,27 @@ nav a{padding:12px 16px;width:100%;display:block}
 </div>
 </footer>
 <script>
-document.addEventListener('click',function(e){if(!e.target.closest('.nav-menu')&&!e.target.closest('.nav-toggle'))document.querySelector('.nav-menu').classList.remove('active')});
 document.querySelectorAll('.faq-item').forEach(function(item){item.querySelector('.faq-q').addEventListener('click',function(){item.classList.toggle('active')});});
+</script>
+<script>
+(function(){
+var menu=document.querySelector('.nav-menu')||document.querySelector('.nav-links');
+var toggle=document.querySelector('.nav-toggle');
+var backdrop=document.querySelector('.nav-backdrop');
+if(!menu||!toggle)return;
+function setOpen(open){
+menu.classList.toggle('active',open);
+toggle.classList.toggle('active',open);
+if(backdrop)backdrop.classList.toggle('active',open);
+document.body.classList.toggle('nav-open',open);
+toggle.setAttribute('aria-expanded',open?'true':'false');
+}
+toggle.addEventListener('click',function(e){e.stopPropagation();setOpen(!menu.classList.contains('active'))});
+if(backdrop)backdrop.addEventListener('click',function(){setOpen(false)});
+menu.addEventListener('click',function(e){if(e.target.closest('a'))setOpen(false)});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')setOpen(false)});
+window.addEventListener('resize',function(){if(window.innerWidth>768)setOpen(false)});
+})();
 </script>
 </body>
 </html>
