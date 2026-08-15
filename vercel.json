@@ -69,6 +69,28 @@
           "value": "text/plain"
         }
       ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/favicon.svg",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800"
+        },
+        {
+          "key": "Content-Type",
+          "value": "image/svg+xml"
+        }
+      ]
     }
   ],
   "redirects": [
@@ -90,6 +112,21 @@
     {
       "source": "/sitemap_index.xml",
       "destination": "/sitemap.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations/",
+      "destination": "/consulting/",
+      "statusCode": 301
+    },
+    {
+      "source": "/about-us/",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/team/",
+      "destination": "/about/",
       "statusCode": 301
     }
   ]

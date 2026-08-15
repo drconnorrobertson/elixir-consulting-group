@@ -5,13 +5,21 @@ Generates all HTML pages, sitemap.xml, robots.txt, and vercel.json
 """
 
 import os
+import re
 import json
+import html as htmllib
 from datetime import datetime
 
 DOMAIN = "https://elixirconsultinggroup.com"
 YEAR = "2026"
-DATE_NOW = "2026-05-02"
+DATE_NOW = "2026-08-15"
 ADDRESS = "429 Fourth Ave. Suite 300, Pittsburgh, PA 15219"
+PHONE = "(412) 387-7656"
+PHONE_HREF = "tel:+14123877656"
+EMAIL = "info@elixirconsultinggroup.com"
+OG_IMAGE = DOMAIN + "/images/og-image.png"
+HEADSHOT = "/images/dr-connor-robertson.jpg"
+HEADSHOT_ALT = "Dr. Connor Robertson, Founder and Lead Consultant at Elixir Consulting Group"
 
 # ─── Brand Colors & Design Tokens ──────────────────────────────────────
 COLORS = {
@@ -129,7 +137,8 @@ nav .btn-primary:hover{{background:{COLORS['navy_light']};color:{COLORS['white']
 .faq-q::after{{content:'+';font-size:1.4rem;color:{COLORS['gold']};font-weight:300;transition:transform .3s}}
 .faq-item.active .faq-q::after{{transform:rotate(45deg)}}
 .faq-a{{padding:0 24px;max-height:0;overflow:hidden;transition:all .3s ease}}
-.faq-item.active .faq-a{{max-height:300px;padding:0 24px 20px}}
+.faq-item.active .faq-a{{max-height:1400px;padding:0 24px 20px}}
+.faq-a p{{margin-bottom:0}}
 
 /* Process Steps */
 .process-step{{display:flex;gap:20px;padding:24px 0;border-bottom:1px solid {COLORS['border']}}}
@@ -158,6 +167,103 @@ nav .btn-primary:hover{{background:{COLORS['navy_light']};color:{COLORS['white']
 .industry-card:hover{{border-color:{COLORS['gold']};box-shadow:0 4px 20px rgba(0,0,0,.08)}}
 .industry-card .ind-icon{{font-size:2rem;margin-bottom:12px}}
 
+/* Utility bar */
+.topbar{{background:{COLORS['navy_dark']};color:rgba(255,255,255,.82);font-size:.82rem}}
+.topbar-inner{{max-width:1200px;margin:0 auto;padding:0 24px;height:40px;display:flex;align-items:center;justify-content:space-between;gap:16px}}
+.topbar a{{color:rgba(255,255,255,.9);font-weight:600}}
+.topbar a:hover{{color:{COLORS['gold']}}}
+.topbar-links{{display:flex;align-items:center;gap:20px;flex-shrink:0}}
+.topbar-note{{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+.site-main{{margin-top:112px}}
+.skip-link{{position:absolute;left:-9999px;top:0;background:{COLORS['navy']};color:#fff;padding:12px 20px;z-index:2000;border-radius:0 0 6px 0}}
+.skip-link:focus{{left:0;color:#fff}}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{{outline:3px solid {COLORS['gold']};outline-offset:2px}}
+
+/* Trust bar */
+.trust-bar{{background:{COLORS['off_white']};border-top:1px solid {COLORS['border']};border-bottom:1px solid {COLORS['border']};padding:22px 0}}
+.trust-row{{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 36px;text-align:center}}
+.trust-item{{display:flex;align-items:center;gap:9px;font-size:.92rem;font-weight:600;color:{COLORS['navy']}}}
+.trust-item span{{color:{COLORS['gold']};font-size:1.05rem;line-height:1}}
+
+/* Article typography (blog) */
+.article-body{{max-width:760px;margin:0 auto;font-size:1.075rem;line-height:1.85;color:{COLORS['text_light']}}}
+.article-body>p{{margin-bottom:1.35rem}}
+.article-body h2{{margin-top:2.4rem;margin-bottom:.9rem;font-size:clamp(1.45rem,3.4vw,1.9rem);scroll-margin-top:130px}}
+.article-body h3{{margin-top:1.9rem;margin-bottom:.6rem;font-size:clamp(1.15rem,2.6vw,1.35rem);scroll-margin-top:130px}}
+.article-body ul,.article-body ol{{margin:0 0 1.35rem 1.25rem;padding-left:1rem}}
+.article-body li{{margin-bottom:.55rem;color:{COLORS['text_light']}}}
+.article-body img{{width:100%;border-radius:12px;margin:2rem 0}}
+.article-body a{{color:{COLORS['navy']};text-decoration:underline;text-underline-offset:2px;font-weight:500}}
+.article-body a:hover{{color:{COLORS['gold']}}}
+.article-body strong{{color:{COLORS['text']}}}
+.article-body blockquote,.article-body .pullquote{{margin:2rem 0;padding:20px 28px;border-left:4px solid {COLORS['gold']};background:{COLORS['off_white']};border-radius:0 10px 10px 0;font-style:italic;font-size:1.1rem;color:{COLORS['text']}}}
+.article-body blockquote p:last-child,.article-body .pullquote p:last-child{{margin-bottom:0}}
+.article-body table{{width:100%;border-collapse:collapse;margin:1.75rem 0;font-size:.95rem}}
+.article-body th,.article-body td{{border:1px solid {COLORS['border']};padding:10px 14px;text-align:left}}
+.article-body th{{background:{COLORS['off_white']};color:{COLORS['navy']}}}
+.article-body .stat-highlight,.article-body .big-number{{margin:2rem 0;padding:28px 32px;background:{COLORS['navy']};border-radius:14px;text-align:center;color:#fff}}
+.article-body .stat-highlight .stat-num,.article-body .big-number .stat-num{{color:{COLORS['gold']};font-size:2.6rem;display:block;margin-bottom:6px}}
+.article-body .stat-highlight .stat-label,.article-body .big-number .stat-label{{color:rgba(255,255,255,.85);font-size:1rem;margin-bottom:0}}
+.article-body .checklist{{list-style:none;margin-left:0;padding-left:0}}
+.article-body .checklist li{{position:relative;padding-left:30px;margin-bottom:.7rem}}
+.article-body .checklist li::before{{content:'\\2713';position:absolute;left:0;top:0;color:{COLORS['gold']};font-weight:700}}
+.article-hero-img{{width:100%;max-height:460px;object-fit:cover;border-radius:14px;margin-bottom:12px}}
+.article-figcaption{{font-size:.85rem;color:{COLORS['mid_gray']};text-align:center;margin-bottom:32px}}
+.post-meta{{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:18px;color:rgba(255,255,255,.85);font-size:.92rem}}
+.post-meta img{{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.35)}}
+.post-meta .dot{{opacity:.5}}
+.post-tag{{display:inline-block;background:rgba(201,168,76,.16);color:{COLORS['gold']};border:1px solid rgba(201,168,76,.4);border-radius:999px;padding:4px 12px;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}}
+.author-box{{max-width:760px;margin:48px auto 0;display:flex;gap:24px;align-items:flex-start;background:{COLORS['off_white']};border-radius:14px;padding:28px}}
+.author-box img{{width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0}}
+.author-box h3{{font-size:1.15rem;margin-bottom:2px}}
+.author-box .author-role{{font-size:.85rem;color:{COLORS['mid_gray']};margin-bottom:10px}}
+.author-box p{{font-size:.95rem;margin-bottom:10px}}
+
+/* Blog index */
+.blog-toolbar{{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:32px}}
+.blog-search{{flex:1 1 260px;min-width:0;padding:13px 16px;border:1px solid {COLORS['border']};border-radius:10px;font-size:1rem;font-family:inherit}}
+.blog-filters{{display:flex;flex-wrap:wrap;gap:8px}}
+.filter-chip{{border:1px solid {COLORS['border']};background:#fff;color:{COLORS['navy']};border-radius:999px;padding:9px 16px;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s;min-height:40px}}
+.filter-chip:hover{{border-color:{COLORS['gold']}}}
+.filter-chip.active{{background:{COLORS['navy']};color:#fff;border-color:{COLORS['navy']}}}
+.post-list{{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px}}
+.post-card{{display:flex;flex-direction:column;background:#fff;border:1px solid {COLORS['border']};border-radius:14px;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}}
+.post-card:hover{{transform:translateY(-4px);box-shadow:0 12px 34px rgba(0,0,0,.09);border-color:{COLORS['gold']}}}
+.post-card .thumb{{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:{COLORS['navy']}}}
+.post-card .pc-body{{padding:22px;display:flex;flex-direction:column;flex:1}}
+.post-card .pc-cat{{font-size:.72rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:{COLORS['gold']};margin-bottom:8px}}
+.post-card h3{{font-size:1.08rem;line-height:1.35;margin-bottom:9px}}
+.post-card h3 a{{color:{COLORS['navy']}}}
+.post-card h3 a:hover{{color:{COLORS['gold']}}}
+.post-card p{{font-size:.93rem;margin-bottom:14px;flex:1}}
+.post-card .pc-meta{{font-size:.82rem;color:{COLORS['mid_gray']};display:flex;gap:8px;align-items:center}}
+.featured-post{{display:grid;grid-template-columns:1.15fr 1fr;gap:0;background:#fff;border:1px solid {COLORS['border']};border-radius:16px;overflow:hidden;margin-bottom:44px}}
+.featured-post img{{width:100%;height:100%;min-height:300px;object-fit:cover;background:{COLORS['navy']}}}
+.featured-post .fp-body{{padding:40px}}
+.featured-post h2{{font-size:clamp(1.4rem,3vw,2rem);margin-bottom:12px}}
+.no-results{{text-align:center;padding:48px 0;color:{COLORS['mid_gray']};display:none}}
+.load-more-wrap{{text-align:center;margin-top:40px}}
+
+/* Ingested legacy sections */
+.content-section{{padding:70px 0}}
+.content-section h2{{margin-bottom:1rem}}
+.content-section h3{{margin-top:1.75rem}}
+.content-section p,.content-section li{{color:{COLORS['text_light']}}}
+.content-section ul{{margin:0 0 1.25rem 1.5rem}}
+.content-section li{{margin-bottom:.5rem}}
+.cta-section{{background:linear-gradient(135deg,{COLORS['navy']} 0%,{COLORS['navy_dark']} 100%);padding:60px 0;text-align:center;color:{COLORS['white']}}}
+.cta-section h2,.cta-section p{{color:{COLORS['white']}}}
+.cta-section p{{color:rgba(255,255,255,.8);max-width:560px;margin:0 auto 24px}}
+.related-posts{{padding:70px 0;background:{COLORS['off_white']}}}
+.services-link{{display:inline-block;margin:0 10px 10px 0;padding:10px 18px;border:1px solid {COLORS['border']};border-radius:8px;background:#fff;font-weight:600;font-size:.9rem}}
+.services-link:hover{{border-color:{COLORS['gold']}}}
+
+/* Contact strip */
+.contact-strip{{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:8px}}
+.contact-strip a{{display:flex;align-items:center;gap:12px;min-height:56px;padding:16px 20px;background:{COLORS['off_white']};border:1px solid {COLORS['border']};border-radius:12px;font-weight:600;color:{COLORS['navy']}}}
+.contact-strip a:hover{{border-color:{COLORS['gold']};color:{COLORS['navy']}}}
+.contact-strip .ic{{color:{COLORS['gold']};font-size:1.15rem}}
+
 /* ===== MOBILE OPTIMIZATION PASS =====
    The off-canvas drawer is positioned with transform (not `right:-100%`):
    .header sets backdrop-filter, which makes it the containing block for its
@@ -179,6 +285,9 @@ h1,h2,h3,h4,h5,p,li,a,td{{overflow-wrap:break-word;word-wrap:break-word}}
 @media(max-width:968px){{
 .footer-grid{{grid-template-columns:1fr 1fr}}
 .grid-3{{grid-template-columns:1fr}}
+.featured-post{{grid-template-columns:1fr}}
+.featured-post img{{min-height:220px;max-height:280px}}
+.featured-post .fp-body{{padding:28px 24px}}
 }}
 @media(max-width:900px){{
 .split-2,.split-1-2{{grid-template-columns:1fr;gap:36px}}
@@ -201,7 +310,35 @@ h1,h2,h3,h4,h5,p,li,a,td{{overflow-wrap:break-word;word-wrap:break-word}}
 body.nav-open{{overflow:hidden}}
 .header-inner{{height:64px}}
 main[style]{{margin-top:64px!important}}
+.site-main{{margin-top:100px}}
+.topbar-inner{{height:38px;padding:0 20px;font-size:.83rem;justify-content:center;gap:18px}}
+.topbar-note{{display:none}}
+.topbar-links{{gap:18px}}
+.topbar a{{display:inline-flex;align-items:center;min-height:36px}}
 .logo{{display:inline-flex;align-items:center;min-height:44px}}
+.post-list{{grid-template-columns:1fr;gap:20px}}
+.post-card .pc-cat{{font-size:.8rem}}
+.post-card .pc-meta{{font-size:.87rem}}
+.post-card h3{{font-size:1.12rem}}
+.author-box{{flex-direction:column;align-items:center;text-align:center;gap:16px;padding:24px 20px}}
+.blog-toolbar{{flex-direction:column;align-items:stretch}}
+/* flex-basis grows the *height* once the toolbar stacks, so pin it back down */
+.blog-search{{flex:0 0 auto;width:100%;min-height:52px}}
+.blog-filters{{overflow-x:auto;flex-wrap:nowrap;padding-bottom:6px;-webkit-overflow-scrolling:touch;scrollbar-width:none}}
+.blog-filters::-webkit-scrollbar{{display:none}}
+.filter-chip{{flex:0 0 auto;min-height:44px}}
+.trust-row{{gap:12px 22px}}
+.trust-item{{font-size:.85rem}}
+.article-body{{font-size:1.03rem}}
+.article-body .stat-highlight,.article-body .big-number{{padding:22px 20px}}
+.article-body .stat-highlight .stat-num,.article-body .big-number .stat-num{{font-size:2.1rem}}
+.article-body blockquote,.article-body .pullquote{{padding:16px 18px;font-size:1rem}}
+.article-body table{{display:block;overflow-x:auto;white-space:nowrap}}
+.content-section{{padding:44px 0}}
+.related-posts{{padding:44px 0}}
+.post-meta{{font-size:.86rem;gap:6px 8px}}
+.post-meta .dot{{display:none}}
+.services-link{{display:inline-flex;align-items:center;min-height:44px}}
 .grid{{gap:20px}}
 .grid-2,.grid-3,.grid-4{{grid-template-columns:1fr}}
 .footer-grid{{grid-template-columns:1fr;gap:28px}}
@@ -246,6 +383,11 @@ button[type=submit]{{width:100%;min-height:52px}}
 .stat-num{{font-size:2rem}}
 .split-stats{{gap:16px}}
 .blog-card .blog-img{{height:160px}}
+.post-card .pc-body{{padding:18px}}
+.featured-post .fp-body{{padding:24px 20px}}
+.author-box img{{width:84px;height:84px}}
+.article-hero-img{{max-height:240px;border-radius:10px}}
+.contact-strip a{{padding:14px 16px}}
 }}
 @media(max-width:360px){{
 .container{{padding:0 16px}}
@@ -253,6 +395,12 @@ h1{{font-size:1.7rem}}
 .logo{{font-size:1.15rem}}
 .stat-num{{font-size:1.8rem}}
 .split-stats{{grid-template-columns:1fr}}
+.topbar-inner{{gap:10px;font-size:.8rem}}
+.trust-row{{flex-direction:column;gap:10px}}
+}}
+@media(prefers-reduced-motion:reduce){{
+*,*::before,*::after{{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+.card:hover,.post-card:hover,.btn:hover{{transform:none}}
 }}
 """
 
@@ -297,6 +445,76 @@ FAQ_ITEMS = [
     ("What makes Dr. Connor Robertson qualified to lead Elixir Consulting Group?", "Dr. Connor Robertson brings extensive experience in business strategy, operational growth, and organizational development. He has worked with dozens of businesses to install systems that improve execution and drive measurable results. Learn more at drconnorrobertson.com."),
     ("Can you help us prepare our business for a sale or exit?", "Yes. We help business owners build the systems and documentation needed to increase business value and make the company attractive to buyers. This includes operational cleanup, financial clarity, and reducing owner dependence."),
 ]
+
+# Page-specific FAQ sets. Every one of these is rendered visibly on the page it
+# belongs to as well as emitted as FAQPage schema -- schema without matching
+# on-page content is a guideline violation, so the two always ship together.
+HOME_FAQS = [FAQ_ITEMS[0], FAQ_ITEMS[1], FAQ_ITEMS[2], FAQ_ITEMS[6], FAQ_ITEMS[8], FAQ_ITEMS[10]]
+
+ABOUT_FAQS = [
+    FAQ_ITEMS[13],
+    FAQ_ITEMS[1],
+    ("What is Dr. Connor Robertson's background?",
+     "Dr. Robertson is the founder and lead consultant at Elixir Consulting Group, with experience spanning business strategy, operational growth, and organizational development. He has worked with dozens of businesses to install systems that improve execution, and he is the author of six books on acquisitions and business strategy."),
+    ("Who does Elixir Consulting Group actually work with day to day?",
+     "Owners and small leadership teams. Most of our clients run businesses between $1M and $30M in revenue where the owner is still deeply involved in operations and wants that to change."),
+    ("Does Dr. Robertson work on engagements personally?",
+     "Yes. Engagements are led personally rather than handed to a junior team. The implementation model only works when the person building the systems is the person sitting with your leadership team every week."),
+    FAQ_ITEMS[9],
+]
+
+SERVICES_FAQS = [
+    ("Which service should we start with?",
+     "Most businesses start with operations because it surfaces the constraints affecting everything else. If your revenue is inconsistent, we often start with sales strategy instead. The consult determines the starting point."),
+    ("Can services be combined in one engagement?",
+     "Yes, and they usually are. Operational problems rarely stay in one lane. A typical engagement combines two or three of our five service areas around a single set of priorities."),
+    FAQ_ITEMS[4],
+    FAQ_ITEMS[6],
+    FAQ_ITEMS[7],
+    FAQ_ITEMS[12],
+]
+
+INDUSTRIES_FAQS = [
+    FAQ_ITEMS[5],
+    ("Do you need industry-specific experience to help our business?",
+     "In most cases, no. The core problems we solve -- unclear process, weak accountability, inconsistent follow-through, owner dependency -- are structural rather than industry-specific. We learn the domain details from your team and bring the operating system."),
+    ("What if our industry is heavily regulated?",
+     "Regulated environments generally benefit more from documented process, not less. We build systems that fit inside your compliance requirements rather than working around them."),
+    FAQ_ITEMS[0],
+    FAQ_ITEMS[3],
+]
+
+CASE_STUDY_FAQS = [
+    ("Are these case studies from real engagements?",
+     "Yes. Details are generalized and client names are withheld to protect confidentiality, but the situations, interventions, and outcomes reflect real engagements."),
+    ("How quickly do results usually appear?",
+     "Operational changes such as meeting cadence and role clarity tend to show up within the first 30 to 60 days. Revenue and margin effects typically follow over a full quarter or two as the new systems compound."),
+    FAQ_ITEMS[8],
+    FAQ_ITEMS[4],
+    FAQ_ITEMS[10],
+]
+
+TESTIMONIAL_FAQS = [
+    ("Can I speak with a current client before engaging?",
+     "In most cases yes. Once we have determined there is a likely fit, we can connect you with a client in a comparable situation so you can hear directly what the work involves."),
+    ("Why are client names abbreviated?",
+     "Many clients prefer that their consulting work stays private, particularly around exit planning or leadership restructuring. We abbreviate names to respect that."),
+    FAQ_ITEMS[8],
+    FAQ_ITEMS[1],
+    FAQ_ITEMS[10],
+]
+
+CONTACT_FAQS = [
+    FAQ_ITEMS[10],
+    FAQ_ITEMS[2],
+    ("How soon will someone respond?",
+     "We respond to consult requests within one business day. If you need to talk sooner, call {} directly.".format(PHONE)),
+    FAQ_ITEMS[3],
+    FAQ_ITEMS[6],
+    ("Is the first consult free?",
+     "Yes. The first conversation is a consult to understand your business and determine whether there is a fit. There is no cost and no obligation."),
+]
+
 
 # ─── Blog Posts ─────────────────────────────────────────────────────────
 BLOG_POSTS = [
@@ -745,9 +963,18 @@ def make_header(active_path="/"):
     nav_html += f'<li><a href="/contact/" class="btn btn-primary">Book a Consult</a></li>'
 
     return f"""<header class="header">
+<div class="topbar">
+<div class="topbar-inner">
+<span class="topbar-note">Pittsburgh, PA &middot; Serving business owners nationwide</span>
+<span class="topbar-links">
+<a href="{PHONE_HREF}">&#9742; {PHONE}</a>
+<a href="mailto:{EMAIL}">&#9993; Email Us</a>
+</span>
+</div>
+</div>
 <div class="header-inner">
-<a href="/" class="logo">Elixir<span>.</span></a>
-<nav>
+<a href="/" class="logo" aria-label="Elixir Consulting Group home">Elixir<span>.</span></a>
+<nav aria-label="Main">
 <button type="button" class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
 <span></span><span></span><span></span>
 </button>
@@ -759,6 +986,142 @@ def make_header(active_path="/"):
 </header>"""
 
 
+def make_trust_bar():
+    return """<div class="trust-bar">
+<div class="container">
+<div class="trust-row">
+<span class="trust-item"><span>&#9733;</span> 150+ businesses served</span>
+<span class="trust-item"><span>&#10003;</span> 92% client retention</span>
+<span class="trust-item"><span>&#9873;</span> Founded by Dr. Connor Robertson</span>
+<span class="trust-item"><span>&#9781;</span> Implementation, not just advice</span>
+<span class="trust-item"><span>&#9992;</span> Pittsburgh based, nationwide reach</span>
+</div>
+</div>
+</div>"""
+
+
+def render_faq_section(items, heading="Frequently Asked Questions", intro="", gray=True):
+    """Visible FAQ accordion. Always paired with make_page(faq=items) for FAQPage schema."""
+    rows = ""
+    for q, a in items:
+        rows += f"""<div class="faq-item">
+<div class="faq-q" role="button" tabindex="0">{q}</div>
+<div class="faq-a"><p>{a}</p></div>
+</div>\n"""
+    intro_html = f'<p style="max-width:640px;margin:0 auto">{intro}</p>' if intro else ""
+    return f"""<section class="section{' section-gray' if gray else ''}">
+<div class="container">
+<div class="text-center" style="margin-bottom:36px">
+<span class="eyebrow">Questions</span>
+<h2>{heading}</h2>
+{intro_html}
+</div>
+<div style="max-width:820px;margin:0 auto">
+{rows}
+</div>
+</div>
+</section>"""
+
+
+_GLOBAL_SCHEMA_CACHE = []
+
+
+def make_global_schema():
+    """Organization + WebSite + Person graph emitted on every page.
+
+    Organization rather than LocalBusiness: the practice is headquartered in
+    Pittsburgh but the client base is nationwide, so a local-business type would
+    misrepresent the service area.
+    """
+    if _GLOBAL_SCHEMA_CACHE:
+        return _GLOBAL_SCHEMA_CACHE[0]
+
+    graph = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": DOMAIN + "/#organization",
+                "name": "Elixir Consulting Group",
+                "alternateName": "Elixir Consulting",
+                "url": DOMAIN,
+                "logo": {"@type": "ImageObject", "url": OG_IMAGE, "width": 1200, "height": 630},
+                "image": OG_IMAGE,
+                "description": "Business consulting firm specializing in operations, sales systems, AI adoption, and leadership development for owner-led companies. Headquartered in Pittsburgh, PA, serving clients nationwide.",
+                "telephone": "+1-412-387-7656",
+                "email": EMAIL,
+                "foundingDate": "2019",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "429 Fourth Ave. Suite 300",
+                    "addressLocality": "Pittsburgh",
+                    "addressRegion": "PA",
+                    "postalCode": "15219",
+                    "addressCountry": "US",
+                },
+                "areaServed": {"@type": "Country", "name": "United States"},
+                "founder": {"@id": DOMAIN + "/#founder"},
+                "knowsAbout": [
+                    "Business Strategy Consulting", "Operations Consulting",
+                    "AI Consulting", "Sales Strategy", "Leadership Development",
+                    "Exit Planning", "Business Process Improvement",
+                ],
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+1-412-387-7656",
+                    "email": EMAIL,
+                    "contactType": "sales",
+                    "areaServed": "US",
+                    "availableLanguage": "English",
+                },
+                "sameAs": [
+                    "https://drconnorrobertson.com",
+                    "https://thepittsburghwire.com",
+                    "https://www.youtube.com/@TheProspectingShow",
+                ],
+            },
+            {
+                "@type": "Person",
+                "@id": DOMAIN + "/#founder",
+                "name": "Dr. Connor Robertson",
+                "url": "https://drconnorrobertson.com",
+                "image": DOMAIN + HEADSHOT,
+                "jobTitle": "Founder & Lead Consultant",
+                "worksFor": {"@id": DOMAIN + "/#organization"},
+                "sameAs": [
+                    "https://drconnorrobertson.com",
+                    "https://drconnorrobertsonbooks.com",
+                    "https://www.barnesandnoble.com/s/Connor+Robertson",
+                ],
+            },
+            {
+                "@type": "WebSite",
+                "@id": DOMAIN + "/#website",
+                "url": DOMAIN,
+                "name": "Elixir Consulting Group",
+                "publisher": {"@id": DOMAIN + "/#organization"},
+                "inLanguage": "en-US",
+            },
+        ],
+    }
+    out = '<script type="application/ld+json">\n' + json.dumps(graph) + '\n</script>'
+    _GLOBAL_SCHEMA_CACHE.append(out)
+    return out
+
+
+def make_faq_schema(items):
+    obj = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": q,
+             "acceptedAnswer": {"@type": "Answer", "text": a}}
+            for q, a in items
+        ],
+    }
+    return '<script type="application/ld+json">\n' + json.dumps(obj) + '\n</script>'
+
+
 def make_footer():
     return f"""<footer class="footer">
 <div class="container">
@@ -767,6 +1130,9 @@ def make_footer():
 <h4>Elixir Consulting Group</h4>
 <p class="footer-desc">Business growth, operations, and execution support for owners who want results. Based in Pittsburgh, PA. Serving clients nationwide.</p>
 <p style="margin-top:16px;font-size:.9rem">{ADDRESS}</p>
+<p style="margin-top:10px;font-size:.95rem"><a href="{PHONE_HREF}" style="font-weight:700;color:#fff">{PHONE}</a></p>
+<p style="font-size:.95rem"><a href="mailto:{EMAIL}">{EMAIL}</a></p>
+<p style="margin-top:16px"><a href="/contact/" class="btn btn-gold" style="padding:12px 24px;font-size:.9rem">Book a Consult</a></p>
 </div>
 <div>
 <h4>Services</h4>
@@ -797,6 +1163,7 @@ def make_footer():
 <li><a href="/pittsburgh-operations-consulting/">Pittsburgh Ops</a></li>
 <li><a href="/cranberry-township-business-consultant/">Cranberry Twp</a></li>
 <li><a href="/wexford-business-consultant/">Wexford</a></li>
+<li><a href="/consulting/">All Locations</a></li>
 </ul>
 </div>
 <div>
@@ -829,7 +1196,7 @@ def make_cta():
 </section>"""
 
 
-def make_breadcrumb_schema(path):
+def make_breadcrumb_schema(path, last_name=None):
     """Generate BreadcrumbList JSON-LD schema from the URL path."""
     if path in ("/404", "/404.html") or path == "":
         return ""
@@ -858,6 +1225,8 @@ def make_breadcrumb_schema(path):
     for i, part in enumerate(parts):
         accumulated += f"/{part}"
         name = segment_names.get(part, part.replace("-", " ").title())
+        if last_name and i == len(parts) - 1:
+            name = last_name
         pos = i + 2
         item_url = DOMAIN + accumulated + "/"
         items.append({"@type": "ListItem", "position": pos, "name": name, "item": item_url})
@@ -873,9 +1242,39 @@ def make_breadcrumb_schema(path):
 </script>"""
 
 
-def make_page(title, description, path, body, schema="", canonical=None):
+def esc_attr(s):
+    """Escape a string for safe use inside a double-quoted HTML attribute."""
+    return (str(s).replace("&", "&amp;").replace('"', "&quot;")
+            .replace("<", "&lt;").replace(">", "&gt;"))
+
+
+def esc_text(s):
+    """Escape plain text (titles, excerpts) for placement in element content."""
+    return str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def make_page(title, description, path, body, schema="", canonical=None,
+              image=None, og_type="website", extra_head="", faq=None,
+              published=None, modified=None, crumb_override=None, og_title=None):
     if canonical is None:
         canonical = DOMAIN + path
+    image = image or OG_IMAGE
+    description = clip(description, 158)
+
+    title_a = esc_attr(og_title or title)
+    desc_a = esc_attr(description)
+    image_a = esc_attr(image)
+
+    article_meta = ""
+    if og_type == "article":
+        article_meta = f"""<meta property="article:published_time" content="{published or DATE_NOW}">
+<meta property="article:modified_time" content="{modified or published or DATE_NOW}">
+<meta property="article:author" content="Dr. Connor Robertson">
+<meta property="article:publisher" content="https://elixirconsultinggroup.com">
+"""
+
+    faq_schema = make_faq_schema(faq) if faq else ""
+    global_schema = make_global_schema()
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -884,31 +1283,46 @@ def make_page(title, description, path, body, schema="", canonical=None):
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>{title}</title>
-<meta name="description" content="{description}">
+<meta name="description" content="{desc_a}">
+<meta name="author" content="Dr. Connor Robertson">
 <meta name="theme-color" content="#002E5B">
+<meta name="format-detection" content="telephone=yes">
 <link rel="canonical" href="{canonical}">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/images/og-image.png">
 <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<meta property="og:title" content="{title}">
-<meta property="og:description" content="{description}">
+<meta property="og:title" content="{title_a}">
+<meta property="og:description" content="{desc_a}">
 <meta property="og:url" content="{canonical}">
-<meta property="og:type" content="website">
+<meta property="og:type" content="{og_type}">
 <meta property="og:site_name" content="Elixir Consulting Group">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{title}">
-<meta name="twitter:description" content="{description}">
-<meta name="robots" content="index,follow">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="{image_a}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{title_a}">
+{article_meta}<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title_a}">
+<meta name="twitter:description" content="{desc_a}">
+<meta name="twitter:image" content="{image_a}">
+<meta name="twitter:image:alt" content="{title_a}">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="google-site-verification" content="googleb0b4e7581f87b498">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>{SHARED_CSS}</style>
+{global_schema}
 {schema}
-{make_breadcrumb_schema(path)}
+{faq_schema}
+{make_breadcrumb_schema(path, crumb_override)}
+{extra_head}
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 <div class="nav-backdrop" aria-hidden="true"></div>
 {make_header(path)}
-<main style="margin-top:72px">
+<main class="site-main" id="main-content">
 {body}
 </main>
 {make_footer()}
@@ -931,7 +1345,13 @@ menu.addEventListener('click',function(e){{if(e.target.closest('a'))setOpen(fals
 document.addEventListener('keydown',function(e){{if(e.key==='Escape')setOpen(false)}});
 window.addEventListener('resize',function(){{if(window.innerWidth>768)setOpen(false)}});
 }})();
-document.querySelectorAll('.faq-item').forEach(function(item){{item.querySelector('.faq-q').addEventListener('click',function(){{item.classList.toggle('active')}});}});
+document.querySelectorAll('.faq-item').forEach(function(item){{
+var q=item.querySelector('.faq-q');if(!q)return;
+q.setAttribute('aria-expanded','false');
+function tog(){{var open=!item.classList.contains('active');item.classList.toggle('active',open);q.setAttribute('aria-expanded',open?'true':'false')}}
+q.addEventListener('click',tog);
+q.addEventListener('keydown',function(e){{if(e.key==='Enter'||e.key===' '){{e.preventDefault();tog()}}}});
+}});
 if('IntersectionObserver' in window){{const observer=new IntersectionObserver(function(entries){{entries.forEach(function(entry){{if(entry.isIntersecting){{const img=entry.target;img.src=img.dataset.src;img.classList.add('loaded');observer.unobserve(img)}}}});}});document.querySelectorAll('img[data-src]').forEach(img=>observer.observe(img))}}else{{document.querySelectorAll('img[data-src]').forEach(function(img){{img.src=img.dataset.src}})}}
 </script>
 </body>
@@ -978,12 +1398,12 @@ def gen_homepage():
     schema = """<script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "Organization",
   "name": "Elixir Consulting Group",
   "description": "Business consulting firm specializing in operations, sales systems, AI consulting, and leadership development for business owners.",
   "url": "https://elixirconsultinggroup.com",
-  "logo": "https://elixirconsultinggroup.com/og-image.png",
-  "image": "https://elixirconsultinggroup.com/og-image.png",
+  "logo": "https://elixirconsultinggroup.com/images/og-image.png",
+  "image": "https://elixirconsultinggroup.com/images/og-image.png",
   "telephone": "+1-412-387-7656",
   "email": "info@elixirconsultinggroup.com",
   "address": {
@@ -1020,9 +1440,11 @@ def gen_homepage():
 <h1>Build Structure That Scales Your Business</h1>
 <p>Elixir Consulting Group helps business owners replace chaos with systems. We install the operations, sales processes, and leadership cadence that produce consistent execution and measurable growth.</p>
 <a href="/contact/" class="btn btn-gold">Book a Consult</a>
-<a href="/services/" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff">Our Services</a>
+<a href="{PHONE_HREF}" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff">Call {PHONE}</a>
 </div>
 </section>
+
+{make_trust_bar()}
 
 <section class="section">
 <div class="container">
@@ -1218,20 +1640,23 @@ def gen_homepage():
 </div>
 </section>
 
+{render_faq_section(HOME_FAQS, "Common Questions", "Straight answers to what business owners ask before booking a consult.")}
+
 {make_cta()}
 """
     return make_page(
-        "Business Consulting Pittsburgh | Proven Results | Elixir Consulting Group",
+        "Business Consulting Pittsburgh, PA | Elixir Consulting Group",
         "Elixir Consulting Group helps business owners build operations, sales systems, and leadership cadence that produce consistent execution and measurable growth. Based in Pittsburgh, PA.",
         "/",
         body,
-        schema
+        schema,
+        faq=HOME_FAQS,
     )
 
 
 def gen_about():
     schema = """<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Elixir Consulting Group","url":"https://elixirconsultinggroup.com","logo":"https://elixirconsultinggroup.com/og-image.png","image":"https://elixirconsultinggroup.com/og-image.png","telephone":"+1-412-387-7656","email":"info@elixirconsultinggroup.com","founder":{"@type":"Person","name":"Dr. Connor Robertson","url":"https://drconnorrobertson.com"},"address":{"@type":"PostalAddress","streetAddress":"429 Fourth Ave. Suite 300","addressLocality":"Pittsburgh","addressRegion":"PA","postalCode":"15219","addressCountry":"US"}}
+{"@context":"https://schema.org","@type":"Organization","name":"Elixir Consulting Group","url":"https://elixirconsultinggroup.com","logo":"https://elixirconsultinggroup.com/images/og-image.png","image":"https://elixirconsultinggroup.com/images/og-image.png","telephone":"+1-412-387-7656","email":"info@elixirconsultinggroup.com","founder":{"@type":"Person","name":"Dr. Connor Robertson","url":"https://drconnorrobertson.com"},"address":{"@type":"PostalAddress","streetAddress":"429 Fourth Ave. Suite 300","addressLocality":"Pittsburgh","addressRegion":"PA","postalCode":"15219","addressCountry":"US"}}
 </script>"""
 
     body = f"""
@@ -1243,7 +1668,38 @@ def gen_about():
 </div>
 </section>
 
+{make_trust_bar()}
+
 <section class="section">
+<div class="container">
+<div class="split-1-2 split-center">
+<div style="text-align:center">
+<img src="{HEADSHOT}" alt="{HEADSHOT_ALT}" width="800" height="800" style="width:clamp(220px,72vw,340px);height:clamp(220px,72vw,340px);border-radius:50%;object-fit:cover;margin:0 auto 24px;display:block;box-shadow:0 16px 44px rgba(0,46,91,.22)" fetchpriority="high" decoding="async">
+<h2 style="font-size:clamp(1.5rem,4vw,1.9rem);margin-bottom:4px">Dr. Connor Robertson</h2>
+<p style="color:{COLORS['mid_gray']};font-weight:600;margin-bottom:16px">Founder &amp; Lead Consultant</p>
+<div class="contact-strip" style="grid-template-columns:1fr;max-width:320px;margin:0 auto">
+<a href="{PHONE_HREF}"><span class="ic">&#9742;</span> {PHONE}</a>
+<a href="/contact/"><span class="ic">&#9993;</span> Book a Consult</a>
+</div>
+</div>
+<div>
+<span class="eyebrow">Meet the Founder</span>
+<h2>Hands-On, Implementation-First Consulting</h2>
+<p>Dr. Connor Robertson is the founder and lead consultant at Elixir Consulting Group, bringing extensive experience in business strategy, operational growth, and organizational development to owner-led companies across the country.</p>
+<p>Working with entrepreneurs and established companies, Dr. Robertson helps organizations identify opportunities, improve performance, and achieve sustainable long-term success. His approach is hands-on: he works alongside owners and leadership teams to install the systems rather than hand over a set of recommendations and walk away.</p>
+<p>His expertise spans business strategy, operations consulting, AI and digital transformation, sales system design, and leadership development. He is the author of six books on business acquisitions and strategy, including <a href="https://www.barnesandnoble.com/w/creative-acquisitions-by-dr-connor-robertson-connor-robertson/1148958050" target="_blank" rel="noopener"><em>Creative Acquisitions</em></a>, <a href="https://play.google.com/store/books/details/Dr_Connor_Robertson_Buying_Wealth?id=Dw2HEQAAQBAJ" target="_blank" rel="noopener"><em>Buying Wealth</em></a>, and <a href="https://play.google.com/store/books/details/Dr_Connor_Robertson_The_7_Minute_Phone_Call?id=9QyHEQAAQBAJ" target="_blank" rel="noopener"><em>The 7 Minute Phone Call</em></a>.</p>
+<div class="split-stats" style="margin:24px 0">
+<div><span class="stat-num" style="font-size:1.9rem">150+</span><br><span class="stat-label">Businesses Served</span></div>
+<div><span class="stat-num" style="font-size:1.9rem">6</span><br><span class="stat-label">Books Published</span></div>
+</div>
+<a href="https://drconnorrobertson.com" target="_blank" rel="noopener" class="btn btn-primary">Visit DrConnorRobertson.com</a>
+<a href="/blog/" class="btn btn-outline">Read His Articles</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section section-gray">
 <div class="container">
 <div class="split-2 split-center">
 <div>
@@ -1266,17 +1722,12 @@ def gen_about():
 </div>
 </section>
 
-<section class="section section-gray">
+<section class="section">
 <div class="container">
-<div class="split-1-2">
-<div style="text-align:center">
-<img src="/images/dr-connor-robertson.jpg" alt="Dr. Connor Robertson, Founder and Lead Consultant at Elixir Consulting Group" width="800" height="800" style="width:clamp(180px,58vw,240px);height:clamp(180px,58vw,240px);border-radius:50%;object-fit:cover;margin:0 auto 20px;display:block;box-shadow:0 10px 34px rgba(0,46,91,.20)" fetchpriority="high">
-<h3>Dr. Connor Robertson</h3>
-<p style="color:{COLORS['mid_gray']}">Founder & Lead Consultant</p>
-</div>
+<div style="max-width:820px;margin:0 auto">
 <div>
-<span class="eyebrow">Leadership</span>
-<h2>About Dr. Connor Robertson</h2>
+<span class="eyebrow">Background</span>
+<h2>More on Dr. Connor Robertson</h2>
 <p>Dr. Connor Robertson is the founder and lead consultant at Elixir Consulting Group, bringing extensive experience in business strategy, operational growth, and organizational development.</p>
 <p>Through his work with entrepreneurs and established companies, Dr. Robertson helps organizations identify opportunities, improve performance, and achieve sustainable long-term success. His approach is hands-on and implementation-focused. He works alongside owners and leadership teams to install the systems, not just recommend them.</p>
 <p>Dr. Robertson's expertise spans business strategy, operations consulting, AI and digital transformation, sales system design, and leadership development. His work has helped businesses across industries build the structure they need to grow without chaos.</p>
@@ -1287,7 +1738,7 @@ def gen_about():
 </div>
 </section>
 
-<section class="section">
+<section class="section section-gray">
 <div class="container">
 <div class="text-center" style="margin-bottom:48px">
 <span class="eyebrow">Our Beliefs</span>
@@ -1305,7 +1756,7 @@ def gen_about():
 </div>
 </section>
 
-<section class="section section-gray">
+<section class="section">
 <div class="container">
 <div class="text-center" style="margin-bottom:48px">
 <span class="eyebrow">Our Process</span>
@@ -1320,14 +1771,17 @@ def gen_about():
 </div>
 </section>
 
+{render_faq_section(ABOUT_FAQS, "About Elixir: Common Questions")}
+
 {make_cta()}
 """
     return make_page(
-        "About Elixir Consulting Group | Pittsburgh Business Consulting",
-        "Learn about Elixir Consulting Group, founded by Dr. Connor Robertson. We help business owners build operations, sales systems, and leadership cadence in Pittsburgh, PA.",
+        "About Dr. Connor Robertson | Elixir Consulting Group",
+        "Meet Dr. Connor Robertson, founder of Elixir Consulting Group. We help business owners install operations, sales systems, and leadership cadence. Pittsburgh, PA and nationwide.",
         "/about/",
         body,
-        schema
+        schema,
+        faq=ABOUT_FAQS,
     )
 
 
@@ -1393,13 +1847,16 @@ def gen_services_overview():
 </div>
 </section>
 
+{render_faq_section(SERVICES_FAQS, "Service FAQs", gray=False)}
+
 {make_cta()}
 """
     return make_page(
         "Business Consulting Services | Elixir Consulting Group",
-        "Explore Elixir Consulting Group's five core services: business strategy, AI consulting, operations, sales strategy, and leadership development. Pittsburgh, PA.",
+        "Five core consulting services: business strategy, AI consulting, operations, sales strategy, and leadership development. Implementation-focused, from Pittsburgh, PA and nationwide.",
         "/services/",
-        body
+        body,
+        faq=SERVICES_FAQS,
     )
 
 
@@ -1520,8 +1977,12 @@ def gen_service_page(slug, title, tagline, intro, items, outcomes):
 {related_html}
 {make_cta()}
 """
+    seo_titles = {
+        "ai-consulting": "AI Consulting for Business Owners | Elixir Consulting",
+        "leadership": "Leadership Consulting & Coaching | Elixir Consulting",
+    }
     return make_page(
-        f"{title} | Elixir Consulting Group",
+        seo_titles.get(slug, f"{title} | Elixir Consulting Group"),
         f"{tagline} Elixir Consulting Group provides {title.lower()} services for business owners in Pittsburgh, PA and nationwide.",
         f"/services/{slug}/",
         body,
@@ -1549,7 +2010,7 @@ def gen_city_page(slug, city, state_abbr, services_focus, intro, geo_description
 {json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faq_schema_items}, indent=2)}
 </script>
 <script type="application/ld+json">
-{json.dumps({"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Elixir Consulting Group", "description": f"Business consulting firm serving {city}, {state_abbr}. Specializing in operations, AI consulting, sales systems, and leadership development.", "url": f"https://elixirconsultinggroup.com/{slug}/", "logo": "https://elixirconsultinggroup.com/og-image.png", "image": "https://elixirconsultinggroup.com/og-image.png", "telephone": "+1-412-387-7656", "email": "info@elixirconsultinggroup.com", "address": {"@type": "PostalAddress", "streetAddress": "429 Fourth Ave. Suite 300", "addressLocality": "Pittsburgh", "addressRegion": "PA", "postalCode": "15219", "addressCountry": "US"}, "areaServed": {"@type": "City", "name": city}, "founder": {"@type": "Person", "name": "Dr. Connor Robertson", "url": "https://drconnorrobertson.com"}}, indent=2)}
+{json.dumps({"@context": "https://schema.org", "@type": "Organization", "name": "Elixir Consulting Group", "description": f"Business consulting firm serving {city}, {state_abbr}. Specializing in operations, AI consulting, sales systems, and leadership development.", "url": f"https://elixirconsultinggroup.com/{slug}/", "logo": "https://elixirconsultinggroup.com/images/og-image.png", "image": "https://elixirconsultinggroup.com/images/og-image.png", "telephone": "+1-412-387-7656", "email": "info@elixirconsultinggroup.com", "address": {"@type": "PostalAddress", "streetAddress": "429 Fourth Ave. Suite 300", "addressLocality": "Pittsburgh", "addressRegion": "PA", "postalCode": "15219", "addressCountry": "US"}, "areaServed": {"@type": "City", "name": city}, "founder": {"@type": "Person", "name": "Dr. Connor Robertson", "url": "https://drconnorrobertson.com"}}, indent=2)}
 </script>"""
 
     services_cards = ""
@@ -1641,12 +2102,330 @@ def gen_city_page(slug, city, state_abbr, services_focus, intro, geo_description
 
 {make_cta()}
 """
+    focus = {
+        "pittsburgh-ai-consulting": ("AI Consulting", "AI consulting and digital transformation"),
+        "pittsburgh-operations-consulting": ("Operations Consulting", "operations consulting, process design, and weekly operating cadence"),
+    }.get(slug, ("Business Consultant", "business strategy, operations, sales systems, and leadership development"))
     return make_page(
-        f"Business Consultant {city}, {state_abbr} | Elixir Consulting Group",
-        f"Elixir Consulting Group provides business consulting, AI consulting, operations improvement, and leadership development for businesses in {city}, {state_abbr}.",
+        f"{focus[0]} in {city}, {state_abbr} | Elixir Consulting",
+        clip(f"Elixir Consulting Group provides {focus[1]} for businesses in {city}, {state_abbr}. Implementation-focused engagements. Call {PHONE}.", 158),
         f"/{slug}/",
         body,
-        schema
+        schema,
+    )
+
+
+# ─── Regional consulting pages (/consulting/<city>/) ───────────────────
+#
+# These 30 pages were originally written by separate tooling with their own
+# navigation, footer, and stylesheet. Same treatment as the blog: read the
+# narrative off disk, throw the old shell away, and re-render through the
+# shared template so the whole site stays on one design system.
+
+CONSULTING_SERVICES = [
+    ("Business Strategy", "/services/business-strategy/"),
+    ("AI Consulting", "/services/ai-consulting/"),
+    ("Operations", "/services/operations/"),
+    ("Sales Strategy", "/services/sales-strategy/"),
+    ("Leadership", "/services/leadership/"),
+]
+
+
+def _delocalize(html):
+    """Rewrite absolute self-links to relative paths so links stay portable."""
+    return html.replace("https://elixirconsultinggroup.com/", "/").replace(
+        "https://elixirconsultinggroup.com", "/")
+
+
+def parse_consulting_page(slug, html):
+    t = re.search(r"<title>(.*?)</title>", html, re.S)
+    title = htmllib.unescape(
+        re.sub(r"\s*\|\s*Elixir Consulting Group\s*$", "", t.group(1).strip())) if t else ""
+
+    h1 = re.search(r"<h1>(.*?)</h1>", html, re.S)
+    heading = htmllib.unescape(h1.group(1).strip()) if h1 else title
+
+    city = heading
+    m = re.match(r"Business Consulting in (.+?),\s*([A-Z]{2})$", heading)
+    state = "PA"
+    if m:
+        city, state = m.group(1), m.group(2)
+    else:
+        city = slug.replace("-", " ").title()
+    city = re.sub(r"[ ,]+%s$" % state, "", city, flags=re.I).strip(" ,")
+    heading = f"Business Consulting in {city}, {state}"
+
+    desc = _meta(html, "description", attr="name")
+
+    tag = re.search(r"<p>(.*?)</p>", html[html.find("<h1>"):], re.S) if "<h1>" in html else None
+    tagline = htmllib.unescape(tag.group(1).strip()) if tag else (
+        f"Strategic business consulting tailored to {city}'s market dynamics and economic landscape.")
+
+    # Pages this generator has already rewritten carry an explicit marker, so
+    # look for that first; fall back to the legacy markup on the first pass.
+    marker = re.search(r'<section class="content-section" id="location-body"[^>]*>', html)
+    if marker:
+        content = _find_balanced(html, marker.start(), "section").strip()
+    else:
+        content = ""
+        for s in re.findall(r'<section class="content-section[^"]*">(.*?)</section>', html, re.S):
+            # One of these is a boilerplate service list we re-render below.
+            if "services-link" in s or "Our Consulting Services" in s:
+                continue
+            inner = re.search(r'<div class="container">(.*?)</div>\s*$', s.strip(), re.S)
+            content += (inner.group(1) if inner else s).strip() + "\n"
+
+    return {
+        "slug": slug,
+        "city": city,
+        "state": state,
+        "heading": heading,
+        "tagline": _delocalize(tagline),
+        "description": desc,
+        "content": _delocalize(content).strip(),
+    }
+
+
+def load_consulting_pages():
+    pages = []
+    base = os.path.join(SITE_DIR, "consulting")
+    if not os.path.isdir(base):
+        return pages
+    for slug in sorted(os.listdir(base)):
+        fp = os.path.join(base, slug, "index.html")
+        if not os.path.isfile(fp):
+            continue
+        try:
+            with open(fp, encoding="utf-8") as f:
+                parsed = parse_consulting_page(slug, f.read())
+        except Exception as exc:
+            print(f"  ! skipped consulting/{slug}: {exc}")
+            continue
+        if len(strip_tags(parsed["content"]).split()) < 40:
+            print(f"  ! consulting/{slug} has no extractable body, skipping")
+            continue
+        pages.append(parsed)
+    return pages
+
+
+def consulting_faqs(page):
+    city = page["city"]
+    return [
+        (f"Do you work with businesses in {city}?",
+         f"Yes. Elixir Consulting Group works with owner-led businesses in {city} and across {page['state']}, combining virtual strategy work with on-site collaboration when the engagement calls for it. Our office is at {ADDRESS}."),
+        (f"What consulting services are available to {city} businesses?",
+         "Business strategy, operations consulting, AI and digital transformation, sales strategy, and leadership development. Most engagements combine two or three of these because operational problems rarely stay in one lane."),
+        (f"How much does business consulting cost in {city}?",
+         "Pricing depends on the scope of the engagement and the size of your business. We offer both project-based and retainer arrangements. The first step is a consult where we determine whether there is a fit before discussing pricing."),
+        (f"How long does a typical {city} engagement last?",
+         "Most engagements run between 90 days and six months depending on scope. Many clients continue with monthly advisory support once the initial systems are installed."),
+        (f"How do we get started?",
+         f"Book a consult. We will talk through your business, what is currently breaking, and what you want the next 12 months to look like, then tell you honestly whether we are the right partner for it. Call {PHONE} or use the contact page."),
+    ]
+
+
+def gen_consulting_page(page, siblings):
+    city = page["city"]
+    faqs = consulting_faqs(page)
+
+    service_cards = ""
+    for name, href in CONSULTING_SERVICES:
+        service_cards += f"""<div class="card">
+<h3><a href="{href}">{name}</a></h3>
+<p>{name} consulting for {city} businesses, built around implementation rather than recommendations.</p>
+<a href="{href}">Learn more &rarr;</a>
+</div>\n"""
+
+    nearby = [p for p in siblings if p["slug"] != page["slug"]]
+    seed = sum(ord(c) for c in page["slug"])
+    nearby = [nearby[(seed + i) % len(nearby)] for i in range(min(8, len(nearby)))] if nearby else []
+    nearby_links = " &nbsp;&middot;&nbsp; ".join(
+        f'<a href="/consulting/{p["slug"]}/">{p["city"]}</a>' for p in nearby)
+
+    testimonial = TESTIMONIALS[seed % len(TESTIMONIALS)]
+
+    schema = '<script type="application/ld+json">\n' + json.dumps({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Elixir Consulting Group",
+        "url": DOMAIN,
+        "logo": OG_IMAGE,
+        "image": OG_IMAGE,
+        "telephone": "+1-412-387-7656",
+        "email": EMAIL,
+        "description": f"Business consulting for companies in {city}, {page['state']}. Strategy, operations, AI consulting, sales systems, and leadership development.",
+        "address": {"@type": "PostalAddress", "streetAddress": "429 Fourth Ave. Suite 300",
+                    "addressLocality": "Pittsburgh", "addressRegion": "PA",
+                    "postalCode": "15219", "addressCountry": "US"},
+        "areaServed": [{"@type": "City", "name": city}, {"@type": "Country", "name": "United States"}],
+        "founder": {"@type": "Person", "name": "Dr. Connor Robertson", "url": "https://drconnorrobertson.com"},
+    }) + '\n</script>'
+
+    body = f"""
+<section class="page-hero">
+<div class="container">
+<p class="breadcrumb"><a href="/">Home</a> / <a href="/consulting/">Consulting</a> / {city}</p>
+<h1>{esc_text(page['heading'])}</h1>
+<p>{esc_text(page['tagline'])}</p>
+<div style="margin-top:24px">
+<a href="/contact/" class="btn btn-gold">Book a Consult</a>
+<a href="{PHONE_HREF}" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff">Call {PHONE}</a>
+</div>
+</div>
+</section>
+
+{make_trust_bar()}
+
+<section class="section">
+<div class="container">
+<div class="split-1-2">
+<div>
+<div class="contact-info-card">
+<span class="eyebrow">Talk to Us</span>
+<h3 style="margin-bottom:12px">Serving {city} Businesses</h3>
+<p style="font-size:.95rem;margin-bottom:16px">Pittsburgh-based, working with owners across {page['state']} and nationwide.</p>
+<p style="margin-bottom:6px"><a href="{PHONE_HREF}" style="font-weight:700">{PHONE}</a></p>
+<p style="margin-bottom:16px"><a href="mailto:{EMAIL}">{EMAIL}</a></p>
+<a href="/contact/" class="btn btn-primary" style="width:100%">Book a Consult</a>
+</div>
+<div class="testimonial-card" style="margin-top:20px">
+<p class="quote">"{testimonial['text']}"</p>
+<p class="author">{testimonial['name']}</p>
+<p class="role">{testimonial['role']}</p>
+</div>
+</div>
+<section class="content-section" id="location-body" style="padding:0">
+{page['content']}
+</section>
+</div>
+</div>
+</section>
+
+<section class="section section-gray">
+<div class="container">
+<div class="text-center" style="margin-bottom:44px">
+<span class="eyebrow">What We Do</span>
+<h2>Consulting Services for {city}</h2>
+<p style="max-width:620px;margin:0 auto">Every engagement is built around installing systems your team will actually run, not a report that sits on a shelf.</p>
+</div>
+<div class="grid grid-3">
+{service_cards}
+</div>
+</div>
+</section>
+
+{render_faq_section(faqs, f"{city} Consulting FAQs", gray=False)}
+
+<section class="section section-gray">
+<div class="container text-center">
+<span class="eyebrow">Nearby</span>
+<h2 style="margin-bottom:16px">Other Areas We Serve</h2>
+<p style="max-width:760px;margin:0 auto 12px">{nearby_links}</p>
+<a href="/consulting/" class="btn btn-outline" style="margin-top:16px">View All Locations</a>
+</div>
+</section>
+
+{make_cta()}
+"""
+    desc = page["description"] or (
+        f"Business consulting in {city}, {page['state']}. Strategy, operations, AI, sales systems, "
+        f"and leadership development from Elixir Consulting Group. Call {PHONE}.")
+    return make_page(
+        f"{city}, {page['state']} Business Consulting Services | Elixir",
+        clip(desc, 158),
+        f"/consulting/{page['slug']}/",
+        body,
+        schema,
+        faq=faqs,
+        crumb_override=city,
+    )
+
+
+def gen_consulting_index(pages):
+    cards = ""
+    for p in sorted(pages, key=lambda x: x["city"]):
+        cards += f"""<div class="card">
+<h3><a href="/consulting/{p['slug']}/">{esc_text(p['city'])}, {p['state']}</a></h3>
+<p>{esc_text(clip(p['tagline'], 120))}</p>
+<a href="/consulting/{p['slug']}/">View {p['city']} consulting &rarr;</a>
+</div>\n"""
+
+    faqs = [
+        ("Which areas does Elixir Consulting Group serve?",
+         "We are based in Pittsburgh, PA and work with businesses throughout Western Pennsylvania, across the state, and nationwide. Our engagement model combines virtual strategy work with on-site collaboration when it matters."),
+        ("Do you have to be local to work with Elixir?",
+         "No. A large share of our clients are outside the Pittsburgh region. The systems we install -- operating cadence, scorecards, sales process, documented workflows -- are built and run the same way regardless of geography."),
+        ("Is there a difference between your local and remote engagements?",
+         "The structure is identical. Local engagements simply include more in-person working sessions. Outcomes depend on the leadership team's commitment to the cadence, not on travel time."),
+        ("How do I know which location page applies to me?",
+         "The location pages provide market context for each area we serve. If your city is not listed, that does not mean we cannot help -- book a consult and we will tell you honestly whether there is a fit."),
+    ]
+
+    schema = '<script type="application/ld+json">\n' + json.dumps({
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Business Consulting Locations",
+        "url": DOMAIN + "/consulting/",
+        "description": "Regions served by Elixir Consulting Group, a Pittsburgh-based business consulting firm working with owner-led companies nationwide.",
+        "hasPart": [
+            {"@type": "WebPage", "name": f"Business Consulting in {p['city']}, {p['state']}",
+             "url": DOMAIN + f"/consulting/{p['slug']}/"}
+            for p in sorted(pages, key=lambda x: x["city"])
+        ],
+    }) + '\n</script>'
+
+    body = f"""
+<section class="page-hero">
+<div class="container">
+<p class="breadcrumb"><a href="/">Home</a> / Consulting Locations</p>
+<h1>Business Consulting Locations</h1>
+<p>Elixir Consulting Group is headquartered in Pittsburgh, PA and works with owner-led businesses across Pennsylvania and nationwide.</p>
+</div>
+</section>
+
+{make_trust_bar()}
+
+<section class="section">
+<div class="container">
+<div class="text-center" style="margin-bottom:44px">
+<span class="eyebrow">Regions We Serve</span>
+<h2>Local Market Context, Nationwide Reach</h2>
+<p style="max-width:680px;margin:0 auto">Each page below covers the business landscape of a specific market and how our operations, sales, and leadership work applies there.</p>
+</div>
+<div class="grid grid-3">
+{cards}
+</div>
+</div>
+</section>
+
+<section class="section section-gray">
+<div class="container">
+<div class="text-center" style="margin-bottom:32px">
+<span class="eyebrow">Focused Service Areas</span>
+<h2>Pittsburgh Metro Pages</h2>
+</div>
+<div class="grid grid-3">
+<div class="card"><h3><a href="/pittsburgh-business-consultant/">Pittsburgh Business Consultant</a></h3><p>Strategy, operations, and leadership consulting for Pittsburgh companies.</p></div>
+<div class="card"><h3><a href="/pittsburgh-ai-consulting/">Pittsburgh AI Consulting</a></h3><p>Practical AI evaluation, implementation, and team adoption.</p></div>
+<div class="card"><h3><a href="/pittsburgh-operations-consulting/">Pittsburgh Operations Consulting</a></h3><p>Process mapping, SOPs, and weekly operating cadence.</p></div>
+<div class="card"><h3><a href="/cranberry-township-business-consultant/">Cranberry Township</a></h3><p>Consulting for one of Western PA's fastest-growing business communities.</p></div>
+<div class="card"><h3><a href="/wexford-business-consultant/">Wexford</a></h3><p>Consulting for businesses across Pittsburgh's northern suburbs.</p></div>
+<div class="card"><h3><a href="/contact/">Not Listed?</a></h3><p>We work with clients nationwide. Book a consult and we will tell you if there is a fit.</p></div>
+</div>
+</div>
+</section>
+
+{render_faq_section(faqs, "Location FAQs", gray=False)}
+
+{make_cta()}
+"""
+    return make_page(
+        "Consulting Locations | Elixir Consulting Group",
+        f"Elixir Consulting Group serves business owners in Pittsburgh, across Pennsylvania, and nationwide. Browse {len(pages)} regional consulting pages or book a consult at {PHONE}.",
+        "/consulting/",
+        body,
+        schema,
+        faq=faqs,
     )
 
 
@@ -1687,11 +2466,13 @@ def gen_industries():
 
 {make_cta()}
 """
+    body += render_faq_section(INDUSTRIES_FAQS, "Industry FAQs", gray=False)
     return make_page(
         "Industries We Serve | Elixir Consulting Group",
-        "Elixir Consulting Group works with businesses across industries including professional services, construction, healthcare, manufacturing, technology, and real estate.",
+        "Elixir Consulting Group works across professional services, construction, healthcare, manufacturing, technology, real estate, and retail. Operations, sales, and leadership systems that transfer between industries.",
         "/industries/",
-        body
+        body,
+        faq=INDUSTRIES_FAQS,
     )
 
 
@@ -1733,88 +2514,738 @@ def gen_case_studies():
 
 {make_cta()}
 """
+    body += render_faq_section(CASE_STUDY_FAQS, "Case Study FAQs", gray=False)
     return make_page(
-        "Case Studies | Client Success Stories | Elixir Consulting Group",
-        "See real case studies from Elixir Consulting Group clients. Manufacturing, professional services, construction, and healthcare success stories.",
+        "Case Studies | Elixir Consulting Group",
+        "Real case studies from Elixir Consulting Group engagements across manufacturing, professional services, construction, and healthcare. See the systems installed and the results they produced.",
         "/case-studies/",
-        body
+        body,
+        faq=CASE_STUDY_FAQS,
     )
 
 
-def gen_blog_index():
-    cards = ""
-    for post in BLOG_POSTS:
-        cards += f"""<div class="card blog-card">
-<div class="blog-img">E</div>
-<div class="blog-content">
-<p class="blog-date">{post['date']}</p>
-<h3><a href="/blog/{post['slug']}/">{post['title']}</a></h3>
-<p>{post['excerpt'][:150]}...</p>
-<a href="/blog/{post['slug']}/" style="font-weight:600;font-size:.9rem">Read More &rarr;</a>
+# ─── Blog: ingestion, taxonomy, and rendering ──────────────────────────
+#
+# The blog is the largest surface on this site (330+ posts). Posts arrive from
+# two places: the BLOG_POSTS list above, and standalone HTML files that earlier
+# tooling wrote straight into blog/<slug>/index.html. Rather than let those two
+# drift apart, every run re-reads the HTML on disk, pulls out just the article
+# content, and re-renders each post through the same template as everything
+# else. The extraction targets <article>, which this generator also emits, so
+# the pass is idempotent -- running it twice produces identical files.
+
+MONTHS = ["January", "February", "March", "April", "May", "June", "July",
+          "August", "September", "October", "November", "December"]
+
+CATEGORY_RULES = [
+    ("AI & Technology", ["ai-", "-ai", "artificial", "agentic", "automat", "chatgpt", "llm",
+                         "digital-transformation", "technology", "tech-", "software", "data-",
+                         "machine-learning", "robot", "cyber", "saas", "crm", "cloud"]),
+    ("Sales & Revenue", ["sales", "revenue", "pipeline", "lead", "prospect", "closing",
+                         "pricing", "customer-acquisition", "b2b", "cold-call", "negotiat"]),
+    ("Operations", ["operation", "process", "workflow", "sop", "efficien", "productiv",
+                    "systems", "supply", "onboarding", "dashboard", "quality", "logistics",
+                    "inventory", "project-management", "remote-work"]),
+    ("Leadership", ["leader", "team", "culture", "hiring", "hire", "manager", "management",
+                    "coaching", "delegat", "accountab", "talent", "employee", "succession"]),
+    ("Strategy & Growth", ["strateg", "growth", "scal", "plan", "market", "brand",
+                           "competit", "expansion", "positioning", "innovation", "transform"]),
+    ("Finance & Exit", ["exit", "sell", "acquisition", "valuation", "m-a", "merger", "profit",
+                        "cash-flow", "financ", "cost", "roi", "invest", "capital", "budget"]),
+    ("Pittsburgh & Local", ["pittsburgh", "cranberry", "wexford", "pennsylvania", "regional",
+                            "local", "western-pa"]),
+]
+
+# Images already served elsewhere on the site, grouped so a post without its own
+# artwork still gets something topical instead of an empty grey box.
+CATEGORY_IMAGES = {
+    "AI & Technology": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
+    "Sales & Revenue": "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80",
+    "Operations": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
+    "Leadership": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
+    "Strategy & Growth": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    "Finance & Exit": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
+    "Pittsburgh & Local": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80",
+    "Insights": "https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=800&q=80",
+}
+
+CATEGORY_ORDER = [c for c, _ in CATEGORY_RULES] + ["Insights"]
+
+
+def classify_post(slug, title):
+    """Assign a post to a single category using slug and title keywords."""
+    hay = (slug + " " + title).lower()
+    best, best_score = "Insights", 0
+    for cat, keys in CATEGORY_RULES:
+        score = sum(3 if k in slug.lower() else 1 for k in keys if k in hay)
+        if score > best_score:
+            best, best_score = cat, score
+    return best
+
+
+def strip_tags(html):
+    return re.sub(r"<[^>]+>", " ", html)
+
+
+def read_minutes(html):
+    words = len(strip_tags(html).split())
+    return max(1, round(words / 225))
+
+
+def pretty_date(iso):
+    try:
+        y, m, d = iso.split("-")
+        return f"{MONTHS[int(m) - 1]} {int(d)}, {y}"
+    except Exception:
+        return iso
+
+
+def clip(text, limit):
+    text = re.sub(r"\s+", " ", strip_tags(text)).strip()
+    if len(text) <= limit:
+        return text
+    # Reserve room for the ellipsis so the result never exceeds `limit`.
+    # Without that, re-reading a clipped value on the next build clips it again.
+    cut = text[:max(1, limit - 3)].rsplit(" ", 1)[0].rstrip(" ,.;:-")
+    return cut + "..."
+
+
+def _find_balanced(html, start, tag="div"):
+    """Return the inner HTML of the element beginning at `start`, matching nesting."""
+    open_end = html.find(">", start)
+    if open_end == -1:
+        return ""
+    depth, i = 1, open_end + 1
+    pat = re.compile(r"<(/?)%s\b" % tag, re.I)
+    while depth > 0:
+        m = pat.search(html, i)
+        if not m:
+            return html[open_end + 1:]
+        depth += -1 if m.group(1) else 1
+        i = m.end()
+    return html[open_end + 1:html.rfind("<", open_end, i)]
+
+
+def clean_article_html(html):
+    """Normalize legacy markup so every post renders through the same stylesheet."""
+    # Unwrap Elementor/WordPress page-builder scaffolding left over from the
+    # original site migration -- the wrappers carry no styles here, only noise.
+    for _ in range(12):
+        new = re.sub(r"<div[^>]*class=\"[^\"]*elementor[^\"]*\"[^>]*>", "", html)
+        if new == html:
+            break
+        html = new
+    html = re.sub(r"\s*class=\"(wp-block-[^\"]*)\"", "", html)
+    html = re.sub(r"<div class=\"article-meta\">.*?</div>", "", html, flags=re.S)
+    html = re.sub(r'<script[^>]*>.*?</script>', "", html, flags=re.S)
+    # The page-level <h1> is rendered by the template; anything the body carries
+    # would be a second one, so demote it to keep the outline valid.
+    html = re.sub(r"<(/?)h1\b", r"<\1h2", html)
+    html = re.sub(r"<section class=\"related-posts\">.*?</section>", "", html, flags=re.S)
+    html = _rebalance_divs(html)
+    html = re.sub(r"\n{3,}", "\n\n", html)
+    return html.strip()
+
+
+def _rebalance_divs(html):
+    """Drop </div> tags that close nothing and close any div left hanging.
+
+    Unwrapping page-builder scaffolding and lifting the lead image out of the
+    body both leave orphaned closers behind. Deleting the *last* closer instead
+    of the unmatched one would strip a real wrapper (a stat callout, say) and
+    let it swallow the rest of the article, so match position by position.
+    """
+    kept, depth, pos = [], 0, 0
+    for m in re.finditer(r"<div\b|</div>", html):
+        if m.group(0).startswith("</"):
+            if depth == 0:
+                kept.append(html[pos:m.start()])
+                pos = m.end()
+                continue
+            depth -= 1
+        else:
+            depth += 1
+    kept.append(html[pos:])
+    html = "".join(kept)
+    return html + "</div>" * max(0, depth)
+
+
+def _meta(html, prop, attr="property"):
+    """Read a meta tag's content, decoded back to plain text.
+
+    Decoding matters: these values get re-escaped on the way out, so returning
+    them still-escaped would compound `&` into `&amp;amp;` on every rebuild.
+    """
+    m = re.search(r'<meta %s="%s" content="(.*?)"\s*/?>' % (attr, re.escape(prop)), html, re.S)
+    return htmllib.unescape(m.group(1).strip()) if m else ""
+
+
+def parse_existing_post(slug, html):
+    """Pull title, description, date, artwork, and body out of a rendered post."""
+    title = _meta(html, "og:title")
+    if not title:
+        t = re.search(r"<title>(.*?)</title>", html, re.S)
+        title = htmllib.unescape(t.group(1).strip()) if t else slug.replace("-", " ").title()
+    title = re.sub(r"\s*\|\s*Elixir Consulting Group\s*$", "", title).strip()
+
+    desc = _meta(html, "description", attr="name") or _meta(html, "og:description")
+    image = _meta(html, "og:image")
+
+    # Allow the whitespace json.dumps inserts after the colon, otherwise a
+    # rebuild loses the original publish date and stamps today's instead.
+    d = re.search(r'"datePublished":\s*"(\d{4}-\d{2}-\d{2})', html)
+    if not d:
+        d = re.search(r'article:published_time" content="(\d{4}-\d{2}-\d{2})', html)
+    date = d.group(1) if d else DATE_NOW
+    dm = re.search(r'"dateModified":\s*"(\d{4}-\d{2}-\d{2})', html)
+    if not dm:
+        dm = re.search(r'article:modified_time" content="(\d{4}-\d{2}-\d{2})', html)
+    modified = dm.group(1) if dm else date
+
+    art = re.search(r"<article[^>]*>", html)
+    if art:
+        body = _find_balanced(html, art.start(), "article")
+    else:
+        wrap = re.search(r'<div class="article-wrap">', html)
+        if wrap:
+            body = _find_balanced(html, wrap.start(), "div")
+        else:
+            main = re.search(r"<main[^>]*>", html)
+            body = _find_balanced(html, main.start(), "main") if main else ""
+
+    # The lead image is re-rendered above the article, so take it out of the body.
+    img_alt = ""
+    lead = re.search(r'<(?:div class="hero-img">\s*)?<img[^>]*>', body[:1200])
+    if lead:
+        src = re.search(r'src="([^"]+)"', lead.group(0))
+        alt = re.search(r'alt="([^"]*)"', lead.group(0))
+        if src and ("unsplash" in src.group(1) or "images/" in src.group(1)):
+            image = image or htmllib.unescape(src.group(1))
+            img_alt = htmllib.unescape(alt.group(1)) if alt else ""
+            body = body[:lead.start()] + body[lead.end():]
+            body = re.sub(r'^\s*</div>', '', body.lstrip(), count=1)
+
+    # Only FAQs written into the article itself count as authored. The <head>
+    # block is whatever this generator emitted last run; re-capturing that would
+    # freeze generated questions in place forever.
+    custom_faqs = []
+    for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>', body, re.S):
+        try:
+            obj = json.loads(block)
+        except Exception:
+            continue
+        if obj.get("@type") == "FAQPage":
+            for q in obj.get("mainEntity", []):
+                name = q.get("name", "").strip()
+                ans = (q.get("acceptedAnswer") or {}).get("text", "").strip()
+                if name and ans:
+                    custom_faqs.append([name, ans])
+
+    return {
+        "slug": slug,
+        "title": title,
+        "description": desc,
+        "custom_faqs": custom_faqs,
+        "date": date,
+        "modified": modified,
+        "image": image,
+        "image_alt": img_alt,
+        "content": clean_article_html(body),
+    }
+
+
+# Links that older article bodies point at, which never existed as blog posts.
+BODY_LINK_ALIASES = {
+    "/blog/dr-connor-robertson/": "/about/",
+    "/blog/dr-connor-robertson": "/about/",
+    "/blog/contact": "/contact/",
+    "/blog/contact/": "/contact/",
+    "/blog/about/": "/about/",
+    "/blog/services/": "/services/",
+}
+
+
+def repair_body_links(posts):
+    """Point in-article links at pages that actually exist.
+
+    Article bodies inherited cross-links to posts that were planned but never
+    published. Rather than ship dead ends, alias the known cases and send the
+    rest to the closest published slug, falling back to the blog index.
+    """
+    import difflib
+
+    slugs = set(posts)
+    fixed = 0
+    for p in posts.values():
+        body = p["content"]
+
+        def sub(m):
+            nonlocal fixed
+            href = m.group(1)
+            if href in BODY_LINK_ALIASES:
+                fixed += 1
+                return 'href="%s"' % BODY_LINK_ALIASES[href]
+            slug = href.strip("/").split("/")[-1]
+            if slug in slugs or slug == "blog":
+                return m.group(0)
+            near = difflib.get_close_matches(slug, slugs, n=1, cutoff=0.72)
+            fixed += 1
+            return 'href="/blog/%s/"' % near[0] if near else 'href="/blog/"'
+
+        p["content"] = re.sub(r'href="(/blog/[^"]*)"', sub, body)
+    if fixed:
+        print(f"  Repaired {fixed} stale in-article links")
+
+
+def load_all_posts():
+    """Merge in-script posts with every post already written to blog/<slug>/."""
+    posts = {}
+    for p in BLOG_POSTS:
+        posts[p["slug"]] = {
+            "slug": p["slug"],
+            "title": p["title"],
+            "description": p["excerpt"],
+            "date": p["date"],
+            "modified": p["date"],
+            "image": "",
+            "image_alt": "",
+            "content": clean_article_html(p["content"]),
+        }
+
+    blog_dir = os.path.join(SITE_DIR, "blog")
+    if os.path.isdir(blog_dir):
+        for slug in sorted(os.listdir(blog_dir)):
+            fp = os.path.join(blog_dir, slug, "index.html")
+            if not os.path.isfile(fp):
+                continue
+            try:
+                with open(fp, encoding="utf-8") as f:
+                    html = f.read()
+                parsed = parse_existing_post(slug, html)
+            except Exception as exc:  # a malformed file must not sink the build
+                print(f"  ! skipped blog/{slug}: {exc}")
+                continue
+            if len(strip_tags(parsed["content"]).split()) < 60:
+                # Nothing usable on disk; keep the in-script version if we have one.
+                if slug in posts:
+                    continue
+                print(f"  ! blog/{slug} has no extractable body, skipping")
+                continue
+            existing = posts.get(slug)
+            if existing:
+                # On-disk copy wins for body, but keep in-script metadata as backup.
+                parsed["description"] = parsed["description"] or existing["description"]
+            posts[slug] = parsed
+
+    repair_body_links(posts)
+
+    # Hand-written FAQs only exist in the source markup on the first pass, so
+    # persist them to a sidecar rather than losing them on the next rebuild.
+    store = load_custom_faqs()
+    for slug, p in posts.items():
+        found = p.pop("custom_faqs", None)
+        if found:
+            store[slug] = found
+        if slug in store:
+            p["custom_faqs"] = store[slug]
+    save_custom_faqs(store)
+
+    out = []
+    for p in posts.values():
+        p["title"] = p["title"].strip()
+        p["category"] = classify_post(p["slug"], p["title"])
+        p["description"] = (p["description"] or clip(p["content"], 160)).strip()
+        p["image"] = p["image"] or CATEGORY_IMAGES.get(p["category"], CATEGORY_IMAGES["Insights"])
+        p["image_alt"] = p["image_alt"] or f"{p['title']} - Elixir Consulting Group"
+        p["og_image"] = p["image"].replace("w=800", "w=1200")
+        p["read_min"] = read_minutes(p["content"])
+        p["excerpt"] = clip(p["description"], 155)
+        p["url"] = f"/blog/{p['slug']}/"
+        out.append(p)
+
+    out.sort(key=lambda x: (x["date"], x["slug"]), reverse=True)
+    dedupe_descriptions(out)
+    canonicalize_duplicate_titles(out)
+    return out
+
+
+def first_paragraph(html):
+    m = re.search(r"<p[^>]*>(.*?)</p>", html, re.S)
+    return strip_tags(m.group(1)) if m else strip_tags(html)
+
+
+def dedupe_descriptions(posts):
+    """Give every post its own meta description.
+
+    Several imported posts shipped with the same boilerplate description, which
+    reads to a search engine as duplicate content. Where that happens, derive
+    one from the post's own opening paragraph.
+    """
+    seen, changed = {}, 0
+    for p in posts:
+        key = p["description"].strip().lower()
+        if key not in seen:
+            seen[key] = p["slug"]
+            continue
+        candidate = clip(first_paragraph(p["content"]), 158)
+        if candidate.strip().lower() in seen or len(candidate) < 60:
+            candidate = clip(f"{p['title']}. {first_paragraph(p['content'])}", 158)
+        p["description"] = candidate
+        p["excerpt"] = clip(candidate, 155)
+        seen[candidate.strip().lower()] = p["slug"]
+        changed += 1
+    if changed:
+        print(f"  Rewrote {changed} duplicate meta descriptions")
+
+
+def canonicalize_duplicate_titles(posts):
+    """Point re-published duplicates at the original via rel=canonical."""
+    first, dupes = {}, 0
+    for p in posts:
+        key = re.sub(r"\W+", "", p["title"].lower())
+        if key in first:
+            p["canonical"] = DOMAIN + first[key]["url"]
+            p["duplicate_of"] = first[key]["slug"]
+            dupes += 1
+        else:
+            first[key] = p
+    if dupes:
+        print(f"  Canonicalized {dupes} duplicate-title posts")
+
+
+CUSTOM_FAQ_FILE = "data/post-faqs.json"
+
+
+def load_custom_faqs():
+    path = os.path.join(SITE_DIR, CUSTOM_FAQ_FILE)
+    if os.path.isfile(path):
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+
+def save_custom_faqs(store):
+    path = os.path.join(SITE_DIR, CUSTOM_FAQ_FILE)
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(store, f, indent=2, sort_keys=True)
+        f.write("\n")
+
+
+def post_faqs(post):
+    """Three real, on-page answered questions per post, weighted toward its topic.
+
+    A handful of posts arrived with their own hand-written FAQ schema. Those are
+    better than anything picked by keyword, so they win when present.
+    """
+    custom = post.get("custom_faqs")
+    if custom:
+        return [tuple(x) for x in custom[:6]]
+    keys = dict(CATEGORY_RULES).get(post["category"], [])
+    scored = []
+    for i, (q, a) in enumerate(FAQ_ITEMS):
+        hay = (q + " " + a).lower()
+        scored.append((sum(1 for k in keys if k.strip("-") in hay), i, q, a))
+    scored.sort(key=lambda x: (-x[0], x[1]))
+    picked = [(q, a) for _, _, q, a in scored[:2]]
+    # Rotate the third so the set varies across the archive instead of repeating.
+    rest = [(q, a) for _, _, q, a in scored[2:]]
+    if rest:
+        picked.append(rest[sum(ord(c) for c in post["slug"]) % len(rest)])
+    return picked
+
+
+def related_posts(post, all_posts, count=3):
+    """Same-category posts first, then recent ones, so every post links onward."""
+    same = [p for p in all_posts if p["category"] == post["category"] and p["slug"] != post["slug"]]
+    seed = sum(ord(c) for c in post["slug"])
+    picked = []
+    if same:
+        start = seed % len(same)
+        picked = [same[(start + i) % len(same)] for i in range(min(count, len(same)))]
+    if len(picked) < count:
+        chosen = {p["slug"] for p in picked} | {post["slug"]}
+        for p in all_posts:
+            if p["slug"] not in chosen:
+                picked.append(p)
+                chosen.add(p["slug"])
+            if len(picked) == count:
+                break
+    return picked
+
+
+def post_card(p, lazy=True):
+    loading = 'loading="lazy" decoding="async"' if lazy else 'loading="eager" fetchpriority="high"'
+    return f"""<article class="post-card" data-cat="{esc_attr(p['category'])}" data-search="{esc_attr((p['title'] + ' ' + p['excerpt'] + ' ' + p['category']).lower())}">
+<a href="{p['url']}" tabindex="-1" aria-hidden="true"><img class="thumb" src="{esc_attr(p['image'])}" alt="{esc_attr(p['image_alt'])}" width="800" height="450" {loading}></a>
+<div class="pc-body">
+<p class="pc-cat">{p['category']}</p>
+<h3><a href="{p['url']}">{esc_text(p['title'])}</a></h3>
+<p>{esc_text(p['excerpt'])}</p>
+<p class="pc-meta"><time datetime="{p['date']}">{pretty_date(p['date'])}</time> <span aria-hidden="true">&middot;</span> {p['read_min']} min read</p>
 </div>
-</div>\n"""
+</article>\n"""
+
+
+def gen_blog_index(all_posts):
+    featured = all_posts[0]
+    rest = all_posts[1:]
+
+    cards = "".join(post_card(p, lazy=(i > 5)) for i, p in enumerate(rest))
+    page_size = 24
+
+    counts = {}
+    for p in all_posts:
+        counts[p["category"]] = counts.get(p["category"], 0) + 1
+    chips = '<button type="button" class="filter-chip active" data-filter="all">All ({})</button>'.format(len(all_posts))
+    for cat in CATEGORY_ORDER:
+        if counts.get(cat):
+            chips += f'<button type="button" class="filter-chip" data-filter="{esc_attr(cat)}">{cat} ({counts[cat]})</button>'
+
+    faqs = [
+        ("How often does Elixir Consulting Group publish new articles?",
+         "We publish new articles regularly on business strategy, operations, AI adoption, sales systems, and leadership. The archive currently holds more than {} articles covering the operational problems we see most often in owner-led businesses.".format(len(all_posts))),
+        ("Who writes the articles on this blog?",
+         "Articles are written by Dr. Connor Robertson, founder and lead consultant at Elixir Consulting Group, drawing on hands-on implementation work with business owners across industries."),
+        ("Can I apply these ideas without hiring a consultant?",
+         "Yes. Every article is written to be actionable on its own. If you want help installing the systems faster or want an outside read on where your business is actually stuck, a consult is the next step."),
+        ("What topics does the blog cover?",
+         "Coverage spans business strategy, operations and process design, AI and automation, sales and revenue systems, leadership and accountability, exit planning, and the Pittsburgh regional economy."),
+    ]
+
+    schema = '<script type="application/ld+json">\n' + json.dumps({
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Elixir Consulting Group Blog",
+        "url": DOMAIN + "/blog/",
+        "description": "Insights on business strategy, operations, AI consulting, sales systems, and leadership from Elixir Consulting Group.",
+        "publisher": {"@type": "Organization", "name": "Elixir Consulting Group", "url": DOMAIN},
+        "blogPost": [
+            {"@type": "BlogPosting", "headline": p["title"], "url": DOMAIN + p["url"],
+             "datePublished": p["date"],
+             "author": {"@type": "Person", "name": "Dr. Connor Robertson"}}
+            for p in all_posts[:25]
+        ],
+    }) + '\n</script>'
 
     body = f"""
 <section class="page-hero">
 <div class="container">
 <p class="breadcrumb"><a href="/">Home</a> / Blog</p>
-<h1>Blog</h1>
-<p>Insights on business strategy, operations, AI consulting, and growth from Elixir Consulting Group.</p>
+<h1>Insights for Business Owners</h1>
+<p>{len(all_posts)} articles on strategy, operations, AI adoption, sales systems, and leadership &mdash; written from the implementation side of the table.</p>
 </div>
 </section>
+
+{make_trust_bar()}
 
 <section class="section">
 <div class="container">
-<div class="grid grid-3">
+
+<a href="{featured['url']}" style="display:block" aria-label="Featured article: {esc_attr(featured['title'])}">
+<div class="featured-post">
+<img src="{esc_attr(featured['image'])}" alt="{esc_attr(featured['image_alt'])}" width="800" height="450" fetchpriority="high" decoding="async">
+<div class="fp-body">
+<p class="pc-cat" style="margin-bottom:10px">Latest &middot; {featured['category']}</p>
+<h2>{esc_text(featured['title'])}</h2>
+<p>{esc_text(featured['excerpt'])}</p>
+<p class="pc-meta" style="margin-bottom:18px"><time datetime="{featured['date']}">{pretty_date(featured['date'])}</time> <span aria-hidden="true">&middot;</span> {featured['read_min']} min read</p>
+<span class="btn btn-primary">Read the Article</span>
+</div>
+</div>
+</a>
+
+<div class="blog-toolbar">
+<label class="sr-only" for="blog-search" style="position:absolute;left:-9999px">Search articles</label>
+<input type="search" id="blog-search" class="blog-search" placeholder="Search {len(all_posts)} articles..." autocomplete="off">
+<div class="blog-filters" role="group" aria-label="Filter articles by category">
+{chips}
+</div>
+</div>
+
+<div class="post-list" id="post-list">
 {cards}
 </div>
+<p class="no-results" id="no-results">No articles matched that search. Try a different term or clear the filters.</p>
+<div class="load-more-wrap"><button type="button" class="btn btn-outline" id="load-more">Load More Articles</button></div>
+
 </div>
 </section>
+
+{render_faq_section(faqs, "Blog FAQs")}
+
+{make_cta()}
+
+<script>
+/* Every card ships in the HTML so the archive stays crawlable and searchable
+   offline, but painting 300+ of them at once is wasteful. Show a page at a
+   time; searching or filtering widens the window to cover all matches. */
+(function(){{
+var PAGE={page_size};
+var search=document.getElementById('blog-search');
+var chips=document.querySelectorAll('.filter-chip');
+var cards=Array.prototype.slice.call(document.querySelectorAll('#post-list .post-card'));
+var empty=document.getElementById('no-results');
+var more=document.getElementById('load-more');
+var cat='all',limit=PAGE;
+function apply(){{
+var q=(search&&search.value||'').trim().toLowerCase();
+var matched=0,shown=0;
+cards.forEach(function(c){{
+var okCat=(cat==='all'||c.getAttribute('data-cat')===cat);
+var okQ=(!q||c.getAttribute('data-search').indexOf(q)>-1);
+if(okCat&&okQ){{
+matched++;
+var show=shown<limit;
+c.style.display=show?'':'none';
+if(show)shown++;
+}}else{{c.style.display='none'}}
+}});
+empty.style.display=matched?'none':'block';
+if(more)more.parentNode.style.display=(matched>shown)?'':'none';
+}}
+function reset(){{limit=PAGE;apply()}}
+if(search)search.addEventListener('input',reset);
+chips.forEach(function(b){{b.addEventListener('click',function(){{
+chips.forEach(function(x){{x.classList.remove('active')}});
+b.classList.add('active');
+cat=b.getAttribute('data-filter');
+reset();
+}})}});
+if(more)more.addEventListener('click',function(){{limit+=PAGE;apply()}});
+apply();
+}})();
+</script>
 """
     return make_page(
         "Business Consulting Blog | Elixir Consulting Group",
-        "Read insights on business strategy, operations, AI consulting, sales systems, and growth from Elixir Consulting Group in Pittsburgh, PA.",
+        "Practical articles on business strategy, operations, AI adoption, sales systems, and leadership for owner-led companies. Written by Dr. Connor Robertson of Elixir Consulting Group.",
         "/blog/",
-        body
+        body,
+        schema,
+        faq=faqs,
     )
 
 
-def gen_blog_post(post):
-    schema = f"""<script type="application/ld+json">
-{{"@context":"https://schema.org","@type":"Article","headline":"{post['title']}","datePublished":"{post['date']}","author":{{"@type":"Person","name":"Dr. Connor Robertson","url":"https://drconnorrobertson.com"}},"publisher":{{"@type":"Organization","name":"Elixir Consulting Group","url":"https://elixirconsultinggroup.com"}},"mainEntityOfPage":"{DOMAIN}/blog/{post['slug']}/"}}
-</script>"""
+def seo_title_for(title, suffix=" | Elixir Consulting Group"):
+    """Build a <title> that survives SERP truncation (~60 characters).
+
+    Long headlines are cut at their natural break (a colon or dash) rather than
+    mid-phrase; the full headline still ships as the H1 and og:title.
+    """
+    if len(title) + len(suffix) <= 62:
+        return title + suffix
+    if len(title) <= 62:
+        return title
+    return title[:62].rsplit(" ", 1)[0].rstrip(" ,.;:-")
+
+
+def gen_blog_post(post, all_posts):
+    rel = related_posts(post, all_posts)
+    rel_cards = "".join(post_card(p) for p in rel)
+    faqs = post_faqs(post)
+
+    schema = '<script type="application/ld+json">\n' + json.dumps({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": clip(post["title"], 110),
+        "description": post["description"],
+        "datePublished": post["date"],
+        "dateModified": post["modified"],
+        "articleSection": post["category"],
+        "wordCount": len(strip_tags(post["content"]).split()),
+        "timeRequired": f"PT{post['read_min']}M",
+        "inLanguage": "en-US",
+        "image": [post["og_image"]],
+        "author": {
+            "@type": "Person",
+            "name": "Dr. Connor Robertson",
+            "url": "https://drconnorrobertson.com",
+            "jobTitle": "Founder & Lead Consultant",
+            "worksFor": {"@type": "Organization", "name": "Elixir Consulting Group"},
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Elixir Consulting Group",
+            "url": DOMAIN,
+            "logo": {"@type": "ImageObject", "url": OG_IMAGE},
+        },
+        "mainEntityOfPage": {"@type": "WebPage", "@id": DOMAIN + post["url"]},
+        "isPartOf": {"@type": "Blog", "name": "Elixir Consulting Group Blog", "@id": DOMAIN + "/blog/"},
+    }) + '\n</script>'
 
     body = f"""
 <section class="page-hero">
 <div class="container">
-<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / {post['title'][:50]}...</p>
-<h1 style="font-size:clamp(1.6rem,4vw,2.4rem)">{post['title']}</h1>
-<p style="font-size:.9rem;margin-top:8px">By Dr. Connor Robertson | {post['date']}</p>
+<p class="breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / {esc_text(clip(post['title'], 48))}</p>
+<p style="margin-bottom:14px"><span class="post-tag">{post['category']}</span></p>
+<h1 style="font-size:clamp(1.65rem,4.2vw,2.6rem);max-width:900px;margin-left:auto;margin-right:auto">{esc_text(post['title'])}</h1>
+<p>{esc_text(post['excerpt'])}</p>
+<div class="post-meta">
+<img src="{HEADSHOT}" alt="{HEADSHOT_ALT}" width="88" height="88" loading="lazy" decoding="async">
+<span>By <a href="/about/" style="color:#fff;font-weight:600">Dr. Connor Robertson</a></span>
+<span class="dot" aria-hidden="true">&middot;</span>
+<time datetime="{post['date']}">{pretty_date(post['date'])}</time>
+<span class="dot" aria-hidden="true">&middot;</span>
+<span>{post['read_min']} min read</span>
+</div>
 </div>
 </section>
 
 <section class="section">
 <div class="container">
-<article style="max-width:800px;margin:0 auto;font-size:1.05rem;line-height:1.85">
+<figure style="max-width:860px;margin:0 auto 8px">
+<img class="article-hero-img" src="{esc_attr(post['image'])}" alt="{esc_attr(post['image_alt'])}" width="1200" height="630" fetchpriority="high" decoding="async">
+</figure>
+<article class="article-body" id="post-body">
 {post['content']}
 </article>
+
+<div class="author-box">
+<img src="{HEADSHOT}" alt="{HEADSHOT_ALT}" width="192" height="192" loading="lazy" decoding="async">
+<div>
+<h3>Dr. Connor Robertson</h3>
+<p class="author-role">Founder &amp; Lead Consultant, Elixir Consulting Group</p>
+<p>Dr. Robertson works hands-on with owners and leadership teams to install operations, sales, and leadership systems that hold up under growth. He is the author of six books on acquisitions and business strategy.</p>
+<p style="margin-bottom:0"><a href="/about/">Read the full bio</a> &nbsp;&middot;&nbsp; <a href="/contact/">Book a consult</a></p>
+</div>
+</div>
 </div>
 </section>
 
-<section class="section section-gray">
-<div class="container text-center">
-<h2>Ready to Improve Your Business Operations?</h2>
-<p style="max-width:500px;margin:0 auto 24px">If this article resonated with you, a consult is the best next step to understand how these ideas apply to your specific business.</p>
-<a href="/contact/" class="btn btn-primary">Book a Consult</a>
+{render_faq_section(faqs, "Related Questions", gray=False)}
+
+<section class="related-posts">
+<div class="container">
+<div class="text-center" style="margin-bottom:32px">
+<span class="eyebrow">Keep Reading</span>
+<h2>Related Articles</h2>
+</div>
+<div class="post-list">
+{rel_cards}
+</div>
+<div class="text-center" style="margin-top:32px">
+<a href="/blog/" class="btn btn-outline">Browse All Articles</a>
+</div>
 </div>
 </section>
+
+{make_cta()}
 """
     return make_page(
-        f"{post['title']} | Elixir Consulting Group",
-        post['excerpt'][:160],
-        f"/blog/{post['slug']}/",
+        seo_title_for(post["title"]),
+        clip(post["description"], 158),
+        post["url"],
         body,
-        schema
+        schema,
+        og_title=post["title"],
+        canonical=post.get("canonical"),
+        image=post["og_image"],
+        og_type="article",
+        published=post["date"],
+        modified=post["modified"],
+        faq=faqs,
+        crumb_override=clip(post["title"], 60),
     )
 
 
@@ -1877,11 +3308,13 @@ def gen_contact():
 </div>
 </section>
 """
+    body += render_faq_section(CONTACT_FAQS, "Before You Reach Out", gray=False)
     return make_page(
-        "Contact Elixir Consulting Group | Book a Consult",
-        "Contact Elixir Consulting Group to book a business consulting engagement. Based in Pittsburgh, PA. Serving clients nationwide.",
+        "Contact Elixir Consulting Group | Book a Free Consult",
+        f"Book a consult with Elixir Consulting Group. Call {PHONE} or email {EMAIL}. Based in Pittsburgh, PA and serving business owners nationwide.",
         "/contact/",
-        body
+        body,
+        faq=CONTACT_FAQS,
     )
 
 
@@ -1942,7 +3375,7 @@ def gen_testimonials():
 </div>\n"""
 
     schema = """<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"Elixir Consulting Group","url":"https://elixirconsultinggroup.com","logo":"https://elixirconsultinggroup.com/og-image.png","image":"https://elixirconsultinggroup.com/og-image.png","telephone":"+1-412-387-7656","email":"info@elixirconsultinggroup.com","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"47","bestRating":"5"}}
+{"@context":"https://schema.org","@type":"Organization","name":"Elixir Consulting Group","url":"https://elixirconsultinggroup.com","logo":"https://elixirconsultinggroup.com/images/og-image.png","image":"https://elixirconsultinggroup.com/images/og-image.png","telephone":"+1-412-387-7656","email":"info@elixirconsultinggroup.com","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"47","bestRating":"5"}}
 </script>"""
 
     body = f"""
@@ -1964,16 +3397,18 @@ def gen_testimonials():
 
 {make_cta()}
 """
+    body += render_faq_section(TESTIMONIAL_FAQS, "Testimonial FAQs", gray=False)
     return make_page(
         "Client Testimonials | Elixir Consulting Group",
-        "Read client testimonials and reviews from business owners who have worked with Elixir Consulting Group for operations, sales systems, and leadership consulting.",
+        "Read testimonials from business owners who worked with Elixir Consulting Group on operations, sales systems, and leadership cadence. Pittsburgh, PA and nationwide.",
         "/testimonials/",
         body,
-        schema
+        schema,
+        faq=TESTIMONIAL_FAQS,
     )
 
 
-def gen_sitemap():
+def gen_sitemap(all_posts=None, consulting_pages=None):
     urls = [
         ("/", "1.0", "weekly"),
         ("/about/", "0.8", "monthly"),
@@ -1994,24 +3429,35 @@ def gen_sitemap():
         ("/contact/", "0.8", "monthly"),
         ("/faq/", "0.7", "monthly"),
         ("/testimonials/", "0.75", "monthly"),
-        ("/404.html", "0.2", "yearly"),
+        ("/consulting/", "0.8", "monthly"),
     ]
-    # Add consulting city pages
-    city_slugs = []
-    consulting_dir = os.path.join(SITE_DIR, "consulting")
-    if os.path.isdir(consulting_dir):
-        for d in sorted(os.listdir(consulting_dir)):
-            if os.path.isdir(os.path.join(consulting_dir, d)):
-                urls.append((f"/consulting/{d}/", "0.7", "monthly"))
-    
-    for post in BLOG_POSTS:
-        urls.append((f"/blog/{post['slug']}/", "0.6", "monthly"))
+
+    # lastmod defaults to the build date; blog posts carry their publish date.
+    lastmod = {}
+
+    consulting_pages = consulting_pages or []
+    if consulting_pages:
+        for p in consulting_pages:
+            urls.append((f"/consulting/{p['slug']}/", "0.7", "monthly"))
+    else:
+        consulting_dir = os.path.join(SITE_DIR, "consulting")
+        if os.path.isdir(consulting_dir):
+            for d in sorted(os.listdir(consulting_dir)):
+                if os.path.isdir(os.path.join(consulting_dir, d)):
+                    urls.append((f"/consulting/{d}/", "0.7", "monthly"))
+
+    posts = all_posts if all_posts is not None else []
+    for i, post in enumerate(posts):
+        # The newest posts get a higher priority than the long tail.
+        priority = "0.75" if i < 12 else "0.6"
+        urls.append((post["url"], priority, "monthly"))
+        lastmod[post["url"]] = post.get("modified") or post["date"]
 
     entries = ""
     for path, priority, freq in urls:
         entries += f"""  <url>
     <loc>{DOMAIN}{path}</loc>
-    <lastmod>{DATE_NOW}</lastmod>
+    <lastmod>{lastmod.get(path, DATE_NOW)}</lastmod>
     <changefreq>{freq}</changefreq>
     <priority>{priority}</priority>
   </url>\n"""
@@ -2064,6 +3510,19 @@ def gen_vercel_json():
                     {"key": "Cache-Control", "value": "public, max-age=86400"},
                     {"key": "Content-Type", "value": "text/plain"}
                 ]
+            },
+            {
+                "source": "/images/(.*)",
+                "headers": [
+                    {"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}
+                ]
+            },
+            {
+                "source": "/favicon.svg",
+                "headers": [
+                    {"key": "Cache-Control", "value": "public, max-age=604800"},
+                    {"key": "Content-Type", "value": "image/svg+xml"}
+                ]
             }
         ],
         "redirects": [
@@ -2085,6 +3544,21 @@ def gen_vercel_json():
             {
                 "source": "/sitemap_index.xml",
                 "destination": "/sitemap.xml",
+                "statusCode": 301
+            },
+            {
+                "source": "/locations/",
+                "destination": "/consulting/",
+                "statusCode": 301
+            },
+            {
+                "source": "/about-us/",
+                "destination": "/about/",
+                "statusCode": 301
+            },
+            {
+                "source": "/team/",
+                "destination": "/about/",
                 "statusCode": 301
             }
         ]
@@ -2237,14 +3711,20 @@ write_page("/industries/", gen_industries())
 print("\n[10/14] Case Studies")
 write_page("/case-studies/", gen_case_studies())
 
-# Blog Index
-print("\n[11/14] Blog Index")
-write_page("/blog/", gen_blog_index())
+# Blog: ingest everything on disk first, then re-render the whole archive so
+# posts written by other tooling share this template. Reading completes before
+# any write, so the pass is safe to re-run.
+print("\n[11/14] Blog Index & Posts")
+ALL_POSTS = load_all_posts()
+# Canonicalized duplicates still get a page, but they stay out of the index,
+# the related-post pool, and the sitemap so only the original competes.
+INDEX_POSTS = [p for p in ALL_POSTS if not p.get("duplicate_of")]
+print(f"  Loaded {len(ALL_POSTS)} blog posts ({len(INDEX_POSTS)} canonical)")
+write_page("/blog/", gen_blog_index(INDEX_POSTS))
 
-# Blog Posts
 print("\n[12/14] Blog Posts")
-for post in BLOG_POSTS:
-    write_page(f"/blog/{post['slug']}/", gen_blog_post(post))
+for post in ALL_POSTS:
+    write_page(post["url"], gen_blog_post(post, INDEX_POSTS))
 
 # City Pages
 print("\n[12.5/14] City-Specific Service Pages")
@@ -2319,6 +3799,14 @@ write_page("/wexford-business-consultant/", gen_city_page(
     "The Wexford business community is part of the rapidly growing northern suburbs of Pittsburgh, benefiting from proximity to major transportation corridors, a strong local economy, and access to the Pittsburgh talent pool. Elixir Consulting Group helps Wexford businesses build the operational structure and strategic clarity needed to thrive in this competitive environment."
 ))
 
+# Regional consulting pages (same ingest-then-rerender approach as the blog)
+print("\n[12.75/14] Regional Consulting Pages")
+CONSULTING_PAGES = load_consulting_pages()
+print(f"  Loaded {len(CONSULTING_PAGES)} location pages")
+write_page("/consulting/", gen_consulting_index(CONSULTING_PAGES))
+for cpage in CONSULTING_PAGES:
+    write_page(f"/consulting/{cpage['slug']}/", gen_consulting_page(cpage, CONSULTING_PAGES))
+
 # Contact
 print("\n[13/14] Contact")
 write_page("/contact/", gen_contact())
@@ -2369,7 +3857,7 @@ write_page("/404.html", gen_404())
 # Sitemap, robots.txt, vercel.json
 print("\nGenerating sitemap.xml, robots.txt, vercel.json...")
 with open(os.path.join(SITE_DIR, "sitemap.xml"), "w") as f:
-    f.write(gen_sitemap())
+    f.write(gen_sitemap(INDEX_POSTS, CONSULTING_PAGES))
 print("  Created: sitemap.xml")
 
 with open(os.path.join(SITE_DIR, "robots.txt"), "w") as f:
@@ -2388,5 +3876,8 @@ for root, dirs, files in os.walk(SITE_DIR):
             total += 1
 print(f"\n{'='*60}")
 print(f"DONE! Generated {total} HTML pages + sitemap + robots.txt + vercel.json")
-print("SEO optimization complete: 10 new blog posts, 5 city pages, FAQ schema on all service pages, internal cross-links, As Featured In section")
+print(f"  {len(ALL_POSTS)} blog posts, {len(CONSULTING_PAGES)} location pages, "
+      f"{len(open(os.path.join(SITE_DIR, 'sitemap.xml')).read().split('<url>')) - 1} sitemap URLs")
+print("  Every page: Organization + WebSite + Person graph, FAQPage, BreadcrumbList,")
+print("  canonical, OG/Twitter card. Blog posts also carry BlogPosting.")
 print(f"{'='*60}")
