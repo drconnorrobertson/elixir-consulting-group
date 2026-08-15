@@ -100,7 +100,13 @@ p{{margin-bottom:1rem;color:{COLORS['text_light']}}}
 .breadcrumb a:hover{{color:{COLORS['gold']}}}
 
 /* Header */
-.header{{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);box-shadow:0 1px 3px rgba(0,0,0,.08);transition:all .3s}}
+/* No backdrop-filter here. A blurred backdrop on a fixed, full-width header
+   makes the header a backdrop root over the whole scrolling document; WebKit
+   then stops repainting the document below the first screenful and the page
+   goes white from roughly the fold down. The background is opaque, so the
+   blur was never visible anyway. Only the properties that actually change
+   are transitioned -- `all` on a fixed element re-composites on every tick. */
+.header{{position:fixed;top:0;left:0;right:0;z-index:1000;background:{COLORS['white']};box-shadow:0 1px 3px rgba(0,0,0,.08);transition:box-shadow .3s,background-color .3s}}
 .header-inner{{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 24px}}
 .logo{{font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:800;color:{COLORS['navy']};letter-spacing:-.5px}}
 .logo span{{color:{COLORS['gold']}}}
@@ -288,13 +294,20 @@ a.post-tag:hover{{background:rgba(201,168,76,.28);color:{COLORS['gold']}}}
 
 /* ===== MOBILE OPTIMIZATION PASS =====
    The off-canvas drawer is positioned with transform (not `right:-100%`):
-   .header sets backdrop-filter, which makes it the containing block for its
-   fixed children, and a percentage offset there resolved against a viewport
-   that the drawer itself had widened -- the menu never came on screen and
-   every page scrolled ~50px horizontally. translateX(105%) is relative to
-   the drawer's own width, so neither problem can recur. */
-html,body{{overflow-x:hidden}}
-body{{max-width:100%}}
+   a percentage offset resolved against a viewport that the drawer itself had
+   widened -- the menu never came on screen and every page scrolled ~50px
+   horizontally. translateX(105%) is relative to the drawer's own width, so
+   neither problem can recur regardless of what its containing block is.
+
+   Sideways overflow is contained with `clip`, never `hidden`. `overflow:hidden`
+   on the root makes the root a scroll container, which in WebKit detaches
+   `position:fixed` descendants and leaves everything past the first screenful
+   unpainted -- the same white-page-below-the-fold failure the header caused.
+   `clip` clips without ever creating a scroll container. The `hidden` line
+   below it is the pre-Safari-16 fallback and lands on body only, so the root
+   stays a plain scrolling viewport in every browser. */
+html{{overflow-x:clip}}
+body{{overflow-x:hidden;overflow-x:clip;max-width:100%}}
 img,video,iframe{{max-width:100%;height:auto}}
 h1,h2,h3,h4,h5,p,li,a,td{{overflow-wrap:break-word;word-wrap:break-word}}
 .nav-toggle{{display:none}}
@@ -320,7 +333,7 @@ h1,h2,h3,h4,h5,p,li,a,td{{overflow-wrap:break-word;word-wrap:break-word}}
 .nav-toggle.active span:nth-child(1){{transform:translateY(7px) rotate(45deg)}}
 .nav-toggle.active span:nth-child(2){{opacity:0}}
 .nav-toggle.active span:nth-child(3){{transform:translateY(-7px) rotate(-45deg)}}
-.nav-menu{{position:fixed;top:0;right:0;left:auto;bottom:auto;display:flex;flex-direction:column;align-items:stretch;gap:2px;width:min(320px,86vw);height:100vh;margin:0;padding:80px 20px 32px;list-style:none;background:{COLORS['white']};box-shadow:-4px 0 24px rgba(0,0,0,.18);transform:translateX(105%);transition:transform .3s ease;z-index:1001;overflow-y:auto;-webkit-overflow-scrolling:touch}}
+.nav-menu{{position:fixed;top:0;right:0;left:auto;bottom:auto;display:flex;flex-direction:column;align-items:stretch;gap:2px;width:min(320px,86vw);height:100vh;height:100dvh;margin:0;padding:80px 20px 32px;list-style:none;background:{COLORS['white']};box-shadow:-4px 0 24px rgba(0,0,0,.18);transform:translateX(105%);transition:transform .3s ease;z-index:1001;overflow-y:auto;-webkit-overflow-scrolling:touch}}
 .nav-menu.active{{transform:translateX(0)}}
 .nav-menu li{{width:100%;margin:0}}
 .nav-menu a{{display:flex;align-items:center;width:100%;min-height:48px;padding:12px 14px;font-size:1rem;font-weight:500;color:{COLORS['text']};border-radius:8px}}
