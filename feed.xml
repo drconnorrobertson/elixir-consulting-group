@@ -9,20 +9,29 @@
   <copyright>Copyright 2026 Elixir Consulting Group</copyright>
   <managingEditor>info@elixirconsultinggroup.com (Dr. Connor Robertson)</managingEditor>
   <webMaster>info@elixirconsultinggroup.com (Elixir Consulting Group)</webMaster>
-  <lastBuildDate>Sat, 22 Aug 2026 12:00:00 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 26 Aug 2026 12:00:00 +0000</lastBuildDate>
   <image>
     <url>https://elixirconsultinggroup.com/images/og-image.png</url>
     <title>Elixir Consulting Group Blog</title>
     <link>https://elixirconsultinggroup.com/blog/</link>
   </image>
   <item>
+    <title>The Lean Scale-Up: Why 2026&apos;s Fastest-Growing Companies Hire Software Before They Hire People</title>
+    <link>https://elixirconsultinggroup.com/blog/lean-scale-up-2026/</link>
+    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/lean-scale-up-2026/</guid>
+    <description>63% of Q2 2026 C-corp filings had a single founder. Here is why the fastest-growing companies in 2026 are scaling revenue with agentic software before...</description>
+    <category>Strategy &amp; Growth</category>
+    <dc:creator>Dr. Connor Robertson</dc:creator>
+    <pubDate>Wed, 26 Aug 2026 12:00:00 +0000</pubDate>
+  </item>
+  <item>
     <title>Rising Costs, Flat Margins: Why 2026 Is the Year to Fix Your Operations, Not Just Chase More Revenue</title>
     <link>https://elixirconsultinggroup.com/blog/operational-systems-rising-costs-2026/</link>
     <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/operational-systems-rising-costs-2026/</guid>
-    <description>77% of business owners cite rising costs as their top challenge in 2026. Here is why fixing operational systems, not just chasing more revenue, is the fastest way back to margin.</description>
-    <pubDate>Sat, 22 Aug 2026 12:00:00 +0000</pubDate>
-    <dc:creator>Dr. Connor Robertson</dc:creator>
+    <description>77% of business owners cite rising costs as their top challenge in 2026. Here is why fixing operational systems, not just chasing more revenue, is the...</description>
     <category>Operations</category>
+    <dc:creator>Dr. Connor Robertson</dc:creator>
+    <pubDate>Sat, 22 Aug 2026 12:00:00 +0000</pubDate>
   </item>
   <item>
     <title>The First 100 Days: Why Most Small Business Acquisitions Fail After the Deal Closes</title>
@@ -455,33 +464,6 @@
     <category>Operations</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
     <pubDate>Sat, 04 Apr 2026 12:00:00 +0000</pubDate>
-  </item>
-  <item>
-    <title>How to Reduce Operating Costs by 30% Without Cutting Quality</title>
-    <link>https://elixirconsultinggroup.com/blog/reduce-operating-costs-30-percent-without-cutting-quality/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/reduce-operating-costs-30-percent-without-cutting-quality/</guid>
-    <description>Cutting costs does not have to mean cutting corners. Here is a systematic approach to reducing operating expenses while maintaining or improving service...</description>
-    <category>Operations</category>
-    <dc:creator>Dr. Connor Robertson</dc:creator>
-    <pubDate>Fri, 03 Apr 2026 12:00:00 +0000</pubDate>
-  </item>
-  <item>
-    <title>The Difference Between Strategy and Execution in Business</title>
-    <link>https://elixirconsultinggroup.com/blog/the-difference-between-strategy-and-execution-in-business/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/the-difference-between-strategy-and-execution-in-business/</guid>
-    <description>Strategy is knowing where you want to go. Execution is actually getting there. Most businesses do not fail because of […]</description>
-    <category>Strategy &amp; Growth</category>
-    <dc:creator>Dr. Connor Robertson</dc:creator>
-    <pubDate>Thu, 02 Apr 2026 12:00:00 +0000</pubDate>
-  </item>
-  <item>
-    <title>How to Reduce Owner Dependency in Your Business</title>
-    <link>https://elixirconsultinggroup.com/blog/how-to-reduce-owner-dependency-in-your-business/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/how-to-reduce-owner-dependency-in-your-business/</guid>
-    <description>If your business cannot function without you for a single week, you do not own a business. You own a […]</description>
-    <category>Insights</category>
-    <dc:creator>Dr. Connor Robertson</dc:creator>
-    <pubDate>Tue, 31 Mar 2026 12:00:00 +0000</pubDate>
   </item>
 </channel>
 </rss>
