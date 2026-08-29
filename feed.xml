@@ -9,12 +9,21 @@
   <copyright>Copyright 2026 Elixir Consulting Group</copyright>
   <managingEditor>info@elixirconsultinggroup.com (Dr. Connor Robertson)</managingEditor>
   <webMaster>info@elixirconsultinggroup.com (Elixir Consulting Group)</webMaster>
-  <lastBuildDate>Wed, 26 Aug 2026 12:00:00 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 29 Aug 2026 12:00:00 +0000</lastBuildDate>
   <image>
     <url>https://elixirconsultinggroup.com/images/og-image.png</url>
     <title>Elixir Consulting Group Blog</title>
     <link>https://elixirconsultinggroup.com/blog/</link>
   </image>
+  <item>
+    <title>Brand Is the New SEO: Why 2026&apos;s AI Search Rewards Trust Over Traffic</title>
+    <link>https://elixirconsultinggroup.com/blog/brand-is-the-new-seo-2026/</link>
+    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/brand-is-the-new-seo-2026/</guid>
+    <description>68% of searches now end without a click, and AI Overviews push that past 80%. Here is why brand trust, not keyword rank, decides who gets found in 2026.</description>
+    <category>Strategy &amp; Growth</category>
+    <dc:creator>Dr. Connor Robertson</dc:creator>
+    <pubDate>Sat, 29 Aug 2026 12:00:00 +0000</pubDate>
+  </item>
   <item>
     <title>The Lean Scale-Up: Why 2026&apos;s Fastest-Growing Companies Hire Software Before They Hire People</title>
     <link>https://elixirconsultinggroup.com/blog/lean-scale-up-2026/</link>
@@ -455,15 +464,6 @@
     <category>Strategy &amp; Growth</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
     <pubDate>Tue, 07 Apr 2026 12:00:00 +0000</pubDate>
-  </item>
-  <item>
-    <title>How to Create a Repeatable Client Delivery Process</title>
-    <link>https://elixirconsultinggroup.com/blog/how-to-create-a-repeatable-client-delivery-process/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/how-to-create-a-repeatable-client-delivery-process/</guid>
-    <description>Inconsistent client delivery is one of the fastest ways to lose trust, generate complaints, and increase churn. When every client […]</description>
-    <category>Operations</category>
-    <dc:creator>Dr. Connor Robertson</dc:creator>
-    <pubDate>Sat, 04 Apr 2026 12:00:00 +0000</pubDate>
   </item>
 </channel>
 </rss>
