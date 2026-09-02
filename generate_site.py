@@ -2042,6 +2042,8 @@ def gen_homepage(all_posts=None):
 <div style="display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap;margin-top:24px">
 <a href="https://thepittsburghwire.com" target="_blank" rel="noopener" style="font-size:1.3rem;font-weight:700;color:{COLORS['navy']};opacity:.7;transition:opacity .2s">The Pittsburgh Wire</a>
 <a href="https://www.youtube.com/@TheProspectingShow" target="_blank" rel="noopener" style="font-size:1.3rem;font-weight:700;color:{COLORS['navy']};opacity:.7;transition:opacity .2s">The Prospecting Show</a>
+<a href="https://gritdaily.com/dr-connor-robertson-entrepreneur-author-and-founder/" target="_blank" rel="noopener" style="font-size:1.3rem;font-weight:700;color:#002E5B;opacity:.7;transition:opacity .2s">Grit Daily</a>
+<a href="https://apple.news/AkpEwhEk5SZ2xSYGUahT9LQ" target="_blank" rel="noopener" style="font-size:1.3rem;font-weight:700;color:#002E5B;opacity:.7;transition:opacity .2s">Apple News</a>
 </div>
 </div>
 </section>
