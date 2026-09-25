@@ -1,4 +1,76 @@
 {
+  "90-day-ai-adoption-plan-for-pittsburgh-small-businesses": [
+    [
+      "How should a small business start adopting AI?",
+      "Start with a business goal, a written data policy, and an internal owner. Then choose two high-hour, well-understood, low-risk workflows, measure the baseline, and run focused 30-day pilots before scaling."
+    ],
+    [
+      "How long does it take to see results from AI adoption?",
+      "Most small businesses can see measurable time savings from one or two AI-assisted workflows within 60 to 90 days when pilots are focused and measured against a baseline."
+    ],
+    [
+      "Do small businesses need custom AI software?",
+      "Rarely at first. Most early wins come from business-grade AI assistants, AI features built into existing software, and simple automations that connect tools you already use."
+    ],
+    [
+      "Does Elixir Consulting Group offer AI consulting in Pittsburgh?",
+      "Yes. We help owner-led businesses in Pittsburgh and across western Pennsylvania plan and implement AI adoption, including workflow selection, pilots, team training, and measurement."
+    ]
+  ],
+  "how-to-write-sops-your-team-will-actually-use": [
+    [
+      "What should be included in a standard operating procedure?",
+      "A useful SOP includes a title and owner, purpose, trigger, numbered action steps, quality standards, links to tools and templates, and a last reviewed date. Keep it to one or two pages."
+    ],
+    [
+      "Who should write SOPs in a small business?",
+      "The person who performs the process every day should create the first draft, ideally from a recorded walkthrough. A manager or owner then reviews it for standards and quality."
+    ],
+    [
+      "How often should SOPs be updated?",
+      "Review each SOP at least twice per year and update it immediately whenever the team finds a better way to do the work. Reviewing a few SOPs in each monthly operations meeting keeps the library current."
+    ],
+    [
+      "How long does it take to document core business processes?",
+      "Most small businesses can document their top ten core processes in 60 to 90 days by completing two or three SOPs per week using the record-then-write method."
+    ]
+  ],
+  "marketing-attribution-for-local-service-businesses": [
+    [
+      "What is marketing attribution for a local business?",
+      "Marketing attribution is the practice of recording where each lead came from and connecting it to the revenue it produced, so you can see which channels create profitable customers rather than just activity."
+    ],
+    [
+      "Do I need expensive software to track marketing attribution?",
+      "No. Most local service businesses can get reliable attribution with call tracking numbers, UTM links, a required lead source field in the CRM, and a monthly match between leads and invoices."
+    ],
+    [
+      "Which attribution model should a small service business use?",
+      "Record the first known source as primary and the converting source as secondary, then apply that rule consistently for at least two quarters. Consistency matters more than model sophistication."
+    ],
+    [
+      "How long before attribution data is useful?",
+      "One full quarter of clean data usually reveals clear patterns in close rate and acquisition cost by channel, and two quarters is enough to make confident budget shifts."
+    ]
+  ],
+  "sales-pipeline-stages-and-exit-criteria-for-owner-led-companies": [
+    [
+      "What are exit criteria in a sales pipeline?",
+      "Exit criteria are specific, verifiable conditions a deal must meet before it can move to the next stage, such as confirming the decision maker or reviewing a proposal live. They make pipeline stages consistent and forecasts reliable."
+    ],
+    [
+      "How many pipeline stages should a small business have?",
+      "Most owner-led companies work best with five or six stages. More stages usually create ambiguity and make it harder for the team to apply definitions consistently."
+    ],
+    [
+      "How do I handle deals that sit in one stage too long?",
+      "Set a maximum age for each stage based on your closed-won history, flag deals that exceed it in the weekly pipeline review, and require the owner to advance the deal, set a dated next action, or close it as lost."
+    ],
+    [
+      "What sales metrics should I track by stage?",
+      "Track conversion rate between each stage, average time in stage, pipeline value by stage, and close rate. These numbers show exactly where your sales process leaks."
+    ]
+  ],
   "the-five-questions-every-business-owner-should-ask-before-hiring-a-consulta": [
     [
       "What experience does the consultant have in my industry?",
@@ -51,6 +123,24 @@
     [
       "What should I prepare before meeting with a consultant?",
       "Prepare your recent financial statements, organizational chart, list of current challenges, and your goals for the next 12 months. The more context you provide upfront, the more productive the initial consultation will be."
+    ]
+  ],
+  "when-to-hire-a-fractional-coo-pittsburgh-owner-guide": [
+    [
+      "What is a fractional COO?",
+      "A fractional COO is an experienced operations executive who works with your company part time, usually one to three days per week, and owns operating results such as meeting cadence, accountability, process documentation, and management of department leads."
+    ],
+    [
+      "How long does a fractional COO engagement last?",
+      "Most engagements run six to twelve months. The first 90 days focus on diagnosis and installing a weekly cadence and scorecard, and later months focus on process documentation, leadership development, and hiring a permanent operations leader."
+    ],
+    [
+      "Is a fractional COO better than hiring an operations manager?",
+      "An operations manager is ideal when systems already exist and need to be run. A fractional COO is the better fit when the systems do not exist yet and the owner needs senior operating leadership to build them."
+    ],
+    [
+      "Does Elixir Consulting Group provide fractional COO services in Pittsburgh?",
+      "Yes. Fractional operating leadership is part of our operations consulting practice, and we work with owner-led companies in Pittsburgh, Cranberry Township, Wexford, and throughout Pennsylvania."
     ]
   ]
 }
