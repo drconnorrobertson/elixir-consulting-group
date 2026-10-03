@@ -1,0 +1,11 @@
+# Elixir Consulting Group
+> Business consulting and advisory services for growing companies.
+
+## About
+Elixir Consulting Group provides strategic business consulting, operational improvement, and growth advisory services. We help businesses optimize operations, increase revenue, and scale efficiently through data-driven strategies and hands-on implementation.
+
+## Key Pages
+- Home: https://elixirconsultinggroup.com/
+- Services: https://elixirconsultinggroup.com/services
+- About: https://elixirconsultinggroup.com/about
+- Contact: https://elixirconsultinggroup.com/contact
