@@ -2,8 +2,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <channel>
   <title>Elixir Consulting Group Blog</title>
-  <link>https://elixirconsultinggroup.com/blog/</link>
-  <atom:link href="https://elixirconsultinggroup.com/feed.xml" rel="self" type="application/rss+xml"/>
+  <link>https://www.elixirconsultinggroup.com/blog/</link>
+  <atom:link href="https://www.elixirconsultinggroup.com/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Practical articles on business strategy, operations, AI adoption, sales systems, and leadership for owner-led companies.</description>
   <language>en-us</language>
   <copyright>Copyright 2026 Elixir Consulting Group</copyright>
@@ -11,14 +11,14 @@
   <webMaster>info@elixirconsultinggroup.com (Elixir Consulting Group)</webMaster>
   <lastBuildDate>Thu, 24 Sep 2026 12:00:00 +0000</lastBuildDate>
   <image>
-    <url>https://elixirconsultinggroup.com/images/og-image.png</url>
+    <url>https://www.elixirconsultinggroup.com/images/og-image.png</url>
     <title>Elixir Consulting Group Blog</title>
-    <link>https://elixirconsultinggroup.com/blog/</link>
+    <link>https://www.elixirconsultinggroup.com/blog/</link>
   </image>
   <item>
     <title>When to Hire a Fractional COO: A Pittsburgh Owner&apos;s Guide</title>
-    <link>https://elixirconsultinggroup.com/blog/when-to-hire-a-fractional-coo-pittsburgh-owner-guide/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/when-to-hire-a-fractional-coo-pittsburgh-owner-guide/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/when-to-hire-a-fractional-coo-pittsburgh-owner-guide/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/when-to-hire-a-fractional-coo-pittsburgh-owner-guide/</guid>
     <description>A fractional COO gives an owner-led company senior operating leadership without a full-time executive salary. Here is how to tell when you need one...</description>
     <category>Leadership</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -26,8 +26,8 @@
   </item>
   <item>
     <title>Marketing Attribution for Local Service Businesses: Know What Actually Drives Leads</title>
-    <link>https://elixirconsultinggroup.com/blog/marketing-attribution-for-local-service-businesses/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/marketing-attribution-for-local-service-businesses/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/marketing-attribution-for-local-service-businesses/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/marketing-attribution-for-local-service-businesses/</guid>
     <description>Most local service businesses cannot say which marketing channel produced their best customers. Here is a simple attribution system any owner can...</description>
     <category>Strategy &amp; Growth</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -35,8 +35,8 @@
   </item>
   <item>
     <title>How to Write SOPs Your Team Will Actually Use</title>
-    <link>https://elixirconsultinggroup.com/blog/how-to-write-sops-your-team-will-actually-use/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/how-to-write-sops-your-team-will-actually-use/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/how-to-write-sops-your-team-will-actually-use/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/how-to-write-sops-your-team-will-actually-use/</guid>
     <description>Most standard operating procedures end up in a shared drive nobody opens. Here is a practical method for documenting processes that your team will...</description>
     <category>Operations</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -44,8 +44,8 @@
   </item>
   <item>
     <title>Sales Pipeline Stages and Exit Criteria for Owner-Led Companies</title>
-    <link>https://elixirconsultinggroup.com/blog/sales-pipeline-stages-and-exit-criteria-for-owner-led-companies/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/sales-pipeline-stages-and-exit-criteria-for-owner-led-companies/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/sales-pipeline-stages-and-exit-criteria-for-owner-led-companies/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/sales-pipeline-stages-and-exit-criteria-for-owner-led-companies/</guid>
     <description>A sales pipeline is only as useful as the definitions behind each stage. Here is how owner-led companies can design pipeline stages with clear exit...</description>
     <category>Sales &amp; Revenue</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -53,8 +53,8 @@
   </item>
   <item>
     <title>A 90-Day AI Adoption Plan for Pittsburgh Small Businesses</title>
-    <link>https://elixirconsultinggroup.com/blog/90-day-ai-adoption-plan-for-pittsburgh-small-businesses/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/90-day-ai-adoption-plan-for-pittsburgh-small-businesses/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/90-day-ai-adoption-plan-for-pittsburgh-small-businesses/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/90-day-ai-adoption-plan-for-pittsburgh-small-businesses/</guid>
     <description>Pittsburgh small businesses do not need a massive AI transformation. They need a focused 90-day plan that picks the right workflows, protects data...</description>
     <category>AI &amp; Technology</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -62,8 +62,8 @@
   </item>
   <item>
     <title>The AI Adoption Tipping Point: What 2026&apos;s Numbers Mean for Your Business</title>
-    <link>https://elixirconsultinggroup.com/blog/ai-adoption-tipping-point-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/ai-adoption-tipping-point-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/ai-adoption-tipping-point-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/ai-adoption-tipping-point-2026/</guid>
     <description>77% of small businesses now use AI regularly, up from 48% in 2024. Here is what 2026&apos;s record adoption curve means and how to avoid falling...</description>
     <category>AI &amp; Technology</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -71,8 +71,8 @@
   </item>
   <item>
     <title>The Discipline Dividend: Why 2026&apos;s Best Leaders Are Scaling Slower and Winning Bigger</title>
-    <link>https://elixirconsultinggroup.com/blog/the-discipline-dividend-leadership-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/the-discipline-dividend-leadership-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/the-discipline-dividend-leadership-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/the-discipline-dividend-leadership-2026/</guid>
     <description>NFIB optimism just hit a one-year high, but the Uncertainty Index sits near record levels. Here is why 2026&apos;s best leaders are hiring less, not more.</description>
     <category>Sales &amp; Revenue</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -80,8 +80,8 @@
   </item>
   <item>
     <title>Brand Is the New SEO: Why 2026&apos;s AI Search Rewards Trust Over Traffic</title>
-    <link>https://elixirconsultinggroup.com/blog/brand-is-the-new-seo-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/brand-is-the-new-seo-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/brand-is-the-new-seo-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/brand-is-the-new-seo-2026/</guid>
     <description>68% of searches now end without a click, and AI Overviews push that past 80%. Here is why brand trust, not keyword rank, decides who gets found in 2026.</description>
     <category>Strategy &amp; Growth</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -89,8 +89,8 @@
   </item>
   <item>
     <title>The Lean Scale-Up: Why 2026&apos;s Fastest-Growing Companies Hire Software Before They Hire People</title>
-    <link>https://elixirconsultinggroup.com/blog/lean-scale-up-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/lean-scale-up-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/lean-scale-up-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/lean-scale-up-2026/</guid>
     <description>63% of Q2 2026 C-corp filings had a single founder. Here is why the fastest-growing companies in 2026 are scaling revenue with agentic software before...</description>
     <category>Strategy &amp; Growth</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -98,8 +98,8 @@
   </item>
   <item>
     <title>Rising Costs, Flat Margins: Why 2026 Is the Year to Fix Your Operations, Not Just Chase More Revenue</title>
-    <link>https://elixirconsultinggroup.com/blog/operational-systems-rising-costs-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/operational-systems-rising-costs-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/operational-systems-rising-costs-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/operational-systems-rising-costs-2026/</guid>
     <description>77% of business owners cite rising costs as their top challenge in 2026. Here is why fixing operational systems, not just chasing more revenue, is the...</description>
     <category>Operations</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -107,8 +107,8 @@
   </item>
   <item>
     <title>The First 100 Days: Why Most Small Business Acquisitions Fail After the Deal Closes</title>
-    <link>https://elixirconsultinggroup.com/blog/post-acquisition-100-days-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/post-acquisition-100-days-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/post-acquisition-100-days-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/post-acquisition-100-days-2026/</guid>
     <description>M&amp;A deal volume hit a record high in Q2 2026, but 70 to 90 percent of acquisitions still fail to deliver value. Here is...</description>
     <category>Finance &amp; Exit</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -116,8 +116,8 @@
   </item>
   <item>
     <title>The Middle Manager Advantage: Why Your Best 2026 Leadership Investment Isn&apos;t at the Top</title>
-    <link>https://elixirconsultinggroup.com/blog/middle-manager-advantage-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/middle-manager-advantage-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/middle-manager-advantage-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/middle-manager-advantage-2026/</guid>
     <description>2026 leadership research points to the same conclusion: middle managers, not executives, are becoming the deciding factor in whether a growing business...</description>
     <category>Leadership</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -125,8 +125,8 @@
   </item>
   <item>
     <title>The Data Center Boom Is Coming to Pittsburgh: What It Means for Your Business Before It Arrives</title>
-    <link>https://elixirconsultinggroup.com/blog/pittsburgh-data-center-boom-business-impact-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/pittsburgh-data-center-boom-business-impact-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/pittsburgh-data-center-boom-business-impact-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/pittsburgh-data-center-boom-business-impact-2026/</guid>
     <description>At least 12 data center sites are planned across Southwestern Pennsylvania, backed by more than $90 billion in announced AI and energy investment. Here...</description>
     <category>AI &amp; Technology</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -134,8 +134,8 @@
   </item>
   <item>
     <title>The Invisible Sales Cycle: Winning Deals Decided Before You Hear From the Buyer</title>
-    <link>https://elixirconsultinggroup.com/blog/invisible-sales-cycle-b2b-buying-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/invisible-sales-cycle-b2b-buying-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/invisible-sales-cycle-b2b-buying-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/invisible-sales-cycle-b2b-buying-2026/</guid>
     <description>Forrester found 94% of B2B buyers used AI during their last purchase, and 61% of the buying journey now finishes before a vendor is ever contacted. Here...</description>
     <category>Sales &amp; Revenue</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -143,8 +143,8 @@
   </item>
   <item>
     <title>The Agentic AI Shift: How Small Businesses Are Winning Big in 2026</title>
-    <link>https://elixirconsultinggroup.com/blog/agentic-ai-small-business-operations-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/agentic-ai-small-business-operations-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/agentic-ai-small-business-operations-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/agentic-ai-small-business-operations-2026/</guid>
     <description>67% of small businesses using AI automation saw 20%+ revenue growth last year. Agentic AI delivers 171% average ROI. Here is how small businesses are...</description>
     <category>AI &amp; Technology</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -152,8 +152,8 @@
   </item>
   <item>
     <title>The Leadership Gap: Why AI Investments Fail Without the Right Leadership Foundation</title>
-    <link>https://elixirconsultinggroup.com/blog/leadership-gap-ai-business-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/leadership-gap-ai-business-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/leadership-gap-ai-business-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/leadership-gap-ai-business-2026/</guid>
     <description>89% of small businesses now use AI, but most are not seeing real ROI. A 2026 McKinsey analysis shows the problem is leadership, not technology. Here is...</description>
     <category>AI &amp; Technology</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -161,8 +161,8 @@
   </item>
   <item>
     <title>Positioning Your Business for Pittsburgh&apos;s 2026 Economic Boom</title>
-    <link>https://elixirconsultinggroup.com/blog/pittsburgh-2026-economic-boom-founders-guide/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/pittsburgh-2026-economic-boom-founders-guide/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/pittsburgh-2026-economic-boom-founders-guide/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/pittsburgh-2026-economic-boom-founders-guide/</guid>
     <description>Pittsburgh&apos;s economic development strategy is reshaping the region with billions in investment across AI, robotics, life sciences, and energy. Here is...</description>
     <category>Pittsburgh &amp; Local</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -170,8 +170,8 @@
   </item>
   <item>
     <title>From Hustle to System: How High-Growth Small Businesses Are Building Predictable Revenue in 2026</title>
-    <link>https://elixirconsultinggroup.com/blog/revenue-systems-small-business-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/revenue-systems-small-business-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/revenue-systems-small-business-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/revenue-systems-small-business-2026/</guid>
     <description>The most profitable small businesses in 2026 stopped relying on hustle and built revenue systems instead. Here is exactly how they did it and what you...</description>
     <category>Sales &amp; Revenue</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -179,8 +179,8 @@
   </item>
   <item>
     <title>Why Your Brand Voice Matters More Than Ever in an AI-Generated World</title>
-    <link>https://elixirconsultinggroup.com/blog/brand-voice-ai-content-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/brand-voice-ai-content-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/brand-voice-ai-content-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/brand-voice-ai-content-2026/</guid>
     <description>AI-generated content is everywhere in 2026. The businesses pulling ahead are the ones with a brand voice that cannot be replicated by a prompt. Here is...</description>
     <category>AI &amp; Technology</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -188,8 +188,8 @@
   </item>
   <item>
     <title>The Integration Advantage: Why Small Businesses With Five AI Tools Are Still Falling Behind</title>
-    <link>https://elixirconsultinggroup.com/blog/ai-tool-integration-strategy-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/ai-tool-integration-strategy-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/ai-tool-integration-strategy-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/ai-tool-integration-strategy-2026/</guid>
     <description>The average small business now runs five AI tools. Most are still not saving time. The problem is not the tools — it is the lack of integration. Here is...</description>
     <category>AI &amp; Technology</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -197,8 +197,8 @@
   </item>
   <item>
     <title>The Mid-Year Business Reset: How to Finish 2026 Stronger Than You Started</title>
-    <link>https://elixirconsultinggroup.com/blog/mid-year-business-reset-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/mid-year-business-reset-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/mid-year-business-reset-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/mid-year-business-reset-2026/</guid>
     <description>July 1 is the most underused strategic checkpoint in business. Here is the mid-year reset process high-performing owners use to course-correct and...</description>
     <category>Insights</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -206,8 +206,8 @@
   </item>
   <item>
     <title>The 2026 M&amp;A Window: Why Business Owners Have Never Had a Better Environment to Sell</title>
-    <link>https://elixirconsultinggroup.com/blog/2026-ma-window-best-time-sell-business/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/2026-ma-window-best-time-sell-business/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/2026-ma-window-best-time-sell-business/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/2026-ma-window-best-time-sell-business/</guid>
     <description>M&amp;A market confidence is at a six-year high, cross-border deal volume rose 47% year over year, and 79% of business owners are considering selling. Here...</description>
     <category>Finance &amp; Exit</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -215,8 +215,8 @@
   </item>
   <item>
     <title>805,000 People Came to Pittsburgh. Did Your Business Capture Any of That Value?</title>
-    <link>https://elixirconsultinggroup.com/blog/pittsburgh-nfl-draft-record-2026-business-lessons/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/pittsburgh-nfl-draft-record-2026-business-lessons/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/pittsburgh-nfl-draft-record-2026-business-lessons/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/pittsburgh-nfl-draft-record-2026-business-lessons/</guid>
     <description>Pittsburgh just broke the all-time NFL Draft attendance record with 805,000 visitors and up to $200M in economic impact. Here is what the event revealed...</description>
     <category>Pittsburgh &amp; Local</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -224,8 +224,8 @@
   </item>
   <item>
     <title>Why Outcome-Based Consulting Is Replacing Retainer Models for Small Business Owners in 2026</title>
-    <link>https://elixirconsultinggroup.com/blog/outcome-based-consulting-vs-retainer-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/outcome-based-consulting-vs-retainer-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/outcome-based-consulting-vs-retainer-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/outcome-based-consulting-vs-retainer-2026/</guid>
     <description>Business owners are abandoning hourly retainers and demanding results-tied consulting engagements. Here is what the shift to outcome-based consulting...</description>
     <category>Insights</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -233,8 +233,8 @@
   </item>
   <item>
     <title>Pittsburgh&apos;s $1.7 Billion Startup Surge: What It Signals for Business Owners in 2026</title>
-    <link>https://elixirconsultinggroup.com/blog/pittsburgh-startup-surge-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/pittsburgh-startup-surge-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/pittsburgh-startup-surge-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/pittsburgh-startup-surge-2026/</guid>
     <description>Pittsburgh startups raised $1.7 billion in Q1 2026, led by Skild AI&apos;s $1.4B robotics round. Here is what this regional investment surge means for...</description>
     <category>Pittsburgh &amp; Local</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -242,8 +242,8 @@
   </item>
   <item>
     <title>The 2026 Acquisition Playbook: How Smart Business Owners Are Buying Growth Instead of Building It</title>
-    <link>https://elixirconsultinggroup.com/blog/business-acquisition-playbook-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/business-acquisition-playbook-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/business-acquisition-playbook-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/business-acquisition-playbook-2026/</guid>
     <description>The M&amp;A market is at a six-year high in 2026. Interest rates have fallen, sellers are motivated, and valuations have stabilized. Here is how business...</description>
     <category>Finance &amp; Exit</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -251,8 +251,8 @@
   </item>
   <item>
     <title>The RevOps Revolution: How Small Businesses Are Building Revenue Systems That Scale in 2026</title>
-    <link>https://elixirconsultinggroup.com/blog/revenue-operations-framework-small-business-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/revenue-operations-framework-small-business-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/revenue-operations-framework-small-business-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/revenue-operations-framework-small-business-2026/</guid>
     <description>Revenue Operations is no longer just for enterprise companies. In 2026, small businesses that align their sales, marketing, and customer success into...</description>
     <category>Operations</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -260,8 +260,8 @@
   </item>
   <item>
     <title>Agentic AI Is Here: What It Means for Your Business in 2026</title>
-    <link>https://elixirconsultinggroup.com/blog/agentic-ai-business-operations-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/agentic-ai-business-operations-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/agentic-ai-business-operations-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/agentic-ai-business-operations-2026/</guid>
     <description>AI agents are no longer experimental. In 2026, businesses deploying agentic AI systems are averaging 171% ROI. Here is what every business owner needs...</description>
     <category>AI &amp; Technology</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -269,8 +269,8 @@
   </item>
   <item>
     <title>Pittsburgh&apos;s NFL Draft Moment: What $150 Million in Economic Impact Means for Local Business Owners</title>
-    <link>https://elixirconsultinggroup.com/blog/pittsburgh-nfl-draft-2026-business-impact/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/pittsburgh-nfl-draft-2026-business-impact/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/pittsburgh-nfl-draft-2026-business-impact/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/pittsburgh-nfl-draft-2026-business-impact/</guid>
     <description>The 2026 NFL Draft just put Pittsburgh in front of the entire country. Dr. Connor Robertson breaks down what that exposure means for local business...</description>
     <category>Pittsburgh &amp; Local</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -278,8 +278,8 @@
   </item>
   <item>
     <title>What Every Business Owner Should Know About Buying or Selling a Business in 2026</title>
-    <link>https://elixirconsultinggroup.com/blog/what-every-business-owner-should-know-about-buying-or-selling-in-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/what-every-business-owner-should-know-about-buying-or-selling-in-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/what-every-business-owner-should-know-about-buying-or-selling-in-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/what-every-business-owner-should-know-about-buying-or-selling-in-2026/</guid>
     <description>The M&amp;A market is shifting in 2026. Whether you&apos;re looking to acquire a competitor or position your business for sale, here&apos;s what you need to know...</description>
     <category>Finance &amp; Exit</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -287,8 +287,8 @@
   </item>
   <item>
     <title>Why Every Business Owner Needs an AI Strategy in 2026</title>
-    <link>https://elixirconsultinggroup.com/blog/why-every-business-owner-needs-ai-strategy-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/why-every-business-owner-needs-ai-strategy-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/why-every-business-owner-needs-ai-strategy-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/why-every-business-owner-needs-ai-strategy-2026/</guid>
     <description>Dr. Connor Robertson explains why business owners who do not have an AI strategy in 2026 are leaving money on the table and falling behind competitors...</description>
     <category>AI &amp; Technology</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -296,8 +296,8 @@
   </item>
   <item>
     <title>Elixir Consulting Group: Our Approach to Business Transformation</title>
-    <link>https://elixirconsultinggroup.com/blog/elixir-consulting-group-our-approach-to-business-transformation/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/elixir-consulting-group-our-approach-to-business-transformation/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/elixir-consulting-group-our-approach-to-business-transformation/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/elixir-consulting-group-our-approach-to-business-transformation/</guid>
     <description>Business transformation sounds like a big, complicated undertaking. But at Elixir Consulting Group, transformation is about making practical...</description>
     <category>Strategy &amp; Growth</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -305,8 +305,8 @@
   </item>
   <item>
     <title>Pittsburgh Small Business Growth Trends to Watch in 2026</title>
-    <link>https://elixirconsultinggroup.com/blog/pittsburgh-small-business-growth-trends-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/pittsburgh-small-business-growth-trends-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/pittsburgh-small-business-growth-trends-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/pittsburgh-small-business-growth-trends-2026/</guid>
     <description>Dr. Connor Robertson breaks down the key growth trends shaping Pittsburgh small businesses in 2026, from AI adoption to the reshoring boom and talent...</description>
     <category>Strategy &amp; Growth</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -314,8 +314,8 @@
   </item>
   <item>
     <title>How to Scale Your Business From $500K to $5M in Revenue</title>
-    <link>https://elixirconsultinggroup.com/blog/how-to-scale-business-500k-to-5m-revenue/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/how-to-scale-business-500k-to-5m-revenue/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/how-to-scale-business-500k-to-5m-revenue/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/how-to-scale-business-500k-to-5m-revenue/</guid>
     <description>Scaling from $500K to $5M is the most dangerous growth phase for any business. Here is the playbook for making that leap without breaking what already...</description>
     <category>Sales &amp; Revenue</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -323,8 +323,8 @@
   </item>
   <item>
     <title>How to Measure Business Performance Beyond Revenue</title>
-    <link>https://elixirconsultinggroup.com/blog/how-to-measure-business-performance-beyond-revenue/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/how-to-measure-business-performance-beyond-revenue/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/how-to-measure-business-performance-beyond-revenue/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/how-to-measure-business-performance-beyond-revenue/</guid>
     <description>Revenue is important, but it tells you only part of the story. A business generating strong revenue can still be […]</description>
     <category>Sales &amp; Revenue</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -332,8 +332,8 @@
   </item>
   <item>
     <title>AI Implementation for Small Business: A Step-by-Step Guide</title>
-    <link>https://elixirconsultinggroup.com/blog/ai-implementation-small-business-step-by-step-guide/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/ai-implementation-small-business-step-by-step-guide/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/ai-implementation-small-business-step-by-step-guide/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/ai-implementation-small-business-step-by-step-guide/</guid>
     <description>AI adoption does not have to be overwhelming. This step-by-step guide shows small business owners how to implement AI tools that deliver real ROI...</description>
     <category>AI &amp; Technology</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -341,8 +341,8 @@
   </item>
   <item>
     <title>Why Hiring a Business Consultant Pays for Itself in 90 Days</title>
-    <link>https://elixirconsultinggroup.com/blog/why-hiring-a-business-consultant-pays-for-itself-in-90-days/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/why-hiring-a-business-consultant-pays-for-itself-in-90-days/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/why-hiring-a-business-consultant-pays-for-itself-in-90-days/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/why-hiring-a-business-consultant-pays-for-itself-in-90-days/</guid>
     <description>The Real Cost of Not Having a Consultant Most business owners think of consulting as an expense. But the real […]</description>
     <category>Leadership</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -350,8 +350,8 @@
   </item>
   <item>
     <title>The Small Business Guide to Operational Efficiency in 2026</title>
-    <link>https://elixirconsultinggroup.com/blog/the-small-business-guide-to-operational-efficiency-in-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/the-small-business-guide-to-operational-efficiency-in-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/the-small-business-guide-to-operational-efficiency-in-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/the-small-business-guide-to-operational-efficiency-in-2026/</guid>
     <description>Why Operational Efficiency Is the Defining Challenge of 2026 Every small business owner knows the feeling: working harder than ever, […]</description>
     <category>Operations</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -359,8 +359,8 @@
   </item>
   <item>
     <title>How AI Consulting Is Helping Pittsburgh Businesses Grow 3x Faster</title>
-    <link>https://elixirconsultinggroup.com/blog/how-ai-consulting-is-helping-pittsburgh-businesses-grow-3x-faster/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/how-ai-consulting-is-helping-pittsburgh-businesses-grow-3x-faster/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/how-ai-consulting-is-helping-pittsburgh-businesses-grow-3x-faster/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/how-ai-consulting-is-helping-pittsburgh-businesses-grow-3x-faster/</guid>
     <description>The AI Revolution Is Here, and Pittsburgh Is Leading the Charge Artificial intelligence is no longer a futuristic concept reserved […]</description>
     <category>AI &amp; Technology</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -368,8 +368,8 @@
   </item>
   <item>
     <title>Digital Transformation for Traditional Businesses: A Practical Guide</title>
-    <link>https://elixirconsultinggroup.com/blog/digital-transformation-for-traditional-businesses-a-practical-guide/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/digital-transformation-for-traditional-businesses-a-practical-guide/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/digital-transformation-for-traditional-businesses-a-practical-guide/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/digital-transformation-for-traditional-businesses-a-practical-guide/</guid>
     <description>Why Digital Transformation Matters for Traditional Businesses Digital transformation has become one of the most talked-about concepts in business, but […]</description>
     <category>AI &amp; Technology</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -377,8 +377,8 @@
   </item>
   <item>
     <title>5 Signs Your Business Needs a Strategy Overhaul</title>
-    <link>https://elixirconsultinggroup.com/blog/5-signs-your-business-needs-a-strategy-overhaul/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/5-signs-your-business-needs-a-strategy-overhaul/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/5-signs-your-business-needs-a-strategy-overhaul/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/5-signs-your-business-needs-a-strategy-overhaul/</guid>
     <description>Is Your Business Sending You Warning Signals? Every business goes through cycles of growth, stability, and stagnation. The challenge for […]</description>
     <category>Strategy &amp; Growth</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -386,8 +386,8 @@
   </item>
   <item>
     <title>The Business Owner Guide to Effective Delegation</title>
-    <link>https://elixirconsultinggroup.com/blog/the-business-owner-guide-to-effective-delegation/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/the-business-owner-guide-to-effective-delegation/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/the-business-owner-guide-to-effective-delegation/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/the-business-owner-guide-to-effective-delegation/</guid>
     <description>Delegation is one of the most important skills a business owner can develop, yet it is one of the most […]</description>
     <category>Leadership</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -395,8 +395,8 @@
   </item>
   <item>
     <title>How to Build a Leadership Team That Actually Drives Growth</title>
-    <link>https://elixirconsultinggroup.com/blog/how-to-build-leadership-team-that-drives-growth/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/how-to-build-leadership-team-that-drives-growth/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/how-to-build-leadership-team-that-drives-growth/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/how-to-build-leadership-team-that-drives-growth/</guid>
     <description>Dr. Connor Robertson shares the framework Elixir Consulting Group uses to help business owners build high-performing leadership teams that drive...</description>
     <category>Leadership</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -404,8 +404,8 @@
   </item>
   <item>
     <title>The True Cost of Not Having a Business Strategy</title>
-    <link>https://elixirconsultinggroup.com/blog/true-cost-of-not-having-business-strategy/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/true-cost-of-not-having-business-strategy/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/true-cost-of-not-having-business-strategy/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/true-cost-of-not-having-business-strategy/</guid>
     <description>Operating without a clear business strategy costs more than most owners realize. Here is how to calculate what strategic drift is actually costing your...</description>
     <category>Strategy &amp; Growth</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -413,8 +413,8 @@
   </item>
   <item>
     <title>How to Build a Team That Executes Without Micromanagement</title>
-    <link>https://elixirconsultinggroup.com/blog/how-to-build-a-team-that-executes-without-micromanagement/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/how-to-build-a-team-that-executes-without-micromanagement/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/how-to-build-a-team-that-executes-without-micromanagement/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/how-to-build-a-team-that-executes-without-micromanagement/</guid>
     <description>Micromanagement is a symptom, not a strategy. When a business owner feels the need to oversee every detail, it usually […]</description>
     <category>Leadership</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -422,8 +422,8 @@
   </item>
   <item>
     <title>Consulting vs. Coaching: What Your Business Actually Needs</title>
-    <link>https://elixirconsultinggroup.com/blog/consulting-vs-coaching-what-your-business-actually-needs/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/consulting-vs-coaching-what-your-business-actually-needs/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/consulting-vs-coaching-what-your-business-actually-needs/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/consulting-vs-coaching-what-your-business-actually-needs/</guid>
     <description>Dr. Connor Robertson explains the difference between business consulting and business coaching, and how to determine which approach will produce results...</description>
     <category>Leadership</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -431,8 +431,8 @@
   </item>
   <item>
     <title>How AI Is Transforming Small Business Operations in 2026</title>
-    <link>https://elixirconsultinggroup.com/blog/how-ai-is-transforming-small-business-operations-2026/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/how-ai-is-transforming-small-business-operations-2026/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/how-ai-is-transforming-small-business-operations-2026/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/how-ai-is-transforming-small-business-operations-2026/</guid>
     <description>AI is no longer just for enterprise companies. In 2026, small businesses are leveraging artificial intelligence to automate workflows, improve...</description>
     <category>AI &amp; Technology</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -440,8 +440,8 @@
   </item>
   <item>
     <title>How Pittsburgh Businesses Are Using AI to Outperform Competitors</title>
-    <link>https://elixirconsultinggroup.com/blog/pittsburgh-businesses-using-ai-outperform-competitors/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/pittsburgh-businesses-using-ai-outperform-competitors/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/pittsburgh-businesses-using-ai-outperform-competitors/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/pittsburgh-businesses-using-ai-outperform-competitors/</guid>
     <description>Pittsburgh has become a national leader in practical AI adoption for small and mid-sized businesses. Here is how local companies are gaining an edge...</description>
     <category>AI &amp; Technology</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -449,8 +449,8 @@
   </item>
   <item>
     <title>How to Improve Cash Flow Management for Small Businesses</title>
-    <link>https://elixirconsultinggroup.com/blog/how-to-improve-cash-flow-management-for-small-businesses/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/how-to-improve-cash-flow-management-for-small-businesses/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/how-to-improve-cash-flow-management-for-small-businesses/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/how-to-improve-cash-flow-management-for-small-businesses/</guid>
     <description>Cash flow is the lifeblood of every business. Even profitable companies can fail if they run out of cash. For […]</description>
     <category>Leadership</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>
@@ -458,8 +458,8 @@
   </item>
   <item>
     <title>The Entrepreneur&apos;s Guide to Operational Excellence</title>
-    <link>https://elixirconsultinggroup.com/blog/entrepreneurs-guide-to-operational-excellence/</link>
-    <guid isPermaLink="true">https://elixirconsultinggroup.com/blog/entrepreneurs-guide-to-operational-excellence/</guid>
+    <link>https://www.elixirconsultinggroup.com/blog/entrepreneurs-guide-to-operational-excellence/</link>
+    <guid isPermaLink="true">https://www.elixirconsultinggroup.com/blog/entrepreneurs-guide-to-operational-excellence/</guid>
     <description>Dr. Connor Robertson of Elixir Consulting Group shares the operational excellence framework that helps entrepreneurs build businesses that run...</description>
     <category>Operations</category>
     <dc:creator>Dr. Connor Robertson</dc:creator>

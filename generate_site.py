@@ -11,7 +11,7 @@ import html as htmllib
 from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 from datetime import datetime
 
-DOMAIN = "https://elixirconsultinggroup.com"
+DOMAIN = "https://www.elixirconsultinggroup.com"
 YEAR = "2026"
 DATE_NOW = "2026-08-15"
 ADDRESS = "429 Fourth Ave. Suite 300, Pittsburgh, PA 15219"
@@ -1883,7 +1883,7 @@ def make_page(title, description, path, body, schema="", canonical=None,
         article_meta = f"""<meta property="article:published_time" content="{published or DATE_NOW}">
 <meta property="article:modified_time" content="{modified or published or DATE_NOW}">
 <meta property="article:author" content="Dr. Connor Robertson">
-<meta property="article:publisher" content="https://elixirconsultinggroup.com">
+<meta property="article:publisher" content="https://www.elixirconsultinggroup.com">
 """
 
     faq_schema = make_faq_schema(faq) if faq else ""
@@ -2060,9 +2060,9 @@ def gen_homepage(all_posts=None):
   "@type": "Organization",
   "name": "Elixir Consulting Group",
   "description": "Business consulting firm specializing in operations, sales systems, AI consulting, and leadership development for business owners.",
-  "url": "https://elixirconsultinggroup.com",
-  "logo": "https://elixirconsultinggroup.com/images/og-image.png",
-  "image": "https://elixirconsultinggroup.com/images/og-image.png",
+  "url": "https://www.elixirconsultinggroup.com",
+  "logo": "https://www.elixirconsultinggroup.com/images/og-image.png",
+  "image": "https://www.elixirconsultinggroup.com/images/og-image.png",
   "telephone": "+1-412-387-7656",
   "email": "info@elixirconsultinggroup.com",
   "address": {
@@ -2391,7 +2391,7 @@ def gen_homepage(all_posts=None):
 
 def gen_about():
     schema = """<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Elixir Consulting Group","url":"https://elixirconsultinggroup.com","logo":"https://elixirconsultinggroup.com/images/og-image.png","image":"https://elixirconsultinggroup.com/images/og-image.png","telephone":"+1-412-387-7656","email":"info@elixirconsultinggroup.com","founder":{"@type":"Person","name":"Dr. Connor Robertson","url":"https://drconnorrobertson.com"},"address":{"@type":"PostalAddress","streetAddress":"429 Fourth Ave. Suite 300","addressLocality":"Pittsburgh","addressRegion":"PA","postalCode":"15219","addressCountry":"US"}}
+{"@context":"https://schema.org","@type":"Organization","name":"Elixir Consulting Group","url":"https://www.elixirconsultinggroup.com","logo":"https://www.elixirconsultinggroup.com/images/og-image.png","image":"https://www.elixirconsultinggroup.com/images/og-image.png","telephone":"+1-412-387-7656","email":"info@elixirconsultinggroup.com","founder":{"@type":"Person","name":"Dr. Connor Robertson","url":"https://drconnorrobertson.com"},"address":{"@type":"PostalAddress","streetAddress":"429 Fourth Ave. Suite 300","addressLocality":"Pittsburgh","addressRegion":"PA","postalCode":"15219","addressCountry":"US"}}
 </script>"""
 
     body = f"""
@@ -2800,7 +2800,7 @@ def gen_city_page(slug, city, state_abbr, services_focus, intro, geo_description
 {json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faq_schema_items}, indent=2)}
 </script>
 <script type="application/ld+json">
-{json.dumps({"@context": "https://schema.org", "@type": "Organization", "name": "Elixir Consulting Group", "description": f"Business consulting firm serving {city}, {state_abbr}. Specializing in operations, AI consulting, sales systems, and leadership development.", "url": f"https://elixirconsultinggroup.com/{slug}/", "logo": "https://elixirconsultinggroup.com/images/og-image.png", "image": "https://elixirconsultinggroup.com/images/og-image.png", "telephone": "+1-412-387-7656", "email": "info@elixirconsultinggroup.com", "address": {"@type": "PostalAddress", "streetAddress": "429 Fourth Ave. Suite 300", "addressLocality": "Pittsburgh", "addressRegion": "PA", "postalCode": "15219", "addressCountry": "US"}, "areaServed": {"@type": "City", "name": city}, "founder": {"@type": "Person", "name": "Dr. Connor Robertson", "url": "https://drconnorrobertson.com"}}, indent=2)}
+{json.dumps({"@context": "https://schema.org", "@type": "Organization", "name": "Elixir Consulting Group", "description": f"Business consulting firm serving {city}, {state_abbr}. Specializing in operations, AI consulting, sales systems, and leadership development.", "url": f"https://www.elixirconsultinggroup.com/{slug}/", "logo": "https://www.elixirconsultinggroup.com/images/og-image.png", "image": "https://www.elixirconsultinggroup.com/images/og-image.png", "telephone": "+1-412-387-7656", "email": "info@elixirconsultinggroup.com", "address": {"@type": "PostalAddress", "streetAddress": "429 Fourth Ave. Suite 300", "addressLocality": "Pittsburgh", "addressRegion": "PA", "postalCode": "15219", "addressCountry": "US"}, "areaServed": {"@type": "City", "name": city}, "founder": {"@type": "Person", "name": "Dr. Connor Robertson", "url": "https://drconnorrobertson.com"}}, indent=2)}
 </script>"""
 
     services_cards = ""
@@ -2923,8 +2923,8 @@ CONSULTING_SERVICES = [
 
 def _delocalize(html):
     """Rewrite absolute self-links to relative paths so links stay portable."""
-    return html.replace("https://elixirconsultinggroup.com/", "/").replace(
-        "https://elixirconsultinggroup.com", "/")
+    return html.replace("https://www.elixirconsultinggroup.com/", "/").replace(
+        "https://www.elixirconsultinggroup.com", "/")
 
 
 def parse_consulting_page(slug, html):

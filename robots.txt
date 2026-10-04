@@ -5,7 +5,7 @@ Disallow: /search?
 Disallow: /*?q=
 
 # Crawl the whole site; nothing here is private.
-Sitemap: https://elixirconsultinggroup.com/sitemap.xml
-Sitemap: https://elixirconsultinggroup.com/sitemap-pages.xml
-Sitemap: https://elixirconsultinggroup.com/sitemap-blog.xml
-Sitemap: https://elixirconsultinggroup.com/sitemap-locations.xml
+Sitemap: https://www.elixirconsultinggroup.com/sitemap.xml
+Sitemap: https://www.elixirconsultinggroup.com/sitemap-pages.xml
+Sitemap: https://www.elixirconsultinggroup.com/sitemap-blog.xml
+Sitemap: https://www.elixirconsultinggroup.com/sitemap-locations.xml
