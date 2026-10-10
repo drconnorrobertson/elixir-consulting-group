@@ -1,0 +1,34 @@
+<style>
+#consulting-roi{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px;padding:24px;margin:24px 0}#consulting-roi label{display:flex;flex-direction:column;gap:8px;font-weight:600}#consulting-roi input{width:100%;min-height:44px;padding:10px;border:1px solid #64748b;border-radius:6px;color:#172033;background:white;box-sizing:border-box}#consulting-roi input:focus{outline:3px solid #b58d25;outline-offset:2px}#consulting-roi button{min-height:44px}#roi-result{padding:20px;border-left:4px solid #b58d25;background:#f1f5f9;color:#172033;font-weight:600}@media print{#roi-print,#roi-export{display:none}}
+</style>
+<p>Consulting ROI should compare the incremental contribution and cash savings attributable to an engagement with all of its costs over the same period. An increase in revenue is not the same as an increase in profit. Use the workbench below to pressure-test a proposal before treating its projected return as a reason to buy.</p>
+<h2>Calculate a scenario for your consulting proposal</h2>
+<p>The initial values are a fictional worked example, not Elixir pricing or a client result. All values are USD. Entries remain in this page; the calculator does not save them or send them to us. Export before leaving.</p>
+<form id="consulting-roi" class="card">
+<label>Comparison period (whole months, 1–120)<input name="months" type="number" min="1" max="120" step="1" value="12" required></label>
+<label>Total consulting fees in the period ($)<input name="fee" type="number" min="0" step="any" value="12000" required></label>
+<label>One-time implementation cost ($)<input name="implementation" type="number" min="0" step="any" value="3000" required></label>
+<label>Additional recurring delivery or software cost per month ($)<input name="monthlyCost" type="number" min="0" step="any" value="250" required></label>
+<label>Incremental revenue per month ($)<input name="monthlyRevenue" type="number" min="0" step="any" value="5000" required></label>
+<label>Contribution margin on that revenue (%)<input name="margin" type="number" min="0" max="100" step="any" value="40" required></label>
+<label>Separate realized cash savings per month ($)<input name="monthlySavings" type="number" min="0" step="any" value="500" required></label>
+<p id="roi-result" role="status" aria-live="polite">The example models $30,000 of contribution and cash savings against $18,000 of cost over 12 months: $12,000 net modeled benefit, 66.7% ROI, and 6.7 months simple payback from benefit commencement.</p>
+<button type="submit" class="btn btn-primary">Calculate scenario</button> <button type="button" id="roi-export" class="btn btn-outline">Export assumptions</button> <button type="button" id="roi-print" class="btn btn-outline">Print</button>
+</form>
+<noscript><p>Use the formulas and worked example below without JavaScript.</p></noscript>
+<h2>Use contribution, not gross revenue</h2>
+<p>Contribution is incremental revenue minus the variable costs needed to deliver it. For example, $5,000 of additional monthly revenue at an assumed 40% contribution margin contributes $2,000 before the engagement costs shown separately. Do not subtract those costs in the margin and then count them a second time in the workbench.</p>
+<p>Cash savings should be separate reductions in actual spending. A reduction in staff hours is valuable, but it is not automatically a payroll reduction. Track reclaimed capacity separately unless you can explain how it creates incremental contribution or removes a real expense.</p>
+<h2>The formulas and the fictional example</h2>
+<ul><li>Total cost = consulting fees + implementation cost + monthly recurring cost × months.</li><li>Modeled benefit = (monthly incremental revenue × contribution margin + monthly cash savings) × months.</li><li>Net modeled benefit = modeled benefit − total cost.</li><li>ROI = net modeled benefit ÷ total cost × 100. ROI is undefined when total cost is zero.</li><li>Simple payback = one-time fees and implementation cost ÷ monthly benefit after recurring cost. Payback is not reached when that monthly amount is zero or negative.</li></ul>
+<p>For the initial example: $12,000 + $3,000 + ($250 × 12) = $18,000 total cost. (($5,000 × 40%) + $500) × 12 = $30,000 modeled benefit. The $12,000 difference is 66.7% of cost. The monthly benefit after recurring cost is $2,250, so $15,000 ÷ $2,250 gives roughly 6.7 months simple payback.</p>
+<h2>Test a downside case before accepting the base case</h2>
+<p>Lower the revenue assumption, reduce the contribution margin, and remove savings that lack an implementation plan. The calculator assumes benefits begin immediately and continue steadily. It does not model a ramp, delays, taxes, discounting, financing, or a terminal business value. For a delayed rollout, build a month-by-month schedule rather than interpreting this simple payback as a calendar commitment.</p>
+<p>Keep the assumptions you originally approved. After launch, compare actual results with that version and record what changed. Label each benefit as observed, estimated, or unproven. Improvement caused by seasonality, a price change, or an unrelated campaign should not automatically be credited to the consultant.</p>
+<h2>Define who implements the work</h2>
+<p>A proposal should identify the operating baseline, scope, deliverables, internal owner, implementation costs, measurement source, and review date. Agree on what happens when a dependency is late. If the engagement only recommends changes, identify the team and budget responsible for executing them.</p>
+<p><a href="/services/operations/">Explore operations consulting</a>, read about <a href="/blog/when-to-hire-a-fractional-coo-pittsburgh-owner-guide/">when a fractional COO may fit</a>, or <a href="/contact/">discuss a measurable consulting scope</a>.</p>
+<script defer src="/consulting-roi.js"></script>
+<h2>Questions about consulting ROI</h2>
+<h3>How do you calculate consulting ROI?</h3><p>Subtract the engagement’s total cost from incremental contribution and separate cash savings over the same period, then divide the net modeled benefit by total cost. State every assumption.</p>
+<h3>Is additional revenue the same as consulting profit?</h3><p>No. Subtract the variable costs needed to deliver that revenue. Track owner capacity separately unless it produces documented contribution or cash savings.</p>
