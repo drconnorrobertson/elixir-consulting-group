@@ -190,5 +190,6 @@
       "statusCode": 301
     }
   ],
-  "buildCommand": "node scripts/optimize-media.mjs ."
+  "buildCommand": "node scripts/optimize-media.mjs .",
+  "outputDirectory": "."
 }
