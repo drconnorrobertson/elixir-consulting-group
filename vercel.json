@@ -189,5 +189,6 @@
       "destination": "/about/",
       "statusCode": 301
     }
-  ]
+  ],
+  "buildCommand": "node scripts/optimize-media.mjs ."
 }
