@@ -4167,6 +4167,19 @@ def load_all_posts():
                 parsed["description"] = parsed["description"] or existing["description"]
             posts[slug] = parsed
 
+    # The authored ROI workbench includes one trusted local enhancement script.
+    # Keep its source outside HTML ingestion so later rebuilds retain the tool.
+    roi = posts.get('roi-of-hiring-business-consultant-real-numbers')
+    roi_source = os.path.join(SITE_DIR, 'data', 'consulting-roi-article.html')
+    if roi and os.path.isfile(roi_source):
+        roi['content'] = open(roi_source, encoding='utf-8').read()
+        roi['title'] = 'Business Consulting ROI Calculator & Proposal Worksheet'
+        roi['description'] = 'Calculate consulting ROI using contribution margin, cash savings, fees, and implementation costs. Export your assumptions and compare a downside case.'
+        roi['modified'] = '2026-10-09'
+        roi['custom_faqs'] = [
+            ['How do you calculate consulting ROI?', 'Subtract the engagement’s total cost from incremental contribution and separate cash savings over the same period, then divide the net modeled benefit by total cost. State every assumption.'],
+            ['Is additional revenue the same as consulting profit?', 'No. Subtract the variable costs needed to deliver that revenue. Track owner capacity separately unless it produces documented contribution or cash savings.'],
+        ]
     repair_body_links(posts)
 
     # Hand-written FAQs only exist in the source markup on the first pass, so
