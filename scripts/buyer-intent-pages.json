@@ -1,0 +1,14 @@
+{
+  "index.html": {
+    "title": "Business Operations Consulting Pittsburgh | Elixir",
+    "description": "Compare Elixir Consulting Group’s operations, systems and AI consulting. Review the process and discuss a defined business problem before choosing support.",
+    "heading": "Choose consulting around a defined operating problem",
+    "body": "<p>Identify the process that is slowing your business, the person responsible for it, and how you will recognize an improvement. Compare <a href=\"/services/operations/\">operations consulting</a>, <a href=\"/services/sales-strategy/\">sales strategy</a> and <a href=\"/services/ai-consulting/\">AI consulting</a> against that specific need.</p><p>Review <a href=\"/process/\">the consulting process</a> and bring the current workflow, baseline measures, decision authority and implementation capacity to <a href=\"/contact/\">a consulting discussion</a>. Agree scope and responsibilities before starting a project.</p>"
+  },
+  "services/index.html": {
+    "title": "Operations, Systems & AI Consulting | Elixir",
+    "description": "Explore Elixir’s business consulting services. Compare project fit, implementation responsibilities and the process before discussing your company’s needs.",
+    "heading": "Prepare a useful consulting brief",
+    "body": "<p>Bring one business problem, the current process, its owner and the evidence of its cost. Ask which work belongs in discovery, which deliverables are included and who will implement the recommendations.</p><p>Use <a href=\"/process/\">our process overview</a> to prepare your questions and <a href=\"/contact/\">discuss the scope of a potential engagement</a>. An initial conversation should establish fit rather than assume every business needs the same program.</p>"
+  }
+}
