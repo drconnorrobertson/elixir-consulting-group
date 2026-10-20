@@ -548,6 +548,7 @@ h1 { letter-spacing: -.035em; } h2 { letter-spacing: -.025em; } .card { border: 
 <a href="tel:+14123877656"><span class="ic">&#9742;</span> (412) 387-7656</a>
 <a href="mailto:info@elixirconsultinggroup.com"><span class="ic">&#9993;</span> Email Us</a>
 </div>
+<p>Your details stay in this page until you choose to compose an email. The button opens your email app; review and send the message there to request a consult.</p>
 <form id="consult-form" action="mailto:info@elixirconsultinggroup.com" method="POST" enctype="text/plain" style="margin-top:8px">
 <div class="form-group"><label for="cf-name">Full Name</label><input id="cf-name" type="text" name="name" required autocomplete="name" placeholder="Your full name"></div>
 <div class="form-group"><label for="cf-email">Email</label><input id="cf-email" type="email" name="email" required autocomplete="email" placeholder="your@email.com"></div>
@@ -565,7 +566,7 @@ h1 { letter-spacing: -.035em; } h2 { letter-spacing: -.025em; } .card { border: 
 </select>
 </div>
 <div class="form-group"><label for="cf-message">Message</label><textarea id="cf-message" name="message" placeholder="Tell us about your business and what you are looking to improve..."></textarea></div>
-<button type="submit" class="btn btn-primary" style="width:100%">Request a Consult</button>
+<button type="submit" class="btn btn-primary" style="width:100%">Compose Consult Email</button>
 <p id="cf-status" role="status" aria-live="polite" style="margin-top:14px;font-size:.9rem;color:#6C757D">
 Prefer to skip the form? Call <a href="tel:+14123877656">(412) 387-7656</a> or email <a href="mailto:info@elixirconsultinggroup.com">info@elixirconsultinggroup.com</a>.
 </p>
@@ -592,8 +593,7 @@ var lines=[
 'Service area: '+(get('cf-service')||'not specified'),
 '',
 get('cf-message')||'(no message)'
-].join('
-');
+].join('\n');
 var href='mailto:info@elixirconsultinggroup.com'
   +'?subject='+encodeURIComponent('Consult request from '+name)
   +'&body='+encodeURIComponent(lines);
@@ -623,7 +623,7 @@ window.location.href=href;
 </div>
 <div style="background:#002E5B;border-radius:12px;padding:32px;margin-top:16px;color:#FFFFFF">
 <h3 style="color:#C9A84C;margin-bottom:12px">What to Expect</h3>
-<p style="color:rgba(255,255,255,.85);font-size:.95rem">After you submit the form, we will reach out within one business day to schedule your consult. During the call, we will discuss your business, identify priorities, and determine if there is a fit for an engagement.</p>
+<p style="color:rgba(255,255,255,.85);font-size:.95rem">After you send your email, our team can reply to discuss scheduling your consult. During the call, we will discuss your business, identify priorities, and determine if there is a fit for an engagement.</p>
 </div>
 </div>
 </div>
