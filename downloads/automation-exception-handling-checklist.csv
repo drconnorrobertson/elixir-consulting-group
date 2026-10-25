@@ -1,0 +1,7 @@
+Field,Instructions,Your entry,Owner,Due date,Status / evidence
+Trigger and input,Define what starts the workflow and required data.,,,,
+Validation,"Check permissions, required fields, and acceptable formats.",,,,
+Failure categories,Separate temporary failures from invalid input or business exceptions.,,,,
+Human owner,Assign monitoring and backup coverage.,,,,
+Recovery action,"Define retry, correction, manual processing, or cancellation.",,,,
+Audit trail,"Record status, attempts, decisions, and final outcome.",,,,
