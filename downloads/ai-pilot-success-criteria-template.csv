@@ -1,0 +1,7 @@
+Field,Instructions,Your entry,Owner,Due date,Status / evidence
+Bounded task,"Specify the input, output, user, and workflow boundary.",,,,
+Baseline,"Measure current completion time, error rate, and review effort.",,,,
+Test cases,"Include ordinary, difficult, incomplete, and prohibited inputs.",,,,
+Acceptance criteria,Define quality requirements and human approval points.,,,,
+Data controls,"Document approved information, access, retention, and vendor review.",,,,
+Rollout decision,"Choose expand, revise, or stop using recorded evidence.",,,,
