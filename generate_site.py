@@ -502,7 +502,7 @@ FAQ_ITEMS = [
     ("Do you work with businesses outside of Pittsburgh?", "Yes. While we are proudly based in Pittsburgh, PA, we work with clients remotely across the United States. Our virtual consulting process is structured to be just as effective as in-person work."),
     ("How long does a typical engagement last?", "Most engagements run between 90 days and 6 months depending on the scope. Some clients continue with ongoing advisory support after the initial implementation phase is complete."),
     ("What industries do you specialize in?", "We work across industries including professional services, construction, healthcare, manufacturing, technology, real estate, and retail. Our frameworks are designed to be industry-agnostic because the core operational challenges tend to be universal."),
-    ("How much does it cost to work with Elixir Consulting Group?", "Pricing depends on the scope of the engagement and the size of your business. We offer both project-based and retainer-based arrangements. The first step is a consult where we determine if there is a fit before discussing pricing."),
+    ("How much does it cost to work with Elixir Consulting Group?", "Elixir consulting starts at $5,000 per month. Final pricing depends on the scope of the engagement and the size of your business. We offer both project-based and retainer-based arrangements. The first step is a consult where we determine if there is a fit before confirming the scope and final fee."),
     ("Can you help with AI and technology adoption?", "Yes. We help businesses evaluate and adopt AI tools and digital systems that improve efficiency. This includes AI-powered automation, CRM implementation, workflow digitization, and helping teams integrate technology without disrupting operations."),
     ("What results can I expect?", "Clients typically see improved operational consistency, better sales follow-through, clearer accountability across their teams, and reduced stress for the owner. Specific outcomes depend on where your business is starting from and which systems we install."),
     ("Do you replace our existing team or processes?", "No. We work with your existing team and build on what is already working. Our goal is to strengthen your operations, not replace your people. We help teams become more effective by giving them clearer processes and better cadence."),
@@ -1794,7 +1794,7 @@ def make_cta():
 <div class="container">
 <span class="eyebrow">Ready to Get Started?</span>
 <h2>Build the Structure Your Business Needs</h2>
-<p>The first step is a consult to understand your business and determine if there is a fit.</p>
+<p>Elixir consulting starts at $5,000 per month, with final pricing based on scope. The first step is a consult to understand your business and determine if there is a fit.</p>
 <a href="/contact/" class="btn btn-gold">Book a Consult</a>
 </div>
 </section>"""
@@ -3017,7 +3017,7 @@ def consulting_faqs(page):
         (f"What consulting services are available to {city} businesses?",
          "Business strategy, operations consulting, AI and digital transformation, sales strategy, and leadership development. Most engagements combine two or three of these because operational problems rarely stay in one lane."),
         (f"How much does business consulting cost in {city}?",
-         "Pricing depends on the scope of the engagement and the size of your business. We offer both project-based and retainer arrangements. The first step is a consult where we determine whether there is a fit before discussing pricing."),
+         "Elixir consulting starts at $5,000 per month. Final pricing depends on the scope of the engagement and the size of your business. We offer both project-based and retainer arrangements. The first step is a consult where we determine whether there is a fit before confirming the scope and final fee."),
         (f"How long does a typical {city} engagement last?",
          "Most engagements run between 90 days and six months depending on scope. Many clients continue with monthly advisory support once the initial systems are installed."),
         (f"How do we get started?",
@@ -3269,7 +3269,7 @@ def industry_faqs(ind):
         ("How do you measure whether it worked?",
          "We set baseline metrics at the start and review them weekly. The specific measures depend on the engagement, but they are always things your team can see and influence, not abstractions that only appear in a quarterly report."),
         (f"How much does consulting for a {name.lower()} business cost?",
-         f"Pricing depends on scope and the size of your business. We offer both project-based and retainer arrangements. The first step is a consult to determine whether there is a fit before discussing pricing. Call {PHONE} to start that conversation."),
+         f"Elixir consulting starts at $5,000 per month. Final pricing depends on scope and the size of your business. We offer both project-based and retainer arrangements. The first step is a consult to determine whether there is a fit before confirming the scope and final fee. Call {PHONE} to start that conversation."),
     ]
 
 
@@ -4741,7 +4741,7 @@ PROCESS_FAQS = [
     ("Is the first consult really free?",
      "Yes. There is no cost and no obligation. It exists so both sides can decide whether the work makes sense."),
     ("What does it cost?",
-     f"Pricing depends on scope and business size, and we offer both project-based and retainer arrangements. We discuss it after the consult, once we both know what the work actually involves. Call {PHONE} to start."),
+     f"Elixir consulting starts at $5,000 per month. Final pricing depends on scope and business size. We offer both project-based and retainer arrangements. We discuss it after the consult, once we both know what the work actually involves. Call {PHONE} to start."),
 ]
 
 

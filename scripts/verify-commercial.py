@@ -43,7 +43,8 @@ for page in pages:
 for slug in ('trainual', 'process-street'):
     text = (ROOT / 'pricing' / slug / 'index.html').read_text()
     article = re.search(r'<article class="resource-content">(.*?)</article>', text, re.S).group(1)
-    assert not re.search(r'\$\s*\d', article), (slug, 'unverified dollar figure')
+    vendor_snapshot = re.search(r'<section id="section-0".*?</section>', article, re.S).group(0)
+    assert not re.search(r'\$\s*\d', vendor_snapshot), (slug, 'unverified vendor dollar figure')
     assert 'quote' in article.lower(), slug
 
 # Independently recheck the arithmetic printed in the four subscription examples.
@@ -55,6 +56,6 @@ for slug, annual in [('hubspot-sales-hub', '$6,900'), ('pipedrive', '$2,340'), (
     assert annual in (ROOT / 'pricing' / slug / 'index.html').read_text(), slug
 
 hub = (ROOT / 'pricing/index.html').read_text()
-assert 'No standard hourly rate or package amount is published here' in hub
+assert 'Elixir consulting starts at $5,000 per month' in hub
 assert 'Vendor subscription amounts' in hub
 print('PASS: 36 commercial pages + 4 hubs; source citations, pricing boundaries, worked budget arithmetic, quote-only handling, list counts, and truthful list markup.')

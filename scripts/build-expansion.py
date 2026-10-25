@@ -33,7 +33,7 @@ GROUPS = [('/guides/', 'Business Consulting Buying Guides & Industry Workflows',
            'Explore alternatives to executive hires, coaching, operating frameworks, CRM migration, and software choices by the work your team needs.',
            ['Alternatives']),
           ('/pricing/', 'Consulting Pricing & Software Cost Guides',
-           'Elixir fees are custom-scoped. Compare implementation cost drivers, reviewed vendor software prices, billing conditions, and quote requirements.',
+           'Elixir consulting starts at $5,000 per month. Compare implementation cost drivers, reviewed vendor software prices, billing conditions, and quote requirements.',
            ['Pricing guide']),
           ('/lists/', 'Business Operations Checklists & Curated Shortlists',
            'Use practical lists to evaluate consultants, proposals, CRM trials, documentation tools, operating measures, automation, and location readiness.',
@@ -54,7 +54,7 @@ def hubs():
         sections.append(('Choose one operating problem first', p('Begin with the workflow that is causing missed commitments, repeated approvals, or unreliable reporting. Use the guide to define the decision, the worksheet or example to prepare evidence, and the related service page to understand implementation scope. Test one change before introducing a larger system.')))
         sections.append(('What these resources represent', p('The worked examples are illustrative and the calculators are planning models. They are not client outcomes or industry benchmarks. Service pages explain potential scope and acceptance criteria; specific responsibilities, timing, and fees are agreed in a written proposal.')))
         if path == '/pricing/':
-            sections.insert(0, ('How Elixir consulting is priced', p('Elixir scopes consulting fees around the workflow, systems, data, participating teams, pilot, and handover required. No standard hourly rate or package amount is published here. Bring a recent operating example to a consultation and ask for a written scope separating diagnostic work, implementation, ongoing support, and third-party costs. Vendor subscription amounts in the guides below are separate from Elixir fees.')))
+            sections.insert(0, ('How Elixir consulting is priced', p('Elixir scopes consulting fees around the workflow, systems, data, participating teams, pilot, and handover required. Elixir consulting starts at $5,000 per month, with final pricing based on scope. Bring a recent operating example to a consultation and ask for a written scope separating diagnostic work, implementation, ongoing support, and third-party costs. Vendor subscription amounts in the guides below are separate from Elixir fees.')))
             sections.insert(1, ('Existing consulting cost guides', '<ul><li><a href="/guides/operations-consulting-cost/">Operations consulting cost</a></li><li><a href="/guides/sop-documentation-cost/">SOP documentation cost</a></li><li><a href="/guides/crm-implementation-cost-small-business/">CRM implementation cost</a></li><li><a href="/guides/consulting-project-vs-retainer/">Project versus retainer</a></li></ul>'))
         pages.append(dict(path=path, title=title, description=intro, intro=intro, sections=sections,
                           links=['/services/', '/blog/small-business-operations-templates-checklists/'] + [g[0] for g in GROUPS if g[0] != path],
@@ -159,7 +159,7 @@ def page_html(page, shell, global_schema, lookup):
             + '<section class="page-hero"><div class="container"><p class="resource-kicker">' + escape(page['kind']) + '</p><h1>' + escape(page['title']) + '</h1><p>' + escape(page['intro']) + '</p></div></section>'
             + '<div class="container resource-layout">' + toc + '<article class="resource-content">' + download + sections
             + '<section><h2>Related implementation resources</h2><ul>' + ''.join(related) + '</ul></section>'
-            + '<section class="resource-cta"><h2>Discuss the operating problem</h2><p>Bring a recent example, the current workflow, and the person who owns the result. Elixir Consulting Group can help define the appropriate implementation scope.</p><p><a class="btn btn-primary" href="/contact/">Book a consult</a> <a href="/about/">About Elixir and Dr. Connor Robertson</a></p></section>'
+            + '<section class="resource-cta"><h2>Discuss the operating problem</h2><p>Elixir consulting starts at $5,000 per month, with final pricing based on scope. Bring a recent example, the current workflow, and the person who owns the result to define the appropriate implementation scope.</p><p><a class="btn btn-primary" href="/contact/">Book a consult</a> <a href="/about/">About Elixir and Dr. Connor Robertson</a></p></section>'
             + '</article></div></main>')
     return footer_links(re.sub(r'<main\b.*?</main>', lambda _: main, head, count=1, flags=re.S))
 
