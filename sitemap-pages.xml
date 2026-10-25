@@ -138,18 +138,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.elixirconsultinggroup.com/blog/</loc>
-    <lastmod>2026-10-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.elixirconsultinggroup.com/blog/author/dr-connor-robertson/</loc>
-    <lastmod>2026-10-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
+
+
   <url>
     <loc>https://www.elixirconsultinggroup.com/contact/</loc>
     <lastmod>2026-10-03</lastmod>
