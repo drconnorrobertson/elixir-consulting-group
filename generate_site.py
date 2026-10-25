@@ -10,10 +10,11 @@ import json
 import html as htmllib
 from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 from datetime import datetime
+from long_tail_content import authored_posts, TOPICS, HUB_SLUG
 
 DOMAIN = "https://www.elixirconsultinggroup.com"
 YEAR = "2026"
-DATE_NOW = "2026-08-15"
+DATE_NOW = "2026-10-24"
 ADDRESS = "429 Fourth Ave. Suite 300, Pittsburgh, PA 15219"
 PHONE = "(412) 387-7656"
 PHONE_HREF = "tel:+14123877656"
@@ -1749,6 +1750,7 @@ def make_footer():
 <li><a href="/industries/">Industries</a></li>
 <li><a href="/case-studies/">Case Studies</a></li>
 <li><a href="/blog/">Blog</a></li>
+<li><a href="/blog/small-business-operations-templates-checklists/">Templates &amp; Checklists</a></li>
 <li><a href="/blog/author/dr-connor-robertson/">Articles by Dr. Robertson</a></li>
 <li><a href="/process/">How We Work</a></li>
 <li><a href="/faq/">FAQ</a></li>
@@ -1869,6 +1871,14 @@ def og_image_for(path):
 def make_page(title, description, path, body, schema="", canonical=None,
               image=None, og_type="website", extra_head="", faq=None,
               published=None, modified=None, crumb_override=None, og_title=None):
+    if path in ('/', '/index.html', '/blog/', '/services/') or path.startswith('/services/'):
+        service = path.strip('/').split('/')[-1]
+        items = ''.join(f'<li><a href="/blog/{t["slug"]}/">{esc_text(t["title"])}</a></li>'
+                        for t in TOPICS if t['service'] == service)
+        body += ('<section class="section"><div class="container"><h2>Business Templates &amp; Checklists</h2>'
+                 + ('<ul>' + items + '</ul>' if items else '')
+                 + '<p>Use 18 practical guides with editable worksheets for capacity planning, sales handoffs, leadership coverage, AI pilots, and project delivery.</p>'
+                 + f'<p><a href="/blog/{HUB_SLUG}/">Browse templates, checklists, and worked examples</a></p></div></section>')
     if canonical is None:
         canonical = DOMAIN + path
     image = image or og_image_for(path)
@@ -4180,6 +4190,9 @@ def load_all_posts():
             ['How do you calculate consulting ROI?', 'Subtract the engagement’s total cost from incremental contribution and separate cash savings over the same period, then divide the net modeled benefit by total cost. State every assumption.'],
             ['Is additional revenue the same as consulting profit?', 'No. Subtract the variable costs needed to deliver that revenue. Track owner capacity separately unless it produces documented contribution or cash savings.'],
         ]
+    # Authored source wins over generated HTML on every subsequent build.
+    for authored in authored_posts():
+        posts[authored['slug']] = authored
     repair_body_links(posts)
 
     # Hand-written FAQs only exist in the source markup on the first pass, so
@@ -5746,6 +5759,8 @@ def sitemap_location_urls(consulting_pages):
 
 def gen_vercel_json():
     return json.dumps({
+        "buildCommand": "node scripts/optimize-media.mjs . && node scripts/buyer-intent-release.cjs .",
+        "outputDirectory": ".",
         "cleanUrls": True,
         "trailingSlash": True,
         "headers": [
