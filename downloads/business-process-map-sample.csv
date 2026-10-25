@@ -1,0 +1,7 @@
+ILLUSTRATIVE SAMPLE — NOT CLIENT RESULTS
+Step,Owner,Input,Decision or action,Output / next step
+1. Record accepted scope,Seller,Accepted agreement and discovery record,"Capture scope, exclusions, dependencies, and promises",Handoff brief to delivery lead
+2. Check readiness,Delivery lead,Handoff brief and capacity plan,"Are scope, access, and capacity sufficiently resolved?",Accept or return a named blocker
+3a. Resolve blocker,Assigned owner,Specific missing prerequisite,Obtain evidence or agree a revised commitment,Return to readiness check
+3b. Schedule kickoff,Coordinator,Accepted readiness decision,Confirm a feasible date and customer responsibilities,"Customer receives owner, date, and next action"
+4. Review first milestone,Project owner,Delivery record and acceptance criteria,Confirm progress and resolve any remaining handoff gap,Normal delivery or an owned exception

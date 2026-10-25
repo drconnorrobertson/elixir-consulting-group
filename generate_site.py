@@ -7,6 +7,7 @@ Generates all HTML pages, sitemap.xml, robots.txt, and vercel.json
 import os
 import re
 import json
+import runpy
 import html as htmllib
 from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 from datetime import datetime
@@ -6291,3 +6292,6 @@ print(f"  {_sitemap_urls} URLs across 3 sitemaps + RSS feed + search index")
 print("  Every page: Organization + WebSite + Person graph, FAQPage, BreadcrumbList,")
 print("  canonical, OG/Twitter card. Posts add BlogPosting; industries add Service.")
 print(f"{'='*60}")
+
+# Restore authored service/resource pages and discovery entries after core assets.
+runpy.run_path(os.path.join(SITE_DIR, 'scripts', 'build-expansion.py'), run_name='__main__')

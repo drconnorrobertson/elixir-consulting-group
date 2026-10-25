@@ -1,0 +1,501 @@
+[
+  {
+    "path": "/services/operational-assessment/",
+    "title": "Operational Assessment Services for Small Businesses",
+    "kind": "Service",
+    "parent": "/services/operations/",
+    "related": [
+      "/blog/weekly-operations-scorecard-template-service-business/",
+      "/examples/operations-assessment-report/",
+      "/process/"
+    ]
+  },
+  {
+    "path": "/services/sop-documentation/",
+    "title": "SOP Documentation Services for Growing Teams",
+    "kind": "Service",
+    "parent": "/services/operations/",
+    "related": [
+      "/blog/employee-cross-training-matrix-template/",
+      "/playbooks/sop-rollout/",
+      "/process/"
+    ]
+  },
+  {
+    "path": "/services/business-process-mapping/",
+    "title": "Business Process Mapping Consulting for Small Teams",
+    "kind": "Service",
+    "parent": "/services/operations/",
+    "related": [
+      "/blog/sales-to-operations-handoff-checklist/",
+      "/examples/business-process-map/",
+      "/process/"
+    ]
+  },
+  {
+    "path": "/services/crm-cleanup/",
+    "title": "CRM Cleanup Services for Small Sales Teams",
+    "kind": "Service",
+    "parent": "/services/sales-strategy/",
+    "related": [
+      "/blog/crm-data-cleanup-checklist-small-business/",
+      "/playbooks/crm-rollout/",
+      "/process/"
+    ]
+  },
+  {
+    "path": "/services/crm-implementation/",
+    "title": "CRM Implementation Consulting for Small Businesses",
+    "kind": "Service",
+    "parent": "/services/sales-strategy/",
+    "related": [
+      "/blog/lead-response-time-sla-template/",
+      "/guides/crm-implementation-cost-small-business/",
+      "/process/"
+    ]
+  },
+  {
+    "path": "/services/sales-process-implementation/",
+    "title": "Sales Process Implementation for Owner-Led Companies",
+    "kind": "Service",
+    "parent": "/services/sales-strategy/",
+    "related": [
+      "/blog/sales-pipeline-aging-report-template/",
+      "/playbooks/founder-sales-handoff/",
+      "/process/"
+    ]
+  },
+  {
+    "path": "/services/kpi-dashboard-setup/",
+    "title": "KPI Dashboard Setup for Small Business Operations",
+    "kind": "Service",
+    "parent": "/services/operations/",
+    "related": [
+      "/blog/weekly-operations-scorecard-template-service-business/",
+      "/examples/weekly-operations-dashboard/",
+      "/process/"
+    ]
+  },
+  {
+    "path": "/services/leadership-operating-cadence/",
+    "title": "Leadership Operating Cadence Implementation",
+    "kind": "Service",
+    "parent": "/services/leadership/",
+    "related": [
+      "/blog/decision-rights-matrix-small-business-template/",
+      "/examples/weekly-operations-dashboard/",
+      "/process/"
+    ]
+  },
+  {
+    "path": "/services/owner-dependency-reduction/",
+    "title": "Owner Dependency Reduction Through Business Systems",
+    "kind": "Service",
+    "parent": "/services/leadership/",
+    "related": [
+      "/blog/owner-vacation-business-continuity-checklist/",
+      "/playbooks/operations-manager-first-90-days/",
+      "/process/"
+    ]
+  },
+  {
+    "path": "/services/ai-workflow-implementation/",
+    "title": "AI Workflow Implementation for Small Business Teams",
+    "kind": "Service",
+    "parent": "/services/ai-consulting/",
+    "related": [
+      "/blog/ai-pilot-success-criteria-template/",
+      "/blog/automation-exception-handling-checklist/",
+      "/process/"
+    ]
+  },
+  {
+    "path": "/services/client-onboarding-systems/",
+    "title": "Client Onboarding Systems for Service Businesses",
+    "kind": "Service",
+    "parent": "/services/operations/",
+    "related": [
+      "/blog/client-onboarding-missing-documents-workflow/",
+      "/guides/professional-services-scope-to-invoice/",
+      "/process/"
+    ]
+  },
+  {
+    "path": "/services/multi-location-operations/",
+    "title": "Multi-Location Operations Systems and Scorecards",
+    "kind": "Service",
+    "parent": "/services/operations/",
+    "related": [
+      "/blog/multi-location-manager-scorecard-template/",
+      "/playbooks/second-location-opening/",
+      "/process/"
+    ]
+  },
+  {
+    "path": "/guides/operations-consulting-cost/",
+    "title": "Operations Consulting Cost: Scope, Fees & Buyer Checklist",
+    "kind": "Buying guide",
+    "parent": "/guides/",
+    "related": [
+      "/services/operational-assessment/",
+      "/guides/consulting-project-vs-retainer/",
+      "/blog/roi-of-hiring-business-consultant-real-numbers/"
+    ]
+  },
+  {
+    "path": "/guides/sop-documentation-cost/",
+    "title": "SOP Documentation Cost: How to Scope a Useful Project",
+    "kind": "Buying guide",
+    "parent": "/guides/",
+    "related": [
+      "/services/sop-documentation/",
+      "/playbooks/sop-rollout/",
+      "/examples/business-process-map/"
+    ]
+  },
+  {
+    "path": "/guides/crm-implementation-cost-small-business/",
+    "title": "CRM Implementation Cost for Small Businesses: Scope Guide",
+    "kind": "Buying guide",
+    "parent": "/guides/",
+    "related": [
+      "/services/crm-implementation/",
+      "/services/crm-cleanup/",
+      "/playbooks/crm-rollout/"
+    ]
+  },
+  {
+    "path": "/guides/fractional-coo-vs-operations-consultant/",
+    "title": "Fractional COO vs Operations Consultant: Choosing Support",
+    "kind": "Buying guide",
+    "parent": "/guides/",
+    "related": [
+      "/services/operations/",
+      "/services/leadership-operating-cadence/",
+      "/guides/consultant-vs-operations-manager/"
+    ]
+  },
+  {
+    "path": "/guides/consultant-vs-operations-manager/",
+    "title": "Operations Consultant vs Operations Manager: Which to Hire?",
+    "kind": "Buying guide",
+    "parent": "/guides/",
+    "related": [
+      "/services/owner-dependency-reduction/",
+      "/playbooks/operations-manager-first-90-days/",
+      "/guides/operations-consulting-cost/"
+    ]
+  },
+  {
+    "path": "/guides/consulting-project-vs-retainer/",
+    "title": "Consulting Project vs Retainer: Scope, Access & Accountability",
+    "kind": "Buying guide",
+    "parent": "/guides/",
+    "related": [
+      "/guides/operations-consulting-cost/",
+      "/services/operational-assessment/",
+      "/process/"
+    ]
+  },
+  {
+    "path": "/guides/construction-estimating-to-production-handoff/",
+    "title": "Construction Estimating to Production Handoff Checklist",
+    "kind": "Industry workflow",
+    "parent": "/guides/",
+    "related": [
+      "/industries/construction-trades/",
+      "/services/business-process-mapping/",
+      "/blog/sales-to-operations-handoff-checklist/",
+      "/case-studies/construction-operating-cadence/"
+    ]
+  },
+  {
+    "path": "/guides/construction-crew-capacity-planning/",
+    "title": "Construction Crew Capacity Planning by Skill and Week",
+    "kind": "Industry workflow",
+    "parent": "/guides/",
+    "related": [
+      "/industries/construction-trades/",
+      "/services/multi-location-operations/",
+      "/blog/service-business-capacity-planning-template/",
+      "/case-studies/construction-operating-cadence/"
+    ]
+  },
+  {
+    "path": "/guides/construction-change-order-approval/",
+    "title": "Construction Change Order Approval Workflow",
+    "kind": "Industry workflow",
+    "parent": "/guides/",
+    "related": [
+      "/industries/construction-trades/",
+      "/services/client-onboarding-systems/",
+      "/blog/change-order-process-template-service-business/",
+      "/case-studies/construction-operating-cadence/"
+    ]
+  },
+  {
+    "path": "/guides/professional-services-scope-to-invoice/",
+    "title": "Professional Services Scope-to-Invoice Workflow",
+    "kind": "Industry workflow",
+    "parent": "/guides/",
+    "related": [
+      "/industries/professional-services/",
+      "/services/client-onboarding-systems/",
+      "/blog/professional-services-project-closeout-checklist/",
+      "/case-studies/professional-services-close-rate/"
+    ]
+  },
+  {
+    "path": "/guides/professional-services-recurring-client-capacity/",
+    "title": "Capacity Planning for Recurring Professional Services Clients",
+    "kind": "Industry workflow",
+    "parent": "/guides/",
+    "related": [
+      "/industries/professional-services/",
+      "/services/kpi-dashboard-setup/",
+      "/blog/service-business-capacity-planning-template/",
+      "/case-studies/professional-services-close-rate/"
+    ]
+  },
+  {
+    "path": "/guides/professional-services-client-renewal/",
+    "title": "Client Renewal Workflow for Professional Services Firms",
+    "kind": "Industry workflow",
+    "parent": "/guides/",
+    "related": [
+      "/industries/professional-services/",
+      "/services/sales-process-implementation/",
+      "/blog/project-margin-review-template-service-firms/",
+      "/case-studies/professional-services-close-rate/"
+    ]
+  },
+  {
+    "path": "/guides/manufacturing-production-scheduling-handoff/",
+    "title": "Manufacturing Order-to-Production Scheduling Handoff",
+    "kind": "Industry workflow",
+    "parent": "/guides/",
+    "related": [
+      "/industries/manufacturing/",
+      "/services/business-process-mapping/",
+      "/blog/vendor-performance-scorecard-template-small-business/",
+      "/case-studies/manufacturing-delivery-delays/"
+    ]
+  },
+  {
+    "path": "/guides/manufacturing-order-change-control/",
+    "title": "Manufacturing Order Change Control Workflow",
+    "kind": "Industry workflow",
+    "parent": "/guides/",
+    "related": [
+      "/industries/manufacturing/",
+      "/services/business-process-mapping/",
+      "/blog/change-order-process-template-service-business/",
+      "/case-studies/manufacturing-delivery-delays/"
+    ]
+  },
+  {
+    "path": "/guides/manufacturing-late-order-recovery/",
+    "title": "Manufacturing Late Order Recovery and Escalation Plan",
+    "kind": "Industry workflow",
+    "parent": "/guides/",
+    "related": [
+      "/industries/manufacturing/",
+      "/services/kpi-dashboard-setup/",
+      "/blog/weekly-operations-scorecard-template-service-business/",
+      "/case-studies/manufacturing-delivery-delays/"
+    ]
+  },
+  {
+    "path": "/playbooks/crm-rollout/",
+    "title": "Small Business CRM Rollout Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/crm-implementation/",
+      "/services/crm-cleanup/",
+      "/guides/crm-implementation-cost-small-business/",
+      "/blog/crm-data-cleanup-checklist-small-business/"
+    ]
+  },
+  {
+    "path": "/playbooks/sop-rollout/",
+    "title": "SOP Implementation and Rollout Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/sop-documentation/",
+      "/guides/sop-documentation-cost/",
+      "/blog/employee-cross-training-matrix-template/",
+      "/examples/business-process-map/"
+    ]
+  },
+  {
+    "path": "/playbooks/operations-manager-first-90-days/",
+    "title": "First Operations Manager: A 90-Day Onboarding Plan",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/guides/consultant-vs-operations-manager/",
+      "/services/owner-dependency-reduction/",
+      "/blog/decision-rights-matrix-small-business-template/",
+      "/blog/owner-vacation-business-continuity-checklist/"
+    ]
+  },
+  {
+    "path": "/playbooks/second-location-opening/",
+    "title": "Second Location Opening: Operations Readiness Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/multi-location-operations/",
+      "/blog/multi-location-manager-scorecard-template/",
+      "/tools/service-capacity-calculator/",
+      "/services/leadership-operating-cadence/"
+    ]
+  },
+  {
+    "path": "/playbooks/post-acquisition-operations/",
+    "title": "Post-Acquisition Operations Integration Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/blog/post-acquisition-employee-transition-checklist/",
+      "/services/operational-assessment/",
+      "/services/business-process-mapping/",
+      "/examples/operations-assessment-report/"
+    ]
+  },
+  {
+    "path": "/playbooks/founder-sales-handoff/",
+    "title": "Founder-Led Sales Handoff Playbook for a Small Team",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/sales-process-implementation/",
+      "/blog/sales-pipeline-stages-and-exit-criteria-for-owner-led-companies/",
+      "/blog/sales-to-operations-handoff-checklist/",
+      "/services/crm-implementation/"
+    ]
+  },
+  {
+    "path": "/examples/operations-assessment-report/",
+    "title": "Sample Operations Assessment Report With Action Plan",
+    "kind": "Sample deliverable",
+    "parent": "/examples/",
+    "related": [
+      "/services/operational-assessment/",
+      "/services/business-process-mapping/",
+      "/case-studies/",
+      "/tools/service-capacity-calculator/"
+    ]
+  },
+  {
+    "path": "/examples/business-process-map/",
+    "title": "Business Process Map Example: Sales to Delivery",
+    "kind": "Sample deliverable",
+    "parent": "/examples/",
+    "related": [
+      "/services/business-process-mapping/",
+      "/services/sop-documentation/",
+      "/blog/sales-to-operations-handoff-checklist/",
+      "/examples/operations-assessment-report/"
+    ]
+  },
+  {
+    "path": "/examples/weekly-operations-dashboard/",
+    "title": "Weekly Operations Dashboard Example With KPI Definitions",
+    "kind": "Sample deliverable",
+    "parent": "/examples/",
+    "related": [
+      "/services/kpi-dashboard-setup/",
+      "/blog/weekly-operations-scorecard-template-service-business/",
+      "/tools/service-capacity-calculator/",
+      "/services/leadership-operating-cadence/"
+    ]
+  },
+  {
+    "path": "/tools/service-capacity-calculator/",
+    "title": "Service Business Capacity Calculator",
+    "kind": "Calculator",
+    "parent": "/tools/",
+    "related": [
+      "/services/kpi-dashboard-setup/",
+      "/blog/service-business-capacity-planning-template/",
+      "/guides/professional-services-recurring-client-capacity/"
+    ]
+  },
+  {
+    "path": "/tools/project-margin-calculator/",
+    "title": "Service Project Margin Calculator",
+    "kind": "Calculator",
+    "parent": "/tools/",
+    "related": [
+      "/blog/project-margin-review-template-service-firms/",
+      "/guides/professional-services-scope-to-invoice/",
+      "/services/operational-assessment/"
+    ]
+  },
+  {
+    "path": "/tools/rework-cost-calculator/",
+    "title": "Rework Cost Calculator for Service Businesses",
+    "kind": "Calculator",
+    "parent": "/tools/",
+    "related": [
+      "/services/business-process-mapping/",
+      "/tools/project-margin-calculator/",
+      "/examples/operations-assessment-report/"
+    ]
+  },
+  {
+    "path": "/guides/",
+    "title": "Business Consulting Buying Guides & Industry Workflows",
+    "kind": "Resource hub",
+    "parent": "/",
+    "related": [
+      "/services/",
+      "/blog/small-business-operations-templates-checklists/",
+      "/playbooks/",
+      "/examples/",
+      "/tools/"
+    ]
+  },
+  {
+    "path": "/playbooks/",
+    "title": "Business Implementation Playbooks",
+    "kind": "Resource hub",
+    "parent": "/",
+    "related": [
+      "/services/",
+      "/blog/small-business-operations-templates-checklists/",
+      "/guides/",
+      "/examples/",
+      "/tools/"
+    ]
+  },
+  {
+    "path": "/examples/",
+    "title": "Sample Business Operations Reports, Maps & Dashboards",
+    "kind": "Resource hub",
+    "parent": "/",
+    "related": [
+      "/services/",
+      "/blog/small-business-operations-templates-checklists/",
+      "/guides/",
+      "/playbooks/",
+      "/tools/"
+    ]
+  },
+  {
+    "path": "/tools/",
+    "title": "Small Business Operations Calculators",
+    "kind": "Resource hub",
+    "parent": "/",
+    "related": [
+      "/services/",
+      "/blog/small-business-operations-templates-checklists/",
+      "/guides/",
+      "/playbooks/",
+      "/examples/"
+    ]
+  }
+]
