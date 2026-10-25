@@ -1,0 +1,18 @@
+[
+  {
+    "file": "services/operations/index.html",
+    "heading": "Read the framework behind owner-independent operations",
+    "before": "Elixir founder Dr. Connor Robertson explores documentation, delegation and accountability in ",
+    "anchor": "Built to Run",
+    "url": "https://www.drconnorrobertsonbooks.com/books/built-to-run/",
+    "after": ". Read the book overview when preparing to identify the processes your team needs to run consistently."
+  },
+  {
+    "file": "services/sales-strategy/index.html",
+    "heading": "Prepare for stronger follow-up conversations",
+    "before": "For related reading from Elixir founder Dr. Connor Robertson, explore ",
+    "anchor": "The 7 Minute Phone Call",
+    "url": "https://www.drconnorrobertsonbooks.com/books/the-7-minute-phone-call/",
+    "after": ". The book introduces a structure for restarting stalled conversations, a useful starting point before reviewing your team’s follow-up process."
+  }
+]
