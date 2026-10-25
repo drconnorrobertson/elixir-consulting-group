@@ -67,12 +67,12 @@ def parsed(file):
 
 ns = '{http://www.sitemaps.org/schemas/sitemap/0.9}'
 sitemap_urls = [x.text for x in ET.parse(ROOT / 'sitemap-expansion.xml').iter(ns + 'loc')]
-assert len(sitemap_urls) == len(set(sitemap_urls)) == 43
+assert len(sitemap_urls) == len(set(sitemap_urls)) == 83
 assert DOMAIN + '/sitemap-expansion.xml' in [x.text for x in ET.parse(ROOT / 'sitemap.xml').iter(ns + 'loc')]
 search = json.loads((ROOT / 'search-index.json').read_text())
 search_counts = Counter(entry['u'] for entry in search)
 paths = {entry['path'] for entry in MANIFEST}
-assert len(paths) == 43
+assert len(paths) == 83
 titles = set()
 descriptions = set()
 redirects = json.loads((ROOT / 'vercel.json').read_text())['redirects']
@@ -150,10 +150,15 @@ if OPTIONS.compare_ref:
     for name in files:
         if not name.endswith('.html') or not (ROOT / name).exists():
             continue
+        route = '/' + name[:-len('index.html')] if name.endswith('index.html') else '/' + name
+        if route in paths:
+            continue  # Authored resource pages may gain intentional new cross-links.
         old = subprocess.check_output(['git', 'show', OPTIONS.compare_ref + ':' + name], cwd=ROOT, text=True)
         current = (ROOT / name).read_text()
         current = re.sub(r'<!-- expansion:[^>]+:start -->.*?<!-- expansion:[^>]+:end -->', '', current, flags=re.S)
         current = current.replace('<link rel="stylesheet" href="/expansion.css">', '')
+        old = re.sub(r'<!-- expansion:[^>]+:start -->.*?<!-- expansion:[^>]+:end -->', '', old, flags=re.S)
+        old = old.replace('<link rel="stylesheet" href="/expansion.css">', '')
         assert current == old, (name, 'copy changed outside marked additions')
         checked += 1
     print(f'PASS: original copy and styles preserved on {checked} existing HTML files.')

@@ -25,7 +25,19 @@ GROUPS = [('/guides/', 'Business Consulting Buying Guides & Industry Workflows',
            ['Sample deliverable']),
           ('/tools/', 'Small Business Operations Calculators',
            'Estimate service capacity, project contribution margin, and rework cost with transparent formulas, editable assumptions, and downloadable results.',
-           ['Calculator'])]
+           ['Calculator']),
+          ('/compare/', 'Business Consulting & Software Comparisons',
+           'Compare operating support, process projects, automation approaches, and CRM or documentation products using practical selection tests.',
+           ['Comparison']),
+          ('/alternatives/', 'Business Consulting & Software Alternatives',
+           'Explore alternatives to executive hires, coaching, operating frameworks, CRM migration, and software choices by the work your team needs.',
+           ['Alternatives']),
+          ('/pricing/', 'Consulting Pricing & Software Cost Guides',
+           'Elixir fees are custom-scoped. Compare implementation cost drivers, reviewed vendor software prices, billing conditions, and quote requirements.',
+           ['Pricing guide']),
+          ('/lists/', 'Business Operations Checklists & Curated Shortlists',
+           'Use practical lists to evaluate consultants, proposals, CRM trials, documentation tools, operating measures, automation, and location readiness.',
+           ['Curated list'])]
 
 
 def link_list(items):
@@ -37,12 +49,17 @@ def hubs():
     for path, title, intro, kinds in GROUPS:
         sections = []
         for kind in kinds:
-            sections.append((kind + 's', link_list([x for x in PAGES if x['kind'] == kind])))
+            label = 'Alternatives guides' if kind == 'Alternatives' else kind + 's'
+            sections.append((label, link_list([x for x in PAGES if x['kind'] == kind])))
         sections.append(('Choose one operating problem first', p('Begin with the workflow that is causing missed commitments, repeated approvals, or unreliable reporting. Use the guide to define the decision, the worksheet or example to prepare evidence, and the related service page to understand implementation scope. Test one change before introducing a larger system.')))
         sections.append(('What these resources represent', p('The worked examples are illustrative and the calculators are planning models. They are not client outcomes or industry benchmarks. Service pages explain potential scope and acceptance criteria; specific responsibilities, timing, and fees are agreed in a written proposal.')))
+        if path == '/pricing/':
+            sections.insert(0, ('How Elixir consulting is priced', p('Elixir scopes consulting fees around the workflow, systems, data, participating teams, pilot, and handover required. No standard hourly rate or package amount is published here. Bring a recent operating example to a consultation and ask for a written scope separating diagnostic work, implementation, ongoing support, and third-party costs. Vendor subscription amounts in the guides below are separate from Elixir fees.')))
+            sections.insert(1, ('Existing consulting cost guides', '<ul><li><a href="/guides/operations-consulting-cost/">Operations consulting cost</a></li><li><a href="/guides/sop-documentation-cost/">SOP documentation cost</a></li><li><a href="/guides/crm-implementation-cost-small-business/">CRM implementation cost</a></li><li><a href="/guides/consulting-project-vs-retainer/">Project versus retainer</a></li></ul>'))
         pages.append(dict(path=path, title=title, description=intro, intro=intro, sections=sections,
                           links=['/services/', '/blog/small-business-operations-templates-checklists/'] + [g[0] for g in GROUPS if g[0] != path],
-                          kind='Resource hub', parent='/'))
+                          kind='Resource hub', parent='/', modified='2026-10-25' if path in ('/compare/', '/alternatives/', '/pricing/', '/lists/') else RELEASE_DATE,
+                          listed_items=[dict(name=x['title'], url=x['path']) for x in PAGES if x['kind'] in kinds]))
     return pages
 
 
@@ -69,7 +86,7 @@ def patch_section(path, name, content):
 
 def footer_links(text):
     marker = '<!-- expansion:navigation:start -->'
-    block = marker + '<li><a href="/guides/">Buying Guides &amp; Workflows</a></li><li><a href="/tools/">Operations Calculators</a></li><li><a href="/playbooks/">Implementation Playbooks</a></li><li><a href="/examples/">Sample Deliverables</a></li><!-- expansion:navigation:end -->'
+    block = marker + '<li><a href="/guides/">Buying Guides &amp; Workflows</a></li><li><a href="/tools/">Operations Calculators</a></li><li><a href="/playbooks/">Implementation Playbooks</a></li><li><a href="/examples/">Sample Deliverables</a></li><li><a href="/compare/">Comparisons</a></li><li><a href="/alternatives/">Alternatives</a></li><li><a href="/pricing/">Pricing &amp; Costs</a></li><li><a href="/lists/">Checklists &amp; Shortlists</a></li><!-- expansion:navigation:end -->'
     text = re.sub(re.escape(marker) + r'.*?<!-- expansion:navigation:end -->', '', text, flags=re.S)
     needle = '<li><a href="/blog/">Blog</a></li>'
     return re.sub(r'<footer\b.*?</footer>', lambda m: m.group(0).replace(needle, needle + block), text, flags=re.S)
@@ -98,6 +115,8 @@ def page_html(page, shell, global_schema, lookup):
 
     head = re.sub(r'<meta\b[^>]*>', meta, head)
     head = re.sub(r'<link\b[^>]*rel=["\']canonical["\'][^>]*>', '<link rel="canonical" href="' + DOMAIN + path + '">', head)
+    if not path.startswith('/services/'):
+        head = head.replace(' style="color:#002E5B;font-weight:700" aria-current="page"', '')
     head = re.sub(r'\saria-current="page"', '', head)
     parent = page['parent']
     crumbs = [('/', 'Home')]
@@ -112,6 +131,11 @@ def page_html(page, shell, global_schema, lookup):
            'url': DOMAIN + path, 'name': page['title'], 'description': desc,
            'isPartOf': {'@id': DOMAIN + '/#website'}, 'inLanguage': 'en-US'}
     schemas = [global_schema, breadcrumb, web]
+    if page.get('listed_items'):
+        schemas.append({'@context': 'https://schema.org', '@type': 'ItemList', 'name': page['title'],
+                        'numberOfItems': len(page['listed_items']), 'itemListElement': [
+                            {'@type': 'ListItem', 'position': i + 1, 'name': item['name'], 'url': DOMAIN + item['url']}
+                            for i, item in enumerate(page['listed_items'])]})
     if page['kind'] == 'Service':
         schemas.append({'@context': 'https://schema.org', '@type': 'Service', 'name': page['title'],
                         'url': DOMAIN + path, 'description': desc, 'provider': {'@id': DOMAIN + '/#organization'}})
@@ -120,7 +144,7 @@ def page_html(page, shell, global_schema, lookup):
     if page['kind'] == 'Calculator':
         asset += '<script src="/operations-calculators.js" defer></script>'
     head = head.replace('</head>', asset + schemas_html + '</head>')
-    sections = ''.join('<section aria-labelledby="section-' + str(i) + '"><h2 id="section-' + str(i) + '">' + escape(h) + '</h2>' + body + '</section>' for i, (h, body) in enumerate(page['sections']))
+    sections = ''.join('<section id="section-' + str(i) + '" aria-labelledby="heading-' + str(i) + '"><h2 id="heading-' + str(i) + '">' + escape(h) + '</h2>' + body + '</section>' for i, (h, body) in enumerate(page['sections']))
     related = []
     for link in page['links']:
         label = lookup[link]['title'] if link in lookup else link.strip('/').split('/')[-1].replace('-', ' ').capitalize()
@@ -166,7 +190,7 @@ def build():
         updated = footer_links(original)
         if updated != original:
             file.write_text(updated)
-    featured = '<h2>Tools, guides, and implementation playbooks</h2>' + link_list([lookup['/guides/'], lookup['/tools/'], lookup['/playbooks/'], lookup['/examples/']])
+    featured = '<h2>Tools, guides, comparisons, and pricing</h2>' + link_list([lookup[group[0]] for group in GROUPS])
     patch_section('/', 'resource-hubs', featured)
     patch_section('/blog/', 'resource-hubs', featured)
     patch_section('/services/', 'specific-services', '<h2>Implementation services by operating problem</h2>' + link_list([x for x in pages if x['kind'] == 'Service']))
@@ -195,6 +219,29 @@ def build():
     for path, links in contexts.items():
         resources = [lookup[x] if x in lookup else dict(path=x, title='AI Pilot Success Criteria Template', description='Define output requirements and a controlled pilot before rollout.') for x in links]
         patch_section(path, 'contextual-resources', '<h2>Put the workflow into practice</h2>' + link_list(resources))
+    commercial_contexts = {
+        '/services/': ['/compare/', '/pricing/', '/lists/questions-before-hiring-operations-consultant/'],
+        '/services/operations/': ['/compare/operations-consultant-vs-business-coach/', '/lists/operations-consulting-deliverables/'],
+        '/services/sales-strategy/': ['/compare/hubspot-vs-pipedrive/', '/compare/zoho-crm-vs-monday-crm/', '/lists/crm-selection-criteria/'],
+        '/services/leadership/': ['/alternatives/full-time-coo/', '/alternatives/eos-small-business/', '/alternatives/business-coaching/'],
+        '/services/ai-consulting/': ['/compare/ai-vs-rule-based-automation/', '/pricing/ai-workflow-implementation/', '/lists/workflows-to-automate-first/'],
+        '/services/business-strategy/': ['/compare/in-house-vs-outsourced-operations/', '/lists/consulting-engagement-models/'],
+        '/services/crm-implementation/': ['/pricing/hubspot-sales-hub/', '/pricing/pipedrive/', '/pricing/zoho-crm/', '/pricing/monday-crm/', '/lists/crm-migration-acceptance-tests/'],
+        '/services/crm-cleanup/': ['/compare/crm-cleanup-vs-crm-migration/', '/alternatives/crm-migration/'],
+        '/services/sop-documentation/': ['/compare/sop-documentation-vs-process-mapping/', '/lists/sop-documentation-tools/', '/pricing/trainual/'],
+        '/services/business-process-mapping/': ['/compare/sop-documentation-vs-process-mapping/', '/lists/handoff-failures-to-check/', '/pricing/process-street/'],
+        '/services/kpi-dashboard-setup/': ['/compare/kpi-dashboard-vs-business-intelligence/', '/pricing/kpi-dashboard-implementation/', '/lists/service-business-operating-metrics/'],
+        '/services/client-onboarding-systems/': ['/lists/handoff-failures-to-check/', '/compare/trainual-vs-process-street/'],
+        '/services/owner-dependency-reduction/': ['/alternatives/full-time-coo/', '/compare/in-house-vs-outsourced-operations/'],
+        '/services/multi-location-operations/': ['/lists/systems-before-second-location/'],
+        '/guides/operations-consulting-cost/': ['/pricing/', '/lists/consulting-engagement-models/', '/lists/operations-consulting-deliverables/'],
+        '/guides/crm-implementation-cost-small-business/': ['/pricing/hubspot-sales-hub/', '/pricing/pipedrive/', '/pricing/zoho-crm/', '/pricing/monday-crm/'],
+        '/guides/sop-documentation-cost/': ['/pricing/trainual/', '/pricing/process-street/', '/lists/sop-documentation-tools/'],
+        '/guides/fractional-coo-vs-operations-consultant/': ['/alternatives/full-time-coo/', '/compare/in-house-vs-outsourced-operations/'],
+        '/blog/how-to-choose-the-right-franchise-for-your-market/': ['/lists/systems-before-second-location/'],
+    }
+    for path, links in commercial_contexts.items():
+        patch_section(path, 'commercial-resources', '<h2>Compare options and plan the cost</h2>' + link_list([lookup[x] for x in links]))
     # Merge our entries; preserve all existing search descriptions and kinds.
     index_file = ROOT / 'search-index.json'
     search = json.loads(index_file.read_text())
@@ -203,13 +250,13 @@ def build():
         search.append(dict(t=page['title'], u=page['path'], d=page['description'][:150], k=page['kind'],
                            s=' '.join([page['title'], page['description'], page['kind']]).lower()))
     index_file.write_text(json.dumps(search, separators=(',', ':'), ensure_ascii=False))
-    urls = ''.join('<url><loc>' + DOMAIN + x['path'] + '</loc><lastmod>' + RELEASE_DATE + '</lastmod></url>\n' for x in pages)
+    urls = ''.join('<url><loc>' + DOMAIN + x['path'] + '</loc><lastmod>' + x.get('modified', RELEASE_DATE) + '</lastmod></url>\n' for x in pages)
     (ROOT / 'sitemap-expansion.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + '</urlset>\n')
     sitemap_file = ROOT / 'sitemap.xml'
     sitemap = sitemap_file.read_text()
     sitemap = re.sub(r'\s*<sitemap>\s*<loc>' + re.escape(DOMAIN + '/sitemap-expansion.xml') + r'</loc>.*?</sitemap>', '', sitemap, flags=re.S)
     sitemap_file.write_text(sitemap.replace('</sitemapindex>', '<sitemap><loc>' + DOMAIN + '/sitemap-expansion.xml</loc><lastmod>' + RELEASE_DATE + '</lastmod></sitemap>\n</sitemapindex>'))
-    manifest = [dict(path=x['path'], title=x['title'], kind=x['kind'], parent=x['parent'], related=x['links']) for x in pages]
+    manifest = [dict(path=x['path'], title=x['title'], kind=x['kind'], parent=x['parent'], related=x['links'], sources=x.get('sources', [])) for x in pages]
     (ROOT / 'scripts/expansion-manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
     print(f'Built {len(pages)} expansion pages, 3 illustrative CSVs, contextual links, search entries, and sitemap.')
 

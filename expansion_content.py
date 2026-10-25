@@ -501,4 +501,5 @@ def tool_pages():
 
 
 def all_pages():
-    return service_pages() + buying_pages() + industry_pages() + playbook_pages() + sample_pages() + tool_pages()
+    from commercial_content import commercial_pages
+    return service_pages() + buying_pages() + industry_pages() + playbook_pages() + sample_pages() + tool_pages() + commercial_pages()

@@ -8,7 +8,8 @@
       "/blog/weekly-operations-scorecard-template-service-business/",
       "/examples/operations-assessment-report/",
       "/process/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/services/sop-documentation/",
@@ -19,7 +20,8 @@
       "/blog/employee-cross-training-matrix-template/",
       "/playbooks/sop-rollout/",
       "/process/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/services/business-process-mapping/",
@@ -30,7 +32,8 @@
       "/blog/sales-to-operations-handoff-checklist/",
       "/examples/business-process-map/",
       "/process/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/services/crm-cleanup/",
@@ -41,7 +44,8 @@
       "/blog/crm-data-cleanup-checklist-small-business/",
       "/playbooks/crm-rollout/",
       "/process/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/services/crm-implementation/",
@@ -52,7 +56,8 @@
       "/blog/lead-response-time-sla-template/",
       "/guides/crm-implementation-cost-small-business/",
       "/process/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/services/sales-process-implementation/",
@@ -63,7 +68,8 @@
       "/blog/sales-pipeline-aging-report-template/",
       "/playbooks/founder-sales-handoff/",
       "/process/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/services/kpi-dashboard-setup/",
@@ -74,7 +80,8 @@
       "/blog/weekly-operations-scorecard-template-service-business/",
       "/examples/weekly-operations-dashboard/",
       "/process/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/services/leadership-operating-cadence/",
@@ -85,7 +92,8 @@
       "/blog/decision-rights-matrix-small-business-template/",
       "/examples/weekly-operations-dashboard/",
       "/process/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/services/owner-dependency-reduction/",
@@ -96,7 +104,8 @@
       "/blog/owner-vacation-business-continuity-checklist/",
       "/playbooks/operations-manager-first-90-days/",
       "/process/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/services/ai-workflow-implementation/",
@@ -107,7 +116,8 @@
       "/blog/ai-pilot-success-criteria-template/",
       "/blog/automation-exception-handling-checklist/",
       "/process/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/services/client-onboarding-systems/",
@@ -118,7 +128,8 @@
       "/blog/client-onboarding-missing-documents-workflow/",
       "/guides/professional-services-scope-to-invoice/",
       "/process/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/services/multi-location-operations/",
@@ -129,7 +140,8 @@
       "/blog/multi-location-manager-scorecard-template/",
       "/playbooks/second-location-opening/",
       "/process/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/guides/operations-consulting-cost/",
@@ -140,7 +152,8 @@
       "/services/operational-assessment/",
       "/guides/consulting-project-vs-retainer/",
       "/blog/roi-of-hiring-business-consultant-real-numbers/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/guides/sop-documentation-cost/",
@@ -151,7 +164,8 @@
       "/services/sop-documentation/",
       "/playbooks/sop-rollout/",
       "/examples/business-process-map/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/guides/crm-implementation-cost-small-business/",
@@ -162,7 +176,8 @@
       "/services/crm-implementation/",
       "/services/crm-cleanup/",
       "/playbooks/crm-rollout/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/guides/fractional-coo-vs-operations-consultant/",
@@ -173,7 +188,8 @@
       "/services/operations/",
       "/services/leadership-operating-cadence/",
       "/guides/consultant-vs-operations-manager/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/guides/consultant-vs-operations-manager/",
@@ -184,7 +200,8 @@
       "/services/owner-dependency-reduction/",
       "/playbooks/operations-manager-first-90-days/",
       "/guides/operations-consulting-cost/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/guides/consulting-project-vs-retainer/",
@@ -195,7 +212,8 @@
       "/guides/operations-consulting-cost/",
       "/services/operational-assessment/",
       "/process/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/guides/construction-estimating-to-production-handoff/",
@@ -207,7 +225,8 @@
       "/services/business-process-mapping/",
       "/blog/sales-to-operations-handoff-checklist/",
       "/case-studies/construction-operating-cadence/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/guides/construction-crew-capacity-planning/",
@@ -219,7 +238,8 @@
       "/services/multi-location-operations/",
       "/blog/service-business-capacity-planning-template/",
       "/case-studies/construction-operating-cadence/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/guides/construction-change-order-approval/",
@@ -231,7 +251,8 @@
       "/services/client-onboarding-systems/",
       "/blog/change-order-process-template-service-business/",
       "/case-studies/construction-operating-cadence/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/guides/professional-services-scope-to-invoice/",
@@ -243,7 +264,8 @@
       "/services/client-onboarding-systems/",
       "/blog/professional-services-project-closeout-checklist/",
       "/case-studies/professional-services-close-rate/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/guides/professional-services-recurring-client-capacity/",
@@ -255,7 +277,8 @@
       "/services/kpi-dashboard-setup/",
       "/blog/service-business-capacity-planning-template/",
       "/case-studies/professional-services-close-rate/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/guides/professional-services-client-renewal/",
@@ -267,7 +290,8 @@
       "/services/sales-process-implementation/",
       "/blog/project-margin-review-template-service-firms/",
       "/case-studies/professional-services-close-rate/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/guides/manufacturing-production-scheduling-handoff/",
@@ -279,7 +303,8 @@
       "/services/business-process-mapping/",
       "/blog/vendor-performance-scorecard-template-small-business/",
       "/case-studies/manufacturing-delivery-delays/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/guides/manufacturing-order-change-control/",
@@ -291,7 +316,8 @@
       "/services/business-process-mapping/",
       "/blog/change-order-process-template-service-business/",
       "/case-studies/manufacturing-delivery-delays/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/guides/manufacturing-late-order-recovery/",
@@ -303,7 +329,8 @@
       "/services/kpi-dashboard-setup/",
       "/blog/weekly-operations-scorecard-template-service-business/",
       "/case-studies/manufacturing-delivery-delays/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/playbooks/crm-rollout/",
@@ -315,7 +342,8 @@
       "/services/crm-cleanup/",
       "/guides/crm-implementation-cost-small-business/",
       "/blog/crm-data-cleanup-checklist-small-business/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/playbooks/sop-rollout/",
@@ -327,7 +355,8 @@
       "/guides/sop-documentation-cost/",
       "/blog/employee-cross-training-matrix-template/",
       "/examples/business-process-map/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/playbooks/operations-manager-first-90-days/",
@@ -339,7 +368,8 @@
       "/services/owner-dependency-reduction/",
       "/blog/decision-rights-matrix-small-business-template/",
       "/blog/owner-vacation-business-continuity-checklist/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/playbooks/second-location-opening/",
@@ -351,7 +381,8 @@
       "/blog/multi-location-manager-scorecard-template/",
       "/tools/service-capacity-calculator/",
       "/services/leadership-operating-cadence/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/playbooks/post-acquisition-operations/",
@@ -363,7 +394,8 @@
       "/services/operational-assessment/",
       "/services/business-process-mapping/",
       "/examples/operations-assessment-report/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/playbooks/founder-sales-handoff/",
@@ -375,7 +407,8 @@
       "/blog/sales-pipeline-stages-and-exit-criteria-for-owner-led-companies/",
       "/blog/sales-to-operations-handoff-checklist/",
       "/services/crm-implementation/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/examples/operations-assessment-report/",
@@ -387,7 +420,8 @@
       "/services/business-process-mapping/",
       "/case-studies/",
       "/tools/service-capacity-calculator/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/examples/business-process-map/",
@@ -399,7 +433,8 @@
       "/services/sop-documentation/",
       "/blog/sales-to-operations-handoff-checklist/",
       "/examples/operations-assessment-report/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/examples/weekly-operations-dashboard/",
@@ -411,7 +446,8 @@
       "/blog/weekly-operations-scorecard-template-service-business/",
       "/tools/service-capacity-calculator/",
       "/services/leadership-operating-cadence/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/tools/service-capacity-calculator/",
@@ -422,7 +458,8 @@
       "/services/kpi-dashboard-setup/",
       "/blog/service-business-capacity-planning-template/",
       "/guides/professional-services-recurring-client-capacity/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/tools/project-margin-calculator/",
@@ -433,7 +470,8 @@
       "/blog/project-margin-review-template-service-firms/",
       "/guides/professional-services-scope-to-invoice/",
       "/services/operational-assessment/"
-    ]
+    ],
+    "sources": []
   },
   {
     "path": "/tools/rework-cost-calculator/",
@@ -444,6 +482,500 @@
       "/services/business-process-mapping/",
       "/tools/project-margin-calculator/",
       "/examples/operations-assessment-report/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/compare/operations-consultant-vs-business-coach/",
+    "title": "Operations Consultant vs Business Coach",
+    "kind": "Comparison",
+    "parent": "/compare/",
+    "related": [
+      "/services/operations/",
+      "/services/leadership/",
+      "/guides/consultant-vs-operations-manager/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/compare/sop-documentation-vs-process-mapping/",
+    "title": "SOP Documentation vs Process Mapping",
+    "kind": "Comparison",
+    "parent": "/compare/",
+    "related": [
+      "/services/sop-documentation/",
+      "/services/business-process-mapping/",
+      "/examples/business-process-map/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/compare/crm-cleanup-vs-crm-migration/",
+    "title": "CRM Cleanup vs Migration: Repair or Replace?",
+    "kind": "Comparison",
+    "parent": "/compare/",
+    "related": [
+      "/services/crm-cleanup/",
+      "/services/crm-implementation/",
+      "/playbooks/crm-rollout/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/compare/crm-consultant-vs-vendor-onboarding/",
+    "title": "CRM Consultant vs Vendor Onboarding",
+    "kind": "Comparison",
+    "parent": "/compare/",
+    "related": [
+      "/services/crm-implementation/",
+      "/guides/crm-implementation-cost-small-business/",
+      "/pricing/hubspot-sales-hub/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/compare/kpi-dashboard-vs-business-intelligence/",
+    "title": "KPI Dashboard vs Business Intelligence Project",
+    "kind": "Comparison",
+    "parent": "/compare/",
+    "related": [
+      "/services/kpi-dashboard-setup/",
+      "/examples/weekly-operations-dashboard/",
+      "/pricing/kpi-dashboard-implementation/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/compare/ai-vs-rule-based-automation/",
+    "title": "AI vs Rule-Based Automation for Business Workflows",
+    "kind": "Comparison",
+    "parent": "/compare/",
+    "related": [
+      "/services/ai-workflow-implementation/",
+      "/blog/automation-exception-handling-checklist/",
+      "/pricing/ai-workflow-implementation/"
+    ],
+    "sources": [
+      "cloud_flows",
+      "ai_review"
+    ]
+  },
+  {
+    "path": "/compare/in-house-vs-outsourced-operations/",
+    "title": "In-House vs Outsourced Operations Support",
+    "kind": "Comparison",
+    "parent": "/compare/",
+    "related": [
+      "/guides/consultant-vs-operations-manager/",
+      "/services/owner-dependency-reduction/",
+      "/alternatives/full-time-coo/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/compare/hubspot-vs-pipedrive/",
+    "title": "HubSpot vs Pipedrive for Small Service Businesses",
+    "kind": "Comparison",
+    "parent": "/compare/",
+    "related": [
+      "/pricing/hubspot-sales-hub/",
+      "/pricing/pipedrive/",
+      "/alternatives/hubspot-small-business/",
+      "/services/crm-implementation/"
+    ],
+    "sources": [
+      "hubspot_crm",
+      "pipedrive_pipeline"
+    ]
+  },
+  {
+    "path": "/compare/zoho-crm-vs-monday-crm/",
+    "title": "Zoho CRM vs monday CRM for Small Sales Teams",
+    "kind": "Comparison",
+    "parent": "/compare/",
+    "related": [
+      "/pricing/zoho-crm/",
+      "/pricing/monday-crm/",
+      "/lists/crm-selection-criteria/",
+      "/services/crm-implementation/"
+    ],
+    "sources": [
+      "zoho",
+      "monday"
+    ]
+  },
+  {
+    "path": "/compare/trainual-vs-process-street/",
+    "title": "Trainual vs Process Street: Training or Workflow First?",
+    "kind": "Comparison",
+    "parent": "/compare/",
+    "related": [
+      "/pricing/trainual/",
+      "/pricing/process-street/",
+      "/alternatives/trainual-sop-documentation/",
+      "/services/sop-documentation/"
+    ],
+    "sources": [
+      "trainual",
+      "process_street"
+    ]
+  },
+  {
+    "path": "/alternatives/full-time-coo/",
+    "title": "Alternatives to Hiring a Full-Time COO",
+    "kind": "Alternatives",
+    "parent": "/alternatives/",
+    "related": [
+      "/guides/fractional-coo-vs-operations-consultant/",
+      "/compare/in-house-vs-outsourced-operations/",
+      "/services/owner-dependency-reduction/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/alternatives/eos-small-business/",
+    "title": "EOS Alternatives for Small Business Operating Systems",
+    "kind": "Alternatives",
+    "parent": "/alternatives/",
+    "related": [
+      "/services/leadership-operating-cadence/",
+      "/services/operational-assessment/",
+      "/guides/fractional-coo-vs-operations-consultant/"
+    ],
+    "sources": [
+      "eos"
+    ]
+  },
+  {
+    "path": "/alternatives/business-coaching/",
+    "title": "Alternatives to Business Coaching for Owners",
+    "kind": "Alternatives",
+    "parent": "/alternatives/",
+    "related": [
+      "/compare/operations-consultant-vs-business-coach/",
+      "/services/leadership/",
+      "/lists/questions-before-hiring-operations-consultant/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/alternatives/crm-migration/",
+    "title": "5 Alternatives to a Full CRM Migration",
+    "kind": "Alternatives",
+    "parent": "/alternatives/",
+    "related": [
+      "/compare/crm-cleanup-vs-crm-migration/",
+      "/services/crm-cleanup/",
+      "/lists/crm-migration-acceptance-tests/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/alternatives/hubspot-small-business/",
+    "title": "HubSpot Alternatives for Small Service Businesses",
+    "kind": "Alternatives",
+    "parent": "/alternatives/",
+    "related": [
+      "/compare/hubspot-vs-pipedrive/",
+      "/pricing/hubspot-sales-hub/",
+      "/pricing/zoho-crm/",
+      "/pricing/monday-crm/"
+    ],
+    "sources": [
+      "pipedrive_pipeline",
+      "zoho",
+      "monday"
+    ]
+  },
+  {
+    "path": "/alternatives/pipedrive-service-business/",
+    "title": "Pipedrive Alternatives for Service Business Sales Teams",
+    "kind": "Alternatives",
+    "parent": "/alternatives/",
+    "related": [
+      "/compare/hubspot-vs-pipedrive/",
+      "/pricing/pipedrive/",
+      "/compare/zoho-crm-vs-monday-crm/",
+      "/services/crm-implementation/"
+    ],
+    "sources": [
+      "hubspot_crm",
+      "zoho",
+      "monday"
+    ]
+  },
+  {
+    "path": "/alternatives/trainual-sop-documentation/",
+    "title": "Trainual Alternatives for SOPs and Team Documentation",
+    "kind": "Alternatives",
+    "parent": "/alternatives/",
+    "related": [
+      "/compare/trainual-vs-process-street/",
+      "/pricing/trainual/",
+      "/pricing/process-street/",
+      "/lists/sop-documentation-tools/"
+    ],
+    "sources": [
+      "process_street",
+      "scribe",
+      "notion",
+      "google_docs"
+    ]
+  },
+  {
+    "path": "/alternatives/spreadsheets-operations-management/",
+    "title": "Spreadsheet Alternatives for Small Business Operations",
+    "kind": "Alternatives",
+    "parent": "/alternatives/",
+    "related": [
+      "/services/business-process-mapping/",
+      "/compare/kpi-dashboard-vs-business-intelligence/",
+      "/services/crm-implementation/",
+      "/examples/weekly-operations-dashboard/"
+    ],
+    "sources": [
+      "pipedrive_pipeline",
+      "process_street",
+      "monday"
+    ]
+  },
+  {
+    "path": "/pricing/hubspot-sales-hub/",
+    "title": "HubSpot Sales Hub Pricing and Implementation Costs",
+    "kind": "Pricing guide",
+    "parent": "/pricing/",
+    "related": [
+      "/compare/hubspot-vs-pipedrive/",
+      "/alternatives/hubspot-small-business/",
+      "/guides/crm-implementation-cost-small-business/"
+    ],
+    "sources": [
+      "hubspot"
+    ]
+  },
+  {
+    "path": "/pricing/pipedrive/",
+    "title": "Pipedrive Pricing: Seats, Add-Ons and Setup Budget",
+    "kind": "Pricing guide",
+    "parent": "/pricing/",
+    "related": [
+      "/compare/hubspot-vs-pipedrive/",
+      "/alternatives/pipedrive-service-business/",
+      "/services/crm-implementation/"
+    ],
+    "sources": [
+      "pipedrive",
+      "pipedrive_billing"
+    ]
+  },
+  {
+    "path": "/pricing/zoho-crm/",
+    "title": "Zoho CRM Pricing and Small-Team Implementation Budget",
+    "kind": "Pricing guide",
+    "parent": "/pricing/",
+    "related": [
+      "/compare/zoho-crm-vs-monday-crm/",
+      "/lists/crm-selection-criteria/",
+      "/playbooks/crm-rollout/"
+    ],
+    "sources": [
+      "zoho"
+    ]
+  },
+  {
+    "path": "/pricing/monday-crm/",
+    "title": "monday CRM Pricing: Seat Selection and Rollout Costs",
+    "kind": "Pricing guide",
+    "parent": "/pricing/",
+    "related": [
+      "/compare/zoho-crm-vs-monday-crm/",
+      "/guides/crm-implementation-cost-small-business/",
+      "/services/crm-implementation/"
+    ],
+    "sources": [
+      "monday"
+    ]
+  },
+  {
+    "path": "/pricing/trainual/",
+    "title": "Trainual Pricing: Quote Questions and Rollout Costs",
+    "kind": "Pricing guide",
+    "parent": "/pricing/",
+    "related": [
+      "/compare/trainual-vs-process-street/",
+      "/alternatives/trainual-sop-documentation/",
+      "/guides/sop-documentation-cost/"
+    ],
+    "sources": [
+      "trainual"
+    ]
+  },
+  {
+    "path": "/pricing/process-street/",
+    "title": "Process Street Pricing: Plans and Workflow Setup Costs",
+    "kind": "Pricing guide",
+    "parent": "/pricing/",
+    "related": [
+      "/compare/trainual-vs-process-street/",
+      "/lists/sop-documentation-tools/",
+      "/services/business-process-mapping/"
+    ],
+    "sources": [
+      "process_street"
+    ]
+  },
+  {
+    "path": "/pricing/kpi-dashboard-implementation/",
+    "title": "KPI Dashboard Implementation Cost: Scope and Budget",
+    "kind": "Pricing guide",
+    "parent": "/pricing/",
+    "related": [
+      "/services/kpi-dashboard-setup/",
+      "/compare/kpi-dashboard-vs-business-intelligence/",
+      "/examples/weekly-operations-dashboard/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/pricing/ai-workflow-implementation/",
+    "title": "AI Workflow Implementation Pricing: Pilot to Handover",
+    "kind": "Pricing guide",
+    "parent": "/pricing/",
+    "related": [
+      "/services/ai-workflow-implementation/",
+      "/compare/ai-vs-rule-based-automation/",
+      "/blog/ai-pilot-success-criteria-template/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/lists/questions-before-hiring-operations-consultant/",
+    "title": "9 Questions Before Hiring an Operations Consultant",
+    "kind": "Curated list",
+    "parent": "/lists/",
+    "related": [
+      "/services/operational-assessment/",
+      "/guides/operations-consulting-cost/",
+      "/lists/operations-consulting-deliverables/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/lists/operations-consulting-deliverables/",
+    "title": "8 Deliverables to Define in an Operations Proposal",
+    "kind": "Curated list",
+    "parent": "/lists/",
+    "related": [
+      "/examples/operations-assessment-report/",
+      "/examples/business-process-map/",
+      "/services/operations/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/lists/crm-selection-criteria/",
+    "title": "7 CRM Selection Criteria for Small Business Teams",
+    "kind": "Curated list",
+    "parent": "/lists/",
+    "related": [
+      "/compare/hubspot-vs-pipedrive/",
+      "/compare/zoho-crm-vs-monday-crm/",
+      "/guides/crm-implementation-cost-small-business/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/lists/crm-migration-acceptance-tests/",
+    "title": "9 CRM Migration Acceptance Tests Before Cutover",
+    "kind": "Curated list",
+    "parent": "/lists/",
+    "related": [
+      "/playbooks/crm-rollout/",
+      "/compare/crm-cleanup-vs-crm-migration/",
+      "/services/crm-implementation/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/lists/service-business-operating-metrics/",
+    "title": "9 Operating Metrics for Service Business Owners",
+    "kind": "Curated list",
+    "parent": "/lists/",
+    "related": [
+      "/examples/weekly-operations-dashboard/",
+      "/tools/service-capacity-calculator/",
+      "/tools/rework-cost-calculator/",
+      "/services/kpi-dashboard-setup/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/lists/workflows-to-automate-first/",
+    "title": "7 Business Workflows to Evaluate for Automation",
+    "kind": "Curated list",
+    "parent": "/lists/",
+    "related": [
+      "/compare/ai-vs-rule-based-automation/",
+      "/services/ai-workflow-implementation/",
+      "/blog/automation-exception-handling-checklist/"
+    ],
+    "sources": [
+      "cloud_flows",
+      "ai_review"
+    ]
+  },
+  {
+    "path": "/lists/handoff-failures-to-check/",
+    "title": "8 Handoff Failures to Check Before Adding Software",
+    "kind": "Curated list",
+    "parent": "/lists/",
+    "related": [
+      "/blog/sales-to-operations-handoff-checklist/",
+      "/guides/professional-services-scope-to-invoice/",
+      "/services/business-process-mapping/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/lists/consulting-engagement-models/",
+    "title": "6 Consulting Engagement Models and What to Compare",
+    "kind": "Curated list",
+    "parent": "/lists/",
+    "related": [
+      "/guides/consulting-project-vs-retainer/",
+      "/guides/fractional-coo-vs-operations-consultant/",
+      "/pricing/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/lists/systems-before-second-location/",
+    "title": "7 Systems to Check Before Opening a Second Location",
+    "kind": "Curated list",
+    "parent": "/lists/",
+    "related": [
+      "/playbooks/second-location-opening/",
+      "/services/multi-location-operations/",
+      "/blog/multi-location-manager-scorecard-template/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/lists/sop-documentation-tools/",
+    "title": "6 SOP Documentation Options for Small Teams",
+    "kind": "Curated list",
+    "parent": "/lists/",
+    "related": [
+      "/alternatives/trainual-sop-documentation/",
+      "/compare/trainual-vs-process-street/",
+      "/services/sop-documentation/"
+    ],
+    "sources": [
+      "trainual",
+      "process_street",
+      "scribe",
+      "notion",
+      "google_docs"
     ]
   },
   {
@@ -456,8 +988,13 @@
       "/blog/small-business-operations-templates-checklists/",
       "/playbooks/",
       "/examples/",
-      "/tools/"
-    ]
+      "/tools/",
+      "/compare/",
+      "/alternatives/",
+      "/pricing/",
+      "/lists/"
+    ],
+    "sources": []
   },
   {
     "path": "/playbooks/",
@@ -469,8 +1006,13 @@
       "/blog/small-business-operations-templates-checklists/",
       "/guides/",
       "/examples/",
-      "/tools/"
-    ]
+      "/tools/",
+      "/compare/",
+      "/alternatives/",
+      "/pricing/",
+      "/lists/"
+    ],
+    "sources": []
   },
   {
     "path": "/examples/",
@@ -482,8 +1024,13 @@
       "/blog/small-business-operations-templates-checklists/",
       "/guides/",
       "/playbooks/",
-      "/tools/"
-    ]
+      "/tools/",
+      "/compare/",
+      "/alternatives/",
+      "/pricing/",
+      "/lists/"
+    ],
+    "sources": []
   },
   {
     "path": "/tools/",
@@ -495,7 +1042,84 @@
       "/blog/small-business-operations-templates-checklists/",
       "/guides/",
       "/playbooks/",
-      "/examples/"
-    ]
+      "/examples/",
+      "/compare/",
+      "/alternatives/",
+      "/pricing/",
+      "/lists/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/compare/",
+    "title": "Business Consulting & Software Comparisons",
+    "kind": "Resource hub",
+    "parent": "/",
+    "related": [
+      "/services/",
+      "/blog/small-business-operations-templates-checklists/",
+      "/guides/",
+      "/playbooks/",
+      "/examples/",
+      "/tools/",
+      "/alternatives/",
+      "/pricing/",
+      "/lists/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/alternatives/",
+    "title": "Business Consulting & Software Alternatives",
+    "kind": "Resource hub",
+    "parent": "/",
+    "related": [
+      "/services/",
+      "/blog/small-business-operations-templates-checklists/",
+      "/guides/",
+      "/playbooks/",
+      "/examples/",
+      "/tools/",
+      "/compare/",
+      "/pricing/",
+      "/lists/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/pricing/",
+    "title": "Consulting Pricing & Software Cost Guides",
+    "kind": "Resource hub",
+    "parent": "/",
+    "related": [
+      "/services/",
+      "/blog/small-business-operations-templates-checklists/",
+      "/guides/",
+      "/playbooks/",
+      "/examples/",
+      "/tools/",
+      "/compare/",
+      "/alternatives/",
+      "/lists/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/lists/",
+    "title": "Business Operations Checklists & Curated Shortlists",
+    "kind": "Resource hub",
+    "parent": "/",
+    "related": [
+      "/services/",
+      "/blog/small-business-operations-templates-checklists/",
+      "/guides/",
+      "/playbooks/",
+      "/examples/",
+      "/tools/",
+      "/compare/",
+      "/alternatives/",
+      "/pricing/"
+    ],
+    "sources": []
   }
 ]
