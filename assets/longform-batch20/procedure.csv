@@ -1,0 +1,6 @@
+fictional_id,approved_source,proposed_draft,teaching_label
+R1,Log request with supplied reference,Record request,aligned
+R2,Check required information,Check information,aligned
+R3,Approval before readiness,Mark ready automatically,altered
+R4,Return incomplete request for clarification,No branch,omitted
+D4,No source requirement supplied,Send general confirmation,added
