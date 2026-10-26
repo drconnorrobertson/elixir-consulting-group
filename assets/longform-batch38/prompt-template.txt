@@ -1,0 +1,6 @@
+Task: Draft exactly two clarification questions.
+Topic: $topic
+Audience: $audience
+Notes:
+$notes
+Boundary: Draft only. Do not send, approve, or invent commitments.
