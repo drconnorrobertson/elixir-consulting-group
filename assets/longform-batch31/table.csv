@@ -1,0 +1,7 @@
+fictional_case,authored_source,deliberate_proposal,teaching_resolution
+A,Capacity is six hours per week.,Capacity is six total hours.,Preserve weekly basis
+B,The review lasts forty-five minutes.,The review lasts forty-five hours.,Preserve minutes
+C,One-time amount: USD1200.,Monthly amount: USD1200.,Preserve one-time recurrence
+D,"Launch proposed for November12,2026.","Launch confirmed for November12,2026.",Preserve proposed status
+E,Owner is unassigned.,Owner is Maya.,Keep unassigned
+F,Zero overdue items on the fictional sample list.,Zero overdue items on the fictional sample list.,Faithful within sample scope
