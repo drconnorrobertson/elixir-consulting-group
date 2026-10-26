@@ -1,0 +1,14 @@
+{
+  "case_id": "SAMPLE-JSON-1",
+  "draft": {
+    "status": "proposed",
+    "owner": "unassigned"
+  },
+  "steps": [
+    {
+      "label": "Review text",
+      "approved": false
+    }
+  ],
+  "quantity": 1.25
+}
