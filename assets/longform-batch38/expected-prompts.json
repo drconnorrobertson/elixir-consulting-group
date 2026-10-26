@@ -1,0 +1,10 @@
+[
+  {
+    "case_id": "P1",
+    "prompt": "Task: Draft exactly two clarification questions.\nTopic: draft newsletter heading\nAudience: volunteer editors\nNotes:\nThe heading is undecided. No publication date has been approved.\nBoundary: Draft only. Do not send, approve, or invent commitments.\n"
+  },
+  {
+    "case_id": "P2",
+    "prompt": "Task: Draft exactly two clarification questions.\nTopic: draft welcome paragraph\nAudience: internal review group\nNotes:\nKeep the literal reference $topic in these fictional notes.\nBoundary: Draft only. Do not send, approve, or invent commitments.\n"
+  }
+]
