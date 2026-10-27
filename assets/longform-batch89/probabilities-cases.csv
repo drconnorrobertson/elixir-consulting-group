@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"fictional p0.1,0.8,0.6,0.3;y0,1,1,0","squares0.01,0.04,0.16,0.09;mean3/40"
+B,"fictional y0,1;S0.2,0.8;T0.9,0.1",S1/25;T81/100;not actual model performance
+C,fictional complement probabilities of A;keep outcomes;then complement both,p-only mean23/40;both mean3/40
+D,fictional constant0.5 on A outcomes,mean1/4;A lower by7/40;not business value
+E,"fictional p0.2,0.8,0.6;y0,1,null",resolved subset1/25 on2;full score unknown
+F,fictional R1p0.1y0;R2p0.9y1;then swap outcomes,aligned1/100;swapped81/100
