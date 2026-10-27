@@ -1,0 +1,7 @@
+fictional_case,baseline_minutes,candidate_total_minutes,critical_ok,prerequisite_ok,effort_complete,fallback_ok,evidence_role,declared_decision
+A,20,15,true,true,true,true,untouched,eligible_next_authorized_review
+B,20,9,false,true,true,true,untouched,stop_critical
+C,20,,true,true,false,true,untouched,pending_effort
+D,20,15,true,false,true,true,untouched,pause_prerequisite
+E,20,15,true,true,true,true,development,revise_and_renew_checks
+F,20,15,true,true,true,false,untouched,pending_fallback
