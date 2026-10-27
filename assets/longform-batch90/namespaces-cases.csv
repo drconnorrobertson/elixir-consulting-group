@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,fictional a:item and b:item;both namespaceurn:example:one,different prefixes;same selected expanded name;not document equivalence
+B,fictional a:item namespaceurn:example:one versusurn:example:two,same prefix/local word;different expanded names
+C,fictional default namespaceurn:example:one;root attribute id=K1,root namespaced;unprefixed attribute id unqualified
+D,fictional id=K1 and a:id=K2;namespaceurn:example:one,two distinct attribute names;local-name-only collision
+E,fictional root defaultnamespaceone;item xmlns empty versus inherited,unqualified child versus namespaced child
+F,fictional one:item codeA;two:item codeB,two local-item occurrences;one selected namespace-one item;not entity identity

@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,fictional https://example.invalid/report?team=cedar#notes,path/report;queryteam=cedar;fragmentnotes;not fetched
+B,fictional tag=red&tag=blue,two ordered pairs;single-value dict loses one occurrence
+C,fictional q=red+blue versus q=red%2Bblue,declared parser red space blue versus red plus blue
+D,fictional a=&b=2;keep_blank_values True versus default,two pairs with blank a versus only b;not source absence
+E,fictional q=A%26B versus q=A&part=B,one pair q:A&B versus two pairs q:A and part:B
+F,fictional x=%252F;parse then additional unquote,one stage%2F;additional stage slash;not server/security finding

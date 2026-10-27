@@ -1,0 +1,54 @@
+{
+  "scope": "Tiny original authored XML snippets;no external resources/model/client input",
+  "cases": {
+    "A": {
+      "xml": [
+        "<a:item xmlns:a=\"urn:example:one\"/>",
+        "<b:item xmlns:b=\"urn:example:one\"/>"
+      ],
+      "expectedTag": "{urn:example:one}item"
+    },
+    "B": {
+      "xml": [
+        "<a:item xmlns:a=\"urn:example:one\"/>",
+        "<a:item xmlns:a=\"urn:example:two\"/>"
+      ],
+      "expectedTags": [
+        "{urn:example:one}item",
+        "{urn:example:two}item"
+      ]
+    },
+    "C": {
+      "xml": "<root xmlns=\"urn:example:one\" id=\"K1\"/>",
+      "expectedTag": "{urn:example:one}root",
+      "expectedAttributes": {
+        "id": "K1"
+      }
+    },
+    "D": {
+      "xml": "<root xmlns:a=\"urn:example:one\" id=\"K1\" a:id=\"K2\"/>",
+      "expectedAttributes": {
+        "id": "K1",
+        "{urn:example:one}id": "K2"
+      }
+    },
+    "E": {
+      "xml": [
+        "<root xmlns=\"urn:example:one\"><item xmlns=\"\"/></root>",
+        "<root xmlns=\"urn:example:one\"><item/></root>"
+      ],
+      "expectedChildTags": [
+        "item",
+        "{urn:example:one}item"
+      ]
+    },
+    "F": {
+      "xml": "<root xmlns:one=\"urn:example:one\" xmlns:two=\"urn:example:two\"><one:item code=\"A\"/><two:item code=\"B\"/></root>",
+      "localItemCount": 2,
+      "namespaceOneCount": 1,
+      "selectedCodes": [
+        "A"
+      ]
+    }
+  }
+}
