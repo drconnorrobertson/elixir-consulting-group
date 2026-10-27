@@ -1,0 +1,68 @@
+{
+  "scope": "Original finite numerical half-open pairs; not actual calendars/resources/PostgreSQL execution",
+  "expected": {
+    "A": {
+      "valid": true,
+      "lengths": [
+        10,
+        10
+      ],
+      "sum": 20,
+      "overlap": 0,
+      "union": 20,
+      "span": 20,
+      "gap": 0
+    },
+    "B": {
+      "valid": true,
+      "lengths": [
+        12,
+        12
+      ],
+      "sum": 24,
+      "overlap": 4,
+      "union": 20,
+      "span": 20,
+      "gap": 0
+    },
+    "C": {
+      "valid": true,
+      "lengths": [
+        0,
+        10
+      ],
+      "sum": 10,
+      "overlap": 0,
+      "union": 10,
+      "span": 10,
+      "gap": 0
+    },
+    "D": {
+      "valid": false
+    },
+    "E": {
+      "valid": true,
+      "lengths": [
+        20,
+        5
+      ],
+      "sum": 25,
+      "overlap": 5,
+      "union": 20,
+      "span": 20,
+      "gap": 0
+    },
+    "F": {
+      "valid": true,
+      "lengths": [
+        10,
+        8
+      ],
+      "sum": 18,
+      "overlap": 0,
+      "union": 18,
+      "span": 20,
+      "gap": 2
+    }
+  }
+}

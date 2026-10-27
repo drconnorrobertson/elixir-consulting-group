@@ -1,0 +1,7 @@
+fictional_case,a_start,a_end,b_start,b_end
+A,0,10,10,20
+B,0,12,8,20
+C,5,5,0,10
+D,12,8,0,10
+E,0,20,5,10
+F,0,10,12,20

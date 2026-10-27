@@ -1,0 +1,7 @@
+fictional_case,declared_rule,expected_ids
+A,rank ascending stable,"R2,R4,R1,R3,R5"
+B,rank ascending score descending stable,"R2,R4,R3,R1,R5"
+C,rank ascending score descending id descending,"R4,R2,R3,R5,R1"
+D,ASCII text versus integer ordering,"1,10,2 versus 1,2,10"
+E,known rank ascending then absent,"U3,U2,U1"
+F,rank-only fixed first3 versus include cutoff rank ties,"R2,R4,R1 versus R2,R4,R1,R3,R5"
