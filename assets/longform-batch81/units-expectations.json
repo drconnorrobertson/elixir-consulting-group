@@ -1,0 +1,26 @@
+{
+  "scope": "Original fictional quantities; manual expectations; no actual measurement or forecast",
+  "expected": {
+    "A": [
+      "2",
+      "2000"
+    ],
+    "B": [
+      "3",
+      "1/3"
+    ],
+    "C": [
+      "36"
+    ],
+    "D": [
+      "1200",
+      "3/25"
+    ],
+    "E": null,
+    "F": [
+      "60",
+      "2",
+      "60"
+    ]
+  }
+}

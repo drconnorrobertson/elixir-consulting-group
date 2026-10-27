@@ -1,0 +1,84 @@
+{
+  "scope": "Original static fictional lists; no actual import or record change",
+  "source": [
+    "R1",
+    "R2",
+    "R3"
+  ],
+  "destination": [
+    "R2",
+    "R3",
+    "R4"
+  ],
+  "duplicateSource": [
+    "R1",
+    "R1",
+    "R2"
+  ],
+  "duplicateDestination": [
+    "R1",
+    "R2",
+    "R2"
+  ],
+  "sequenceDestination": [
+    "R3",
+    "R2",
+    "R1"
+  ],
+  "sourceRecord": {
+    "id": "R1",
+    "status": "open"
+  },
+  "destinationRecord": {
+    "id": "R1",
+    "status": "closed"
+  },
+  "textPair": [
+    "TK01",
+    "tk01"
+  ],
+  "snapshotTimes": [
+    "2030-06-01T09:00:00Z",
+    "2030-06-01T10:00:00Z"
+  ],
+  "expected": {
+    "A": {
+      "shared": [
+        "R2",
+        "R3"
+      ],
+      "sourceOnly": [
+        "R1"
+      ],
+      "destinationOnly": [
+        "R4"
+      ]
+    },
+    "B": {
+      "sourceExcess": {
+        "R1": 1
+      },
+      "destinationExcess": {
+        "R2": 1
+      }
+    },
+    "C": {
+      "sameCounts": true,
+      "sameOrder": false
+    },
+    "D": {
+      "sameId": true,
+      "changedFields": [
+        "status"
+      ]
+    },
+    "E": {
+      "exact": false,
+      "asciiLower": true
+    },
+    "F": {
+      "minutes": 60,
+      "cause": null
+    }
+  }
+}

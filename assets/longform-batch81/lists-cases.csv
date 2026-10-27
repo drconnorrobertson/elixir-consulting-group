@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"source R1,R2,R3; destination R2,R3,R4","shared R2,R3; source-only R1; destination-only R4"
+B,"source R1,R1,R2; destination R1,R2,R2",same presence; R1 source excess 1; R2 destination excess 1
+C,"source R1,R2,R3; destination R3,R2,R1",same multiplicities; different sequence
+D,R1 source open; R1 destination closed,shared identity; status differs; authority unresolved
+E,TK01 versus tk01,exact unequal; declared ASCII lowercase equal
+F,"2030-06-01T09:00:00Z R1,R2; 2030-06-01T10:00:00Z R2,R3",60 minutes apart; cause unresolved
