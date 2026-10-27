@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"values0,5,10,15,20;edges0,10,20;last endpoint included","counts2,3;accepted5"
+B,same values and edges;all intervals half-open,"counts2,2;outside20"
+C,"values-1,0,9,10,20,21;edges0,10,20;last included","counts2,2;outside-1,21"
+D,"values1,2,6,10;edges0,5,20;last included","counts2,2;proportions1/2,1/2;densities1/10,1/30"
+E,"values0,null,5,15;edges0,10,20;preserve missing","counts2,1;accepted denominator3;all denominator4"
+F,"values4,6,9,11,14,16;edges0,10,20 versus0,5,15,20","counts3,3 versus1,4,1;same six values"
