@@ -1,0 +1,238 @@
+{
+  "scope": "Original static fictional toy-v1 chains; not provider responses, model outputs, snapshot or import approval",
+  "requestScope": {
+    "collection": "teaching-items",
+    "filter": "category=sample",
+    "order": "authored fixture sequence",
+    "version": "toy-v1"
+  },
+  "contract": "Required items list of objects with nonempty string id; required next is nonempty string or null; validate before accepting page; preserve occurrences; stop repeated visited key as incomplete",
+  "cases": [
+    {
+      "case": "A",
+      "pages": {
+        "start": {
+          "items": [
+            {
+              "id": "R1"
+            },
+            {
+              "id": "R2"
+            }
+          ],
+          "next": "cedar"
+        },
+        "cedar": {
+          "items": [
+            {
+              "id": "R3"
+            }
+          ],
+          "next": "maple"
+        },
+        "maple": {
+          "items": [
+            {
+              "id": "R4"
+            },
+            {
+              "id": "R5"
+            }
+          ],
+          "next": null
+        }
+      },
+      "expected": {
+        "status": "terminal",
+        "complete": true,
+        "acceptedPages": [
+          "start",
+          "cedar",
+          "maple"
+        ],
+        "ids": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5"
+        ],
+        "uniqueCount": 5
+      }
+    },
+    {
+      "case": "B",
+      "pages": {
+        "start": {
+          "items": [
+            {
+              "id": "R1"
+            }
+          ],
+          "next": "birch"
+        },
+        "birch": {
+          "items": [
+            {
+              "id": "R2"
+            },
+            {
+              "id": "R3"
+            }
+          ],
+          "next": null
+        }
+      },
+      "expected": {
+        "status": "terminal",
+        "complete": true,
+        "acceptedPages": [
+          "start",
+          "birch"
+        ],
+        "ids": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "uniqueCount": 3
+      }
+    },
+    {
+      "case": "C",
+      "pages": {
+        "start": {
+          "items": [],
+          "next": "elm"
+        },
+        "elm": {
+          "items": [
+            {
+              "id": "R7"
+            }
+          ],
+          "next": null
+        }
+      },
+      "expected": {
+        "status": "terminal",
+        "complete": true,
+        "acceptedPages": [
+          "start",
+          "elm"
+        ],
+        "ids": [
+          "R7"
+        ],
+        "uniqueCount": 1
+      }
+    },
+    {
+      "case": "D",
+      "pages": {
+        "start": {
+          "items": [
+            {
+              "id": "R1"
+            },
+            {
+              "id": "R2"
+            }
+          ],
+          "next": "ash"
+        },
+        "ash": {
+          "items": [
+            {
+              "id": "R2"
+            },
+            {
+              "id": "R3"
+            }
+          ],
+          "next": null
+        }
+      },
+      "expected": {
+        "status": "terminal",
+        "complete": true,
+        "acceptedPages": [
+          "start",
+          "ash"
+        ],
+        "ids": [
+          "R1",
+          "R2",
+          "R2",
+          "R3"
+        ],
+        "uniqueCount": 3
+      }
+    },
+    {
+      "case": "E",
+      "pages": {
+        "start": {
+          "items": [
+            {
+              "id": "R1"
+            }
+          ],
+          "next": "loop"
+        },
+        "loop": {
+          "items": [
+            {
+              "id": "R2"
+            }
+          ],
+          "next": "loop"
+        }
+      },
+      "expected": {
+        "status": "repeated_cursor",
+        "complete": false,
+        "acceptedPages": [
+          "start",
+          "loop"
+        ],
+        "ids": [
+          "R1",
+          "R2"
+        ],
+        "uniqueCount": 2
+      }
+    },
+    {
+      "case": "F",
+      "pages": {
+        "start": {
+          "items": [
+            {
+              "id": "R1"
+            }
+          ],
+          "next": "broken"
+        },
+        "broken": {
+          "items": [
+            {
+              "id": "R2"
+            }
+          ]
+        }
+      },
+      "expected": {
+        "status": "malformed",
+        "complete": false,
+        "acceptedPages": [
+          "start"
+        ],
+        "ids": [
+          "R1"
+        ],
+        "uniqueCount": 1
+      }
+    }
+  ]
+}

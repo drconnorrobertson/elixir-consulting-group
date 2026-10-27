@@ -1,0 +1,7 @@
+fictional_case,authored_boundary,expected_status,expected_occurrences
+A,three pages with short middle page,terminal,5
+B,short first page with continuation,terminal,3
+C,empty first page with continuation,terminal,1
+D,repeated identifier across pages,terminal,4
+E,continuation points back to visited page,repeated_cursor,2
+F,second page omits required next field,malformed,1
