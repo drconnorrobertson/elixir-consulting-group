@@ -1,0 +1,7 @@
+fictional_case,arrival_minute,qualifying_reply_minute,other_event_minute,snapshot_minute,expected_staffed_minutes,expected_elapsed_minutes,reading
+A,10,35,,,25,25,completed_qualifying_reply
+B,470,1460,,,30,990,completed_overnight
+C,495,1455,,,15,960,completed_after_hours_arrival
+D,60,130,61,,70,70,receipt_at_61_not_qualifying
+E,1500,,,1560,60,60,pending_age_not_final_duration
+F,120,180,150,,60,60,wrong_service_at_150_not_qualifying
