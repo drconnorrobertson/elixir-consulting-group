@@ -1,0 +1,72 @@
+{
+  "scope": "Original fictional static records, no model/client/API execution",
+  "records": [
+    {
+      "id": "A"
+    },
+    {
+      "id": "B",
+      "response": null
+    },
+    {
+      "id": "C",
+      "response": false
+    },
+    {
+      "id": "D",
+      "response": 0
+    },
+    {
+      "id": "E",
+      "response": ""
+    },
+    {
+      "id": "F",
+      "response": "0"
+    }
+  ],
+  "expected": [
+    {
+      "id": "A",
+      "present": false,
+      "type": "absent",
+      "literal": "ABSENT"
+    },
+    {
+      "id": "B",
+      "present": true,
+      "type": "null",
+      "literal": "null"
+    },
+    {
+      "id": "C",
+      "present": true,
+      "type": "boolean",
+      "literal": "false"
+    },
+    {
+      "id": "D",
+      "present": true,
+      "type": "number",
+      "literal": "0"
+    },
+    {
+      "id": "E",
+      "present": true,
+      "type": "string",
+      "literal": "\"\""
+    },
+    {
+      "id": "F",
+      "present": true,
+      "type": "string",
+      "literal": "\"0\""
+    }
+  ],
+  "counts": {
+    "records": 6,
+    "present": 5,
+    "nonNull": 4,
+    "nonNullNonEmptyString": 3
+  }
+}
