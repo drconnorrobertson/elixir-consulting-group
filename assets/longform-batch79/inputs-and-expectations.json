@@ -1,0 +1,117 @@
+{
+  "scope": "Original fictional finite lists and manual expectations; no actual model/client/report data",
+  "cases": {
+    "A": {
+      "values": [
+        1,
+        2,
+        3,
+        4,
+        40
+      ],
+      "expected": {
+        "count": 5,
+        "mean": "10",
+        "median": "3",
+        "lastChangedTo400Median": "3",
+        "lastChangedTo400Mean": "82"
+      }
+    },
+    "B": {
+      "values": [
+        1,
+        2,
+        8,
+        9
+      ],
+      "expected": {
+        "count": 4,
+        "median": "5",
+        "lower": "2",
+        "upper": "8"
+      }
+    },
+    "C": {
+      "values": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ],
+      "expected": {
+        "count": 5,
+        "inclusive": [
+          "10",
+          "20",
+          "30"
+        ],
+        "exclusive": [
+          "5",
+          "20",
+          "35"
+        ],
+        "median": "20"
+      }
+    },
+    "D": {
+      "values": [
+        1,
+        1,
+        1,
+        9,
+        9
+      ],
+      "expected": {
+        "count": 5,
+        "median": "1",
+        "below": 0,
+        "equal": 3,
+        "above": 2
+      }
+    },
+    "E": {
+      "groups": {
+        "Cedar": [
+          1,
+          2,
+          100
+        ],
+        "Maple": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "expected": {
+        "cedarCount": 3,
+        "mapleCount": 5,
+        "groupMedians": [
+          "2",
+          "5"
+        ],
+        "equalMean": "7/2",
+        "weightedMean": "31/8",
+        "pooledMedian": "9/2"
+      }
+    },
+    "F": {
+      "values": [
+        1,
+        2,
+        null,
+        8,
+        9
+      ],
+      "expected": {
+        "knownCount": 4,
+        "unknownCount": 1,
+        "knownMedian": "5",
+        "zeroSubstitutedMedian": "2",
+        "overallStatus": "unresolved"
+      }
+    }
+  }
+}
