@@ -1,0 +1,53 @@
+{
+  "header": [
+    "case_id",
+    "identifier",
+    "amount_text",
+    "note",
+    "status"
+  ],
+  "rows": [
+    [
+      "A",
+      "00127",
+      "12.50",
+      "plain note",
+      "supplied"
+    ],
+    [
+      "B",
+      "03-04",
+      "7",
+      "red, blue",
+      "supplied"
+    ],
+    [
+      "C",
+      "12345678901234567",
+      "8",
+      "He said \"ready\"",
+      "supplied"
+    ],
+    [
+      "D",
+      "D004",
+      "9",
+      "first line\r\nsecond line",
+      "supplied"
+    ],
+    [
+      "E",
+      "E005",
+      "",
+      "missing amount",
+      "unknown"
+    ],
+    [
+      "F",
+      "F006",
+      "0",
+      "supplied zero",
+      "supplied"
+    ]
+  ]
+}
