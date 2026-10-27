@@ -1,0 +1,103 @@
+{
+  "scope": "Original fictional unchanged strings, not observed model/customer data or identity/security findings",
+  "wholePattern": "TK-[0-9]{4}",
+  "searchPattern": "(?<![A-Za-z0-9_])TK-[0-9]{4}(?![A-Za-z0-9_])",
+  "spanBasis": "Python string positions, end excluded, not bytes",
+  "cases": [
+    {
+      "case": "A",
+      "input": "TK-0042",
+      "wholeField": true,
+      "occurrences": [
+        {
+          "text": "TK-0042",
+          "start": 0,
+          "end": 7
+        }
+      ]
+    },
+    {
+      "case": "B",
+      "input": "See (TK-0042).",
+      "wholeField": false,
+      "occurrences": [
+        {
+          "text": "TK-0042",
+          "start": 5,
+          "end": 12
+        }
+      ]
+    },
+    {
+      "case": "C",
+      "input": "XTK-0042",
+      "wholeField": false,
+      "occurrences": []
+    },
+    {
+      "case": "D",
+      "input": "TK-00420",
+      "wholeField": false,
+      "occurrences": []
+    },
+    {
+      "case": "E",
+      "input": "tk-0042",
+      "wholeField": false,
+      "occurrences": []
+    },
+    {
+      "case": "F",
+      "input": "TK-٠٠٤٢",
+      "wholeField": false,
+      "occurrences": []
+    },
+    {
+      "case": "G",
+      "input": "TK-0042 TK-0042",
+      "wholeField": false,
+      "occurrences": [
+        {
+          "text": "TK-0042",
+          "start": 0,
+          "end": 7
+        },
+        {
+          "text": "TK-0042",
+          "start": 8,
+          "end": 15
+        }
+      ]
+    },
+    {
+      "case": "H",
+      "input": "TK-0042\n",
+      "wholeField": false,
+      "occurrences": [
+        {
+          "text": "TK-0042",
+          "start": 0,
+          "end": 7
+        }
+      ]
+    },
+    {
+      "case": "I",
+      "input": "αTK-0042β",
+      "wholeField": false,
+      "occurrences": [
+        {
+          "text": "TK-0042",
+          "start": 1,
+          "end": 8
+        }
+      ]
+    },
+    {
+      "case": "J",
+      "input": "TK-0042_suffix",
+      "wholeField": false,
+      "occurrences": []
+    }
+  ]
+}
