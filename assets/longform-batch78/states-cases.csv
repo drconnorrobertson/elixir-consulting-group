@@ -1,0 +1,7 @@
+fictional_case,state,json_literal
+A,absent,ABSENT
+B,null,null
+C,boolean,false
+D,number,0
+E,string,""""""
+F,string,"""0"""
