@@ -1,0 +1,33 @@
+{
+  "scope": "Original fictional finite-decimal arithmetic only, not observed model results, business policy or financial advice",
+  "lineInputs": [
+    "0.335",
+    "0.335",
+    "0.335"
+  ],
+  "roundEachThenSum": "1.02",
+  "sumThenRound": "1.00",
+  "originalSum": "1.005",
+  "difference": "0.02",
+  "score": "9.96",
+  "threshold": "10.00",
+  "displayScore": "10.0",
+  "originalMeetsThreshold": false,
+  "roundedMeetsThreshold": true,
+  "ratio": "0.075",
+  "percentNumber": "7.500",
+  "percentDisplay": "7.50%",
+  "equalRoundedShares": [
+    "0.33",
+    "0.33",
+    "0.33"
+  ],
+  "equalRoundedTotal": "0.99",
+  "residual": "0.01",
+  "orderedAllocation": [
+    "0.34",
+    "0.33",
+    "0.33"
+  ],
+  "allocationTotal": "1.00"
+}
