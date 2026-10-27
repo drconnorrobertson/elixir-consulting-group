@@ -1,0 +1,138 @@
+{
+  "scope": "Manually authored fictional string expectations; no actual model results or business identity decision",
+  "pipeline": "unicodedata.normalize(\"NFKC\", text).casefold(), no extra normalization",
+  "expectedEqualCounts": {
+    "raw": 0,
+    "NFC": 1,
+    "NFKC": 4,
+    "NFKC_then_casefold": 5
+  },
+  "pairs": [
+    {
+      "case": "A",
+      "leftCodePoints": [
+        "U+00E9"
+      ],
+      "rightCodePoints": [
+        "U+0065",
+        "U+0301"
+      ],
+      "raw": false,
+      "NFC": true,
+      "NFKC": true,
+      "NFKC_then_casefold": true
+    },
+    {
+      "case": "B",
+      "leftCodePoints": [
+        "U+FF21"
+      ],
+      "rightCodePoints": [
+        "U+0041"
+      ],
+      "raw": false,
+      "NFC": false,
+      "NFKC": true,
+      "NFKC_then_casefold": true
+    },
+    {
+      "case": "C",
+      "leftCodePoints": [
+        "U+FB01"
+      ],
+      "rightCodePoints": [
+        "U+0066",
+        "U+0069"
+      ],
+      "raw": false,
+      "NFC": false,
+      "NFKC": true,
+      "NFKC_then_casefold": true
+    },
+    {
+      "case": "D",
+      "leftCodePoints": [
+        "U+0078",
+        "U+00A0",
+        "U+0079"
+      ],
+      "rightCodePoints": [
+        "U+0078",
+        "U+0020",
+        "U+0079"
+      ],
+      "raw": false,
+      "NFC": false,
+      "NFKC": true,
+      "NFKC_then_casefold": true
+    },
+    {
+      "case": "E",
+      "leftCodePoints": [
+        "U+0053",
+        "U+0074",
+        "U+0072",
+        "U+0061",
+        "U+00DF",
+        "U+0065"
+      ],
+      "rightCodePoints": [
+        "U+0053",
+        "U+0054",
+        "U+0052",
+        "U+0041",
+        "U+0053",
+        "U+0053",
+        "U+0045"
+      ],
+      "raw": false,
+      "NFC": false,
+      "NFKC": false,
+      "NFKC_then_casefold": true
+    },
+    {
+      "case": "F",
+      "leftCodePoints": [
+        "U+0020",
+        "U+0041",
+        "U+0020"
+      ],
+      "rightCodePoints": [
+        "U+0041"
+      ],
+      "raw": false,
+      "NFC": false,
+      "NFKC": false,
+      "NFKC_then_casefold": false
+    },
+    {
+      "case": "G",
+      "leftCodePoints": [
+        "U+0041"
+      ],
+      "rightCodePoints": [
+        "U+0410"
+      ],
+      "raw": false,
+      "NFC": false,
+      "NFKC": false,
+      "NFKC_then_casefold": false
+    },
+    {
+      "case": "H",
+      "leftCodePoints": [
+        "U+0061",
+        "U+200D",
+        "U+0062"
+      ],
+      "rightCodePoints": [
+        "U+0061",
+        "U+0062"
+      ],
+      "raw": false,
+      "NFC": false,
+      "NFKC": false,
+      "NFKC_then_casefold": false
+    }
+  ]
+}

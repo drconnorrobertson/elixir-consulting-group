@@ -1,0 +1,9 @@
+fictional_case,left_text,right_text,expected_NFC_equal,expected_NFKC_equal,expected_NFKC_then_casefold_equal
+A,é,é,true,true,true
+B,Ａ,A,false,true,true
+C,ﬁ,fi,false,true,true
+D,x y,x y,false,true,true
+E,Straße,STRASSE,false,false,true
+F, A ,A,false,false,false
+G,A,А,false,false,false
+H,a‍b,ab,false,false,false
