@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,invented TN6 FP2 FN1 TP3;positive means route to review,12 cases;accuracy3/4;precision3/5;recall3/4
+B,invented TN90 FP0 FN10 TP0,accuracy9/10;recall0;precision undefined;not release approval
+C,A relabeled with other category positive,TN3 FP1 FN2 TP6;accuracy3/4;precision6/7;recall3/4
+D,invented strict TN7 FP1 FN2 TP2;broader TN5 FP3 FN1 TP3,precision2/3→1/2;recall1/2→3/4;accuracy3/4→2/3
+E,invented Cedar TN6 FP0 FN1 TP1;Maple TN1 FP1 FN0 TP0,class-positive recalls1/2 andundefined;pooled1/2;do not silently average
+F,invented four cases;known references for three;one unresolved,resolved accuracy2/3;full accuracy unresolved;coverage3/4
