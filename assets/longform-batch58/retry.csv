@@ -1,0 +1,7 @@
+fictional_case,operation,key,payload,declared_teaching_expectation
+A,O1,K1,P1,R1_created_response_lost
+B,O1,K1,P1,same_caller_within_interval_return_recorded_R1_no_new_creation
+C,changed_payload,K1,P2,mismatch_rejected_no_creation
+D,O1_business_intent_but_new_service_identity,K2,P1,R2_created
+E,notification_stage,not_supplied,not_supplied,draft_creation_established_notification_unresolved
+F,late_attempt,K1,P1,outside_interval_behavior_unspecified
