@@ -1,0 +1,102 @@
+{
+  "scope": "Original fictional static records and manual expectations, not model/client/selection findings",
+  "records": [
+    {
+      "id": "R1",
+      "rank": 2,
+      "score": 90
+    },
+    {
+      "id": "R2",
+      "rank": 1,
+      "score": 80
+    },
+    {
+      "id": "R3",
+      "rank": 2,
+      "score": 95
+    },
+    {
+      "id": "R4",
+      "rank": 1,
+      "score": 80
+    },
+    {
+      "id": "R5",
+      "rank": 2,
+      "score": 90
+    }
+  ],
+  "strings": [
+    "2",
+    "10",
+    "1"
+  ],
+  "unknownRecords": [
+    {
+      "id": "U1"
+    },
+    {
+      "id": "U2",
+      "rank": 2
+    },
+    {
+      "id": "U3",
+      "rank": 1
+    }
+  ],
+  "expected": {
+    "A": [
+      "R2",
+      "R4",
+      "R1",
+      "R3",
+      "R5"
+    ],
+    "B": [
+      "R2",
+      "R4",
+      "R3",
+      "R1",
+      "R5"
+    ],
+    "C": [
+      "R4",
+      "R2",
+      "R3",
+      "R5",
+      "R1"
+    ],
+    "D": {
+      "text": [
+        "1",
+        "10",
+        "2"
+      ],
+      "integer": [
+        1,
+        2,
+        10
+      ]
+    },
+    "E": [
+      "U3",
+      "U2",
+      "U1"
+    ],
+    "F": {
+      "fixed": [
+        "R2",
+        "R4",
+        "R1"
+      ],
+      "cutoffTies": [
+        "R2",
+        "R4",
+        "R1",
+        "R3",
+        "R5"
+      ]
+    }
+  }
+}
