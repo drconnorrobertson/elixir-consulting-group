@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"ordered K1 through K10;zero-based positions1,4,8","K2,K5,K9;3/10 selection fraction"
+B,"same frame;positions1,1,4","K2,K2,K5;3 occurrences;2 distinct"
+C,row-A:E1;row-B:E1;row-C:E2,3 rows;2 entity labels
+D,frame Cedar20 Maple80;selected Cedar2 Maple2,"frame1/5,4/5;selection1/2,1/2;fraction1/25"
+E,"V1 K1,K2,K3,K4;V2 K4,K3,K2,K1;positions0,2","V1 K1,K3;V2 K4,K2"
+F,"authored10<=value<20;values9,10,19,20","accepted10,19;rejected9,20;not random"
