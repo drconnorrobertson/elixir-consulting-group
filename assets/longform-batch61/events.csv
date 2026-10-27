@@ -1,0 +1,5 @@
+event_id,task_id,kind
+E1,T1,done
+E2,T1,note
+E3,T2,done
+E4,T9,done

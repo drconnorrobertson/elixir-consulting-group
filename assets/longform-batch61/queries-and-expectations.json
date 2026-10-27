@@ -1,0 +1,152 @@
+{
+  "scope": "Authored SELECT queries and manually specified results for fictional local in-memory SQLite only; not observed model outputs or production instructions",
+  "queries": [
+    {
+      "name": "inner_pairs",
+      "sql": "SELECT t.task_id,t.team,e.event_id,e.kind FROM tasks t INNER JOIN events e ON t.task_id=e.task_id ORDER BY t.task_id,e.event_id",
+      "expected": [
+        [
+          "T1",
+          "A",
+          "E1",
+          "done"
+        ],
+        [
+          "T1",
+          "A",
+          "E2",
+          "note"
+        ],
+        [
+          "T2",
+          "A",
+          "E3",
+          "done"
+        ]
+      ]
+    },
+    {
+      "name": "left_pairs",
+      "sql": "SELECT t.task_id,t.team,e.event_id,e.kind FROM tasks t LEFT JOIN events e ON t.task_id=e.task_id ORDER BY t.task_id,e.event_id",
+      "expected": [
+        [
+          "T1",
+          "A",
+          "E1",
+          "done"
+        ],
+        [
+          "T1",
+          "A",
+          "E2",
+          "note"
+        ],
+        [
+          "T2",
+          "A",
+          "E3",
+          "done"
+        ],
+        [
+          "T3",
+          "B",
+          null,
+          null
+        ],
+        [
+          "T4",
+          "B",
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "name": "where_done",
+      "sql": "SELECT t.task_id,e.event_id FROM tasks t LEFT JOIN events e ON t.task_id=e.task_id WHERE e.kind='done' ORDER BY t.task_id,e.event_id",
+      "expected": [
+        [
+          "T1",
+          "E1"
+        ],
+        [
+          "T2",
+          "E3"
+        ]
+      ]
+    },
+    {
+      "name": "on_done",
+      "sql": "SELECT t.task_id,e.event_id FROM tasks t LEFT JOIN events e ON t.task_id=e.task_id AND e.kind='done' ORDER BY t.task_id,e.event_id",
+      "expected": [
+        [
+          "T1",
+          "E1"
+        ],
+        [
+          "T2",
+          "E3"
+        ],
+        [
+          "T3",
+          null
+        ],
+        [
+          "T4",
+          null
+        ]
+      ]
+    },
+    {
+      "name": "left_counts",
+      "sql": "SELECT COUNT(*),COUNT(e.event_id),COUNT(DISTINCT t.task_id) FROM tasks t LEFT JOIN events e ON t.task_id=e.task_id",
+      "expected": [
+        [
+          5,
+          3,
+          4
+        ]
+      ]
+    },
+    {
+      "name": "team_counts",
+      "sql": "SELECT t.team,COUNT(*),COUNT(e.event_id),COUNT(DISTINCT t.task_id) FROM tasks t LEFT JOIN events e ON t.task_id=e.task_id GROUP BY t.team ORDER BY t.team",
+      "expected": [
+        [
+          "A",
+          3,
+          3,
+          2
+        ],
+        [
+          "B",
+          2,
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "distinct_inner_tasks",
+      "sql": "SELECT DISTINCT t.task_id FROM tasks t INNER JOIN events e ON t.task_id=e.task_id ORDER BY t.task_id",
+      "expected": [
+        [
+          "T1"
+        ],
+        [
+          "T2"
+        ]
+      ]
+    },
+    {
+      "name": "unmatched_event_references",
+      "sql": "SELECT e.event_id,e.task_id FROM events e LEFT JOIN tasks t ON e.task_id=t.task_id WHERE t.task_id IS NULL ORDER BY e.event_id",
+      "expected": [
+        [
+          "E4",
+          "T9"
+        ]
+      ]
+    }
+  ]
+}
