@@ -1,0 +1,12 @@
+fictional_case,input_text,expected_whole_field
+A,TK-0042,true
+B,See (TK-0042).,false
+C,XTK-0042,false
+D,TK-00420,false
+E,tk-0042,false
+F,TK-٠٠٤٢,false
+G,TK-0042 TK-0042,false
+H,"TK-0042
+",false
+I,αTK-0042β,false
+J,TK-0042_suffix,false
