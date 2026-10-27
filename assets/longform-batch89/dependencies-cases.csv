@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"fictional A:[];B:[A];C:[B];candidate A,B,C;invalid B,A,C",valid chain versus one violated prerequisite;no actual work completed
+B,"fictional A:[];B:[A];C:[A];D:[B,C]","A,B,C,D and A,C,B,D valid;real concurrency unresolved"
+C,fictional B:[A];no separate A key,"node set A,B;task A description unresolved"
+D,fictional A:[B];B:[A],cycle;no complete topological order
+E,"fictional A:[];B:[];C:[A,B];mark A done before B",C blocked after A alone;ready after A and B done;not real completion
+F,fictional add D with B;then add D with C,"effective predecessors B,C;second addition does not replace first"

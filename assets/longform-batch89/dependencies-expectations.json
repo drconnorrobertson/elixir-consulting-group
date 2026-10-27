@@ -1,0 +1,111 @@
+{
+  "scope": "Original fictional predecessor graphs;not actual AI output/team plan",
+  "cases": {
+    "A": {
+      "graph": {
+        "A": [],
+        "B": [
+          "A"
+        ],
+        "C": [
+          "B"
+        ]
+      },
+      "valid": [
+        "A",
+        "B",
+        "C"
+      ],
+      "invalid": [
+        "B",
+        "A",
+        "C"
+      ]
+    },
+    "B": {
+      "graph": {
+        "A": [],
+        "B": [
+          "A"
+        ],
+        "C": [
+          "A"
+        ],
+        "D": [
+          "B",
+          "C"
+        ]
+      },
+      "validOrders": [
+        [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        [
+          "A",
+          "C",
+          "B",
+          "D"
+        ]
+      ]
+    },
+    "C": {
+      "graph": {
+        "B": [
+          "A"
+        ]
+      },
+      "expectedNodes": [
+        "A",
+        "B"
+      ]
+    },
+    "D": {
+      "graph": {
+        "A": [
+          "B"
+        ],
+        "B": [
+          "A"
+        ]
+      },
+      "cycle": true
+    },
+    "E": {
+      "graph": {
+        "A": [],
+        "B": [],
+        "C": [
+          "A",
+          "B"
+        ]
+      },
+      "initialReady": [
+        "A",
+        "B"
+      ],
+      "afterAReady": [],
+      "afterBReady": [
+        "C"
+      ]
+    },
+    "F": {
+      "additions": [
+        [
+          "D",
+          "B"
+        ],
+        [
+          "D",
+          "C"
+        ]
+      ],
+      "expectedPredecessors": [
+        "B",
+        "C"
+      ]
+    }
+  }
+}
