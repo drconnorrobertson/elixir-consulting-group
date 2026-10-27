@@ -1,0 +1,123 @@
+{
+  "scope": "Original manually authored selections, no random draw or model execution",
+  "A": {
+    "frame": [
+      "K1",
+      "K2",
+      "K3",
+      "K4",
+      "K5",
+      "K6",
+      "K7",
+      "K8",
+      "K9",
+      "K10"
+    ],
+    "positions": [
+      1,
+      4,
+      8
+    ],
+    "expected": [
+      "K2",
+      "K5",
+      "K9"
+    ],
+    "fraction": "3/10"
+  },
+  "B": {
+    "positions": [
+      1,
+      1,
+      4
+    ],
+    "expected": [
+      "K2",
+      "K2",
+      "K5"
+    ],
+    "occurrences": 3,
+    "distinct": 2
+  },
+  "C": {
+    "rows": [
+      {
+        "row": "row-A",
+        "entity": "E1"
+      },
+      {
+        "row": "row-B",
+        "entity": "E1"
+      },
+      {
+        "row": "row-C",
+        "entity": "E2"
+      }
+    ],
+    "expectedRows": 3,
+    "expectedEntities": 2
+  },
+  "D": {
+    "frame": {
+      "Cedar": 20,
+      "Maple": 80
+    },
+    "selected": {
+      "Cedar": 2,
+      "Maple": 2
+    },
+    "expectedFrame": [
+      "1/5",
+      "4/5"
+    ],
+    "expectedSelected": [
+      "1/2",
+      "1/2"
+    ],
+    "fraction": "1/25"
+  },
+  "E": {
+    "V1": [
+      "K1",
+      "K2",
+      "K3",
+      "K4"
+    ],
+    "V2": [
+      "K4",
+      "K3",
+      "K2",
+      "K1"
+    ],
+    "positions": [
+      0,
+      2
+    ],
+    "expectedV1": [
+      "K1",
+      "K3"
+    ],
+    "expectedV2": [
+      "K4",
+      "K2"
+    ]
+  },
+  "F": {
+    "lowerInclusive": 10,
+    "upperExclusive": 20,
+    "values": [
+      9,
+      10,
+      19,
+      20
+    ],
+    "accepted": [
+      10,
+      19
+    ],
+    "rejected": [
+      9,
+      20
+    ]
+  }
+}
