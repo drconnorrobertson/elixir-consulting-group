@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,all ready and assigned,R1
+B,any ready or assigned inclusive,"R1,R2,R3"
+C,ready AND (high priority OR east region),"R1,R2"
+D,not all versus none,"R2,R3,R4 versus R4"
+E,R5 assigned omitted; R6 ready null,both unresolved under strict Boolean-input policy
+F,empty conditions,Python all true; any false; business selection unresolved
