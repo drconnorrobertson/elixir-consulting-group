@@ -1,0 +1,86 @@
+{
+  "scope": "Original static URL/query strings and manual expectations;no network requests",
+  "cases": {
+    "A": {
+      "url": "https://example.invalid/report?team=cedar#notes",
+      "expected": {
+        "scheme": "https",
+        "netloc": "example.invalid",
+        "path": "/report",
+        "query": "team=cedar",
+        "fragment": "notes"
+      }
+    },
+    "B": {
+      "query": "tag=red&tag=blue",
+      "pairs": [
+        [
+          "tag",
+          "red"
+        ],
+        [
+          "tag",
+          "blue"
+        ]
+      ]
+    },
+    "C": {
+      "queries": [
+        "q=red+blue",
+        "q=red%2Bblue"
+      ],
+      "values": [
+        "red blue",
+        "red+blue"
+      ]
+    },
+    "D": {
+      "query": "a=&b=2",
+      "keepBlank": [
+        [
+          "a",
+          ""
+        ],
+        [
+          "b",
+          "2"
+        ]
+      ],
+      "default": [
+        [
+          "b",
+          "2"
+        ]
+      ]
+    },
+    "E": {
+      "queries": [
+        "q=A%26B",
+        "q=A&part=B"
+      ],
+      "pairs": [
+        [
+          [
+            "q",
+            "A&B"
+          ]
+        ],
+        [
+          [
+            "q",
+            "A"
+          ],
+          [
+            "part",
+            "B"
+          ]
+        ]
+      ]
+    },
+    "F": {
+      "query": "x=%252F",
+      "once": "%2F",
+      "additional": "/"
+    }
+  }
+}
