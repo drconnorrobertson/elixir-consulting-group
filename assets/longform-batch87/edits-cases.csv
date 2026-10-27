@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,original Do not publish the draft.;proposal Do publish the draft.,not removed;source restriction changed
+B,original The delivery date is not confirmed.;proposal The delivery date is Friday.,Friday unsupported in supplied source
+C,original Mix 500 mL in the marked container.;proposal Mix 500 L in the marked container.,same500;volume ratio1000;not a real mixing instruction
+D,original record identifier then compare draft;proposal compare draft then record identifier,same actions;reversed order;no operating decision
+E,original This is an invented example.;proposal A client achieved this result.,unsupported evidence-status change
+F,original Cedar desk accepts sealed kits.;proposal Cedar  desk accepts sealed kits.,raw differs;declared whitespace-normalized match;not universal equivalence

@@ -1,0 +1,37 @@
+{
+  "scope": "Original fictional before/after strings, manually authored boundaries;not actual model outputs",
+  "cases": {
+    "A": {
+      "before": "Do not publish the draft.",
+      "after": "Do publish the draft."
+    },
+    "B": {
+      "before": "The delivery date is not confirmed.",
+      "after": "The delivery date is Friday."
+    },
+    "C": {
+      "before": "Mix 500 mL in the marked container.",
+      "after": "Mix 500 L in the marked container.",
+      "volumeRatio": "1000"
+    },
+    "D": {
+      "before": [
+        "First record the draft identifier.",
+        "Then compare the draft."
+      ],
+      "after": [
+        "Then compare the draft.",
+        "First record the draft identifier."
+      ]
+    },
+    "E": {
+      "before": "This is an invented example.",
+      "after": "A client achieved this result."
+    },
+    "F": {
+      "before": "Cedar desk accepts sealed kits.",
+      "after": "Cedar  desk accepts sealed kits.",
+      "normalization": "split whitespace then join with one ASCII space"
+    }
+  }
+}
