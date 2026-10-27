@@ -1,0 +1,5 @@
+fictional_case,input_decimal,half_even_two_places,half_up_two_places
+A,1.005,1.00,1.01
+B,1.015,1.02,1.02
+C,-1.005,-1.00,-1.01
+G,2.675,2.68,2.68
