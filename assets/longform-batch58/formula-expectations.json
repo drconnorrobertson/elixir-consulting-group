@@ -1,0 +1,62 @@
+{
+  "scope": "Authored coordinate transformations and exact arithmetic; not spreadsheet execution or model outputs",
+  "copy_down": [
+    {
+      "destination": "D2",
+      "formula": "=B2*C2",
+      "expected": 20
+    },
+    {
+      "destination": "D3",
+      "formula": "=B3*C3",
+      "expected": 60
+    },
+    {
+      "destination": "D4",
+      "formula": "=B4*C4",
+      "expected": 120
+    }
+  ],
+  "shared_factor": [
+    {
+      "destination": "E2",
+      "formula": "=D2*$F$1",
+      "expected": 2
+    },
+    {
+      "destination": "E3",
+      "formula": "=D3*$F$1",
+      "expected": 6
+    },
+    {
+      "destination": "E4",
+      "formula": "=D4*$F$1",
+      "expected": 12
+    }
+  ],
+  "mixed": [
+    {
+      "destination": "C2",
+      "formula": "=$B2*C$1",
+      "expected": 20
+    },
+    {
+      "destination": "D2",
+      "formula": "=$B2*D$1",
+      "expected": 40
+    },
+    {
+      "destination": "C3",
+      "formula": "=$B3*C$1",
+      "expected": 30
+    },
+    {
+      "destination": "D3",
+      "formula": "=$B3*D$1",
+      "expected": 60
+    }
+  ],
+  "total": 200,
+  "omitted_last_row_total": 80,
+  "wrong_D3_B2_times_C3": 40
+}
