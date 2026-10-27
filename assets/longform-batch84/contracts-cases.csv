@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,id K1;status ready;count0,structure accepts;business unverified
+B,count omitted versus count null,required versus type
+C,count string0,type
+D,extra approved true,additional property;no authority finding
+E,status READY,enum
+F,id K1;status ready;count2,structure accepts;business unresolved

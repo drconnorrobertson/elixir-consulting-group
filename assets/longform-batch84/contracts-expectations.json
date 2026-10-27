@@ -1,0 +1,86 @@
+{
+  "scope": "Original fixture contract and manual error categories; local checks limited to supplied objects, not general JSON Schema validation",
+  "schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "ready",
+          "review"
+        ]
+      },
+      "count": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "required": [
+      "id",
+      "status",
+      "count"
+    ],
+    "additionalProperties": false
+  },
+  "objects": {
+    "A": {
+      "id": "K1",
+      "status": "ready",
+      "count": 0
+    },
+    "B1": {
+      "id": "K1",
+      "status": "ready"
+    },
+    "B2": {
+      "id": "K1",
+      "status": "ready",
+      "count": null
+    },
+    "C": {
+      "id": "K1",
+      "status": "ready",
+      "count": "0"
+    },
+    "D": {
+      "id": "K1",
+      "status": "ready",
+      "count": 0,
+      "approved": true
+    },
+    "E": {
+      "id": "K1",
+      "status": "READY",
+      "count": 0
+    },
+    "F": {
+      "id": "K1",
+      "status": "ready",
+      "count": 2
+    }
+  },
+  "expected": {
+    "A": [],
+    "B1": [
+      "required"
+    ],
+    "B2": [
+      "type"
+    ],
+    "C": [
+      "type"
+    ],
+    "D": [
+      "additionalProperties"
+    ],
+    "E": [
+      "enum"
+    ],
+    "F": []
+  }
+}

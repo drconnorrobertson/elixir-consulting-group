@@ -1,0 +1,53 @@
+{
+  "scope": "Original fictional static fixture; no retrieval/model run",
+  "heading": "Cedar Return Desk",
+  "document": "WorkshopNote",
+  "version": "V3",
+  "sentences": {
+    "S1": "The Cedar desk accepts sealed kits on Tuesday.",
+    "S2": "Open kits need review before return.",
+    "S3": "Maple desk rules are separate."
+  },
+  "candidateA": "accepts sealed kits on Tuesday",
+  "candidateB": [
+    "S1"
+  ],
+  "requiredForB": "S2",
+  "overlapChunks": [
+    [
+      "S1",
+      "S2"
+    ],
+    [
+      "S2",
+      "S3"
+    ]
+  ],
+  "identities": [
+    [
+      "WorkshopNote",
+      "V2",
+      "C1"
+    ],
+    [
+      "WorkshopNote",
+      "V3",
+      "C1"
+    ]
+  ],
+  "budgetUnits": [
+    1200,
+    800,
+    900
+  ],
+  "budgetLimit": 2500,
+  "candidateF": "It must be reviewed first.",
+  "antecedent": null,
+  "expected": {
+    "occurrences": 4,
+    "unique": 3,
+    "S2Occurrences": 2,
+    "total": 2900,
+    "excess": 400
+  }
+}
