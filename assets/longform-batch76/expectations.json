@@ -1,0 +1,34 @@
+{
+  "scope": "Original fictional inputs and manual exact expectations; not model outputs or real performance data",
+  "cases": {
+    "A": {
+      "pooled": "14/55",
+      "equalGroup": "1/2"
+    },
+    "B": {
+      "totalMinutes": "88",
+      "count": "10",
+      "weightedMean": "44/5",
+      "equalGroup": "7"
+    },
+    "C": {
+      "weightedScore": "32/5"
+    },
+    "D": {
+      "pooled": "2/11"
+    },
+    "E": {
+      "status": "unresolved_missing_denominator"
+    },
+    "F": {
+      "periodOne": "29/110",
+      "periodTwo": "81/110",
+      "cedarOne": "9/10",
+      "cedarTwo": "4/5",
+      "mapleOne": "1/5",
+      "mapleTwo": "1/10",
+      "equalGroupOne": "11/20",
+      "equalGroupTwo": "9/20"
+    }
+  }
+}
