@@ -1,0 +1,7 @@
+fictional_case,source_value,comparison_value,expected_source_utc,expected_comparison_utc,bounded_reading
+A,2030-06-12T09:00:00-04:00,2030-06-12T13:00:00Z,2030-06-12T13:00:00Z,2030-06-12T13:00:00Z,same_instant
+B,2030-06-12T09:00:00-04:00,2030-06-12T09:00:00-05:00,2030-06-12T13:00:00Z,2030-06-12T14:00:00Z,comparison_one_hour_later
+C,2030-06-12T23:30:00-02:00,,2030-06-13T01:30:00Z,,next_UTC_date
+D,2030-06-12T09:00:00,,,,missing_basis_unresolved
+E,2030-06-12,,,,date_only_not_an_instant
+F,2030-06-12T13:00:00Z,2030-06-12T13:00:00Z,2030-06-12T13:00:00Z,2030-06-12T13:00:00Z,equal_values_created_at_not_approved_at

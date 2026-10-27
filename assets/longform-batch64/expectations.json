@@ -1,0 +1,12 @@
+{
+  "scope": "Manually specified expectations for original fictional ordinary fixed-offset cases; not model observations or full RFC conformance",
+  "caseA_equal": true,
+  "caseB_delta_seconds": 3600,
+  "caseC_utc": "2030-06-13T01:30:00Z",
+  "positive_offset_counterexample_utc": "2030-06-11T22:30:00Z",
+  "missing_offset_utc": null,
+  "date_only_utc": null,
+  "caseF_equal_values": true,
+  "caseF_same_event_meaning": false,
+  "mixed_offset_text_order_equals_instant_order": false
+}
