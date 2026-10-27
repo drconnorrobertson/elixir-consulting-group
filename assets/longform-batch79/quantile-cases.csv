@@ -1,0 +1,8 @@
+fictional_case,group,authored_values_json
+A,all,"[1,2,3,4,40]"
+B,all,"[1,2,8,9]"
+C,all,"[0,10,20,30,40]"
+D,all,"[1,1,1,9,9]"
+E,Cedar,"[1,2,100]"
+E,Maple,"[3,4,5,6,7]"
+F,all,"[1,2,null,8,9]"
