@@ -1,0 +1,65 @@
+{
+  "scope": "Original fictional text and mappings only; no PDF binary, parser, OCR or AI execution",
+  "pageLabels": [
+    "i",
+    "ii",
+    "1",
+    "2"
+  ],
+  "intendedBlocks": [
+    "L1",
+    "L2",
+    "R1",
+    "R2"
+  ],
+  "interleavedBlocks": [
+    "L1",
+    "R1",
+    "L2",
+    "R2"
+  ],
+  "candidates": [
+    "LOT-0A",
+    "LOT-OA"
+  ],
+  "selectedIndices": [
+    0,
+    1,
+    3
+  ],
+  "headings": [
+    "volume_mL",
+    "duration_min"
+  ],
+  "values": [
+    500,
+    30
+  ],
+  "caption": "Two components on a workbench",
+  "expected": {
+    "A": {
+      "index": 2,
+      "printedLabel": "1"
+    },
+    "B": {
+      "sameMembership": true,
+      "sameOrder": false
+    },
+    "C": null,
+    "D": {
+      "selectedFraction": "3/4",
+      "missing": [
+        2
+      ]
+    },
+    "E": {
+      "volume_mL": 500,
+      "duration_min": 30
+    },
+    "F": {
+      "captionAvailable": true,
+      "colors": null,
+      "dimensions": null
+    }
+  }
+}

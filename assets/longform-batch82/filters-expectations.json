@@ -1,0 +1,78 @@
+{
+  "scope": "Original fictional records and manual expectations; no AI, database or destination execution",
+  "records": [
+    {
+      "id": "R1",
+      "ready": true,
+      "assigned": true,
+      "priority": "high",
+      "region": "west"
+    },
+    {
+      "id": "R2",
+      "ready": true,
+      "assigned": false,
+      "priority": "normal",
+      "region": "east"
+    },
+    {
+      "id": "R3",
+      "ready": false,
+      "assigned": true,
+      "priority": "normal",
+      "region": "west"
+    },
+    {
+      "id": "R4",
+      "ready": false,
+      "assigned": false,
+      "priority": "high",
+      "region": "west"
+    }
+  ],
+  "unknownRecords": [
+    {
+      "id": "R5",
+      "ready": true
+    },
+    {
+      "id": "R6",
+      "ready": null,
+      "assigned": true
+    }
+  ],
+  "emptyConditions": [],
+  "expected": {
+    "A": [
+      "R1"
+    ],
+    "B": [
+      "R1",
+      "R2",
+      "R3"
+    ],
+    "C": [
+      "R1",
+      "R2"
+    ],
+    "D": {
+      "notAll": [
+        "R2",
+        "R3",
+        "R4"
+      ],
+      "none": [
+        "R4"
+      ]
+    },
+    "E": [
+      "R5",
+      "R6"
+    ],
+    "F": {
+      "runtimeAll": true,
+      "runtimeAny": false,
+      "businessSelection": null
+    }
+  }
+}
