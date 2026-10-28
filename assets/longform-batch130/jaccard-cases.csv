@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""A"": [""EX-A"", ""EX-B"", ""EX-C""], ""B"": [""EX-B"", ""EX-C"", ""EX-D""]}",Intersection2 union4 similarity1/2 distance1/2
+B,"{""A"": [""EX-A"", ""EX-A"", ""EX-B""], ""B"": [""EX-A"", ""EX-B""]}","Distinctsetsidenticalsimilarity1, lengths3/2 occurrencesA2/1notlistidentity"
+C,"{""universeCount"": 100, ""A"": [""EX-A""], ""B"": [""EX-B""]}",Sharedpresent0 union2 similarity0 sharedabsent98notdenominator
+D,"{""A"": [], ""B"": []}",Raw0/0undefined;namedSciPyconventiondistance0/complementsimilarity1nottaskcompletion
+E,"{""A"": [""EX-A"", ""EX-B""], ""B"": [""EX-B"", ""EX-C""], ""weights"": {""EX-A"": 1, ""EX-B"": 4, ""EX-C"": 1}}",Unweighted1/3 versuscoordinateweighted4/6=2/3 notbusinessvalue
+F,"{""A"": {""EX-A"": true, ""EX-B"": true, ""EX-C"": false}, ""B"": {""EX-A"": true, ""EX-B"": false, ""EX-C"": null}}",Membershipavailable2/3 fullunresolved;hypabsent1/2/present1/3
