@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""hex"":""636174"",""encoded"":""Y2F0"",""expectedBytes"":3,""expectedCharacters"":4}",Four encoded ASCII characters decode to three supplied bytes NOTtokens/file completeness
+B,"{""hex"":[""63"",""6361"",""636174""],""encoded"":[""Yw=="",""Y2E="",""Y2F0""],""expectedPadding"":[2,1,0]}",Padded standard representations decode to one/two/three bytes NOTdestination acceptance of altered endings
+C,"{""hex"":""fbff"",""standard"":""+/8="",""urlsafe"":""-_8=""}",Two declared alphabets represent the same two supplied bytes NOTURL validation or source identity
+D,"{""wrapped"":""Y2\nF0"",""expectedHex"":""636174"",""defaultValidate"":false,""strictValidate"":true}",Python default returns cat; validate=True rejects newline NOTuniversal format validity
+E,"{""invalidUtf8Hex"":""ff"",""encoded"":""/w=="",""text"":""\u00e9"",""utf8Hex"":""c3a9"",""utf8Encoded"":""w6k=""}",Base64 decode of ff succeeds; strict UTF-8 interpretation fails; c3a9 returns é NOTencoding detection or content recovery
+F,"{""originalHex"":""636174"",""inner"":""Y2F0"",""outer"":""WTJGMA=="",""declaredLayers"":2}",One decode yields Y2F0; declared second yields cat NOTpermission to decode until readable
