@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""aHex"":""636174"",""bHex"":""6361740a"",""expectedLengths"":[3,4]}",cat versus cat+LF bytes3/4 different localSHA256 NOTcause/actualtransferfailure
+B,"{""labels"":[""draft-one.txt"",""reviewed-copy.txt""],""payloadsHex"":[""636174"",""636174""]}",Two labels same supplied payload bytes/digest NOTreview/approval/origin
+C,"{""codepointsA"":[233],""codepointsB"":[101,769],""utf8Hex"":[""c3a9"",""65cc81""],""expectedByteLengths"":[2,3]}",Authored composed/decomposed UTF8 bytes2/3 different localSHA256 NOTidentity/normalizationpolicy
+D,"{""a"":""id,count\nEX-A,2\nEX-B,3\n"",""b"":""id,count\nEX-B,3\nEX-A,2\n"",""expectedLengths"":[23,23],""expectedCountTotal"":5}",Two23byteCSVsnippets same authored row membership/total5 differentorder/digest NOTbusinessreconciliation
+E,"{""wholeHex"":""616263646566"",""partitionsHex"":[[""6162"",""63646566""],[""616263"",""646566""]],""reversedHex"":[""63646566"",""6162""],""expectedLengths"":[[2,4],[3,3]]}",Two ordered partitions reconstructabcdef and match whole digest; reversedpartsdiffer NOTstreamcompletion
+F,"{""payloadHex"":""636174"",""expectedRawDigestBytes"":32,""expectedHexCharacters"":64}",Rawdigest32bytes versushex64characters samecalculatedresult NOThigherstrength/authenticity
