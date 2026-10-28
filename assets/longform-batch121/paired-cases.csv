@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""table"": [6, 2, 2, 0], ""expectedN"": 10, ""expectedA"": 8, ""expectedB"": 8, ""expectedDiscordant"": 4, ""expectedNet"": 0}","Equal eight-of-ten marginal matches, four changed states; no actual model performance"
+B,"{""table"": [8, 0, 0, 2], ""expectedN"": 10, ""expectedA"": 8, ""expectedB"": 8, ""expectedDiscordant"": 0, ""expectedNet"": 0}","Same margins as A, no changed binary states; not identical output text"
+C,"{""table"": [5, 1, 3, 1], ""expectedN"": 10, ""expectedA"": 6, ""expectedB"": 8, ""expectedDiscordant"": 4, ""expectedNet"": 2}","Three fixes minus one regression, net2/10=1/5; conditional fix3/4 not all-case fraction"
+D,"{""a"": [[""K1"", 1], [""K2"", 1], [""K3"", 0], [""K4"", 0]], ""b"": [[""K3"", 0], [""K4"", 0], [""K1"", 1], [""K2"", 1]], ""expectedAligned"": [2, 0, 0, 2], ""expectedPositional"": [0, 2, 2, 0]}",Explicit fictional identifier alignment differs from positional pairing; no real identity finding
+E,"{""rows"": [[""E1"", 1, 1], [""E2"", 0, 1], [""E3"", 1, null], [""E4"", 0, 0]], ""expectedComplete"": [1, 0, 1, 1], ""expectedAvailability"": [3, 4], ""expectedFullIfMatch"": [1, 4], ""expectedFullIfMismatch"": [0, 1]}","Complete subset net1/3, availability3/4, full comparison unresolved; alternatives not observations"
+F,"{""Cedar"": [2, 0, 2, 0], ""Maple"": [2, 2, 0, 0], ""expectedPooled"": [4, 2, 2, 0], ""expectedCedarNet"": [1, 2], ""expectedMapleNet"": [-1, 2]}","Opposing authored group changes, pooled zero net; no fairness or causal finding"
