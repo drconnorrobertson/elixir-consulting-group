@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""grades"": {""A"": 3, ""B"": 1, ""C"": 0}, ""order"": [""B"", ""A"", ""C""], ""gain"": ""linear"", ""discount"": ""log2(rank+1)""}",DCG2.892789 ideal3.630930 ratio.796708rounded; notmodelresult
+B,"{""orderedGrades"": [0, 3, 1], ""gainRules"": [""linear"", ""2**grade-1""]}","Linear.659002 versusexponential.644287rounded sameorder/grades, notmodelchange"
+C,"{""orderedGrades"": [1, 3, 0], ""cutoffs"": [1, 2, 3]}","At1 1/3;at2and3 .796708rounded underdeclaredinventory, notsemanticcoverage"
+D,"{""orderedGrades"": [1, 3, 0], ""multiplier"": 2, ""offset"": 1}","Linearpositive scalingpreservesratio; offsetratio.871892rounded differs, notrubricvalidation"
+E,"{""predictionScores"": [1, 1], ""grades"": [3, 1], ""cutoff"": 1}",Twoexplicitordersnormalized1or1/3;authoredequalordermean2/3notgeneraltiereproduction
+F,"{""zeroGrades"": [0, 0, 0], ""unknownGrades"": [3, 1, null]}",Allzeroideal0/raw0/0undefined;unknowngradeavailability2/3distinct/fullscoreunresolved
