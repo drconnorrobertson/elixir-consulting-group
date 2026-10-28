@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,text ABC;declared UTF-8,codepoints3;bytes3;hex414243;exact roundtrip
+B,text caf\u00e9;declared UTF-8,codepoints4;bytes5;hex636166c3a9;exact roundtrip
+C,text1 \u00e9;text2 e\u0301;no normalization,codepoints1/2;bytes2/3;hex c3a9/65cc81;not identity finding
+D,text A\u00e9B;actual hex41c3a942;prefix first2bytes41c3,strict error;ignore A;replace A\ufffd;first3bytes gives A\u00e9
+E,one stream chunks41c3/a942;first nonfinal/second final;separate incomplete stream c3 then final empty,outputs A then \u00e9B;joined exact A\u00e9B;separate c3 buffers empty then final error
+F,invalid supplied bytes ff41;declared UTF-8,strict error;ignore A;replace \ufffdA;unknown cause/original unresolved
