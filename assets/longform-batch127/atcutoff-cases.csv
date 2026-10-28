@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""relevant"": [""A"", ""C"", ""E"", ""G""], ""ranking"": [""A"", ""B"", ""C"", ""D"", ""E""], ""k"": 3}",Two relevant in three positions: precision2/3 recall1/2; supplied labels only
+B,"{""relevant"": [""A"", ""C"", ""E""], ""ranking"": [""A"", ""B"", ""C"", ""D"", ""E""], ""cutoffs"": [1, 2, 5]}","Precision1,1/2,3/5 recall1/3,1/3,1 under authored cutoffs; not retriever change"
+C,"{""ranking"": [""A"", ""B""], ""relevant"": [""A""], ""requestedK"": 5}",One relevant: fixed-requested1/5 versus returned1/2; declared conventions not universal evaluator
+D,"{""ranking"": [""A"", ""A"", ""B""], ""relevant"": [""A"", ""C""], ""k"": 3}",Two relevant occurrences/three slots but one distinct relevant identifier/two=1/2 distinct coverage
+E,"{""queries"": [{""id"": ""Cedar"", ""selected"": 2, ""hits"": 1, ""relevant"": 1}, {""id"": ""Maple"", ""selected"": 2, ""hits"": 1, ""relevant"": 9}]}",Equal-query recall5/9 versus pooled1/5; both query precision1/2; no actual traffic
+F,"{""judgments"": [true, false, null], ""k"": 3, ""relevantInventoryKnown"": false}",Judgment availability2/3; hypothetical precision1/3 or2/3; final precision and collection recall unresolved
