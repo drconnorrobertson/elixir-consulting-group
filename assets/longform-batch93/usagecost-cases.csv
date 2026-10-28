@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,fictional input250000 at4 units/million;output50000 at12 units/million,input1;output3/5;subtotal8/5;not a real bill
+B,fictional input250 at4 units/million versus4 units/token,1/1000 versus1000;factor1000000
+C,fictional totalinput200000=uncached50000+read150000;rates4 and1/2 units/million,correct11/40;doublecount7/8;excess3/5
+D,fictional write100000 at5;three reads100000 at1/2 each;ordinaryrate4 per million,scenario13/20 versusordinary8/5;difference19/20;not measured savings
+E,fictional attempts I10000/O2000 andI8000/O1000;rates4/12 permillion,8/125 plus11/250=27/250;oneaccepteditemnotoneattempt
+F,fictional knowninputcost4/5;outputcountunknown;rate12permillion,"fullunknown;assumed10000 gives23/25;20000gives26/25,not observed"
