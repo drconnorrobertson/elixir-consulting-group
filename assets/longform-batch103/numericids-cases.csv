@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,JSON integers9007199254740992 and9007199254740993,Distinct Python integers; explicit float conversion equal; not actual application loss
+B,JSON string00042 versus number42; separate bare00042 token,5characters/3leadingzeros; integer conversion42; bare token invalid JSON; identity unresolved
+C,JSON42/42.0/quoted42,int/float/string; numeric equality differs from source token/type equality
+D,JSON1e3/1000/quoted1e3,float1000.0/int1000/string1e3; source spellings differ
+E,JSONfalse/0,Boolean/int exact types differ although Python equality true
+F,JSON quoted001/1/1.0,Three source representations; declared integer conversion one distinct result; not entity duplicates

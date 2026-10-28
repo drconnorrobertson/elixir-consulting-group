@@ -1,0 +1,66 @@
+{
+  "scope": "Original fictional JSON token cases. Local Python checks only; no model/provider/client/import/security/general-conformance or real identity finding.",
+  "A": {
+    "tokens": [
+      "9007199254740992",
+      "9007199254740993"
+    ],
+    "expectedDifference": 1,
+    "expectedFloatEqual": true
+  },
+  "B": {
+    "stringToken": "\"00042\"",
+    "numberToken": "42",
+    "invalidBareToken": "00042",
+    "expectedLength": 5,
+    "expectedLeadingZeros": 3
+  },
+  "C": {
+    "tokens": [
+      "42",
+      "42.0",
+      "\"42\""
+    ],
+    "expectedTypeNames": [
+      "int",
+      "float",
+      "str"
+    ]
+  },
+  "D": {
+    "tokens": [
+      "1e3",
+      "1000",
+      "\"1e3\""
+    ],
+    "expectedTypeNames": [
+      "float",
+      "int",
+      "str"
+    ]
+  },
+  "E": {
+    "tokens": [
+      "false",
+      "0"
+    ],
+    "expectedTypeNames": [
+      "bool",
+      "int"
+    ],
+    "expectedNumericEqual": true
+  },
+  "F": {
+    "tokens": [
+      "\"001\"",
+      "1",
+      "1.0"
+    ],
+    "expectedConverted": [
+      1,
+      1,
+      1
+    ],
+    "expectedDistinctConverted": 1
+  }
+}
