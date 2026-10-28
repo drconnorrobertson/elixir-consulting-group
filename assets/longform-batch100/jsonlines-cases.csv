@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,two compact authored objects EX-L1/count2 and EX-L2/count3 separated by LF;alternate one array,2line values/countsum5 versus1outer array with2members;whole sequence is not one JSON document
+B,one pretty-printed EX-P1/count4 object on four physical lines,whole object parses;all4lines fail independent single-value parsing
+C,one note serialized alpha\nbeta;separate invalid variant contains literal LF inside quotes,one file record;parsed note10characters with newline;literal control variant fails
+D,four positions:null/blank/{}/false,3JSONvalues/1blank/1object under chosen object-only rule;not universal blank policy or schema success
+E,complete EX-T1 LF then unfinished EX-T2;alternate complete two values lacking final LF,1complete plus fragment versus2complete without final terminator;not intended total/import completion
+F,file1 EX-J1 no finalLF;file2 EX-J2 with finalLF,naive join invalid one-line pair;explicit LF boundary yields2values;not general repair/identity/import finding
