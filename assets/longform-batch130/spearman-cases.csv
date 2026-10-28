@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""x"": [1, 2, 3], ""y"": [1, 4, 9]}",Bothranks1/2/3 rho1;originaldifferences0/2/6 notagreement
+B,"{""x"": [10, 10, 30], ""y"": [1, 2, 3]}",Averageranks1.5/1.5/3 rho0.866025rounded notstricttieorder
+C,"{""x"": [1, 2, 3], ""y"": [9, 4, 1]}",Reverseranks rho-1 notquality/cause
+D,"{""x"": {""EX-K1"": 1, ""EX-K2"": 2, ""EX-K3"": 3}, ""incomingY"": [[""EX-K3"", 30], [""EX-K2"", 20], [""EX-K1"", 10]]}",SuppliedIDalignmentrho1versuspositional-1 notactualidentityproof
+E,"{""x"": [5, 5, 5], ""y"": [1, 2, 3]}",Constantranks2/2/2 squaredsum0 denominator0 undefinednotzero
+F,"{""x"": [1, 2, 3], ""y"": [1, 2, null]}",Available2/3 subsetrho1 fullunresolved;hypthird3gives1/third0gives-1/2
