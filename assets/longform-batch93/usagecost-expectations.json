@@ -1,0 +1,73 @@
+{
+  "scope": "Original fictional token counts and invented cost-unit rates, not real provider prices, usage, client billing or savings. No model/API/cache execution.",
+  "ratesPerMillion": {
+    "input": "4",
+    "output": "12",
+    "read": "1/2",
+    "write": "5"
+  },
+  "cases": {
+    "A": {
+      "input": 250000,
+      "output": 50000,
+      "expected": [
+        "1",
+        "3/5",
+        "8/5"
+      ]
+    },
+    "B": {
+      "input": 250,
+      "perMillion": "1/1000",
+      "perToken": "1000",
+      "factor": 1000000
+    },
+    "C": {
+      "totalInput": 200000,
+      "uncached": 50000,
+      "read": 150000,
+      "expected": "11/40",
+      "doubleCount": "7/8",
+      "excess": "3/5"
+    },
+    "D": {
+      "write": 100000,
+      "readEach": 100000,
+      "reads": 3,
+      "expected": "13/20",
+      "ordinary": "8/5",
+      "difference": "19/20"
+    },
+    "E": {
+      "attempts": [
+        [
+          10000,
+          2000
+        ],
+        [
+          8000,
+          1000
+        ]
+      ],
+      "expected": [
+        "8/125",
+        "11/250"
+      ],
+      "total": "27/250",
+      "acceptedItems": 1
+    },
+    "F": {
+      "knownInputCost": "4/5",
+      "output": null,
+      "total": null,
+      "scenarioCounts": [
+        10000,
+        20000
+      ],
+      "scenarioTotals": [
+        "23/25",
+        "26/25"
+      ]
+    }
+  }
+}
