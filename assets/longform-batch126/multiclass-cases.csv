@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""labels"": [""Cedar"", ""Maple"", ""Birch""], ""matrix"": [[6, 1, 1], [1, 1, 0], [0, 1, 1]], ""orientation"": ""rows references, columns predictions""}","Per-class F1 4/5,2/5,1/2; macro17/30 support-weighted41/60 micro2/3, not model quality"
+B,"{""labels"": [""Cedar"", ""Maple"", ""Birch""], ""matrix"": [[8, 0, 0], [2, 0, 0], [2, 0, 0]], ""undefinedPrecisionPolicy"": ""declared zero substitution for summary only""}","Same8/12accuracy asA, macroF1 4/15 weighted8/15; no predictions for two classes, not deployment finding"
+C,"{""matrix"": [[6, 1, 1], [1, 1, 0], [0, 1, 1]], ""selectedIndices"": [1, 2], ""rowFilter"": false}","Selected-class TP2FP3FN2 precision2/5recall1/2F1 4/9, not all-label accuracy or filtered rows"
+D,"{""originalClassF1"": [""4/5"", ""2/5"", ""1/2""], ""absentClass"": ""Ash"", ""support"": 0, ""predictions"": 0, ""insertedF1"": 0}","Raw Ash ratios undefined; zero-inserted macro17/40 versus excluded17/30, not measured Ash performance"
+E,"{""recalls"": [""3/4"", ""1/2"", ""1/2""], ""referenceWeights"": [8, 2, 2], ""predictionWeights"": [7, 3, 2]}","Reference-support weighted recall2/3 versus other weights31/48, not actual implementation error"
+F,"{""references"": [""Cedar"", ""Maple"", null], ""predictions"": [""Cedar"", ""Birch"", ""Maple""]}","Resolvedaccuracy1/2availability2/3; fullifMaple2/3otherwise1/3 hypothetical, fullunresolved"

@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""y"": [1, 0], ""p"": [""0.8"", ""0.3""], ""pMeaning"": ""probability of class one""}",Outcome probabilities.8/.7 meanloss.289909 sum.579818 rounded; not observed model output
+B,"{""probabilities"": [""0.6"", ""0.9""], ""threshold"": ""0.5"", ""hypotheticalOutcomes"": [1, 0]}","Both positive decisions; positive losses.510826/.105361, negative.916291/2.302585 rounded, not model gain"
+C,"{""y"": [1, 1], ""S"": [""0.9"", ""0.1""], ""T"": [""0.5"", ""0.5""]}","Bothmeanp.5 butmeanloss1.203973/.693147 rounded, not loss of mean"
+D,"{""labels"": [""Cedar"", ""Maple"", ""Birch""], ""probabilities"": [""0.7"", ""0.2"", ""0.1""], ""reference"": ""Maple""}",Correct q.2loss1.609438 versuswrongcolumn.7loss.356675rounded; no actual import/mapping finding
+E,"{""y"": [1, 0, null], ""p"": [""0.8"", ""0.2"", ""0.9""]}",Resolvedmean.223144availability2/3 fullif1 .183883 if0 .916291 rounded hypothetical; fullunresolved
+F,"{""reference"": 1, ""p"": ""0"", ""inventedFloors"": [""0.01"", ""0.001""], ""correctBoundaryProbability"": ""1""}",Idealzero assigned probability unboundedloss; inventedfloors4.605170/6.907755 versuscorrectq1loss0; not library-default reproduction
