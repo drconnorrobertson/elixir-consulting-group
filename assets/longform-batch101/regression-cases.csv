@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,reference10/10/10;prediction8/10/12;unit minutes;error=prediction-reference,signedmean0;MAE4/3;MSE8/3;RMSEsqrt(8/3);not all exact or actual model output
+B,reference10/10/10;S10/10/16;T13/13/13,S MAE2 MSE12 RMSEsqrt12;T MAE3 MSE9 RMSE3;ranking differs NOT production decision
+C,A references/predictions multiplied by60 into seconds,MAE80seconds;MSE9600seconds squared;RMSE60sqrt(8/3);not changed prediction quality
+D,Cedar errors0/0/0/4;Maple error6,pooledMAE2/MSE52/5/RMSEsqrt(52/5);equalgroupMAE7/2/MSE20/meanRMSE4 NOT pooled
+E,references EX-A10 EX-B20;predictions EX-A11 EX-B19;alternate swapped values,correctMAE1/MSE1 versus swappedMAE9/MSE81;not verified real identity/database join
+F,reference10/10/unknown;prediction8/12/13,resolvedMAE2/MSE4/RMSE2;referenceavailability2/3;full-list metrics unresolved

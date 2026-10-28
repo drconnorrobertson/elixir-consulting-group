@@ -1,0 +1,105 @@
+{
+  "scope": "All predictions and references deliberately authored, not observed outputs or client data. Single-target unweighted arithmetic only; no scikit-learn execution.",
+  "A": {
+    "reference": [
+      10,
+      10,
+      10
+    ],
+    "prediction": [
+      8,
+      10,
+      12
+    ],
+    "unit": "minutes"
+  },
+  "B": {
+    "reference": [
+      10,
+      10,
+      10
+    ],
+    "S": [
+      10,
+      10,
+      16
+    ],
+    "T": [
+      13,
+      13,
+      13
+    ]
+  },
+  "C": {
+    "reference": [
+      600,
+      600,
+      600
+    ],
+    "prediction": [
+      480,
+      600,
+      720
+    ],
+    "unit": "seconds",
+    "scaleFromA": 60
+  },
+  "D": {
+    "Cedar": {
+      "reference": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "prediction": [
+        10,
+        10,
+        10,
+        14
+      ]
+    },
+    "Maple": {
+      "reference": [
+        10
+      ],
+      "prediction": [
+        16
+      ]
+    }
+  },
+  "E": {
+    "reference": [
+      {
+        "id": "EX-A",
+        "value": 10
+      },
+      {
+        "id": "EX-B",
+        "value": 20
+      }
+    ],
+    "prediction": [
+      {
+        "id": "EX-A",
+        "value": 11
+      },
+      {
+        "id": "EX-B",
+        "value": 19
+      }
+    ]
+  },
+  "F": {
+    "reference": [
+      10,
+      10,
+      null
+    ],
+    "prediction": [
+      8,
+      12,
+      13
+    ]
+  }
+}
