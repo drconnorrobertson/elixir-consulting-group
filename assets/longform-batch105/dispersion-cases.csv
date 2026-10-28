@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""values"":[2,4,6],""unit"":""minutes"",""expectedMean"":4,""expectedSsq"":8,""expectedPopulationVariance"":""8/3"",""expectedSampleVariance"":""4""}",mean4 sumsq8; population variance8/3 SDsqrt8/3; sample variance4 SD2
+B,"{""first"":[1,1,7],""second"":[3,3,3],""expectedMean"":3,""expectedFirstPopulationVariance"":""8"",""expectedSecondPopulationVariance"":""0""}",Bothmean3; populationvariances8/0 NOT quality judgment
+C,"{""values"":[2,4,6],""offset"":100,""scale"":60,""expectedScaledPopulationVariance"":""9600"",""expectedScaledSampleSD"":""120""}",Offset preservesvariance/SD; scale60→populationvariance9600 SD97.979590rounded/sampleSD120 NOT physicalchange
+D,"{""Cedar"":[0,0],""Maple"":[10,10],""expectedGroupPopulationVariances"":[""0"",""0""],""expectedPooledPopulationVariance"":""25""}",Within-group populationSDs0/0; pooledpopulationvariance25 SD5 NOT averagegroupSD
+E,"{""values"":[0,0,0,10],""alternate"":[0,5,5,10],""expectedRange"":10,""expectedPopulationVariance"":""75/4"",""expectedAlternatePopulationVariance"":""25/2""}",Range10both; populationvariances75/4versus25/2 NOT actual outlier/cleaning decision
+F,"{""singleton"":[5],""pair"":[5,5],""expectedSingletonPopulationVariance"":""0"",""expectedSingletonSampleState"":""undefined"",""expectedPairSampleVariance"":""0""}",SingletonpopulationSD0/sampleundefined; two5s bothSD0 NOT reliability/adequacy finding

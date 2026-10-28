@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""x"":[1,2,3],""y"":[2,4,6],""expectedR"":""1"",""positiveScale"":60}",r1 but y=2x not equality; scaled y retainsr1
+B,"{""x"":[1,2,3],""y"":[6,4,2],""expectedR"":""-1""}","r-1 direction only, NOT bad outcome or causation"
+C,"{""x"":[-2,-1,0,1,2],""y"":[4,1,0,1,4],""expectedR"":""0""}",y=x squared with r0; centered cross-products sum0 NOT no structure
+D,"{""ids"":[""EX-C1"",""EX-C2"",""EX-C3""],""x"":[1,2,3],""alignedY"":[10,20,30],""reversedY"":[30,20,10],""expectedAlignedR"":""1"",""expectedReversedR"":""-1""}",Same lists differently paired r1→-1 NOT actual identity/join finding
+E,"{""x"":[1,1,1],""y"":[2,3,4],""expectedState"":""undefined constant input""}","Constant x centered variance0, Pearson undefined NOT coefficient0"
+F,"{""x"":[0,1,2,3],""y"":[3,2,1,0],""added"":[100,100],""expectedBeforeR"":""-1"",""expectedAfterR"":""19392/19417"",""expectedAfterMean"":""106/5"",""expectedAfterSxx"":""38834/5"",""expectedAfterSxy"":""38784/5""}",Four original points r-1; added100/100 yields19392/19417≈0.998712 NOT point deletion/business result
