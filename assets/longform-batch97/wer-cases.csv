@@ -1,0 +1,7 @@
+fictional_case,references_json,candidates_json,expected_edits_json,expected_reference_counts_json,bounded_result
+A,"[""turn off pump""]","[""turn on pump""]",[1],[3],one substitution;rate1/3;not actual instruction
+B,"[""do not send draft""]","[""do send draft""]",[1],[4],one deletion;rate1/4;no send or authorization
+C,"[""ready""]","[""ready now please""]",[2],[1],two insertions;rate2=200percent;not negative accuracy
+D,"[""Ready,""]","[""ready""]",[1],[1],raw rate1;declared ASCIIlower/trailingcomma preparation rate0;not exact original match
+E,"[""a b c d e f g h i j"", ""k l""]","[""a b c d e f g h i x"", ""k x""]","[1, 1]","[10, 2]",pooled2/12=1/6;equal pair mean3/10;not representative speech
+F,"[""a b"", ""c d"", ""e f"", null]","[""a b"", ""c x"", ""e f"", ""g h""]","[0, 1, 0, null]","[2, 2, 2, null]",resolved1/6;pair availability3/4;full rate unknown;not word or semantic coverage
