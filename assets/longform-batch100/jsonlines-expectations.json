@@ -1,0 +1,57 @@
+{
+  "scope": "Original fictional supplied strings only; escape notation belongs to this JSON container. Parsing checks demonstrate only listed cases under Python3.12.14.",
+  "A": {
+    "sequence": "{\"id\":\"EX-L1\",\"count\":2}\n{\"id\":\"EX-L2\",\"count\":3}\n",
+    "array": "[{\"id\":\"EX-L1\",\"count\":2},{\"id\":\"EX-L2\",\"count\":3}]",
+    "expectedIds": [
+      "EX-L1",
+      "EX-L2"
+    ],
+    "expectedCountSum": 5
+  },
+  "B": {
+    "pretty": "{\n\"id\":\"EX-P1\",\n\"count\":4\n}\n",
+    "expectedPhysicalLines": 4,
+    "expectedId": "EX-P1",
+    "expectedCount": 4
+  },
+  "C": {
+    "escaped": "{\"note\":\"alpha\\nbeta\"}\n",
+    "literalControl": "{\"note\":\"alpha\nbeta\"}\n",
+    "expectedNote": "alpha\nbeta",
+    "expectedNoteLength": 10
+  },
+  "D": {
+    "text": "null\n\n{}\nfalse\n",
+    "expectedBlankPositions": [
+      2
+    ],
+    "expectedValidPositions": [
+      1,
+      3,
+      4
+    ],
+    "expectedObjectPositions": [
+      3
+    ]
+  },
+  "E": {
+    "incomplete": "{\"id\":\"EX-T1\"}\n{\"id\":\"EX-T2\"",
+    "completeNoFinalLF": "{\"id\":\"EX-T1\"}\n{\"id\":\"EX-T2\"}",
+    "expectedCompletePrefixIds": [
+      "EX-T1"
+    ],
+    "expectedCompleteVariantIds": [
+      "EX-T1",
+      "EX-T2"
+    ]
+  },
+  "F": {
+    "left": "{\"id\":\"EX-J1\"}",
+    "right": "{\"id\":\"EX-J2\"}\n",
+    "expectedJoinedIds": [
+      "EX-J1",
+      "EX-J2"
+    ]
+  }
+}
