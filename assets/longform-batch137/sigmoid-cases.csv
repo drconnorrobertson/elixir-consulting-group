@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""inputs"": [1.0986122886681098, -1.0986122886681098, 0], ""exponentialWeights"": [3, 0.3333333333333333, 1]}","Sigmoid3/4,1/4,1/2; no measured frequencies"
+B,"{""input"": 1.0986122886681098, ""scale"": 2}","Positive3/4to9/10difference3/20; negative1/4to1/10, not improved calibration"
+C,"{""input"": 1.0986122886681098, ""offset"": 1.0986122886681098}","Offset changes3/4to9/10, unlike a separate shared softmax shift"
+D,"{""labels"": [""Cedar"", ""Maple""], ""inputs"": [1.0986122886681098, 1.3862943611198906]}","Independent3/4,4/5sum31/20; separately normalized15/31,16/31 not recommended"
+E,"{""inputs"": [-1.0986122886681098, 0, 1.0986122886681098], ""threshold"": ""1/2"", ""rules"": ["">="", "">""]}","Outputs1/4,1/2,3/4; inclusive selects2/strict1 under invented rule"
+F,"{""inputs"": [0, 1.0986122886681098, null], ""hypotheses"": [0, 1.3862943611198906]}","Availability2/3,resolvedmean5/8,thirdunresolved,hypothetical1/2or4/5"
