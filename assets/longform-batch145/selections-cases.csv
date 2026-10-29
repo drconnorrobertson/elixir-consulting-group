@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""frame"": [""EX-A"", ""EX-B"", ""EX-C"", ""EX-D""], ""k"": 2, ""repetition"": false}",unordered6/ordered12 distinct result definitions
+B,"{""frame"": [""Cedar"", ""Maple"", ""Birch""], ""k"": 2}",ordered no repetition6/with repetition9/unordered with repetition6; collections differ
+C,"{""frame"": [""EX-C1"", ""EX-C2"", ""EX-C3""]}",allmembers unordered1/ordered6;emptyselection1;choose4withoutrepetition0
+D,"{""frame"": [""EX-A"", ""EX-B"", ""EX-C"", ""EX-D""], ""forbidden_pair"": [""EX-A"", ""EX-B""], ""required_member"": ""EX-A""}",forbidden-only5/required-only3/both2; invented restrictions
+E,"{""row_ids"": [""EX-E1"", ""EX-E1"", ""EX-E2"", ""EX-E3""]}",occurrence-position pairs6/distinctsuppliedIDpairs3; not dedup authority
+F,"{""confirmed"": [""EX-F1"", ""EX-F2""], ""unresolved_slots"": 1}",confirmedsubset1/fullunresolved/hypnewdistinct3/hyprepeat1
