@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""first"": ""1011"", ""second"": ""1001""}",One disagreement at position3; 1/4 not accuracy
+B,"{""first"": ""cat"", ""second"": ""cats""}",Lengths3/4; full fixed-position frame unresolved; no padding
+C,"{""first"": ""ABCD"", ""second"": ""BCDA""}",4/4 position disagreements; equal distinct membership not sequence identity
+D,"{""firstIDs"": [""EX-A"", ""EX-B"", ""EX-C""], ""first"": [""red"", ""blue"", ""green""], ""incomingIDs"": [""EX-C"", ""EX-B"", ""EX-A""], ""incoming"": [""green"", ""blue"", ""red""]}",Arrival-order mismatch2/3; supplied-ID alignment0/3; no real identity proof
+E,"{""first"": [""A"", ""B"", ""C""], ""second"": [""A"", ""X"", null]}",Paired availability2/3; subset1/2; hypothetical full1/3 or2/3; full unresolved
+F,"{""first"": [""A"", ""B"", ""C""], ""second"": [""X"", ""B"", ""C""], ""weights"": [3, 1, 1], ""scaledWeights"": [6, 2, 2]}",Unweighted1/3; weighted3/5 and6/10; not justified business impact
