@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""points"": [[0, 10], [4, 30]], ""queries"": [0, 1, 2, 3, 4], ""expected"": [10, 15, 20, 25, 30]}",explicitline/localfractionsnotobservations
+B,"{""points"": [[0, 0], [2, 10], [10, 18]], ""query"": 6, ""local"": 14, ""whole"": ""54/5""}",irregularspacing/localversuswholeendpointline
+C,"{""incoming"": [[4, 30], [0, 10], [2, 18]], ""sortedPairs"": [[0, 10], [2, 18], [4, 30]], ""query"": 1, ""paired"": 14, ""detached"": 20}",pairsortversuscoordinatesonlydifferentmapping
+D,"{""points"": [[0, 10], [4, 30]], ""query"": 6, ""noOutside"": null, ""hold"": 30, ""extension"": 40}",distinctoutsidepoliciesnotforecast
+E,"{""minutes"": [0, 2, 1], ""seconds"": [0, 120, 60], ""values"": [100, 160], ""expected"": 130}",fraction1/2/slope30perminuteand1/2persecond
+F,"{""points"": [[0, 10], [4, 30]], ""unknownAt"": 2, ""actual"": null, ""derived"": 20, ""hypothetical"": [12, 28]}",unknownretained/twohypotheticals8awaynotinference
