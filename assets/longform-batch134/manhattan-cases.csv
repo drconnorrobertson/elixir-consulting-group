@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""first"": [2, 7, 1], ""second"": [5, 3, 2]}",Signed changes3/-4/1 sum0; magnitudes3/4/1 sum8 not zero
+B,"{""reference"": [0, 0], ""S"": [4, 0], ""T"": [2, 2]}",Manhattan4/4 tied; squared Euclidean16/8; no task equivalence
+C,"{""firstMinutes"": [1, 2], ""secondMinutes"": [3, 5], ""partlyConvertedFirst"": [60, 2], ""partlyConvertedSecond"": [180, 5]}","Minutes sum5; incompatible raw mixed-number sum123; convert back5, no physical change"
+D,"{""firstIDs"": [""EX-A"", ""EX-B""], ""first"": [1, 9], ""incomingIDs"": [""EX-B"", ""EX-A""], ""incoming"": [9, 1]}",Positional16 versus supplied-ID alignment0; no actual identity proof
+E,"{""first"": [2, 5, 8], ""second"": [4, null, 7], ""hypotheticalSecond"": [4, 5, 7], ""alternateSecond"": [4, 10, 7]}",Available2/3 known subtotal3; hypothetical complete3/8; full unresolved
+F,"{""differences"": [2, 3], ""weights"": [3, 1], ""scaledWeights"": [6, 2]}",Unweighted5; weighted sum9 scaled18; separate normalized9/4 not sum
