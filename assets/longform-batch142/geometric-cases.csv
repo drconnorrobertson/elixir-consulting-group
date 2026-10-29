@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""values"": [""2"", ""8""]}","Product16,geometricmean4,arithmeticmean5"
+B,"{""factors"": [""2"", ""1/2""], ""start"": ""100"", ""signedChanges"": [""1"", ""-1/2""]}","Product1,markers100/200/100,equalfactor1;arithmeticchange1/4 repeatedfactorproduct25/16"
+C,"{""cases"": [{""id"": ""EX-PAIR-A"", ""factor"": ""2""}, {""id"": ""EX-PAIR-B"", ""factor"": ""8""}], ""relationship"": ""independent comparisons""}",Product16/mean4 but no sequential source relationship/cumulativefinding
+D,"{""original"": [""2"", ""8""], ""repeated"": [""2"", ""2"", ""8""]}",Originalmean4;repeatedproduct32/count3/cuberoot32 approx3.174802;not independentobservation
+E,"{""alternatives"": [[""2"", ""8""], [""0"", ""8""], [""-2"", ""-8""]], ""domain"": ""strictly positive""}",Onlyfirstwithindomain;negativepairproduct16doesnotestablishpositiveinputs;emptyoutside
+F,"{""factors"": [""2"", ""8"", null], ""hypotheticalThird"": [""4"", ""1""]}","Knownproduct16/count2/mean4,availability2/3;fullunresolved;hypothesisproduct64mean4orproduct16cuberoot16 approx2.519842"

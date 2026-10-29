@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""a"": ""100"", ""b"": ""101"", ""relative"": ""1/100"", ""absolute"": ""0""}",Difference1;relative allowance101/100;closeness true;exact equality false
+B,"{""pairs"": [[""10"", ""11""], [""1000"", ""1001""]], ""relative"": ""1/100"", ""absoluteOnly"": ""1""}",Equal differences1;relative resultsfalse/true;absolute-only resultsbothtrue at inclusive boundary
+C,"{""a"": ""0"", ""b"": ""1/1000"", ""relative"": ""1/100"", ""absoluteChoices"": [""0"", ""1/1000""]}",Relativeallowance1/100000 fail;absolute1/1000 pass
+D,"{""minutes"": [""3"", ""301/100""], ""absoluteMinutes"": ""1/50"", ""secondsPerMinute"": 60}",Minute difference1/100 pass;seconds180/903over5 difference3/5 allowance6/5 pass;bare1/50seconds fail
+E,"{""values"": [""0"", ""9/10"", ""9/5""], ""relative"": ""0"", ""absolute"": ""1""}",Neighborpairsbothpass;endpointsfail;not transitiveidentity/grouping
+F,"{""pairs"": [[""10"", ""10""], [""20"", ""21""], [""30"", null]], ""absolute"": ""1"", ""hypotheticalThird"": [""30"", ""32""]}",2/2completedpass;2/3available;fullunresolved;hypothetical3/3or2/3
