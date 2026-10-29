@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""u"": [1, 2], ""v"": [4, 6], ""other_difference"": [0, 5]}","differences3,4;squared25;distance5;alternative0,5same distance"
+B,"{""u"": [1, 2], ""v"": [4, 6], ""offset"": [100, 100], ""scale"": 10}",common translation distance5;scale10 distance50
+C,"{""q"": [0, 0], ""a"": [3, 0], ""b"": [0, 2], ""scales"": [1, 10]}",originalA3/B2;second-coordinate×10A3/B20
+D,"{""u"": [0, 0], ""v"": [3, 4], ""weights"": [4, 1]}",weighted squared52;coordinate×2equivalent;not×4
+E,"{""u"": [1, 4], ""labels"": [""Cedar"", ""Maple""], ""incoming"": [4, 1], ""v_by_label"": {""Cedar"": 1, ""Maple"": 4}}",positional squared18;declared aligned distance0
+F,"{""u"": [0, 0, 0], ""partial_v"": [3, 4, null], ""hypothetical_v_zero"": [3, 4, 0], ""hypothetical_v_twelve"": [3, 4, 12]}",known subset5;availability2/3;full unresolved;hypothetical5or13;lower bound5 under stated formula
