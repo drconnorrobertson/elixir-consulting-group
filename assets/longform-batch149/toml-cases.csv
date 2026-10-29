@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""toml"":""# draft only\nlabel = \""#draft\""\nenabled = false # human note\n""}","Two returned fields; label #draft string and enabled Boolean false; comments not returned fields, not application policy."
+B,"{""literal"":""\""review.owner\"" = \""Mira\""\n"",""nested"":""review.owner = \""Mira\""\n""}","Literal top-level review.owner versus nested review/owner, same leaf text different paths; no real schema finding."
+C,"{""toml"":""count = 12\ncode = \""0012\""\nenabled = false\n""}","Integer12/string0012/Booleanfalse exact types; explicit int conversion12 loses two zeros, not entity identity."
+D,"{""toml"":""day = 2030-06-12\nlabel = \""2030-06-12\""\n""}",Date2030-06-12 versus string same displayed characters; different exact types not schedule/timezone.
+E,"{""toml"":""count = 1\ncount = 2\n"",""expectedException"":""TOMLDecodeError""}",Local TOMLDecodeError on duplicate count; no last-wins/repair/cause finding.
+F,"{""toml"":""[[tasks]]\ncode = \""EX-A\""\nstate = \""draft\""\n[[tasks]]\ncode = \""EX-A\""\nstate = \""reviewed\""\n""}","Two ordered task dictionaries, one distinct EX-A code, statesdraft/reviewed; no replacement/approval authority."
