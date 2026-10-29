@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""rates"": [""3"", ""6""], ""outputs"": [""12"", ""12""]}","Equal output: durations4/2,total24/6=4; harmonic4 versus arithmetic9/2; not a forecast"
+B,"{""rates"": [""3"", ""6""], ""hours"": [""2"", ""2""]}","Equal time: outputs6/12,total18/4=9/2; harmonic4 answers another question"
+C,"{""rates"": [""3"", ""6""], ""outputs"": [""6"", ""18""]}","Durations2/3,total24/5; output-weighted reciprocal24/5 versus weighted arithmetic21/4"
+D,"{""hourRates"": [""3"", ""6""], ""minutesPerHour"": 60}","Minute rates1/20,1/10; harmonic1/15; times60 restores4"
+E,"{""alternatives"": [[""3"", ""6""], [""0"", ""6""], [""-3"", ""6""], []], ""repeated"": [""3"", ""6"", ""6""]}",Only nonemptypositive pair in domain; repeated list harmonic9/2 not new observations
+F,"{""rates"": [""3"", ""6"", null], ""outputEach"": ""12"", ""hypotheses"": [""4"", ""12""]}","Known24/6=4,2/3rate availability; fullunresolved; hypothetical4or36/7"
