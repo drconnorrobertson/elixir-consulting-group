@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""u"": [2, 0, 4], ""v"": [0, 2, 4]}","Differences2,2,0sum4; denominator2,2,8sum12; ratio1/3 not probability"
+B,"{""u"": [1, 100], ""v"": [2, 101]}",BrayCurtis2/204=1/102 versus separate Canberra68/201
+C,"{""u"": [1, 1], ""v"": [2, 2], ""commonFactor"": 10}","Raw1/3; commonpositivefactor preserves; separate per-vector proportions both1/2,1/2 gives0"
+D,"{""u"": [2, 0, 4], ""v"": [0, 2, 4], ""appendBoth"": 0}",Newlength4/numerator4/denominator12/ratio1/3 not frame completeness
+E,"{""u"": [1, -1], ""vZero"": [-1, 1], ""vOther"": [-1, 2]}",Signed numerator4denominator0undefined; other numerator5denominator1ratio5 not positive-domain bound
+F,"{""u"": [2, 0, 4], ""v"": [0, 2, null], ""hypotheticalThird"": [4, 0]}",Knownnum4den4subset1;availability2/3;fullunresolved;hypotheses1/3or1
