@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""u"": [1, 100], ""v"": [2, 101]}","Contributions1/3,1/201 sum68/201 versus rawdifferences2"
+B,"{""pairs"": [[0, 5], [0, 0]], ""bothZeroConvention"": 0}",Contributions1/0; numeric zero not missing
+C,"{""pair"": [2, 6], ""scaled"": [20, 60], ""offset"": [12, 16]}",Common positive scaling preserves1/2; offset gives1/7
+D,"{""pairs"": [[-2, 2], [-2, -6]]}","Absolute magnitude denominators4/8, contributions1/1half"
+E,"{""u"": [1, 4], ""v"": [2, 4], ""weights"": [3, 1]}","Unweighted1/3,weighted sum1,separate normalized1/4 not recommendation"
+F,"{""u"": [1, 4, 0], ""v"": [2, 4, null], ""hypotheticalThird"": [0, 5]}","Partial1/3,availability2/3,fullunresolved,hypotheses1/3,4/3"
