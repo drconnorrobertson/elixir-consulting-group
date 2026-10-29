@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""u"": [1, 2], ""v"": [2, 4]}",Similarity1/distance0; original coordinates differ
+B,"{""u"": [1, 2], ""v"": [-2, -4]}",Similarity-1/distance2; no content judgment
+C,"{""u"": [1, 0], ""u_labels"": [""Cedar"", ""Maple""], ""incoming_v"": [0, 1], ""v_by_label"": {""Cedar"": 1, ""Maple"": 0}}",Positional0/aligned1; supplied label mapping only
+D,"{""u"": [0, 0], ""v"": [3, 4]}",Raw0/0undefined; application handling unverified
+E,"{""u"": [1, 0], ""v"": [0, 1], ""offset"": 1}",Similarity0→4/5 under authored common offset; differences unchanged
+F,"{""u"": [1, 0, 1], ""partial_v"": [1, 0, null], ""hypothetical_positive_v"": [1, 0, 1], ""hypothetical_negative_v"": [1, 0, -1]}",Known subset1; full unknown; hypothetical1or0
