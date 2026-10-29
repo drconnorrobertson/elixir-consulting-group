@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""u"": [0, 0], ""v"": [3, 4], ""orders"": [1, 2]}","Differences3,4; order1=7; order2=5"
+B,"{""reference"": [0, 0], ""cedar"": [3, 0], ""maple"": [2, 2]}",Order1 Cedar3<Maple4; order2 Maple sqrt8<Cedar3
+C,"{""differences"": [3, 4], ""weights"": [4, 1], ""order"": 2}",Weighted sum52; distance sqrt52; rawdifference multiplication gives sqrt160 separately
+D,"{""originalDifferences"": [3, 4], ""convertedDifferences"": [300, 4], ""convertedWeights"": [""1/10000"", ""1""]}",Original5; rawconverted sqrt90016; adjusted5
+E,"{""A"": [0, 0], ""B"": [1, 0], ""C"": [1, 1], ""order"": ""1/2""}","AB1,BC1,AC4; ordinary triangle inequality fails"
+F,"{""reference"": [0, 0], ""candidate"": [3, null], ""hypotheticalSecond"": [0, 4]}",Availability1/2; subset3; full unresolved; hypothetical3or5
