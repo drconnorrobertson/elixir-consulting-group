@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""values"": [""Cedar"", ""Cedar"", ""Maple"", ""Birch"", ""Ash""], ""added"": ""Cedar""}",Cedar2/5 unique mode but notmajority; addition3/6 stillnotstrictmajority
+B,"{""values"": [""Cedar"", ""Maple"", ""Cedar"", ""Maple""]}",Both2 tied;firstencounterCedar versusreversedMaple notuniquewinner
+C,"{""values"": [""Cedar"", ""Maple"", ""Birch""], ""convention"": ""allmaximumfrequency labels""}",All3tieat1; no standout; conventionexplicit
+D,"{""values"": [""Cedar"", ""cedar"", ""Maple""], ""transform"": ""ASCII lowercase""}",Rawthreelabelstie;transformedcedar2/maple1 notidentityfinding
+E,"{""ids"": [""EX-M1"", ""EX-M1"", ""EX-M2"", ""EX-M3""], ""labels"": [""Cedar"", ""Cedar"", ""Maple"", ""Birch""]}",FourrowoccurrencesCedar2/4;threedistinctsuppliedIDslabels1each notdedupauthority
+F,"{""values"": [""Cedar"", ""Cedar"", ""Maple"", null], ""hypotheses"": [""Maple"", ""Cedar""]}",KnownCedar2/3;3/4available;fullunresolved;hypotheticaltieorCedar3/4
