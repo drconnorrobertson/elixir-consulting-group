@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""uniform"": [0.25, 0.25, 0.25, 0.25], ""concentrated"": [1, 0, 0, 0]}",Entropy2bits versus0; not correctness
+B,"{""first"": [1, 1], ""second"": [100, 100]}",Totals2/200 factor100; both normalized halves H1 not equal evidence
+C,"{""groups"": [[4, 0], [0, 4]]}",Within-group H0/0; pooled4/4 H1 not mean entropy
+D,"{""first"": [0.75, 0.25], ""second"": [0.25, 0.75], ""labels"": [""Cedar"", ""Maple""]}","Same H0.811278 rounded, swapped labeled probabilities; not unchanged behavior"
+E,"{""first"": [0.5, 0.5, 0], ""second"": [0.5, 0.25, 0.25]}",H1 versus1.5; category refinement not measured system change
+F,"{""counts"": [3, 1, null], ""hypotheticalZero"": [3, 1, 0], ""hypotheticalFour"": [3, 1, 4]}",2/3 fields available; subsetH0.811278; hypotheticalH0.811278/1.405639; full unresolved

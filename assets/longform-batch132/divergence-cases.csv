@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""p"": [0.5, 0.5], ""q"": [0.75, 0.25]}",Terms-0.292481/+0.5bits; D0.207519 rounded not error percentage
+B,"{""p"": [0.75, 0.25], ""q"": [0.5, 0.5]}",Reverse D0.188722 rounded; not symmetric
+C,"{""labels"": [""Cedar"", ""Maple""], ""p"": [0.75, 0.25], ""incomingLabels"": [""Maple"", ""Cedar""], ""incomingQ"": [0.25, 0.75]}",PositionalD0.792481 versus supplied label alignment0; no real semantic identity
+D,"{""p"": [1, 0], ""q"": [0, 1], ""hypotheticalQ1"": [0.01, 0.99], ""hypotheticalQ2"": [0.001, 0.999]}",Positive p/zero q infinite; changed q gives6.643856/9.965784 rounded; no universal smoothing rule
+E,"{""pCounts"": [1, 1], ""qCounts"": [3, 1], ""scaledP"": [10, 10], ""scaledQ"": [300, 100]}",Separate normalization unchanged; D0.207519 not equal evidence
+F,"{""pCounts"": [3, 1, 0], ""qCounts"": [1, 1, null], ""hypotheticalZero"": [1, 1, 0], ""hypotheticalTwo"": [1, 1, 2]}",Q2/3 fields known full unresolved; hypotheticalD0.188722/1.188722 rounded
