@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""p"": [""1/2"", ""1/2"", ""0""], ""q"": [""0"", ""0"", ""1""]}","Midpoint1/4,1/4,1/2;base2 divergence1distance1;natural divergence ln2distance sqrtln2"
+B,"{""p"": [""3/4"", ""1/4""], ""q"": [""1/4"", ""3/4""]}",Base2 divergence.188722 distance.434421 rounded
+C,"{""p"": [""1/2"", ""1/2""], ""q"": [""1"", ""0""]}","Midpoint3/4,1/4;JSD.311278 distance.557923 symmetric;directKLpToQunbounded"
+D,"{""pCounts"": [3, 1], ""qCounts"": [6, 2]}","Totals4and8;both proportions3/4,1/4;distance0 not count identity"
+E,"{""p"": [""3/4"", ""1/4""], ""q"": [""1/4"", ""3/4""], ""mergedP"": [""1""], ""mergedQ"": [""1""]}",Original nonzero;merged distance0 not original identity
+F,"{""pCounts"": [1, 1], ""qCounts"": [1, null], ""hypotheticalSecond"": [1, 3]}",Availability1/2;fullunresolved;hypotheticaldistance0or.220896 rounded
