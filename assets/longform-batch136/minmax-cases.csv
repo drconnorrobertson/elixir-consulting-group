@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""reference"": [10, 30], ""input"": 20, ""output"": [0, 1]}","Reference width20, relative1/2, endpoints0/1; not accuracy"
+B,"{""reference"": [10, 30], ""inputs"": [40, 0], ""refitted"": [10, 40]}","Fixed-frame3/2,-1/2; refitted40maps1, not source decline or repair"
+C,"{""reference"": [10, 30], ""input"": 20, ""output"": [-1, 1]}","Relative1/2 maps0; inverse20, not raw change"
+D,"{""Cedar"": {""reference"": [0, 10], ""input"": 5}, ""Maple"": {""reference"": [0, 100], ""input"": 50}}",Both1/2 in different frames; raw difference45/factor10
+E,"{""reference"": [10, 30], ""inputs"": [40, 50], ""clamp"": [0, 1]}","Unclipped3/2,2; clipped1,1; inverse boundary30 not recovered originals"
+F,"{""constant"": [5, 5, 5], ""input"": 5, ""partialReference"": [10, null], ""laterInput"": 20, ""hypotheticalMaximums"": [30, 50]}","Constant0/0 undefined; partial frame unresolved; hypotheses1/2,1/4"
