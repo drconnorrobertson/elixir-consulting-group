@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""reference"": [2, 2, 6, 6], ""ddof"": 0}","Mean4,squared sum16,variance4,SD2,z[-1,-1,1,1],mean0,variance1 not normality"
+B,"{""reference"": [2, 2, 6, 6], ""ddof"": 1}","Samplevariance16/3,SD4/sqrt3,z±sqrt3/2 approximately±0.866025"
+C,"{""reference"": [2, 2, 6, 6], ""later"": 8}","Storedz2; refittedmean24/5,variance144/25,newz16/sqrt144 approximately1.333333"
+D,"{""referenceMinutes"": [2, 2, 6, 6], ""inputMinutes"": 8, ""factor"": 60}","Seconds120,120,360,360 mean240 SD120 input480,z2; mixed-unit238 not intended"
+E,"{""Cedar"": {""mean"": 10, ""scale"": 2, ""input"": 12}, ""Maple"": {""mean"": 100, ""scale"": 20, ""input"": 120}}","Bothz1,different raw values difference108/factor10 not equality/fairness"
+F,"{""constant"": [5, 5, 5], ""declaredSubstituteScale"": 1, ""inputs"": [5, 6], ""partial"": {""mean"": 4, ""scale"": null, ""input"": 8}, ""hypotheticalScales"": [2, 4]}","Raw0/0 undefined; declaredscale1gives0/1; unknownscaleunresolved,hypotheses2/1"
