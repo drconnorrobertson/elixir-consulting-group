@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""first"": [2, 7, 1], ""second"": [5, 3, 2]}",Magnitudes3/4/1 maximum4 at second coordinate; sum8 distinct
+B,"{""reference"": [0, 0, 0], ""S"": [4, 0, 0], ""T"": [4, 4, 4]}",Same max4; nonzero counts1/3 sums4/12; no equivalence
+C,"{""minuteDifferences"": [2, 3], ""mixedDifferences"": [120, 3]}",Compatible max3 at second; incompatible rawmax120 at first; convert120seconds to2minutes
+D,"{""differences"": [2, 6], ""tolerances"": [2, 3], ""inclusiveBoundary"": 1}",Normalized1/2 max2 fails invented inclusive<=1 rule; rawmax6 not safety/approval
+E,"{""contributions"": [2, 4, null], ""hypotheticalOne"": [2, 4, 1], ""hypotheticalNine"": [2, 4, 9]}",Available2/3 knownmax4; hypotheticalfull4/9; full unresolved
+F,"{""differences"": [2, 5], ""weights1"": [1, 100], ""weights2"": [1, 0.01], ""weights3"": [1, 0]}",Positive-weight inclusion gives5/5/2; separate multiplied max500 not that convention; no SciPy run
