@@ -1,0 +1,7 @@
+case,supplied
+A,"{""case"": ""A"", ""left"": [[1, 2, 0], [0, 1, 3]], ""right"": [[2, 1], [4, 0], [1, 5]], ""expected"": [[10, 1], [7, 15]]}"
+B,"{""case"": ""B"", ""left"": [[1, 2], [0, 1]], ""right"": [[2, 0], [3, 1]], ""expected"": [[8, 2], [3, 1]], ""reverse"": [[2, 4], [3, 7]], ""cellwise"": [[2, 0], [0, 1]]}"
+C,"{""case"": ""C"", ""left"": [[1, 2, 0], [0, 1, 3]], ""incomingLabels"": [""EX-C"", ""EX-A"", ""EX-B""], ""desiredLabels"": [""EX-A"", ""EX-B"", ""EX-C""], ""right"": [[1, 5], [2, 1], [4, 0]], ""positional"": [[5, 7], [14, 1]], ""aligned"": [[10, 1], [7, 15]]}"
+D,"{""case"": ""D"", ""left"": [[1, 2, 0], [0, 1, 3]], ""right"": [[2, 4, 1], [1, 0, 5]], ""inner"": [3, 2], ""transposeProduct"": [[10, 1], [7, 15]]}"
+E,"{""case"": ""E"", ""counts"": [1, 2, 0], ""rates"": [[2, 1], [4, 0], [1, 5]], ""quantities"": [10, 1], ""units"": [""amber credits"", ""blue credits""], ""combinedRule"": null}"
+F,"{""case"": ""F"", ""known"": [1, 2, null], ""rates"": [[2, 1], [4, 0], [1, 5]], ""subtotal"": [10, 1], ""ifZero"": [10, 1], ""ifTwo"": [12, 11], ""full"": ""unresolved""}"
