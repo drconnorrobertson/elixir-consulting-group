@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""x"": [""1"", ""2"", ""3""], ""y"": [""2"", ""4"", ""6""]}","Means2/4,products2/0/2sum4;n3cov4/3 versusn-1cov2;differences1/2/3 notagreement"
+B,"{""x"": [""1"", ""2"", ""3""], ""y"": [""2"", ""4"", ""6""], ""factor"": ""60"", ""offset"": ""100""}","xscale60 productsum240,ncov80,sample120;offset100preservesproducts4"
+C,"{""x"": [""1"", ""2"", ""3""], ""y"": [""6"", ""4"", ""2""]}","Productsum-4,ncov-4/3,sample-2;swapunchanged notcausation/quality"
+D,"{""x"": [""-2"", ""-1"", ""0"", ""1"", ""2""], ""y"": [""4"", ""1"", ""0"", ""1"", ""4""]}","Means0/2,products-4/1/0/-1/4sum0,covzero despiteauthoredsquares"
+E,"{""ids"": [""EX-C1"", ""EX-C2"", ""EX-C3""], ""x"": [""1"", ""2"", ""3""], ""incoming"": [{""id"": ""EX-C3"", ""y"": ""30""}, {""id"": ""EX-C2"", ""y"": ""20""}, {""id"": ""EX-C1"", ""y"": ""10""}]}",SuppliedIDalignedsample10versuspositional-10;sameseparatememberships notactualidentityproof
+F,"{""x"": [""1"", ""2"", ""3""], ""y"": [""2"", ""4"", null], ""hypotheses"": [""6"", ""0""]}",Twoofthreepairsavailable;knownsample1/ncov1/2;fullunresolved;hypotheticalsample2or-1
