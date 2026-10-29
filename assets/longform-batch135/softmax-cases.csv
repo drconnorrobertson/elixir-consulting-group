@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""labels"": [""Cedar"", ""Maple""], ""scores"": [0.6931471805599453, 1.0986122886681098], ""weights"": [2, 3]}","Denominator5; shares2/5 and3/5, not accuracy"
+B,"{""scores"": [0.6931471805599453, 1.0986122886681098], ""offset"": 1000}","Common shift preserves2/5,3/5; local math.exp1000 overflows, not SciPy result"
+C,"{""scores"": [0.6931471805599453, 1.0986122886681098], ""scale"": 2, ""weights"": [4, 9]}","Scaled scores give4/13,9/13; same ordering, not calibration"
+D,"{""labels"": [""Cedar"", ""Maple"", ""Birch""], ""scores"": [0.6931471805599453, 1.0986122886681098, 1.6094379124341003], ""weights"": [2, 3, 5]}","Expanded frame denominator10; shares1/5,3/10,1/2"
+E,"{""scores"": [[0.0, 1.0986122886681098], [0.6931471805599453, 0.6931471805599453]], ""weights"": [[1, 3], [2, 2]]}","Row shares1/4,3/4 and1/2,1/2; global1/8,3/8,1/4,1/4"
+F,"{""labels"": [""Cedar"", ""Maple"", ""Birch""], ""weights"": [2, 3, null], ""hypotheses"": [1, 5]}","Availability2/3; subset2/5,3/5; hypothetical full1/3,1/2,1/6 or1/5,3/10,1/2; full unresolved"
