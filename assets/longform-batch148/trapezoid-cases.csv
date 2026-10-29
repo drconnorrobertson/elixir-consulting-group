@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""points"":[[0,2],[1,6],[4,4]],""contributions"":[4,15],""total"":19,""heightSum"":12,""unitSpacingTotal"":9,""pointMean"":4,""spanMean"":""19/4""}",Two contributions 4 and 15 sum19; height sum12/unit-spacing9/pointmean4/spanmean19/4 are distinct authored operations.
+B,"{""points"":[[4,4],[1,6],[0,2]],""contributions"":[-15,-4],""total"":-19}","Reversing complete pairs gives -15,-4,total-19; not actual physical negative output."
+C,"{""points"":[[0,2],[4,4],[1,6]],""contributions"":[12,-15],""total"":-3,""sortedTotal"":19}",Input path12-15=-3 versus sorted pairs19; no automatic reorder authority.
+D,"{""points"":[[0,2],[2,-2],[4,2]],""contributions"":[0,0],""signed"":0,""crossings"":[1,3],""nonnegativeArea"":4,""absoluteEndpointConstruction"":8}",Signed0 versus split-at-crossings nonnegative4 versus absolute-endpoint8; not actual chart observation.
+E,"{""hours"":[0,2],""perHour"":[6,10],""minutes"":[0,120],""perMinute"":[""1/10"",""1/6""],""totalItems"":16}",Consistent hours-rate/minutes-rate conversions both16 invented items; not forecast.
+F,"{""points"":[[0,2],[1,null],[2,6]],""middleUnknown"":true,""hypotheses"":[4,10],""scenarioTotals"":[8,14],""dropMiddleTotal"":8,""zeroScenarioTotal"":4}","Unknown middle remains unresolved; hypotheses4/10 yield8/14, droppingmiddle8 or zero4 are other constructions."
