@@ -1,0 +1,28 @@
+fictional_case,authored_inputs,bounded_result
+A,"[DEFAULT]
+owner = Mira
+[Review]
+state = draft
+",Inherited owner wins over fallback; not a local assignment or authority.
+B,"[Review]
+Owner = Mira
+[review]
+owner = Owen
+",Option spelling folds by default; section names remain distinct.
+C,"[Review]
+code = 0012
+enabled = false
+",Stored strings differ from explicit integer and Boolean getter results.
+D,"[DEFAULT]
+base = EX-ROOT
+[Review]
+label = %(base)s/draft
+share = 50%%
+",Basic interpolation access differs from raw text; no path is accessed.
+E,"[Review]
+count = 1
+COUNT = 2
+",Default strict parser rejects duplicate normalized option in this single source.
+F,"[Review]
+state = draft
+",Missing owner remains absent while a getter can return an explicit fallback.
