@@ -1,0 +1,7 @@
+fictional_case,authored_inputs,bounded_result
+A,"{""raw"": ""1,234"", ""profiles"": [""GroupComma"", ""DecimalComma""]}",Conditional1234or617/500;factor1000;sourceprofileunresolved
+B,"{""raw"": ""12,34"", ""profiles"": [""GroupComma"", ""DecimalComma""], ""removeAllComma"": ""1234""}",Strictgroupreject;decimal617/50;punctuationremoval1234 separate
+C,"{""narrow"": ""1\u202f234,50"", ""ascii"": ""1 234,50"", ""profile"": ""NarrowSpaceComma""}",Different codepointsU202F/U0020;explicitprofileacceptsnarrow2469/2rejectsASCII
+D,"{""percent"": ""12%"", ""plain"": ""12""}",Explicitpercentprofile3/25 versusplain12 factor100;notactualrate
+E,"{""csv"": ""EX-CELL-1,\""1,25\""\n"", ""jsonString"": ""\""1,25\"""", ""jsonBare"": ""1,25""}",CSVtwofields versusnaivesplitthree;stringpreserved;declareddecimal5/4;bareJSONinvalid
+F,"{""rows"": [{""source"": ""Cedar"", ""raw"": ""1,234"", ""profile"": ""GroupComma""}, {""source"": ""Maple"", ""raw"": ""1.234"", ""profile"": ""GroupPeriod""}, {""source"": ""Birch"", ""raw"": ""1,234"", ""profile"": null}], ""hypotheticalProfiles"": [""GroupComma"", ""DecimalComma""]}",Twoofthreeprofileassignmentsknown;subtotal2468;fullunresolved;hypothetical3702or1234617/500
