@@ -1,0 +1,7 @@
+fictional_case,authored_inputs
+A,"{""values"":[2,4,9,1,3],""cutoff"":6}"
+B,"{""values"":[""amber"",""birch"",""STOP"",""cedar""],""stop"":""STOP""}"
+C,"{""empty"":[],""values"":[8,2,3],""cutoff"":5}"
+D,"{""values"":[1,2,7,3],""cutoff"":5}"
+E,"{""records"":[{""id"":""EX-A"",""ready"":true},{""id"":""EX-B"",""ready"":true},{""id"":""EX-C"",""ready"":false},{""id"":""EX-D"",""ready"":true}]}"
+F,"{""values"":[2,null,8],""cutoff"":6,""hypothetical"":[3,9]}"
