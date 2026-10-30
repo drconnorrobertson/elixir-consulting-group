@@ -1,0 +1,7 @@
+fictional_case,authored_inputs
+A,"{""sequence"": [""Cedar"", ""Cedar"", ""Maple"", ""Cedar""]}"
+B,"{""sequence"": [""Cedar"", ""Cedar"", ""Maple"", ""Cedar""]}"
+C,"{""records"": [{""id"": ""EX-R1"", ""team"": ""Cedar"", ""state"": ""draft""}, {""id"": ""EX-R2"", ""team"": ""Cedar"", ""state"": ""reviewed""}, {""id"": ""EX-R3"", ""team"": ""Maple"", ""state"": ""draft""}]}"
+D,"{""sequence"": [""Cedar"", ""Cedar"", ""Maple""]}"
+E,"{""sequence"": [""Cedar"", ""Cedar"", ""Maple"", ""Cedar""]}"
+F,"{""partial"": [""Cedar"", ""Cedar"", null, ""Cedar""], ""chunks"": [[""Cedar"", ""Cedar""], [""Cedar"", ""Maple""]]}"
