@@ -1,0 +1,7 @@
+fictional_case,authored_inputs
+A,"{""values"":[1,4,2,9,7,3],""sorted"":[1,2,3,4,7,9]}"
+B,"{""values"":[1,4,2,9,7,3],""pops"":[1,2,3,4,7,9]}"
+C,"{""values"":[9,1,7,3,1,8],""sorted"":[1,1,3,7,8,9]}"
+D,"{""pairs"":[[2,""EX-B""],[2,""EX-A""]],""counted"":[[2,0,""EX-B""],[2,1,""EX-A""]]}"
+E,"{""values"":[2,5,8],""new_small"":1,""new_large"":6}"
+F,"{""records"":[[""EX-A"",2],[""EX-B"",null],[""EX-C"",7]],""hypothetical"":[1,9]}"
