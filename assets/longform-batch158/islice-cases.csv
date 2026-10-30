@@ -1,0 +1,7 @@
+fictional_case,authored_inputs
+A,"{""source"":[""amber"",""birch"",""cedar"",""dune"",""elm"",""fir""],""start"":1,""stop"":6,""step"":2}"
+B,"{""source"":[""red"",""blue"",""gold"",""white""],""start"":1,""stop"":3}"
+C,"{""source"":[""amber"",""birch"",""cedar"",""dune"",""elm"",""fir""],""start"":4,""stop"":2}"
+D,"{""source"":[""amber"",""birch"",""cedar"",""dune"",""elm"",""fir""],""count"":2}"
+E,"{""source"":[""copper"",""silver"",""gold""],""invalid"":[[-1,2,1],[0,-1,1],[0,2,0]]}"
+F,"{""source"":[""amber"",null,""cedar"",""dune""],""start"":1,""stop"":3,""hypothetical"":[""blue"",""green""]}"
