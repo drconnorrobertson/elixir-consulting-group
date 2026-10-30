@@ -1,0 +1,7 @@
+fictional_case,authored_inputs
+A,"{""input"": [""amber"", ""birch"", ""cedar"", ""dune""]}"
+B,"{""inputs"": [[], [""elm""], [""elm"", ""fir""], [""elm"", ""elm""]]}"
+C,"{""input"": [""amber"", ""birch"", ""cedar"", ""dune""]}"
+D,"{""input"": [""amber"", ""birch"", ""cedar"", ""dune""], ""consume"": 1}"
+E,"{""input"": [4, 9, 6, 14]}"
+F,"{""input"": [""amber"", null, ""cedar""], ""hypotheses"": [""birch"", ""dune""]}"
