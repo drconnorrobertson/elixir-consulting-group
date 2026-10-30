@@ -1,0 +1,7 @@
+fictional_case,authored_inputs
+A,"{""data"": [""amber"", ""birch"", ""cedar"", ""dune""], ""selectors"": [false, true, false, true], ""repeated"": [""amber"", ""amber"", ""cedar"", ""dune""]}"
+B,"{""data"": [""amber"", ""birch"", ""cedar"", ""dune"", ""elm"", ""fir""], ""selectors"": [0, ""0"", """", [], [0], null]}"
+C,"{""data"": [""amber"", ""birch"", ""cedar"", ""dune""], ""short_selectors"": [true, false], ""short_data"": [""amber"", ""birch""], ""long_selectors"": [true, false, true, true]}"
+D,"{""data"": [{""code"": ""EX-A"", ""value"": 30}, {""code"": ""EX-B"", ""value"": 10}, {""code"": ""EX-C"", ""value"": 20}], ""selectors"": [true, false, true]}"
+E,"{""data"": [""amber"", ""birch"", ""cedar"", ""dune""], ""selectors"": [false, true, true, false]}"
+F,"{""data"": [""amber"", ""birch"", ""cedar""], ""selectors"": [true, null, false], ""hypotheses"": [false, true]}"
