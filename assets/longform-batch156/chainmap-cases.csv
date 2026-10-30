@@ -1,0 +1,7 @@
+fictional_case,authored_inputs
+A,"{""front"":{""shade"":""amber"",""count"":2},""back"":{""shade"":""blue"",""size"":8}}"
+B,"{""front"":{""enabled"":false,""count"":0,""label"":"""",""note"":null},""back"":{""enabled"":true,""count"":9,""label"":""baseline"",""note"":""known""}}"
+C,"{""front"":{},""back"":{""shade"":""blue""},""assigned"":""amber""}"
+D,"{""front"":{""shade"":""amber""},""back"":{""shade"":""blue"",""size"":8}}"
+E,"{""front"":{""shared"":""front"",""new"":""n""},""back"":{""old"":""o"",""shared"":""back""}}"
+F,"{""front"":{""shade"":null},""back"":{""shade"":""blue""},""hypothetical"":[""amber"",""green""]}"
