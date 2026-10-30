@@ -1,0 +1,7 @@
+case,authored_input,condition_or_setup,expected,scope
+A,"[2,4,9,3,11]",x < 7,"[9,3,11]","filterfalse [9,11]"
+B,"[9,2,4];[2,4,6];[]",x < 7,"[9,2,4];[];[]",Distinct supplied inputs
+C,"[2,4,9,3,11]",shared iterator,"first 9;remaining [3,11]",full collection leaves exhausted iterator
+D,"[2,4,9,3,11]",record x < 7 calls,"[2,4,9]",after full dropwhile;filterfalse calls all five
+E,"[2,9,3,11]",consume first two before dropwhile,[11],"fresh traversal [9,3,11]"
+F,"EX-A,EX-B,EX-C,EX-D","true,unknown,false,true",unresolved,hyp EX-B false yields BCD;true yields CD
