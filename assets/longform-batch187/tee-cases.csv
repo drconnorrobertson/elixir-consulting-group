@@ -1,0 +1,7 @@
+fictional_case,authored_inputs
+A,"{""input"": [""amber"", ""birch"", ""cedar"", ""dune""]}"
+B,"{""input"": [""amber"", ""birch"", ""cedar"", ""dune""]}"
+C,"{""input"": [{""code"": ""EX-A"", ""tags"": [""amber""]}, {""code"": ""EX-B"", ""tags"": [""birch""]}]}"
+D,"{""input"": [""amber"", ""birch"", ""cedar"", ""dune""]}"
+E,"{""input"": [""amber"", ""birch""], ""branch_counts"": [0, 1, -1]}"
+F,"{""input"": [""amber"", null, ""cedar""], ""hypotheses"": [""birch"", ""dune""]}"
