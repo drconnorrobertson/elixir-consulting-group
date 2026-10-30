@@ -1,0 +1,7 @@
+fictional_case,authored_inputs
+A,"{""sequence"": [2, 5, 5, 5, 9], ""probes"": [5, 6]}"
+B,"{""sequence"": [2, 5, 5, 5, 9], ""probes"": [1, 12], ""empty"": []}"
+C,"{""sequence"": [1, 3, 3, 3, 8], ""lo"": 2, ""hi"": 4, ""probes"": [3, 0]}"
+D,"{""records"": [{""id"": ""EX-A"", ""score"": 2}, {""id"": ""EX-B"", ""score"": 5}, {""id"": ""EX-C"", ""score"": 5}, {""id"": ""EX-D"", ""score"": 9}], ""probe"": 5, ""new"": {""id"": ""EX-NEW"", ""score"": 5}}"
+E,"{""sequence"": [1, 3, 7], ""probe"": 4}"
+F,"{""partial"": [1, null, 7], ""hypotheticalMiddle"": [3, 6], ""probe"": 4}"
