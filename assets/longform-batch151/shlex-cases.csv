@@ -1,0 +1,7 @@
+fictional_case,authored_inputs
+A,"[""review 'red blue'"", ""review red blue""]"
+B,"[""review 'red blue'"", ""review \""red blue\"""", ""review red\\ blue""]"
+C,"[""review \""\"""", ""review ""]"
+D,"[""review #draft"", ""review '#draft'""]"
+E,"[[""review"", ""red blue"", """", ""#draft""]]"
+F,"[""review 'red blue""]"
