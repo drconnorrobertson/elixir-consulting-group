@@ -1,0 +1,7 @@
+fictional_case,authored_inputs
+A,"{""initial"":[""amber"",""blue""],""append"":""green"",""rebind"":[""violet""]}"
+B,"{""original"":{""title"":""draft"",""tags"":[""amber""]},""replacementTitle"":""reviewed"",""append"":""blue"",""replacementTags"":[""green""]}"
+C,"{""original"":[[""amber""],[""blue""]],""newOuter"":[""green""],""innerAppend"":""copper""}"
+D,"{""original"":{""title"":""draft"",""stages"":[""collect"",""review""]},""append"":""record""}"
+E,"{""sharedInitial"":[""amber""],""keys"":[""left"",""right""],""append"":""blue""}"
+F,"{""original"":{""tags"":[""amber""]},""operation"":null,""hypotheticalOperations"":[""alias"",""shallow"",""deep""],""append"":""blue""}"
