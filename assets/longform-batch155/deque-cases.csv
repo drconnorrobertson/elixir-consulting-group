@@ -1,0 +1,7 @@
+fictional_case,authored_inputs
+A,"{""original"":[""EX-A"",""EX-B""],""added"":""EX-C""}"
+B,"{""original"":[""EX-A"",""EX-B"",""EX-C""]}"
+C,"{""original"":[""EX-C""],""batch"":[""EX-A"",""EX-B""]}"
+D,"{""original"":[""EX-A"",""EX-B"",""EX-C"",""EX-D""],""amounts"":[1,-1,5,4]}"
+E,"{""original"":[""EX-A"",""EX-B"",""EX-C""],""maxlen"":3,""added"":""EX-D"",""insertPosition"":1,""history"":[""EX-A"",""EX-B"",""EX-C"",""EX-D"",""EX-E""]}"
+F,"{""original"":[""EX-A"",null,""EX-C""],""hypotheticalMiddle"":[""EX-B"",""EX-D""]}"
