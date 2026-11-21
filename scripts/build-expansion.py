@@ -1,5 +1,9 @@
 """Render the authored expansion without regenerating or rewriting old articles."""
 import csv
+import copy
+from datetime import date
+from html.parser import HTMLParser
+import xml.etree.ElementTree as ET
 import io
 import json
 import re
@@ -130,6 +134,8 @@ def page_html(page, shell, global_schema, lookup):
     web = {'@context': 'https://schema.org', '@type': 'WebPage', '@id': DOMAIN + path,
            'url': DOMAIN + path, 'name': page['title'], 'description': desc,
            'isPartOf': {'@id': DOMAIN + '/#website'}, 'inLanguage': 'en-US'}
+    if page.get('revision_date'):
+        web['dateModified'] = page['revision_date']
     schemas = [global_schema, breadcrumb, web]
     if page.get('listed_items'):
         schemas.append({'@context': 'https://schema.org', '@type': 'ItemList', 'name': page['title'],
@@ -154,6 +160,8 @@ def page_html(page, shell, global_schema, lookup):
     if sample_slug in SAMPLES:
         download = '<p><a class="btn btn-outline" href="/downloads/' + sample_slug + '-sample.csv" download>Download the illustrative sample CSV</a></p>'
     toc = '<nav class="resource-toc" aria-label="On this page"><h2>On this page</h2><ul>' + ''.join('<li><a href="#section-' + str(i) + '">' + escape(h) + '</a></li>' for i, (h, _) in enumerate(page['sections'])) + '</ul></nav>'
+    if page.get('exclude_toc_from_snippets'):
+        toc = '<div class="resource-toc" data-nosnippet>' + toc.replace('class="resource-toc" ', '', 1) + '</div>'
     breadcrumb_html = '<nav class="resource-crumb" aria-label="Breadcrumb"><ol>' + ''.join('<li><a href="' + url + '">' + escape(label) + '</a></li>' if url != path else '<li aria-current="page">' + escape(label) + '</li>' for url, label in crumbs) + '</ol></nav>'
     main = ('<main class="site-main" id="main-content">' + breadcrumb_html
             + '<section class="page-hero"><div class="container"><p class="resource-kicker">' + escape(page['kind']) + '</p><h1>' + escape(page['title']) + '</h1><p>' + escape(page['intro']) + '</p></div></section>'
@@ -162,6 +170,62 @@ def page_html(page, shell, global_schema, lookup):
             + '<section class="resource-cta"><h2>Discuss the operating problem</h2><p>Elixir consulting starts at $5,000 per month, with final pricing based on scope. Bring a recent example, the current workflow, and the person who owns the result to define the appropriate implementation scope.</p><p><a class="btn btn-primary" href="/contact/">Book a consult</a> <a href="/about/">About Elixir and Dr. Connor Robertson</a></p></section>'
             + '</article></div></main>')
     return footer_links(re.sub(r'<main\b.*?</main>', lambda _: main, head, count=1, flags=re.S))
+
+
+
+# This authored article deliberately uses its own template while sharing the
+# expansion sitemap. Never silently discard it during a resource rebuild.
+ADDITIONAL_EXPANSION_PATHS = ('/blog/test-ai-intake-classifier/',)
+
+
+class SitemapPage(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.canonicals, self.robots = [], []
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if tag == 'link' and attrs.get('rel') == 'canonical':
+            self.canonicals.append(attrs.get('href'))
+        if tag == 'meta' and attrs.get('name') == 'robots':
+            self.robots.append(attrs.get('content', ''))
+
+
+def expansion_sitemap(pages, existing_xml):
+    ns = 'http://www.sitemaps.org/schemas/sitemap/0.9'
+    ET.register_namespace('', ns)
+    old = ET.fromstring(existing_xml)
+    previous = {entry.find('{*}loc').text: entry for entry in old.findall('{*}url')}
+    source_urls = {DOMAIN + page['path'] for page in pages}
+    extra_urls = {DOMAIN + path for path in ADDITIONAL_EXPANSION_PATHS}
+    unexpected = set(previous) - source_urls - extra_urls
+    if unexpected:
+        raise RuntimeError('Unmapped expansion sitemap owners require review: ' + ', '.join(sorted(unexpected)))
+    result = ET.Element('{' + ns + '}urlset')
+    for page in pages:
+        url = DOMAIN + page['path']
+        declared = page.get('modified', RELEASE_DATE)
+        old_entry = previous.get(url)
+        old_date = old_entry.find('{*}lastmod') if old_entry is not None else None
+        values = [date.fromisoformat(declared)]
+        if old_date is not None and old_date.text:
+            values.append(date.fromisoformat(old_date.text))
+        entry = ET.SubElement(result, '{' + ns + '}url')
+        ET.SubElement(entry, '{' + ns + '}loc').text = url
+        ET.SubElement(entry, '{' + ns + '}lastmod').text = max(values).isoformat()
+    for path in ADDITIONAL_EXPANSION_PATHS:
+        parser = SitemapPage()
+        parser.feed(target(path).read_text())
+        if parser.canonicals != [DOMAIN + path] or any('noindex' in value.lower() for value in parser.robots):
+            raise RuntimeError('Independent sitemap owner is not eligible: ' + path)
+        old_entry = previous.get(DOMAIN + path)
+        if old_entry is not None:
+            result.append(copy.deepcopy(old_entry))
+        else:
+            entry = ET.SubElement(result, '{' + ns + '}url')
+            ET.SubElement(entry, '{' + ns + '}loc').text = DOMAIN + path
+    latest = max(entry.text for entry in result.findall('.//{*}lastmod'))
+    return '<?xml version="1.0" encoding="UTF-8"?>\n' + ET.tostring(result, encoding='unicode') + '\n', latest
 
 
 def build():
@@ -250,12 +314,12 @@ def build():
         search.append(dict(t=page['title'], u=page['path'], d=page['description'][:150], k=page['kind'],
                            s=' '.join([page['title'], page['description'], page['kind']]).lower()))
     index_file.write_text(json.dumps(search, separators=(',', ':'), ensure_ascii=False))
-    urls = ''.join('<url><loc>' + DOMAIN + x['path'] + '</loc><lastmod>' + x.get('modified', RELEASE_DATE) + '</lastmod></url>\n' for x in pages)
-    (ROOT / 'sitemap-expansion.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + '</urlset>\n')
+    expansion_xml, latest_expansion_change = expansion_sitemap(pages, (ROOT / 'sitemap-expansion.xml').read_text())
+    (ROOT / 'sitemap-expansion.xml').write_text(expansion_xml)
     sitemap_file = ROOT / 'sitemap.xml'
     sitemap = sitemap_file.read_text()
     sitemap = re.sub(r'\s*<sitemap>\s*<loc>' + re.escape(DOMAIN + '/sitemap-expansion.xml') + r'</loc>.*?</sitemap>', '', sitemap, flags=re.S)
-    sitemap_file.write_text(sitemap.replace('</sitemapindex>', '<sitemap><loc>' + DOMAIN + '/sitemap-expansion.xml</loc><lastmod>' + RELEASE_DATE + '</lastmod></sitemap>\n</sitemapindex>'))
+    sitemap_file.write_text(sitemap.replace('</sitemapindex>', '<sitemap><loc>' + DOMAIN + '/sitemap-expansion.xml</loc><lastmod>' + latest_expansion_change + '</lastmod></sitemap>\n</sitemapindex>'))
     manifest = [dict(path=x['path'], title=x['title'], kind=x['kind'], parent=x['parent'], related=x['links'], sources=x.get('sources', [])) for x in pages]
     (ROOT / 'scripts/expansion-manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
     print(f'Built {len(pages)} expansion pages, 3 illustrative CSVs, contextual links, search entries, and sitemap.')

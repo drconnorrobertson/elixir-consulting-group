@@ -3,6 +3,7 @@ import json
 from html import escape as e
 from pathlib import Path
 from expansion_content import p, ul, table, guide
+from owner_support_content import business_coach_alternatives
 
 RESEARCH = json.loads((Path(__file__).parent / 'data/commercial-sources.json').read_text())
 
@@ -153,13 +154,7 @@ ALTERNATIVES = [
          example='Illustrative example: a firm’s immediate issue is incomplete sales-to-delivery handoffs. It can pilot that workflow while leadership separately evaluates whether it wants a broader framework. Fixing the handoff does not establish that all company-wide management needs are covered.',
          check='Ask each option to explain its scope, terminology, required leadership time, facilitation responsibility, and handover. Elixir’s systems services are described in their own scope; this page does not present Elixir as a certified EOS implementation provider.',
          links=['/services/leadership-operating-cadence/', '/services/operational-assessment/', '/guides/fractional-coo-vs-operations-consultant/'], sources=['eos']),
-    dict(slug='business-coaching', title='Alternatives to Business Coaching for Owners',
-         intro='Business coaching is one form of support for an owner. If the unresolved need is implementation, specialized knowledge, peer perspective, or daily management, compare an alternative against that actual gap.',
-         rows=[('Implementation consultant', 'A defined process needs to be diagnosed, built, and tested', 'Who owns it internally after the project?'), ('Experienced mentor', 'You want context from someone who has faced a similar situation', 'How relevant is their experience to this decision?'), ('Peer group', 'You need challenge and perspective from other owners', 'How are relevance, confidentiality, and follow-through handled?'), ('Internal operations manager', 'The business needs daily operating ownership', 'What authority and resources will the role receive?'), ('Specialist adviser', 'A technical or professional decision requires expertise', 'What qualifications and scope apply to that specific work?')],
-         diagnosis='Write the last three problems you hoped coaching would solve. Separate decisions you need to make from work someone must perform. A useful conversation may help define a problem, but an unbuilt workflow still needs an owner and implementation capacity.',
-         example='Illustrative example: an owner receives useful guidance about delegation but the team still lacks an agreed customer-credit limit. A short decision-rights project can turn the intent into a rule the manager can use.',
-         check='Ask what the provider will deliver beyond conversations, what you must implement, how progress is checked, and when a different specialist should be involved. Complementary support can make sense when responsibilities remain clear.',
-         links=['/compare/operations-consultant-vs-business-coach/', '/services/leadership/', '/lists/questions-before-hiring-operations-consultant/'], sources=[]),
+    dict(slug='business-coaching', authored=True),
     dict(slug='crm-migration', title='5 Alternatives to a Full CRM Migration',
          intro='A CRM migration can be appropriate, but it should follow a demonstrated requirement. These five alternatives help a team test whether it can repair the current operating setup before moving its customer records.',
          rows=[('Clean active records', 'Duplicates, missing owners, and stale opportunities undermine trust', 'Reconcile a representative pipeline sample'), ('Redefine the sales process', 'Sellers use conflicting stage meanings', 'Have two sellers stage the same cases independently'), ('Reconfigure existing capabilities', 'The workflow was never configured around current needs', 'Demonstrate the required scenario in a controlled setup'), ('Repair the integration boundary', 'Data is lost or duplicated between otherwise usable tools', 'Test success, failure, and retry with stable record identifiers'), ('Use a controlled manual bridge', 'A limited gap needs temporary handling during a decision', 'Assign an owner, reconciliation check, and retirement date')],
@@ -173,6 +168,9 @@ ALTERNATIVES = [
 def operational_alternatives():
     pages = []
     for a in ALTERNATIVES:
+        if a.get('authored'):
+            pages.append(business_coach_alternatives())
+            continue
         sections = [('Options and the work each one addresses', table(a['title'], ['Alternative', 'When to consider it', 'Responsibility to resolve'], a['rows'])),
                     ('Diagnose the gap before choosing', p(a['diagnosis'])), ('Worked decision example', p(a['example'])),
                     ('Compare the full commitment', p(a['check'])),
@@ -442,5 +440,6 @@ def commercial_pages():
              + listicle_pages() + [sop_tools_list()])
     assert len(pages) == 36
     for page in pages:
-        page['modified'] = '2026-10-25'
+        # Preserve later authored revisions after the shared commercial refresh.
+        page['modified'] = max(page.get('modified', '2026-10-25'), '2026-10-25')
     return pages

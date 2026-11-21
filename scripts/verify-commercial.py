@@ -23,7 +23,7 @@ for page in pages:
         assert key in RESEARCH['sources'], (page['path'], key)
         assert RESEARCH['sources'][key]['url'] in body, (page['path'], 'source missing from visible copy')
     if page['sources']:
-        assert RESEARCH['checked_on'] in body and 'editorial' in body, page['path']
+        assert page.get('source_checked_on', RESEARCH['checked_on']) in body and 'editorial' in body, page['path']
     schemas = [json.loads(x) for x in re.findall(r'<script type="application/ld\+json">(.*?)</script>', text, re.S)]
     assert not any(s.get('@type') in ('Review', 'Product', 'AggregateRating', 'Offer') for s in schemas), page['path']
     if page['kind'] == 'Curated list':
