@@ -648,15 +648,18 @@
   },
   {
     "path": "/alternatives/business-coaching/",
-    "title": "Alternatives to Business Coaching for Owners",
+    "title": "Business Ownership Coach Alternatives",
     "kind": "Alternatives",
     "parent": "/alternatives/",
     "related": [
       "/compare/operations-consultant-vs-business-coach/",
       "/services/leadership/",
-      "/lists/questions-before-hiring-operations-consultant/"
+      "/lists/questions-before-hiring-operations-consultant/",
+      "/alternatives/full-time-coo/"
     ],
-    "sources": []
+    "sources": [
+      "sba-resource-partners"
+    ]
   },
   {
     "path": "/alternatives/crm-migration/",
