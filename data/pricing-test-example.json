@@ -1,0 +1,12 @@
+{
+  "fictional": true,
+  "unit": "One completed job with the same defined service scope",
+  "period": "Comparable invented operating periods; no actual client data",
+  "cases": [
+    { "scenario": "Fictional baseline", "unit_price": 100, "completed_jobs": 200, "variable_cost_per_job": 40, "listed_fixed_costs": 8000 },
+    { "scenario": "Fictional price-change case", "unit_price": 110, "completed_jobs": 180, "variable_cost_per_job": 40, "listed_fixed_costs": 8000 },
+    { "scenario": "Fictional capacity ceiling", "unit_price": 110, "completed_jobs": 220, "variable_cost_per_job": 40, "listed_fixed_costs": 8000 }
+  ],
+  "revenue_growth_goal_percent": 30,
+  "capacity_jobs": 220
+}
