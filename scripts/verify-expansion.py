@@ -67,12 +67,26 @@ def parsed(file):
 
 ns = '{http://www.sitemaps.org/schemas/sitemap/0.9}'
 sitemap_urls = [x.text for x in ET.parse(ROOT / 'sitemap-expansion.xml').iter(ns + 'loc')]
-assert len(sitemap_urls) == len(set(sitemap_urls)) == 83
+assert len(sitemap_urls) == len(set(sitemap_urls)), 'Duplicate expansion sitemap URL'
 assert DOMAIN + '/sitemap-expansion.xml' in [x.text for x in ET.parse(ROOT / 'sitemap.xml').iter(ns + 'loc')]
 search = json.loads((ROOT / 'search-index.json').read_text())
 search_counts = Counter(entry['u'] for entry in search)
 paths = {entry['path'] for entry in MANIFEST}
 assert len(paths) == 83
+# This separately authored article shares the expansion sitemap, but does not
+# use the service/resource template checked by the manifest loop below.
+additional_paths = {'/blog/test-ai-intake-classifier/'}
+expected_sitemap = {DOMAIN + path for path in paths | additional_paths}
+assert set(sitemap_urls) == expected_sitemap, {
+    'missing': sorted(expected_sitemap - set(sitemap_urls)),
+    'unexpected': sorted(set(sitemap_urls) - expected_sitemap),
+}
+for path in additional_paths:
+    _, page = parsed(file_for(path))
+    assert page.h1 == 1, (path, 'h1 count')
+    assert page.canonicals == [DOMAIN + path], (path, 'canonical')
+    assert 'noindex' not in page.metas.get('robots', '').lower(), path
+    assert search_counts[path] == 1, (path, 'search discovery')
 titles = set()
 descriptions = set()
 redirects = json.loads((ROOT / 'vercel.json').read_text())['redirects']
