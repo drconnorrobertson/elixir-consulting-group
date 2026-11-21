@@ -594,7 +594,7 @@ var out=document.getElementById('search-results');
 var count=document.getElementById('search-count');
 var empty=document.getElementById('search-empty');
 var idx=[],ready=false;
-fetch('/search-index.json').then(function(r){return r.json()}).then(function(d){
+fetch('/search-index.json', {cache: 'no-cache'}).then(function(r){return r.json()}).then(function(d){
 idx=d;ready=true;if(input.value)run();
 }).catch(function(){count.textContent='Search index could not be loaded. Try the blog index instead.'});
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
