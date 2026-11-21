@@ -1,0 +1,4 @@
+fictional,scenario,price_per_completed_job,completed_jobs,variable_cost_per_job,listed_fixed_costs,modeled_revenue,total_variable_costs,contribution_before_fixed,remainder_after_listed_fixed
+true,Fictional baseline,100,200,40,8000,20000,8000,12000,4000
+true,Fictional price-change case,110,180,40,8000,19800,7200,12600,4600
+true,Fictional capacity ceiling,110,220,40,8000,24200,8800,15400,7400
