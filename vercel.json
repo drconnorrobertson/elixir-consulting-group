@@ -198,6 +198,26 @@
       "source": "/blog/ai-consulting-for-healthcare/",
       "destination": "/industries/healthcare/",
       "statusCode": 301
+    },
+    {
+      "source": "/blog/dr-connor-robertson",
+      "destination": "/blog/author/dr-connor-robertson/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/dr-connor-robertson/",
+      "destination": "/blog/author/dr-connor-robertson/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/category",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/category/",
+      "destination": "/blog/",
+      "statusCode": 301
     }
   ],
   "buildCommand": "node scripts/optimize-media.mjs . && node scripts/buyer-intent-release.cjs . && node scripts/brand-fit.cjs . && node scripts/contextual-crosslinks.cjs .",
