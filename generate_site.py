@@ -5426,29 +5426,9 @@ def gen_testimonials():
 <p class="role">{t['role']}</p>
 </div>\n"""
 
-    # Individual Review items for the testimonials actually shown on this page.
-    # No aggregateRating: numeric star ratings were never collected for these,
-    # and asserting one that nothing on the page supports is exactly the kind of
-    # self-serving markup search engines discount or penalize.
-    schema = '<script type="application/ld+json">\n' + json.dumps({
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Client testimonials for Elixir Consulting Group",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": i,
-                "item": {
-                    "@type": "Review",
-                    "reviewBody": t["text"],
-                    "author": {"@type": "Person", "name": t["name"], "jobTitle": t["role"]},
-                    "itemReviewed": {"@id": DOMAIN + "/#organization"},
-                    "publisher": {"@id": DOMAIN + "/#organization"},
-                },
-            }
-            for i, t in enumerate(TESTIMONIALS, 1)
-        ],
-    }) + '\n</script>'
+    # Company-controlled testimonials are not eligible for organization review stars.
+    # Keep the visible quotations without asserting Review or rating markup.
+    schema = ""
 
     body = f"""
 <section class="page-hero">
