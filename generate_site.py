@@ -2907,13 +2907,19 @@ def gen_city_page(slug, city, state_abbr, services_focus, intro, geo_description
         "pittsburgh-ai-consulting": ("AI Consulting", "AI consulting and digital transformation"),
         "pittsburgh-operations-consulting": ("Operations Consulting", "operations consulting, process design, and weekly operating cadence"),
     }.get(slug, ("Business Consultant", "business strategy, operations, sales systems, and leadership development"))
-    return make_page(
+    rendered = make_page(
         f"{focus[0]} in {city}, {state_abbr} | Elixir",
         clip(f"Elixir Consulting Group provides {focus[1]} for businesses in {city}, {state_abbr}. Implementation-focused engagements. Call {PHONE}.", 158),
         f"/{slug}/",
         body,
         schema,
     )
+
+
+    if slug == "pittsburgh-operations-consulting":
+        from operations_review_content import apply_operations_review
+        rendered = apply_operations_review(rendered)
+    return rendered
 
 
 # ─── Regional consulting pages (/consulting/<city>/) ───────────────────
