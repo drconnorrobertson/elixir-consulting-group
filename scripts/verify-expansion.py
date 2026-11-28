@@ -72,7 +72,7 @@ assert DOMAIN + '/sitemap-expansion.xml' in [x.text for x in ET.parse(ROOT / 'si
 search = json.loads((ROOT / 'search-index.json').read_text())
 search_counts = Counter(entry['u'] for entry in search)
 paths = {entry['path'] for entry in MANIFEST}
-assert len(paths) == 83
+assert len(paths) == len(MANIFEST), "Duplicate expansion manifest URL"
 # This separately authored article shares the expansion sitemap, but does not
 # use the service/resource template checked by the manifest loop below.
 additional_paths = {'/blog/test-ai-intake-classifier/'}

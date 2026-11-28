@@ -982,6 +982,116 @@
     ]
   },
   {
+    "path": "/playbooks/vendor-renewal-calendar/",
+    "title": "Vendor Renewal Calendar for Small Businesses",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/pittsburgh-operations-consulting/",
+      "/playbooks/subscription-seat-audit/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/subscription-seat-audit/",
+    "title": "Software Subscription Seat Audit Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/pittsburgh-operations-consulting/",
+      "/playbooks/vendor-renewal-calendar/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/supplier-bid-comparison/",
+    "title": "Supplier Bid Comparison for Operating Teams",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/vendor-renewal-calendar/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-backlog-triage/",
+    "title": "Service Backlog Triage Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/weekly-commitment-review/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/weekly-commitment-review/",
+    "title": "Weekly Commitment Review for Leadership Teams",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/leadership/",
+      "/playbooks/service-backlog-triage/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/customer-onboarding-handoff/",
+    "title": "Sales-to-Delivery Customer Onboarding Handoff",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/sales-strategy/",
+      "/playbooks/founder-sales-handoff/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/operating-metric-definitions/",
+    "title": "Operating Metrics Dictionary for Small Teams",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/leadership/",
+      "/playbooks/weekly-commitment-review/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/process-exception-register/",
+    "title": "Process Exception Register for Small Businesses",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/weekly-commitment-review/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/route-density-planning/",
+    "title": "Route Density Planning for Field Service Teams",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/industries/construction-trades/",
+      "/playbooks/service-backlog-triage/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/month-end-operations-review/",
+    "title": "Month-End Operations Review Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/operating-metric-definitions/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
