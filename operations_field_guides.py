@@ -1672,6 +1672,34 @@ TOPICS.extend([('customer-order-date-promise-audit',
   '/services/operations/',
   '/playbooks/stock-transfer-approval/')])
 
+TOPICS.extend([('service-van-inventory-handoff',
+  'Service Van Inventory Handoff Playbook',
+  'Transfer responsibility for van stock when technicians change routes or share a vehicle.',
+  'Freeze routine issues during the handoff or record them on a shared cutoff list. Give outgoing and '
+  'incoming staff the same item and quantity records.',
+  'Count high-use and high-value items together. Record each open job reservation and any damaged or '
+  'unreturned part separately. Identify who can approve adjustments.',
+  'A van holds 16 fittings, four reserved for a job assigned to the outgoing technician. The team transfers '
+  'twelve to the new custodian and moves the reserved four to the correct job bin before accepting the '
+  'handoff.',
+  'Trace one reservation from the old vehicle to the intended job and confirm the next stock count reflects '
+  'the new custodian.',
+  '/services/operations/',
+  '/playbooks/field-service-van-stock-replenishment/'),
+ ('customer-purchase-order-reference-check',
+  'Customer Purchase Order Reference Check',
+  'Prevent rejected invoices by verifying the customer’s required purchase order reference before releasing '
+  'work.',
+  'Identify which customers and work types require a purchase order and whether the scope, quantity or value '
+  'must match before starting.',
+  'Check the reference, remaining authorized amount, eligible service dates, and whether a change needs a '
+  'revised customer document. Route missing or expired references to the account lead.',
+  'A job estimate totals $6,200. The approved customer order has $5,000 remaining. The account lead obtains '
+  'revised approval or agrees a reduced scope before committing labor to the unsupported balance.',
+  'Review a first invoice and verify it carries the required reference and stays within documented approval.',
+  '/services/operations/',
+  '/playbooks/invoice-release-batch-control/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:

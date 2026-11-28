@@ -2390,6 +2390,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/service-van-inventory-handoff/",
+    "title": "Service Van Inventory Handoff Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/field-service-van-stock-replenishment/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/customer-purchase-order-reference-check/",
+    "title": "Customer Purchase Order Reference Check",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/invoice-release-batch-control/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
