@@ -1305,6 +1305,42 @@ TOPICS.extend([('purchase-order-cancellation-control',
   '/services/operations/',
   '/playbooks/supplier-bid-comparison/')])
 
+TOPICS.extend([('field-service-parts-usage-reconciliation',
+  'Field Service Parts Usage Reconciliation',
+  'Reconcile truck withdrawals, job usage and parts returned to stock.',
+  'Start with a completed work order and identify how the crew received each part.',
+  'Record quantity issued, installed, unused, and damaged. Tie unused stock to a return transaction and '
+  'require an approved disposition for damaged items.',
+  'A crew receives nine fittings, installs six and returns two unopened. The ninth is damaged during setup. '
+  'Record the damaged item separately rather than returning it as available stock.',
+  'Sample a job and verify truck stock, work order consumption and any customer charge independently.',
+  '/services/operations/',
+  '/playbooks/field-service-van-stock-replenishment/'),
+ ('invoice-release-batch-control',
+  'Invoice Release Batch Control Playbook',
+  'Catch duplicate, unsupported and incorrectly dated invoices before a batch is issued.',
+  'Define who prepares and approves a batch and identify which records support the charges.',
+  'Check invoice identifiers, customer, dates, scope, credits and supporting proof. Separate rejected items '
+  'so the billing team can correct and resubmit them without sending accepted invoices twice.',
+  'A draft batch contains 42 invoices. Two share the same order and work date, so the reviewer checks for a '
+  'legitimate split before releasing the other 40 and putting the two in an exception queue.',
+  'Reconcile accepted invoices to approved totals and confirm rejected records remain visible with a named '
+  'owner.',
+  '/services/operations/',
+  '/playbooks/customer-milestone-invoice-readiness/'),
+ ('equipment-return-inspection',
+  'Equipment Return Inspection Playbook',
+  'Inspect shared or rented equipment at return and record condition before scheduling its next use.',
+  'Define the inspection with the responsible qualified owner and identify which results block release.',
+  'Record the equipment ID, job, time returned, observed condition and any missing accessories. Separate '
+  'routine cleaning, repair and vendor return decisions.',
+  'A returned unit is due out the next day but its power lead is missing. The coordinator holds the unit, '
+  'verifies an approved replacement lead and updates the next reservation.',
+  'Check that a failed return inspection removes equipment from available scheduling and records who can '
+  'release it.',
+  '/services/operations/',
+  '/playbooks/service-equipment-loaner-tracking/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:

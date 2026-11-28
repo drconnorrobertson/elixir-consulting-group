@@ -2093,6 +2093,39 @@
     "sources": []
   },
   {
+    "path": "/playbooks/field-service-parts-usage-reconciliation/",
+    "title": "Field Service Parts Usage Reconciliation",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/field-service-van-stock-replenishment/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/invoice-release-batch-control/",
+    "title": "Invoice Release Batch Control Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/customer-milestone-invoice-readiness/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/equipment-return-inspection/",
+    "title": "Equipment Return Inspection Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-equipment-loaner-tracking/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
