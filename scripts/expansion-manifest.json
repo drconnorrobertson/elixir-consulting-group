@@ -2368,6 +2368,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/customer-order-date-promise-audit/",
+    "title": "Customer Order Date Promise Audit",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/sales-strategy/",
+      "/playbooks/customer-onboarding-handoff/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/slow-moving-stock-disposition/",
+    "title": "Slow-Moving Stock Disposition Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/stock-transfer-approval/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
