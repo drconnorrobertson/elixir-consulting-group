@@ -819,6 +819,47 @@ TOPICS.extend([('split-shipment-customer-approval',
   '/services/sales-strategy/',
   '/playbooks/renewal-risk-sales-handoff/')])
 
+TOPICS.extend([('customer-owned-inventory-tracking',
+  'Customer-Owned Inventory Tracking Playbook',
+  'Keep customer-owned inventory traceable through receipt, storage, use, and return.',
+  'Define where customer property can be stored and who may release it. Keep ownership visible at the lot '
+  'and transaction levels.',
+  'Record the customer, item, quantity, condition, order, authorized use, and remaining balance. Label '
+  'physical bins and reconcile the customer’s property separately from available company stock.',
+  'A shop receives 50 customer-owned blanks, uses 42, and records two damaged during setup. Its return '
+  'register shows six unused pieces, while the customer report lists the damaged two separately for '
+  'disposition.',
+  'Trace a lot from receipt to job issue to return. Verify that the balance reconciles and cannot be '
+  'assigned to another customer’s job.',
+  '/services/operations/',
+  '/playbooks/inventory-cycle-count-discrepancy/'),
+ ('supplier-pack-size-change-control',
+  'Supplier Pack Size Change Control Playbook',
+  'Prevent purchasing and inventory errors when vendors change order multiples or packaging.',
+  'Document the units used in buying, receiving, storage, and customer fulfillment before updating a vendor '
+  'item.',
+  'Record the old and new quantities per pack, effective date, prices, and open order treatment. Test '
+  'receiving and item labels before updating the default ordering conversion.',
+  'A supplier moves from cartons of 12 to cartons of 10. Five cartons that once yielded 60 units now yield '
+  '50. The buyer reviews open orders and updates reorder quantities before the first shipment.',
+  'Have purchasing and receiving test the same item independently. Reconcile ordered, received and available '
+  'units plus per-unit cost.',
+  '/services/operations/',
+  '/playbooks/purchase-order-three-way-match/'),
+ ('service-appointment-window-sizing',
+  'Service Appointment Window Sizing Playbook',
+  'Size customer arrival windows using observed travel and job-duration variation.',
+  'Compare actual arrival and service durations for similar jobs, then identify the routes and time bands '
+  'with the widest spread.',
+  'Choose customer windows the team can meet consistently. Reserve slack where jobs vary and agree when '
+  'dispatch should notify customers about a predicted miss.',
+  'The first job on a route ends between 9:30 and 10:20 in recent records, and the next drive can take 25 '
+  'minutes. Dispatch tests a later customer window and compares missed arrivals alongside idle time.',
+  'Compare promise accuracy, time spent waiting and jobs completed. Adjust windows where the causes of '
+  'variability can be traced.',
+  '/services/operations/',
+  '/playbooks/route-density-planning/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
