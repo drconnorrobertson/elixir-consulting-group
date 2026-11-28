@@ -1664,6 +1664,39 @@
     "sources": []
   },
   {
+    "path": "/playbooks/split-shipment-customer-approval/",
+    "title": "Split Shipment Customer Approval Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/supplier-on-time-in-full-scorecard/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-equipment-loaner-tracking/",
+    "title": "Service Equipment Loaner Tracking Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/repair-versus-replace-decision/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-contract-renewal-handoff/",
+    "title": "Service Contract Renewal Handoff Checklist",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/sales-strategy/",
+      "/playbooks/renewal-risk-sales-handoff/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",

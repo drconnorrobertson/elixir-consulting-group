@@ -775,6 +775,50 @@ TOPICS.extend([('purchase-approval-delegation',
   '/services/operations/',
   '/playbooks/service-delivery-proof-check/')])
 
+TOPICS.extend([('split-shipment-customer-approval',
+  'Split Shipment Customer Approval Playbook',
+  'Decide whether to ship part of an order and record who approved the added shipping cost and delivery '
+  'dates.',
+  'Check whether the available portion is independently useful to the customer and whether shipping it '
+  'changes freight, installation timing, or billing.',
+  'Record quantities available and short, usable delivery dates, incremental cost, and the approval needed '
+  'under the order. Preserve one order reference across shipments.',
+  'A customer needs 60 units to start work. Forty are ready today and the remaining 20 arrive Friday. A '
+  'partial shipment costs $90 more and supports preparation only. Confirm whether the customer wants it and '
+  'who covers the charge before release.',
+  'Reconcile both shipment records to the original order. Verify the second commitment stayed visible and '
+  'billing reflects the approved terms.',
+  '/services/operations/',
+  '/playbooks/supplier-on-time-in-full-scorecard/'),
+ ('service-equipment-loaner-tracking',
+  'Service Equipment Loaner Tracking Playbook',
+  'Track temporary equipment issued during repairs, including condition, collection dates and availability.',
+  'Identify equipment suitable for temporary use and give each unit a unique identifier and responsible '
+  'coordinator.',
+  'Record the repair ticket, loaner condition, issue date, return commitment, and approved instructions. '
+  'Reserve inspection time before making returned equipment available again.',
+  'A customer receives a temporary unit through Tuesday. The repair slips to Thursday, while the loaner is '
+  'booked on Wednesday. The coordinator arranges a substitute and updates both customers before changing the '
+  'original return date.',
+  'Sample an overdue loaner and a returned one. Verify custody, inspection status, and future availability '
+  'from the same record.',
+  '/services/operations/',
+  '/playbooks/repair-versus-replace-decision/'),
+ ('service-contract-renewal-handoff',
+  'Service Contract Renewal Handoff Checklist',
+  'Transfer renewed scope, dates, rates and open customer commitments into scheduling and billing.',
+  'Create the handoff as soon as a renewal is approved. Use the signed scope and amendments as the source '
+  'for upcoming work.',
+  'Compare old and new scope, cadence, approved rates, exclusions, and any open commitments. Assign an owner '
+  'to retire obsolete recurring jobs and another to test billing.',
+  'A quarterly inspection contract changes to a monthly visit on August 1. Dispatch suppresses the old '
+  'schedule, creates the new visits, and checks the first August invoice against the renewal rather than '
+  'carrying the prior cadence forward.',
+  'Inspect one scheduled job and one invoice after renewal. Check every material change against the signed '
+  'document.',
+  '/services/sales-strategy/',
+  '/playbooks/renewal-risk-sales-handoff/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
