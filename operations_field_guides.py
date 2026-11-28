@@ -493,6 +493,48 @@ TOPICS.extend([('warehouse-pick-error-review',
   '/services/operations/',
   '/playbooks/shift-handoff-log/')])
 
+TOPICS.extend([('quote-expiration-review',
+  'Quote Expiration Review Playbook',
+  'Keep expired quotes from turning into unsupported pricing, stale availability or missed follow-up.',
+  'Give quotes an expiration date and put that date where the customer and sales team can see it.',
+  'Track quote version, accepted date, vendor assumptions and availability. Define which changes require '
+  'formal reapproval, and which salesperson handles the customer conversation.',
+  'A customer accepts a 30-day quote on day 38. A supplier has raised the included equipment price by $450. '
+  'The seller checks the proposal terms and current costs, then takes a revised quote or a documented '
+  'exception to the approver.',
+  'Sample orders placed after expiration. Check current price, availability and the version accepted by the '
+  'customer.',
+  '/services/sales-strategy/',
+  '/playbooks/quote-approval-delegation/'),
+ ('service-labor-utilization',
+  'Service Labor Utilization Measurement Playbook',
+  'Measure how field-service time is used without losing sight of training, travel, quality and customer '
+  'outcomes.',
+  'Define available hours and productive service hours before comparing technicians, shifts or territories.',
+  'Classify travel, on-site work, training, leave and idle time consistently. Review hours by job mix. Pair '
+  'utilization with on-time arrival, safety, quality and completion measures.',
+  'A technician has 32 scheduled working hours after leave. They spend 22 on site, six traveling and four in '
+  'training, yielding 68.75% on-site utilization. A manager checks route assignments before deciding whether '
+  'low utilization reflects avoidable delay.',
+  'Have supervisors classify a sample independently, then review trends across comparable schedules instead '
+  'of using a raw score to explain individual performance.',
+  '/services/operations/',
+  '/playbooks/route-density-planning/'),
+ ('service-warranty-rework-tracking',
+  'Service Warranty Rework Tracking Playbook',
+  'Track work repeated under warranty and its direct labor, parts and travel costs.',
+  'Give every work order performed under warranty a link to the original job and a code for the nature of '
+  'the work.',
+  'Record the customer commitment, approved coverage decision, required parts, direct labor and trip time. '
+  'Keep warranty goodwill decisions distinct from corrections already owed under policy.',
+  'A fictional shop replaces five failed parts. The total includes $150 in materials, four crew hours at $35 '
+  'direct labor, and $60 in travel. Track the resulting $350 direct cost separately from any supplier '
+  'recovery.',
+  'Review repeating failures by job type, product or lot. Check that credits and spare part use reconcile to '
+  'the original repair record.',
+  '/services/operations/',
+  '/playbooks/service-callback-root-cause/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
