@@ -1389,6 +1389,50 @@
     "sources": []
   },
   {
+    "path": "/playbooks/warehouse-pick-error-review/",
+    "title": "Warehouse Pick Error Review Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/inventory-cycle-count-discrepancy/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/scheduled-maintenance-completion/",
+    "title": "Scheduled Maintenance Completion Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/month-end-operations-review/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-work-queue-aging/",
+    "title": "Service Work Queue Aging Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-backlog-triage/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/handoff-acceptance-criteria/",
+    "title": "Internal Handoff Acceptance Criteria Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/shift-handoff-log/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
