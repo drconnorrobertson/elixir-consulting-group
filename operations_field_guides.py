@@ -573,6 +573,46 @@ TOPICS.extend([('dispatch-schedule-freeze',
   '/services/operations/',
   '/playbooks/warehouse-pick-error-review/')])
 
+TOPICS.extend([('subcontractor-work-acceptance',
+  'Subcontractor Work Acceptance Playbook',
+  'Define the evidence needed to accept subcontracted work and clear an invoice for payment.',
+  'Choose one work package and write the acceptance criteria before the subcontractor starts.',
+  'Record the accepted scope, required inspections, documentation and approver. If work fails a check, note '
+  'what can proceed and who verifies the correction.',
+  'A crew installs 18 fixtures and reports the work complete. The inspector accepts 16 and flags two for '
+  'retesting. The project lead records the approved quantities and works with billing on the treatment under '
+  'the agreement.',
+  'Sample a closed work package and trace acceptance, correction, approval and payment back to the same '
+  'scope.',
+  '/industries/construction-trades/',
+  '/playbooks/job-closeout-completeness/'),
+ ('service-price-list-change-control',
+  'Service Price List Change Control',
+  'Roll out approved price changes with effective dates, quote checks and a defined rollback.',
+  'Identify every place a service rate appears, including quotes, recurring billing, sales scripts and '
+  'partner material.',
+  'Record approved rates, scope, effective dates, exceptions, and who updates each system. Test held quotes '
+  'and recurring orders before switching.',
+  'A team raises a service from $120 to $132 on July 1. An order accepted June 25 stays at the documented '
+  'old rate. A new July order uses $132 after the team checks the catalog and billing rule.',
+  'Reconcile a sample of invoices for old and new commitments. Assign a decision owner for any mismatch '
+  'found during rollout.',
+  '/services/sales-strategy/',
+  '/playbooks/quote-expiration-review/'),
+ ('service-delivery-proof-check',
+  'Service Delivery Proof Checklist',
+  'Capture usable evidence that the contracted service was completed and accepted.',
+  'Identify what billing and support need to establish that a job occurred and which commitments were met.',
+  'Capture the order reference, completion time, scope delivered, and signed acknowledgment or other '
+  'approved evidence. Limit personal data to what the workflow actually requires.',
+  'A recurring service is completed at a site outside office hours. The crew records the service area and '
+  'checklist in the authorized system. The account owner verifies whether the agreement permits that record '
+  'in place of a signature.',
+  'Walk a completed job from crew record to invoice and confirm the same evidence is accessible for dispute '
+  'resolution.',
+  '/services/operations/',
+  '/playbooks/billing-dispute-triage/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
