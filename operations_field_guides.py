@@ -1642,6 +1642,36 @@ TOPICS.extend([('purchase-price-effective-date-audit',
   '/services/operations/',
   '/playbooks/supplier-backorder-notification/')])
 
+TOPICS.extend([('customer-order-date-promise-audit',
+  'Customer Order Date Promise Audit',
+  'Compare dates promised during sales with dates fulfillment can reliably meet.',
+  'Capture the date first confirmed to the customer separately from the date currently shown in the '
+  'schedule.',
+  'Check when the order was approved, whether parts and crew were available, and which changes the customer '
+  'accepted. Group discrepancies by cause and identify the owner who can prevent them.',
+  'A rep promises August 12 based on stock on hand. Warehouse records show most of those units were already '
+  'reserved. The order moves to August 15 with customer approval, and the team adds a check for unallocated '
+  'stock before promising future dates.',
+  'Sample promises made after the change. Verify dates against real capacity and measure misses against the '
+  'original date as well as any accepted revision.',
+  '/services/sales-strategy/',
+  '/playbooks/customer-onboarding-handoff/'),
+ ('slow-moving-stock-disposition',
+  'Slow-Moving Stock Disposition Playbook',
+  'Decide which slow stock to retain, return, transfer, discount, or dispose of using demand and recovery '
+  'evidence.',
+  'Identify items with little movement during a relevant demand cycle and check whether the business still '
+  'has a service or contractual need for them.',
+  'Compare opening stock, verified demand, return eligibility, alternative locations, clearance recovery and '
+  'handling costs. Record who approves disposition and how quantity changes will be posted.',
+  'A branch holds 80 units and expects to use 15 over the next year. Another branch can use 25, and the '
+  'supplier has approved a return for 30. Retain 15, move 25, process the return and investigate a permitted '
+  'disposition for the remaining 10.',
+  'Verify outgoing movements and supplier credits, then review whether the replenishment rule still orders '
+  'items the business is trying to reduce.',
+  '/services/operations/',
+  '/playbooks/stock-transfer-approval/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
