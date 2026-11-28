@@ -343,6 +343,51 @@ TOPICS.extend([('service-callback-root-cause',
   '/services/leadership/',
   '/playbooks/weekly-commitment-review/')])
 
+TOPICS.extend([('dispatch-cancellation-recovery',
+  'Dispatch Cancellation Recovery Playbook',
+  'Recover field-service capacity after a cancellation without breaking promised windows or sending an '
+  'unprepared crew.',
+  'Create a short list of customer-approved openings and jobs that can move on short notice. Keep the '
+  "customer's preferred contact method and the time by which the offer expires.",
+  'Screen replacement jobs by travel distance, part availability, crew skills, and promised window. Confirm '
+  'the new booking before changing the route. Retain the original cancellation reason for trend reporting.',
+  'A technician frees a 90-minute slot. A 45-minute inspection nearby requires 20 minutes of round-trip '
+  'travel and has a confirmed customer window. A 60-minute repair needs a part held across town. Schedule '
+  'the inspection and leave a buffer for the next job.',
+  'Compare recovered billable hours, customer acceptance, and any missed promises after rerouting. Review '
+  'cancellations by notice time to see where the standby list is most useful.',
+  '/services/operations/',
+  '/playbooks/route-density-planning/'),
+ ('inventory-cycle-count-discrepancy',
+  'Inventory Cycle Count Discrepancy Playbook',
+  'Investigate physical-versus-system inventory discrepancies before approving adjustments.',
+  'Define what the count covers, including location, lot, units of measure, and a transaction cutoff. Assign '
+  'a second counter when the first difference is material.',
+  'Hold or record moves around the cutoff, then compare receipts, issues, transfers and returns. Record the '
+  'adjustment separately from the root cause and approval. Preserve both count sheets.',
+  'A bin shows 72 units in the system and 60 physically. Twelve units were moved to a staging shelf just '
+  'before the count and never transferred in the system. Confirm both locations and correct the transfer, '
+  'preserving the total stock balance.',
+  'Recount affected bins after the correction and sample upcoming transfers for the same issue. Track '
+  'recurring differences by location and transaction type.',
+  '/services/operations/',
+  '/playbooks/minimum-stock-reorder-point/'),
+ ('billing-dispute-triage',
+  'Billing Dispute Triage Playbook',
+  'Resolve customer billing disputes by tying each disputed line to approved scope, delivery records, and '
+  'decision authority.',
+  'Capture the exact invoice line and what the customer believes should change. Give one account owner '
+  'responsibility for updates and agree when they will respond.',
+  'Compare the original agreement, approved changes, delivery log, payment history, and billing setup. Mark '
+  'what is supported, what needs correction, and which team can approve a credit or revised bill.',
+  'A customer disputes $600 on a $4,000 invoice. The initial review confirms $400 of authorized extra work '
+  'and finds a $200 duplicate charge. Correct the duplicate, explain the documented balance, and retain the '
+  'disposition in the account record.',
+  'Before closing the case, verify customer communication, the account balance, and any credit. Review '
+  'repeated disputes by source so billing can fix the entry point.',
+  '/services/operations/',
+  '/playbooks/job-closeout-completeness/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
