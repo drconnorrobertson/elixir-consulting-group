@@ -1268,6 +1268,43 @@ TOPICS.extend([('inventory-adjustment-approval',
   '/services/operations/',
   '/playbooks/purchase-approval-delegation/')])
 
+TOPICS.extend([('purchase-order-cancellation-control',
+  'Purchase Order Cancellation Control',
+  'Cancel supplier orders without leaving residual receipts, charges or production commitments untracked.',
+  'Start with the open line quantity, the supplier’s latest confirmation and what has already shipped.',
+  'Record the approved request, whether the supplier accepted it, and any charges or materials still due. '
+  'Keep the order open for reconciliation if a deposit or shipment remains outstanding.',
+  'A buyer cancels 40 of 100 units, but 15 of the requested cancellations are already packed and the vendor '
+  'declines to stop them. Update the planning quantity to 75 and assign receiving and accounts payable to '
+  'reconcile that result.',
+  'Trace one cancellation to the vendor’s response, the revised arrival plan and the final invoice.',
+  '/services/operations/',
+  '/playbooks/supplier-order-acknowledgment-audit/'),
+ ('service-reschedule-change-log',
+  'Service Reschedule Change Log',
+  'Track service appointment changes with a clear customer promise and current source of truth.',
+  'Identify the jobs where changed dates affect site access, required parts or another team’s work.',
+  'Record the original appointment, requested and accepted replacement, initiator, affected resource '
+  'bookings and customer acknowledgment. Keep one active dispatch date and preserve the change history.',
+  'A customer moves a Thursday visit to Monday. Dispatch verifies that the rented lift can move too and '
+  'gives the customer an updated window before releasing Thursday’s slot.',
+  'Compare the dispatch calendar, resource booking and customer message for a rescheduled job. Check for '
+  'stale notifications or duplicate visits.',
+  '/services/operations/',
+  '/playbooks/dispatch-schedule-freeze/'),
+ ('supplier-freight-term-comparison',
+  'Supplier Freight Term Comparison Playbook',
+  'Compare quotes using shipment frequency, surcharges and the delivery point each vendor supports.',
+  'Define a representative order pattern before comparing quotes that allocate freight differently.',
+  'Record base charges, fuel or accessorial fees, free-freight thresholds, pickup responsibilities and '
+  'receiving constraints. Use confirmed vendor details and equivalent delivery points.',
+  'One supplier charges $60 per shipment. Another offers free freight at $900, but a normal order is $600. '
+  'Compare the $60 expense with the cost and cash tied up in $300 of extra stock per order.',
+  'Check the first few invoices for unexpected freight and review whether ordering behavior changed as '
+  'assumed.',
+  '/services/operations/',
+  '/playbooks/supplier-bid-comparison/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
