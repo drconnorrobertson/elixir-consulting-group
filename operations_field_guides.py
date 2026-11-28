@@ -1867,6 +1867,36 @@ TOPICS.extend([('service-loaner-utilization',
   '/services/operations/',
   '/playbooks/purchase-order-three-way-match/')])
 
+TOPICS.extend([('service-part-revision-check',
+  'Service Part Revision Check',
+  'Verify that the part assigned to a job matches the installed equipment revision before loading the van.',
+  'Collect the equipment identifier, original work order and supported replacement list. Give the crew a way '
+  'to flag an uncertain match.',
+  'Record installed revision and approved replacement in the dispatch record. Where a vendor lists different '
+  'parts under similar descriptions, compare identifiers and technical documentation with a qualified '
+  'reviewer.',
+  'A crew has a replacement module for revision B, but the customer’s asset record and photo show revision '
+  'A. The scheduler pauses the repair booking until a qualified lead confirms an approved match and '
+  'availability.',
+  'Trace a sample from asset record to pick ticket and confirm that the technician can verify the revision '
+  'at the site.',
+  '/services/operations/',
+  '/playbooks/serial-number-installation-audit/'),
+ ('warehouse-reservation-expiry-review',
+  'Warehouse Reservation Expiry Review',
+  'Release stale reservations for canceled or delayed work without reallocating stock still promised to '
+  'customers.',
+  'Review reservations that have passed their decision or job date. Confirm each work order’s current status '
+  'before releasing its stock.',
+  'Record item, quantity, active commitment, approver and time. Separate delayed work with a renewed date '
+  'from canceled work eligible for release.',
+  'Ten units remain reserved after a job moves three weeks. The owner confirms six are still needed and '
+  'authorizes release of four after an approved scope reduction.',
+  'Compare the new availability report with the approved decision and check that the remaining reservation '
+  'follows the updated job schedule.',
+  '/services/operations/',
+  '/playbooks/job-material-reservation/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
