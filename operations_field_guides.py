@@ -1027,6 +1027,47 @@ TOPICS.extend([('alternate-part-substitution',
   '/services/operations/',
   '/playbooks/supplier-lead-time-variance/')])
 
+TOPICS.extend([('rental-equipment-off-hire',
+  'Rental Equipment Off-Hire Playbook',
+  'End avoidable rental charges by confirming pickup, off-hire acceptance and final invoice dates.',
+  'Identify who can release rented equipment and confirm the vendor’s documented billing cutoff before the '
+  'rental begins.',
+  'Link rental ID, site, agreement, actual ready date, submitted off-hire request, pickup and confirmation. '
+  'Keep a named owner for disputed dates before approving the final bill.',
+  'A lift costs $180 a day. Site staff mark it ready Tuesday, but the rental company receives the off-hire '
+  'request Thursday. Review the vendor’s accepted cutoff and record the $360 difference between the dates '
+  'for future process improvement.',
+  'Sample an open rental and a closed invoice. Confirm the off-hire evidence and verify all equipment no '
+  'longer in use has a pickup or return owner.',
+  '/services/operations/',
+  '/playbooks/vendor-invoice-variance-review/'),
+ ('lost-quote-review',
+  'Lost Quote Review for Service Businesses',
+  'Classify lost quotes using customer evidence and choose one pricing or scope issue to test.',
+  'Separate rejected quotes from expired, replaced, and still-pending offers before measuring outcomes.',
+  'Record the relevant quote version, decision date, evidence of why it was lost, and whether the proposed '
+  'work fit the service area. Keep unknown reasons visible.',
+  'A team loses seven of 20 quoted jobs. Two buyers cite scheduling, one cites a narrower scope from another '
+  'provider, and four give no reason. Test a better scheduling option on comparable quotes without treating '
+  'all seven as price losses.',
+  'Compare quote outcomes for the same job class after the test. Document customer feedback separately from '
+  'sales guesses.',
+  '/services/sales-strategy/',
+  '/playbooks/quote-expiration-review/'),
+ ('work-order-duplicate-prevention',
+  'Work Order Duplicate Prevention Playbook',
+  'Avoid dispatching and billing duplicate jobs created from overlapping order requests.',
+  'Identify source events that can create a second work order for the same customer, site, item and '
+  'scheduled scope.',
+  'Use a shared reference from the originating request. Flag possible duplicates for a designated reviewer '
+  'and preserve legitimate repeat and multi-site work as separate records.',
+  'A recurring job is generated automatically on Monday. Sales also submits an email for the same site and '
+  'work window. Dispatch links the email to the generated order after confirming it adds no separate work.',
+  'Verify the crew and billing see one active record. Sample legitimate repeat visits to ensure matching '
+  'rules do not hide distinct customer commitments.',
+  '/services/operations/',
+  '/playbooks/duplicate-service-ticket-triage/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
