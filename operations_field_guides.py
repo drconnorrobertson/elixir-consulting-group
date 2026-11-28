@@ -1560,6 +1560,33 @@ TOPICS.extend([('serial-number-installation-audit',
   '/services/operations/',
   '/playbooks/dispatch-ready-work-order/')])
 
+TOPICS.extend([('delivery-proof-discrepancy',
+  'Delivery Proof Discrepancy Review',
+  'Resolve conflicts between shipment records, delivery evidence and what the customer received.',
+  'Compare the promised shipment with the actual scan, packing list and customer report before choosing a '
+  'remedy.',
+  'Record the affected order lines, carrier evidence, quantities and recipient confirmation. Give the case '
+  'one owner and preserve the original documents.',
+  'A carrier marks two cartons delivered, but receiving reports only one carton with both labels attached. '
+  'The owner checks packed quantities and carrier evidence before approving a replacement for the missing '
+  'parts.',
+  'Verify the agreed remedy reached billing and inventory records and that the customer received one '
+  'accurate update.',
+  '/services/operations/',
+  '/playbooks/carrier-delivery-exception-desk/'),
+ ('service-technician-travel-time-variance',
+  'Service Technician Travel Time Variance',
+  'Compare planned and actual driving time to identify routing assumptions that cause late appointments.',
+  'Select comparable routes and separate travel from stops, loading, or time spent waiting for access.',
+  'Record estimated and actual trip time by time band and stop sequence. Group discrepancies by detour, '
+  'traffic, site entry or scheduling error.',
+  'A route consistently budgets 20 minutes for a 35-minute afternoon trip. Updating only that segment adds '
+  '15 minutes of realistic capacity demand without padding every appointment.',
+  'Repeat the comparison with a later set of routes and verify that the adjustment improves arrival accuracy '
+  'without reducing otherwise feasible work.',
+  '/services/operations/',
+  '/playbooks/service-appointment-window-sizing/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
