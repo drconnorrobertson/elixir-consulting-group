@@ -2632,6 +2632,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/inventory-count-tolerance-design/",
+    "title": "Inventory Count Tolerance Design",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/inventory-adjustment-approval/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/installation-site-readiness-signoff/",
+    "title": "Installation Site Readiness Sign-Off",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/dispatch-ready-work-order/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",

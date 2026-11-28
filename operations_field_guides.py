@@ -1980,6 +1980,34 @@ TOPICS.extend([('service-territory-overflow-request',
   '/services/operations/',
   '/playbooks/vendor-invoice-variance-review/')])
 
+TOPICS.extend([('inventory-count-tolerance-design',
+  'Inventory Count Tolerance Design',
+  'Set recount and approval thresholds that reflect value, measurement accuracy and order commitments.',
+  'Start with the purpose of the count. A useful tolerance sends significant differences for review while '
+  'keeping minor measurement noise from blocking routine work.',
+  'Set a quantity or value limit by item category. Require a recount for any variance that could make a '
+  'confirmed order fail, even when the stock’s value is low. Record responsibility for corrections.',
+  'A count shows 99 inexpensive fasteners instead of 100, but 100 are reserved for a job. The missing unit '
+  'triggers a recount because the job cannot ship complete, even though the difference is inside the usual '
+  'percentage tolerance.',
+  'Test the rules on past counts and confirm which differences would have triggered a recount, an approval, '
+  'or ordinary recording.',
+  '/services/operations/',
+  '/playbooks/inventory-adjustment-approval/'),
+ ('installation-site-readiness-signoff',
+  'Installation Site Readiness Sign-Off',
+  'Confirm site prerequisites and equipment before committing a field installation crew.',
+  'Start from the accepted installation scope and ask the site owner to verify prerequisites that the crew '
+  'cannot complete itself.',
+  'Record access, clearances, power or other utilities, staging space, and the person qualified to approve '
+  'any exception. Check evidence for high-cost or irreversible scheduling decisions.',
+  'A customer confirms the installation date but has yet to finish the mounting surface. The project lead '
+  'arranges a documented readiness check before bringing the full crew and equipment to site.',
+  'Compare site sign-off with conditions found by the crew. Assign failed checks to the person who can '
+  'correct the specific prerequisite.',
+  '/services/operations/',
+  '/playbooks/dispatch-ready-work-order/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
