@@ -1345,6 +1345,50 @@
     "sources": []
   },
   {
+    "path": "/playbooks/field-service-van-stock-replenishment/",
+    "title": "Field Service Van Stock Replenishment Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/field-service-first-visit-completion/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-appointment-confirmation/",
+    "title": "Service Appointment Confirmation Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/industries/construction-trades/",
+      "/playbooks/dispatch-cancellation-recovery/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/customer-support-response-time-audit/",
+    "title": "Customer Support Response Time Audit",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/operating-metric-definitions/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/duplicate-vendor-record-cleanup/",
+    "title": "Duplicate Vendor Record Cleanup Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/purchase-order-three-way-match/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
