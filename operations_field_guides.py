@@ -1474,6 +1474,35 @@ TOPICS.extend([('technician-jobs-per-day-capacity',
   '/services/operations/',
   '/playbooks/supplier-credit-memo-follow-up/')])
 
+TOPICS.extend([('warehouse-dock-to-stock-time',
+  'Dock-to-Stock Time Measurement',
+  'Measure the elapsed time from receiving arrival to usable inventory and identify where time is lost.',
+  'Choose a start event and a release event. Track quality holds separately so they remain visible in total '
+  'elapsed time.',
+  'Capture unloading, count, inspection and putaway timestamps by lot. Review queues at each handoff and '
+  'sample late scans against actual movement.',
+  'An inbound lot arrives at 8 a.m., is counted at 9, released after inspection at noon, and put away at 2 '
+  'p.m. Dock-to-stock time is six hours. The team checks why the released material waited two hours before '
+  'putaway.',
+  'Compare time by shipment type and verify that faster results still reflect approved inspection and '
+  'location records.',
+  '/services/operations/',
+  '/playbooks/supplier-delivery-appointment-control/'),
+ ('schedule-no-show-capacity-review',
+  'Field Service No-Show Capacity Review',
+  'Measure unused appointment time and compare confirmation, standby scheduling and other recovery options.',
+  'Separate no-shows from cancellations received early enough to refill the slot. Use scheduled and actual '
+  'times from the same set of jobs.',
+  'Group by visit type, lead time, and customer access requirements. Review the time recovered through '
+  'standby work and the work that stayed idle.',
+  'Six of 60 visits are missed. Two were canceled a day early and refilled. Of the four no-shows, one crew '
+  'completes an approved standby task. Estimate three unfilled appointment periods before testing a reminder '
+  'change.',
+  'Compare wasted hours, customer rebooking and reminder workload after a trial. Check that the same event '
+  'definitions are used in both periods.',
+  '/services/operations/',
+  '/playbooks/appointment-cancellation-reason-coding/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:

@@ -2236,6 +2236,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/warehouse-dock-to-stock-time/",
+    "title": "Dock-to-Stock Time Measurement",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/supplier-delivery-appointment-control/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/schedule-no-show-capacity-review/",
+    "title": "Field Service No-Show Capacity Review",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/appointment-cancellation-reason-coding/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
