@@ -2148,6 +2148,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/inventory-kit-shortage-review/",
+    "title": "Inventory Kit Shortage Review",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/job-material-reservation/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/warranty-spare-parts-reserve/",
+    "title": "Warranty Spare Parts Reserve Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-warranty-rework-tracking/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",

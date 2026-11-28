@@ -1367,6 +1367,35 @@ TOPICS.extend([('warehouse-staging-lane-audit',
   '/services/operations/',
   '/playbooks/supplier-on-time-in-full-scorecard/')])
 
+TOPICS.extend([('inventory-kit-shortage-review',
+  'Inventory Kit Shortage Review',
+  'Identify which components limit the number of complete kits available for scheduled work.',
+  'Count kits by their least available required component. Keep complete kits and loose parts separate after '
+  'assembly.',
+  'Review the active component list, quantities per kit, held stock and reservations. Give the assembly lead '
+  'one report of the limiting parts and the jobs affected.',
+  'A kit uses two clamps and four screws. Available stock is 24 clamps and 36 screws, enough for nine kits. '
+  'An order for ten kits needs four additional screws even though the clamp stock can support twelve.',
+  'Trace a completed batch to component withdrawals and verify leftover components return to available stock '
+  'only when physically returned.',
+  '/services/operations/',
+  '/playbooks/job-material-reservation/'),
+ ('warranty-spare-parts-reserve',
+  'Warranty Spare Parts Reserve Playbook',
+  'Set aside replacement parts for existing warranty commitments while preserving visibility into available '
+  'stock.',
+  'Use documented replacement history and current commitments to identify parts that might require a '
+  'separate reserve.',
+  'Choose reserve quantities from observed claims and lead times. Record the owner, allowed use and the '
+  'escalation required before a reservation can be moved to a regular order.',
+  'A repair team receives ten replacements per month and normally uses three for warranty work. With a '
+  'four-week refill time, it sets aside three and checks whether recent claim spikes justify a temporary '
+  'increase.',
+  'Track stockouts, depleted reserve and unused stock over a full refill cycle. Reassess when claims or lead '
+  'times change.',
+  '/services/operations/',
+  '/playbooks/service-warranty-rework-tracking/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
