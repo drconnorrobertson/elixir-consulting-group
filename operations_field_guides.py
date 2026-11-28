@@ -1446,6 +1446,34 @@ TOPICS.extend([('shipment-weight-reconciliation',
   '/services/operations/',
   '/playbooks/warehouse-pick-face-replenishment/')])
 
+TOPICS.extend([('technician-jobs-per-day-capacity',
+  'Technician Jobs per Day Capacity Planning',
+  'Estimate realistic daily field service capacity from work time, travel and scheduled breaks.',
+  'Use a completed route and split paid time into travel, direct service, administration, breaks and '
+  'standby.',
+  'Group appointments by work type and verify which scheduled constraints affect the same technician. Leave '
+  'a buffer based on observed overruns and compare capacity in hours before expressing it as job count.',
+  'An eight-hour day has 90 minutes of driving, 45 minutes of breaks and paperwork, and a 45-minute buffer. '
+  'Five hours remain for direct service. Four 75-minute visits fill the available time before considering '
+  'customer windows.',
+  'Compare forecast capacity with completed jobs, overtime and windows missed. Revise the estimate when job '
+  'mix or territory changes.',
+  '/services/operations/',
+  '/playbooks/service-job-duration-estimation/'),
+ ('vendor-statement-reconciliation',
+  'Vendor Statement Reconciliation Playbook',
+  'Reconcile supplier statements to invoices, credits and payments before authorizing a balance.',
+  'Choose one vendor account and align the date of its statement with the ledger snapshot.',
+  'Compare entries by reference and amount. Separate missing records, duplicates, payments in transit and '
+  'credits awaiting allocation. Assign each material difference to the person who can obtain the source '
+  'document.',
+  'A statement shows $9,600 due and the ledger shows $8,400. A $1,200 payment was sent after the statement '
+  'date. Verify bank settlement and supplier application before treating the difference as resolved.',
+  'Have a reviewer reproduce the opening balance, reconciling items and ending balance from the retained '
+  'records.',
+  '/services/operations/',
+  '/playbooks/supplier-credit-memo-follow-up/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
