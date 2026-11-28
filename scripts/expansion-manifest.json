@@ -2346,6 +2346,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/purchase-price-effective-date-audit/",
+    "title": "Purchase Price Effective Date Audit",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/supplier-order-acknowledgment-audit/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-visit-parts-shortage-notice/",
+    "title": "Service Visit Parts Shortage Notice",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/supplier-backorder-notification/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
