@@ -1781,6 +1781,37 @@ TOPICS.extend([('damaged-stock-write-off-review',
   '/services/operations/',
   '/playbooks/equipment-return-inspection/')])
 
+TOPICS.extend([('warehouse-label-version-control',
+  'Warehouse Label Version Control',
+  'Prevent old product or package labels from reaching current orders after an approved artwork change.',
+  'List where each label version is printed, stored and used. Identify who can approve changes and the first '
+  'lot or order that needs the new version.',
+  'Tie the approved artwork to the item and packaging format. Keep superseded labels out of active bins, '
+  'remove obsolete templates from print queues and document any authorized runout.',
+  'A vendor approves a new carton label for orders shipping after August 1. Packing still has 200 old labels '
+  'at one station. The lead separates them, prints a test sheet from the approved template and checks the '
+  'first shipment against the order.',
+  'Trace a sample carton back to the approved artwork version and verify that staff can still retrieve an '
+  'old label for a historical complaint without accidentally printing it for current work.',
+  '/services/operations/',
+  '/playbooks/warehouse-location-label-audit/'),
+ ('service-repair-authorization-limit',
+  'Service Repair Authorization Limit Playbook',
+  "Give technicians a clear stop point when findings push a repair beyond the customer's approved amount or "
+  'scope.',
+  "Attach the customer's approved work and spending limit to the dispatch record. Separate permission to "
+  'diagnose from permission to repair.',
+  'Define who can quote additional work, what the technician can perform within the approved amount, and how '
+  'the customer confirms the revised scope. Record declined work and instructions for leaving the equipment '
+  'in an appropriate condition.',
+  'A customer authorizes a repair up to $550. After opening the unit, the technician estimates $680 because '
+  'a second part failed. The account owner explains the findings and requests approval before the technician '
+  'commits to the $130 increase.',
+  'Sample the service note and invoice. Verify that completed work matches the approval in force when it was '
+  'performed and that unresolved work has a named owner.',
+  '/services/operations/',
+  '/playbooks/customer-scope-clarification-log/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:

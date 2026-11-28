@@ -2478,6 +2478,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/warehouse-label-version-control/",
+    "title": "Warehouse Label Version Control",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/warehouse-location-label-audit/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-repair-authorization-limit/",
+    "title": "Service Repair Authorization Limit Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/customer-scope-clarification-log/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
