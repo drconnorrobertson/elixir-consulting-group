@@ -535,6 +535,44 @@ TOPICS.extend([('quote-expiration-review',
   '/services/operations/',
   '/playbooks/service-callback-root-cause/')])
 
+TOPICS.extend([('dispatch-schedule-freeze',
+  'Dispatch Schedule Freeze Playbook',
+  'Define when tomorrow’s route becomes a commitment and how dispatch approves late changes.',
+  'Choose a freeze time that gives the crew enough notice and leaves room for genuine emergencies.',
+  'At the freeze, reconcile customer windows, job duration, crew skills and vehicle loads. Require late '
+  'changes to show the affected jobs, customer communication owner, and replacement capacity.',
+  'At 4 p.m., a customer requests a morning add-on that needs the same truck as two booked visits. Dispatch '
+  'offers the afternoon opening and records the approval needed to move either morning visit.',
+  'Compare late changes, avoidable drive time and missed windows. Sample exceptions to check that the '
+  'affected customers received an update.',
+  '/services/operations/',
+  '/playbooks/dispatch-cancellation-recovery/'),
+ ('customer-credit-hold-release',
+  'Customer Credit Hold Release Workflow',
+  'Define how sales, billing and credit teams review holds before accepting or releasing a customer order.',
+  'Start with the reason for the hold and distinguish an unresolved invoice dispute from confirmed overdue '
+  'exposure.',
+  'Record open items, scheduled deliveries, payment evidence and approval authority. Ask billing to verify '
+  'available credit and route exceptions to the authorized reviewer.',
+  'A buyer has a $12,000 limit and $9,000 outstanding. A $5,000 order would bring exposure to $14,000. A '
+  'promised payment is still pending, so the team reviews a partial shipment or waits for cleared funds.',
+  'Recheck exposure after release and track repeated exceptions that point to a credit limit or billing '
+  'issue.',
+  '/services/operations/',
+  '/playbooks/billing-dispute-triage/'),
+ ('warehouse-location-label-audit',
+  'Warehouse Location Label Audit Playbook',
+  'Audit bin labels and scanning configuration to prevent pick and transfer errors.',
+  'Select representative stock locations, including temporary staging and slow-moving items.',
+  'Compare printed labels with the system’s active locations. Scan sample barcodes and check whether similar '
+  'labels, damaged print, or reused locations create ambiguity.',
+  'Two racks use different location codes but their labels both show B-14. The lead checks picking history, '
+  'updates the authorized label record and validates scans against a sample transfer.',
+  'Have a picker locate items from a clean ticket and confirm the scanner identifies the intended bin and '
+  'SKU.',
+  '/services/operations/',
+  '/playbooks/warehouse-pick-error-review/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
