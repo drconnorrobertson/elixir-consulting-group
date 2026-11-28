@@ -1897,6 +1897,35 @@ TOPICS.extend([('service-part-revision-check',
   '/services/operations/',
   '/playbooks/job-material-reservation/')])
 
+TOPICS.extend([('inventory-expiry-pick-sequence',
+  'Inventory Expiry Pick Sequence',
+  'Set a first-expiring-first-out picking sequence that accounts for customer-specific shelf life '
+  'requirements.',
+  'Record the expiry and usable quantity by lot before setting a pick priority. Identify customers that '
+  'require a minimum remaining shelf life at delivery.',
+  'Rank eligible lots by expiry, and have the picker flag lots that fail a customer’s cutoff. Retain the '
+  'scanned lot and decision evidence on the order.',
+  'A lot expires in 45 days and another in 90. An order requires 60 days of life at delivery. Allocate the '
+  '90-day lot and review whether the earlier lot can go to another approved order in time.',
+  'Sample recent lines for compliance with both picking priority and customer eligibility. Review expired '
+  'units for recurring forecast or ordering problems.',
+  '/services/operations/',
+  '/playbooks/slow-moving-stock-disposition/'),
+ ('service-work-order-reopen-control',
+  'Service Work Order Reopen Control',
+  'Reopen a closed work order without losing its original completion evidence or generating duplicate '
+  'billing.',
+  'Define which issues belong on the original work order and which require a separate job with a new scope.',
+  'Record reopen reason, original close time, new owner and billing status. Do not overwrite the original '
+  'record. Send revised customer commitments to scheduling and the account owner.',
+  'A customer reports the same fault after a technician closes a job. Dispatch reopens it for diagnosis and '
+  'flags the original invoice as already issued, preventing a second invoice before the service lead reviews '
+  'the cause.',
+  'Check both the completion and reopening trail in a sample. Verify that the response deadline and any '
+  'approved additional charge remain visible.',
+  '/services/operations/',
+  '/playbooks/service-callback-root-cause/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
