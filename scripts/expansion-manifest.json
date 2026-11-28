@@ -2027,6 +2027,39 @@
     "sources": []
   },
   {
+    "path": "/playbooks/inventory-adjustment-approval/",
+    "title": "Inventory Adjustment Approval Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/inventory-cycle-count-discrepancy/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-appointment-overbooking-test/",
+    "title": "Service Appointment Overbooking Test",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/dispatch-cancellation-recovery/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/approved-vendor-list-review/",
+    "title": "Approved Vendor List Review Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/purchase-approval-delegation/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",

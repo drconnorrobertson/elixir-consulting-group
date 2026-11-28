@@ -1225,6 +1225,49 @@ TOPICS.extend([('multi-site-service-grouping',
   '/services/operations/',
   '/playbooks/service-job-duration-estimation/')])
 
+TOPICS.extend([('inventory-adjustment-approval',
+  'Inventory Adjustment Approval Playbook',
+  'Review and approve stock adjustments with evidence appropriate to their quantity, cost, and cause.',
+  'Set review thresholds based on value, frequency, and sensitivity to customer commitments. Capture '
+  'physical quantity, system quantity, and the cutoff that applies to both.',
+  'Require a second count or transaction trace for material differences. Record the reason, approver, '
+  'financial impact and whether an underlying record requires correction.',
+  'A stock count finds five units missing. Four trace to a delayed transfer and one remains unexplained. '
+  'Post the supported transfer separately and move only the remaining unit through the adjustment approval '
+  'process.',
+  'Trace an approved adjustment through the ledger and warehouse report. Check whether the same reason '
+  'recurs after corrective action.',
+  '/services/operations/',
+  '/playbooks/inventory-cycle-count-discrepancy/'),
+ ('service-appointment-overbooking-test',
+  'Service Appointment Overbooking Test',
+  'Evaluate whether a proposed overbooking rule can survive a day when every customer arrives.',
+  'Start with actual no-show rates for comparable service windows and the resources a booking consumes.',
+  'Measure how often bookings overlap, how many crews can respond, and which customers can accept another '
+  'window. Define clear stop conditions based on wait time and missed commitments.',
+  'In a four-slot afternoon, one customer usually cancels. Before accepting a fifth visit, dispatch '
+  'simulates every visit proceeding and finds the fifth would run past the latest access time. It uses a '
+  'standby list instead.',
+  'Check actual waiting, reschedules, and capacity recovered over the trial. Stop the rule when recovery '
+  'depends on repeatedly breaking a promise.',
+  '/services/operations/',
+  '/playbooks/dispatch-cancellation-recovery/'),
+ ('approved-vendor-list-review',
+  'Approved Vendor List Review Playbook',
+  'Make sure the supplier list distinguishes vendors cleared for routine orders from restricted or expired '
+  'approvals.',
+  'Start with active purchase categories and identify which teams can authorize each supplier for a defined '
+  'use.',
+  'Review evidence, scope, approval expiry and recent purchases. Give restricted vendors an explicit '
+  'permitted use and set a workflow for escalation when no approved option is available.',
+  'A previously approved vendor can still supply packaging but no longer holds the documentation the '
+  'business requires for finished components. Purchasing keeps packaging active and removes component orders '
+  'from the vendor’s permitted scope.',
+  'Sample active orders against current approvals and check that a restricted supplier is flagged before '
+  'order release.',
+  '/services/operations/',
+  '/playbooks/purchase-approval-delegation/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
