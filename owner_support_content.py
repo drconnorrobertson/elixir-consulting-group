@@ -71,10 +71,10 @@ def business_coach_alternatives():
          + p('Elixir Consulting Group publishes this guide and offers paid implementation consulting. Confirm the actual provider, local availability, work scope, and fees directly before making a commitment.')),
     ]
     page = guide('business-coaching', 'Business Ownership Coach Alternatives',
-                 'Compare mentoring, SBDC advice, peers, specialist support and operating help. Use a brief to choose who advises, builds or runs the work.',
+                 'Compare a business coach, operations consultant and fractional COO by what each delivers, who implements the work and when each option fits.',
                  'If you need perspective, compare mentoring, business advising, or peers. If you need a workflow built or recurring decisions owned, compare implementation and operating leadership. Use a specialist for a defined technical question.',
                  sections, ['/compare/operations-consultant-vs-business-coach/', '/services/leadership/', '/lists/questions-before-hiring-operations-consultant/', '/alternatives/full-time-coo/'], 'Alternatives', '/alternatives/')
-    page.update(seo_title='Business Ownership Coach Alternatives: Compare the Work',
+    page.update(seo_title='Business Ownership Coach Alternatives: Coach, Consultant or Fractional COO?',
                 sources=['sba-resource-partners'], source_checked_on=source['checked_on'],
                 modified='2026-11-21', revision_date='2026-11-21', exclude_toc_from_snippets=True)
     return page

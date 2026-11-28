@@ -2607,6 +2607,15 @@ def gen_services_overview():
 
 
 def gen_service_page(slug, title, tagline, intro, items, outcomes, all_posts=None):
+    leadership_models = """<section class="section"><div class="container" style="max-width:800px">
+<h2>Which Leadership Consulting Model Fits Your Team?</h2>
+<ul>
+<li><strong>Executive coaching</strong> fits a leader working on delegation, decision-making, or communication. Agree on one behavior to practice and how progress will be reviewed.</li>
+<li><strong>Leadership team facilitation</strong> fits a team that needs agreement on priorities or roles. Leave the working session with decisions, owners, and due dates.</li>
+<li><strong>Operating system implementation</strong> fits recurring problems with accountability or follow-through. Define who decides, what the weekly scorecard tracks, and how missed commitments get resolved.</li>
+</ul>
+<p>For a recurring decision that still lands with the owner, use the <a href="/blog/decision-rights-matrix-small-business-template/">decision-rights matrix</a> to name the decision maker, who provides input, and when to escalate. Review the next few decisions in the weekly leadership meeting to see whether the arrangement works.</p>
+</div></section>""" if slug == "leadership" else ""
     all_posts = all_posts or []
     items_html = ""
     for item in items:
@@ -2711,6 +2720,8 @@ def gen_service_page(slug, title, tagline, intro, items, outcomes, all_posts=Non
 </div>
 </div>
 </section>
+
+{leadership_models}
 
 {{PROOF}}
 {faq_section}
