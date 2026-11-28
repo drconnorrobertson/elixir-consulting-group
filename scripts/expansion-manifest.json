@@ -2126,6 +2126,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/warehouse-staging-lane-audit/",
+    "title": "Warehouse Staging Lane Audit",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/job-material-reservation/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/supplier-delivery-appointment-control/",
+    "title": "Supplier Delivery Appointment Control",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/supplier-on-time-in-full-scorecard/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
