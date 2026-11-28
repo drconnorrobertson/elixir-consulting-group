@@ -2060,6 +2060,39 @@
     "sources": []
   },
   {
+    "path": "/playbooks/purchase-order-cancellation-control/",
+    "title": "Purchase Order Cancellation Control",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/supplier-order-acknowledgment-audit/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-reschedule-change-log/",
+    "title": "Service Reschedule Change Log",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/dispatch-schedule-freeze/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/supplier-freight-term-comparison/",
+    "title": "Supplier Freight Term Comparison Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/supplier-bid-comparison/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
