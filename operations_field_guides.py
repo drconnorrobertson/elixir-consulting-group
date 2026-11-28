@@ -388,6 +388,60 @@ TOPICS.extend([('dispatch-cancellation-recovery',
   '/services/operations/',
   '/playbooks/job-closeout-completeness/')])
 
+TOPICS.extend([('field-service-van-stock-replenishment',
+  'Field Service Van Stock Replenishment Playbook',
+  'Set van stock levels by job type and replenish used parts without losing track of inventory.',
+  'Use completed jobs to identify which parts belong on each van. Review consumption and return visits '
+  'before changing stock.',
+  'Create one list per service profile. Give each part a bin, minimum, maximum and replenishment owner. Log '
+  'parts removed from a van for a different job or truck.',
+  'A crew uses six common fittings over three routes. The next scheduled refill is two routes away and two '
+  'remain. The lead adds enough for expected use and a documented buffer, then checks a slower-moving '
+  'specialty fitting separately.',
+  'Compare stockout callbacks, unused stock and replenishment effort over several refill cycles.',
+  '/services/operations/',
+  '/playbooks/field-service-first-visit-completion/'),
+ ('service-appointment-confirmation',
+  'Service Appointment Confirmation Playbook',
+  'Confirm site access, customer availability and job inputs before assigning crew time.',
+  'Identify appointments where a missing contact or an inaccessible site creates significant wasted travel.',
+  'Confirm the window, access instructions, site contact, and any equipment or paperwork needed. Define when '
+  'to release an unconfirmed slot and who handles exceptions.',
+  'A 90-minute visit requires access to a locked utility room. The customer confirms their appointment but '
+  'the building contact is unavailable. Dispatch keeps the booking conditional until the crew has a working '
+  'access plan.',
+  'Sample visits with access delays. Compare wasted drive time and customer rescheduling after the new '
+  'confirmation step.',
+  '/industries/construction-trades/',
+  '/playbooks/dispatch-cancellation-recovery/'),
+ ('customer-support-response-time-audit',
+  'Customer Support Response Time Audit',
+  'Recalculate response times using a consistent clock and a sample of original ticket events.',
+  'Choose whether the measure tracks elapsed time or staffed hours. Document the qualifying human response '
+  'and the rules for merged tickets.',
+  'Export receipt and response events. Preserve timezone and shift information, classify auto-replies '
+  'separately, and trace outliers to the original thread.',
+  'A ticket arrives Friday at 4:45 p.m. and receives a reply Monday at 9:15 a.m. A team staffed 9 to 5 on '
+  'weekdays counts 30 staffed minutes. Its parallel elapsed measure records the full weekend wait.',
+  'Have two reviewers reproduce a sample of results and show how much the definition changes reported '
+  'performance.',
+  '/services/operations/',
+  '/playbooks/operating-metric-definitions/'),
+ ('duplicate-vendor-record-cleanup',
+  'Duplicate Vendor Record Cleanup Playbook',
+  'Find and resolve duplicate supplier records while preserving purchase, payment, and tax reporting '
+  'history.',
+  'Inventory active and inactive vendor records together. Keep banking and tax records in the approved '
+  'system with restricted access.',
+  'Compare legal names, registration identifiers where available, remittance details, and open transactions. '
+  'Route potential matches through an authorized reviewer before merging or retiring records.',
+  'Two entries share a trading name, but invoices show separate legal entities. The reviewer keeps both '
+  'records and adds distinguishing details so purchase orders can select the correct payee.',
+  'Reconcile open purchase orders and balances before and after any approved cleanup, and confirm future '
+  'invoices use the intended record.',
+  '/services/operations/',
+  '/playbooks/purchase-order-three-way-match/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
