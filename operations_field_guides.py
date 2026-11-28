@@ -613,6 +613,49 @@ TOPICS.extend([('subcontractor-work-acceptance',
   '/services/operations/',
   '/playbooks/billing-dispute-triage/')])
 
+TOPICS.extend([('tool-calibration-records',
+  'Tool Calibration Records Playbook',
+  'Track the status and use of measurement tools before relying on inspection results.',
+  'Inventory tools whose readings determine whether work is accepted. Record a unique ID, intended use, '
+  'responsible person, and the applicable calibration source.',
+  'Keep due dates, service certificates, out-of-tolerance findings, and tool status in one register. Have '
+  'qualified staff determine whether previous inspections need review when a tool fails a check.',
+  'A fictional shop finds a torque tool past its due date during setup. It removes the tool from active use, '
+  'locates work orders that mention its ID, and assigns the quality lead to determine what needs to be '
+  'checked again.',
+  'Sample a completed inspection and trace the instrument ID to status at the time of use. Confirm operators '
+  'can identify and avoid unavailable tools.',
+  '/services/operations/',
+  '/playbooks/scheduled-maintenance-completion/'),
+ ('appointment-cancellation-reason-coding',
+  'Appointment Cancellation Reason Coding Playbook',
+  'Classify cancellation causes consistently to identify which missed bookings can be prevented.',
+  'Keep the time, reason, and initiator of each cancellation. Give dispatch a short reason list with '
+  'examples and an option for unresolved cases.',
+  'Separate weather, customer changes, missing materials, and internal scheduling problems. Preserve the '
+  'original note and use a reviewer for cases where multiple reasons apply.',
+  'A fictional team has 18 cancellations. Six have customer messages citing inaccessible sites and four cite '
+  'price disputes. The lead tests a site-access confirmation for the six cases and leaves pricing follow-up '
+  'with the account owner.',
+  'Have two people independently code a sample, then measure agreement. Investigate whether the targeted '
+  'category falls after the workflow changes.',
+  '/services/operations/',
+  '/playbooks/service-appointment-confirmation/'),
+ ('change-order-aging-report',
+  'Change Order Aging Report for Project Teams',
+  'Identify open change orders that delay work, invoicing or customer decisions.',
+  'Start the clock when a change is submitted for action. Use dates that show which handoff currently owns '
+  'the delay.',
+  'Track project, submission date, current stage, expected value, scope impact and next decision. Separate '
+  'incomplete change requests from proposals waiting on the customer.',
+  'A fictional project has eight changes open longer than ten days. Five await missing field quantities and '
+  'three await acceptance. The project lead assigns one estimator to verify quantities and has account '
+  'owners handle the three customer decisions.',
+  'Check unresolved value and age by stage each week. Sample closed changes to verify approval arrived '
+  'before billing or the appropriate authorized exception was recorded.',
+  '/industries/construction-trades/',
+  '/playbooks/job-closeout-completeness/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:

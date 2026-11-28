@@ -1532,6 +1532,39 @@
     "sources": []
   },
   {
+    "path": "/playbooks/tool-calibration-records/",
+    "title": "Tool Calibration Records Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/scheduled-maintenance-completion/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/appointment-cancellation-reason-coding/",
+    "title": "Appointment Cancellation Reason Coding Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-appointment-confirmation/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/change-order-aging-report/",
+    "title": "Change Order Aging Report for Project Teams",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/industries/construction-trades/",
+      "/playbooks/job-closeout-completeness/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
