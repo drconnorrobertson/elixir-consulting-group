@@ -2036,6 +2036,33 @@ TOPICS.extend([('warehouse-blind-count',
   '/services/operations/',
   '/playbooks/service-recurring-job-generation-audit/')])
 
+TOPICS.extend([('warehouse-pick-wave-staffing',
+  'Warehouse Pick Wave Staffing',
+  'Set staffing for a release window using observed pickup deadlines and labor by task.',
+  'Choose a planned shipping window and estimate time for picking, packing and exceptional orders '
+  'separately.',
+  'Measure order lines by handling class. Identify work that needs special equipment and reserve time for '
+  'exception handling before filling the remaining hours.',
+  'Two pickers each have 90 minutes and can finish 24 routine lines per hour. They have capacity for 72 '
+  'routine lines. A wave with 60 routine lines and 40 minutes of special handling requires 190 labor '
+  'minutes, leaving ten minutes uncovered.',
+  'Compare estimated and actual completion for several waves and change staffing assumptions only for the '
+  'work types that consistently differ.',
+  '/services/operations/',
+  '/playbooks/warehouse-wave-release-check/'),
+ ('field-service-visit-deferral-register',
+  'Field Service Visit Deferral Register',
+  'Keep a traceable record when a scheduled visit is postponed and assign ownership of the revised promise.',
+  'Establish who can defer work and who reviews consequences for customers, equipment and schedules.',
+  'Record the original commitment, reason for deferral, approved interim action, revised date and owner. '
+  'Preserve the first date in reporting so deferrals do not hide misses.',
+  'A scheduled visit overlaps a facility shutdown. The customer approves a later date and the service lead '
+  'confirms which interim checks are needed. The dispatcher keeps both events linked to the same commitment.',
+  'Review deferrals until replacement work is completed. Investigate changes without an approval or next '
+  'date.',
+  '/services/operations/',
+  '/playbooks/missed-maintenance-visit-follow-up/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:

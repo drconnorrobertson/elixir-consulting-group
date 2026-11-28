@@ -2676,6 +2676,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/warehouse-pick-wave-staffing/",
+    "title": "Warehouse Pick Wave Staffing",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/warehouse-wave-release-check/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/field-service-visit-deferral-register/",
+    "title": "Field Service Visit Deferral Register",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/missed-maintenance-visit-follow-up/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
