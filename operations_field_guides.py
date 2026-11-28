@@ -1341,6 +1341,32 @@ TOPICS.extend([('field-service-parts-usage-reconciliation',
   '/services/operations/',
   '/playbooks/service-equipment-loaner-tracking/')])
 
+TOPICS.extend([('warehouse-staging-lane-audit',
+  'Warehouse Staging Lane Audit',
+  'Prevent staged orders from being lost, mixed, or counted as available stock.',
+  'Give each staging lane a defined use, maximum dwell time and named owner.',
+  'Compare the physical contents against the active shipment or job record. Check that each pallet has a '
+  'reference and an authorized next move.',
+  'A lane holds six pallets for two orders. One pallet has an old label from a canceled shipment. The lead '
+  'checks the item and lot against the reservation before returning it to available inventory.',
+  'Sample a full and an empty lane after dispatch. Reconcile all movements and check that canceled orders '
+  'leave no unowned material.',
+  '/services/operations/',
+  '/playbooks/job-material-reservation/'),
+ ('supplier-delivery-appointment-control',
+  'Supplier Delivery Appointment Control',
+  'Coordinate inbound delivery windows with staffing, dock capacity and storage constraints.',
+  'Reserve time according to the load type, unloading resources and inspection steps required.',
+  'Record carrier, expected quantity, required dock, special handling, inspection owner and contact for '
+  'changes. Compare planned and actual arrival without removing the original booking.',
+  'Two large trailers request the same 10 a.m. slot and only one dock can handle them. Receiving confirms '
+  'the first load, offers the second a later appointment and checks whether its stock is needed for the '
+  'afternoon shift.',
+  'Review late arrivals and dock waiting by carrier. Validate that schedule changes reached the buyer and '
+  'receiving staff.',
+  '/services/operations/',
+  '/playbooks/supplier-on-time-in-full-scorecard/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
