@@ -2324,6 +2324,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/field-service-return-trip-charge/",
+    "title": "Field Service Return Trip Charge Review",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-callback-root-cause/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/supplier-prepayment-tracking/",
+    "title": "Supplier Prepayment Tracking Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/vendor-statement-reconciliation/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
