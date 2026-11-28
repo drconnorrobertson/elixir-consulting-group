@@ -2500,6 +2500,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/duplicate-supplier-invoice-review/",
+    "title": "Duplicate Supplier Invoice Review",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/vendor-statement-reconciliation/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/customer-service-parts-waitlist/",
+    "title": "Customer Service Parts Waitlist Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-visit-parts-shortage-notice/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
