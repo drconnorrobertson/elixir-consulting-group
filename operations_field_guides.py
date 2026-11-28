@@ -93,6 +93,63 @@ TOPICS = [
         "/services/operations/", "/playbooks/operating-metric-definitions/",
     ),
 ]
+TOPICS.extend([
+    (
+        "vendor-invoice-variance-review", "Vendor Invoice Variance Review Playbook",
+        "Trace unexplained changes in vendor invoices to quantities, contract rates, fees, and one-time charges.",
+        "Review invoices against the purchase order and effective rate schedule. Preserve the version that applied on the service date.",
+        "Build a variance bridge. Calculate the impact of quantities at the old rate, then the impact of any rate changes at the new quantities. Separate credits, taxes, and new fees.",
+        "A vendor billed 240 units at $11 instead of 200 at $10. The $640 increase consists of $400 for additional volume and $240 in rate variance. Check which units were accepted and which notice authorized the rate.",
+        "Ask an approver to reproduce the calculation and trace each disputed line to the supporting record. Verify any agreed credit against the next statement.",
+        "/pittsburgh-operations-consulting/", "/playbooks/vendor-renewal-calendar/",
+    ),
+    (
+        "field-service-first-visit-completion", "First-Visit Completion Playbook for Field Service",
+        "Improve first-visit completion by identifying missing parts, site information, and approval before dispatch.",
+        "Define first-visit completion against the originally promised scope. Track planned multi-visit work separately so routine project stages do not distort the result.",
+        "Sample recent returns and assign each a primary cause. For missing parts, compare job category and equipment model with the van stock list. For access failures, confirm the site contact and entry window before dispatch.",
+        "A fictional team completes 72 of 90 eligible jobs on the first visit. Six of the 18 returns involve an unverified equipment model. Test a dispatch field requiring model identification on that job type before changing stock across the whole fleet.",
+        "Recheck first-visit completion with the same denominator and measure the time added to dispatch. Confirm that jobs still complete safely within the promised scope.",
+        "/industries/construction-trades/", "/playbooks/route-density-planning/",
+    ),
+    (
+        "quote-approval-delegation", "Quote Approval and Delegation Playbook",
+        "Give sales staff clear quote authority and route unusual price, scope, or contract terms to the right approver.",
+        "Map offers the team can quote routinely and the exceptions that need a decision. Use observed cases to define approval boundaries.",
+        "Record the proposed price, estimated direct costs, terms, reason for exception, and decision deadline. Assign authority by margin and nonstandard commitments as well as total price.",
+        "A fictional $8,000 quote carries $6,400 in direct costs, leaving a 20% contribution margin before overhead. The standard floor is 25%. The approver can revise scope, change price, or document a specific reason for accepting the exception.",
+        "Sample approved quotes after handoff. Compare approval time and margin to baseline and confirm delivery received the same scope the customer accepted.",
+        "/services/sales-strategy/", "/playbooks/customer-onboarding-handoff/",
+    ),
+    (
+        "customer-complaint-escalation-matrix", "Customer Complaint Escalation Matrix Playbook",
+        "Route customer complaints by impact and authority with concrete response owners, next actions, and closure evidence.",
+        "Identify the complaints that front-line staff can resolve using existing policy and those that need a duty manager or specialist.",
+        "For each severity band, specify acknowledgement expectation, required details, decision authority, escalation path, and which promises can be made before review. Give staff a backup contact.",
+        "A fictional customer receives the wrong part and faces an installation delay. The representative verifies the order, reserves a correct part, and escalates the requested reimbursement because it exceeds their authority.",
+        "Walk a simulated routine complaint and an urgent one through the matrix. Check that the customer receives one consistent status and that the team can explain who owns follow-up.",
+        "/services/operations/", "/playbooks/process-exception-register/",
+    ),
+    (
+        "shift-handoff-log", "Shift Handoff Log for Service and Operations Teams",
+        "Pass open work, changes, blocked jobs, and urgent decisions between shifts using an auditable handoff log.",
+        "Build the handoff around the work the next shift must pick up. Separate immediate action from useful context and identify the owner of each item.",
+        "Record the work reference, current condition, next check, deadline, and escalation contact. Keep the log with the system of record, or link back to it, so updates are visible to both shifts.",
+        "A fictional dispatch team has a truck waiting on a part with a 9 a.m. delivery promise. The departing lead lists the vendor confirmation, the backup stock location, and the time to update the customer if the part is late.",
+        "Ask the incoming lead to identify the first three actions without calling the outgoing lead. Review missed handoffs for incomplete inputs and unclear ownership.",
+        "/services/operations/", "/playbooks/service-backlog-triage/",
+    ),
+    (
+        "manual-report-retirement", "Manual Report Retirement Playbook",
+        "Identify duplicate reports, test their replacements, and retire spreadsheets without losing operating decisions or audit history.",
+        "Inventory each report’s actual readers, the decision it supports, calculation owner, source files, and deadlines. Find hand-edited fields before comparing replacements.",
+        "Run the replacement alongside the current report for a representative cycle. Explain differences by definition, data freshness, or calculation. Keep a documented rollback option and follow the applicable retention process.",
+        "A fictional sales report counts repeat buyers only after a second completed invoice, while the new dashboard counts a second order. The team confirms the original metric supports collection analysis and revises the dashboard definition before retirement.",
+        "Ask readers to reproduce a recent decision with the replacement. After switching, confirm that the data owner can retrieve the last approved version and correct a source error.",
+        "/services/operations/", "/playbooks/operating-metric-definitions/",
+    ),
+])
+
 
 
 def field_guides():
