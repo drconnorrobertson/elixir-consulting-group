@@ -2258,6 +2258,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/service-recall-lot-tracing/",
+    "title": "Service Part Lot Traceability Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/incoming-material-hold/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/after-hours-service-call-routing/",
+    "title": "After-Hours Service Call Routing Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/customer-complaint-escalation-matrix/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
