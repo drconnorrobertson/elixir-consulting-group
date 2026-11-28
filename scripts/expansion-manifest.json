@@ -1730,6 +1730,39 @@
     "sources": []
   },
   {
+    "path": "/playbooks/incoming-material-hold/",
+    "title": "Incoming Material Hold and Release Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/freight-damage-claim-workflow/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-rebooking-after-missed-window/",
+    "title": "Service Rebooking After a Missed Arrival Window",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-appointment-window-sizing/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/supplier-lead-time-variance/",
+    "title": "Supplier Lead Time Variance Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/minimum-stock-reorder-point/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
