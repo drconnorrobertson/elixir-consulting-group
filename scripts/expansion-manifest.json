@@ -2214,6 +2214,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/technician-jobs-per-day-capacity/",
+    "title": "Technician Jobs per Day Capacity Planning",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-job-duration-estimation/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/vendor-statement-reconciliation/",
+    "title": "Vendor Statement Reconciliation Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/supplier-credit-memo-follow-up/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
