@@ -1143,6 +1143,48 @@ TOPICS.extend([('supplier-backorder-notification',
   '/services/sales-strategy/',
   '/playbooks/change-order-decision-thresholds/')])
 
+TOPICS.extend([('service-recurring-job-generation-audit',
+  'Recurring Service Job Generation Audit',
+  'Verify that recurring work orders match contract cadence, blackout dates, and active customer locations.',
+  'Select contracts with different service frequencies and write down the expected jobs for a complete '
+  'scheduling period.',
+  'Compare expected jobs with generated orders by customer, site and window. Group missing, duplicate and '
+  'unexpectedly shifted work separately and retain the schedule version used for the audit.',
+  'A weekly service skips an agreed holiday but the scheduler moves that visit to Monday, when a new weekly '
+  'order is also due. The owner verifies the holiday rule and cancels the unauthorized duplicate after '
+  'checking dispatch status.',
+  'Repeat the audit after updating the rule and confirm the next cycle generates exactly the authorized '
+  'work.',
+  '/services/operations/',
+  '/playbooks/service-contract-renewal-handoff/'),
+ ('inventory-negative-balance-review',
+  'Negative Inventory Balance Review Playbook',
+  'Trace negative stock to timing, location, conversion, or posting problems before making adjustments.',
+  'Treat each negative balance as a symptom to investigate. Capture the item, location, time and available '
+  'transaction history.',
+  'Reconstruct the movements in event order. Check open receipts, transfers, quantity conversions and issue '
+  'entries. Record any approved adjustment separately from the cause and the process fix.',
+  'A location shows minus six units immediately after a job issue. The stock exists at that site, but a '
+  '12-unit inbound transfer still shows in transit. Receiving verifies the actual arrival before posting the '
+  'transfer and leaves the issue intact.',
+  'Review the resulting balance and confirm the next comparable transfer is acknowledged before the stock is '
+  'issued.',
+  '/services/operations/',
+  '/playbooks/inventory-cycle-count-discrepancy/'),
+ ('supplier-credit-memo-follow-up',
+  'Supplier Credit Memo Follow-Up Playbook',
+  'Reconcile approved supplier credits to statements and prevent claims from disappearing after a return.',
+  'Create a follow-up item as soon as the supplier owes an approved credit. Give it one owner and an '
+  'expected issue date.',
+  'Record the original invoice, reason, approved amount, supplier reference and settlement method. '
+  'Distinguish the approved credit from a pending request and from the posted document.',
+  'A supplier accepts a $480 credit for a short shipment. The next statement shows $300 applied. Accounts '
+  'payable links the partial settlement and asks for the remaining $180 with the original claim reference.',
+  'Trace the full amount through the statement and ledger, then close the follow-up only after the credit is '
+  'accounted for.',
+  '/services/operations/',
+  '/playbooks/purchase-order-three-way-match/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
