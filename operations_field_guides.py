@@ -442,6 +442,57 @@ TOPICS.extend([('field-service-van-stock-replenishment',
   '/services/operations/',
   '/playbooks/purchase-order-three-way-match/')])
 
+TOPICS.extend([('warehouse-pick-error-review',
+  'Warehouse Pick Error Review Playbook',
+  'Trace mispicks to slotting, barcodes, order edits or packing checks.',
+  'Start with a specific wrong shipment and reconstruct the records available at each step.',
+  'Capture the expected SKU, scanned item, label version, storage slot, pack check and any changes after '
+  'release. Preserve the original pick ticket before correcting the order.',
+  'A picker scans the correct outer case but two inner packs contain the wrong variant. Receiving checks the '
+  'same lot, isolates affected stock and gives packing a temporary inner-pack verification step.',
+  'Compare defects per order line and time per order after the change. Inspect corrected orders for new '
+  'delays and reject changes that move the error downstream.',
+  '/services/operations/',
+  '/playbooks/inventory-cycle-count-discrepancy/'),
+ ('scheduled-maintenance-completion',
+  'Scheduled Maintenance Completion Playbook',
+  'Track whether essential maintenance finishes on time and whether deferred tasks have operating owners.',
+  'List maintenance tasks with due dates, affected assets and the operating windows needed to perform them.',
+  'Record completion evidence, technician, exceptions, and rescheduled work. Define who can defer work and '
+  'how they notify dispatch or production. Use manufacturer guidance and qualified personnel to determine '
+  'the work itself.',
+  'A shop has 24 preventive tasks due in a month. Twenty finish by their approved date, three are late and '
+  'one is deferred because a replacement part is unavailable. Review 20 of 24 as on time and give the '
+  'deferred task a named owner.',
+  'Check completion against original dates as well as approved revised dates. Sample records for evidence '
+  'that the listed work happened.',
+  '/services/operations/',
+  '/playbooks/month-end-operations-review/'),
+ ('service-work-queue-aging',
+  'Service Work Queue Aging Playbook',
+  'Use aging buckets and blocked-work detail to spot stalled service orders before deadlines are missed.',
+  'Capture the original receipt time and define which events change status without resetting queue age.',
+  'Calculate open age for each ticket, track promised dates separately and group by blocker. Identify the '
+  'oldest item with a next action each day.',
+  'A queue has 40 items including six older than seven days. Four depend on the same vendor quote. Assign '
+  'one coordinator to resolve that dependency and verify remaining customer dates individually.',
+  'Compare the age of the oldest items and the proportion overdue. Check whether moving items to another '
+  'status hides them from the review.',
+  '/services/operations/',
+  '/playbooks/service-backlog-triage/'),
+ ('handoff-acceptance-criteria',
+  'Internal Handoff Acceptance Criteria Playbook',
+  'Specify what the receiving team must have before accepting work from another department.',
+  'Choose one recurring transfer where missing details lead to delayed work or rework.',
+  'Define required fields, source records, exception path and acknowledgment. Let the receiving team mark an '
+  'item accepted, conditional or returned with the next action.',
+  'Estimating hands a job to production with drawings and approved scope but no access date. Production '
+  'accepts document review and leaves scheduling conditional until the account owner confirms site access.',
+  'Review an accepted and a returned handoff with both teams. Check whether the record states what can '
+  'start, what is blocked and who resolves it.',
+  '/services/operations/',
+  '/playbooks/shift-handoff-log/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
