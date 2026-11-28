@@ -1700,6 +1700,35 @@ TOPICS.extend([('service-van-inventory-handoff',
   '/services/operations/',
   '/playbooks/invoice-release-batch-control/')])
 
+TOPICS.extend([('supplier-overdelivery-review',
+  'Supplier Overdelivery Review',
+  'Handle goods received in excess of the order without assuming the customer or business has accepted the '
+  'extra cost.',
+  'Compare the approved order quantity, packing list and physical count before releasing the excess stock.',
+  'Record the confirmed ordered quantity, location of the additional units, proposed disposition and who can '
+  'approve retention. Check whether added freight, storage or payment changes the decision.',
+  'A supplier ships 54 units against a 48-unit order. Receiving records the six extras separately. '
+  'Purchasing obtains a return authorization or a documented order change before the excess becomes '
+  'available for use.',
+  'Trace the disposition through receiving and accounts payable. Verify the team paid only for quantities '
+  'the business accepted under the agreement.',
+  '/services/operations/',
+  '/playbooks/purchase-order-three-way-match/'),
+ ('service-subcontractor-schedule-confirmation',
+  'Service Subcontractor Schedule Confirmation',
+  'Confirm outside crew availability, scope and arrival windows before making a customer promise.',
+  'Build the confirmation around the exact job and requested timing. Compare the subcontractor’s response '
+  'with the skills and access needed at the site.',
+  'Record the named crew or capacity, approved scope, equipment, confirmed time, fallback and who can '
+  'approve a later change. Give dispatch the deadline for treating an unanswered booking as unavailable.',
+  'An installation needs a two-person crew. A vendor confirms one person Tuesday and offers a full crew '
+  'Wednesday. Dispatch checks whether preparation can proceed Tuesday and confirms Wednesday with the '
+  'customer before moving the installation.',
+  'Compare confirmed capacity with actual arrival and scope. Review any overflow work that was promised '
+  'before the subcontractor accepted it.',
+  '/industries/construction-trades/',
+  '/playbooks/subcontractor-work-acceptance/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:

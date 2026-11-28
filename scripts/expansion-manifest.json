@@ -2412,6 +2412,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/supplier-overdelivery-review/",
+    "title": "Supplier Overdelivery Review",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/purchase-order-three-way-match/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-subcontractor-schedule-confirmation/",
+    "title": "Service Subcontractor Schedule Confirmation",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/industries/construction-trades/",
+      "/playbooks/subcontractor-work-acceptance/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
