@@ -2434,6 +2434,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/delivery-address-validation/",
+    "title": "Delivery Address Validation Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/delivery-proof-discrepancy/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/reusable-shipping-container-tracking/",
+    "title": "Reusable Shipping Container Tracking Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/split-shipment-customer-approval/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
