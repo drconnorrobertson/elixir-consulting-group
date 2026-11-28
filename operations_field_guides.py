@@ -1,0 +1,114 @@
+"""Operational playbooks with worked examples and explicit acceptance checks."""
+from html import escape
+
+TOPICS = [
+    (
+        "vendor-renewal-calendar", "Vendor Renewal Calendar for Small Businesses",
+        "Build a vendor renewal calendar that gives owners time to review spending, test alternatives, and act before notice deadlines.",
+        "A useful calendar tells the team when a decision is due and which contract establishes that date. Start with recurring spend the business cannot easily pause.",
+        "Record the legal vendor name, service owner, agreement version, end date, cancellation instructions, and evidence of delivery. Add an internal review date early enough for procurement and service testing. Keep unknown deadlines visibly unresolved.",
+        "A fictional software contract ends June 30 and requires notice 60 days before expiry. The team starts in March to allow time to test exports and approve a replacement. The owner checks how the contract counts days and confirms the notice method before scheduling delivery.",
+        "Choose three agreements. Ask a backup owner to locate each deadline in the signed record and explain what action keeps the business from renewing by default.",
+        "/pittsburgh-operations-consulting/", "/playbooks/subscription-seat-audit/",
+    ),
+    (
+        "subscription-seat-audit", "Software Subscription Seat Audit Playbook",
+        "Reconcile paid software seats to assigned users and actual use before removing access or changing subscription quantities.",
+        "Paid seats, assigned seats, and active users answer different questions. Export each count for the same billing period and reconcile by license type before deciding what to remove.",
+        "Label active roles, pending departures, shared service accounts, and reserved seasonal seats separately. Ask department owners to confirm unusual access. Check whether reductions take effect immediately or only at renewal.",
+        "A fictional company pays for 60 seats. It finds 49 assigned, of which 4 belong to departed employees and 3 support scheduled integrations. The owner verifies the integrations, removes the former employees through the normal offboarding process, and checks the next contract opportunity to lower the paid quantity.",
+        "Compare the next invoice with the approved change. Ask the application owner to verify that essential service accounts and access to exported records still work.",
+        "/pittsburgh-operations-consulting/", "/playbooks/vendor-renewal-calendar/",
+    ),
+    (
+        "supplier-bid-comparison", "Supplier Bid Comparison for Operating Teams",
+        "Compare supplier bids using landed cost, delivery reliability, service requirements, and an explicit trial plan.",
+        "Write a common order profile before asking for quotes. Compare the same quantities, delivery location, packaging, payment terms, and minimum service level.",
+        "Record unit price, freight, duties where applicable, minimum quantities, payment timing, defects and credits, and the cost of carrying surplus stock. Give delivery and quality their own acceptance criteria.",
+        "A fictional supplier quotes $9 a unit for orders of 500 and $400 freight. Another quotes $10 for 200 units with no freight. The first quote lands at $9.80 per unit before storage, but ties up $4,900 on the first order. The second requires $2,000 and can suit a trial with uncertain demand.",
+        "Give purchasing a sample order to place and receiving a checklist to complete. Verify invoice, quality, delivery date, and escalation contact before switching regular volume.",
+        "/services/operations/", "/playbooks/vendor-renewal-calendar/",
+    ),
+    (
+        "service-backlog-triage", "Service Backlog Triage Playbook",
+        "Triage a service backlog by age, customer commitment, and blocked work using a daily queue and recovery plan.",
+        "Export open items at a fixed time. Capture the original receipt date, promised date, next action, and blocker so reassigning an item preserves its history.",
+        "Group work by decisions the team can act on today. Assign one owner to release each blocker. Escalate commitments at risk and tell the customer when they can expect a meaningful update.",
+        "A fictional team has 50 open jobs. Twelve lack customer approval and five are due tomorrow. The supervisor assigns one person to contact the 12 customers and reserves field capacity for the five jobs with complete inputs.",
+        "During the next huddle, check whether the oldest open work is getting younger and whether overdue commitments fell without hiding items in a waiting status.",
+        "/services/operations/", "/playbooks/weekly-commitment-review/",
+    ),
+    (
+        "weekly-commitment-review", "Weekly Commitment Review for Leadership Teams",
+        "Run a leadership meeting around operating commitments, evidence of completion, and decisions required this week.",
+        "Bring the prior week's commitments and the decisions the team needs now. Each commitment has a named owner, due date, and observable finish condition.",
+        "Separate a missed deliverable from a changed priority. Ask what blocked completion, who can clear it, and whether the existing promise should be renegotiated. Update the original record.",
+        "A fictional team promises to reduce open quotes older than five days. When the review shows most quotes are waiting on a single approval, the team assigns a backup approver and sets a threshold for quotes that can go out without escalation.",
+        "A person absent from the meeting should be able to tell what was decided, what evidence will demonstrate completion, and when to raise a blocker.",
+        "/services/leadership/", "/playbooks/service-backlog-triage/",
+    ),
+    (
+        "customer-onboarding-handoff", "Sales-to-Delivery Customer Onboarding Handoff",
+        "Transfer scope, commitments, customer context, and exceptions from sales to delivery with an acceptance checklist.",
+        "Start with what the customer actually approved. Give delivery a short handoff that points to the authorized scope, owner, kickoff date, and unresolved decisions.",
+        "Ask delivery to accept or return the handoff. Required fields include buying reason, approved deliverables, exclusions, promised timing, customer contacts, dependencies, and exceptions that still need approval.",
+        "A fictional proposal promises a report during the first month while the kickoff notes say weekly dashboards. Delivery flags the conflict before kickoff and the account owner confirms what was actually agreed with the customer.",
+        "Review the first five transfers. Track missing fields and scope clarifications discovered after kickoff. Assign a person to update the originating sales process when the same gap repeats.",
+        "/services/sales-strategy/", "/playbooks/founder-sales-handoff/",
+    ),
+    (
+        "operating-metric-definitions", "Operating Metrics Dictionary for Small Teams",
+        "Define operating metrics so leaders can reconcile a scorecard to source records and act on changes consistently.",
+        "Document the decision each metric helps someone make. Put the formula, timing, population, exclusions, source, and owner next to the metric name.",
+        "Choose a sample date range and recalculate the result from records. Include boundary cases such as cancellations, reopened tickets, or late data. State how corrections affect prior reports.",
+        "A fictional support team defines first response as the first reply from a person during published support hours. An automatic receipt therefore contributes no response time measurement. A ticket reopened next week stays part of the original cohort.",
+        "Ask a second analyst to calculate the number independently using the written definition. Resolve differences before publishing the metric in the weekly meeting.",
+        "/services/leadership/", "/playbooks/weekly-commitment-review/",
+    ),
+    (
+        "process-exception-register", "Process Exception Register for Small Businesses",
+        "Create an exception register for refunds, delivery promises, approvals, and process failures that need a clear decision.",
+        "Define which deviations operators can resolve under existing policy and which need review. Give staff one place to record a decision request and its supporting evidence.",
+        "Capture the rule affected, impact, options, owner, and decision deadline. Keep a reusable decision trail. Review repeated exceptions to see when a rule, system field, or training step needs revision.",
+        "A fictional field team repeatedly waives a return visit charge when a scheduling error causes the issue. The manager compares the jobs, confirms the policy boundary, and adjusts scheduling instructions to prevent repeat disputes.",
+        "Sample a closed exception. The team should be able to explain the authority used, the evidence reviewed, how the customer was informed, and what would prevent recurrence.",
+        "/services/operations/", "/playbooks/weekly-commitment-review/",
+    ),
+    (
+        "route-density-planning", "Route Density Planning for Field Service Teams",
+        "Improve field service route density by grouping compatible jobs around drive time, crew skills, and customer windows.",
+        "Separate travel, on-site work, and uncertainty. Begin with completed routes from a representative week and use real arrival times when available.",
+        "Group nearby jobs that require comparable skills, equipment, and service windows. Reserve time for variable work and confirm which visits can move without affecting a customer commitment.",
+        "A fictional crew completes three 60-minute visits and spends 90 minutes driving. Clustering the visits reduces travel to 45 minutes. The team uses the recovered time as a buffer until it can demonstrate a reliable fourth appointment.",
+        "Pilot one route on two comparable days. Compare on-time arrival and completed work alongside travel time so route savings reflect service results.",
+        "/industries/construction-trades/", "/playbooks/service-backlog-triage/",
+    ),
+    (
+        "month-end-operations-review", "Month-End Operations Review Playbook",
+        "Review volume, capacity, recurring costs, and missed commitments with an action log that carries into the next month.",
+        "Plan the review around decisions. Give finance and operations one time window, definitions, and a short list of areas where results changed.",
+        "Reconcile volume and margin where data supports it, identify constraints, and choose the next action at the level the team can control. Record unresolved data differences separately from decisions.",
+        "A fictional service team notices overtime alongside flat completed jobs. A closer review shows repeat visits from missing first-visit equipment. The team tests a dispatch checklist for one work type before changing staffing.",
+        "At the next review, ask which action changed the result and inspect a sample of underlying records. Reopen a decision when a key assumption proves wrong.",
+        "/services/operations/", "/playbooks/operating-metric-definitions/",
+    ),
+]
+
+
+def field_guides():
+    for slug, title, description, intro, method, example, check, service, related in TOPICS:
+        yield {
+            "path": f"/playbooks/{slug}/",
+            "title": title,
+            "description": description,
+            "intro": intro,
+            "sections": [
+                ("Set up the work", f"<p>{escape(method)}</p>"),
+                ("Worked example", f"<p>{escape(example)}</p>"),
+                ("Check the result", f"<p>{escape(check)}</p>"),
+            ],
+            "links": [service, related],
+            "kind": "Implementation playbook",
+            "parent": "/playbooks/",
+            "modified": "2026-11-27",
+        }
