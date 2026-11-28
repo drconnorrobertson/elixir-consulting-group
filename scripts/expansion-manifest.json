@@ -1312,6 +1312,39 @@
     "sources": []
   },
   {
+    "path": "/playbooks/dispatch-cancellation-recovery/",
+    "title": "Dispatch Cancellation Recovery Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/route-density-planning/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/inventory-cycle-count-discrepancy/",
+    "title": "Inventory Cycle Count Discrepancy Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/minimum-stock-reorder-point/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/billing-dispute-triage/",
+    "title": "Billing Dispute Triage Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/job-closeout-completeness/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
