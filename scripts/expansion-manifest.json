@@ -1466,6 +1466,39 @@
     "sources": []
   },
   {
+    "path": "/playbooks/dispatch-schedule-freeze/",
+    "title": "Dispatch Schedule Freeze Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/dispatch-cancellation-recovery/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/customer-credit-hold-release/",
+    "title": "Customer Credit Hold Release Workflow",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/billing-dispute-triage/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/warehouse-location-label-audit/",
+    "title": "Warehouse Location Label Audit Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/warehouse-pick-error-review/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
