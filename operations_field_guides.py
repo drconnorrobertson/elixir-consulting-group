@@ -734,6 +734,47 @@ TOPICS.extend([('change-order-decision-thresholds',
   '/services/operations/',
   '/playbooks/service-territory-boundary-review/')])
 
+TOPICS.extend([('purchase-approval-delegation',
+  'Purchase Approval Delegation Playbook',
+  'Set purchasing authority by value, supplier risk, and commitments that outlast the current order.',
+  'Map which roles can order routine supplies, approve new vendors, and sign recurring obligations. Record '
+  'limits in the system staff use to make requests.',
+  'Capture the amount, purpose, supplier, budget owner, duration and any recurring commitment. Apply '
+  'thresholds to the whole commitment and document how emergencies move to an authorized backup.',
+  'A buyer can approve a $900 routine order, but a $400 monthly agreement commits the company to $4,800 for '
+  'the year. Send the annual obligation for the approval it requires before ordering.',
+  'Sample a routine purchase, recurring agreement and emergency. Trace each to the right approval and check '
+  'for related orders that should have been reviewed together.',
+  '/services/operations/',
+  '/playbooks/purchase-order-three-way-match/'),
+ ('repair-versus-replace-decision',
+  'Repair Versus Replace Decision Playbook',
+  'Compare equipment repair and replacement using downtime, remaining service life and support costs.',
+  'Identify the equipment’s operating role and ask qualified staff which options can safely meet it.',
+  'Compare repair cost, expected service life, replacement lead time, temporary coverage, and downtime '
+  'exposure using the same time horizon. State which assumptions still need testing.',
+  'A repair costs $2,000 and buys six expected months. A replacement costs $7,000 and arrives in eight '
+  'weeks. Compare a rental bridge, repair plus later replacement, and the cost of leaving the workload '
+  'uncovered.',
+  'After the decision, confirm actual downtime and spending. Record whether a similar asset now needs a '
+  'planned review.',
+  '/services/operations/',
+  '/playbooks/scheduled-maintenance-completion/'),
+ ('service-visit-check-in-out',
+  'Service Visit Check-In and Check-Out Playbook',
+  'Record arrival, work completed and open issues so dispatch and customers see an accurate visit status.',
+  'Define which timestamp starts the visit and what evidence is required before dispatch can consider the '
+  'work closed.',
+  'Assign check-in and check-out roles. Capture the ticket, arrival, departure, scope delivered and '
+  'remaining work. Provide a way to log delayed or offline updates without changing the original event time.',
+  'A crew loses connectivity at a rural site. Its lead records arrival and departure offline, then syncs '
+  'when available. Dispatch keeps the job pending until the completion record appears and checks for an '
+  'outstanding return visit.',
+  'Review a delayed sync and an incomplete visit. Confirm that both timelines remain traceable and customers '
+  'receive accurate updates.',
+  '/services/operations/',
+  '/playbooks/service-delivery-proof-check/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
