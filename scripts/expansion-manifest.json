@@ -1092,6 +1092,72 @@
     "sources": []
   },
   {
+    "path": "/playbooks/vendor-invoice-variance-review/",
+    "title": "Vendor Invoice Variance Review Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/pittsburgh-operations-consulting/",
+      "/playbooks/vendor-renewal-calendar/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/field-service-first-visit-completion/",
+    "title": "First-Visit Completion Playbook for Field Service",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/industries/construction-trades/",
+      "/playbooks/route-density-planning/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/quote-approval-delegation/",
+    "title": "Quote Approval and Delegation Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/sales-strategy/",
+      "/playbooks/customer-onboarding-handoff/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/customer-complaint-escalation-matrix/",
+    "title": "Customer Complaint Escalation Matrix Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/process-exception-register/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/shift-handoff-log/",
+    "title": "Shift Handoff Log for Service and Operations Teams",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-backlog-triage/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/manual-report-retirement/",
+    "title": "Manual Report Retirement Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/operating-metric-definitions/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
