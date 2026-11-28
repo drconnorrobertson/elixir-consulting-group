@@ -1104,6 +1104,45 @@ TOPICS.extend([('carrier-delivery-exception-desk',
   '/services/operations/',
   '/playbooks/dispatch-ready-work-order/')])
 
+TOPICS.extend([('supplier-backorder-notification',
+  'Supplier Backorder Notification Playbook',
+  'Turn supplier backorder notices into dated decisions for purchasing, scheduling, and customer service.',
+  'Identify the specific order lines and jobs affected before updating a customer promise.',
+  'Record the latest confirmed arrival, quantity short, alternate source, and last useful decision time. '
+  'Keep the original date visible and assign a customer communication owner.',
+  'A supplier moves delivery of 18 valves from Tuesday to Friday. Six are reserved for a Wednesday job. '
+  'Purchasing verifies six compatible units at another location and updates only the orders actually '
+  'affected.',
+  'Compare the alternate transfer and final receipt to the plan. Check that affected customers heard the '
+  'revised promise from one owner.',
+  '/services/operations/',
+  '/playbooks/job-material-reservation/'),
+ ('inventory-unit-of-measure-audit',
+  'Inventory Unit of Measure Audit',
+  'Find conversion errors between ordered packs, stored units and invoiced quantities.',
+  'Choose items bought and used in different units and compare the records that translate between them.',
+  'Sample the purchase description, receiving label, item conversion and issue record. Verify whether count '
+  'adjustments correct a physical difference or a conversion defect.',
+  'A vendor invoices four cases of 24 units. Receiving records four each instead of 96. Confirm the '
+  'packaging and correct the authorized receipt workflow before ordering more stock based on the false '
+  'shortage.',
+  'Have purchasing and warehouse staff independently trace one order through issue and verify quantity and '
+  'per-unit cost.',
+  '/services/operations/',
+  '/playbooks/supplier-pack-size-change-control/'),
+ ('customer-scope-clarification-log',
+  'Customer Scope Clarification Log',
+  'Resolve ambiguous customer requests before assigning crews or pricing changes.',
+  'Capture the wording and the decision needed while keeping approved scope visible to the team.',
+  'Log the unclear requirement, current interpretation, impact, evidence and authorized responder. Mark '
+  'which work can continue and which needs clarification first.',
+  'A customer asks to service all units, but the signed quote lists four of six. The project lead keeps the '
+  'four scheduled and requests written clarification for the extra two before arranging labor.',
+  'Sample completed jobs with clarifications. Verify the answer reached scheduling, delivery and billing '
+  'before each team acted.',
+  '/services/sales-strategy/',
+  '/playbooks/change-order-decision-thresholds/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
