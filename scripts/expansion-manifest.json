@@ -2302,6 +2302,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/delivery-proof-discrepancy/",
+    "title": "Delivery Proof Discrepancy Review",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/carrier-delivery-exception-desk/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-technician-travel-time-variance/",
+    "title": "Service Technician Travel Time Variance",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-appointment-window-sizing/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
