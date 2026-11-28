@@ -1697,6 +1697,39 @@
     "sources": []
   },
   {
+    "path": "/playbooks/customer-owned-inventory-tracking/",
+    "title": "Customer-Owned Inventory Tracking Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/inventory-cycle-count-discrepancy/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/supplier-pack-size-change-control/",
+    "title": "Supplier Pack Size Change Control Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/purchase-order-three-way-match/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-appointment-window-sizing/",
+    "title": "Service Appointment Window Sizing Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/route-density-planning/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
