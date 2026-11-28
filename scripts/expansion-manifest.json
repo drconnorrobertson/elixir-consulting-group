@@ -2280,6 +2280,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/serial-number-installation-audit/",
+    "title": "Serial Number Installation Audit",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-recall-lot-tracing/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/shift-start-resource-check/",
+    "title": "Shift Start Resource Check for Service Teams",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/dispatch-ready-work-order/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",

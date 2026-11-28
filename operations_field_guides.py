@@ -1531,6 +1531,35 @@ TOPICS.extend([('service-recall-lot-tracing',
   '/services/operations/',
   '/playbooks/customer-complaint-escalation-matrix/')])
 
+TOPICS.extend([('serial-number-installation-audit',
+  'Serial Number Installation Audit',
+  'Verify the individual unit installed at each site before handing over warranty or service '
+  'responsibilities.',
+  'Choose completed jobs that require unit-level tracking and obtain the dispatch, shipment and installation '
+  'records.',
+  'Capture the serial read at installation, the equipment location, the work order and any removal or '
+  'substitution. Resolve ambiguous photos using the authorized inspection process.',
+  'A job lists two shipped units, but the crew used one from its spare inventory. The supervisor verifies '
+  'the installed serial, corrects the asset register and records the unused shipment’s disposition.',
+  'Test whether support can identify the installed unit from a customer’s site record without searching '
+  'unrelated jobs.',
+  '/services/operations/',
+  '/playbooks/service-recall-lot-tracing/'),
+ ('shift-start-resource-check',
+  'Shift Start Resource Check for Service Teams',
+  'Identify coverage gaps, unavailable vehicles and missing tools before the first jobs leave.',
+  'Use the published route and list the resources shared across crews. Give the shift lead responsibility '
+  'for immediate decisions.',
+  'Review attendance, assigned qualifications, vehicle availability, parts holds and first customer windows. '
+  'Document replacements and assign one owner to relay new promises.',
+  'A scheduled vehicle is unavailable and two crews need the only spare. The lead confirms which job '
+  'requires a lift gate, assigns the equipped spare to that crew and verifies the other crew’s revised '
+  'arrival.',
+  'Review actual departures and first appointments. Keep a record of which gaps were found before customers '
+  'were affected.',
+  '/services/operations/',
+  '/playbooks/dispatch-ready-work-order/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
