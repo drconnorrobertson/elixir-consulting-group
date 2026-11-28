@@ -2544,6 +2544,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/service-part-revision-check/",
+    "title": "Service Part Revision Check",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/serial-number-installation-audit/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/warehouse-reservation-expiry-review/",
+    "title": "Warehouse Reservation Expiry Review",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/job-material-reservation/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
