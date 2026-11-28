@@ -287,6 +287,62 @@ TOPICS.extend([('overtime-approval-capacity',
   '/services/operations/',
   '/playbooks/customer-onboarding-handoff/')])
 
+TOPICS.extend([('service-callback-root-cause',
+  'Service Callback Root Cause Review',
+  'Separate repeat visits caused by workmanship, missing inputs, and changes in customer scope.',
+  'Define a callback by linking the second visit to the original ticket and classifying the reason after '
+  'evidence review.',
+  'Compare work notes, dispatch instructions, parts used, and customer acceptance. Choose a single corrective '
+  'action for the most frequent preventable category while retaining secondary causes.',
+  'A fictional team reviews 20 callbacks. Eight concern the same fitting, six are new requests and six involve '
+  'other issues. Inspect the installation steps and receipt lots for the eight before deciding whether '
+  'training or part selection needs to change.',
+  'Track the corrected category for the same job types over the next cycle and check that operators still '
+  'record returns consistently.',
+  '/services/operations/',
+  '/playbooks/field-service-first-visit-completion/'),
+ ('capacity-buffer-for-emergency-work',
+  'Capacity Buffer for Emergency Service Work',
+  'Size a dispatch capacity buffer using actual urgent job volume and response commitments.',
+  'Start with historic urgent arrivals by shift and the actual hours they required from the constrained crew.',
+  'Compare weeks by day and time. Reserve capacity where urgent demand appears, assign authority to release '
+  'unused time, and define which regular work can move without breaching a promise.',
+  'A fictional crew averages four urgent hours on Mondays across six weeks, with nine in one outlier. The team '
+  'reserves four hours and agrees which backup crew or flexible jobs cover the remaining peak exposure.',
+  'Review how often the buffer was used, how many emergency commitments were missed, and what regular work was '
+  'displaced.',
+  '/services/operations/',
+  '/playbooks/rush-order-intake/'),
+ ('supplier-on-time-in-full-scorecard',
+  'Supplier On-Time In-Full Scorecard',
+  'Score delivery against agreed dates and accepted quantities using an auditable supplier performance '
+  'measure.',
+  'Measure at the order line or purchase order level consistently. Use the committed date recorded before the '
+  'delivery period and document how revised commitments are handled.',
+  'Record ordered and accepted quantity, delivery time, quality holds, and exceptions. Flag whether split '
+  'shipments satisfy the original commitment and decide how to treat approved early deliveries.',
+  'Of 30 fictional orders, 25 arrive on time and in full. Three arrive on time but short, and two arrive late. '
+  'The combined measure is 83.3%. Review the shortage and lateness reasons separately before choosing a '
+  'supplier action.',
+  'Ask purchasing and receiving to score the same orders independently. Resolve conflicting date and quantity '
+  'interpretations before issuing the scorecard.',
+  '/services/operations/',
+  '/playbooks/purchase-order-three-way-match/'),
+ ('recurring-meeting-consolidation',
+  'Recurring Meeting Consolidation Playbook',
+  'Reduce duplicate operating meetings while preserving the decisions, escalation routes, and records teams '
+  'rely on.',
+  'Inventory standing meetings and write down the recurring decision or commitment each meeting produces.',
+  'Map overlapping decisions and separate status updates that can be handled in the existing work record. '
+  'Establish the owner, schedule and handoff for every decision that moves.',
+  'Two fictional meetings review service backlog on adjacent days using different reports. The leads adopt one '
+  'shared queue, move staffing decisions into one review, and keep an urgent route for commitments at risk the '
+  'same day.',
+  'After three weeks, sample past decisions and check whether the replacement still captures who decided, '
+  'which evidence they used, and who executes the result.',
+  '/services/leadership/',
+  '/playbooks/weekly-commitment-review/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:

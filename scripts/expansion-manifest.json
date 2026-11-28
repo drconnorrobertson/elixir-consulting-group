@@ -1268,6 +1268,50 @@
     "sources": []
   },
   {
+    "path": "/playbooks/service-callback-root-cause/",
+    "title": "Service Callback Root Cause Review",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/field-service-first-visit-completion/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/capacity-buffer-for-emergency-work/",
+    "title": "Capacity Buffer for Emergency Service Work",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/rush-order-intake/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/supplier-on-time-in-full-scorecard/",
+    "title": "Supplier On-Time In-Full Scorecard",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/purchase-order-three-way-match/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/recurring-meeting-consolidation/",
+    "title": "Recurring Meeting Consolidation Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/leadership/",
+      "/playbooks/weekly-commitment-review/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
