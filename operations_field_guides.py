@@ -656,6 +656,42 @@ TOPICS.extend([('tool-calibration-records',
   '/industries/construction-trades/',
   '/playbooks/job-closeout-completeness/')])
 
+TOPICS.extend([('freight-damage-claim-workflow',
+  'Freight Damage Claim Workflow',
+  'Preserve receiving evidence, document damage and track supplier or carrier follow-up.',
+  'Set receiving rules for inspecting damaged cartons and identifying affected items before stock is '
+  'released.',
+  'Log shipment and delivery references, condition, counts, packaging evidence and the agreement’s claim '
+  'instructions. Give the claim a deadline owner and track replacement separately from recovery.',
+  'A shipment has 40 cartons, four visibly damaged. Receiving follows the agreed inspection process and '
+  'identifies six unusable units. The buyer arranges replacement and tracks the separate claim through '
+  'settlement.',
+  'Reconcile the receiving adjustment, replacement order and eventual credit to the original shipment.',
+  '/services/operations/',
+  '/playbooks/supplier-on-time-in-full-scorecard/'),
+ ('duplicate-service-ticket-triage',
+  'Duplicate Service Ticket Triage',
+  'Identify duplicate requests without dropping customer context, deadlines or promises.',
+  'Define when two tickets describe the same incident, using account, asset and reported problem.',
+  'Choose a surviving record, retain the earliest applicable receipt time, and move essential updates before '
+  'closing the duplicate. Keep separate defects open even when reported together.',
+  'An account emails and calls about one failed unit while an adjacent unit has a second problem. The team '
+  'combines the first two contacts and leaves the separate incident open with its own service commitment.',
+  'Check a merged case for retained notes, original SLA time and a single clear customer response.',
+  '/services/operations/',
+  '/playbooks/customer-support-response-time-audit/'),
+ ('supplier-sample-approval-workflow',
+  'Supplier Sample Approval Workflow',
+  'Evaluate samples against intended use and carry approved specifications into the purchase order.',
+  'Write acceptance checks and name who can approve deviations before comparing samples.',
+  'Record sample version, quantity, lot or drawing reference, test results and the exact specification '
+  'purchasing must order. Define the inspection needed on the first production delivery.',
+  'A replacement carton survives the bench test but fails on a loaded pallet. The team asks for a revised '
+  'version and repeats the loaded test before adding the approved design to the purchase order.',
+  'Compare the first shipment with the approved sample and preserve the evidence of the decision.',
+  '/services/operations/',
+  '/playbooks/supplier-bid-comparison/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:

@@ -1565,6 +1565,39 @@
     "sources": []
   },
   {
+    "path": "/playbooks/freight-damage-claim-workflow/",
+    "title": "Freight Damage Claim Workflow",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/supplier-on-time-in-full-scorecard/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/duplicate-service-ticket-triage/",
+    "title": "Duplicate Service Ticket Triage",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/customer-support-response-time-audit/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/supplier-sample-approval-workflow/",
+    "title": "Supplier Sample Approval Workflow",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/supplier-bid-comparison/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
