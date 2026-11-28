@@ -2192,6 +2192,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/shipment-weight-reconciliation/",
+    "title": "Shipment Weight Reconciliation Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/supplier-freight-term-comparison/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/warehouse-short-pick-resolution/",
+    "title": "Warehouse Short Pick Resolution",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/warehouse-pick-face-replenishment/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
