@@ -1928,6 +1928,39 @@
     "sources": []
   },
   {
+    "path": "/playbooks/supplier-backorder-notification/",
+    "title": "Supplier Backorder Notification Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/job-material-reservation/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/inventory-unit-of-measure-audit/",
+    "title": "Inventory Unit of Measure Audit",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/supplier-pack-size-change-control/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/customer-scope-clarification-log/",
+    "title": "Customer Scope Clarification Log",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/sales-strategy/",
+      "/playbooks/change-order-decision-thresholds/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
