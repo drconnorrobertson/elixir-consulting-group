@@ -1503,6 +1503,34 @@ TOPICS.extend([('warehouse-dock-to-stock-time',
   '/services/operations/',
   '/playbooks/appointment-cancellation-reason-coding/')])
 
+TOPICS.extend([('service-recall-lot-tracing',
+  'Service Part Lot Traceability Playbook',
+  'Use installation and stock records to identify jobs affected by a supplier lot notice.',
+  'Link each tracked part to the receipt lot and to its installed job or remaining stock location. Use the '
+  'approved procedure for addressing notices.',
+  'Reconcile receipts, transfers, installed quantities and returned parts. For any quantity that cannot be '
+  'located, document the last confirmed movement and assign investigation before reporting results.',
+  'A notice covers a lot of 40 units. Records show 23 installed, 15 in stock, and two sent back to the '
+  'supplier. Verify the return receipt and confirm the installation list before the responsible lead chooses '
+  'follow-up.',
+  'Run a tracing exercise from a sample notice and check whether every unit and affected job can be '
+  'accounted for.',
+  '/services/operations/',
+  '/playbooks/incoming-material-hold/'),
+ ('after-hours-service-call-routing',
+  'After-Hours Service Call Routing Playbook',
+  'Route urgent calls to qualified coverage and set accurate expectations for requests that can wait.',
+  'Define which customer commitments apply outside standard hours and who is authorized to classify calls.',
+  'Record the site, reported issue, agreed response window, assigned responder and backup. Test that callers '
+  'receive an acknowledgment and that unresolved calls reach the next shift.',
+  'A customer calls at 7 p.m. under a contract that starts its response clock immediately. The first '
+  'responder is on another job. The coordinator contacts the backup and confirms the next update time with '
+  'the customer.',
+  'Test one urgent and one routine call. Verify the timestamps and ownership through acknowledgment and '
+  'transfer to the next shift.',
+  '/services/operations/',
+  '/playbooks/customer-complaint-escalation-matrix/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
