@@ -2456,6 +2456,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/damaged-stock-write-off-review/",
+    "title": "Damaged Stock Write-Off Review",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/inventory-adjustment-approval/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-accessory-completeness-check/",
+    "title": "Service Equipment Accessory Completeness Check",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/equipment-return-inspection/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
