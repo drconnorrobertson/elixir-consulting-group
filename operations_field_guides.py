@@ -692,6 +692,48 @@ TOPICS.extend([('freight-damage-claim-workflow',
   '/services/operations/',
   '/playbooks/supplier-bid-comparison/')])
 
+TOPICS.extend([('change-order-decision-thresholds',
+  'Change Order Decision Thresholds for Project Teams',
+  'Set approval boundaries for small field changes and route larger effects to the right decision maker.',
+  'Choose who can approve scope, price, and schedule separately. Use the customer agreement and internal '
+  'authority rules as your starting records.',
+  'Record the baseline scope, work requested, customer documentation, incremental cost, and schedule impact. '
+  'Define who decides if a proposed change exceeds any of the limits.',
+  'A field lead can approve up to $250 in internal materials but cannot change a customer’s completion date. '
+  'A $180 request also moves the job by a day, so the lead sends the scheduling impact to the project '
+  'approver before committing.',
+  'Sample recent changes that crossed one threshold but not another. Confirm the approver had the relevant '
+  'evidence and the customer received the approved scope.',
+  '/industries/construction-trades/',
+  '/playbooks/change-order-aging-report/'),
+ ('parts-expedite-approval',
+  'Parts Expedite Approval Playbook',
+  'Decide when faster parts delivery protects a commitment and when a standard shipment makes more sense.',
+  'Identify the customer or production commitment the part is blocking and the last date it can arrive '
+  'without disruption.',
+  'Compare standard and expedited arrival, incremental freight, alternative stock, and the cost of any '
+  'missed commitment that can be supported. Give the approver the decision deadline.',
+  'An emergency delivery costs $240 more and saves two days. A compatible part is already available from '
+  'another shop and costs $75 to transfer. Confirm compatibility and timing before asking for the faster '
+  'freight.',
+  'Log the actual arrival, freight billed and outcome of the job. Review repeat expedites by cause and '
+  'supplier to decide where the original planning needs work.',
+  '/services/operations/',
+  '/playbooks/rush-order-intake/'),
+ ('service-crew-skill-matrix',
+  'Service Crew Skill Matrix Playbook',
+  'Match service jobs to verified crew capabilities and identify coverage or training gaps.',
+  'List job categories and the skills, supervision or qualifying evidence each category requires.',
+  'Record role, verified capability, coverage windows and where the supporting record lives. Ask a '
+  'designated owner to review status changes and remove stale assignments.',
+  'A fictional service company has four technicians, but only one can verify a particular installation type '
+  'independently. The dispatcher schedules supervised practice on lower-complexity work and makes backup '
+  'coverage visible in the schedule.',
+  'Ask dispatch to route two jobs with different requirements and verify that the choices reflect the '
+  'current records. Follow up on gaps without exposing personal records in the schedule.',
+  '/services/operations/',
+  '/playbooks/service-territory-boundary-review/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
