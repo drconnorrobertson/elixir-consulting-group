@@ -1158,6 +1158,72 @@
     "sources": []
   },
   {
+    "path": "/playbooks/purchase-order-three-way-match/",
+    "title": "Three-Way Purchase Order Matching Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/vendor-invoice-variance-review/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/minimum-stock-reorder-point/",
+    "title": "Minimum Stock and Reorder Point Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/supplier-bid-comparison/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/sales-discount-review/",
+    "title": "Sales Discount Review and Margin Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/sales-strategy/",
+      "/playbooks/quote-approval-delegation/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/rush-order-intake/",
+    "title": "Rush Order Intake and Capacity Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-backlog-triage/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/renewal-risk-sales-handoff/",
+    "title": "Customer Renewal Risk Handoff Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/sales-strategy/",
+      "/playbooks/customer-onboarding-handoff/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/workflow-pilot-rollback/",
+    "title": "Workflow Pilot Rollback Plan",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/shift-handoff-log/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
