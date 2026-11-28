@@ -1433,6 +1433,39 @@
     "sources": []
   },
   {
+    "path": "/playbooks/quote-expiration-review/",
+    "title": "Quote Expiration Review Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/sales-strategy/",
+      "/playbooks/quote-approval-delegation/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-labor-utilization/",
+    "title": "Service Labor Utilization Measurement Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/route-density-planning/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-warranty-rework-tracking/",
+    "title": "Service Warranty Rework Tracking Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-callback-root-cause/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
