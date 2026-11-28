@@ -1840,6 +1840,33 @@ TOPICS.extend([('duplicate-supplier-invoice-review',
   '/services/operations/',
   '/playbooks/service-visit-parts-shortage-notice/')])
 
+TOPICS.extend([('service-loaner-utilization',
+  'Service Loaner Utilization Review',
+  'Measure whether the loaner fleet meets demand after accounting for repairs and inspection turnaround.',
+  'Record the days each loaner is booked, in use, awaiting inspection, unavailable for repair, or ready to '
+  'issue.',
+  'Compare simultaneous demand with units actually ready to issue. Track requests turned away and determine '
+  'whether faster turnaround would cover the gap before adding equipment.',
+  'A four-unit loaner fleet shows only two active bookings, yet one unit awaits inspection and the other is '
+  'out for repair. The coordinator checks whether releasing the inspected unit in time will cover an '
+  'upcoming job.',
+  'Recheck unavailable days and requests denied after piloting a turnaround change. Track whether readiness '
+  'improves without skipping inspection.',
+  '/services/operations/',
+  '/playbooks/service-equipment-loaner-tracking/'),
+ ('supplier-short-ship-backbilling',
+  'Supplier Short Shipment Billing Review',
+  'Resolve quantity differences when an invoice includes items that have not arrived.',
+  'Compare the original order, actual accepted quantity and vendor invoices before final payment approval.',
+  'Record whether missing stock is backordered, canceled or in transit. Identify if the invoice needs '
+  'correction or an authorized payment hold and set the next review date.',
+  'A vendor bills 75 units at $14, but receiving accepts 60. Review the $210 difference, confirm whether the '
+  'supplier will send the missing 15, and document how payment will be reconciled.',
+  'Check the subsequent receipt or credit and verify that it clears the specific open line without a '
+  'duplicate entry.',
+  '/services/operations/',
+  '/playbooks/purchase-order-three-way-match/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:

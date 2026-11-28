@@ -2522,6 +2522,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/service-loaner-utilization/",
+    "title": "Service Loaner Utilization Review",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-equipment-loaner-tracking/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/supplier-short-ship-backbilling/",
+    "title": "Supplier Short Shipment Billing Review",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/purchase-order-three-way-match/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
