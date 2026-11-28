@@ -1631,6 +1631,39 @@
     "sources": []
   },
   {
+    "path": "/playbooks/purchase-approval-delegation/",
+    "title": "Purchase Approval Delegation Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/purchase-order-three-way-match/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/repair-versus-replace-decision/",
+    "title": "Repair Versus Replace Decision Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/scheduled-maintenance-completion/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-visit-check-in-out/",
+    "title": "Service Visit Check-In and Check-Out Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-delivery-proof-check/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
