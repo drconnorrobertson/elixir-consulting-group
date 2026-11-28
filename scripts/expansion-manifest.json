@@ -2654,6 +2654,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/warehouse-blind-count/",
+    "title": "Warehouse Blind Count Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/inventory-count-tolerance-design/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/missed-maintenance-visit-follow-up/",
+    "title": "Missed Preventive Maintenance Visit Follow-Up",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-recurring-job-generation-audit/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",

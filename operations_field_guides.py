@@ -2008,6 +2008,34 @@ TOPICS.extend([('inventory-count-tolerance-design',
   '/services/operations/',
   '/playbooks/dispatch-ready-work-order/')])
 
+TOPICS.extend([('warehouse-blind-count',
+  'Warehouse Blind Count Playbook',
+  'Count selected inventory without showing expected balances and reconcile differences without altering the '
+  'original observation.',
+  'Give counters item and location identifiers without expected quantities. Set a cutoff for movements and '
+  'define who can review exceptions.',
+  'Record initial and repeated counts separately. Preserve any moves during the count and have the reviewer '
+  'check units, holds and open transfers before approving an adjustment.',
+  'The first counter records 36 units and the second records 48. The reviewer finds a sealed 12-unit carton '
+  'in the wrong bin and verifies where it was stored at cutoff. Record the location correction separately '
+  'from the quantity review.',
+  'Check whether the signed count, recount and source transactions support the final posting.',
+  '/services/operations/',
+  '/playbooks/inventory-count-tolerance-design/'),
+ ('missed-maintenance-visit-follow-up',
+  'Missed Preventive Maintenance Visit Follow-Up',
+  'Recover missed recurring maintenance visits and identify which commitments need customer approval to '
+  'move.',
+  'List overdue visits against the original schedule and verify whether the work occurred without a '
+  'completed record.',
+  'Group missed visits by site access, capacity, parts and scheduling errors. Confirm the revised scope and '
+  'timing with a responsible owner. Ask qualified staff to review any implications of delayed work.',
+  'A monthly visit was marked complete when only a site check occurred. The coordinator corrects the record, '
+  'asks the responsible lead to confirm the remaining work, and agrees a new date with the customer.',
+  'Review the next schedule cycle for overdue work and verify completed visits against actual evidence.',
+  '/services/operations/',
+  '/playbooks/service-recurring-job-generation-audit/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
