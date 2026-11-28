@@ -1763,6 +1763,39 @@
     "sources": []
   },
   {
+    "path": "/playbooks/dispatch-ready-work-order/",
+    "title": "Dispatch-Ready Work Order Checklist",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-appointment-confirmation/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/customer-return-parts-recovery/",
+    "title": "Parts Recovery from Customer Returns Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/returns-disposition-workflow/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-dispatch-manual-fallback/",
+    "title": "Manual Dispatch Fallback Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/workflow-pilot-rollback/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
