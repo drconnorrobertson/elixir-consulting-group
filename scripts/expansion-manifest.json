@@ -2588,6 +2588,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/warehouse-wave-release-check/",
+    "title": "Warehouse Wave Release Checklist",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/warehouse-short-pick-resolution/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-parts-scrap-reconciliation/",
+    "title": "Service Parts Scrap Reconciliation",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/damaged-stock-write-off-review/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",

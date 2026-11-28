@@ -1926,6 +1926,32 @@ TOPICS.extend([('inventory-expiry-pick-sequence',
   '/services/operations/',
   '/playbooks/service-callback-root-cause/')])
 
+TOPICS.extend([('warehouse-wave-release-check',
+  'Warehouse Wave Release Checklist',
+  'Release groups of pick tickets only when stock, packing capacity and carrier cutoffs line up.',
+  'Start with paid or otherwise approved orders and group them by the carrier cutoff they actually need to '
+  'meet.',
+  'Before release, check priority lines for holds, reserve locations, required packaging and available '
+  'packing labor. Assign incomplete orders to a separate review list with a deadline.',
+  'A wave contains 60 orders for a 4 p.m. pickup. Four await a packaging decision. Release the 56 ready '
+  'orders and give the other four a named reviewer and a last feasible release time.',
+  'Compare packed orders, carrier manifests and excluded records at cutoff. Check that excluded orders have '
+  'a revised plan.',
+  '/services/operations/',
+  '/playbooks/warehouse-short-pick-resolution/'),
+ ('service-parts-scrap-reconciliation',
+  'Service Parts Scrap Reconciliation',
+  'Reconcile damaged service parts to jobs and inventory records before approving disposal.',
+  'Choose a reporting interval and preserve the original work order and stock issue records for each damaged '
+  'part.',
+  'Record the part, quantity, observed damage, disposition authority and whether the vendor could offer a '
+  'credit. Keep parts awaiting a decision out of available stock.',
+  'A team records nine unusable parts this month. Three qualify for an approved return, while six await '
+  'disposal. Keep the groups separate and verify the supplier receipt before closing the expected recovery.',
+  'Trace a sample from the damaged part to the recorded inventory movement and any supplier recovery.',
+  '/services/operations/',
+  '/playbooks/damaged-stock-write-off-review/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
