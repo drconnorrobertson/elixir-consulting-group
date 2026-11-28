@@ -1862,6 +1862,39 @@
     "sources": []
   },
   {
+    "path": "/playbooks/rental-equipment-off-hire/",
+    "title": "Rental Equipment Off-Hire Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/vendor-invoice-variance-review/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/lost-quote-review/",
+    "title": "Lost Quote Review for Service Businesses",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/sales-strategy/",
+      "/playbooks/quote-expiration-review/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/work-order-duplicate-prevention/",
+    "title": "Work Order Duplicate Prevention Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/duplicate-service-ticket-triage/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
