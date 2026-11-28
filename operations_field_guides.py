@@ -2063,6 +2063,61 @@ TOPICS.extend([('warehouse-pick-wave-staffing',
   '/services/operations/',
   '/playbooks/missed-maintenance-visit-follow-up/')])
 
+TOPICS.extend([('warehouse-packing-material-stockout',
+  'Packing Material Stockout Playbook',
+  'Protect shipping capacity when approved boxes, labels or cushioning run short.',
+  'Track packing materials alongside the orders and shipping methods that consume them. Identify formats '
+  'with no approved substitute.',
+  'Count usable materials at the start of each shift and compare them with released work. Give purchasing a '
+  'decision deadline and have the packing lead approve any alternate format before use.',
+  'An afternoon wave has 60 orders that need a particular insert, but only 48 inserts remain. The lead '
+  'schedules the 48 ready orders first and checks whether the remaining 12 can use an approved alternate '
+  'without changing the customer commitment.',
+  'Reconcile the wave with carrier records and count remaining supplies. Check whether the reorder setting '
+  'would have signaled the shortage before the next similar wave.',
+  '/services/operations/',
+  '/playbooks/warehouse-wave-release-check/'),
+ ('service-job-time-entry-audit',
+  'Service Job Time Entry Audit',
+  'Reconcile technician time against accepted work, dispatch records and customer billing terms.',
+  'Pick completed jobs with unusual labor hours, overlapping appointments or time entries submitted after '
+  'cutoff.',
+  'Distinguish payroll time, direct job cost and billable time. Review original timestamps, travel, breaks, '
+  'approved scope changes and the basis of any rounding before correcting a report.',
+  'A worker records four paid hours for a job, including 45 minutes of travel and 15 minutes waiting for '
+  'site access. Compare the three on-site hours and the other work time against the accepted billing terms '
+  'before releasing the invoice.',
+  'Trace any correction through job costing and billing. Verify that the original record and authorized '
+  'reason remain available.',
+  '/services/operations/',
+  '/playbooks/job-estimate-variance-review/'),
+ ('warehouse-pallet-load-verification',
+  'Warehouse Pallet Load Verification',
+  'Verify pallet contents and load sequence against the manifest before a multi-stop truck leaves.',
+  'Build a stop-level manifest and make sure every pallet has a unique reference linked to the corresponding '
+  'shipment.',
+  'Confirm count, destination and load sequence independently at the loading point. Assign a lead to resolve '
+  'mismatches and update both the loading record and carrier paperwork.',
+  'A truck serves three stops and one pallet is staged with the first stop’s orders but labeled for the '
+  'third. The checker verifies its manifest reference, moves it to the correct sequence and records the '
+  'correction before departure.',
+  'Match the signed manifest to delivery confirmations and verify exceptions did not disappear during '
+  'relabeling or loading.',
+  '/services/operations/',
+  '/playbooks/warehouse-staging-lane-audit/'),
+ ('service-customer-status-update-cadence',
+  'Service Customer Status Update Cadence',
+  'Set customer update times for open jobs even when the completion date is still uncertain.',
+  'Identify which work orders require proactive updates and what the customer needs to know to plan around '
+  'the disruption.',
+  'Agree the next update time, communication owner, verified facts and escalation trigger. Record the last '
+  'commitment and keep updates due even while waiting for a supplier response.',
+  'A repair awaits a vendor’s ship date. The account owner confirms it will update the customer by 3 p.m. '
+  'each day until the date is verified and records any approved workaround separately.',
+  'Review open jobs for missed updates and compare promised messages with the actual contact history.',
+  '/services/operations/',
+  '/playbooks/customer-service-parts-waitlist/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:

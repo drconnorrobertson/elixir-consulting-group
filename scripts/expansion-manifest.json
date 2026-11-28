@@ -2698,6 +2698,50 @@
     "sources": []
   },
   {
+    "path": "/playbooks/warehouse-packing-material-stockout/",
+    "title": "Packing Material Stockout Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/warehouse-wave-release-check/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-job-time-entry-audit/",
+    "title": "Service Job Time Entry Audit",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/job-estimate-variance-review/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/warehouse-pallet-load-verification/",
+    "title": "Warehouse Pallet Load Verification",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/warehouse-staging-lane-audit/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-customer-status-update-cadence/",
+    "title": "Service Customer Status Update Cadence",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/customer-service-parts-waitlist/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
