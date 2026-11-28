@@ -1729,6 +1729,33 @@ TOPICS.extend([('supplier-overdelivery-review',
   '/industries/construction-trades/',
   '/playbooks/subcontractor-work-acceptance/')])
 
+TOPICS.extend([('delivery-address-validation',
+  'Delivery Address Validation Playbook',
+  'Catch site, billing, and shipping address mismatches before goods leave the warehouse.',
+  'Validate the delivery address against the accepted order and site instructions when planning fulfillment.',
+  'Flag changes that affect freight, access or taxes for the appropriate reviewer. Give carrier paperwork '
+  'and dispatch the same verified location, and record who confirmed an exception.',
+  'An order uses the head office address, but the buyer’s approved order specifies a distribution site '
+  'across town. Fulfillment verifies the delivery address with the account owner and replaces the draft '
+  'label before releasing the shipment.',
+  'Check the final label, shipment acknowledgment and proof of delivery against the verified site. Review '
+  'any changes made after release separately.',
+  '/services/operations/',
+  '/playbooks/delivery-proof-discrepancy/'),
+ ('reusable-shipping-container-tracking',
+  'Reusable Shipping Container Tracking Playbook',
+  'Track returnable bins, pallets and crates across customers and carriers.',
+  'Identify which containers must come back and how they can be counted or matched to an outbound order.',
+  'Record quantity, recipient, return deadline, condition and any deposit terms. Review overdue balances by '
+  'customer and separate verified losses from transfers still in progress.',
+  'A customer receives 24 reusable bins, returns 18 and keeps four with another scheduled load. The '
+  'coordinator marks four as acknowledged outstanding and traces the remaining two before ordering '
+  'replacements.',
+  'Reconcile sent, returned, pending and lost counts for one customer and verify that deposits or charges '
+  'follow the approved terms.',
+  '/services/operations/',
+  '/playbooks/split-shipment-customer-approval/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
