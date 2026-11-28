@@ -1994,6 +1994,39 @@
     "sources": []
   },
   {
+    "path": "/playbooks/multi-site-service-grouping/",
+    "title": "Multi-Site Service Grouping Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/route-density-planning/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/supplier-order-acknowledgment-audit/",
+    "title": "Supplier Order Acknowledgment Audit",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/supplier-backorder-notification/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/job-estimate-variance-review/",
+    "title": "Job Estimate Variance Review Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-job-duration-estimation/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",

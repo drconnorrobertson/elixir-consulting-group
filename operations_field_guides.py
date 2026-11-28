@@ -1185,6 +1185,46 @@ TOPICS.extend([('service-recurring-job-generation-audit',
   '/services/operations/',
   '/playbooks/purchase-order-three-way-match/')])
 
+TOPICS.extend([('multi-site-service-grouping',
+  'Multi-Site Service Grouping Playbook',
+  'Group nearby customer sites while preserving the distinct access and scope requirements of each visit.',
+  'Start with the sites that share the same service cadence and can be grouped within customer-approved '
+  'windows.',
+  'Document each site’s equipment, access instructions, required skills and completion evidence. Schedule '
+  'the route as a group and keep each visit individually traceable.',
+  'Three locations can receive service Tuesday, but one opens at 11 a.m. Route the two earlier sites first '
+  'and keep the third booking conditional until access is confirmed.',
+  'Compare travel time and on-time completion. Check that no location disappears from the report when the '
+  'grouped route changes.',
+  '/services/operations/',
+  '/playbooks/route-density-planning/'),
+ ('supplier-order-acknowledgment-audit',
+  'Supplier Order Acknowledgment Audit',
+  'Check whether suppliers confirmed the quantity, date, price and delivery location before planning work.',
+  'Select released orders with high value or dependencies on scheduled work.',
+  'Compare the approved order to the supplier reply. Record substitutions, split dates, missing '
+  'confirmations and price differences. Assign a deadline for resolving each exception.',
+  'A vendor confirms 24 of 30 parts for a Friday job and quotes the other six for Monday. Purchasing '
+  'clarifies whether the job can start with 24 before the scheduler promises Friday completion.',
+  'Sample the final receipt and invoice against the acknowledged revision. Keep the original promise visible '
+  'when tracking supplier performance.',
+  '/services/operations/',
+  '/playbooks/supplier-backorder-notification/'),
+ ('job-estimate-variance-review',
+  'Job Estimate Variance Review Playbook',
+  'Separate price, time, materials and approved scope changes when a completed job differs from the '
+  'estimate.',
+  'Choose a completed job and preserve the version of the estimate used to approve it.',
+  'Compare estimated and actual labor, travel and materials on the same scope, then add separately approved '
+  'changes. Identify which differences could have been known earlier.',
+  'A job was quoted for six hours at $40 direct labor per hour and ends after eight. One extra hour is an '
+  'approved addition and one is rework. Track $40 in approved scope cost separately from $40 in unfavorable '
+  'execution variance.',
+  'Review the next comparable job and confirm the team applied the estimate change only where the underlying '
+  'cause recurs.',
+  '/services/operations/',
+  '/playbooks/service-job-duration-estimation/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
