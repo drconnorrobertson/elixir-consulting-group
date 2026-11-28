@@ -1615,6 +1615,33 @@ TOPICS.extend([('field-service-return-trip-charge',
   '/services/operations/',
   '/playbooks/vendor-statement-reconciliation/')])
 
+TOPICS.extend([('purchase-price-effective-date-audit',
+  'Purchase Price Effective Date Audit',
+  'Find stale or prematurely applied supplier costs before approving purchase orders and invoices.',
+  'Collect the approved supplier rate schedule and identify the event that determines price eligibility.',
+  'Sample orders on both sides of the effective date. Compare order, shipment and invoice dates, then '
+  'identify which date the agreement actually uses. Keep approved exceptions attached to the relevant order '
+  'line.',
+  'A supplier raises a part from $24 to $27 on July 1 for newly accepted orders. The supplier accepted an '
+  'order for 40 parts on June 28 but invoiced in July. Check the documented rule before approving the $120 '
+  'difference.',
+  'Trace the corrected charge to the approved price schedule and test that new orders use the new rate.',
+  '/services/operations/',
+  '/playbooks/supplier-order-acknowledgment-audit/'),
+ ('service-visit-parts-shortage-notice',
+  'Service Visit Parts Shortage Notice',
+  'When a part will not arrive before a service appointment, give the customer a confirmed alternative and a '
+  'clear next update.',
+  'Verify what is short and which part of the booked scope it prevents. Check if work can proceed safely and '
+  'usefully without it.',
+  'Compare stock, vendor commitment, and compatible alternatives. Record the latest useful decision time and '
+  'the person responsible for contacting the customer.',
+  'A customer booked a repair, but only diagnostic work can proceed until Friday. The scheduler offers a '
+  'confirmed Friday repair slot or an earlier diagnostic visit with a clearly stated limitation.',
+  'Check the customer accepted the revised scope and confirm the part is reserved before the crew is sent.',
+  '/services/operations/',
+  '/playbooks/supplier-backorder-notification/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
