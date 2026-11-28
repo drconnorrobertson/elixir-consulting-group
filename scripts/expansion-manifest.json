@@ -1796,6 +1796,39 @@
     "sources": []
   },
   {
+    "path": "/playbooks/service-job-duration-estimation/",
+    "title": "Service Job Duration Estimation Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-appointment-window-sizing/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/stock-transfer-approval/",
+    "title": "Stock Transfer Approval Between Locations",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/minimum-stock-reorder-point/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/customer-no-access-visit-review/",
+    "title": "No-Access Service Visit Review",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-appointment-confirmation/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",

@@ -945,6 +945,47 @@ TOPICS.extend([('dispatch-ready-work-order',
   '/services/operations/',
   '/playbooks/workflow-pilot-rollback/')])
 
+TOPICS.extend([('service-job-duration-estimation',
+  'Service Job Duration Estimation Playbook',
+  'Estimate job duration by work type and conditions using completed work orders.',
+  'Choose a work category whose scheduled time often differs from actual time. Define whether the estimate '
+  'includes setup, travel or cleanup.',
+  'Group jobs by equipment, scope and site access. Compare the median and slow cases, and record which '
+  'causes warrant a different booking class.',
+  'A crew schedules 60 minutes for all inspections. Recent records show 40 to 55 minutes with ground access '
+  'and 80 to 110 minutes when a spotter and ladder setup are needed. Dispatch tests different booking '
+  'lengths for the two groups.',
+  'Compare estimate error and missed customer windows over the next scheduling cycle. Review canceled and '
+  'incomplete visits separately.',
+  '/services/operations/',
+  '/playbooks/service-appointment-window-sizing/'),
+ ('stock-transfer-approval',
+  'Stock Transfer Approval Between Locations',
+  'Approve inventory transfers without creating a stockout at the sending location.',
+  'Check available stock after reservations at both locations before agreeing to a transfer.',
+  'Record item, units, required date, transport cost, receiving owner and the sending site’s minimum '
+  'remaining coverage. Keep goods in a transit status until receipt is acknowledged.',
+  'Branch A requests 20 units. Branch B has 36 on hand, 10 reserved and needs to retain 12. It can approve '
+  '14 units and have purchasing source the remaining six.',
+  "Trace a transfer from approval to receipt. Check the sending site's availability and investigate missing "
+  'or delayed units.',
+  '/services/operations/',
+  '/playbooks/minimum-stock-reorder-point/'),
+ ('customer-no-access-visit-review',
+  'No-Access Service Visit Review',
+  'Determine why crews could not enter a site and test the specific changes that prevent repeat trips.',
+  'Separate inaccessible sites from customer cancellations and visits where work could proceed in another '
+  'area.',
+  'Record the confirmed access instructions, arrival time, attempted contact and who could grant entry. Keep '
+  'the next visit conditional until the access issue is resolved.',
+  'An early visit fails because the building contact starts after 9 a.m. Dispatch reschedules within staffed '
+  'hours and adds that constraint to the site record instead of changing the standard window for every '
+  'customer.',
+  'Compare no-access trips by site and work type. Sample the updated site instructions from the crew’s view '
+  'before the next visit.',
+  '/services/operations/',
+  '/playbooks/service-appointment-confirmation/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
