@@ -903,6 +903,48 @@ TOPICS.extend([('incoming-material-hold',
   '/services/operations/',
   '/playbooks/minimum-stock-reorder-point/')])
 
+TOPICS.extend([('dispatch-ready-work-order',
+  'Dispatch-Ready Work Order Checklist',
+  'Define which information and resources must be available before dispatch releases a job.',
+  'Review jobs returned to dispatch and list the missing inputs that made them impossible to complete.',
+  'Record confirmed scope, assigned skills, parts, equipment, access and customer window. Assign an owner to '
+  'each unresolved input and distinguish jobs ready for planning from jobs ready for release.',
+  'A crew can inspect a unit without a replacement board, but the customer booked a repair. Dispatch checks '
+  'whether the customer wants an inspection as a separate visit before releasing the work order.',
+  'Sample completed and returned orders. Check whether the readiness decision predicted what the crew could '
+  'actually deliver.',
+  '/services/operations/',
+  '/playbooks/service-appointment-confirmation/'),
+ ('customer-return-parts-recovery',
+  'Parts Recovery from Customer Returns Playbook',
+  'Decide whether usable components can be recovered from returned goods and record their condition and '
+  'inventory status.',
+  'Set eligibility and inspection rules for products that can be safely disassembled or reused. Keep returns '
+  'out of available stock until the decision is documented.',
+  'Record origin, condition, component identifier, approval, storage location and permitted application. '
+  'Confirm any warranty and product requirements with the appropriate owner.',
+  'A returned unit has damaged housing and an undamaged accessory. The quality lead tests the accessory '
+  'under the approved rule and releases it into a distinct reclaimed stock location.',
+  'Trace a recovered item to the original return and approval. Verify that inventory reports distinguish '
+  'inspected stock from units waiting for evaluation.',
+  '/services/operations/',
+  '/playbooks/returns-disposition-workflow/'),
+ ('service-dispatch-manual-fallback',
+  'Manual Dispatch Fallback Playbook',
+  'Keep urgent service work moving during an outage and reconcile changes after the scheduling system '
+  'returns.',
+  'Identify the minimum authorized records dispatch needs and store a controlled offline copy that respects '
+  'data access rules.',
+  'Name who activates the fallback and where the team records bookings, route changes and customer updates. '
+  'Use unique temporary references and assign one person to reconcile them after restoration.',
+  'A scheduling system loses access at 8 a.m. The lead freezes ordinary schedule changes, uses the approved '
+  'copy for urgent jobs and records two additions. Once service returns, the lead reconciles both additions '
+  'before normal booking resumes.',
+  'Run a tabletop test and confirm staff can recover route changes without entering a job twice or losing an '
+  'escalation.',
+  '/services/operations/',
+  '/playbooks/workflow-pilot-rollback/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
