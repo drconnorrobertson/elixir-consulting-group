@@ -1587,6 +1587,34 @@ TOPICS.extend([('delivery-proof-discrepancy',
   '/services/operations/',
   '/playbooks/service-appointment-window-sizing/')])
 
+TOPICS.extend([('field-service-return-trip-charge',
+  'Field Service Return Trip Charge Review',
+  'Decide when a second visit qualifies for a charge using the original scope and cause of return.',
+  'Start with the customer’s accepted quote and preserve the record of the original visit.',
+  'Record whether the revisit follows added scope, denied access, an incomplete repair, or a warranty issue. '
+  'Route uncertain charges to the approver with the applicable written terms.',
+  'A return trip requires 45 minutes of travel and 30 minutes on site. The first visit was incomplete '
+  'because the crew brought the wrong part. The reviewer checks the original agreement before deciding '
+  'whether any charge is allowed.',
+  'Sample a revisited job and verify its reason, any approved customer charge, and how the crew’s cost was '
+  'recorded.',
+  '/services/operations/',
+  '/playbooks/service-callback-root-cause/'),
+ ('supplier-prepayment-tracking',
+  'Supplier Prepayment Tracking Playbook',
+  'Keep vendor deposits linked to purchase orders until goods are received and the final bill is reconciled.',
+  'Identify suppliers that require deposits, which approved order each deposit funds, and what evidence '
+  'authorizes payment.',
+  'Record purchase order, deposit amount, reference, remaining amount, requested ship date and applicable '
+  'recovery terms. Give overdue orders an owner and check that final invoices reflect any prepaid amount.',
+  'A $10,000 materials order requires a $3,000 deposit. After full receipt, the supplier sends a bill '
+  'showing $10,000 but omits the deposit. Payables obtains an updated statement before releasing the $7,000 '
+  'balance.',
+  'Trace a settled deposit from approved order through receipt and final statement. Check for idle deposits '
+  'on canceled orders.',
+  '/services/operations/',
+  '/playbooks/vendor-statement-reconciliation/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
