@@ -1396,6 +1396,32 @@ TOPICS.extend([('inventory-kit-shortage-review',
   '/services/operations/',
   '/playbooks/service-warranty-rework-tracking/')])
 
+TOPICS.extend([('service-zone-surcharge-review',
+  'Service Zone Surcharge Review',
+  'Check whether travel surcharges reflect service costs and are consistently quoted.',
+  'Group completed visits by distance, travel time, and charge policy. Identify the customer-approved source '
+  'for each surcharge.',
+  'Calculate incremental vehicle and paid travel costs above the standard service area. Compare the '
+  'calculation with approved pricing and sample the resulting invoices.',
+  'A remote site adds 40 paid minutes at $36 per hour and 24 vehicle miles at an illustrative 60 cents per '
+  'mile. The added modeled cost is $38.40. Check whether the approved fee covers it and whether customers '
+  'were told before booking.',
+  'Verify that dispatch can identify the zone and billing can trace the fee to the accepted quote.',
+  '/services/operations/',
+  '/playbooks/service-territory-boundary-review/'),
+ ('warehouse-pick-face-replenishment',
+  'Warehouse Pick Face Replenishment Playbook',
+  'Refill active picking bins without overstating stock or interrupting order waves.',
+  'Identify pick locations, reserve locations, and the minimum needed during the next scheduled batch.',
+  'Set a replenishment trigger using typical demand and the time required to move stock. Record the transfer '
+  'and have the picker confirm the correct unit and bin on receipt.',
+  'A bin contains 18 items and an upcoming wave needs 26. Its reserve holds two cartons of 12. The lead '
+  'moves one carton and confirms 30 available at the pick face before releasing the wave.',
+  'Review empty-bin interruptions and excess transfers. Verify that the total across both locations matches '
+  'physical stock.',
+  '/services/operations/',
+  '/playbooks/warehouse-location-label-audit/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:

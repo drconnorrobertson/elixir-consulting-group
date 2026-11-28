@@ -2170,6 +2170,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/service-zone-surcharge-review/",
+    "title": "Service Zone Surcharge Review",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-territory-boundary-review/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/warehouse-pick-face-replenishment/",
+    "title": "Warehouse Pick Face Replenishment Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/warehouse-location-label-audit/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
