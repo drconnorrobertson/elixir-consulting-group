@@ -1952,6 +1952,34 @@ TOPICS.extend([('warehouse-wave-release-check',
   '/services/operations/',
   '/playbooks/damaged-stock-write-off-review/')])
 
+TOPICS.extend([('service-territory-overflow-request',
+  'Service Territory Overflow Request',
+  'Assign jobs to another service territory without losing route capacity or customer ownership.',
+  'Use the published territory schedule and identify which commitments require temporary reassignment.',
+  'Record site, required skills, travel time, customer window and the capacity the receiving lead can '
+  'actually accept. Agree who owns customer updates and what date the territory should resume normal '
+  'coverage.',
+  'A territory has five visits and can cover only four after a truck breakdown. A nearby team can cover one '
+  'visit with the right tools and an extra 25 minutes of driving. The leads confirm the slot and designate '
+  'an owner before updating the customer.',
+  'Compare the transferred job’s actual travel, arrival and closeout with the agreed plan. Keep unresolved '
+  'follow-up with an explicitly named team.',
+  '/services/operations/',
+  '/playbooks/service-territory-boundary-review/'),
+ ('supplier-invoice-currency-check',
+  'Supplier Invoice Currency Check',
+  'Verify that a vendor’s currency and settlement amount match the approved purchase order.',
+  'Start with the approved order, supplier confirmation and the bank or payment record. Identify the '
+  'currency of each before comparing amounts.',
+  'Keep source-currency amount, reporting amount, exchange-rate date and fees visible. Route currency '
+  'mismatches to payables before signing off an apparent price variance.',
+  'A purchase order approves CAD 2,000, but the invoice import labels the same amount USD. Verify the '
+  'supplier document and correct the currency before release, then reconcile the settled amount and any fee.',
+  'Sample an invoice and trace its original currency through approval and settlement. Verify separately that '
+  'fees did not increase the vendor’s approved price.',
+  '/services/operations/',
+  '/playbooks/vendor-invoice-variance-review/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
