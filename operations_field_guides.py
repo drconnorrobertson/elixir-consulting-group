@@ -1756,6 +1756,31 @@ TOPICS.extend([('delivery-address-validation',
   '/services/operations/',
   '/playbooks/split-shipment-customer-approval/')])
 
+TOPICS.extend([('damaged-stock-write-off-review',
+  'Damaged Stock Write-Off Review',
+  'Document damaged stock, recovery options, and approvals before removing units from inventory.',
+  'Isolate affected units and record how the damage was found. Keep the original lot and transaction '
+  'references.',
+  'Separate the quantity adjustment from the financial assessment. Record repair, return or salvage options, '
+  'evidence of approval, and the person responsible for completing disposition.',
+  'A warehouse finds 12 damaged units. Two have approved repair paths and four qualify for a supplier '
+  'return. Keep those six tracked separately from the six requiring a write-off decision.',
+  'Verify the item movements and the authorized financial posting. Check that recoveries are tracked without '
+  'making unusable goods available again.',
+  '/services/operations/',
+  '/playbooks/inventory-adjustment-approval/'),
+ ('service-accessory-completeness-check',
+  'Service Equipment Accessory Completeness Check',
+  'Check that shared equipment leaves with the accessories, documentation and tools required for the job.',
+  'Build a short issue checklist for each equipment type with the items that commonly travel separately.',
+  'Record each required accessory, condition, serial number where useful, issuing owner and return owner. '
+  'Provide a way to flag an approved substitute before loading.',
+  'A device is ready for a morning job but its mounting adapter is still at the previous site. The lead '
+  'locates an approved spare and adds the missing adapter to the prior job’s follow-up record.',
+  'Compare the issue and return records and ask the next crew to verify completeness before departure.',
+  '/services/operations/',
+  '/playbooks/equipment-return-inspection/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
