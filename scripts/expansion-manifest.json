@@ -1224,6 +1224,50 @@
     "sources": []
   },
   {
+    "path": "/playbooks/overtime-approval-capacity/",
+    "title": "Overtime Approval and Capacity Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/rush-order-intake/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/returns-disposition-workflow/",
+    "title": "Returns Disposition Workflow for Small Businesses",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/customer-complaint-escalation-matrix/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-territory-boundary-review/",
+    "title": "Field Service Territory Boundary Review",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/industries/construction-trades/",
+      "/playbooks/route-density-planning/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/job-closeout-completeness/",
+    "title": "Job Closeout Completeness Checklist",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/customer-onboarding-handoff/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",

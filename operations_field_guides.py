@@ -227,6 +227,66 @@ TOPICS.extend([('purchase-order-three-way-match',
   '/services/operations/',
   '/playbooks/shift-handoff-log/')])
 
+TOPICS.extend([('overtime-approval-capacity',
+  'Overtime Approval and Capacity Playbook',
+  'Review overtime requests against the work due, staffing capacity, and causes of repeat overtime.',
+  'Start with the work that must be completed, the hours needed at the constraint, and the latest acceptable '
+  'delivery time.',
+  'Create a request with work reference, estimated regular and overtime hours, remaining alternatives, '
+  'supervisor approval, and a plan for communicating any delivery changes. Log the actual hours and cause '
+  'afterward.',
+  'A team needs 20 hours for priority jobs with 16 regular hours left. Two hours can move to the next shift '
+  'with no impact. Approve the remaining two hours if coverage and workload permit, and confirm the jobs '
+  'completed against the promise.',
+  'Review repeated reasons separately from one-off absences. Compare overtime and completion rates on the '
+  'same job mix to see whether the change improved delivery.',
+  '/services/operations/',
+  '/playbooks/rush-order-intake/'),
+ ('returns-disposition-workflow',
+  'Returns Disposition Workflow for Small Businesses',
+  'Route returned inventory through inspection, refund, restocking, refurbishment, or disposal with '
+  'traceable records.',
+  'Give each return one reference tied to the original order. Record the reason, condition, and customer '
+  'commitment independently.',
+  'Use an inspection checklist and an approved disposition rule. Require separate approval for disposition '
+  'beyond frontline authority and keep inventory movements synchronized with the financial credit.',
+  'A warehouse receives 12 returned units. Seven are unopened and eligible for restock, three need testing, '
+  'and two are damaged. Record inspections by unit or lot so the stock count and customer credit each '
+  'reconcile without putting damaged items back into available stock.',
+  'Sample five closed returns and compare the original sale, receipt, disposition, inventory movement, and '
+  'credit. Investigate mismatches before changing the rule.',
+  '/services/operations/',
+  '/playbooks/customer-complaint-escalation-matrix/'),
+ ('service-territory-boundary-review',
+  'Field Service Territory Boundary Review',
+  'Redraw a service territory using actual travel times, job density, skill coverage, and customer '
+  'commitments.',
+  'Collect a representative set of completed jobs and flag time windows, equipment, and skills required at '
+  'each stop.',
+  'Compare existing and proposed boundaries using the same job list. Calculate travel minutes per completed '
+  'job, verify coverage at the boundary, and identify unusually long drives that need a special rule.',
+  'A team is considering moving eight weekly jobs between territories. The receiving territory saves 120 '
+  'minutes of travel but needs a licensed worker for three of the jobs. Test routing only on days with the '
+  'relevant skill available.',
+  'Check travel, missed windows, and jobs deferred during a short pilot. Retain the old assignment as a '
+  'fallback and document which boundary exception caused trouble.',
+  '/industries/construction-trades/',
+  '/playbooks/route-density-planning/'),
+ ('job-closeout-completeness',
+  'Job Closeout Completeness Checklist',
+  'Prevent delayed invoicing and callbacks by checking evidence, changes, and follow-up at job closeout.',
+  'Choose the evidence required to mark work complete, such as customer acceptance, service notes, approved '
+  'changes, or part serial numbers.',
+  'Have the crew submit a closeout record with job scope, work performed, exceptions, required approvals, '
+  'and records needed by billing. Give billing a way to return incomplete closeouts with a reason.',
+  'A crew finishes an installation but the client verbally requested an added unit. Billing pauses the '
+  'additional charge until the account owner checks the approved scope and flags the extra unit for a '
+  'documented resolution.',
+  'Sample closed jobs from the field log through billing. Compare days to invoice and late scope corrections '
+  'to the starting baseline.',
+  '/services/operations/',
+  '/playbooks/customer-onboarding-handoff/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
