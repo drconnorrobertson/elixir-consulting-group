@@ -1812,6 +1812,34 @@ TOPICS.extend([('warehouse-label-version-control',
   '/services/operations/',
   '/playbooks/customer-scope-clarification-log/')])
 
+TOPICS.extend([('duplicate-supplier-invoice-review',
+  'Duplicate Supplier Invoice Review',
+  'Catch duplicate payable entries even when invoice numbers or dates differ.',
+  'Start with the supplier, original order and accepted delivery. Compare the evidence rather than relying '
+  'on invoice number alone.',
+  'Check amount, currency, delivery references, bank settlement, and whether the second document replaces '
+  'the first. Put only the disputed items on hold and name a reviewer.',
+  'A supplier emails a $1,260 bill and later sends the same bill through a portal with a suffix on the '
+  'reference. Both cover the same 42 accepted units. Payables verifies that one was already posted and links '
+  'the duplicate before releasing the batch.',
+  'Test a legitimate split invoice alongside a duplicate to confirm the review retains valid separate '
+  'charges.',
+  '/services/operations/',
+  '/playbooks/vendor-statement-reconciliation/'),
+ ('customer-service-parts-waitlist',
+  'Customer Service Parts Waitlist Playbook',
+  'Track customers waiting for parts and allocate incoming stock against documented service commitments.',
+  'Keep a separate line for each affected job and show which approved part blocks completion.',
+  'Record quantity, latest useful date, supplier confirmation, customer update owner, and agreed allocation '
+  'priority. Reconfirm availability before automatically assigning a part.',
+  'Eight orders wait for one component and the first shipment contains five. The coordinator reserves those '
+  'against confirmed commitments, updates the remaining three with evidence-backed timing, and checks '
+  'whether any job can use an approved substitute.',
+  'Trace the first receipt through allocations and confirm that every open customer still has an owner and '
+  'next update.',
+  '/services/operations/',
+  '/playbooks/service-visit-parts-shortage-notice/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
