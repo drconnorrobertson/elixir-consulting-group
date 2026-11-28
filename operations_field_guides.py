@@ -860,6 +860,49 @@ TOPICS.extend([('customer-owned-inventory-tracking',
   '/services/operations/',
   '/playbooks/route-density-planning/')])
 
+TOPICS.extend([('incoming-material-hold',
+  'Incoming Material Hold and Release Playbook',
+  'Keep suspect materials out of available stock until a qualified owner resolves the receiving exception.',
+  'Set a hold status and a visible storage boundary for lots that need further evidence before use.',
+  'Log the order, lot, quantity, reason, location and person authorized to release it. Keep held stock out '
+  'of planning availability. Document partial release by lot or unit.',
+  'Two pallets arrive with the same item number. One has incomplete inspection records. Receiving releases '
+  'the verified lot, holds the second lot, and updates available quantities before scheduling assigns '
+  'material.',
+  'Attempt to reserve a held item in an approved test and trace a released lot to its decision and current '
+  'location.',
+  '/services/operations/',
+  '/playbooks/freight-damage-claim-workflow/'),
+ ('service-rebooking-after-missed-window',
+  'Service Rebooking After a Missed Arrival Window',
+  'Rebook a missed field service visit while protecting the customer’s priorities and existing route '
+  'promises.',
+  'Identify whether the crew can still perform the original scope and ask the customer which windows remain '
+  'useful.',
+  'Give one person authority to coordinate an alternative. Record original and replacement dates, reason, '
+  'any accepted remedy, and which downstream appointments changed.',
+  'A crew will arrive two hours beyond the customer’s access window. Dispatch offers a confirmed next-day '
+  'slot with equipment reserved, alerts the account owner, and keeps the first missed promise in the '
+  'performance record.',
+  'Review whether the customer accepted the replacement and whether the next visit succeeded. Track repeated '
+  'causes by route and work type.',
+  '/services/operations/',
+  '/playbooks/service-appointment-window-sizing/'),
+ ('supplier-lead-time-variance',
+  'Supplier Lead Time Variance Playbook',
+  'Compare supplier lead time promises to actual receipts and update planning assumptions using observed '
+  'variability.',
+  'Pick comparable orders and define whether timing starts on release or supplier acceptance and ends at '
+  'receipt or acceptance.',
+  'Record the originally confirmed date and any changes. Distinguish supplier production, transit and '
+  'receiving delays so the correct owner takes action.',
+  'Five similar orders arrive in 8, 9, 9, 11 and 16 days. The buyer checks whether the 16-day late order '
+  'came from a recurring cause before changing the buffer for future orders.',
+  'Measure shortages and excess inventory after updating the planning assumption. Keep the old and new '
+  'assumption dates visible for comparison.',
+  '/services/operations/',
+  '/playbooks/minimum-stock-reorder-point/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
