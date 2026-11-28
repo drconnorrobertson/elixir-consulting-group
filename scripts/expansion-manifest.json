@@ -1499,6 +1499,39 @@
     "sources": []
   },
   {
+    "path": "/playbooks/subcontractor-work-acceptance/",
+    "title": "Subcontractor Work Acceptance Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/industries/construction-trades/",
+      "/playbooks/job-closeout-completeness/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-price-list-change-control/",
+    "title": "Service Price List Change Control",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/sales-strategy/",
+      "/playbooks/quote-expiration-review/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-delivery-proof-check/",
+    "title": "Service Delivery Proof Checklist",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/billing-dispute-triage/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
