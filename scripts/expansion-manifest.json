@@ -2610,6 +2610,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/service-territory-overflow-request/",
+    "title": "Service Territory Overflow Request",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-territory-boundary-review/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/supplier-invoice-currency-check/",
+    "title": "Supplier Invoice Currency Check",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/vendor-invoice-variance-review/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
