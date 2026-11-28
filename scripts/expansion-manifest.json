@@ -1895,6 +1895,39 @@
     "sources": []
   },
   {
+    "path": "/playbooks/carrier-delivery-exception-desk/",
+    "title": "Carrier Delivery Exception Desk Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/freight-damage-claim-workflow/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/field-service-parts-core-return/",
+    "title": "Field Service Core Return Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/field-service-van-stock-replenishment/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/job-material-reservation/",
+    "title": "Job Material Reservation Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/dispatch-ready-work-order/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",

@@ -1068,6 +1068,42 @@ TOPICS.extend([('rental-equipment-off-hire',
   '/services/operations/',
   '/playbooks/duplicate-service-ticket-triage/')])
 
+TOPICS.extend([('carrier-delivery-exception-desk',
+  'Carrier Delivery Exception Desk Playbook',
+  'Route carrier exceptions to an owner who can recover delivery and update the customer.',
+  'Start with carrier events that threaten an actual customer delivery commitment.',
+  'Record shipment ID, last verified location, promised date, recovery choices, and decision deadline. Set '
+  'escalation rules for misroutes, failed delivery attempts and unconfirmed scans.',
+  'A shipment misses its transfer scan. The coordinator checks the carrier’s physical search deadline and '
+  'alternate stock before offering a replacement, avoiding a duplicate shipment without authorization.',
+  'Sample a recovered shipment and verify the timeline, customer update, and disposition of any replacement.',
+  '/services/operations/',
+  '/playbooks/freight-damage-claim-workflow/'),
+ ('field-service-parts-core-return',
+  'Field Service Core Return Playbook',
+  'Track recoverable core deposits after technicians install exchange parts.',
+  'Identify exchange parts at purchasing and give each recoverable core a job and return reference.',
+  'Record the deposit, eligibility and deadline. After installation, document the old unit’s condition and '
+  'assign a person to pack, send and reconcile it.',
+  'An exchange part includes a $300 core deposit. Dispatch closes the service visit but leaves the core '
+  'return open until the supplier accepts the old part and issues the expected credit.',
+  'Reconcile outstanding cores against supplier statements and verify rejected returns have specific reasons '
+  'and owners.',
+  '/services/operations/',
+  '/playbooks/field-service-van-stock-replenishment/'),
+ ('job-material-reservation',
+  'Job Material Reservation Playbook',
+  'Reserve scarce materials for confirmed work without hiding shortages from other job owners.',
+  'Separate stock on hand, held stock and material already promised to an active job.',
+  'Record quantities, needed dates, allocation authority and when an unused reservation expires. Release '
+  'held quantities deliberately and alert affected job owners before moving allocations.',
+  'Two jobs need 30 units each and only 45 are available. The lead checks which job can proceed with a '
+  'partial quantity, protects the earlier confirmed commitment and sources the balance.',
+  'Trace a canceled or moved job through the release decision and confirm available quantities change only '
+  'after authorization.',
+  '/services/operations/',
+  '/playbooks/dispatch-ready-work-order/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
