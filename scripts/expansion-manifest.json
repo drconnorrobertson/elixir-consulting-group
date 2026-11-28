@@ -1829,6 +1829,39 @@
     "sources": []
   },
   {
+    "path": "/playbooks/alternate-part-substitution/",
+    "title": "Alternate Part Substitution Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/supplier-sample-approval-workflow/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/customer-milestone-invoice-readiness/",
+    "title": "Milestone Invoice Readiness Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/job-closeout-completeness/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/supplier-capacity-reservation/",
+    "title": "Supplier Capacity Reservation Playbook",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/supplier-lead-time-variance/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",

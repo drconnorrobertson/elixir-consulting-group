@@ -986,6 +986,47 @@ TOPICS.extend([('service-job-duration-estimation',
   '/services/operations/',
   '/playbooks/service-appointment-confirmation/')])
 
+TOPICS.extend([('alternate-part-substitution',
+  'Alternate Part Substitution Playbook',
+  'Review proposed replacement parts before purchasing, dispatch, or production relies on them.',
+  "Identify the original part's requirements and the person qualified to approve a substitute. Keep "
+  'customer-specific restrictions visible.',
+  'Record the application, specification comparison, availability, warranty implications, and test or '
+  'inspection needed. Tie an approval to the exact revision and applications for which it is valid.',
+  'A replacement gasket has the same dimensions but a different material. Purchasing holds the order while '
+  'the qualified reviewer checks the service conditions and applicable requirements. If approved, the item '
+  'record lists the operating scope and inspection required.',
+  'Sample a purchase and a work order after approval. Confirm users received the approved revision and the '
+  'substitution cannot silently extend to another application.',
+  '/services/operations/',
+  '/playbooks/supplier-sample-approval-workflow/'),
+ ('customer-milestone-invoice-readiness',
+  'Milestone Invoice Readiness Playbook',
+  'Verify customer approval, delivered scope, and prior billings before releasing a milestone invoice.',
+  'Build the billing schedule from documented terms and record the proof needed to bill each milestone.',
+  'Put the trigger, approval owner, expected amount, date, and evidence reference on one checklist. Identify '
+  'which milestone depends on customer acknowledgment or changes to the agreed scope.',
+  'A 30% milestone on a $50,000 project supports a $15,000 invoice once testing is accepted. The crew '
+  'completes testing on Monday, but the signed acceptance arrives Thursday. Billing checks the agreed '
+  'trigger and records both dates.',
+  'Trace the first invoice back to the milestone evidence and confirm the remaining balance accounts for '
+  'earlier invoices and approved changes.',
+  '/services/operations/',
+  '/playbooks/job-closeout-completeness/'),
+ ('supplier-capacity-reservation',
+  'Supplier Capacity Reservation Playbook',
+  'Decide when to reserve supplier production slots and reconcile reserved capacity against orders.',
+  'Identify the confirmed demand or delivery commitment that depends on a supplier slot. Verify what the '
+  'supplier actually reserves.',
+  'Track quantities, allowed dates, fees, cancellation deadlines, and the step required to convert a '
+  'reservation into an order. Give planning a consistent view of reservations and firm orders.',
+  'A supplier holds 100 hours for a project until Friday. Confirmed work needs 70, while a second job awaits '
+  'approval. Planning releases unneeded hours before the fee deadline if the second job remains unresolved.',
+  'Review consumed and expired reservations. Compare unused fees and late orders to determine how much '
+  'capacity to reserve next time.',
+  '/services/operations/',
+  '/playbooks/supplier-lead-time-variance/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
