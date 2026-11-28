@@ -151,6 +151,82 @@ TOPICS.extend([
 ])
 
 
+TOPICS.extend([('purchase-order-three-way-match',
+  'Three-Way Purchase Order Matching Playbook',
+  'Set up a three-way match for purchase orders, receipts, and invoices.',
+  'A three-way match connects what the company ordered, what it accepted, and what the vendor billed.',
+  'Give each discrepancy an owner. Compare line identifiers, agreed prices, accepted quantities, and '
+  'approved adjustments. Keep partial receipts open through the next delivery.',
+  'An order for 100 units at $12 yields an accepted receipt of 90. An invoice for $1,200 exceeds accepted '
+  'goods by $120. The buyer records the 10-unit variance and asks the supplier for the missing shipment or a '
+  'corrected invoice.',
+  'Trace one closed variance through the receipt, approval and vendor statement before expanding the '
+  'workflow.',
+  '/services/operations/',
+  '/playbooks/vendor-invoice-variance-review/'),
+ ('minimum-stock-reorder-point',
+  'Minimum Stock and Reorder Point Playbook',
+  'Calculate a practical reorder point from demand, replenishment time, and an explicit buffer.',
+  'A reorder point tells the team when to act. Use actual consumption and replenishment time for the item '
+  'being ordered.',
+  'Collect daily demand and lead times from completed orders. State how open purchase orders and allocated '
+  'units affect available inventory. Review items with unusual lead times separately.',
+  'A team uses eight units per day and normally waits six days for delivery. With a 16-unit buffer, its '
+  'starting reorder point is 64 units. Test a late delivery and check whether existing inbound stock changes '
+  'the decision.',
+  'Pilot the rule on one product family and review stockouts and excess holdings together.',
+  '/services/operations/',
+  '/playbooks/supplier-bid-comparison/'),
+ ('sales-discount-review',
+  'Sales Discount Review and Margin Playbook',
+  'Review discounts against contribution, volume assumptions, and concessions before approving sales terms.',
+  'Review the economics of the proposed transaction using a common cost and scope baseline.',
+  'Capture the discount type, list amount, approved scope, direct costs, volume assumptions, expiry date and '
+  'renewal treatment. Include concessions such as free setup or accelerated delivery.',
+  'A $10,000 sale with $6,000 in direct costs yields $4,000 of contribution. A 15% discount reduces '
+  'contribution to $2,500, a decline of 37.5%. Compare this change with any supportable increase in sold '
+  'volume.',
+  'Check a sample of closed deals for realized price, direct cost and undocumented concessions.',
+  '/services/sales-strategy/',
+  '/playbooks/quote-approval-delegation/'),
+ ('rush-order-intake',
+  'Rush Order Intake and Capacity Playbook',
+  'Protect existing delivery commitments when urgent orders compete for constrained capacity.',
+  'Define who can promise a rush date and which resource must be checked before agreeing to it.',
+  'Record the requested date, required work, bottleneck hours, inputs still missing, and scheduled jobs that '
+  'would move. Communicate revised expectations to affected customers through the account owner.',
+  'An urgent job requires three hours on a workstation with two hours free. The scheduler offers a '
+  'next-morning slot or obtains explicit approval to move an existing one-hour job.',
+  'Audit promised versus actual delivery and check whether any displaced commitments went uncommunicated.',
+  '/services/operations/',
+  '/playbooks/service-backlog-triage/'),
+ ('renewal-risk-sales-handoff',
+  'Customer Renewal Risk Handoff Playbook',
+  'Surface contract dates, service gaps, and decision owners before an account renewal reaches escalation.',
+  'Start with the customer outcome expected under the agreement and the most recent evidence of delivery.',
+  'Build a handoff with notice date, decision maker, open support cases, promised milestones, commercial '
+  'concessions, and the next conversation. Assign delivery and account owners separately.',
+  'A customer is 45 days from renewal and its last two service reports disagree about response time. '
+  'Delivery reconciles the reporting data while the account owner schedules a review before internal pricing '
+  'is approved.',
+  'Check whether the account plan identifies the unresolved decision and the owner can still act before the '
+  'contractual deadline.',
+  '/services/sales-strategy/',
+  '/playbooks/customer-onboarding-handoff/'),
+ ('workflow-pilot-rollback',
+  'Workflow Pilot Rollback Plan',
+  'Prepare reversible workflow changes with stop conditions, clean handbacks, and evidence for restarting.',
+  'Design the fallback while the team still has the old workflow and access to its records.',
+  'Write the decision owner, stop threshold, record reconciliation method, communication tree and restart '
+  'checks. Select one point at which work switches sources to avoid conflicting updates.',
+  'A scheduling pilot misroutes two appointments. The lead stops intake to the pilot, reconciles open work '
+  'against the dispatch queue, and asks account owners to confirm affected appointments before resuming the '
+  'old process.',
+  'Run a rehearsal using sample records and confirm that an incoming operator can reconcile in-flight work '
+  'without guesswork.',
+  '/services/operations/',
+  '/playbooks/shift-handoff-log/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
