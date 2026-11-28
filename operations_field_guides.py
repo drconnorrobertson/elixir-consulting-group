@@ -1422,6 +1422,30 @@ TOPICS.extend([('service-zone-surcharge-review',
   '/services/operations/',
   '/playbooks/warehouse-location-label-audit/')])
 
+TOPICS.extend([('shipment-weight-reconciliation',
+  'Shipment Weight Reconciliation Playbook',
+  'Check parcel and freight weights against packing and carrier measurements before disputing charges.',
+  'Keep the weight recorded at packing and identify whether billing uses actual or dimensional weight.',
+  'Capture package dimensions, scale reading, declared weight, carrier adjustment and evidence. Review '
+  'material differences against approved rates and packaging used.',
+  'A carton weighs 12 pounds but the carrier bills 18 because of its dimensions. The shipping lead verifies '
+  'the measurements and tests a smaller approved carton before disputing the charge.',
+  'Sample the next invoice and compare observed treatment with the documented rate. Track packing changes '
+  'separately from corrected billing.',
+  '/services/operations/',
+  '/playbooks/supplier-freight-term-comparison/'),
+ ('warehouse-short-pick-resolution',
+  'Warehouse Short Pick Resolution',
+  'Resolve short picks without promising held stock or losing track of the remainder.',
+  'Have the picker record the quantity found and the location checked before pausing a line.',
+  'Review reserve locations, open transfers and stock holds. Give the order owner a choice supported by '
+  'actual available inventory and customer instructions.',
+  'A picker needs 15 items, finds 12, and sees three marked held for inspection. The lead sources a verified '
+  'reserve location rather than counting the held items as available.',
+  'Reconcile the final order to what shipped and give any outstanding quantity a dated follow-up.',
+  '/services/operations/',
+  '/playbooks/warehouse-pick-face-replenishment/')])
+
 
 def field_guides():
     for slug, title, description, intro, method, example, check, service, related in TOPICS:
