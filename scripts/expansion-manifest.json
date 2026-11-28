@@ -2566,6 +2566,28 @@
     "sources": []
   },
   {
+    "path": "/playbooks/inventory-expiry-pick-sequence/",
+    "title": "Inventory Expiry Pick Sequence",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/slow-moving-stock-disposition/"
+    ],
+    "sources": []
+  },
+  {
+    "path": "/playbooks/service-work-order-reopen-control/",
+    "title": "Service Work Order Reopen Control",
+    "kind": "Implementation playbook",
+    "parent": "/playbooks/",
+    "related": [
+      "/services/operations/",
+      "/playbooks/service-callback-root-cause/"
+    ],
+    "sources": []
+  },
+  {
     "path": "/guides/",
     "title": "Business Consulting Buying Guides & Industry Workflows",
     "kind": "Resource hub",
